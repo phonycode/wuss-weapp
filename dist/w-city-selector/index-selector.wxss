@@ -1,0 +1,61 @@
+.w-index {
+  width: 100%;
+  height: 100%
+}
+
+.w-index-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1rpx;
+  background-color: #f7f7f7;
+  top: 50%
+}
+
+.w-index-content {
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 0 10px
+}
+
+.w-index-fixed {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 10;
+  padding-left: 10px;
+  transform: translateY(-50%)
+}
+
+.w-index-fixed-item {
+  display: block;
+  height: 15px;
+  line-height: 15px;
+  padding: 0 5px;
+  text-align: center;
+  color: #fe8b4a;
+  font-size: 10px;
+  border-radius: 50%
+}
+
+.w-index-fixed-item-current {
+  background: #fe8b4a;
+  color: #fff
+}
+
+.w-index-tooltip {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center
+}

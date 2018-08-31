@@ -1,0 +1,9 @@
+{
+  "name": "wuss-weapp_",
+  "version": "1.0.0",
+  "description": "a miniprogram UI-weapp",
+  "main": "index.js",
+  "repository": "https://github.com/phonycode/wuss",
+  "author": "Awei <13650928419@163.com>",
+  "license": "MIT"
+}

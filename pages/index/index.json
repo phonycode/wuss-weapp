@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "w-calendar": "../../dist/w-calendar/index",
+    "w-city-selector": "../../dist/w-city-selector/index",
+    "w-drop-menu": "../../dist/w-drop-menu/index",
+    "w-mask-shadow": "../../dist/w-mask-shadow/index",
+    "w-popup": "../../dist/w-popup/index",
+    "w-activity-indicator": "../../dist/w-activity-indicator/index",
+    "w-button": "../../dist/w-button/index",
+    "w-icon": "../../dist/w-icon/index",
+    "w-pane": "../../dist/w-pane/index"
+  }
+}

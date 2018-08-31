@@ -1,0 +1,151 @@
+.date-day {
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date-day.bgitem {
+  background-color: #d8ecf9;
+}
+
+.date-day.active {
+  background: #fe8b4a;
+  color: #FFF;
+}
+
+.date-day.vacation .item-days-text{
+  color: #F56C6C;
+}
+
+.week-content {
+  position: relative;
+  background: #ffffff;
+}
+
+.week-list {
+  /* position: absolute;
+  top: 0; */
+  font-size: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.date-day.unavailable {
+  color: #aaa;
+}
+
+.date-week {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5px;
+}
+
+.week {
+  color: #fe8b4a;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-days {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.bgwhite {
+  background-color: #fff;
+}
+
+.mask-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .7);
+  z-index: 900;
+  transition: all .2s ease-in-out;
+  opacity: 0;
+  visibility: hidden
+}
+
+.mask-shadow-show {
+  opacity: 1;
+  visibility: visible
+}
+.date-year-month {
+  font-size: 14px;
+  padding: 5px 0;
+  text-align: center;
+  color: #333333;
+  background: #f7f7f7;
+}
+.date-content {
+  background: #ffffff;
+}
+
+.calendar-container {
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f7f7f7;
+  transform: translate3d(0, 100%, 0);
+  transform-origin: center;
+  transition: all .2s ease-in-out;
+  z-index: 900;
+  visibility: hidden
+}
+
+.calendar-modal-show {
+  transform: translate3d(0, 0, 0);
+  visibility: visible
+}
+
+
+.header {
+  background: #ffffff;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 44px;
+  position: relative;
+}
+
+.date-btn  {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 0 10px;
+  color: #333333;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.left-btn {}
+
+.cancel-btn {}
+
+.centered {}
+
+.title {
+  font-size: 16px;
+  line-height: 16px;
+}

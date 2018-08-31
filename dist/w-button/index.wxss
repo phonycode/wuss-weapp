@@ -1,0 +1,127 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-08-30 15:49:45 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-08-31 16:18:49
+ */
+button.wuss-button.wuss-button-normalize {
+  padding: 0;
+  margin: 10px;
+  outline: none;
+  box-shadow: none;
+  border-radius: 4px;
+  text-shadow: none;
+  font-size: 16px;
+  border: 1px solid transparent;
+}
+
+
+button.wuss-button.wuss-button-full {
+  width: 100%;
+  border-radius: 0;
+  margin: 10px 0;
+}
+
+button.wuss-button.wuss-button-inline {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+button.wuss-button.wuss-button-disabled {
+  opacity: .4;
+}
+
+button.wuss-button.wuss-button-default {
+  background-color: rgb(255,255,255)!important;
+  border-color: rgb(223, 223, 223);
+  color: #333333!important;
+}
+
+button.wuss-button.wuss-button-default.wuss-button-hover {
+  background-color: rgb(236, 236, 236)!important;
+}
+
+
+button.wuss-button.wuss-button-primary {
+  background-color: rgb(68, 142, 246)!important;
+  border-color: rgb(68, 142, 246);
+  color: #ffffff!important;
+}
+
+button.wuss-button.wuss-button-primary.wuss-button-hover {
+  background-color: rgb(28, 117, 243)!important;
+}
+
+button.wuss-button.wuss-button-warn {
+  background-color: rgb(255, 153, 0)!important;
+  border-color: rgb(255, 153, 0);
+  color: #ffffff!important;
+}
+
+button.wuss-button.wuss-button-warn.wuss-button-hover {
+  background-color: rgb(255, 136, 0)!important;
+}
+
+button.wuss-button.wuss-button-info {
+  background-color: rgb(85, 178, 240)!important;
+  border-color: rgb(85, 178, 240);
+  color: #ffffff!important;
+}
+
+button.wuss-button.wuss-button-info.wuss-button-hover {
+  background-color: rgb(40, 162, 243)!important;
+}
+
+button.wuss-button.wuss-button-danger {
+  background-color: rgb(239, 71, 58)!important;
+  color: #ffffff!important;
+}
+
+button.wuss-button.wuss-button-danger.wuss-button-hover {
+  background-color: rgb(228, 33, 18)!important;
+}
+
+
+button.wuss-button.wuss-button-flat {
+  border-radius: 0;
+}
+
+button.wuss-button.wuss-button-default.wuss-button-ghost {
+  border-color: rgb(223, 223, 223);
+  color: rgb(51, 51, 51)!important;
+  background: transparent!important;
+}
+
+button.wuss-button.wuss-button-primary.wuss-button-ghost {
+  border-color: rgb(68, 142, 246);
+  color: rgb(68, 142, 246)!important;
+  background: transparent!important;
+}
+
+button.wuss-button.wuss-button-warn.wuss-button-ghost {
+  border-color: rgb(255, 153, 0);
+  color: rgb(255, 153, 0)!important;
+  background: transparent!important;
+}
+
+button.wuss-button.wuss-button-info.wuss-button-ghost {
+  border-color: rgb(85, 178, 240);
+  color: rgb(85, 178, 240)!important;
+  background: transparent!important;
+}
+
+button.wuss-button.wuss-button-danger.wuss-button-ghost {
+  border-color: rgb(239, 71, 58);
+  color: rgb(239, 71, 58)!important;
+  background: transparent!important;
+}
+
+
+button.wuss-button.wuss-button-dashed.wuss-button-normalize {
+  border-style: dashed;
+}
+
+.wuss-icon {
+  margin-right: 5px;
+}
+

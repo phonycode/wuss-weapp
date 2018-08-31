@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/w-button/index",
+    "pages/index/index",
+    "pages/w-activity-indicator/index",
+    "pages/w-calendar/index",
+    "pages/w-drop-menu/index",
+    "pages/w-icon/index",
+    "pages/w-popup/index",
+    "pages/w-city-selector/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

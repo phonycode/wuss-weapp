@@ -1,0 +1,36 @@
+  <!-- <w-drop-menu 
+    dataItems="{{ dataItems }}"
+    bind:sortChange="handleSelected"
+    bind:selected="handleSelected"
+  /> -->
+<!-- <view class="" hover-class="none" hover-stop-propagation="false">
+  <w-activity-indicator />
+</view> -->
+
+<view class="" hover-class="none" hover-stop-propagation="false">
+
+  <!-- <w-icon /> -->
+  <w-button> 
+    hello world
+  </w-button>
+
+</view>
+
+<w-pane desc="按钮" />
+
+<!-- <button bindtap="handleVisible">{{ visible }}</button>
+
+<w-popup 
+  position="bottom"
+  visible="{{visible}}"
+  bind:close="handleClose"
+>
+  <view class="" hover-class="none" hover-stop-propagation="false">
+    1231231312
+    1231231312
+    1231231312
+    1231231312
+    1231231312
+    1231231312
+  </view>
+</w-popup> -->
