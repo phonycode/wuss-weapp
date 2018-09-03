@@ -1,8 +1,8 @@
-.drop-menu {
+.wuss-drop-menu {
   position: relative;
 }
 
-.drop-menu-bar {
+.wuss-drop-menu-bar {
   position: relative;
   z-index: 1000;
   border-bottom: 1px solid #eeeeee;
@@ -15,7 +15,7 @@
   flex-wrap: wrap;
 }
 
-.drop-menu-bar .bar-item {
+.wuss-drop-menu-bar .bar-item {
   display: flex;
   flex: 1;
   flex-direction: row;
@@ -36,7 +36,8 @@
   margin-right: 5px;
 }
 
-.bar-item-text.selected , .opt-text-checked{
+.bar-item-text.selected,
+.opt-text-checked {
   color: #fe8b4a;
 }
 
@@ -94,7 +95,7 @@
   width: 100%;
 }
 
-.drop-menu-content {
+.wuss-drop-menu-content {
   position: relative;
   /* position: absolute; */
   /* top: 0; */
@@ -104,7 +105,7 @@
   /* margin-top: 44px; */
 }
 
-.drop-menu-list {
+.wuss-drop-menu-list {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -112,12 +113,12 @@
   justify-content: center;
 }
 
-.drop-menu-list .items {
+.wuss-drop-menu-list .items {
   display: flex;
   flex: 1;
 }
 
-.drop-menu-list .items .opt-flex {
+.wuss-drop-menu-list .items .opt-flex {
   display: flex;
   flex: 1;
   justify-content: space-between;
@@ -131,7 +132,7 @@
   color: #333333;
 }
 
-.drop-menu-list .items .opt-flex .opt-flex-cell .check-icon{
+.wuss-drop-menu-list .items .opt-flex .opt-flex-cell .check-icon {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -141,7 +142,6 @@
   background-size: cover;
 }
 
-.drop-menu-list .items:last-child {
+.wuss-drop-menu-list .items:last-child {
   /* border-bottom: none; */
 }
-

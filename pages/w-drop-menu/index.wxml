@@ -1,2 +1,7 @@
-<!--pages/w-drop-menu/index.wxml-->
-<text>pages/w-drop-menu/index.wxml</text>
+<w-drop-menu 
+  dataItems="{{ dataItems }}"
+  bind:selected="handleSelected"
+  bind:sortChange="handleSelectedSort"
+/>
+
+<w-pane title="DropMenu" desc="下拉菜单" />

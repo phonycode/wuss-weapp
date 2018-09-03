@@ -16,7 +16,7 @@
   color: #FFF;
 }
 
-.date-day.vacation .item-days-text{
+.date-day.vacation .item-days-text {
   color: #F56C6C;
 }
 
@@ -82,6 +82,7 @@
   opacity: 1;
   visibility: visible
 }
+
 .date-year-month {
   font-size: 14px;
   padding: 5px 0;
@@ -89,6 +90,7 @@
   color: #333333;
   background: #f7f7f7;
 }
+
 .date-content {
   background: #ffffff;
 }
@@ -113,7 +115,6 @@
   visibility: visible
 }
 
-
 .header {
   background: #ffffff;
   display: flex;
@@ -126,7 +127,7 @@
   position: relative;
 }
 
-.date-btn  {
+.date-btn {
   position: absolute;
   left: 0;
   top: 0;

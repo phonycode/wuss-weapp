@@ -68,7 +68,7 @@ Moment.prototype.differ = function (date) {
     date = new Date(date);
   var time1 = this.date.getTime();
   var time2 = date.getTime();
-  var differ = Math.ceil((time1 - time2) / (1000 * 3600 * 24));//除不尽时,向上取整
+  var differ = Math.ceil((time1 - time2) / (1000 * 3600 * 24)); //除不尽时,向上取整
   return differ;
 }
 

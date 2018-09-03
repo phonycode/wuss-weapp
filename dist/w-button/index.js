@@ -2,26 +2,26 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-08-31 16:12:23
+ * @Last Modified time: 2018-09-01 12:44:07
  */
 Component({
-   /**
+  /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class','wuss-button-hover-class'], 
-  
+  externalClasses: ['wuss-class', 'wuss-button-hover-class'],
+
   /**
    * 组件间关系定义
    */
-   relations: {},
-   
+  relations: {},
+
   /**
    * 组件选项
    */
-   options: {
+  options: {
     addGlobalClass: true,
-   },
-   
+  },
+
   /**
    * 组件的属性列表
    * @param {Boolean} disabled 禁用按钮
@@ -105,47 +105,54 @@ Component({
       value: false,
     },
   },
-  
+
   /**
    * 组件的初始数据
    */
   data: {},
-  
+
   /**
    * 组件方法列表
    */
   methods: {
     handleClick() {
-      this.tirggerEvent('click',{},{});
+      this.triggerEvent('click', {}, {});
     },
     initStyles() {
-      const { styles, color, bgColor, hoverColor } = this.data;
+      const {
+        styles,
+        color,
+        bgColor,
+        hoverColor
+      } = this.data;
       let buttonStyles = '';
       buttonStyles += ` ${styles}` + (color ? `color: ${color}!important;` : '') + (bgColor ? ` background-color: ${bgColor}!important;` : '');
-      this.setData({ buttonStyles })
+      this.setData({
+        buttonStyles
+      })
     },
   },
-  
+
   /**
    * 在组件实例进入页面节点树时执行
    */
-  created: function() {},
-   
+  created: function () {},
+
   /**
    * 组件布局完成后执行
    */
-  ready: function() {
+  ready: function () {
     this.initStyles()
   },
-  
+
   /**
    * 在组件实例进入页面节点树时执行
    */
-   attached: function() {},
-   
+  attached: function () {},
+
   /**
    * 在组件实例被移动到节点树另一个位置时执行
    */
-   moved: function() {},
-   
+  moved: function () {},
+
 })

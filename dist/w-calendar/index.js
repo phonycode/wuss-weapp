@@ -14,7 +14,7 @@ Component({
   /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class'], 
+  externalClasses: ['wuss-class'],
 
   /**
    * 组件的属性列表
@@ -200,7 +200,11 @@ Component({
       checkOutDate
     } = this.data;
     this.createDateListData();
-    wx.getSystemInfo({success: systemInfo => this.setData({systemInfo})})
+    wx.getSystemInfo({
+      success: systemInfo => this.setData({
+        systemInfo
+      })
+    })
     if (checkInDate && checkOutDate) {
       this.setData({
         markcheckInDate: true,
@@ -225,7 +229,6 @@ Component({
     //选择的入住与离店时间段
     selectDataMarkLine: function () {
       let dateList = this.data.dateList;
-      console.log(dateList)
       const {
         checkInDate,
         checkOutDate
@@ -271,7 +274,7 @@ Component({
               }
             }
           } else { //入住跨月月份
-            if(yearOut <= yearIn) {
+            if (yearOut <= yearIn) {
               if (dateList[j].month < monthOut && dateList[j].month > monthIn) { //离店中间的月份
                 let days = dateList[j].days;
                 for (let k = 0; k < days.length; k++) {
@@ -289,9 +292,9 @@ Component({
                   }
                 }
               }
-            } else if(yearOut > yearIn){ // 跨年的话
+            } else if (yearOut > yearIn) { // 跨年的话
               let days = dateList[j].days;
-              if(dateList[j].year == yearIn) { // 当年的跨月
+              if (dateList[j].year == yearIn) { // 当年的跨月
                 if (dateList[j].month > monthIn) { //离店中间的月份
                   let days = dateList[j].days;
                   for (let k = 0; k < days.length; k++) {
@@ -300,12 +303,12 @@ Component({
                 }
               } else { // 下一年的跨月
                 for (let k = 0; k < days.length; k++) {
-                  if(days[k].day < dayOut) {
+                  if (days[k].day < dayOut) {
                     days[k].class = days[k].class + ' bgitem';
                   }
                 }
               }
-            } else{}
+            } else {}
           }
         }
       }
@@ -467,6 +470,7 @@ Component({
             checkOutDate,
             checkTotalDay,
           }, {})
+          this.triggerEvent('cancel', {}, {} )
         }, 300);
       }
 

@@ -1,23 +1,22 @@
-
 Component({
-   /**
+  /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class','wuss-activity-indicator'], 
-  
+  externalClasses: ['wuss-class', 'wuss-activity-indicator'],
+
   /**
    * 组件间关系定义
    */
-   relations: {},
-   
+  relations: {},
+
   /**
    * 组件选项
    */
-   options: {},
-   
+  options: {},
+
   /**
    * 组件的属性列表
-   * @param {Boolean} visible 控制动画的显示隐藏
+   * @param {Boolean} show 控制动画的显示隐藏
    * @param {String} size 指示器的大小,分别为[small/default/larger]
    * @param {String} color 动画的颜色
    * @param {String} type 动画类型，可选参数为[snake/diffusion/ball/catapult]
@@ -59,7 +58,7 @@ Component({
       value: '',
     },
   },
-  
+
   /**
    * 组件的初始数据
    */
@@ -67,13 +66,15 @@ Component({
     animationStyles: '',
     animationClass: '',
   },
-  
+
   /**
    * 组件方法列表
    */
   methods: {
     initAnimation() {
-      const { color } = this.data;
+      const {
+        color
+      } = this.data;
       const size = this.data.size.toLowerCase();
       const type = this.data.type.toLowerCase();
       let animationStyles = '';
@@ -95,33 +96,33 @@ Component({
           break;
       }
       animationClass += ` animation-${type}-size-${size}`
-      this.setData({ 
+      this.setData({
         animationStyles,
         animationClass,
       })
     },
   },
-  
+
   /**
    * 在组件实例进入页面节点树时执行
    */
-  created: function() {},
-   
+  created: function () {},
+
   /**
    * 组件布局完成后执行
    */
-  ready: function() {
+  ready: function () {
     this.initAnimation();
   },
-  
+
   /**
    * 在组件实例进入页面节点树时执行
    */
-   attached: function() {},
-   
+  attached: function () {},
+
   /**
    * 在组件实例被移动到节点树另一个位置时执行
    */
-   moved: function() {},
-   
+  moved: function () {},
+
 })

@@ -1,16 +1,9 @@
 <view class="wuss-class wuss-pane" hover-class="none" hover-stop-propagation="false">
-  <view 
-    class="title"
-    style="font-size: {{ tsize }}px;"
-    wx:if="{{ title }}"
-  >
-    {{ title }}
-  </view>
-  <view 
-    class="description"
-    style="font-size: {{ dsize }}px;"
-    wx:if="{{ desc }}"
-  >
-    {{ desc }}
-  </view>
+	<view class="title" style="font-size: {{ tsize }}px;" wx:if="{{ title }}" >
+		{{ title }}
+	</view>
+	<view class="description" style="font-size: {{ dsize }}px;" wx:if="{{ desc }}" >
+		{{ desc }}
+	</view>
 </view>
+

@@ -12,6 +12,12 @@
   open-type="{{ openType }}"
   bindtap="handleClick"
 >
-  <w-icon class="wuss-icon" wx:if="{{ icon }}" type="{{ icon }}" size="{{ iconSize }}" color="{{ iconColor }}"/>
-  <slot />
+  <w-icon 
+    class="wuss-icon" 
+    wx:if="{{ icon }}" 
+    type="{{ icon }}" 
+    size="{{ iconSize }}" 
+    color="{{ iconColor }}"
+  />
+  <slot/>
 </button>

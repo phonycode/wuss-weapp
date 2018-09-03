@@ -62,7 +62,6 @@ Component({
    */
   data: {
     maskShadow: false, // 模态框是否可见
-    popupStyles: '',
   },
 
   /**
@@ -90,14 +89,14 @@ Component({
     },
   },
   ready: function() {
-    const { position, height, width, padding, zIndex } = this.data;
+    const { position, height, width, padding, zIndex  } = this.data;
     let popupStyles = '';
     switch (position.toLowerCase()) {
       case 'top':
-        popupStyles += `height: ${height};max-height: ${height === 'auto' ? '40%;' : 'initial'};`
+        popupStyles += `height: ${height};`
         break;
       case 'bottom':
-        popupStyles += `height: ${height};max-height: ${height === 'auto' ? '40%;' : 'initial'};`
+        popupStyles += `height: ${height};`
         break;
       case 'left':
         popupStyles += `width: ${width};`

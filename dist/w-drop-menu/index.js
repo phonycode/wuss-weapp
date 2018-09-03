@@ -7,7 +7,7 @@ Component({
   /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class'], 
+  externalClasses: ['wuss-class'],
 
   /**
    * 组件的属性列表
@@ -25,8 +25,7 @@ Component({
   /**
    * 组件的初始数据
    */
-  data: {
-  },
+  data: {},
 
   /**
    * 组件的方法列表
@@ -37,35 +36,45 @@ Component({
      * @param {Object} e clcikEvent传递过来的对象
      */
     handleMenuClick(e) {
-      const { itemkey } = e.currentTarget.dataset;
-      let { dataItems } = this.data;
-      if(dataItems[itemkey].type === 'selected') {
+      const {
+        itemkey
+      } = e.currentTarget.dataset;
+      let {
+        dataItems
+      } = this.data;
+      if (dataItems[itemkey].type === 'selected') {
         // 如果子节点列表为空时，直接返回对应事件
-        if(!dataItems[itemkey].options || dataItems[itemkey].options.length <=0) { 
+        if (!dataItems[itemkey].options || dataItems[itemkey].options.length <= 0) {
           this.setData({
             [`dataItems[${itemkey}].highlight`]: true,
           })
-          return this.triggerEvent('selected',{
+          return this.triggerEvent('selected', {
             ...dataItems[itemkey],
             type: 'function',
-          },{})
+          }, {})
         }
-  
+
         // 如果当前下拉列表已展开，则收起当前下拉列表
-        if(dataItems[itemkey].show) {
-          dataItems[itemkey].show = false;
-          this.handleClose()
+        if (dataItems[itemkey].show) {
+          // dataItems[itemkey].show = false;
+          return this.handleClose()
         } else {
           dataItems = dataItems.map(i => {
-            if(i.show) { i.show = false }
+            if (i.show) {
+              i.show = false
+            }
             return i;
           });
-          dataItems[itemkey].show = true;
+          this.setData({
+            dataItems,
+          },() => {
+            dataItems[itemkey].show = true;
+            this.setData({
+              dataItems,
+            })
+          });
         }
-        this.setData({
-          dataItems,
-        })
-      } else if(dataItems[itemkey].type === 'sort') { // 当前筛选条件为sort时
+      } else if (dataItems[itemkey].type === 'sort') { // 当前筛选条件为sort时
         switch (dataItems[itemkey].sortBy) {
           case 'desc': // 降序
             dataItems[itemkey].sortBy = 'asc';
@@ -84,10 +93,10 @@ Component({
             highlight: true,
           }
         })
-        this.triggerEvent('sortChange',{
+        this.triggerEvent('sortChange', {
           sort: dataItems[itemkey].sortBy,
           parent: dataItems[itemkey],
-        },{});
+        }, {});
 
       } else {
 
@@ -98,44 +107,55 @@ Component({
      * @param {Object} e clcikEvent传递过来的对象
      */
     handleOptionsClick(e) {
-      const { optkey, parentkey } = e.currentTarget.dataset;
-      let { dataItems } = this.data;
+      const {
+        optkey,
+        parentkey
+      } = e.currentTarget.dataset;
+      let {
+        dataItems
+      } = this.data;
       const eventDetail = {
         parent: dataItems[parentkey],
         parentkey,
         optkey,
       };
       let items = dataItems[parentkey];
-      if(items.options[optkey].checked) {
+      if (items.options[optkey].checked) {
         // items.options[optkey].checked = false;
         return this.handleClose()
       } else {
         items.options = items.options.map(i => {
-          if(i.checked) { i.checked = false }
+          if (i.checked) {
+            i.checked = false
+          }
           return i;
         });
         items.options[optkey].checked = true;
         this.handleClose()
       }
       this.setData({
-        [`dataItems[${parentkey}]`]: Object.assign({},items,{
+        [`dataItems[${parentkey}]`]: Object.assign({}, items, {
           text: items.options[optkey].text,
           highlight: true,
           show: false,
         }),
       })
-      this.triggerEvent('selected',{
+      this.triggerEvent('selected', {
         ...eventDetail,
         type: 'object',
-      },{})
+      }, {})
     },
     /**
      * 点击遮罩层关闭事件
      */
     handleClose() {
-      let { dataItems } = this.data;
+      let {
+        dataItems
+      } = this.data;
       dataItems = dataItems.map(i => {
-        if(i.show) { i.show = false }
+        if (i.show) {
+          i.show = false
+        }
         return i;
       });
       this.setData({
@@ -145,9 +165,11 @@ Component({
   },
 
   ready: function () {
-    let { dataItems } = this.data;
+    let {
+      dataItems
+    } = this.data;
     dataItems = dataItems.map(i => {
-      let items = Object.assign({},i,{
+      let items = Object.assign({}, i, {
         highlight: i.highlight || false,
         type: i.type || 'selected',
         options: i.options || [],
@@ -168,5 +190,5 @@ Component({
       dataItems
     })
   },
-  
+
 })

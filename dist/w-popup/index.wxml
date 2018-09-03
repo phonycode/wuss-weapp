@@ -1,16 +1,8 @@
-<w-mask-shadow
-  wx:if="{{ mask }}"
-  visible="{{ maskShadow }}"
-  bind:close="handleClose"
-/>
+<w-mask-shadow wx:if="{{ mask }}" visible="{{ maskShadow }}" bind:close="handleClose" />
 
-<view 
-  class="wuss-class animate-content animate-content-{{ position }} {{ visible ? 'animate-content-open' : ''}}"
-  style="{{ popupStyles }} {{ styles }}"
->
-  <view 
-    class="popup-content"
-  >
-    <slot></slot>
-  </view>
+<view class="wuss-class animate-content animate-content-{{ position }} {{ visible ? 'animate-content-open' : ''}}" style="{{ popupStyles }} {{ styles }}" >
+	<view class="popup-content" >
+		<slot></slot>
+	</view>
 </view>
+

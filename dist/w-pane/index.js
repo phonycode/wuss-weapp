@@ -65,7 +65,6 @@ Component({
    * 组件布局完成后执行
    */
   ready: function() {
-    console.log('1111')
   },
   
   /**

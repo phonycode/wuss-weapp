@@ -1,31 +1,25 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
- * @Date: 2018-08-30 17:12:14 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-08-31 12:12:32
- */
-/*
- * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 17:12:04 
- * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
- * @Last Modified time: 2018-08-30 17:12:04 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-01 12:51:04
  */
 Component({
-   /**
+  /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class','wuss-icon'], 
-  
+  externalClasses: ['wuss-class', 'wuss-icon'],
+
   /**
    * 组件间关系定义
    */
-   relations: {},
-   
+  relations: {},
+
   /**
    * 组件选项
    */
-   options: {},
-   
+  options: {},
+
   /**
    * 组件的属性列表
    * @param {String} type 图标类型
@@ -55,46 +49,51 @@ Component({
       },
     },
   },
-  
+
   /**
    * 组件的初始数据
    */
   data: {
     iconStyles: '',
   },
-  
+
   /**
    * 组件方法列表
    */
   methods: {
     initIcon() {
       let iconStyles = '';
-      const { color, size } = this.data;
+      const {
+        color,
+        size
+      } = this.data;
       iconStyles += (color ? `color: ${color};` : '') + ` font-size: ${!size.indexOf('px') || !size.indexOf('rpx') ? size + 'px' : size};`;
-      this.setData({ iconStyles })
+      this.setData({
+        iconStyles
+      })
     },
   },
-  
+
   /**
    * 在组件实例进入页面节点树时执行
    */
-  created: function() {},
-   
+  created: function () {},
+
   /**
    * 组件布局完成后执行
    */
-  ready: function() {
+  ready: function () {
     this.initIcon()
   },
-  
+
   /**
    * 在组件实例进入页面节点树时执行
    */
-   attached: function() {},
-   
+  attached: function () {},
+
   /**
    * 在组件实例被移动到节点树另一个位置时执行
    */
-   moved: function() {},
-   
+  moved: function () {},
+
 })

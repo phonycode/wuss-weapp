@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/w-button/index",
-    "pages/index/index",
+    "pages/w-drop-menu/index",
     "pages/w-activity-indicator/index",
     "pages/w-calendar/index",
-    "pages/w-drop-menu/index",
-    "pages/w-icon/index",
     "pages/w-popup/index",
-    "pages/w-city-selector/index"
+    "pages/w-tabs/index",
+    "pages/w-qr-code/index",
+    "pages/w-icon/index",
+    "pages/w-button/index",
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

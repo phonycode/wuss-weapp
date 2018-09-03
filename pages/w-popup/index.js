@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    popup1: false,
+    popup2: false,
+    popup3: false,
+    popup4: false,
+    popup5: false,
   },
 
   /**
@@ -14,7 +18,30 @@ Page({
   onLoad: function (options) {
   
   },
-
+  handleClose() {
+    this.setData({
+      popup1: false,
+      popup2: false,
+      popup3: false,
+      popup4: false,
+      popup5: false,
+    })
+  },
+  handleClick1() {
+    this.setData({ popup1: true })
+  },
+  handleClick2() {
+    this.setData({ popup2: true })
+  },
+  handleClick3() {
+    this.setData({ popup3: true })
+  },
+  handleClick4() {
+    this.setData({ popup4: true })
+  },
+  handleClick5() {
+    this.setData({ popup5: true })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
