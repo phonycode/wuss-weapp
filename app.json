@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/w-tabs/index",
     "pages/w-drop-menu/index",
     "pages/w-activity-indicator/index",
     "pages/w-calendar/index",
     "pages/w-popup/index",
-    "pages/w-tabs/index",
     "pages/w-qr-code/index",
     "pages/w-icon/index",
     "pages/w-button/index",

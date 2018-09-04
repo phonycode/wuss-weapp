@@ -1,0 +1,60 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-09-03 15:12:51 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-04 11:56:56
+ */
+page {
+  min-height: 100%;
+}
+
+.wuss-tabs {
+}
+
+.wuss-tabs-content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 44px;
+  position: relative;
+}
+
+.tabs-item {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.text {
+  font-size: 15px;
+}
+
+.text.active {
+  color: rgb(69, 143, 246);
+}
+
+.tab-line-bar {
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  z-index: 100;
+  background-color: rgb(69, 143, 246);
+  -webkit-transition: .2s, -webkit-transform .2s;
+  transition: .2s, -webkit-transform .2s;
+}
+
+.wuss-tabs-border-none {
+  border: none!important;
+}
+
+.wuss-tabs-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
