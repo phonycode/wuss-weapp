@@ -41,8 +41,6 @@ Component({
    */
   methods: {
     show({ position = 'default', ...opts }) {
-      console.log(11111);
-      
       const p = new Promise(resolve => {
         if (wussToast.time) {
           wussToast.hide();
@@ -68,10 +66,12 @@ Component({
           }
         );
       });
-      return p;
+      wussToast.then = (resolve, reject) => {
+        return p.then(resolve, reject);
+      };
+      return wussToast;
     },
     __move(position, wussToast) {
-      toast_Animation.opacity(1);
       switch (position) {
         case 'top':
           toast_Animation.top('50rpx');
@@ -82,13 +82,17 @@ Component({
       }
       this.setData(
         {
-          animationData: toast_Animation.step().export(),
+          animationData: toast_Animation
+            .opacity(1)
+            .step()
+            .export(),
         },
         () => {
-          wussToast.time = setTimeout(
-            wussToast.hide,
-            this.data.duration + DURATION
-          );
+          this.data.duration &&
+            (wussToast.time = setTimeout(
+              wussToast.hide,
+              this.data.duration + DURATION
+            ));
         }
       );
     },
@@ -101,21 +105,22 @@ Component({
           toast_Animation.bottom('-100%');
           break;
       }
-      this.setData({
-        animationData: toast_Animation
-          .step()
-          .export(),
-        visible: false,
-      });
+      this.setData(
+        {
+          animationData: toast_Animation
+            .opacity(0)
+            .step()
+            .export(),
+          visible: false,
+        },
+        () => {
+          this.setData({
+            animationData: {},
+          });
+        }
+      );
     },
-    clickshow() {
-      this.show({ ...DEFAULTS_OPTS, position: 'middle' }).then(res => {
-        console.log(2);
-      });
-      this.show({ ...DEFAULTS_OPTS, position: 'top' }).then(res => {
-        console.log(2);
-      });
-    },
+    toastClick() {},
   },
 
   /**

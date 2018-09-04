@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.4",
-	"appid": "wxd6a8a642faee105c",
+	"appid": "wxc512a5a77289993a",
 	"projectname": "wuss-weapp",
 	"isGameTourist": false,
 	"condition": {
@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -47,6 +47,11 @@
 					"name": "w-toast",
 					"pathName": "pages/w-toast/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-button",
+					"pathName": "pages/w-button/index"
 				}
 			]
 		}

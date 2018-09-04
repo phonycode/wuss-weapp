@@ -1,10 +1,14 @@
-.wuss-toast-warp{
+.wuss-toast-warp {
   z-index: 1001;
   position: fixed;
-  width:100vw;
+  width: 100vw;
   display: flex;
   justify-content: center;
   opacity: 0;
+  visibility: hidden;
+}
+.wuss-toast-show {
+  visibility: visible;
 }
 .wuss-toast {
   background: rgba(40, 40, 40, 0.75);
@@ -16,14 +20,12 @@
   min-height: 230rpx;
   padding: 44rpx 84rpx;
   box-sizing: border-box;
-  font-size:32rpx;
   max-width: 80vw;
 }
 .wuss-toast-content_text {
   min-height: 0;
   padding: 10rpx 30rpx;
   text-overflow: ellipsis;
-  font-size:28rpx;
 }
 .wuss-toast-icon {
   margin-bottom: 20rpx;
@@ -31,19 +33,21 @@
 }
 
 /* position */
-.wuss-toast-position-default{
-  top: 260rpx;
+.wuss-toast-position-default {
+  top: 260rpx !important;
+  bottom: auto !important;
 }
 
-.wuss-toast-position-top{
+.wuss-toast-position-top {
   top: -100%;
-  bottom:auto !important;
+  bottom: auto !important;
 }
-.wuss-toast-position-bottom{
+.wuss-toast-position-bottom {
   bottom: -100%;
-  top:auto !important;
+  top: auto !important;
 }
-.wuss-toast-position-middle{
-  top: 50%;
-  transform: translate3d(0, -50%, 0);
+.wuss-toast-position-middle {
+  top: 50% !important;
+  bottom: auto !important;
+  /* transform: translate3d(0, -50%, 0); */
 }

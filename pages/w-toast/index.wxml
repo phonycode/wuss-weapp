@@ -2,7 +2,16 @@
 	点这里测试是否会被穿透
 	<w-toast id="wuss-toast" wuss-class="test"/>
 
-	<w-button catchtap="default">default</w-button>
+	<w-button catchtap="top" type="info">top</w-button>
+	<w-button catchtap="middle" type="info">middle</w-button>
+	<w-button catchtap="bottom" type="info">bottom</w-button>
+	<w-button catchtap="default" type="info">default</w-button>
+
+	<w-button catchtap="success" type="warn">带icon: success</w-button>
+	<w-button catchtap="loading" type="warn">带icon: loading</w-button>
+
+
+	<w-button catchtap="useHide" type="danger">手动关闭 Toast </w-button>
 	
 </view>
 
