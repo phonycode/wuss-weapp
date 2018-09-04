@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-31 15:30:11 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-08-31 15:47:32
+ * @Last Modified time: 2018-09-04 11:59:32
  */
 Component({
    /**
@@ -18,7 +18,9 @@ Component({
   /**
    * 组件选项
    */
-   options: {},
+   options: {
+    multipleSlots: true,
+   },
    
   /**
    * 组件的属性列表
