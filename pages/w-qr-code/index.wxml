@@ -1,0 +1,28 @@
+<w-pane title="QR Code" desc="二维码" />
+
+<w-pane desc="Default" />
+
+
+<view class="cell" >
+  <w-qr-code
+    text="{{ code }}"
+  />
+</view>
+<w-button type="info" bind:click="handleClick">取随机值</w-button>
+
+
+<w-pane desc="Size" />
+
+<view class="cell" >
+  <w-qr-code
+    text="{{ code }}"
+    size="{{200}}"
+  />
+</view>
+
+<view class="cell" >
+  <w-qr-code
+    text="{{ code }}"
+    size="{{300}}"
+  />
+</view>
