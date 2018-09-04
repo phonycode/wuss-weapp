@@ -67,6 +67,18 @@ Page({
       },
       {
         text: 'tab4',
+      },
+      {
+        text: 'tab5',
+      },
+      {
+        text: 'tab6',
+      },
+      {
+        text: 'tab7',
+      },
+      {
+        text: 'tab8',
       }
     ],
   },

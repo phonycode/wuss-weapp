@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-01 12:44:07
+ * @Last Modified time: 2018-09-04 15:33:00
  */
 Component({
   /**
@@ -24,20 +24,20 @@ Component({
 
   /**
    * 组件的属性列表
-   * @param {Boolean} disabled 禁用按钮
-   * @param {Boolean} loading 设置loading状态
-   * @param {String} formType 处理表单类型，可选值为 [submit|reset]
-   * @param {Boolean} ghost 幽灵按钮
-   * @param {Boolean} dashed 虚线
-   * @param {String} icon 添加按钮图标
-   * @param {String} openType 设置开放数据, 可选值为 [contact|share|getUserInfo|openSetting|feedback]
-   * @param {String} type 按钮样式类型，可选值为 []
-   * @param {String} styles 按钮的自定义样式
-   * @param {String} color 自定义按钮颜色
-   * @param {String} bgColor 自定义背景颜色
-   * @param {Boolean} flat 开启按钮扁平化
-   * @param {Boolean} full 撑满容器
-   * @param {Boolean} inline 行内块按钮
+   * @param {boolean} disabled 禁用按钮
+   * @param {boolean} loading 设置loading状态
+   * @param {string} formType 处理表单类型，可选值为 [submit|reset]
+   * @param {boolean} ghost 幽灵按钮
+   * @param {boolean} dashed 虚线
+   * @param {string} icon 添加按钮图标
+   * @param {string} openType 设置开放数据, 可选值为 [contact|share|getUserInfo|openSetting|feedback]
+   * @param {string} type 按钮样式类型，可选值为 []
+   * @param {string} styles 按钮的自定义样式
+   * @param {string} color 自定义按钮颜色
+   * @param {string} bgColor 自定义背景颜色
+   * @param {boolean} flat 开启按钮扁平化
+   * @param {boolean} full 撑满容器
+   * @param {boolean} inline 行内块按钮
    */
   properties: {
     disabled: {

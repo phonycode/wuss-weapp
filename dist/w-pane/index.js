@@ -24,10 +24,10 @@ Component({
    
   /**
    * 组件的属性列表
-   * @param {String} title 标题
-   * @param {String} desc 描述
-   * @param {Number} tsize 标题文字大小
-   * @param {Number} dsize 描述文字大小
+   * @param {string} title 标题
+   * @param {string} desc 描述
+   * @param {number} tsize 标题文字大小
+   * @param {number} dsize 描述文字大小
    */
   properties: {
     title: {

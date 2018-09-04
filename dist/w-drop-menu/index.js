@@ -14,7 +14,7 @@ Component({
    */
   properties: {
     /**
-     * @param {Array} dataItems 父组件传递过来的菜单数组对象, 参数有: text,show,highlight,options
+     * @param {array} dataItems 父组件传递过来的菜单数组对象, 参数有: text,show,highlight,options
      */
     dataItems: {
       type: Array,

@@ -22,9 +22,9 @@ Component({
 
   /**
    * 组件的属性列表
-   * @param {String} type 图标类型
-   * @param {String} size 图标大小
-   * @param {String} color 图标颜色
+   * @param {string} type 图标类型
+   * @param {string} size 图标大小
+   * @param {string} color 图标颜色
    */
   properties: {
     type: {

@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-31 17:11:58 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-03 11:35:42
+ * @Last Modified time: 2018-09-04 15:34:39
  */
 import {
   createQrCodeImg
@@ -26,8 +26,8 @@ Component({
 
   /**
    * 组件的属性列表
-   * @param {String} text 二维码信息
-   * @param {String} size 二维码大小
+   * @param {string} text 二维码信息
+   * @param {string} size 二维码大小
    */
   properties: {
     text: {

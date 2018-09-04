@@ -6,9 +6,9 @@ var DATE_DAY = new Date().getDate();
 
 /**
  * 预定日期日历选择器
- * @augments {Date} checkInDate 当前选择日期的起始时间
- * @augments {Date} checkOutDate 当前选择日期的起始时间
- * @augments {Date} maxMonth 最大渲染月数
+ * @augments {date} checkInDate 当前选择日期的起始时间
+ * @augments {date} checkOutDate 当前选择日期的起始时间
+ * @augments {number} maxMonth 最大渲染月数
  */
 Component({
   /**

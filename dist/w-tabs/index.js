@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:31 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-04 11:56:04
+ * @Last Modified time: 2018-09-04 15:34:57
  */
 Component({
   /**
@@ -22,17 +22,17 @@ Component({
 
   /**
    * 组件的属性列表
-   * @param {Array} tabs tab列表的数据源 参数有 text,icon,iconColor,iconSize
-   * @param {Number} index  设置当前初始化索引
-   * @param {Boolean} transition 是否开启过渡动画
-   * @param {String} line 是否开启线条
-   * @param {Number} margin 设置两边 边距
-   * @param {Number} lineSize 线条长度大小 0 - 1
-   * @param {String} border 开启线条
-   * @param {String} borderColor 线条颜色
-   * @param {String} activeColor 颜色
-   * @param {String} textStyles 文本样式
-   * @param {Boolean} fixed 是否开启定位
+   * @param {array} tabs tab列表的数据源 参数有 text,icon,iconColor,iconSize
+   * @param {number} index  设置当前初始化索引
+   * @param {boolean} transition 是否开启过渡动画
+   * @param {string} line 是否开启线条
+   * @param {number} margin 设置两边 边距
+   * @param {number} lineSize 线条长度大小 0 - 1
+   * @param {string} border 开启线条
+   * @param {string} borderColor 线条颜色
+   * @param {string} activeColor 颜色
+   * @param {string} textStyles 文本样式
+   * @param {boolean} fixed 是否开启定位
    */
   properties: {
     tabs: {
@@ -128,10 +128,10 @@ Component({
       let tabWidth = ((systemInfo.windowWidth - margin * 2) / tabs.length);
       let left = (tabWidth * index) + (tabWidth - (tabWidth * lineSize)) / 2;
       let lineStyles = '';
-      lineStyles += `width: ${tabWidth * lineSize}px;` +
-        `transform: translate3d(${ left }px,0,0);` +
-        `background-color: ${activeColor};` +
-        `${!transition ? 'transition: none;' : ''}`;
+      lineStyles += `width: ${tabWidth * lineSize}px;` 
+                 +  `transform: translate3d(${ left }px,0,0);` 
+                 +  `background-color: ${activeColor};` 
+                 +  `${!transition ? 'transition: none;' : ''}`;
       this.setData({
         lineStyles,
         currentIndex: index,
