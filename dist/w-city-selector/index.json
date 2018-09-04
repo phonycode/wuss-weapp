@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "w-index": "./index-selector",
-    "w-index-item": "./index-selector-item"
-  }
-}
