@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.4",
-	"appid": "wx0188295b10d5c4cf",
+	"appid": "wxd6a8a642faee105c",
 	"projectname": "wuss-weapp",
 	"isGameTourist": false,
 	"condition": {
@@ -25,13 +25,30 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "w-popup",
+					"pathName": "pages/w-popup/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "w-toast",
+					"pathName": "pages/w-toast/index",
+					"query": ""
+				}
+			]
 		}
 	}
 }

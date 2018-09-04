@@ -1,0 +1,8 @@
+<view bindtap="a">
+	点这里测试是否会被穿透
+	<w-toast id="wuss-toast" wuss-class="test"/>
+
+	<w-button catchtap="default">default</w-button>
+	
+</view>
+

@@ -8,7 +8,7 @@ Component({
    * 组件的属性列表
    * @param {boolean} visible 组件是否可见
    * @param {boolean} maskCancel 是否开启遮罩层点击关闭
-   * @param {number} z-index 当前组件的z-index值
+   * @param {number} zIndex 当前组件的z-index值
    * @param {number} opacity 当前组件遮罩的不透明度
    */
   properties: {
