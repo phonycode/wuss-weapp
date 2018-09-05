@@ -12,7 +12,7 @@
 		"nodeModules": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.4",
+	"libVersion": "9.9.9",
 	"appid": "wxc512a5a77289993a",
 	"projectname": "wuss-weapp",
 	"isGameTourist": false,
@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -51,7 +51,19 @@
 				{
 					"id": -1,
 					"name": "w-button",
-					"pathName": "pages/w-button/index"
+					"pathName": "pages/w-button/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-avatar",
+					"pathName": "pages/w-avatar/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-cell",
+					"pathName": "pages/w-cell/index"
 				}
 			]
 		}

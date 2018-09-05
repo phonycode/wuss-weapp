@@ -1,0 +1,16 @@
+/* pages/w-avatar/index.wxss */
+.pd{
+  padding-left:50rpx;
+}
+w-avatar{
+  margin-left: 50rpx;
+}
+.custom1{
+  background-color: blueviolet !important;
+}
+.custom2{
+  background-color: #de961c !important;
+}
+.custom3{
+  background-color: skyblue !important;
+}
