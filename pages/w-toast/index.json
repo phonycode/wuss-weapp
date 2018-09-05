@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Toast 提示",
+  "usingComponents": {
+    "w-toast": "../../dist/w-toast/index",
+    "w-popup": "../../dist/w-popup/index",
+    "w-button": "../../dist/w-button/index"
+  }
+}
