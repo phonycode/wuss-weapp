@@ -20,8 +20,7 @@ Page({
   },
   default() {
     Toast.show({
-      message: 'wuss小程序UI库',
-      mask:false
+      message: 'wuss小程序UI库'
     });
   },
   linux() {
