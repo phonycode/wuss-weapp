@@ -1,0 +1,7 @@
+<view
+ class="wuss-class wuss-cell-group {{ hasBefore ? '' : 'wuss-cell-group-before-none' }}"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+  <slot />
+</view>

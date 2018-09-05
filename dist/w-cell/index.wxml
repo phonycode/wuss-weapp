@@ -1,0 +1,35 @@
+<view
+ class="wuss-cell {{ firstCell ? 'wuss-cell-first-cell' : '' }}"
+ hover-class="wuss-cell-hover"
+ hover-stop-propagation="false"
+>
+	<view class="wuss-cell-content" catchtap="linkTo">
+		<view class="wuss-cell-left">
+			<w-icon
+			 wx:if="{{ icon }}"
+			 type="{{ icon }}"
+			 size="{{ iconSize }}"
+			 color="{{ iconColor }}"
+			/>
+			<view class="wuss-cell-title">
+				{{ title }}
+				<slot name="title" />
+			</view>
+		</view>
+		<view class="wuss-cell-right" style="{{ !link ? 'padding-right: 0;' : ''}}">
+			<slot />
+			<view class="wuss-cell-desc">
+				{{ desc }}
+				<slot name="desc" />
+			</view>
+		</view>
+	</view>
+	<view class="wuss-cell-link" wx:if="{{ link }}">
+		<w-icon
+		 type="angle-right"
+		 color="#cccccc"
+		 size="28px"
+		/>
+	</view>
+</view>
+

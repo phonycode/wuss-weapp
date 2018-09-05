@@ -71,15 +71,6 @@ Page({
       {
         text: 'tab5',
       },
-      {
-        text: 'tab6',
-      },
-      {
-        text: 'tab7',
-      },
-      {
-        text: 'tab8',
-      }
     ],
   },
   handleChange(e) {
