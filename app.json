@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/w-cell/index",
     "pages/w-tabs/index",
+    "pages/w-cell/index",
     "pages/w-drop-menu/index",
     "pages/w-activity-indicator/index",
     "pages/w-calendar/index",

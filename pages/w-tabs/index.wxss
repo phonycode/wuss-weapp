@@ -1,1 +1,32 @@
 /* pages/w-tabs/index.wxss */
+
+.scroll-view_H {
+  width: 100%;
+  white-space:nowrap;
+  overflow-x:auto;
+  overflow-y:hidden;
+  height: 200px;
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.scroll-view-item_H {
+  width: 50%;
+  height: 100%;
+}
+
+.bc_green {
+  background-color: green;
+}
+.bc_red {
+  background-color: red;
+}
+.bc_yellow {
+  background-color: yellow;
+}
+.bc_blue {
+  background-color: blue;
+}

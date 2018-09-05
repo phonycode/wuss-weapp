@@ -64,3 +64,10 @@
   border="{{ false }}"
 />
 
+<w-pane desc="Scroll" />
+<w-tabs
+  scroll
+  width="100px"
+  tabs="{{ tabs5 }}"
+  bind:onChange="handleChange"
+/>

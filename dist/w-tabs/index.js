@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:31 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-04 16:31:29
+ * @Last Modified time: 2018-09-05 15:20:35
  */
 Component({
   /**
@@ -33,6 +33,8 @@ Component({
    * @param {string} borderColor 线条颜色
    * @param {string} activeColor 颜色
    * @param {string} textStyles 文本样式
+   * @param {string} scroll 开启x轴滚动
+   * @param {string} width 设置tabItem的宽度 scroll开启时有效
    * @param {boolean} fixed 是否开启定位
    */
   properties: {
@@ -97,6 +99,14 @@ Component({
       type: String,
       value: '',
     },
+    scroll: {
+      type: Boolean,
+      value: false,
+    },
+    width: {
+      type: String,
+      value: '100px',
+    },
     fixed: {
       type: Boolean,
       value: false,
@@ -127,11 +137,18 @@ Component({
         transition,
         margin,
         borderSize,
+        scroll,
+        width,
       } = this.data;
       const systemInfo = wx.getSystemInfoSync();
       if (!tabs || tabs.length < 0) throw Error('tab 长度不能为空');
       if (currentIndex === index) return false;
-      let tabWidth = ((systemInfo.windowWidth - margin * 2) / tabs.length);
+      let tabWidth = 0;
+      if(scroll && width) {
+        tabWidth = Number(width.indexOf('px')>-1 ? width.replace(/px/g,'') : width);;
+      } else {
+        tabWidth = Number((systemInfo.windowWidth - margin * 2) / tabs.length);
+      }
       let left = (tabWidth * index) + (tabWidth - (tabWidth * lineSize)) / 2;
       let lineStyles = '';
       lineStyles += `width: ${tabWidth * lineSize}px;` 

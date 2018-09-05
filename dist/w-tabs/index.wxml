@@ -1,5 +1,5 @@
 <view
- class="wuss-class wuss-tabs {{ !border ? 'wuss-tabs-border-none' : ''}} {{ fixed ? 'wuss-tabs-fixed' : '' }}"
+ class="wuss-class wuss-tabs {{ !border ? 'wuss-tabs-border-none' : ''}} {{ fixed ? 'wuss-tabs-fixed' : '' }} {{ scroll ? 'wuss-tabs-scroll' : '' }}"
  style="{{ styles }}"
  wx:if="{{ tabs && tabs.length>0 }}"
  hover-class="none"
@@ -13,7 +13,8 @@
 		>
 			<view
 			 catchtap="handleTab"
-			 data-index="{{ index }}"
+       data-index="{{ index }}"
+       style="{{ scroll && width ? 'flex: 1 0 ' + width + ';' : ''}}"
 			 class="tabs-item"
 			 hover-class="none"
 			 hover-stop-propagation="false"
@@ -36,3 +37,6 @@
 		></view>
 	</view>
 </view>
+
+
+

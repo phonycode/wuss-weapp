@@ -68,8 +68,36 @@ Page({
       {
         text: 'tab4',
       },
+    ],
+    tabs5: [{
+        text: 'tab1',
+      },
+      {
+        text: 'tab2',
+      },
+      {
+        text: 'tab3',
+      },
+      {
+        text: 'tab4',
+      },
       {
         text: 'tab5',
+      },
+      {
+        text: 'tab6',
+      },
+      {
+        text: 'tab7',
+      },
+      {
+        text: 'tab8',
+      },
+      {
+        text: 'tab9',
+      },
+      {
+        text: 'tab10',
       },
     ],
   },
