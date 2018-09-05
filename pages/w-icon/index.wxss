@@ -1,1 +1,18 @@
-/* pages/w-icon/index.wxss */
+/**index.wxss**/
+@import 'iconfont.wxss'
+#title{
+  text-align: center ;
+  font-weight: 700 ;
+  margin: 16px 0 ;
+}
+.icon-block{
+  float:left;
+  width: 50% ;
+  text-align: center ;
+  font-size:13px;
+  color: #666 ;
+  margin: 16px 0 ;
+  height: 60px ;
+}
+
+
