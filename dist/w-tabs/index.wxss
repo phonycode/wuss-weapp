@@ -40,7 +40,6 @@ page {
 .tab-line-bar {
   position: absolute;
   bottom: -2px;
-  height: 2px;
   z-index: 100;
   background-color: rgb(69, 143, 246);
   -webkit-transition: .2s, -webkit-transform .2s;

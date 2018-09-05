@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:31 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-04 15:34:57
+ * @Last Modified time: 2018-09-04 16:31:29
  */
 Component({
   /**
@@ -29,6 +29,7 @@ Component({
    * @param {number} margin 设置两边 边距
    * @param {number} lineSize 线条长度大小 0 - 1
    * @param {string} border 开启线条
+   * @param {string} borderSize 线条粗细
    * @param {string} borderColor 线条颜色
    * @param {string} activeColor 颜色
    * @param {string} textStyles 文本样式
@@ -84,6 +85,10 @@ Component({
         this.computedStyles()
       },
     },
+    borderSize: {
+      type: String,
+      value: '2px',
+    },
     activeColor: {
       type: String,
       value: 'rgb(69, 143, 246)',
@@ -121,6 +126,7 @@ Component({
         currentIndex,
         transition,
         margin,
+        borderSize,
       } = this.data;
       const systemInfo = wx.getSystemInfoSync();
       if (!tabs || tabs.length < 0) throw Error('tab 长度不能为空');
@@ -129,8 +135,9 @@ Component({
       let left = (tabWidth * index) + (tabWidth - (tabWidth * lineSize)) / 2;
       let lineStyles = '';
       lineStyles += `width: ${tabWidth * lineSize}px;` 
+                 +  `height: ${borderSize.indexOf('px')>-1 ? borderSize : borderSize + 'px'};`
                  +  `transform: translate3d(${ left }px,0,0);` 
-                 +  `background-color: ${activeColor};` 
+                 +  `background-color: ${activeColor};`
                  +  `${!transition ? 'transition: none;' : ''}`;
       this.setData({
         lineStyles,
