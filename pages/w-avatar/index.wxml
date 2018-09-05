@@ -1,0 +1,30 @@
+<w-pane title="Avatar" desc="头像" />
+
+<w-pane desc="Default" />
+<view class="pd" >
+	<w-avatar size="small">W</w-avatar>
+	<w-avatar>W</w-avatar>
+	<w-avatar size="large">W</w-avatar>
+</view>
+
+<w-pane desc="Use src" />
+<view class="pd" >
+	<w-avatar size="small" src="https://avatars3.githubusercontent.com/u/42834563?s=400&u=409ea65eb5ffd1546b97a7a8ca57267913cf08f0&v=4" />
+	<w-avatar src="https://avatars3.githubusercontent.com/u/42834563?s=400&u=409ea65eb5ffd1546b97a7a8ca57267913cf08f0&v=4" />
+	<w-avatar size="large" src="https://avatars3.githubusercontent.com/u/42834563?s=400&u=409ea65eb5ffd1546b97a7a8ca57267913cf08f0&v=4" />
+</view>
+
+<w-pane desc="Shape is square" />
+<view class="pd" >
+	<w-avatar size="small" scale shape="square">W</w-avatar>
+	<w-avatar shape="square">W</w-avatar>
+	<w-avatar shape="square" size="large">W</w-avatar>
+</view>
+
+<w-pane desc="Custom Style" />
+<view class="pd" >
+	<w-avatar size="small" wuss-class="custom1">W</w-avatar>
+	<w-avatar wuss-class="custom2">W</w-avatar>
+	<w-avatar wuss-class="custom3" size="large">W</w-avatar>
+</view>
+
