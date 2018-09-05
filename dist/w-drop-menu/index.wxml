@@ -1,0 +1,65 @@
+<view
+ wx:if="{{ dataItems && dataItems.length >0 }}"
+ class="wuss-class wuss-drop-menu"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	<view class="wuss-drop-menu-bar" hover-class="none" hover-stop-propagation="false">
+		<view
+		 class="bar-item"
+		 bindtap="handleMenuClick"
+		 data-itemkey="{{index}}"
+		 wx:for="{{dataItems}}"
+		 wx:for-key="index"
+		 wx:key="unique"
+		>
+			<view class="bar-item-text {{ item.show || item.highlight ? 'selected' : '' }}" >
+				{{ item.text }}
+			</view>
+			<view wx:if="{{ item.type === 'selected' }}" class="arrow {{ item.show ? 'selected' : '' }}" />
+			<view wx:if="{{ item.type === 'sort' }}" class="sort {{ item.sortBy === 'desc' ? 'sort-desc' : item.sortBy === 'asc' ? 'sort-asc' : 'sort-default' }}" />
+		</view>
+	</view>
+	<block wx:for="{{ dataItems }}" wx:for-index="parent_key" wx:key="unique" >
+		<w-popup
+		 visible="{{ item.show }}"
+		 position="top"
+		 styles="position: absolute; top: 45px;"
+		 zIndex="200"
+		 bind:close="handleClose"
+		>
+			<view class="wuss-drop-menu-content" >
+				<view class="wuss-drop-menu-list" hover-class="none" hover-stop-propagation="false">
+					<view
+					 class="items"
+					 hover-class="none"
+					 hover-stop-propagation="false"
+					 wx:for="{{item.options}}"
+					 wx:for-index="opt_index"
+					 wx:key="unique"
+					 wx:for-item="opt"
+					 data-parentkey="{{parent_key}}"
+					 data-optkey="{{opt_index}}"
+					 catchtap="handleOptionsClick"
+					>
+						<view class="opt-flex" hover-class="none" hover-stop-propagation="false">
+							<view class="opt-flex-cell {{opt.checked ? 'opt-text-checked' : ''}}" hover-class="none" hover-stop-propagation="false" >
+								{{opt.text}}
+							</view>
+							<view class="opt-flex-cell" hover-class="none" hover-stop-propagation="false">
+								<view
+								 wx:if="{{opt.checked}}"
+								 class="check-icon"
+								 hover-class="none"
+								 hover-stop-propagation="false"
+								>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</w-popup>
+	</block>
+</view>
+

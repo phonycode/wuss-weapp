@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Avtar 头像",
+  "usingComponents": {
+    "w-avatar": "../../dist/w-avatar/index",
+    "w-pane": "../../dist/w-pane/index"
+  }
+}

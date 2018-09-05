@@ -1,0 +1,38 @@
+<w-pane title="ActivityIndicator" desc="活动指示器" />
+
+<w-pane desc="Type" />
+
+
+<view class="cell" >
+  <w-indicator show type="snake" />
+  <w-indicator show type="diffusion" />
+  <w-indicator show type="ball" />
+  <w-indicator show type="catapult" />
+</view>
+
+
+<w-pane desc="Color" />
+
+<view class="cell" >
+  <w-indicator show color="#448ef6" type="snake" />
+  <w-indicator show color="#75c2f6" type="diffusion" />
+  <w-indicator show color="#ffe981" type="ball" />
+  <w-indicator show color="#ff5da2" type="catapult" />
+</view>
+
+
+<w-pane desc="Size" />
+
+<view class="cell" >
+  <w-indicator show color="#35013f" size="small" type="snake" />
+  <w-indicator show color="#b643cd" size="default" type="diffusion" />
+  <w-indicator show color="#99ddcc" size="larger" type="ball" />
+</view>
+
+<w-pane desc="LoadingText" />
+
+<view class="cell" >
+  <w-indicator show text="Loading..." size="small" type="snake" />
+  <w-indicator show text="Loading..." size="small" type="diffusion" />
+  <w-indicator show text="Loading..." size="small" type="ball" />
+</view>

@@ -1,0 +1,55 @@
+<w-pane title="Popup" desc="弹出层" />
+
+<w-pane desc="Position" />
+
+<w-button type="info" bind:click="handleClick1">Top</w-button>
+<w-popup 
+  visible="{{ popup1 }}"
+  position="top"
+  height="250px"
+  bind:close="handleClose"
+>
+  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+</w-popup>
+<w-button type="info" bind:click="handleClick2">Bottom</w-button>
+<w-popup 
+  visible="{{ popup2 }}"
+  position="bottom"
+  height="250px"
+  bind:close="handleClose"
+>
+  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+</w-popup>
+<w-button type="info" bind:click="handleClick3">Left</w-button>
+<w-popup 
+  visible="{{ popup3 }}"
+  position="left"
+  bind:close="handleClose"
+>
+  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+</w-popup>
+<w-button type="info" bind:click="handleClick4">Right</w-button>
+<w-popup 
+  visible="{{ popup4 }}"
+  position="right"
+  bind:close="handleClose"
+>
+  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+</w-popup>
+
+<w-pane desc="Disabled Mask" />
+
+<w-button type="info" bind:click="handleClick5">Info</w-button>
+<w-popup 
+  visible="{{ popup5 }}"
+  position="bottom"
+  height="250px"
+  bind:close="handleClose"
+  mask="{{false}}"
+>
+  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+  <w-button type="info" bind:click="handleClose">关闭</w-button>
+</w-popup>
+
+
+

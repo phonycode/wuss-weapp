@@ -1,0 +1,9 @@
+<image
+ lazy-load
+ class="wuss-class wuss-qrcode"
+ src="{{ base64Data }}"
+ binderror="handleOnError"
+ bindload="handleOnLoad"
+ style="{{ styles }}"
+></image>
+

@@ -1,0 +1,7 @@
+<w-drop-menu 
+  dataItems="{{ dataItems }}"
+  bind:selected="handleSelected"
+  bind:sortChange="handleSelectedSort"
+/>
+
+<w-pane title="DropMenu" desc="下拉菜单" />

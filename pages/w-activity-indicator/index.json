@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "w-indicator": "../../dist/w-activity-indicator/index",
+    "w-pane": "../../dist/w-pane/index"
+  }
+}
