@@ -1,7 +1,6 @@
 {
   "usingComponents": {
     "w-calendar": "../../dist/w-calendar/index",
-    "w-city-selector": "../../dist/w-city-selector/index",
     "w-drop-menu": "../../dist/w-drop-menu/index",
     "w-mask-shadow": "../../dist/w-mask-shadow/index",
     "w-popup": "../../dist/w-popup/index",
