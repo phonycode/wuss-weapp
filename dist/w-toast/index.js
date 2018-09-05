@@ -9,7 +9,8 @@ const DEFAULTS_OPTS = {
   type: '',
   duration: 1500,
   mask: true,
-  message: '一般使用',
+  message: '',
+  size: 50,
   position: 'default',
 };
 
@@ -17,8 +18,8 @@ const DEFAULT_TOAST = {
   hide: null, // 隐藏hide方法
   time: null, // 定时器
 };
-const DURATION = 400;
-let wussToast = DEFAULT_TOAST;
+const DURATION = 100;
+let wussToast = { ...DEFAULT_TOAST };
 const toast_Animation = wx.createAnimation({ duration: DURATION });
 
 Component({
@@ -43,13 +44,12 @@ Component({
     show({ position = 'default', ...opts }) {
       const p = new Promise(resolve => {
         if (wussToast.time) {
-          wussToast.hide();
-          clearTimeout(wussToast.time);
-          wussToast = DEFAULT_TOAST;
+          wussToast.hide(true);
+          wussToast = { ...DEFAULT_TOAST };
         }
 
-        wussToast.hide = () => {
-          this.hide.call(this, position);
+        wussToast.hide = isHide => {
+          this.hide.call(this, position, isHide);
           resolve(true);
         };
         this.setData(
@@ -61,7 +61,7 @@ Component({
           },
           () => {
             setTimeout(() => {
-              this.__move(position, wussToast);
+              this._move(position, wussToast);
             }, 20);
           }
         );
@@ -71,13 +71,13 @@ Component({
       };
       return wussToast;
     },
-    __move(position, wussToast) {
+    _move(position, wussToast) {
       switch (position) {
         case 'top':
-          toast_Animation.top('50rpx');
+          toast_Animation.top('170rpx');
           break;
         case 'bottom':
-          toast_Animation.bottom('100rpx');
+          toast_Animation.bottom('170rpx');
           break;
       }
       this.setData(
@@ -96,45 +96,33 @@ Component({
         }
       );
     },
-    hide(position) {
+    hide(position, isHide) {
+      clearTimeout(wussToast.time);
+      wussToast = { ...DEFAULT_TOAST };
       switch (position) {
         case 'top':
-          toast_Animation.top('-100%');
+          toast_Animation.top('0');
           break;
         case 'bottom':
-          toast_Animation.bottom('-100%');
+          toast_Animation.bottom('0');
           break;
       }
+
       this.setData(
         {
           animationData: toast_Animation
             .opacity(0)
             .step()
             .export(),
-          visible: false,
         },
         () => {
-          this.setData({
-            animationData: {},
-          });
+          !isHide &&
+            setTimeout(() => {
+              this.setData({ position: '', visible: false });
+            }, DURATION);
         }
       );
     },
     toastClick() {},
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  created: function() {},
-
-  /**
-   * 组件布局完成后执行
-   */
-  ready: function() {},
-
-  /**
-   * 在组件实例被移动到节点树另一个位置时执行
-   */
-  moved: function() {},
 });

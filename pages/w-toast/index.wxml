@@ -7,8 +7,8 @@
 	<w-button catchtap="bottom" type="info">bottom</w-button>
 	<w-button catchtap="default" type="info">default</w-button>
 
-	<w-button catchtap="success" type="warn">带icon: success</w-button>
-	<w-button catchtap="loading" type="warn">带icon: loading</w-button>
+	<w-button catchtap="linux" type="warn">带icon: linux</w-button>
+	<w-button catchtap="heart" type="warn">带icon: heart</w-button>
 
 
 	<w-button catchtap="useHide" type="danger">手动关闭 Toast </w-button>

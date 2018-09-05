@@ -18,22 +18,22 @@ Page({
       message: 'bottom',
     });
   },
-
   default() {
     Toast.show({
       message: 'wuss小程序UI库',
+      mask:false
     });
   },
-  success() {
+  linux() {
     Toast.show({
-      type: '',
-      message: '成功',
+      type: 'linux',
+      message: 'linux',
     });
   },
-  loading() {
+  heart() {
     Toast.show({
-      type: '',
-      message: '模块加载中',
+      type: 'heart',
+      message: '收藏成功',
     });
   },
   thenClose() {
