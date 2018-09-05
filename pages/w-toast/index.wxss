@@ -1,0 +1,4 @@
+/* pages/w-toast/index.wxss */
+.test .tt{
+  color:red;
+}
