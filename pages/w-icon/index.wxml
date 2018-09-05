@@ -1,2 +1,381 @@
-<!--pages/w-icon/index.wxml-->
-<text>pages/w-icon/index.wxml</text>
+<!--index.wxml-->
+<view class="container">
+  <view id="title">
+    IconFont 图标
+</view>
+<view class="icon_lists clear">
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-calendar"></text>
+        <view class="name">日历</view>
+        <view class="fontclass">.wuss-icons-calendar</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-order1"></text>
+        <view class="name">全部订单</view>
+        <view class="fontclass">.wuss-icons-order1</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-buy"></text>
+        <view class="name">待付款</view>
+        <view class="fontclass">.wuss-icons-buy</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-start"></text>
+        <view class="name">五星（实）</view>
+        <view class="fontclass">.wuss-icons-start</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-start-o"></text>
+        <view class="name">五星（空）</view>
+        <view class="fontclass">.wuss-icons-start-o</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-user1"></text>
+        <view class="name">头像</view>
+        <view class="fontclass">.wuss-icons-user1</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-top"></text>
+        <view class="name">返回顶部</view>
+        <view class="fontclass">.wuss-icons-top</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-zan"></text>
+        <view class="name">赞</view>
+        <view class="fontclass">.wuss-icons-zan</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-wifi"></text>
+        <view class="name">WIFI 我fi</view>
+        <view class="fontclass">.wuss-icons-wifi</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-public"></text>
+        <view class="name">公益</view>
+        <view class="fontclass">.wuss-icons-public</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-celar"></text>
+        <view class="name">解锁</view>
+        <view class="fontclass">.wuss-icons-celar</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-search"></text>
+        <view class="name">搜索</view>
+        <view class="fontclass">.wuss-icons-search</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-return"></text>
+        <view class="name">返回</view>
+        <view class="fontclass">.wuss-icons-return</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-user"></text>
+        <view class="name">个人中心</view>
+        <view class="fontclass">.wuss-icons-user</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-price"></text>
+        <view class="name">价格</view>
+        <view class="fontclass">.wuss-icons-price</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-moble1"></text>
+        <view class="name">手机</view>
+        <view class="fontclass">.wuss-icons-moble1</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-remove"></text>
+        <view class="name">删除</view>
+        <view class="fontclass">.wuss-icons-remove</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-caidan"></text>
+        <view class="name">菜单</view>
+        <view class="fontclass">.wuss-icons-caidan</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-truck"></text>
+        <view class="name">分期商城－待收货</view>
+        <view class="fontclass">.wuss-icons-truck</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-remen"></text>
+        <view class="name">员工渠道APP-热门</view>
+        <view class="fontclass">.wuss-icons-remen</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-order"></text>
+        <view class="name">订单</view>
+        <view class="fontclass">.wuss-icons-order</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-ios"></text>
+        <view class="name">IOS</view>
+        <view class="fontclass">.wuss-icons-ios</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-rechange"></text>
+        <view class="name">充值</view>
+        <view class="fontclass">.wuss-icons-rechange</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-qq"></text>
+        <view class="name">QQ</view>
+        <view class="fontclass">.wuss-icons-qq</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-android"></text>
+        <view class="name">安卓</view>
+        <view class="fontclass">.wuss-icons-android</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-checked-o"></text>
+        <view class="name">单选-未选</view>
+        <view class="fontclass">.wuss-icons-checked-o</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-edit"></text>
+        <view class="name">编辑</view>
+        <view class="fontclass">.wuss-icons-edit</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-issue"></text>
+        <view class="name">发布</view>
+        <view class="fontclass">.wuss-icons-issue</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-checked"></text>
+        <view class="name">单选-已选</view>
+        <view class="fontclass">.wuss-icons-checked</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-moble"></text>
+        <view class="name">电话</view>
+        <view class="fontclass">.wuss-icons-moble</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-eye"></text>
+        <view class="name">浏览</view>
+        <view class="fontclass">.wuss-icons-eye</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-pal"></text>
+        <view class="name">朋友圈</view>
+        <view class="fontclass">.wuss-icons-pal</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-prev"></text>
+        <view class="name">上一页</view>
+        <view class="fontclass">.wuss-icons-prev</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-hint"></text>
+        <view class="name">提醒</view>
+        <view class="fontclass">.wuss-icons-hint</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-collect-o"></text>
+        <view class="name">收藏</view>
+        <view class="fontclass">.wuss-icons-collect-o</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-next"></text>
+        <view class="name">下一页</view>
+        <view class="fontclass">.wuss-icons-next</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-collect"></text>
+        <view class="name">已收藏</view>
+        <view class="fontclass">.wuss-icons-collect</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-list"></text>
+        <view class="name">图片列表</view>
+        <view class="fontclass">.wuss-icons-list</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-desc"></text>
+        <view class="name">降序</view>
+        <view class="fontclass">.wuss-icons-desc</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-asc"></text>
+        <view class="name">升序</view>
+        <view class="fontclass">.wuss-icons-asc</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-set"></text>
+        <view class="name">设置</view>
+        <view class="fontclass">.wuss-icons-set</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-loading"></text>
+        <view class="name">加载中</view>
+        <view class="fontclass">.wuss-icons-loading</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-mous"></text>
+        <view class="name">音乐</view>
+        <view class="fontclass">.wuss-icons-mous</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-fire"></text>
+        <view class="name">热门</view>
+        <view class="fontclass">.wuss-icons-fire</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-warn"></text>
+        <view class="name">警告</view>
+        <view class="fontclass">.wuss-icons-warn</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-key"></text>
+        <view class="name">钥匙</view>
+        <view class="fontclass">.wuss-icons-key</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-print"></text>
+        <view class="name">打印</view>
+        <view class="fontclass">.wuss-icons-print</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-site"></text>
+        <view class="name">定位 位置 坐标 线性</view>
+        <view class="fontclass">.wuss-icons-site</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-suc"></text>
+        <view class="name">成功</view>
+        <view class="fontclass">.wuss-icons-suc</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-file"></text>
+        <view class="name">文件</view>
+        <view class="fontclass">.wuss-icons-file</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-lingdang"></text>
+        <view class="name">铃铛</view>
+        <view class="fontclass">.wuss-icons-lingdang</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-add"></text>
+        <view class="name">添加</view>
+        <view class="fontclass">.wuss-icons-add</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-notebool"></text>
+        <view class="name">笔记本</view>
+        <view class="fontclass">.wuss-icons-notebool</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-note"></text>
+        <view class="name">信息 短信 消息 提醒 邮件 私信 邮箱</view>
+        <view class="fontclass">.wuss-icons-note</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-shopcat"></text>
+        <view class="name">购物车</view>
+        <view class="fontclass">.wuss-icons-shopcat</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-fail"></text>
+        <view class="name">失败</view>
+        <view class="fontclass">.wuss-icons-fail</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-wx"></text>
+        <view class="name">微信</view>
+        <view class="fontclass">.wuss-icons-wx</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-download"></text>
+        <view class="name">下载</view>
+        <view class="fontclass">.wuss-icons-download</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-hot"></text>
+        <view class="name">热门</view>
+        <view class="fontclass">.wuss-icons-hot</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-home"></text>
+        <view class="name">首页</view>
+        <view class="fontclass">.wuss-icons-home</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-bar"></text>
+        <view class="name">禁止</view>
+        <view class="fontclass">.wuss-icons-bar</view>
+    </view>
+
+    <view class="icon-block">
+        <text class="icon iconfont wuss-icons-psw"></text>
+        <view class="name">密码</view>
+        <view class="fontclass">.wuss-icons-psw</view>
+    </view>
+
+</view>
+</view>
