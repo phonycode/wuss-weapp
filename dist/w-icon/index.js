@@ -2,13 +2,13 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 17:12:04 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-01 12:51:04
+ * @Last Modified time: 2018-09-06 14:43:50
  */
 Component({
   /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class', 'wuss-icon'],
+  externalClasses: ['wuss-class'],
 
   /**
    * 组件间关系定义
@@ -67,7 +67,7 @@ Component({
         color,
         size
       } = this.data;
-      iconStyles += (color ? `color: ${color};` : '') + ` font-size: ${!size.indexOf('px') || !size.indexOf('rpx') ? size + 'px' : size};`;
+      iconStyles += (color ? `color: ${color};` : '') + ` font-size: ${size.indexOf('px')>-1 || size.indexOf('rpx')>-1 ? size : ( size + 'px')};`;
       this.setData({
         iconStyles
       })

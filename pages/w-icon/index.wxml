@@ -1,2 +1,22 @@
-<!--pages/w-icon/index.wxml-->
-<text>pages/w-icon/index.wxml</text>
+<w-pane title="Icon" desc="图标" />
+
+<w-pane desc="Default" />
+
+<scroll-view class="wuss-icon-example" scroll-y="true" >
+	<view
+	 class="wuss-icon-items"
+	 hover-class="none"
+   hover-stop-propagation="false"
+   catchtap="copyIconName"
+   data-name="{{ item.name }}"
+	 wx:for="{{ iconData }}"
+	 wx:key="index"
+	>
+		<w-icon
+		 type="{{ item.name }}"
+		 size="36px"
+		 color="#333333"
+    />
+    <text class="wuss-icon-text" >{{ item.text }}</text>
+	</view>
+</scroll-view>
