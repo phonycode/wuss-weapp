@@ -1,0 +1,7 @@
+<view
+  wx:if="{{ mounted }}"
+  class="wuss-tab-pane"
+  style="{{ show ? '' : 'display: none' }}"
+>
+  <slot />
+</view>

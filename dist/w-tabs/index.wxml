@@ -1,42 +1,45 @@
-<view
- class="wuss-class wuss-tabs {{ !border ? 'wuss-tabs-border-none' : ''}} {{ fixed ? 'wuss-tabs-fixed' : '' }} {{ scroll ? 'wuss-tabs-scroll' : '' }}"
- style="{{ styles }}"
- wx:if="{{ tabs && tabs.length>0 }}"
- hover-class="none"
- hover-stop-propagation="false"
->
-	<view class="wuss-tabs-content">
-		<block
-		 wx:for="{{ tabs }}"
-		 wx:key="index"
-		 wx:for-item="item"
-		>
-			<view
-			 catchtap="handleTab"
-       data-index="{{ index }}"
-       style="{{ scroll && width ? 'flex: 1 0 ' + width + ';' : ''}}"
-			 class="tabs-item"
-			 hover-class="none"
-			 hover-stop-propagation="false"
+<view class="wuss-class wuss-tabs {{ !border ? 'wuss-tabs-border-none' : ''}} {{ fixed ? 'wuss-tabs-fixed' : '' }} " style="{{ styles }}">
+	<scroll-view
+	 id="wuss-scroll-view"
+	 scroll-with-animation
+	 scroll-left="{{ scrollLeft }}"
+	 scroll-x="{{ isScroll }}"
+	>
+		<!-- class=" {{ isScroll ? 'wuss-tabs-scroll' : '' }} " -->
+		<view class="wuss-tabs-content">
+			<block
+			 wx:for="{{ tabs }}"
+			 wx:key="index"
+			 wx:for-item="item"
 			>
-				<w-icon
-				 wx:if="{{ item.icon }}"
-				 type="{{ item.icon }}"
-				 size="{{ item.iconSize }}"
-				 color="{{ item.iconColor }}"
-				/>
-				<view class="text" style="{{ currentIndex === index ? 'color:' + activeColor + ';' : ''}} {{ item.icon ? 'margin-left: 3px;' : '' }} {{ textStyles }}" >
-					{{ item.text }}
+				<view
+				 catchtap="handleTab"
+				 data-index="{{ index }}"
+				 class="tabs-item {{ isScroll ? 'tabs-item-scroll' : '' }}"
+				 hover-class="none"
+				 style="width:calc(100% / {{ 4 }})"
+				 hover-stop-propagation="false"
+				>
+					<w-icon
+					 wx:if="{{ item.data.icon }}"
+					 type="{{ item.data.icon }}"
+					 size="{{ item.data.iconSize }}"
+					 color="{{ item.data.iconColor }}"
+					/>
+					<view class="text" style="{{ ( currentIndex || 0 ) === index ? 'color:' + activeColor + ';' : ''}} {{ item.data.icon ? 'margin-left: 3px;' : '' }} {{ textStyles }}">
+						{{ item.data.title }}
+					</view>
 				</view>
-			</view>
-		</block>
-		<view
-		 wx:if="{{ line }}"
-		 class="tab-line-bar"
-		 style="{{ lineStyles }}"
-		></view>
+			</block>
+			<view
+			 wx:if="{{ line }}"
+			 class="tab-line-bar"
+			 style="{{ lineStyles }}"
+			/>
+		</view>
+	</scroll-view>
+	<view class="wuss-tabs--content">
+		<slot/>
 	</view>
 </view>
-
-
 

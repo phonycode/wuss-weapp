@@ -1,11 +1,11 @@
 // pages/w-tabs/index.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    tabs1: [{
+    tabs1: [
+      {
         text: '电器',
       },
       {
@@ -16,9 +16,10 @@ Page({
       },
       {
         text: '手机',
-      }
+      },
     ],
-    tabs2: [{
+    tabs2: [
+      {
         text: '待付款',
         icon: 'credit-card',
         iconSize: '32rpx',
@@ -41,9 +42,10 @@ Page({
         icon: 'cubes',
         iconSize: '32rpx',
         iconColor: '#ef473a',
-      }
+      },
     ],
-    tabs3: [{
+    tabs3: [
+      {
         text: '英雄联盟',
       },
       {
@@ -54,9 +56,10 @@ Page({
       },
       {
         text: '炉石传说',
-      }
+      },
     ],
-    tabs4: [{
+    tabs4: [
+      {
         text: 'tab1',
       },
       {
@@ -100,67 +103,80 @@ Page({
         text: 'tab10',
       },
     ],
+    tabs5: [
+      {
+        text: 'tab1',
+      },
+      {
+        text: 'tab2',
+      },
+      {
+        text: 'tab3',
+      },
+      {
+        text: 'tab4',
+      },
+      {
+        text: 'tab5',
+      },
+      {
+        text: 'tab6',
+      },
+      {
+        text: 'tab7',
+      },
+      {
+        text: 'tab8',
+      },
+      {
+        text: 'tab9',
+      },
+    ],
   },
   handleChange(e) {
     const index = e.detail.index;
-    console.log(e)
+    console.log(e);
   },
   handleSelected() {
-    this.selectComponent('.w-tabs4').tabIndex(1)
+    this.selectComponent('.w-tabs4').tabIndex(1);
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
+  onLoad: function(options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function() {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
+  onHide: function() {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
+  onUnload: function() {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
+  onPullDownRefresh: function() {},
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
+  onReachBottom: function() {},
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
-})
+  onShareAppMessage: function() {},
+});

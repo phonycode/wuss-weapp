@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:51 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-05 15:23:34
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-06 18:03:27
  */
 page {
   min-height: 100%;
@@ -12,23 +12,32 @@ page {
 }
 
 .wuss-tabs-content {
-  display: flex;
+  /* display: flex;
   flex: 1;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
   height: 44px;
+  position: relative; */
+  white-space: nowrap;
+  display: block;
   position: relative;
 }
-
+.wuss-tabs-scroll{
+  overflow-x: auto;
+}
 .tabs-item {
-  display: flex;
+  /* display: flex;
   flex: 1;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   height: 100%;
+  
+  display: inline-block;
+  text-align: center;
 }
-
+.tabs-item-scroll{
+}
 .text {
   font-size: 15px;
 }

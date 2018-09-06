@@ -1,73 +1,13 @@
 <w-pane title="Tabs" desc="导航切换栏" />
-
-<w-pane desc="Default" />
-<w-tabs
-  tabs="{{ tabs4 }}"
-  bind:onChange="handleChange"
-/>
-
-<w-pane desc="Initial Index = 2" />
-<w-button type="info" bind:click="handleSelected">selected tab2</w-button>
-
-<w-tabs
-  class="w-tabs4"
-  tabs="{{ tabs4 }}"
-  index="2"
-/>
-
-<w-pane desc="Line Size = 1" />
-<w-tabs
-  tabs="{{ tabs1 }}"
-  lineSize="1"
-/>
-
-<w-pane desc="Active Color" />
-<w-tabs
-  tabs="{{ tabs3 }}"
-  lineSize="1"
-  activeColor="#ff8800"
-/>
-
-<w-pane desc="Icon" />
-<w-tabs
-  tabs="{{ tabs2 }}"
-  textStyles="font-size: 14px;"
-  activeColor="#ef473a"
-/>
-
-
-<w-pane desc="Disabled Transition" />
-<w-tabs
-  tabs="{{ tabs4 }}"
-  transition="{{ false }}"
-/>
-
-<w-pane desc="Disabled Line" />
-<w-tabs
-  tabs="{{ tabs4 }}"
-  transition="{{ false }}"
-  line="{{ false }}"
-/>
-
-<w-pane desc="Disabled Border" />
-<w-tabs
-  tabs="{{ tabs4 }}"
-  transition="{{ false }}"
-  line="{{ false }}"
-  border="{{ false }}"
-/>
-
-<w-pane desc="Set Margin" />
-<w-tabs
-  tabs="{{ tabs4 }}"
-  margin="20"
-  border="{{ false }}"
-/>
-
 <w-pane desc="Scroll" />
-<w-tabs
-  scroll
-  width="100px"
-  tabs="{{ tabs5 }}"
-  bind:onChange="handleChange"
-/>
+
+<w-tabs>
+	<w-tab
+	 wx:for="123456"
+	 wx:key="index"
+	 title="{{ '标题' + item }}"
+	>
+		<view class="content">内容页面xxxx{{ item }}</view>
+	</w-tab>
+</w-tabs>
+
