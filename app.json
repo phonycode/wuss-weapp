@@ -1,17 +1,17 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/w-tabs/index",
     "pages/w-cell/index",
     "pages/w-drop-menu/index",
-    "pages/index/index",
     "pages/w-activity-indicator/index",
     "pages/w-calendar/index",
     "pages/w-popup/index",
-    "pages/w-qr-code/index",
-    "pages/w-icon/index",
-    "pages/w-button/index",
     "pages/w-toast/index",
-    "pages/w-avatar/index"
+    "pages/w-qr-code/index",
+    "pages/w-button/index",
+    "pages/w-avatar/index",
+    "pages/w-icon/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
