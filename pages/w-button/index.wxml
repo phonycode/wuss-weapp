@@ -44,9 +44,9 @@
 
 <w-pane desc="Icon" />
 
-<w-button icon="credit-card"  iconSize="18" styles="border-color: #99ddcc!important;" bgColor="#99ddcc" color="#ffffff"  >Payment</w-button>
-<w-button icon="clipboard"  iconSize="18" type="info" >Edit</w-button>
-<w-button icon="repeat" iconColor="#ffffff" iconSize="18" type="warn" >Reload</w-button>
+<w-button icon="android"  iconSize="18" styles="border-color: #99ddcc!important;" bgColor="#99ddcc" color="#ffffff"  >Android</w-button>
+<w-button icon="edit"  iconSize="18" type="info" >Edit</w-button>
+<w-button icon="refresh" iconColor="#ffffff" iconSize="18" type="warn" >Reload</w-button>
 <w-button icon="apple"  iconSize="18" type="danger" >Apple</w-button>
 
 

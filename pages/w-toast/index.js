@@ -23,15 +23,15 @@ Page({
       message: 'wuss小程序UI库'
     });
   },
-  linux() {
+  success() {
     Toast.show({
-      type: 'linux',
-      message: 'linux',
+      type: 'success',
+      message: 'success',
     });
   },
-  heart() {
+  like() {
     Toast.show({
-      type: 'heart',
+      type: 'like',
       message: '收藏成功',
     });
   },

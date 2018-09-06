@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:45 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-01 12:44:40
+ * @Last Modified time: 2018-09-06 14:46:44
  */
 button.wuss-button.wuss-button-normalize {
   padding: 0;
@@ -117,6 +117,6 @@ button.wuss-button.wuss-button-dashed.wuss-button-normalize {
   border-style: dashed;
 }
 
-.wuss-icon {
+.w-icon {
   margin-right: 5px;
 }

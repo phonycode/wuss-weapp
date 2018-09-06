@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-05 11:19:36
+ * @Last Modified time: 2018-09-06 09:38:12
  */
 Component({
   /**

@@ -1,5 +1,5 @@
 <view
- class="wuss-cell {{ firstCell ? 'wuss-cell-first-cell' : '' }}"
+ class="wuss-class wuss-cell {{ firstCell ? 'wuss-cell-first-cell' : '' }}"
  hover-class="wuss-cell-hover"
  hover-stop-propagation="false"
 >
@@ -26,9 +26,9 @@
 	</view>
 	<view class="wuss-cell-link" wx:if="{{ link }}">
 		<w-icon
-		 type="angle-right"
-		 color="#cccccc"
-		 size="28px"
+		 type="arrow-right"
+		 color="#c8c8cd"
+		 size="18px"
 		/>
 	</view>
 </view>

@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-05 10:31:28
+ * @Last Modified time: 2018-09-06 14:53:10
  */
 .wuss-cell {
   position: relative;
@@ -43,7 +43,7 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 7px 15px;
+  padding: 10px 15px;
 }
 
 .wuss-cell-left {
@@ -59,7 +59,8 @@
 }
 
 .wuss-cell-title {
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: normal;
 }
 
 .wuss-cell-right {
@@ -67,19 +68,19 @@
   flex: 1;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 15px;
 }
 
 .wuss-cell-desc {
   color: #999999;
-  font-size: 16px;
+  font-size: 12px;
   white-space: wrap;
   word-break: break-all;
 }
 
 .wuss-cell-link {
   position: absolute;
-  right: 15px;
+  right: 10px;
   top: 50%;
   transform: translate(0, -50%);
 }
