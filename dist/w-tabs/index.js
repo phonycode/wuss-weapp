@@ -34,8 +34,8 @@ Component({
    * @param {string} activeColor 颜色
    * @param {string} textStyles 文本样式
    * @param {string} scroll 开启x轴滚动
-   * @param {string} width 设置tabItem的宽度 scroll开启时有效
-   * @param {boolean} fixed 是否开启定位
+   * @param {string} width 设置tabItem的宽度 scroll开启有效
+   * @param {boolean} fixed 是否开启定位时
    */
   properties: {
     tabs: {

@@ -2,5 +2,59 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-29 17:12:34 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-08-31 10:26:03
+ * @Last Modified time: 2018-09-06 10:32:09
  */
+page,.wuss-weapp-example  {
+  width: 100%;
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+.header {
+  padding: 20px 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 125px;
+  height: 125px;
+  background-color: #eeeeee;
+}
+
+.title {
+  padding: 15px;
+  font-size: 24px;
+  background-image: linear-gradient(92deg, rgba(255, 153, 0, 1), rgba(223, 71, 58, 1));
+  background-image: -webkit-linear-gradient(92deg, rgba(255, 153, 0, 1), rgba(223, 71, 58, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: filter-hue 30s infinite linear;
+}
+
+@-webkit-keyframes filter-hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+
+.example-content {
+  
+}
+
+.w-cell {
+
+}
+
+.w-pane {
+  margin: 15px!important;
+}
