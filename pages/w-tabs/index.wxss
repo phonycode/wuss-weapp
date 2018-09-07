@@ -30,3 +30,6 @@
 .bc_blue {
   background-color: blue;
 }
+.content{
+  padding: 20rpx 40rpx;
+}

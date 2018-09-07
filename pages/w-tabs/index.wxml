@@ -1,13 +1,93 @@
 <w-pane title="Tabs" desc="导航切换栏" />
-<w-pane desc="Scroll" />
 
-<w-tabs>
+<w-pane desc="Default" />
+<w-tabs bind:onChange="handleChange">
 	<w-tab
-	 wx:for="123456"
-	 wx:key="index"
-	 title="{{ '标题' + item }}"
+	 wx:for="{{ tabs4 }}"
+	 wx:key="{{ index }}"
+	 title="{{ item.text }}"
 	>
-		<view class="content">内容页面xxxx{{ item }}</view>
+		<view class="content">{{ item.text }}内容页</view>
+	</w-tab>
+</w-tabs>
+<w-pane desc="Initial Index = 2" />
+<w-button type="info" bind:click="handleSelected">selected tab2</w-button>
+<w-tabs bind:onChange="handleChange" currentIndex="{{ index }}">
+	<w-tab
+	 wx:for="{{ tabs4 }}"
+	 wx:key="{{ index }}"
+	 title="{{ item.text }}"
+	>
+		<view class="content">{{ item.text }}内容页</view>
+	</w-tab>
+</w-tabs>
+<w-pane desc="Line Size = 1" />
+<w-tabs lineSize="1">
+	<w-tab
+	 wx:for="{{ tabs1 }}"
+	 wx:key="{{ index }}"
+	 title="{{ item.text }}"
+	>
+		<view class="content">{{ item.text }}内容页</view>
+	</w-tab>
+</w-tabs>
+<w-pane desc="Active Color" />
+<w-tabs lineSize="1" activeColor="#ff8800">
+	<w-tab
+	 wx:for="{{ tabs3 }}"
+	 wx:key="{{ index }}"
+	 title="{{ item.text }}"
+	>
+		<view class="content">{{ item.text }}内容页</view>
+	</w-tab>
+</w-tabs>
+<!-- <w-pane desc="Icon" />
+<w-tabs
+ tabs="{{ tabs2 }}"
+ textStyles="font-size: 14px;"
+ activeColor="#ef473a"
+/> -->
+<w-pane desc="Disabled Transition and DisabledItem" />
+<w-tabs transition="{{ false }}" bind:disabled="onDisabled">
+	<w-tab
+	 wx:for="{{ tabs4 }}"
+	 wx:key="{{ index }}"
+	 title="{{ item.text }}"
+	 disabled="{{ index == 2 }}"
+	>
+		<view class="content">{{ item.text }}内容页</view>
 	</w-tab>
 </w-tabs>
 
+<w-pane desc="Scroll" />
+<w-tabs bind:click="handleClick">
+	<w-tab
+	 wx:for="123456"
+	 wx:key="{{index}}"
+	 title="{{ 'tab' + item }}"
+	>
+		<view class="content">{{ item }}内容页</view>
+	</w-tab>
+</w-tabs>
+
+<w-pane desc="Disabled Line" />
+<w-tabs transition="{{ false }}" line="{{ false }}">
+	<w-tab
+	 wx:for="{{ tabs4 }}"
+	 wx:key="{{ index }}"
+	 title="{{ item.text }}"
+	>
+		<view class="content">{{ item.text }}内容页</view>
+	</w-tab>
+</w-tabs>
+
+<w-pane desc="Disabled Border" />
+<w-tabs transition="{{ false }}" line="{{ false }}"  border="{{ false }}">
+	<w-tab
+	 wx:for="{{ tabs4 }}"
+	 wx:key="{{ index }}"
+	 title="{{ item.text }}"
+	>
+		<view class="content">{{ item.text }}内容页</view>
+	</w-tab>
+</w-tabs>
