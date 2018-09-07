@@ -1,0 +1,49 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-09-06 16:23:51 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-07 17:05:03
+ */
+.wuss-swiper-out-view {
+  position: relative;  
+  border-top: 1rpx solid #eeeeee;
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+.wuss-swiper-out-btns {
+  position: absolute;
+  left: 375px;
+  top: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+
+.wuss-swiper-out-btn {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  font-size: 16px;
+  color: #333333;
+  height: 100%
+}
+
+.wuss-weiper-out-btn-disabled {
+  opacity: .4;
+}
+
+.wuss-swiper-out-left {
+  height: 100%;
+}
+.wuss-swiper-out-left >view {
+  height: 100%;
+}
+
+.wuss-swiper-out-right {}

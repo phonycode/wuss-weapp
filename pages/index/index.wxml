@@ -48,6 +48,7 @@
     <w-cell-group>
       <w-cell title="Calendar 日历预定选择器" link="../w-calendar/index" wuss-class="w-cell" />
       <w-cell title="QRCode 二维码生成" link="../w-qr-code/index" wuss-class="w-cell" />
+      <w-cell title="SwiperOut 侧滑菜单" link="../w-swiper-out/index" wuss-class="w-cell" />
     </w-cell-group>
 
   </view>

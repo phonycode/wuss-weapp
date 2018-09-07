@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "w-swiper-out": "../../dist/w-swiper-out/index",
+    "w-pane": "../../dist/w-pane/index"
+  }
+}

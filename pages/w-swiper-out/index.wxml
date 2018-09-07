@@ -1,0 +1,109 @@
+<w-pane title="SwiperOut" desc="侧滑菜单" />
+
+<w-pane desc="Default" />
+<w-swiper-out 
+  swiperOutBtns="{{ btns1 }}"
+  bind:delete="delete"
+  bind:edit="edit"
+  bind:added="added"
+>
+  <view class="example-content" style="" >
+     Example Content
+  </view>
+</w-swiper-out>
+
+
+<w-pane desc="Multiple" />
+<w-swiper-out 
+  swiperOutBtns="{{ btns2 }}"
+  bind:delete="delete"
+  bind:edit="edit"
+  bind:added="added"
+>
+  <view class="example-content" style="" >
+     Example Content
+  </view>
+</w-swiper-out>
+
+
+<w-pane desc="ButtonWidth = 50" />
+<w-swiper-out 
+  swiperOutBtns="{{ btns2 }}"
+  bind:delete="delete"
+  bind:edit="edit"
+  bind:added="added"
+  buttonWidth="50"
+>
+  <view class="example-content" style="" >
+     Example Content
+  </view>
+</w-swiper-out>
+
+
+<w-pane desc="Close = True" />
+<w-swiper-out 
+  close
+  swiperOutBtns="{{ btns1 }}"
+  bind:delete="delete"
+  bind:edit="edit"
+  bind:added="added"
+>
+  <view class="example-content" style="" >
+     Example Content
+  </view>
+</w-swiper-out>
+
+<w-pane desc="Threshold = 0.7" />
+<w-swiper-out 
+  swiperOutBtns="{{ btns1 }}"
+  bind:delete="delete"
+  bind:edit="edit"
+  bind:added="added"
+  threshold=".7"
+>
+  <view class="example-content" style="" >
+     Example Content
+  </view>
+</w-swiper-out>
+
+
+<w-pane desc="AutoClose = False" />
+<w-swiper-out 
+  autoClose="{{false}}"
+  swiperOutBtns="{{ btns2 }}"
+  bind:delete="delete"
+  bind:edit="edit"
+  bind:added="added"
+>
+  <view class="example-content" style="" >
+     Example Content
+  </view>
+</w-swiper-out>
+
+
+<w-pane desc="Disabled = True" />
+<w-swiper-out 
+  disabled
+  swiperOutBtns="{{ btns2 }}"
+  bind:delete="delete"
+  bind:edit="edit"
+  bind:added="added"
+>
+  <view class="example-content" style="" >
+     Example Content
+  </view>
+</w-swiper-out>
+
+
+<w-pane desc="BackgroundColor = f8f8f8" />
+<w-swiper-out 
+  backgroundColor="#f8f8f8"
+  swiperOutBtns="{{ btns2 }}"
+  bind:delete="delete"
+  bind:edit="edit"
+  bind:added="added"
+>
+  <view class="example-content" style="" >
+     Example Content
+  </view>
+</w-swiper-out>

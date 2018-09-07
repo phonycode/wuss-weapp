@@ -11,7 +11,8 @@
     "pages/w-qr-code/index",
     "pages/w-button/index",
     "pages/w-avatar/index",
-    "pages/w-icon/index"
+    "pages/w-icon/index",
+    "pages/w-swiper-out/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
