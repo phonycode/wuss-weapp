@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:51 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-06 18:03:27
+ * @Last Modified time: 2018-09-07 11:18:15
  */
 page {
   min-height: 100%;
@@ -12,49 +12,36 @@ page {
 }
 
 .wuss-tabs-content {
-  /* display: flex;
-  flex: 1;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 44px;
-  position: relative; */
   white-space: nowrap;
   display: block;
+  height:70rpx;
   position: relative;
 }
-.wuss-tabs-scroll{
-  overflow-x: auto;
-}
 .tabs-item {
-  /* display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center; */
   height: 100%;
   
   display: inline-block;
   text-align: center;
 }
-.tabs-item-scroll{
-}
-.text {
+.tabs-item-title {
   font-size: 15px;
 }
 
-.text.active {
+.tabs-item-title.active {
   color: rgb(69, 143, 246);
 }
 
 .tab-line-bar {
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   z-index: 100;
   background-color: rgb(69, 143, 246);
   -webkit-transition: .3s, -webkit-transform .3s;
   transition: .3s, -webkit-transform .3s;
 }
-
+.wuss-tabs-item-disabled{
+  color:#c9c9c9;
+}
 .wuss-tabs-border-none {
   border: none!important;
 }
@@ -65,16 +52,4 @@ page {
   right: 0;
   top: 0;
   width: 100%;
-}
-
-.wuss-tabs-scroll .wuss-tabs-content {
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-.wuss-tabs-scroll .wuss-tabs-content .tabs-item {
-  /* min-width: 100px; */
-}
-
-.wuss-tabs-scroll .tab-line-bar {
-  bottom: 0;
 }

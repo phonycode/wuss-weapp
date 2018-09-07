@@ -1,32 +1,25 @@
 <view class="wuss-class wuss-tabs {{ !border ? 'wuss-tabs-border-none' : ''}} {{ fixed ? 'wuss-tabs-fixed' : '' }} " style="{{ styles }}">
 	<scroll-view
-	 id="wuss-scroll-view"
 	 scroll-with-animation
 	 scroll-left="{{ scrollLeft }}"
 	 scroll-x="{{ isScroll }}"
 	>
-		<!-- class=" {{ isScroll ? 'wuss-tabs-scroll' : '' }} " -->
 		<view class="wuss-tabs-content">
-			<block
-			 wx:for="{{ tabs }}"
-			 wx:key="index"
-			 wx:for-item="item"
-			>
+			<block wx:for="{{ tabs }}" wx:key="index">
 				<view
 				 catchtap="handleTab"
 				 data-index="{{ index }}"
-				 class="tabs-item {{ isScroll ? 'tabs-item-scroll' : '' }}"
-				 hover-class="none"
-				 style="width:calc(100% / {{ 4 }})"
-				 hover-stop-propagation="false"
+				 class="tabs-item {{ item.data.disabled ? 'wuss-tabs-item-disabled' : '' }}"
+				 style="width:calc(100% / {{ itemThreshold > tabs.length ? tabs.length : itemThreshold }})"
 				>
-					<w-icon
-					 wx:if="{{ item.data.icon }}"
-					 type="{{ item.data.icon }}"
-					 size="{{ item.data.iconSize }}"
-					 color="{{ item.data.iconColor }}"
-					/>
-					<view class="text" style="{{ ( currentIndex || 0 ) === index ? 'color:' + activeColor + ';' : ''}} {{ item.data.icon ? 'margin-left: 3px;' : '' }} {{ textStyles }}">
+					<!-- <block wx:if="{{ item.data.icon }}">
+						<w-icon
+						 type="{{ item.data.icon }}"
+						 size="{{ item.data.iconSize }}"
+						 color="{{ item.data.iconColor }}"
+						/>
+					</block> -->
+					<view class="tabs-item-title" style="{{ currentIndex === index ? 'color:' + activeColor + ';' : ''}} {{ item.data.icon ? 'margin-left: 3px;' : '' }} {{ textStyles }}">
 						{{ item.data.title }}
 					</view>
 				</view>
@@ -38,8 +31,10 @@
 			/>
 		</view>
 	</scroll-view>
-	<view class="wuss-tabs--content">
-		<slot/>
-	</view>
+
+</view>
+
+<view class="wuss-tabs-content">
+	<slot/>
 </view>
 
