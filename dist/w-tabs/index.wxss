@@ -19,14 +19,16 @@ page {
 }
 .tabs-item {
   height: 100%;
-  
   display: inline-block;
   text-align: center;
 }
 .tabs-item-title {
   font-size: 15px;
+  display: inline-block;
 }
-
+.tabs-item-icon{
+  display: inline-block;
+}
 .tabs-item-title.active {
   color: rgb(69, 143, 246);
 }

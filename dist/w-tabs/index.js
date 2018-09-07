@@ -11,7 +11,7 @@ Component({
     [PATH]: {
       type: 'descendant',
       linked(target) {
-        const { tabs } = this.data;
+        const  tabs  = this.data.tabs.concat();
         tabs.push({
           instance: target,
           data: target.data,

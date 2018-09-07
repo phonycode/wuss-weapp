@@ -12,13 +12,14 @@
 				 class="tabs-item {{ item.data.disabled ? 'wuss-tabs-item-disabled' : '' }}"
 				 style="width:calc(100% / {{ itemThreshold > tabs.length ? tabs.length : itemThreshold }})"
 				>
-					<!-- <block wx:if="{{ item.data.icon }}">
+					<block wx:if="{{ item.data.icon }}">
 						<w-icon
+             class="tabs-item-icon"
 						 type="{{ item.data.icon }}"
 						 size="{{ item.data.iconSize }}"
 						 color="{{ item.data.iconColor }}"
 						/>
-					</block> -->
+					</block>
 					<view class="tabs-item-title" style="{{ currentIndex === index ? 'color:' + activeColor + ';' : ''}} {{ item.data.icon ? 'margin-left: 3px;' : '' }} {{ textStyles }}">
 						{{ item.data.title }}
 					</view>

@@ -41,12 +41,19 @@
 		<view class="content">{{ item.text }}内容页</view>
 	</w-tab>
 </w-tabs>
-<!-- <w-pane desc="Icon" />
-<w-tabs
- tabs="{{ tabs2 }}"
- textStyles="font-size: 14px;"
- activeColor="#ef473a"
-/> -->
+<w-pane desc="Icon" />
+<w-tabs textStyles="font-size: 14px;" activeColor="#ef473a">
+	<w-tab
+	 wx:for="{{ tabs2 }}"
+	 wx:key="{{ index }}"
+	 title="{{ item.text }}"
+	 icon="{{item.icon}}"
+	 iconSize="{{item.iconSize}}"
+	 iconColor="{{item.iconColor}}"
+	>
+		<view class="content">{{ item.text }}内容页</view>
+	</w-tab>
+</w-tabs>
 <w-pane desc="Disabled Transition and DisabledItem" />
 <w-tabs transition="{{ false }}" bind:disabled="onDisabled">
 	<w-tab
@@ -82,7 +89,11 @@
 </w-tabs>
 
 <w-pane desc="Disabled Border" />
-<w-tabs transition="{{ false }}" line="{{ false }}"  border="{{ false }}">
+<w-tabs
+ transition="{{ false }}"
+ line="{{ false }}"
+ border="{{ false }}"
+>
 	<w-tab
 	 wx:for="{{ tabs4 }}"
 	 wx:key="{{ index }}"
@@ -91,3 +102,4 @@
 		<view class="content">{{ item.text }}内容页</view>
 	</w-tab>
 </w-tabs>
+
