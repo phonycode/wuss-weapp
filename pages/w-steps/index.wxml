@@ -1,0 +1,4 @@
+<w-pane title="Steps" desc="步骤条" />
+
+<w-steps steps="{{ steps }}" />
+
