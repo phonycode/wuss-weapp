@@ -1,0 +1,25 @@
+<view class="wuss-class wuss-steps wuss-steps-{{ direction }}">
+
+	<view wx:for="{{ steps }}" wx:key="index" class="wuss-step wuss-step-{{ item.status }}">
+		<view class="wuss-steps-item-tail wuss-steps-item-tail-{{ item.lineStatus }}" />
+		<view class="wuss-step--icon-container ">
+			<w-icon
+			 wx:if="{{ item.status === 'finish' }}"
+			 type="success"
+			 size="18"
+			 color="{{ currentColor }}"
+			 wuss-class="wuss-step--icon"
+			/>
+			<view class="steo-icon--default" wx:else>
+				{{ index + 1 }}
+			</view>
+		</view>
+		<view class="wuss-step-content">
+			<view class="step-title">{{ item.title }}</view>
+			<view class="step-desc">{{ item.desc }}</view>
+		</view>
+
+	</view>
+
+</view>
+
