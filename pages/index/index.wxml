@@ -37,6 +37,7 @@
     <w-cell-group>
       <w-cell title="ActivityIndicator 活动指示器" link="../w-activity-indicator/index" wuss-class="w-cell" />
       <w-cell title="Toast 提示" link="../w-toast/index" wuss-class="w-cell" />
+      <w-cell title="Notice 通告" link="../w-notice/index" wuss-class="w-cell" />
     </w-cell-group>
 
 

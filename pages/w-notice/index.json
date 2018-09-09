@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Notice 通告",
+  "usingComponents": {
+    "w-notice": "../../dist/w-notice/index",
+    "w-button": "../../dist/w-button/index",
+    "w-toast": "../../dist/w-toast/index",
+    "w-pane": "../../dist/w-pane/index"
+  }
+}
