@@ -1,4 +1,8 @@
 Component({
+  externalClasses: ['wuss-class'],
+  optiton: {
+    addGlobalClass: true,
+  },
   /**
    * 组件的属性列表
    * Array<{title:string,desc:string,status:'wait'|'finish'|'error'|'process'}>
@@ -9,7 +13,7 @@ Component({
   properties: {
     steps: {
       type: Array,
-      observer: 'addStatus',
+      observer: 'setStatus',
     },
     direction: {
       type: String,
@@ -17,17 +21,25 @@ Component({
     },
     current: {
       type: Number,
-      value: 2,
-      observer: 'addStatus',
+      observer(newValue) {
+        const { steps } = this.data;
+        const l = steps.length;
+        if (newValue >= l) {
+          this.triggerEvent('complete', {
+            step: steps[l - 1],
+          });
+        }
+        this.setStatus();
+      },
     },
   },
   methods: {
-    addStatus() {
+    setStatus() {
       const { steps } = this.data;
       steps.forEach((step, index) => {
         const status = step.status || this.getStatus(index);
-        step.status = status;
-        index && (steps[index - 1].lineStatus = status);
+        step._status = status;
+        index && (steps[index - 1]._lineStatus = status);
       });
       this.setData({ steps });
     },
