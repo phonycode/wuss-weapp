@@ -1,4 +1,14 @@
 <w-pane title="Steps" desc="步骤条" />
 
-<w-steps steps="{{ steps }}" />
 
+<w-pane desc="Default" />
+<w-steps bindcomplete="complete" current="{{ current }}" steps="{{ steps }}" />
+
+
+<w-button bind:click="setCurrent" size="small">下一步</w-button>
+<w-pane desc="vertical" />
+<w-steps current="{{ current }}" steps="{{ steps }}" direction="vertical"/>
+
+
+<w-pane desc="error" />
+<w-steps current="2" steps="{{ steps2 }}" />

@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    current: 0,
     steps: [
       {
         title: '步骤一',
@@ -16,11 +17,29 @@ Page({
       {
         title: '步骤三',
         desc: '描述三',
+      },
+    ],
+    steps2: [
+      {
+        title: '步骤一',
+      },
+      {
+        title: '步骤二',
+      },
+      {
+        title: '步骤三',
         status: 'error',
       },
     ],
   },
-
+  setCurrent() {
+    this.setData({
+      current: ++this.data.current % 4,
+    });
+  },
+  complete(e) {
+    console.log('complete', e.detail.step);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
