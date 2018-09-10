@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:23 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-07 17:14:21
+ * @Last Modified time: 2018-09-10 09:41:18
  */
 import Behavior from '../base/behavior/index';
 const SYSTEM_INFO = wx.getSystemInfoSync();
@@ -177,7 +177,7 @@ Component({
    */
   ready: function () {
     const { threshold, buttonWidth, swiperOutBtns, close } = this.data;
-    let _slideWidth = swiperOutBtns.length * (buttonWidth ? buttonWidth : (SYSTEM_INFO.windowWidth*0.6)/swiperOutBtns.length);
+    let _slideWidth = swiperOutBtns.length * (buttonWidth ? buttonWidth : (SYSTEM_INFO.windowWidth*0.45)/swiperOutBtns.length);
     this.setData({
       _slideWidth,
       _threshold: _slideWidth * threshold,

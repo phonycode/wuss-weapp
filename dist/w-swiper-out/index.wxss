@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-07 17:05:03
+ * @Last Modified time: 2018-09-10 09:38:47
  */
 .wuss-swiper-out-view {
   position: relative;  
@@ -12,7 +12,6 @@
 
 .wuss-swiper-out-btns {
   position: absolute;
-  left: 375px;
   top: 0;
   background: #ffffff;
   display: flex;

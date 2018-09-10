@@ -20,7 +20,7 @@
     <view class="wuss-swiper-out-left" hover-class="none" hover-stop-propagation="false">
       <slot />
     </view>
-		<view class="wuss-swiper-out-right wuss-swiper-out-btns" style="width:{{ _slideWidth }}px;height: {{ height }}px;">
+		<view class="wuss-swiper-out-right wuss-swiper-out-btns" style="width:{{ _slideWidth }}px;height: {{ height }}px;left: {{ _width }}px;">
 			<view
        class="wuss-swiper-out-btn {{ item.disabled ? 'wuss-weiper-out-btn-disabled' : '' }}"
        style="background-color: {{ item.background }};color: {{ item.color }};font-size: {{ item.size }};"
