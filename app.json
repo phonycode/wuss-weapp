@@ -12,7 +12,8 @@
     "pages/w-button/index",
     "pages/w-avatar/index",
     "pages/w-icon/index",
-    "pages/w-swiper-out/index"
+    "pages/w-swiper-out/index",
+    "pages/w-dialog/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
