@@ -1,3 +1,9 @@
+/*
+ * @Author: cnyballk[https://github.com/cnyballk] 
+ * @Date: 2018-09-10 17:53:43 
+ * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
+ * @Last Modified time: 2018-09-10 17:53:43 
+ */
 /**
  * @param {string} type icon类型
  * @param {string} message 提示内容

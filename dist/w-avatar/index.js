@@ -1,3 +1,9 @@
+/*
+ * @Author: cnyballk[https://github.com/cnyballk] 
+ * @Date: 2018-09-10 17:54:29 
+ * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
+ * @Last Modified time: 2018-09-10 17:54:29 
+ */
 Component({
   externalClasses: ['wuss-class'],
   /**
