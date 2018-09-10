@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-mask-shadow": "../w-mask-shadow/index"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-dialog": "../w-dialog/index"
+  }
+}
