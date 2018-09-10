@@ -118,6 +118,8 @@ Component({
         }
       );
     },
-    toastClick() {},
+    toastClick() {
+      this.triggerEvent('click', {});
+    },
   },
 });
