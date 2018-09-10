@@ -2,11 +2,14 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-06 14:22:37 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-07 11:17:56
+ * @Last Modified time: 2018-09-10 11:16:05
  */
 const PATH = '../w-tabs/index';
 Component({
   externalClasses: ['wuss-class'],
+  options: {
+    addGlobalClass: true,
+  },
   /**
    * 组件的属性列表
    * @param {boolean} disabled 是否禁用

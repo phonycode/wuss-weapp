@@ -2,17 +2,25 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-09 14:35:55 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-09 19:36:33
+ * @Last Modified time: 2018-09-10 11:20:23
  */
-// dist/w-notice/index.js
-
 Component({
   externalClasses: ['wuss-class'],
-  optiton: {
+  options: {
     addGlobalClass: true,
   },
   /**
    * 组件的属性列表
+   * @param {string} text 文本内容
+   * @param {string} mode 模式 可选 link |  closeable
+   * @param {string} color 文本颜色
+   * @param {string} backgroundColor 背景颜色
+   * @param {string} backgroundColor 背景颜色
+   * @param {string} url mode为link时 跳转地址
+   * @param {string} openType mode为link时 跳转类型
+   * @param {string} speed 滚动速度 scrollable为true时有效
+   * @param {string} scrollable 是否可以滚动
+   * @param {string} icon 左边的图标地址
    */
   properties: {
     text: {
@@ -53,10 +61,6 @@ Component({
       value: '',
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     show: true,
     animationData: null,
@@ -66,9 +70,12 @@ Component({
     noticeAnimation: null,
     resetAnimation: null,
   },
-  /**
-   * 组件的方法列表
-   */
+  detached(){
+    clearTimeout(this.data.timer);
+    this.setData({
+      timer:null
+    })
+  },
   methods: {
     init() {
       wx.nextTick(() => {

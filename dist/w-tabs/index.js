@@ -2,11 +2,14 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:31 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-07 11:14:01
+ * @Last Modified time: 2018-09-10 11:12:30
  */
 const PATH = '../w-tab/index';
 Component({
   externalClasses: ['wuss-class'],
+  options: {
+    addGlobalClass: true,
+  },
   relations: {
     [PATH]: {
       type: 'descendant',

@@ -23,11 +23,10 @@ let wussToast = { ...DEFAULT_TOAST };
 const toast_Animation = wx.createAnimation({ duration: DURATION });
 
 Component({
-  /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class'],
-
+  options: {
+    addGlobalClass: true,
+  },
   /**
    * 组件的初始数据
    * @param {boolean} visible 组件是否可见
@@ -36,10 +35,6 @@ Component({
     visible: false,
     animationData: {},
   },
-
-  /**
-   * 组件方法列表
-   */
   methods: {
     show({ position = 'default', ...opts }) {
       const p = new Promise(resolve => {

@@ -1,26 +1,15 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:23 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-07 17:14:21
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-10 11:16:16
  */
 import Behavior from '../base/behavior/index';
 const SYSTEM_INFO = wx.getSystemInfoSync();
 Component({
-  /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class'],
-
-  /**
-   * 组件间关系定义
-   */
-  relations: {},
-
-  /**
-   * 组件选项
-   */
   options: {
+    addGlobalClass: true,
   },
 
   /**
