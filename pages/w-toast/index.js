@@ -1,4 +1,4 @@
-import Toast from '../../dist/w-toast/toast.js';
+import { Toast } from '../../dist/common/index';
 Page({
   top() {
     Toast.show({
