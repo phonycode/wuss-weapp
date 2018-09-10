@@ -1,10 +1,10 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:23 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-10 11:22:07
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-10 16:07:24
  */
-import Behavior from '../base/behavior/index';
+import Behavior from '../common/behavior/index';
 const SYSTEM_INFO = wx.getSystemInfoSync();
 Component({
   externalClasses: ['wuss-class'],
