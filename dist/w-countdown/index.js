@@ -2,11 +2,15 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 14:13:23 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-10 15:17:51
+ * @Last Modified time: 2018-09-10 15:31:10
  */
 // components/countdown/countdown.js
 
 Component({
+  externalClasses: ['wuss-class'],
+  options: {
+    addGlobalClass: true,
+  },
   /**
    * @param {boolean} notimestamp  是否使用时间戳  true为不是
    * @param {boolean} bindcallback 倒计时结束的回调函数

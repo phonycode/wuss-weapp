@@ -75,7 +75,13 @@
 				{
 					"id": -1,
 					"name": "w-steps",
-					"pathName": "pages/w-steps/index"
+					"pathName": "pages/w-steps/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-countdown",
+					"pathName": "pages/w-countdown/index"
 				}
 			]
 		}
