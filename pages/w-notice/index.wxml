@@ -1,0 +1,36 @@
+<!--pages/w-notice/index.wxml-->
+<w-pane title="Notice" desc="通告" />
+
+<w-toast id="wuss-toast" wuss-class="test" />
+
+<w-pane desc="Default" />
+
+<w-notice text="{{ text }}" />
+
+<w-pane desc="mode = closeable speed = 30" />
+
+<w-notice
+ mode="closeable"
+ text="{{ text }}"
+ bindclose="noticeClose"
+ speed="30"
+/>
+
+<w-pane desc="mode = link  scrollable= false"  />
+
+<w-notice
+ scrollable="{{ false }}"
+ mode="link"
+ url="/pages/index/index"
+ text="去首页看看有哪些组件"
+/>
+
+<w-pane desc="set icon color backgroundColor" />
+
+<w-notice 
+	icon="voice" 
+	color="#fff" 
+	backgroundColor="rgba(255, 113, 110, 1)" 
+	text="{{ text }}" 
+/>
+

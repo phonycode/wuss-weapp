@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Steps 步骤条",
+  "usingComponents": {
+    "w-steps": "../../dist/w-steps/index",
+    "w-button": "../../dist/w-button/index",
+    "w-pane": "../../dist/w-pane/index"
+  }
+}
