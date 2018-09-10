@@ -13,7 +13,8 @@
     <w-cell-group>
       <w-cell title="Button 按钮" link="../w-button/index" wuss-class="w-cell" />
       <w-cell title="Icon 图标" link="../w-icon/index" wuss-class="w-cell" />
-      <w-cell title="Avatar 图标" link="../w-avatar/index" wuss-class="w-cell" />
+      <w-cell title="Avatar 头像" link="../w-avatar/index" wuss-class="w-cell" />
+      <w-cell title="Steps 步骤条" link="../w-steps/index" wuss-class="w-cell" />
     </w-cell-group>
 
 
@@ -36,6 +37,7 @@
     <w-cell-group>
       <w-cell title="ActivityIndicator 活动指示器" link="../w-activity-indicator/index" wuss-class="w-cell" />
       <w-cell title="Toast 提示" link="../w-toast/index" wuss-class="w-cell" />
+      <w-cell title="Notice 通告" link="../w-notice/index" wuss-class="w-cell" />
     </w-cell-group>
 
 
