@@ -1,23 +1,11 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-04 15:33:00
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-10 09:18:11
  */
 Component({
-  /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class', 'wuss-button-hover-class'],
-
-  /**
-   * 组件间关系定义
-   */
-  relations: {},
-
-  /**
-   * 组件选项
-   */
   options: {
     addGlobalClass: true,
   },
@@ -105,15 +93,7 @@ Component({
       value: false,
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {},
-
-  /**
-   * 组件方法列表
-   */
   methods: {
     handleClick() {
       this.triggerEvent('click', {}, {});
@@ -123,7 +103,6 @@ Component({
         styles,
         color,
         bgColor,
-        hoverColor
       } = this.data;
       let buttonStyles = '';
       buttonStyles += ` ${styles}` + (color ? `color: ${color}!important;` : '') + (bgColor ? ` background-color: ${bgColor}!important;` : '');
@@ -132,27 +111,8 @@ Component({
       })
     },
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  created: function () {},
-
-  /**
-   * 组件布局完成后执行
-   */
   ready: function () {
     this.initStyles()
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  attached: function () {},
-
-  /**
-   * 在组件实例被移动到节点树另一个位置时执行
-   */
-  moved: function () {},
 
 })
