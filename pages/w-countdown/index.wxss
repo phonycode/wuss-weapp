@@ -1,0 +1,4 @@
+/* pages/w-countdown/index.wxss */
+w-countdown{
+  margin-left:40rpx;
+}

@@ -1,0 +1,3 @@
+<!-- components/countdown/countdown.wxml -->
+<text>{{timeText}}</text>
+
