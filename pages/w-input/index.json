@@ -1,1 +1,8 @@
-{}
+{
+  "navigationBarTitleText": "Input 输入框",
+  "usingComponents": {
+    "w-input": "../../dist/w-input/index",
+    "w-button": "../../dist/w-button/index",
+    "w-pane": "../../dist/w-pane/index"
+  }
+}

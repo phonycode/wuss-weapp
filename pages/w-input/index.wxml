@@ -1,2 +1,6 @@
 <!--pages/w-input/index.wxml-->
-<text>pages/w-input/index.wxml</text>
+
+<w-input placeholder="请输入你的手机号">
+	手机号
+</w-input>
+

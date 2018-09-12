@@ -1,2 +1,33 @@
 <!--dist/w-input/index.wxml-->
-<text>dist/w-input/index.wxml</text>
+<view class="wuss-class wuss-input">
+	<view class="wuss-input_label label--{{ labelNumber }}">
+		<slot/>
+	</view>
+	<view class="wuss-input_input-wrap">
+		<input
+		 class="wuss-input_input"
+		 type="{{ type }}"
+		 style="text-align:{{ moneyKeyboardAlign }}"
+		 password="{{ password }}"
+		 disabled="{{ disabled }}"
+		 maxlength="{{ maxlength }}"
+		 focus="{{ focus }}"
+		 confirm-type="{{ confirm-type }}"
+		 confirm-hold="{{ confirm-hold }}"
+		 cursor="{{ cursor }}"
+		 cursor-spacing="{{ cursor-spacing }}"
+		 placeholder="{{ placeholder }}"
+		 placeholder-style="{{ placeholder-style }}"
+		 placeholder-class="{{ placeholder-class}}"
+		 selection-start="{{ selection-start }}"
+		 selection-end="{{ selection-end }}"
+		 adjust-position="{{ adjust-position }}"
+		 bindinput="handlerChange"
+		 bindfocus="handlerFocus"
+		 bindconfirm="handlerConfirm"
+		 bindblur="handlerBlur"
+		/>
+	</view>
+
+</view>
+
