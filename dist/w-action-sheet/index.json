@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-popup": "../w-popup/index",
+    "w-activity-indicator": "../w-activity-indicator/index",
+    "w-icon": "../w-icon/index"
+  }
+}
