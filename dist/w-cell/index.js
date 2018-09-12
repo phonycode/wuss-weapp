@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-06 09:38:12
+ * @Last Modified time: 2018-09-12 09:59:08
  */
 Component({
   /**
@@ -29,16 +29,22 @@ Component({
   /**
    * 组件的属性列表
    * @param {string} title  标题
-   * @param {string} desc   描述
+   * @param {string} content 内容
+   * @param {string} desc   附加描述
    * @param {string} link   跳转的url，当存在值时显示右边箭头
    * @param {string} icon   标题图标
    * @param {string} iconSize  图标大小
    * @param {string} iconColor   图标颜色
    * @param {number} delta   当linkType值为 navigateBack 时有效，表示返回页面层数
    * @param {string} linkType  跳转类型，类型有 [navigateTo/redirectTo/switchTab/reLaunch/navigateBack]
+   * @param {boolean} disabled  禁用cell
    */
   properties: {
     title: {
+      type: String,
+      valie: '',
+    },
+    content: {
       type: String,
       valie: '',
     },
@@ -70,6 +76,10 @@ Component({
       type: String,
       value: 'navigateTo',
     },
+    disabled: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   /**
@@ -97,6 +107,7 @@ Component({
         linkType,
         link,
         delta,
+        disabled,
       } = this.data;
       const navigateMethods = [
         'navigateTo',
@@ -104,8 +115,10 @@ Component({
         'switchTab',
         'reLaunch',
       ];
-      if (!linkType) throw Error('linkType 不能为空');
+      if(disabled) return false;
       this.triggerEvent('click', {}, {});
+      if(!link)return false;
+      if (!linkType) throw Error('linkType 不能为空');
       if (navigateMethods.indexOf(linkType) > -1) {
         if (!link) throw Error('link 不能为空');
         wx[linkType].call(wx, {

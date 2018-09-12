@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-06 14:53:10
+ * @Last Modified time: 2018-09-12 10:18:38
  */
 .wuss-cell {
   position: relative;
@@ -36,14 +36,26 @@
   display: none;
 }
 
-.wuss-cell-content {
+.wuss-cell-hd {
   display: flex;
   flex: 1;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 10px 15px;
+  padding: 12px 15px;
+}
+.wuss-cell-ft {
+  font-size: 13px;
+  color: #999999;
+}
+
+.wuss-cell-hd-desc-padding {
+  padding: 10px 15px 0;
+}
+
+.wuss-cell-ft .wuss-cell-desc {
+  padding: 0 15px 10px;
 }
 
 .wuss-cell-left {
@@ -59,7 +71,7 @@
 }
 
 .wuss-cell-title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: normal;
 }
 
@@ -71,9 +83,9 @@
   padding-right: 15px;
 }
 
-.wuss-cell-desc {
+.wuss-cell-right-content {
   color: #999999;
-  font-size: 12px;
+  font-size: 15px;
   white-space: wrap;
   word-break: break-all;
 }
@@ -83,4 +95,8 @@
   right: 10px;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+.wuss-cell-title-disabled, .wuss-cell-right-content-disabled {
+  color: #b2b2b2;
 }

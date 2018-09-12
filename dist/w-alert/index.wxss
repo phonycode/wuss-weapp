@@ -2,12 +2,20 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-10 16:04:05 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-10 17:00:36
+ * @Last Modified time: 2018-09-12 09:22:46
  */
+.w-dialog >view {
+  
+}
+
+.w-dialog {
+  background-color: transparent;
+  text-align: center;
+}
+
 .wuss-alert {
-  width: 80%;
-  max-width: 300px;
   background-color: #ffffff;
+  margin: 0 auto;
 }
 
 .wuss-alert .wuss-alert-hd {

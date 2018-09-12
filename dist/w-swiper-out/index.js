@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:23 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-10 16:07:24
+ * @Last Modified time: 2018-09-12 11:13:12
  */
 import Behavior from '../common/behavior/index';
 const SYSTEM_INFO = wx.getSystemInfoSync();
@@ -43,7 +43,7 @@ Component({
     },
     height: {
       type: Number,
-      value: 44,
+      value: 48,
     },
     threshold: {
       type: Number,
@@ -141,6 +141,18 @@ Component({
       if(item.disabled)return false;
       this.triggerEvent(item.type);
       autoClose ? this.close() : '';
+    },
+    /**
+     * left内容区被点击
+     */
+    handleLeftClick() {
+      const { autoClose, _scrollX, _slideWidth } = this.data;
+      if(_scrollX === -_slideWidth) { // 展开状态
+        autoClose ? this.close() : '';
+      } else {
+        this.triggerEvent('click');
+        console.log('click')
+      }
     },
     open() {
       const { _slideWidth } = this.data;

@@ -1,6 +1,7 @@
 <w-dialog
   visible="{{ _visible }}"
   maskClose="{{ maskClose }}"
+  wuss-class="w-dialog"
 >
 	<view
 	 class="wuss-class wuss-alert"

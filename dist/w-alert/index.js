@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-10 16:03:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-10 17:40:40
+ * @Last Modified time: 2018-09-12 09:28:28
  */
 import Behavior from '../common/behavior/index';
 
@@ -62,6 +62,8 @@ Component({
       }
     },
     alert(opts) {
+      const { _visible } = this.data;
+      if(_visible) return false;
       this.setData({
         _visible: true,
         ...OPTIONS,

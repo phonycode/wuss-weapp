@@ -2,11 +2,16 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 15:10:16 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-06 15:37:42
+ * @Last Modified time: 2018-09-12 10:32:36
  */
-page,.wuss-icon-example {
+page {
   width: 100%;
   height: 100%;
+}
+
+.wuss-icon-example {
+  width: 100%;
+  height: 80%;
 }
 
 .wuss-icon-example {
