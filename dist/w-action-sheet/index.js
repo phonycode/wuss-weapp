@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-12 14:03:55 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-12 16:23:15
+ * @Last Modified time: 2018-09-12 17:29:43
  */
 import Behavior from '../common/behavior/index';
 
@@ -52,6 +52,14 @@ Component({
     items: {
       type: Array,
       value: [],
+      observer(val) {
+        this.setData({
+          _globalTouch: val.reduce((p,n) => {
+            n.loading ? p+=1 : p;
+            return p;
+          },0) > 0,
+        })
+      },
     },
     maskCancel: {
       type: Boolean,
@@ -71,6 +79,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    _globalTouch: false, //禁用全局点击
   },
 
   /**
