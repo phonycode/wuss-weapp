@@ -12,6 +12,7 @@ Component({
      * @param {boolean} visible 组件是否可见
      * @param {string} position 弹出位置,可选值: left right top bottom
      * @param {boolean} mask 是否开启遮罩层
+     * @param {boolean} maskCancel d年级遮罩层可否关闭
      * @param {string} width 内容区的宽度，当type的值为left,right 时生效
      * @param {string} height 内容区的高度, 当type的值为top,bottom 时生效
      * @param {string} padding 内容区的内边距
@@ -54,6 +55,10 @@ Component({
     zIndex: {
       type: Number,
       value: 1000,
+    },
+    maskCancel: {
+      type: Boolean,
+      value: true,
     },
   },
 
