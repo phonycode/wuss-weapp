@@ -37,10 +37,11 @@
 
     <w-pane desc="操作反馈" wuss-class="w-pane" />
     <w-cell-group>
-      <w-cell title="ActivityIndicator 活动指示器" link="../w-activity-indicator/index" wuss-class="w-cell" />
-      <w-cell title="Alert 弹出框" link="../w-alert/index" wuss-class="w-cell" />
+      <w-cell title="ActionSheet 操作菜单" link="../w-action-sheet/index" wuss-class="w-cell" />
       <w-cell title="Toast 提示" link="../w-toast/index" wuss-class="w-cell" />
+      <w-cell title="Alert 弹出框" link="../w-alert/index" wuss-class="w-cell" />
       <w-cell title="Notice 通告" link="../w-notice/index" wuss-class="w-cell" />
+      <w-cell title="ActivityIndicator 活动指示器" link="../w-activity-indicator/index" wuss-class="w-cell" />
     </w-cell-group>
 
 
