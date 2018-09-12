@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-10 16:03:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-12 09:28:28
+ * @Last Modified time: 2018-09-12 11:39:08
  */
 import Behavior from '../common/behavior/index';
 
@@ -11,6 +11,7 @@ const OPTIONS = {
   content: '',
   maskClose: false,
   buttonColor: '#333333',
+  confirm: () => {},
 };
 
 Component({
