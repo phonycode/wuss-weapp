@@ -44,8 +44,9 @@
     </w-cell-group>
 
 
-    <w-pane desc="表单"  wx:if="{{ false }}" wuss-class="w-pane" />
-    <w-cell-group wx:if="{{ false }}" >
+    <w-pane desc="表单" wuss-class="w-pane" />
+    <w-cell-group >
+      <w-cell title="Input 输入框" link="../w-input/index" wuss-class="w-cell" />
     </w-cell-group>
     
 
