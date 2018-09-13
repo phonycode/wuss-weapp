@@ -15,6 +15,7 @@
       <w-cell title="Icon 图标" link="../w-icon/index" wuss-class="w-cell" />
       <w-cell title="Avatar 头像" link="../w-avatar/index" wuss-class="w-cell" />
       <w-cell title="Steps 步骤条" link="../w-steps/index" wuss-class="w-cell" />
+      <w-cell title="badge 徽章" link="../w-badge/index" wuss-class="w-cell" />
     </w-cell-group>
 
 

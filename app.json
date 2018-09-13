@@ -13,7 +13,8 @@
     "pages/w-avatar/index",
     "pages/w-icon/index",
     "pages/w-swiper-out/index",
-    "pages/w-steps/index"
+    "pages/w-steps/index",
+    "pages/w-badge/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
