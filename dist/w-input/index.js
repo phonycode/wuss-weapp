@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-12 18:20:25
+ * @Last Modified time: 2018-09-13 12:25:58
  */
 Component({
   /**
@@ -34,10 +34,6 @@ Component({
     type: {
       type: String,
       value: 'text',
-    },
-    password: {
-      type: Boolean,
-      value: false,
     },
     disabled: {
       type: Boolean,
@@ -102,20 +98,30 @@ Component({
    * 组件的初始数据
    */
   data: {},
-  ready() {
-    console.log(1);
-    console.log(this.data);
-  },
+  ready() {},
   /**
    * 组件方法列表
    */
   methods: {
+    formatValue(value) {
+      const { type } = this.data;
+      value = value.replace(/\s/g, '').slice(0, 11);
+      switch (type) {
+        case 'phone':
+          value = value.replace(/(\d{0,3})(\d{0,4})(\d{0,4})/g, '$1 $2 $3');
+        default:
+          break;
+      }
+      return value.trim();
+    },
     _trigger(name, e) {
       this.triggerEvent(name, e.detail);
     },
     ///////////input的监听函数
     handlerChange(e) {
       this._trigger('change', e);
+
+      return this.formatValue(e.detail.value);
     },
     handlerFocus(e) {
       this._trigger('focus', e);

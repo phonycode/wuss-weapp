@@ -1,1 +1,5 @@
 /* pages/w-input/index.wxss */
+page {
+  padding: 30rpx;
+  box-sizing: border-box;
+}

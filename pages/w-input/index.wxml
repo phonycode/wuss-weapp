@@ -1,6 +1,31 @@
 <!--pages/w-input/index.wxml-->
+<w-pane title="Input" desc="输入框" />
 
-<w-input placeholder="请输入你的手机号">
+<w-input type="phone" bindblur="iBlur" placeholder="请输入你的手机号">
 	手机号
 </w-input>
 
+<w-input type="password" placeholder="请输入你的密码">
+	密码
+</w-input>
+<w-pane  desc="受控" />
+<w-input  bindchange="iChange" placeholder="随意输入">
+	标题
+</w-input>
+<w-pane  desc="disabled" />
+<w-input disabled placeholder="我被禁用了">
+	禁用
+</w-input>
+<w-pane  desc="focus" />
+<w-input type="text" focus="{{ focus }}" bindfocus="iFocus" placeholder="click button below to foucus">
+	标题
+</w-input>
+
+<w-button type="info" bind:click="handleFocus">click to Focus</w-button>
+
+
+
+<w-pane  desc="label = 5" />
+<w-input placeholder="标题过长超出了label的宽度">
+	标题过长超出了
+</w-input>

@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:38 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-12 18:25:26
+ * @Last Modified time: 2018-09-13 11:48:45
  */
 
 .wuss-input {
@@ -10,6 +10,7 @@
   align-self: stretch;
   padding-right: 30rpx;
   overflow: hidden;
+  border: 1rpx solid #eee;
 }
 .wuss-input_label {
   color: #000;
@@ -31,7 +32,7 @@
   width: 136rpx;
 }
 .label--5 {
-  width: 170rpx;
+  width: 168rpx;
 }
 .label--6 {
   width: 204rpx;
