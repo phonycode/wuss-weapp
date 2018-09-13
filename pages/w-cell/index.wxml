@@ -17,6 +17,7 @@
 <w-pane desc="Multiple" />
 <w-cell-group>
 	<w-cell
+	 isLink
 	 title="列表{{index}}"
 	 content="内容{{index}}"
 	 wx:for="{{4}}"
@@ -27,23 +28,27 @@
 <w-pane desc="Link" />
 <w-cell-group>
 	<w-cell
+	 isLink
 	 title="navigateTo"
 	 content="w-button"
 	 link="../w-button/index"
 	/>
 	<w-cell
+	 isLink
 	 title="redirectTo"
 	 content="w-button"
 	 linkType="redirectTo"
 	 link="../w-button/index"
 	/>
 	<w-cell
+	 isLink
 	 title="switchTab"
 	 content="index"
 	 linkType="redirectTo"
 	 link="../index/index"
 	/>
 	<w-cell
+	 isLink
 	 title="navigateBack"
 	 content="w-button"
 	 linkType="navigateBack"
@@ -54,6 +59,7 @@
 <w-pane desc="Icon" />
 <w-cell-group>
 	<w-cell
+	 isLink
 	 title="example title"
 	 content="example description"
 	 icon="home"
@@ -63,16 +69,19 @@
 <w-pane desc="Disabled" />
 <w-cell-group>
 	<w-cell
+	 isLink
 	 disabled
 	 title="消息"
 	 link="/message"
 	/>
 	<w-cell
+	 isLink
 	 disabled
 	 title="列表"
 	 link="/message"
 	/>
 	<w-cell
+	 isLink
 	 disabled
 	 title="设置"
 	 link="/message"
