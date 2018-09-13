@@ -12,7 +12,7 @@
 				 size="{{ iconSize }}"
 				 color="{{ iconColor }}"
 				/>
-				<view class="wuss-cell-label wuss-cell-label-span-{{ labelSpan }} {{ disabled ? 'wuss-cell-label-disabled' : '' }}">
+				<view class="wuss-cell-label {{ labelSpan ? 'wuss-cell-label-span-' + labelSpan : '' }} {{ disabled ? 'wuss-cell-label-disabled' : '' }}">
 					{{ label
 					}}
 					<slot wx:if="{{ !label }}" name="label" />

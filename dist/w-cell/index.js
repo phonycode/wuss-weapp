@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-13 15:19:39
+ * @Last Modified time: 2018-09-13 15:37:38
  */
 Component({
   /**
@@ -49,7 +49,7 @@ Component({
     },
     labelSpan: {
       type: Number,
-      value: 3,
+      value: '',
     },
     content: {
       type: String,
