@@ -1,0 +1,4 @@
+/* pages/w-switch/index.wxss */
+.example-switch {
+  margin: 20px 30px;
+}
