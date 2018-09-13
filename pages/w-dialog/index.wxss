@@ -1,0 +1,4 @@
+/* pages/w-alert/index.wxss */
+.example-dialog {
+  padding: 10px;
+} 

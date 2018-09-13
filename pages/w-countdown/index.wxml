@@ -1,0 +1,22 @@
+<!--pages/w-countdown/index.wxml-->
+<w-pane title="Countdown" desc="倒计时" />
+
+<w-pane desc="Default" />
+<w-countdown time="{{ date1 }}" />
+
+
+
+<w-pane desc="notimestamp = true time = 60" />
+<w-countdown time="60" bindcallback="countdownComplate"notimestamp="{{true}}" />
+
+<w-pane desc="format = D" />
+<w-countdown time="{{ date1 }}" format="D" />
+
+<w-pane desc="format = H" />
+<w-countdown time="{{ date1 }}" format="H" />
+
+<w-pane desc="format = MM" />
+<w-countdown time="{{ date1 }}" format="MM" />
+
+<w-pane desc="format = s" />
+<w-countdown time="{{ date1 }}" format="s" />

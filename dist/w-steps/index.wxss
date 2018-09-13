@@ -16,19 +16,25 @@
   font-size: 28rpx;
   position: relative;
   color: #666;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   vertical-align: top;
   /* overflow: hidden; */
 }
-.wuss-step-process .step-icon--default {
+.wuss-step-process .step-icon--default-number {
   border-color: #06bf04;
+}
+.wuss-step-process .step-icon--default-dot {
+background-color: #06bf04;
 }
 
 .wuss-step-finish {
   color: #06bf04;
 }
-.wuss-step-finish .step-icon--default {
+.wuss-step-finish .step-icon--default-number {
   border-color: #06bf04;
+}
+.wuss-step-finish .step-icon--default-dot {
+background-color: #06bf04;
 }
 
 .wuss-steps-item-tail.wuss-steps-item-tail-finish::after {
@@ -41,8 +47,11 @@
 .wuss-steps-item-tail.wuss-steps-item-tail-error::after {
   background-color: #f4333c;
 }
-.wuss-step-error .step-icon--default {
+.wuss-step-error .step-icon--default-number {
   border-color: #f4333c;
+}
+.wuss-step-error .step-icon--default-dot {
+background-color: #f4333c;
 }
 .wuss-step-process {
   color: #06bf04;
@@ -53,17 +62,28 @@
 .wuss-step--icon-container {
   width: 36rpx;
   height: 36rpx;
-  line-height: 36rpx;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 28rpx;
   margin-left: 78rpx;
   transition: background-color 0.3s, border-color 0.3s;
 }
-.step-icon--default {
+.step-icon--default-number {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
   height: 100%;
   border: 1rpx solid rgba(0, 0, 0, 0.25);
   border-radius: 50%;
+}
+.step-icon--default-dot {
+  width: 50%;
+  height: 50%;
+  margin-left: 5rpx;
+  background-color: #ddd;
 }
 /* 内容 */
 .wuss-steps-horizontal .wuss-step-content {

@@ -1,0 +1,115 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-09-13 10:24:43 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-13 13:50:29
+ */
+.wuss-switch {
+  position: relative;
+  background-color: #ddd9d9;
+  border: 1rpx solid #ddd9d9;
+  font-size: 0;
+  letter-spacing: 0;
+}
+
+.wuss-switch-disabled {
+  opacity: .5;
+}
+
+.wuss-switch-circle {
+  position: absolute;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1rpx 2rpx rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  font-size: 0;
+  letter-spacing: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+  transition: transform .35s cubic-bezier(0.3, 0.3, 0.25, 1.35);
+}
+
+.wuss-switch-mask {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity .1s cubic-bezier(0.4, 1, 0.4, 1.35);
+}
+.wuss-switch .wuss-switch-mask.wuss-switch-mask-active {
+  opacity: 1;
+}
+
+
+.wuss-switch.wuss-switch-size-small {
+  width: 40px;
+  height: 20px;
+  border-radius: 15px;
+}
+
+.wuss-switch.wuss-switch-size-small .wuss-switch-mask {
+  width: 38px;
+  height: 18px;
+  border-radius: 15px;
+}
+
+.wuss-switch.wuss-switch-size-small .wuss-switch-circle {
+  width: 18px;
+  height: 18px;
+}
+
+.wuss-switch.wuss-switch.wuss-switch-size-small .wuss-switch-circle.wuss-switch-circle-active {
+  top: 50%;
+  transform: translate(21px,-50%);
+}
+
+
+
+.wuss-switch.wuss-switch-size-default {
+  width: 54px;
+  height: 32px;
+  border-radius: 16px;
+}
+
+.wuss-switch.wuss-switch-size-default .wuss-switch-mask {
+  width: 52px;
+  height: 30px;
+  border-radius: 16px;
+}
+
+.wuss-switch.wuss-switch-size-default .wuss-switch-circle {
+  height: 30px;
+  width: 30px;
+}
+
+.wuss-switch.wuss-switch.wuss-switch-size-default .wuss-switch-circle.wuss-switch-circle-active {
+  top: 50%;
+  transform: translate(23px,-50%);
+}
+
+
+.wuss-switch.wuss-switch-size-larger {
+  width: 64px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.wuss-switch.wuss-switch-size-larger .wuss-switch-mask {
+  width: 62px;
+  height: 38px;
+  border-radius: 20px;
+}
+
+.wuss-switch.wuss-switch-size-larger .wuss-switch-circle {
+  height: 38px;
+  width: 38px;
+}
+
+.wuss-switch.wuss-switch.wuss-switch-size-larger .wuss-switch-circle.wuss-switch-circle-active {
+  top: 50%;
+  transform: translate(25px,-50%);
+}

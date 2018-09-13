@@ -2,56 +2,115 @@
 
 <w-pane desc="Default" />
 <w-cell-group>
+	<w-cell label="列表" content="内容" />
+</w-cell-group>
+
+<w-pane desc="Desc" />
+<w-cell-group>
 	<w-cell
-	 title="example title"
-	 desc="example description"
+	 label="列表"
+	 content="内容"
+	 desc="附加标题"
 	/>
 </w-cell-group>
 
-
 <w-pane desc="Multiple" />
 <w-cell-group>
-  <w-cell
-    title="example title"
-    desc="example description"
-    wx:for="{{4}}"
-    wx:key="index"
-  />
+	<w-cell
+	 isLink
+	 label="列表{{index}}"
+	 content="内容{{index}}"
+	 wx:for="{{4}}"
+	 wx:key="index"
+	/>
 </w-cell-group>
-
 
 <w-pane desc="Link" />
 <w-cell-group>
-  <w-cell
-    title="navigateTo"
-    desc="w-button"
-    link="../w-button/index"
-  />
-  <w-cell
-    title="redirectTo"
-    desc="w-button"
-    linkType="redirectTo"
-    link="../w-button/index"
-  />
-  <w-cell
-    title="switchTab"
-    desc="index"
-    linkType="redirectTo"
-    link="../index/index"
-  />
-  <w-cell
-    title="navigateBack"
-    desc="w-button"
-    linkType="navigateBack"
-    delta="1"
-  />
+	<w-cell
+	 isLink
+	 label="navigateTo"
+	 content="w-button"
+	 link="../w-button/index"
+	/>
+	<w-cell
+	 isLink
+	 label="redirectTo"
+	 content="w-button"
+	 linkType="redirectTo"
+	 link="../w-button/index"
+	/>
+	<w-cell
+	 isLink
+	 label="switchTab"
+	 content="index"
+	 linkType="redirectTo"
+	 link="../index/index"
+	/>
+	<w-cell
+	 isLink
+	 label="navigateBack"
+	 content="w-button"
+	 linkType="navigateBack"
+	 delta="1"
+	/>
 </w-cell-group>
 
 <w-pane desc="Icon" />
 <w-cell-group>
 	<w-cell
-	 title="example title"
-   desc="example description"
-   icon="home"
+	 isLink
+	 label="example title"
+	 content="example description"
+	 icon="home"
 	/>
 </w-cell-group>
+
+<w-pane desc="Disabled" />
+<w-cell-group>
+	<w-cell
+	 isLink
+	 disabled
+	 label="消息"
+	 link="/message"
+	/>
+	<w-cell
+	 isLink
+	 disabled
+	 label="列表"
+	 link="/message"
+	/>
+	<w-cell
+	 isLink
+	 disabled
+	 label="设置"
+	 link="/message"
+	/>
+</w-cell-group>
+
+<w-pane desc="Slot" />
+<w-cell-group>
+	<w-cell
+	 disabled
+	 icon="home"
+	 link="/message"
+	>
+		<view
+		 class=""
+		 slot="label" 
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			我的消息
+		</view>
+		<view
+		 class=""
+		 slot="content"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			内容
+		</view>
+	</w-cell>
+</w-cell-group>
+

@@ -2,18 +2,50 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-07 17:05:03
+ * @Last Modified time: 2018-09-12 10:53:14
  */
+
+.wuss-swiper-out {
+  overflow: hidden;
+}
+
 .wuss-swiper-out-view {
   position: relative;  
-  border-top: 1rpx solid #eeeeee;
-  border-bottom: 1rpx solid #eeeeee;
+}
+
+.wuss-swiper-out-view::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  right: 0;
+  height: 1px;
+  background-color: #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+
+.wuss-swiper-out-view::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  right: 0;
+  height: 1px;
+  background-color: #d9d9d9;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
 }
 
 .wuss-swiper-out-btns {
   position: absolute;
-  left: 375px;
-  top: 0;
+  top:50%;
+  transform:translate(0,-50%);
+  z-index: 1000;
   background: #ffffff;
   display: flex;
   align-items: center;

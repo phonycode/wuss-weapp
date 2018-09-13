@@ -25,12 +25,16 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -65,7 +69,32 @@
 				{
 					"id": -1,
 					"name": "w-tabs",
-					"pathName": "pages/w-tabs/index"
+					"pathName": "pages/w-tabs/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-steps",
+					"pathName": "pages/w-steps/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-dialog",
+					"pathName": "pages/w-dialog/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-alert",
+					"pathName": "pages/w-alert/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-input",
+					"pathName": "pages/w-input/index",
+					"query": ""
 				}
 			]
 		}

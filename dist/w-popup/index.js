@@ -2,7 +2,7 @@ Component({
   /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class','wuss-popup-content'], 
+  externalClasses: ['wuss-class', 'wuss-popup-content'],
 
   /**
    * 组件的属性列表
@@ -12,18 +12,19 @@ Component({
      * @param {boolean} visible 组件是否可见
      * @param {string} position 弹出位置,可选值: left right top bottom
      * @param {boolean} mask 是否开启遮罩层
+     * @param {boolean} maskCancel 点击遮罩层可否关闭
      * @param {string} width 内容区的宽度，当type的值为left,right 时生效
      * @param {string} height 内容区的高度, 当type的值为top,bottom 时生效
      * @param {string} padding 内容区的内边距
-      */
+     */
     visible: {
       type: Boolean,
       value: false,
       observer(visible) {
-        if(visible) {
-          this.openMaskShadow()
+        if (visible) {
+          this.openMaskShadow();
         } else {
-          this.handleClose()
+          this.handleClose();
         }
       },
     },
@@ -55,6 +56,10 @@ Component({
       type: Number,
       value: 1000,
     },
+    maskCancel: {
+      type: Boolean,
+      value: true,
+    },
   },
 
   /**
@@ -71,43 +76,43 @@ Component({
     /**
      * 遮罩层点击遮罩关闭
      */
-    handleClose(){
+    handleClose() {
       const { mask, visible } = this.data;
-      if(!mask)return false; // 如果用户没开则退出
-      this.setData({ maskShadow: false })
-      this.triggerEvent('close',{ visible },{})
+      if (!mask) return false; // 如果用户没开则退出
+      this.setData({ maskShadow: false });
+      this.triggerEvent('close', { visible }, {});
     },
     /**
      * 打开遮罩层
      */
     openMaskShadow() {
       const { mask } = this.data;
-      if(!mask)return false; // 如果用户没开则退出
+      if (!mask) return false; // 如果用户没开则退出
       this.setData({
         maskShadow: true,
-      })
+      });
     },
   },
   ready: function() {
-    const { position, height, width, padding, zIndex  } = this.data;
+    const { position, height, width, padding, zIndex } = this.data;
     let popupStyles = '';
     switch (position.toLowerCase()) {
       case 'top':
-        popupStyles += `height: ${height};`
+        popupStyles += `height: ${height};`;
         break;
       case 'bottom':
-        popupStyles += `height: ${height};`
+        popupStyles += `height: ${height};`;
         break;
       case 'left':
-        popupStyles += `width: ${width};`
+        popupStyles += `width: ${width};`;
         break;
       case 'right':
-        popupStyles += `width: ${width};`
+        popupStyles += `width: ${width};`;
         break;
       default:
         break;
     }
     popupStyles += `padding: ${padding}; z-index: ${zIndex};`;
-    this.setData({ popupStyles })
+    this.setData({ popupStyles });
   },
-})
+});

@@ -4,53 +4,60 @@
  hover-stop-propagation="false"
 >
   <view class="header">
-    <image class="logo" src="../../dist/base/image/logo.gif" ></image>
+    <image class="logo" src="../../dist/common/image/logo.gif" ></image>
     <text class="title">Wuss Weapp</text>
   </view>
 
   <view class="example-content">
     <w-pane desc="基础组件" wuss-class="w-pane" />
     <w-cell-group>
-      <w-cell title="Button 按钮" link="../w-button/index" wuss-class="w-cell" />
-      <w-cell title="Icon 图标" link="../w-icon/index" wuss-class="w-cell" />
-      <w-cell title="Avatar 头像" link="../w-avatar/index" wuss-class="w-cell" />
-      <w-cell title="Steps 步骤条" link="../w-steps/index" wuss-class="w-cell" />
+      <w-cell label="Button 按钮" link="../w-button/index" wuss-class="w-cell" isLink />
+      <w-cell label="Icon 图标" link="../w-icon/index" wuss-class="w-cell" isLink />
+      <w-cell label="Avatar 头像" link="../w-avatar/index" wuss-class="w-cell" isLink />
+      <w-cell label="Steps 步骤条" link="../w-steps/index" wuss-class="w-cell" isLink />
+      <w-cell label="Countdown 倒计时" link="../w-countdown/index" wuss-class="w-cell" isLink />
+      <w-cell label="Dialog 消息框" link="../w-dialog/index" wuss-class="w-cell" isLink />
       <w-cell title="badge 徽章" link="../w-badge/index" wuss-class="w-cell" />
     </w-cell-group>
 
 
     <w-pane desc="布局" wuss-class="w-pane" />
     <w-cell-group>
-      <w-cell title="Pane 窗格" link="../w-pane/index" wuss-class="w-cell" />
+      <w-cell label="Pane 窗格" link="../w-pane/index" wuss-class="w-cell" isLink />
     </w-cell-group>
 
 
     <w-pane desc="导航" wuss-class="w-pane" />
     <w-cell-group>
-      <w-cell title="Cell 列表" link="../w-cell/index" wuss-class="w-cell" />
-      <w-cell title="Popup 弹出层" link="../w-popup/index" wuss-class="w-cell" />
-      <w-cell title="DropMenu 下拉菜单" link="../w-drop-menu/index" wuss-class="w-cell" />
-      <w-cell title="Tabs 导航切换栏" link="../w-tabs/index" wuss-class="w-cell" />
+      <w-cell label="Cell 列表" link="../w-cell/index" wuss-class="w-cell" isLink />
+      <w-cell label="Popup 弹出层" link="../w-popup/index" wuss-class="w-cell" isLink />
+      <w-cell label="DropMenu 下拉菜单" link="../w-drop-menu/index" wuss-class="w-cell" isLink />
+      <w-cell label="Tabs 导航切换栏" link="../w-tabs/index" wuss-class="w-cell" isLink />
     </w-cell-group>
 
 
     <w-pane desc="操作反馈" wuss-class="w-pane" />
     <w-cell-group>
-      <w-cell title="ActivityIndicator 活动指示器" link="../w-activity-indicator/index" wuss-class="w-cell" />
-      <w-cell title="Toast 提示" link="../w-toast/index" wuss-class="w-cell" />
+      <w-cell label="ActionSheet 操作菜单" link="../w-action-sheet/index" wuss-class="w-cell" isLink />
+      <w-cell label="Toast 提示" link="../w-toast/index" wuss-class="w-cell" isLink />
+      <w-cell label="Alert 弹出框" link="../w-alert/index" wuss-class="w-cell" isLink />
+      <w-cell label="Notice 通告" link="../w-notice/index" wuss-class="w-cell" isLink />
+      <w-cell label="ActivityIndicator 活动指示器" link="../w-activity-indicator/index" wuss-class="w-cell" isLink />
     </w-cell-group>
 
 
-    <w-pane desc="表单"  wx:if="{{ false }}" wuss-class="w-pane" />
-    <w-cell-group wx:if="{{ false }}" >
+    <w-pane desc="表单" wuss-class="w-pane" />
+    <w-cell-group >
+      <w-cell label="Input 输入框" link="../w-input/index" wuss-class="w-cell" isLink />
+      <w-cell label="Switch 开关" link="../w-switch/index" wuss-class="w-cell" isLink />
     </w-cell-group>
     
 
     <w-pane desc="其他" wuss-class="w-pane" />
     <w-cell-group>
-      <w-cell title="Calendar 日历预定选择器" link="../w-calendar/index" wuss-class="w-cell" />
-      <w-cell title="QRCode 二维码生成" link="../w-qr-code/index" wuss-class="w-cell" />
-      <w-cell title="SwiperOut 侧滑菜单" link="../w-swiper-out/index" wuss-class="w-cell" />
+      <w-cell label="Calendar 日历预定选择器" link="../w-calendar/index" wuss-class="w-cell" isLink />
+      <w-cell label="QRCode 二维码生成" link="../w-qr-code/index" wuss-class="w-cell" isLink />
+      <w-cell label="SwiperOut 侧滑菜单" link="../w-swiper-out/index" wuss-class="w-cell" isLink />
     </w-cell-group>
 
   </view>

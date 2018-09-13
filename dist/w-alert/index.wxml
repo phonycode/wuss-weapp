@@ -1,0 +1,24 @@
+<w-dialog
+  visible="{{ _visible }}"
+  maskClose="{{ maskClose }}"
+  wuss-class="w-dialog"
+>
+	<view
+	 class="wuss-class wuss-alert"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+  >
+    <view class="wuss-alert-hd">
+      <view class="wuss-alert-title">{{ title }}</view>
+    </view>
+    <view class="wuss-alert-bd">
+      <view class="wuss-alert-content">{{ content }}</view>
+    </view>
+    <view class="wuss-alert-ft">
+      <view class="wuss-alert-button-group">
+        <view style="color: {{ buttonColor }};" catchtap="_handleClick" class="wuss-alert-button" hover-class="wuss-alert-button-hover">确定</view>
+      </view>
+    </view>
+  </view>
+</w-dialog>
+

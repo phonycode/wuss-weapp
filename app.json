@@ -14,7 +14,11 @@
     "pages/w-icon/index",
     "pages/w-swiper-out/index",
     "pages/w-steps/index",
-    "pages/w-badge/index"
+    "pages/w-notice/index",
+    "pages/w-countdown/index",
+    "pages/w-input/index",
+    "pages/w-action-sheet/index",
+    "pages/w-switch/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

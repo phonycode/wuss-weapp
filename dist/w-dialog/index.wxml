@@ -1,0 +1,16 @@
+<w-mask-shadow
+ maskCancel="{{ maskClose }}"
+ visible="{{ _maskShadow }}"
+ bind:close="handleClose"
+/>
+
+<view
+ class="wuss-class wuss-dialog {{ _animate_visible ? 'wuss-dialog-show' : 'wuss-dialog-hide'}}"
+ hover-class="none"
+ hover-stop-propagation="false"
+ style="width: {{ width }};{{ height ? 'height: ' + height + ';' : '' }};"
+ animation="{{ _animation }}"
+>
+	<slot/>
+</view>
+

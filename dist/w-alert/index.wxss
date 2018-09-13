@@ -1,0 +1,57 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-09-10 16:04:05 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-12 09:22:46
+ */
+.w-dialog >view {
+  
+}
+
+.w-dialog {
+  background-color: transparent;
+  text-align: center;
+}
+
+.wuss-alert {
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+.wuss-alert .wuss-alert-hd {
+  padding: 15px 30px 5px;
+}
+
+.wuss-alert .wuss-alert-title {
+  font-size: 18px;
+  color: #333333;
+  text-align: center;
+}
+
+.wuss-alert .wuss-alert-bd {
+  padding: 5px 30px 20px;
+}
+
+.wuss-alert .wuss-alert-content {
+  font-size: 15px;
+  color: #999999;
+  text-align: center;
+}
+
+.wuss-alert .wuss-alert-ft {
+  border-top: 1rpx solid #eeeeee;
+}
+
+.wuss-alert .wuss-alert-button-group {}
+
+.wuss-alert .wuss-alert-button {
+  min-height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.wuss-alert-button-hover {
+  background-color: #eeeeee;
+}

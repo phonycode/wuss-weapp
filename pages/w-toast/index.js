@@ -1,4 +1,10 @@
-import Toast from '../../dist/w-toast/toast.js';
+/*
+ * @Author: cnyballk[https://github.com/cnyballk] 
+ * @Date: 2018-09-5 17:55:32 
+ * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
+ * @Last Modified time: 2018-09-10 17:55:32 
+ */
+import { Toast } from '../../dist/common/index';
 Page({
   top() {
     Toast.show({

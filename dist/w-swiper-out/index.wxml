@@ -16,22 +16,29 @@
 	 bindchange="handleChange"
 	 bindtouchend="handleTouchEnd"
 	 bindtouchstart="handleTouchStart"
-  >
-    <view class="wuss-swiper-out-left" hover-class="none" hover-stop-propagation="false">
-      <slot />
-    </view>
-		<view class="wuss-swiper-out-right wuss-swiper-out-btns" style="width:{{ _slideWidth }}px;height: {{ height }}px;">
+	>
+		<view
+		 class="wuss-swiper-out-left"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		 catchtap="handleLeftClick"
+		>
+			<slot/>
+		</view>
+		<view class="wuss-swiper-out-right wuss-swiper-out-btns" style="width:{{ _slideWidth }}px;height: {{ height - 3 }}px;left: {{ _width }}px;">
 			<view
-       class="wuss-swiper-out-btn {{ item.disabled ? 'wuss-weiper-out-btn-disabled' : '' }}"
-       style="background-color: {{ item.background }};color: {{ item.color }};font-size: {{ item.size }};"
+			 class="wuss-swiper-out-btn {{ item.disabled ? 'wuss-weiper-out-btn-disabled' : '' }}"
+			 style="background-color: {{ item.background }};color: {{ item.color }};font-size: {{ item.size }};"
 			 hover-class="none"
-       hover-stop-propagation="false"
-       wx:for="{{ swiperOutBtns }}"
-       wx:key="index"
-       data-key="{{ index }}"
-       catchtap="handleBtnClick"
+			 hover-stop-propagation="false"
+			 wx:for="{{ swiperOutBtns }}"
+			 wx:key="index"
+			 data-key="{{ index }}"
+			 catchtap="handleBtnClick"
 			>
-				{{ item.text }}
+				{{
+				item.text
+				}}
 			</view>
 		</view>
 	</movable-view>

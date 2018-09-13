@@ -2,25 +2,14 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:23 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-07 17:14:21
+ * @Last Modified time: 2018-09-12 11:13:12
  */
-import Behavior from '../base/behavior/index';
+import Behavior from '../common/behavior/index';
 const SYSTEM_INFO = wx.getSystemInfoSync();
 Component({
-  /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class'],
-
-  /**
-   * 组件间关系定义
-   */
-  relations: {},
-
-  /**
-   * 组件选项
-   */
   options: {
+    addGlobalClass: true,
   },
 
   /**
@@ -54,7 +43,7 @@ Component({
     },
     height: {
       type: Number,
-      value: 44,
+      value: 48,
     },
     threshold: {
       type: Number,
@@ -153,6 +142,18 @@ Component({
       this.triggerEvent(item.type);
       autoClose ? this.close() : '';
     },
+    /**
+     * left内容区被点击
+     */
+    handleLeftClick() {
+      const { autoClose, _scrollX, _slideWidth } = this.data;
+      if(_scrollX === -_slideWidth) { // 展开状态
+        autoClose ? this.close() : '';
+      } else {
+        this.triggerEvent('click');
+        console.log('click')
+      }
+    },
     open() {
       const { _slideWidth } = this.data;
       this.setData({
@@ -177,7 +178,7 @@ Component({
    */
   ready: function () {
     const { threshold, buttonWidth, swiperOutBtns, close } = this.data;
-    let _slideWidth = swiperOutBtns.length * (buttonWidth ? buttonWidth : (SYSTEM_INFO.windowWidth*0.6)/swiperOutBtns.length);
+    let _slideWidth = swiperOutBtns.length * (buttonWidth ? buttonWidth : (SYSTEM_INFO.windowWidth*0.45)/swiperOutBtns.length);
     this.setData({
       _slideWidth,
       _threshold: _slideWidth * threshold,

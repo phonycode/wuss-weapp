@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-06 14:53:10
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-13 18:42:57
  */
 .wuss-cell {
   position: relative;
@@ -13,7 +13,7 @@
 }
 
 .wuss-cell::before {
-  content: " ";
+  content: ' ';
   position: absolute;
   left: 0;
   top: 0;
@@ -23,8 +23,8 @@
   color: #d9d9d9;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  -webkit-transform: scaleY(.5);
-  transform: scaleY(.5);
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
   left: 15px;
 }
 
@@ -34,16 +34,31 @@
 
 .wuss-cell-first-cell::before {
   display: none;
+  background-color: red;
 }
 
-.wuss-cell-content {
+.wuss-cell-hd {
   display: flex;
   flex: 1;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding: 10px 15px;
+  padding: 0 15px;
+  min-height: 44px;
+}
+.wuss-cell-ft {
+  font-size: 13px;
+  color: #999999;
+}
+
+.wuss-cell-hd-desc-padding {
+  padding-top: 5px;
+  min-height: initial;
+}
+
+.wuss-cell-ft .wuss-cell-desc {
+  padding: 0 15px 5px;
 }
 
 .wuss-cell-left {
@@ -58,8 +73,8 @@
   padding-right: 5px;
 }
 
-.wuss-cell-title {
-  font-size: 14px;
+.wuss-cell-label {
+  font-size: 15px;
   font-weight: normal;
 }
 
@@ -71,9 +86,11 @@
   padding-right: 15px;
 }
 
-.wuss-cell-desc {
+.wuss-cell-right-content {
   color: #999999;
-  font-size: 12px;
+  flex: 1;
+  text-align: right;
+  font-size: 15px;
   white-space: wrap;
   word-break: break-all;
 }
@@ -83,4 +100,29 @@
   right: 10px;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+.wuss-cell-label-disabled,
+.wuss-cell-right-content-disabled {
+  color: #b2b2b2;
+}
+
+.wuss-cell-label-span-1 {
+  width: 60px;
+}
+
+.wuss-cell-label-span-2 {
+  width: 80px;
+}
+
+.wuss-cell-label-span-3 {
+  width: 100px;
+}
+
+.wuss-cell-label-span-4 {
+  width: 120px;
+}
+
+.wuss-cell-label-span-5 {
+  width: 150px;
 }

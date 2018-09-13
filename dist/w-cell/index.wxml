@@ -1,30 +1,37 @@
 <view
- class="wuss-class wuss-cell {{ firstCell ? 'wuss-cell-first-cell' : '' }}"
- hover-class="wuss-cell-hover"
+ class="wuss-cell {{ firstCell ? 'wuss-cell-first-cell' : '' }}"
+ hover-class="{{ !disabled && highlight ? 'wuss-cell-hover' : '' }}"
  hover-stop-propagation="false"
 >
-	<view class="wuss-cell-content" catchtap="linkTo">
-		<view class="wuss-cell-left">
-			<w-icon
-			 wx:if="{{ icon }}"
-			 type="{{ icon }}"
-			 size="{{ iconSize }}"
-			 color="{{ iconColor }}"
-			/>
-			<view class="wuss-cell-title">
-				{{ title }}
-				<slot name="title" />
+	<view class="wuss-class wuss-cell-content" catchtap="linkTo">
+		<view class="wuss-class-hd wuss-cell-hd {{ desc ? 'wuss-cell-hd-desc-padding' : '' }}">
+			<view class="wuss-cell-left">
+				<w-icon
+				 wx:if="{{ icon }}"
+				 type="{{ icon }}"
+				 size="{{ iconSize }}"
+				 color="{{ iconColor }}"
+				/>
+				<view class="wuss-cell-label {{ labelSpan ? 'wuss-cell-label-span-' + labelSpan : '' }} {{ disabled ? 'wuss-cell-label-disabled' : '' }}">
+					{{ label
+					}}
+					<slot wx:if="{{ !label }}" name="label" />
+				</view>
 			</view>
-		</view>
-		<view class="wuss-cell-right" style="{{ !link ? 'padding-right: 0;' : ''}}">
-			<slot />
-			<view class="wuss-cell-desc">
-				{{ desc }}
-				<slot name="desc" />
+			<view class="wuss-cell-right" style="{{ !isLink ? 'padding-right: 0;' : ''}}">
+				<slot/>
+				<view class="wuss-class-content wuss-cell-right-content {{ disabled ? 'wuss-cell-right-content-disabled' : '' }}">
+					{{ content
+					}}
+					<slot wx:if="{{ !content }}" name="content" />
+				</view>
 			</view>
+    </view>
+		<view class="wuss-class-ft wuss-cell-ft" wx:if="{{ desc }}">
+			<view class="wuss-cell-desc" >{{ desc }}</view>
 		</view>
 	</view>
-	<view class="wuss-cell-link" wx:if="{{ link }}">
+	<view class="wuss-cell-link" wx:if="{{ isLink }}">
 		<w-icon
 		 type="arrow-right"
 		 color="#c8c8cd"

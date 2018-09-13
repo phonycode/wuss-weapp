@@ -1,0 +1,3 @@
+<!-- components/countdown/countdown.wxml -->
+<text class="wuss-class wuss-countdown" >{{timeText}}</text>
+

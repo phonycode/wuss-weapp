@@ -1,23 +1,11 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-31 15:30:11 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-04 11:59:32
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-10 11:13:16
  */
 Component({
-   /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class'], 
-  
-  /**
-   * 组件间关系定义
-   */
-   relations: {},
-   
-  /**
-   * 组件选项
-   */
    options: {
     multipleSlots: true,
    },
