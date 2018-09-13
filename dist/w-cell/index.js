@@ -2,13 +2,13 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-12 09:59:08
+ * @Last Modified time: 2018-09-13 15:37:38
  */
 Component({
   /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class'],
+  externalClasses: ['wuss-class','wuss-class-hd','wuss-class-content','wuss-class-ft'],
 
   /**
    * 组件间关系定义
@@ -28,21 +28,28 @@ Component({
 
   /**
    * 组件的属性列表
-   * @param {string} title  标题
+   * @param {string} label  标题
+   * @param {string} labelSpan  标题宽度可选值1-5
    * @param {string} content 内容
    * @param {string} desc   附加描述
-   * @param {string} link   跳转的url，当存在值时显示右边箭头
+   * @param {string} isLink 是否是链接 开启后显示右边箭头
+   * @param {string} link   isLink为true时,link为跳转的url
    * @param {string} icon   标题图标
    * @param {string} iconSize  图标大小
    * @param {string} iconColor   图标颜色
    * @param {number} delta   当linkType值为 navigateBack 时有效，表示返回页面层数
    * @param {string} linkType  跳转类型，类型有 [navigateTo/redirectTo/switchTab/reLaunch/navigateBack]
    * @param {boolean} disabled  禁用cell
+   * @param {boolean} highlight  开启hover class
    */
   properties: {
-    title: {
+    label: {
       type: String,
-      valie: '',
+      value: '',
+    },
+    labelSpan: {
+      type: Number,
+      value: '',
     },
     content: {
       type: String,
@@ -51,6 +58,10 @@ Component({
     desc: {
       type: String,
       valie: '',
+    },
+    isLink: {
+      type: Boolean,
+      value: false,
     },
     link: {
       type: String,
@@ -80,6 +91,10 @@ Component({
       type: Boolean,
       value: false,
     },
+    highlight: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   /**
@@ -104,8 +119,9 @@ Component({
      */
     linkTo() {
       const {
-        linkType,
+        isLink,
         link,
+        linkType,
         delta,
         disabled,
       } = this.data;
@@ -117,7 +133,7 @@ Component({
       ];
       if(disabled) return false;
       this.triggerEvent('click', {}, {});
-      if(!link)return false;
+      if(!isLink || !link)return false;
       if (!linkType) throw Error('linkType 不能为空');
       if (navigateMethods.indexOf(linkType) > -1) {
         if (!link) throw Error('link 不能为空');

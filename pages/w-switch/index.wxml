@@ -1,0 +1,73 @@
+<w-pane label="Switch" desc="开关" />
+
+<w-cell-group>
+	<w-cell label="Default">
+		<w-switch open="{{ open }}" bind:onChange="handleChange" />
+	</w-cell>
+
+	<w-cell label="Size = small">
+		<w-switch
+		 open="{{ open }}"
+		 size="small"
+		 bind:onChange="handleChange"
+		/>
+	</w-cell>
+
+	<w-cell label="Size = default">
+		<w-switch
+		 open="{{ open }}"
+		 size="default"
+		 bind:onChange="handleChange"
+		/>
+	</w-cell>
+
+	<w-cell label="Size = larger">
+		<w-switch
+		 open="{{ open }}"
+		 size="larger"
+		 bind:onChange="handleChange"
+		/>
+	</w-cell>
+
+	<w-cell label="Color = 1c75f3" labelSpan="5">
+		<w-switch
+		 open="{{ open }}"
+		 color="#1c75f3"
+		 bind:onChange="handleChange"
+		/>
+	</w-cell>
+
+	<w-cell label="Color = 28a2f3" labelSpan="5">
+		<w-switch
+		 open="{{ open }}"
+		 color="#28a2f3"
+		 bind:onChange="handleChange"
+		/>
+	</w-cell>
+
+	<w-cell label="Color = ff8800" labelSpan="5">
+		<w-switch
+		 open="{{ open }}"
+		 color="#ff8800"
+		 bind:onChange="handleChange"
+		/>
+	</w-cell>
+
+	<w-cell label="Color = e42112" labelSpan="5">
+		<w-switch
+		 open="{{ open }}"
+		 color="#e42112"
+		 bind:onChange="handleChange"
+		/>
+	</w-cell>
+
+	<w-cell label="Disabled">
+		<w-switch
+		 disabled
+		 open
+		 color="#1c75f3"
+		/>
+	</w-cell>
+
+</w-cell-group>
+
