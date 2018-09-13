@@ -18,7 +18,8 @@
     "pages/w-countdown/index",
     "pages/w-input/index",
     "pages/w-action-sheet/index",
-    "pages/w-switch/index"
+    "pages/w-switch/index",
+    "pages/w-badge/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
