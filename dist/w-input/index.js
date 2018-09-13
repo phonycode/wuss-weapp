@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-13 12:25:58
+ * @Last Modified time: 2018-09-13 17:00:11
  */
 Component({
   /**
@@ -92,12 +92,18 @@ Component({
       type: Number,
       value: 5,
     },
+    extra: {
+      type: String,
+      value: '',
+    },
   },
 
   /**
    * 组件的初始数据
    */
-  data: {},
+  data: {
+    _value: '',
+  },
   ready() {},
   /**
    * 组件方法列表
@@ -105,10 +111,12 @@ Component({
   methods: {
     formatValue(value) {
       const { type } = this.data;
-      value = value.replace(/\s/g, '').slice(0, 11);
+      value = value.replace(/\s/g, '');
       switch (type) {
         case 'phone':
           value = value.replace(/(\d{0,3})(\d{0,4})(\d{0,4})/g, '$1 $2 $3');
+        case 'bankCard':
+          value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
         default:
           break;
       }
@@ -119,9 +127,15 @@ Component({
     },
     ///////////input的监听函数
     handlerChange(e) {
-      this._trigger('change', e);
-
-      return this.formatValue(e.detail.value);
+      const v = this.formatValue(e.detail.value);
+      this._trigger('change', {
+        ...e,
+        detail: { ...e.detail, value: v },
+      });
+      this.setData({
+        _value: v,
+      });
+      return v;
     },
     handlerFocus(e) {
       this._trigger('focus', e);
@@ -131,6 +145,9 @@ Component({
     },
     handlerBlur(e) {
       this._trigger('blur', e);
+    },
+    handerExtraClick(e) {
+      this._trigger('extraClick', e);
     },
   },
 });

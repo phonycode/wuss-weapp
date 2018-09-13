@@ -1,15 +1,17 @@
-<!--dist/w-input/index.wxml-->
+<!-- dist/w-input/index.wxml -->
 <view class="wuss-class wuss-input">
 	<view class="wuss-input_label label--{{ labelNumber }}">
+		<w-icon type="{{leftIcon}}" />
 		<slot/>
 	</view>
 	<view class="wuss-input_input-wrap">
 		<input
 		 class="wuss-input_input"
-		 type="{{ type }}"
+		 type="{{ type === 'phone' ? 'number' : type }}"
 		 style="text-align:{{ moneyKeyboardAlign }}"
 		 disabled="{{ disabled	 }}"
-		 maxlength="{{ maxlength }}"
+		 value="{{ _value }}"
+		 maxlength="{{ type === 'phone' ? 13 : maxlength }}"
 		 focus="{{ focus }}"
 		 confirm-type="{{ confirm-type }}"
 		 confirm-hold="{{ confirm-hold }}"
@@ -26,7 +28,12 @@
 		 bindconfirm="handlerConfirm"
 		 bindblur="handlerBlur"
 		/>
+		<w-icon/>
+		<text
+		 wx:if="{{ extra }}"
+		 class="wuss-extra"
+		 catch:tap="handerExtraClick"
+		>{{extra}}</text>
 	</view>
-
 </view>
 

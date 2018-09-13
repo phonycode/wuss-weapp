@@ -1,10 +1,16 @@
 <!--pages/w-input/index.wxml-->
-<w-pane title="Input" desc="输入框" />
-
+<w-pane title="Input" desc="输入框"/>
+<w-pane  desc="Format" />
+<w-input extra="￥" bindextraClick="extraClick" placeholder="00">
+	金额
+</w-input>
+<w-pane  desc="Format" />
 <w-input type="phone" bindblur="iBlur" placeholder="请输入你的手机号">
 	手机号
 </w-input>
-
+<w-input type="bankCard" placeholder="请输入银行卡号">
+	银行卡
+</w-input>
 <w-input type="password" placeholder="请输入你的密码">
 	密码
 </w-input>

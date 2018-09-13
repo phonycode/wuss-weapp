@@ -21,14 +21,13 @@
 			<view class="wuss-cell-right" style="{{ !link ? 'padding-right: 0;' : ''}}">
 				<slot/>
 				<view class="wuss-cell-right-content {{ disabled ? 'wuss-cell-right-content-disabled' : '' }}">
-					{{ content
-					}}
+					{{content}}
 					<slot wx:if="{{ !title }}" name="content" />
 				</view>
 			</view>
 		</view>
 		<view class="wuss-cell-ft" wx:if="{{ desc }}">
-			<view class="wuss-cell-desc" >{{ desc }}</view>
+			<view class="wuss-cell-desc">{{ desc }}</view>
 		</view>
 	</view>
 	<view class="wuss-cell-link" wx:if="{{ link }}">
