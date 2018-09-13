@@ -3,6 +3,7 @@
   "usingComponents": {
     "w-popup": "../w-popup/index",
     "w-activity-indicator": "../w-activity-indicator/index",
+    "w-mask-shadow": "../w-mask-shadow/index",
     "w-icon": "../w-icon/index"
   }
 }
