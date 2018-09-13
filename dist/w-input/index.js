@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-13 17:00:11
+ * @Last Modified time: 2018-09-13 18:19:30
  */
 Component({
   /**
@@ -88,13 +88,17 @@ Component({
       type: String,
       value: 'right',
     },
-    labelNumber: {
+    labelSpan: {
       type: Number,
-      value: 5,
+      value: 2,
     },
     extra: {
       type: String,
       value: '',
+    },
+    clear: {
+      type: Boolean,
+      value: false,
     },
   },
 
@@ -148,6 +152,12 @@ Component({
     },
     handerExtraClick(e) {
       this._trigger('extraClick', e);
+    },
+    handerClearClick(e) {
+      this._trigger('clearClick', e);
+      this.setData({
+        _value: '',
+      });
     },
   },
 });

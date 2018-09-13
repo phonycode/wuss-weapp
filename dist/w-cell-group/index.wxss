@@ -1,5 +1,5 @@
 /* dist/w-cell-group/index.wxss */
-.wuss-cell-group{
+.wuss-cell-group {
   background: #ffffff;
   position: relative;
 }
@@ -19,8 +19,8 @@
   border-top: 1px solid #d9d9d9;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  -webkit-transform: scaleY(.5);
-  transform: scaleY(.5);
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
 }
 
 .wuss-cell-group::after {
@@ -38,10 +38,13 @@
   border-top: 1px solid #d9d9d9;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  -webkit-transform: scaleY(.5);
-  transform: scaleY(.5);
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
 }
 
-.wuss-cell-group-before-none::before {
+/* .wuss-cell-group-before-none::before {
   display: none;
+} */
+.wuss-cell-group .wuss-cell {
+  background-color: green;
 }

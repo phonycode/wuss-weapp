@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -88,6 +88,12 @@
 					"id": -1,
 					"name": "w-alert",
 					"pathName": "pages/w-alert/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-input",
+					"pathName": "pages/w-input/index",
 					"query": ""
 				}
 			]

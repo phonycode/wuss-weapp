@@ -97,7 +97,7 @@
 	>
 		<view
 		 class=""
-		 slot="title"
+		 slot="label" 
 		 hover-class="none"
 		 hover-stop-propagation="false"
 		>

@@ -1,37 +1,66 @@
 <!--pages/w-input/index.wxml-->
-<w-pane title="Input" desc="输入框"/>
-<w-pane  desc="Format" />
-<w-input extra="￥" bindextraClick="extraClick" placeholder="00">
-	金额
-</w-input>
-<w-pane  desc="Format" />
-<w-input type="phone" bindblur="iBlur" placeholder="请输入你的手机号">
-	手机号
-</w-input>
-<w-input type="bankCard" placeholder="请输入银行卡号">
-	银行卡
-</w-input>
-<w-input type="password" placeholder="请输入你的密码">
-	密码
-</w-input>
-<w-pane  desc="受控" />
-<w-input  bindchange="iChange" placeholder="随意输入">
+<w-pane title="Input" desc="输入框" />
+<w-pane desc="extra" />
+<w-cell-group>
+	<w-input
+	 extra="￥"
+	 bindextraClick="extraClick"
+	 placeholder="00"
+	>
+		金额
+	</w-input>
+
+</w-cell-group>
+
+<w-pane desc="Format" />
+<w-cell-group>
+	<w-input
+	 type="phone"
+	 bindblur="iBlur"
+	 placeholder="请输入你的手机号"
+	>
+		手机号
+	</w-input>
+	<w-input type="bankCard" placeholder="请输入银行卡号">
+		银行卡
+	</w-input>
+	<w-input type="password" placeholder="请输入你的密码">
+		密码
+	</w-input>
+</w-cell-group>
+<w-pane desc="受控" />
+<w-cell-group>
+<w-input bindchange="iChange" placeholder="随意输入">
 	标题
 </w-input>
-<w-pane  desc="disabled" />
-<w-input disabled placeholder="我被禁用了">
-	禁用
+</w-cell-group>
+<w-pane desc="clear清空" />
+<w-cell-group>
+<w-input
+ bindchange="iChange"
+ placeholder="随意输入"
+ clear
+>
+	标题
 </w-input>
-<w-pane  desc="focus" />
-<w-input type="text" focus="{{ focus }}" bindfocus="iFocus" placeholder="click button below to foucus">
+</w-cell-group>
+<w-pane desc="disabled" />
+<w-cell-group>
+<w-input disabled placeholder="我被禁用了">
+	标题
+</w-input>
+</w-cell-group>
+<w-pane desc="focus" />
+<w-cell-group>
+<w-input
+ type="text"
+ focus="{{ focus }}"
+ bindfocus="iFocus"
+ placeholder="click button below to foucus"
+>
 	标题
 </w-input>
 
 <w-button type="info" bind:click="handleFocus">click to Focus</w-button>
 
-
-
-<w-pane  desc="label = 5" />
-<w-input placeholder="标题过长超出了label的宽度">
-	标题过长超出了
-</w-input>
+</w-cell-group>

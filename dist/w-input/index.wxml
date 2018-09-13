@@ -1,5 +1,50 @@
 <!-- dist/w-input/index.wxml -->
-<view class="wuss-class wuss-input">
+<w-cell icon="leftIcon" labelSpan="{{ labelSpan }}">
+	<view class="wuss-input_label {{disabled ? 'input_label-disabled':''}}" slot="label">
+		<slot/>
+	</view>
+	<view class="wuss-input_input-wrap" slot="content">
+		<input
+		 class="wuss-input_input"
+		 type="{{ type === 'phone' ? 'number' : type }}"
+		 style="text-align:{{ moneyKeyboardAlign }}"
+		 disabled="{{ disabled	 }}"
+		 value="{{ _value }}"
+		 maxlength="{{ type === 'phone' ? 13 : maxlength }}"
+		 focus="{{ focus }}"
+		 confirm-type="{{ confirm-type }}"
+		 confirm-hold="{{ confirm-hold }}"
+		 cursor="{{ cursor }}"
+		 cursor-spacing="{{ cursor-spacing }}"
+		 placeholder="{{ placeholder }}"
+		 placeholder-style="{{ placeholder-style }}"
+		 placeholder-class="{{ placeholder-class}}"
+		 selection-start="{{ selection-start }}"
+		 selection-end="{{ selection-end }}"
+		 adjust-position="{{ adjust-position }}"
+		 bindinput="handlerChange"
+		 bindfocus="handlerFocus"
+		 bindconfirm="handlerConfirm"
+		 bindblur="handlerBlur"
+		/>
+		<w-icon
+		 wx:if="{{ clear }}"
+		 class="wuss-clear {{ _value.length > 0 ? 'wuss-clear-show' : ''}}"
+		 type="close"
+		 bindtap="handerClearClick"
+		 size="20"
+		/>
+		<view
+		 wx:if="{{ extra }}"
+		 class="wuss-extra"
+		 catch:tap="handerExtraClick"
+		>
+			{{extra}}
+		</view>
+	</view>
+
+</w-cell>
+<!-- <view class="wuss-class wuss-input">
 	<view class="wuss-input_label label--{{ labelNumber }}">
 		<w-icon type="{{leftIcon}}" />
 		<slot/>
@@ -35,5 +80,5 @@
 		 catch:tap="handerExtraClick"
 		>{{extra}}</text>
 	</view>
-</view>
+</view> -->
 
