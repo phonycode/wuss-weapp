@@ -2,11 +2,20 @@
   display:inline-block;
   min-width: 14px;
   height:14px;
-  line-height:15px;
+  line-height:5px;
   color:#fff;
   text-align:center;
   font-size:10px;
   border-radius:18px;
   padding:0 2px;
   background:rgb(40, 162, 243);
+}
+
+.wuss-badge-round{
+  width:6px;
+  height:6px ;
+  padding: 0 ;
+  min-width:auto;
+  line-height:auto;
+  background:pink ;
 }

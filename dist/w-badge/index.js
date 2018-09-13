@@ -2,7 +2,7 @@
  * @Author: Github.Juzhiqiang 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-09-13 22:20:07
+ * @Last Modified time: 2018-09-13 22:42:57
  */
 
 Component({
@@ -31,7 +31,7 @@ Component({
    * @param {string} styles 按钮的自定义样式
    * @param {string} color 自定义按钮颜色
    * @param {string} bgColor 自定义背景颜色
-   * @param {string} badgeType 是否开启超值点点点
+   * @param {string} max 最大值
    * 
    */
   properties: {
@@ -71,9 +71,13 @@ Component({
       type: Boolean,
       value: false,
     },
-    badgeType : {
-      type: Boolean,
-      value: true,
+    max :{
+      type : [Number,String],
+      value : 99
+    },
+    value: {
+      type: [Number, String],
+      value: 0
     }
   },
 
@@ -115,7 +119,20 @@ Component({
   /**
    * 在组件实例进入页面节点树时执行
    */
-  attached: function () { },
+  attached: function () { 
+    console.log(this)
+    let host = this;
+    let data = host.data;
+    let max = parseInt(data.max, 10);
+    let value = parseInt(data.value, 10);
+
+    // 超出 max 范围显示 max+
+    if (value && max && value > max) {
+      host.setData({
+        value: '...'
+      })
+    }
+  },
 
   /**
    * 在组件实例被移动到节点树另一个位置时执行

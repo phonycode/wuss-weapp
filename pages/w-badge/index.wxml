@@ -2,9 +2,14 @@
 
 <view bindtap="a">
 
-	<w-pane desc="显示数量徽章(数量超出99化...)" />
+	<w-pane desc="显示数量徽章" />
 	<view class="wuss-class-round">
-		<w-badge catchtap="topR" badgeType="excess">99</w-badge>
+		<w-badge catchtap="topR" value="99" ></w-badge>
+	</view>
+
+	<w-pane desc="显示数量徽章 max 属性设置最大值" />
+	<view class="wuss-class-round">
+		<w-badge catchtap="topR" max="99" value="100" ></w-badge>
 	</view>
 
 	<w-pane desc="icon数量徽章" />
@@ -14,11 +19,18 @@
 			size="36px"
 			color="#333333"
 		/>
-		<w-badge catchtap="topR" type="info" icon="android">2</w-badge>
+		<w-badge catchtap="topR" type="info" icon="android" value="3" ></w-badge>
 	</view>
 
-	<w-button type="warn">
-	</w-button>
+	<w-pane desc="徽章 自定义类型" />
+	<view class="wuss-class-round">
+		<w-badge catchtap="topR" styles="line-height:15px;">hot</w-badge>
+	</view>
+
+	<w-pane desc="徽章 圆点型" />
+	<view class="wuss-class-round">
+		<w-badge catchtap="topR" styles="background:red;" type="round"></w-badge>
+	</view>
 
 </view>
 

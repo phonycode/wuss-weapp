@@ -27,3 +27,9 @@
   right:0 ;
   top:4px ;
 }
+
+.wuss-badge-round{
+  right:-2px;
+  top:2px;
+  
+}
