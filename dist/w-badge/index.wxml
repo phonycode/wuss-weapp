@@ -1,0 +1,10 @@
+<text
+  size="default" 
+  type="{{ badgeType }}" 
+  class="wuss-class wuss-badge-warp wuss-badge-{{ type }}"
+  style="{{ badgeStyles }}"
+  hover-stop-propagation="true"
+  open-type="{{ openType }}"
+>
+  <slot/>
+</text>

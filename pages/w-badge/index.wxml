@@ -1,0 +1,24 @@
+<w-pane title="Badge" desc="徽章" />
+
+<view bindtap="a">
+
+	<w-pane desc="显示数量徽章(数量超出99化...)" />
+	<view class="wuss-class-round">
+		<w-badge catchtap="topR" badgeType="excess">99</w-badge>
+	</view>
+
+	<w-pane desc="icon数量徽章" />
+	<view class="wuss-class-icon">
+		<w-icon
+			type="home"
+			size="36px"
+			color="#333333"
+		/>
+		<w-badge catchtap="topR" type="info" icon="android">2</w-badge>
+	</view>
+
+	<w-button type="warn">
+	</w-button>
+
+</view>
+
