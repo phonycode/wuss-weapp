@@ -1,0 +1,35 @@
+<w-cell-group>
+	<w-cell
+	 wuss-class-left="{{ direction === 'left' ? 'w-cell-left' : '' }}"
+	 wuss-class-right="{{ direction === 'right' ? 'w-cell-right' : '' }}"
+	 direction="{{ direction === 'left' ? 'flex-start' : 'flex-end' }}"
+	 label="{{ direction === 'right' ? item.label : '' }}"
+	 bind:click="_handleChecked"
+	 wx:for="{{ items }}"
+	 wx:key="index"
+	 data-key="{{ index }}"
+	>
+		<view
+		 slot="content"
+		 class="wuss-class wuss-checkbox {{ item.disabled ? 'wuss-checkbox-disabled' : '' }}"
+		 style="justify-content: {{ direction === 'left' ? 'flex-start' : 'flex-end' }};"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			<w-icon
+			 wx:if="{{ item.checked }}"
+			 type="success"
+			 color="{{ color }}"
+			/>
+			<w-icon
+			 wx:if="{{ !item.checked }}"
+			 type="circle-1"
+			 color="#d9d9d9"
+			/>
+			<view class="wuss-checkbox-title" wx:if="{{ direction === 'left' }}">
+				{{ item.label }}
+			</view>
+		</view>
+	</w-cell>
+</w-cell-group>
+

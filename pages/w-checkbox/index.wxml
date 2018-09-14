@@ -1,0 +1,4 @@
+<w-pane title="Checkbox" desc="复选框" />
+
+
+<w-checkbox items="{{ items }}" bind:onChange="handleChange" />
