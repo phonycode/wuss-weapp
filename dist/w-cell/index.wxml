@@ -5,7 +5,7 @@
 >
 	<view class="wuss-class wuss-cell-content" catchtap="linkTo">
 		<view class="wuss-class-hd wuss-cell-hd {{ desc ? 'wuss-cell-hd-desc-padding' : '' }}">
-			<view class="wuss-cell-left">
+			<view class="wuss-cell-left wuss-class-left">
 				<w-icon
 				 wx:if="{{ icon }}"
 				 type="{{ icon }}"

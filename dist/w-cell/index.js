@@ -11,6 +11,7 @@ Component({
     'wuss-class-hd',
     'wuss-class-content',
     'wuss-class-ft',
+    'wuss-class-left',
   ],
   relations: {
     '../w-cell-group/index': {

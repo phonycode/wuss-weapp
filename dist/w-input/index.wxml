@@ -1,18 +1,52 @@
 <!-- dist/w-input/index.wxml -->
 <w-cell
  icon="leftIcon"
+ class="wuss-class"
+ wuss-class-hd="{{type==='textarea'?'wuss-class-hd':''}}"
  wuss-class-cell="{{ firstCell ? 'wuss-cell-first-cell' : '' }}"
  labelSpan="{{ labelSpan }}"
+ wuss-class-left="{{label===''?'wuss-class-left-empty':''}}"
 >
-	<view class="wuss-input_label {{disabled ? 'input_label-disabled':''}}" slot="label">
-		<slot/>
+	<view  
+		class="wuss-class-label wuss-input_label {{ disabled && !readOnly ? 'input_label-disabled':''}}" 
+		slot="label"
+	>
+		{{label}}
 	</view>
-	<view class="wuss-input_input-wrap" slot="content">
+
+	<view class="wuss-class-input-wrap wuss-input_input-wrap {{ disabled && !readOnly ? 'input_input-disabled':''}} {{ type==='textarea' ? 'input-wrap--textarea' : ''}}" slot="content">
+		<textarea
+		 class="wuss-class-input wuss-input_input"
+		 type="text"
+		 fixed="{{ fixed }}"
+		 style="text-align:left"
+		 disabled="{{ disabled	 }}"
+		 value="{{ _value }}"
+		 maxlength="{{ count? count : maxlength }}"
+		 focus="{{ focus }}"
+		 autoHeight="{{ autoHeight }}"
+		 cursor="{{ cursor }}"
+		 cursor-spacing="{{ cursor-spacing }}"
+		 placeholder="{{ placeholder }}"
+		 placeholder-style="{{ placeholder-style }}"
+		 placeholder-class="{{ placeholder-class}}"
+		 selection-start="{{ selection-start }}"
+		 selection-end="{{ selection-end }}"
+		 adjust-position="{{ adjust-position }}"
+		 bindinput="handlerChange"
+		 bindfocus="handlerFocus"
+		 bindlinechange="handerLineChange"
+		 bindconfirm="handlerConfirm"
+		 bindblur="handlerBlur"
+		 wx:if="{{ type==='textarea' }}"
+		/>
+		<view class="wuss-textarea-count" wx:if="{{  type==='textarea' && count > 0 }}"><text>{{_value.length}}</text>/{{count}}</view>
 		<input
+	 	 wx:else
 		 class="wuss-input_input"
 		 type="{{ type === 'phone' ? 'number' : type }}"
 		 style="text-align:{{ moneyKeyboardAlign }}"
-		 disabled="{{ disabled	 }}"
+		 disabled="{{ readOnly || disabled	 }}"
 		 value="{{ _value }}"
 		 maxlength="{{ type === 'phone' ? 13 : maxlength }}"
 		 focus="{{ focus }}"
@@ -32,8 +66,8 @@
 		 bindblur="handlerBlur"
 		/>
 		<w-icon
-		 wx:if="{{ clear }}"
-		 class="wuss-clear {{ _value.length > 0 ? 'wuss-clear-show' : ''}}"
+		 wx:if="{{ clear&&!disabled }}"
+		 class="wuss-clear {{ _value.length > 0 ? 'wuss-clear-show' : ''}} "
 		 type="close"
 		 bindtap="handerClearClick"
 		 size="20"

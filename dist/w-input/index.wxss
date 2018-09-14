@@ -2,14 +2,10 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:38 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-14 10:42:50
+ * @Last Modified time: 2018-09-14 16:52:39
  */
 
 .wuss-input {
-  display: flex;
-  align-self: stretch;
-  padding-right: 30rpx;
-  overflow: hidden;
   align-items: center;
 }
 .wuss-input_label {
@@ -21,11 +17,16 @@
   white-space: nowrap;
   overflow: hidden;
   padding: 4rpx 0;
+  display: none;
 }
 .wuss-cell-first-cell::before {
   display: none;
   /* background-color: red; */
 }
+.wuss-class-left-empty {
+  display: none !important;
+}
+.input_input-disabled,
 .input_label-disabled {
   color: #888;
 }
@@ -52,9 +53,12 @@
   flex: 1;
   display: flex;
   align-items: center;
+  position: relative;
 }
-
-.wuss-input_input-wrap input {
+.input-wrap--textarea {
+  align-items: flex-start;
+}
+.wuss-input_input-wrap .wuss-input_input {
   color: #000;
   font-size: 34rpx;
   appearance: none;
@@ -82,6 +86,28 @@
   overflow: hidden;
   font-style: normal;
 }
+
 .wuss-clear-show {
   display: block;
+}
+
+.wuss-textarea-count {
+  position: absolute;
+  bottom: 12rpx;
+  right: 10rpx;
+  color: #bbb;
+  font-size: 28rpx;
+}
+.wuss-textarea-count > text {
+  color: #000;
+}
+
+.wuss-input_label {
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
+}
+view.wuss-class-hd {
+  padding-top: 20rpx;
+  align-items: flex-start;
 }
