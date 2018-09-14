@@ -50,6 +50,8 @@
     <w-cell-group >
       <w-cell label="Input 输入框" link="../w-input/index" wuss-class="w-cell" isLink />
       <w-cell label="Switch 开关" link="../w-switch/index" wuss-class="w-cell" isLink />
+      <w-cell label="Radio 单选框" link="../w-radio/index" wuss-class="w-cell" isLink />
+      <w-cell label="Checkbox 复选框" link="../w-checkbox/index" wuss-class="w-cell" isLink />
     </w-cell-group>
     
 

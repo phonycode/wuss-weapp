@@ -1,4 +1,11 @@
 <w-pane title="Checkbox" desc="复选框" />
 
+<w-pane desc="Default" />
+<w-checkbox items="{{ items1 }}" bind:onChange="handleChange" />
+<view >{{ items1Str }}</view>
 
-<w-checkbox items="{{ items }}" bind:onChange="handleChange" />
+<w-pane desc="Disabled" />
+<w-checkbox items="{{ items2 }}" bind:onChange="handleChange" />
+
+<w-pane desc="Directon" />
+<w-checkbox direction="right" items="{{ items1 }}" bind:onChange="handleChange" />
