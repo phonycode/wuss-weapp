@@ -1,14 +1,16 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-14 10:49:02
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-14 14:54:13
  */
 Component({
   externalClasses: [
     'wuss-class',
     'wuss-class-cell',
     'wuss-class-hd',
+    'wuss-class-left',
+    'wuss-class-right',
     'wuss-class-content',
     'wuss-class-ft',
     'wuss-class-left',
@@ -38,6 +40,7 @@ Component({
    * @param {string} linkType  跳转类型，类型有 [navigateTo/redirectTo/switchTab/reLaunch/navigateBack]
    * @param {boolean} disabled  禁用cell
    * @param {boolean} highlight  开启hover class
+   * @param {string} direction  内容区的显示方向
    */
   properties: {
     label: {
@@ -91,6 +94,10 @@ Component({
     highlight: {
       type: Boolean,
       value: false,
+    },
+    direction: {
+      type: String,
+      value: 'flex-end',
     },
   },
   methods: {

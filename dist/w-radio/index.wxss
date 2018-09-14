@@ -1,0 +1,64 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-09-14 09:42:50 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-14 11:00:16
+ */
+.wuss-radio {
+  position: relative;
+  border: 1rpx solid #d9d9d9;
+  border-radius: 50%;
+  transition: .25s;
+}
+
+.wuss-radio .wuss-radio-checked {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  font-size: 0;
+  letter-spacing: 0;
+  transition: all .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translate(-50%,-50%) scale(0);
+  opacity: 0;
+}
+
+.wuss-radio.wuss-radio-active .wuss-radio-checked {
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.wuss-radio.wuss-radio-disabled {
+  opacity: .6!important;
+}
+
+.wuss-radio.wuss-radio-size-small {
+  width: 12px;
+  height: 12px;
+}
+
+.wuss-radio.wuss-radio-size-small .wuss-radio-checked {
+  width: 6px;
+  height: 6px;
+}
+
+.wuss-radio.wuss-radio-size-default {
+  width: 16px;
+  height: 16px;
+}
+
+.wuss-radio.wuss-radio-size-default .wuss-radio-checked {
+  width: 8px;
+  height: 8px;
+}
+
+
+.wuss-radio.wuss-radio-size-larger {
+  width: 24px;
+  height: 24px;
+}
+
+.wuss-radio.wuss-radio-size-larger .wuss-radio-checked {
+  width: 12px;
+  height: 12px;
+}

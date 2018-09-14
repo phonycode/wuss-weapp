@@ -18,17 +18,17 @@
 					<slot wx:if="{{ !label }}" name="label" />
 				</view>
 			</view>
-			<view class="wuss-cell-right" style="{{ !isLink ? 'padding-right: 0;' : ''}}">
+			<view class="wuss-class-right wuss-cell-right" style="{{ !isLink ? 'padding-right: 0;' : ''}}">
 				<slot/>
-				<view class="wuss-class-content wuss-cell-right-content {{ disabled ? 'wuss-cell-right-content-disabled' : '' }}">
+				<view class="wuss-class-content wuss-cell-right-content {{ disabled ? 'wuss-cell-right-content-disabled' : '' }}" style="justify-content: {{ direction }};">
 					{{ content
 					}}
 					<slot wx:if="{{ !content }}" name="content" />
 				</view>
 			</view>
-    </view>
+		</view>
 		<view class="wuss-class-ft wuss-cell-ft" wx:if="{{ desc }}">
-			<view class="wuss-cell-desc" >{{ desc }}</view>
+			<view class="wuss-cell-desc">{{ desc }}</view>
 		</view>
 	</view>
 	<view class="wuss-cell-link" wx:if="{{ isLink }}">

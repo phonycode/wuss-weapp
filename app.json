@@ -19,7 +19,9 @@
     "pages/w-input/index",
     "pages/w-action-sheet/index",
     "pages/w-switch/index",
-    "pages/w-badge/index"
+    "pages/w-badge/index",
+    "pages/w-checkbox/index",
+    "pages/w-radio/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

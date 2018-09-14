@@ -1,0 +1,53 @@
+<w-pane title="Radio" desc="单选框" />
+
+<w-cell-group>
+	<w-cell
+	 label="Default"
+	 labelSpan="5"
+	 wuss-class-content="w-cell"
+	 direction="flex-end"
+	>
+		<w-radio slot="content" checked="{{ checked }}" bindonChange="handleChange" />
+  </w-cell>
+  <w-cell
+	 label="DefaultChecked"
+	 labelSpan="5"
+	 wuss-class-content="w-cell"
+	 direction="flex-end"
+	>
+		<w-radio slot="content" defaultChecked checked="{{ checked }}" bindonChange="handleChange" />
+  </w-cell>
+  <w-cell
+	 label="Color = #ff8800"
+	 labelSpan="5"
+	 wuss-class-content="w-cell"
+	 direction="flex-end"
+	>
+		<w-radio slot="content" color="#ff8800" checked="{{ checked }}" bindonChange="handleChange" />
+  </w-cell>
+  <w-cell
+	 label="Disabled"
+	 labelSpan="5"
+	 wuss-class-content="w-cell"
+	 direction="flex-end"
+	>
+		<w-radio slot="content" defaultChecked disabled />
+  </w-cell>
+  <w-cell
+	 label="Size"
+	 labelSpan="5"
+	 wuss-class-content="w-cell"
+	 direction="flex-end"
+	>
+		<w-radio slot="content" size="small" checked="{{ checked }}" bindonChange="handleChange" />
+  </w-cell>
+  <w-cell
+	 label="Size"
+	 labelSpan="5"
+	 wuss-class-content="w-cell"
+	 direction="flex-end"
+	>
+		<w-radio slot="content" size="larger" checked="{{ checked }}" bindonChange="handleChange" />
+	</w-cell>
+</w-cell-group>
+

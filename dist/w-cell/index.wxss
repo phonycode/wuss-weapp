@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-14 10:37:16
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-14 11:15:32
  */
 .wuss-cell {
   position: relative;
@@ -87,7 +87,9 @@
 
 .wuss-cell-right-content {
   color: #999999;
+  display: flex;
   flex: 1;
+  align-items: center;
   text-align: right;
   font-size: 15px;
   white-space: wrap;

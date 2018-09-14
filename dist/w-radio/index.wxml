@@ -1,0 +1,10 @@
+<view
+ class="wuss-class wuss-radio {{ _checked ? 'wuss-radio-active' : '' }} {{ disabled ? 'wuss-radio-disabled' : '' }} wuss-radio-size-{{ size }}"
+ style="{{ _checked ? 'border: 1rpx solid ' + color + ';' : '' }}"
+ hover-class="none"
+ hover-stop-propagation="false"
+ catchtap="_handleChecked"
+>
+	<view class="wuss-radio-checked" style="{{ _checked ? 'background-color: ' + color + ';' : '' }}" />
+</view>
+
