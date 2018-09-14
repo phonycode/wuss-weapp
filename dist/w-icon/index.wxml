@@ -1,4 +1,4 @@
 <view 
-  class="wuss-class wuss-icon wuss-icon-{{ type }}" 
+  class="wuss-class wuss-font wuss-icon-{{ type }}" 
   style="{{ iconStyles }}"
 />
