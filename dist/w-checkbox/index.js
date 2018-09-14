@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-14 16:15:57
+ * @Last Modified time: 2018-09-14 17:26:34
  */
 import Behavior from '../common/behavior/index';
 
@@ -80,11 +80,7 @@ Component({
         [`items[${key}].checked`]: !item.checked,
       }, () => {
         this.triggerEvent('onChange', {
-          checked: this.data.items.filter(i => (typeof i.checked === 'boolean' && i.checked === true)).map(i => {
-            delete i.checked;
-            console.log(i)
-            return i;
-          }),
+          checked: this.data.items.filter(i => (typeof i.checked === 'boolean' && i.checked === true)),
         }, {});
       })
     },
