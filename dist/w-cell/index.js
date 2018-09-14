@@ -2,11 +2,12 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-13 18:41:45
+ * @Last Modified time: 2018-09-14 10:49:02
  */
 Component({
   externalClasses: [
     'wuss-class',
+    'wuss-class-cell',
     'wuss-class-hd',
     'wuss-class-content',
     'wuss-class-ft',
@@ -93,14 +94,6 @@ Component({
   },
   methods: {
     /**
-     * 更新第一个cell是否有虚线
-     */
-    updateFistCell() {
-      this.setData({
-        firstCell: true,
-      });
-    },
-    /**
      * cell点击跳转事件
      */
     linkTo() {
@@ -131,24 +124,4 @@ Component({
       }
     },
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  created: function() {},
-
-  /**
-   * 组件布局完成后执行
-   */
-  ready: function() {},
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  attached: function() {},
-
-  /**
-   * 在组件实例被移动到节点树另一个位置时执行
-   */
-  moved: function() {},
 });

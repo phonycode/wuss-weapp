@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-13 18:19:30
+ * @Last Modified time: 2018-09-14 10:29:07
  */
 Component({
   /**
@@ -13,7 +13,11 @@ Component({
   /**
    * 组件间关系定义
    */
-  relations: {},
+  relations: {
+    '../w-cell-group/index': {
+      type: 'ancestor',
+    },
+  },
 
   /**
    * 组件选项
@@ -109,6 +113,7 @@ Component({
     _value: '',
   },
   ready() {},
+
   /**
    * 组件方法列表
    */

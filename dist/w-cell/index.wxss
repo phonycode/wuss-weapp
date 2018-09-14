@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-13 18:42:57
+ * @Last Modified time: 2018-09-14 10:37:16
  */
 .wuss-cell {
   position: relative;
@@ -34,7 +34,6 @@
 
 .wuss-cell-first-cell::before {
   display: none;
-  background-color: red;
 }
 
 .wuss-cell-hd {

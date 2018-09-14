@@ -1,5 +1,9 @@
 <!-- dist/w-input/index.wxml -->
-<w-cell icon="leftIcon" labelSpan="{{ labelSpan }}">
+<w-cell
+ icon="leftIcon"
+ wuss-class-cell="{{ firstCell ? 'wuss-cell-first-cell' : '' }}"
+ labelSpan="{{ labelSpan }}"
+>
 	<view class="wuss-input_label {{disabled ? 'input_label-disabled':''}}" slot="label">
 		<slot/>
 	</view>

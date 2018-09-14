@@ -41,10 +41,3 @@
   -webkit-transform: scaleY(0.5);
   transform: scaleY(0.5);
 }
-
-/* .wuss-cell-group-before-none::before {
-  display: none;
-} */
-.wuss-cell-group .wuss-cell {
-  background-color: green;
-}

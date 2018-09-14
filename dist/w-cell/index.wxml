@@ -1,5 +1,5 @@
 <view
- class="wuss-cell {{ firstCell ? 'wuss-cell-first-cell' : '' }}"
+ class="wuss-cell wuss-class-cell {{ firstCell ? 'wuss-cell-first-cell' : '' }}"
  hover-class="{{ !disabled && highlight ? 'wuss-cell-hover' : '' }}"
  hover-stop-propagation="false"
 >
