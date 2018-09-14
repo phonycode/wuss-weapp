@@ -96,18 +96,12 @@
 	 link="/message"
 	>
 		<view
-		 class=""
-		 slot="label" 
-		 hover-class="none"
-		 hover-stop-propagation="false"
+		 slot="label"
 		>
 			我的消息
 		</view>
 		<view
-		 class=""
 		 slot="content"
-		 hover-class="none"
-		 hover-stop-propagation="false"
 		>
 			内容
 		</view>
