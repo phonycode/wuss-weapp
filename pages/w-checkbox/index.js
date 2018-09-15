@@ -14,7 +14,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    items: [
+    items1Str: '',
+    items1: [
       {
         label: '复选框1',
         ...MOCK_DATA,
@@ -27,24 +28,19 @@ Page({
         label: '复选框3',
         ...MOCK_DATA,
       },
+    ],
+    items2: [
       {
-        label: '复选框4',
+        label: '复选框1',
         ...MOCK_DATA,
       },
       {
-        label: '复选框5',
+        label: '复选框2',
         ...MOCK_DATA,
+        disabled: true,
       },
       {
-        label: '复选框6',
-        ...MOCK_DATA,
-      },
-      {
-        label: '复选框7',
-        ...MOCK_DATA,
-      },
-      {
-        label: '复选框8',
+        label: '复选框3',
         ...MOCK_DATA,
       },
     ],
@@ -57,7 +53,7 @@ Page({
 
   },
   handleChange(e) {
-    console.log(e.detail.checked)
+    this.setData({ items1Str: JSON.stringify(e.detail.checked)})
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
