@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-13 10:24:04 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 16:47:26
+ * @Last Modified time: 2018-09-15 17:19:23
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -12,7 +12,11 @@ Component({
 
   externalClasses: ['wuss-class'],
 
-  relations: {},
+  relations: {
+    '../w-form/index': {
+      type: 'ancestor',
+    },
+  },
 
   options: {
     addGlobalClass: true,
@@ -30,14 +34,9 @@ Component({
       type: String,
       value: 'default',
     },
-    open: {
+    value: {
       type: Boolean,
       value: false,
-      observer(val) {
-        if (typeof val === 'boolean') {
-          val ? this.open() : this.close();
-        }
-      },
     },
     color: {
       type: String,
@@ -48,35 +47,13 @@ Component({
       value: false,
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
-  data: {
-    value: false,
-  },
-
-  /**
-   * 组件方法列表
-   */
   methods: {
     _handleClick() {
-      const value = !this.data.value;
-      if (this.data.disabled) return false;
-      this.setData({
-        value,
-      });
-      this.triggerEvent('onChange', { open: value }, {});
-    },
-    open() {
-      this.setData({
-        value: true,
-      });
-    },
-    close() {
-      this.setData({
-        value: false,
-      });
+      const { disabled, value: _value } = this.data;
+      if (disabled) return false;
+      const value = !_value;
+      this.setData({ value });
+      this.triggerEvent('onChange', { value }, {});
     },
   },
 });

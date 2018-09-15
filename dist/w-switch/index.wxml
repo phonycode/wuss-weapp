@@ -4,7 +4,7 @@
  hover-stop-propagation="false"
  catchtap="_handleClick"
 >
-	<view class="wuss-switch-circle {{ _open ? 'wuss-switch-circle-active' : '' }}" />
-	<view class="wuss-switch-mask {{ _open ? 'wuss-switch-mask-active' : '' }}" style="border: 1rpx solid {{ color }};background-color: {{ color }};" />
+	<view class="wuss-switch-circle {{ value ? 'wuss-switch-circle-active' : '' }}" />
+	<view class="wuss-switch-mask {{ value ? 'wuss-switch-mask-active' : '' }}" style="border: 1rpx solid {{ color }};background-color: {{ color }};" />
 </view>
 
