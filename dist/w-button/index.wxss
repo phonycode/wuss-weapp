@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:45 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-10 17:44:07
+ * @Last Modified time: 2018-09-15 13:57:36
  */
 button.wuss-button.wuss-button-normalize {
   padding: 0;
@@ -13,6 +13,7 @@ button.wuss-button.wuss-button-normalize {
   text-shadow: none;
   font-size: 16px;
   border: 1px solid transparent;
+  min-height: 42px;
 }
 
 button.wuss-button.wuss-button-full {
