@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:43:02 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-14 10:57:50
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-15 16:53:51
  */
 import Behavior from '../common/behavior/index';
 
@@ -40,7 +40,8 @@ Component({
       type: Boolean,
       value: false,
       observer(val) {
-        if(typeof val === 'boolean') {
+        console.log(11111, val);
+        if (typeof val === 'boolean') {
           val ? this.checked() : this.pickup();
         }
       },
@@ -79,11 +80,13 @@ Component({
      */
     _handleChecked() {
       const { _checked, disabled } = this.data;
-      if(disabled) return false;
-      this.setData({ _checked: !_checked })
-      this.triggerEvent('onChange',{ checked: !_checked },{});
+      if (disabled) return false;
+      this.setData({ _checked: !_checked });
+      this.triggerEvent('onChange', { checked: !_checked }, {});
     },
     checked() {
+      console.log(1);
+
       this.setData({ _checked: true });
     },
     pickup() {
@@ -94,12 +97,12 @@ Component({
   /**
    * 在组件实例进入页面节点树时执行
    */
-  created: function () {},
+  created: function() {},
 
   /**
    * 组件布局完成后执行
    */
-  ready: function () {
+  ready: function() {
     const { defaultChecked } = this.data;
     defaultChecked ? this.checked() : this.pickup();
   },
@@ -107,11 +110,10 @@ Component({
   /**
    * 在组件实例进入页面节点树时执行
    */
-  attached: function () {},
+  attached: function() {},
 
   /**
    * 在组件实例被移动到节点树另一个位置时执行
    */
-  moved: function () {},
-
-})
+  moved: function() {},
+});

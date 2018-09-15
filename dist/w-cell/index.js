@@ -2,9 +2,11 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-14 18:16:36
+ * @Last Modified time: 2018-09-15 15:31:40
  */
+import cell from '../common/behavior/cell';
 Component({
+  behaviors: [cell],
   externalClasses: [
     'wuss-class',
     'wuss-class-cell',

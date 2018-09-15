@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:31 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-10 11:12:30
+ * @Last Modified time: 2018-09-15 15:41:31
  */
 const PATH = '../w-tab/index';
 Component({
@@ -14,7 +14,7 @@ Component({
     [PATH]: {
       type: 'descendant',
       linked(target) {
-        const  tabs  = this.data.tabs.concat();
+        const tabs = this.data.tabs.concat();
         tabs.push({
           instance: target,
           data: target.data,
@@ -28,7 +28,7 @@ Component({
       },
 
       unlinked(target) {
-        const { tabs } = this.data;
+        const tabs = this.data.tabs.concat();
         this.setData({
           tabs: tabs.filter(item => item.instance !== target),
           isScroll: tabs.length > this.data.itemThreshold,

@@ -21,7 +21,7 @@
 		 fixed="{{ fixed }}"
 		 style="text-align:left"
 		 disabled="{{ disabled	 }}"
-		 value="{{ _value }}"
+		 value="{{ value }}"
 		 maxlength="{{ count? count : maxlength }}"
 		 focus="{{ focus }}"
 		 autoHeight="{{ autoHeight }}"
@@ -40,14 +40,14 @@
 		 bindblur="handlerBlur"
 		 wx:if="{{ type==='textarea' }}"
 		/>
-		<view class="wuss-textarea-count" wx:if="{{  type==='textarea' && count > 0 }}"><text>{{_value.length}}</text>/{{count}}</view>
+		<view class="wuss-textarea-count" wx:if="{{  type==='textarea' && count > 0 }}"><text>{{value.length}}</text>/{{count}}</view>
 		<input
 	 	 wx:else
 		 class="wuss-input_input"
 		 type="{{ type === 'phone' ? 'number' : type }}"
 		 style="text-align:{{ moneyKeyboardAlign }}"
 		 disabled="{{ readOnly || disabled	 }}"
-		 value="{{ _value }}"
+		 value="{{ value }}"
 		 maxlength="{{ type === 'phone' ? 13 : maxlength }}"
 		 focus="{{ focus }}"
 		 confirm-type="{{ confirm-type }}"
@@ -67,7 +67,7 @@
 		/>
 		<w-icon
 		 wx:if="{{ clear&&!disabled }}"
-		 class="wuss-clear {{ _value.length > 0 ? 'wuss-clear-show' : ''}} "
+		 class="wuss-clear {{ value.length > 0 ? 'wuss-clear-show' : ''}} "
 		 type="close"
 		 bindtap="handerClearClick"
 		 size="20"
@@ -93,7 +93,7 @@
 		 type="{{ type === 'phone' ? 'number' : type }}"
 		 style="text-align:{{ moneyKeyboardAlign }}"
 		 disabled="{{ disabled	 }}"
-		 value="{{ _value }}"
+		 value="{{ value }}"
 		 maxlength="{{ type === 'phone' ? 13 : maxlength }}"
 		 focus="{{ focus }}"
 		 confirm-type="{{ confirm-type }}"

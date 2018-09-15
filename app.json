@@ -21,7 +21,8 @@
     "pages/w-switch/index",
     "pages/w-badge/index",
     "pages/w-checkbox/index",
-    "pages/w-radio/index"
+    "pages/w-radio/index",
+    "pages/w-form/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

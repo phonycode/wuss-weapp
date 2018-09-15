@@ -1,37 +1,24 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-05 09:15:49 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-14 11:17:35
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-15 16:09:52
  */
-const CELL_PATH = '../w-cell/index';
-const INPUT_PATH = '../w-input/index';
-
+import cell from '../common/behavior/cell';
 Component({
   externalClasses: ['wuss-class'],
   relations: {
-    [CELL_PATH]: {
-      type: 'descendant',
+    cell: {
+      type: 'descendant', // 关联的目标节点应为子孙节点
+      target: cell,
       linked() {
-        this._mapLastCell(CELL_PATH);
+        this._setFistCell();
       },
       linkChanged() {
-        this._mapLastCell(CELL_PATH);
+        this._setFistCell();
       },
       unlinked() {
-        this._mapLastCell(CELL_PATH);
-      },
-    },
-    [INPUT_PATH]: {
-      type: 'descendant',
-      linked() {
-        this._mapLastCell(INPUT_PATH);
-      },
-      linkChanged() {
-        this._mapLastCell(INPUT_PATH);
-      },
-      unlinked() {
-        this._mapLastCell(INPUT_PATH);
+        this._setFistCell();
       },
     },
   },
@@ -39,9 +26,9 @@ Component({
     addGlobalClass: true,
   },
   methods: {
-    _mapLastCell(path) {
-      const nodes = this.getRelationNodes(path);
-      nodes.forEach((e, i) => {
+    _setFistCell() {
+      const cellNodes = this.getRelationNodes('cell');
+      cellNodes.forEach((e, i) => {
         e.setData({
           firstCell: i === 0,
         });

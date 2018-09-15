@@ -1,22 +1,20 @@
-// pages/w-radio/index.js
+// pages/w-form/index.js
 Page({
   /**
    * 页面的初始数据
    */
-  data: {
-    checked: true,
+  data: {},
+  wussFormSubmit(e) {
+    console.log('提交了:', e.detail);
   },
-
+  wussFormReset(e) {
+    console.log('重置了:', e.detail);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {},
-  handleChange(e) {
-    const checked = e.detail.checked;
-    console.log(checked);
 
-    this.setData({ checked });
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

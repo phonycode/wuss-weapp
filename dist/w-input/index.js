@@ -2,50 +2,32 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-14 17:01:34
+ * @Last Modified time: 2018-09-15 16:17:55
  */
+import field from '../common/behavior/field';
+import cell from '../common/behavior/cell';
 Component({
-  /**
-   * 继承父组件的class
-   */
+  behaviors: [cell, field],
   externalClasses: [
     'wuss-class',
     'wuss-class-label',
     'wuss-class-input-wrap',
     'wuss-class-input',
   ],
-
-  /**
-   * 组件间关系定义
-   */
   relations: {
     '../w-cell-group/index': {
       type: 'ancestor',
     },
+    '../w-form/index': {
+      type: 'ancestor',
+    },
   },
-
-  /**
-   * 组件选项
-   */
   options: {
     addGlobalClass: true,
   },
-
-  /**
-   * 组件的属性列表
-   */
   properties: {
     ///////自带属性
     value: {
-      type: String,
-      value: '',
-      observer(newValue) {
-        this.setData({
-          _value: newValue,
-        });
-      },
-    },
-    name: {
       type: String,
       value: '',
     },
@@ -149,18 +131,6 @@ Component({
       value: false,
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
-  data: {
-    _value: '',
-  },
-  ready() {},
-
-  /**
-   * 组件方法列表
-   */
   methods: {
     formatValue(value) {
       const { type } = this.data;
@@ -180,15 +150,12 @@ Component({
     },
     ///////////input的监听函数
     handlerChange(e) {
-      const v = this.formatValue(e.detail.value);
+      const value = this.formatValue(e.detail.value);
       this._trigger('change', {
         ...e,
-        detail: { ...e.detail, value: v },
+        detail: { ...e.detail, value },
       });
-      this.setData({
-        _value: v,
-      });
-      return v;
+      this.setData({ value });
     },
     handlerFocus(e) {
       this._trigger('focus', e);
@@ -207,9 +174,7 @@ Component({
     },
     handerClearClick(e) {
       this._trigger('clearClick', e);
-      this.setData({
-        _value: '',
-      });
+      this.setData({ value: '' });
     },
   },
 });

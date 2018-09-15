@@ -1,0 +1,5 @@
+
+<view class="wuss-form">
+	<slot/>
+</view>
+		

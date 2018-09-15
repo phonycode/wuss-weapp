@@ -1,0 +1,42 @@
+<!--pages/w-form/index.wxml-->
+
+<w-pane title="Form" desc="表单" />
+<!-- <form
+ class=""
+ report-submit="false"
+ bindsubmit="a"
+ bindreset=""
+>
+	<input
+	 type="text"
+	 value="11"
+	 name="111"
+	/>
+	<button formType="submit">11</button>
+</form> -->
+<w-form bindsubmit="wussFormSubmit" bindreset="wussFormReset">
+	<w-cell-group>
+		<w-input
+		 type="phone"
+		 name="phone"
+		 placeholder="请输入你的手机号"
+		 label="手机号"
+		/>
+			<w-input
+		 type="password"
+		 name="password"
+		 placeholder="请输入你的密码"
+		 label="密码"
+		/>
+		<w-cell>
+			<w-button
+			 inline
+			 type="info"
+			 formType="submit"
+			>
+				提交
+			</w-button>
+		</w-cell>
+	</w-cell-group>
+</w-form>
+

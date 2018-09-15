@@ -2,14 +2,23 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-10 09:18:11
+ * @Last Modified time: 2018-09-15 15:55:28
  */
 Component({
   externalClasses: ['wuss-class', 'wuss-button-hover-class'],
   options: {
     addGlobalClass: true,
   },
-
+  relations: {
+    '../w-form/index': {
+      type: 'ancestor',
+      linked(target) {
+        this.setData({
+          _formTarget: target,
+        });
+      },
+    },
+  },
   /**
    * 组件的属性列表
    * @param {boolean} disabled 禁用按钮
@@ -38,7 +47,7 @@ Component({
     },
     formType: {
       type: String,
-      value: ''
+      value: '',
     },
     ghost: {
       type: Boolean,
@@ -96,23 +105,23 @@ Component({
   data: {},
   methods: {
     handleClick() {
+      const { _formTarget, formType } = this.data;
+      formType && _formTarget && _formTarget.formTypeClick(formType);
       this.triggerEvent('click', {}, {});
     },
     initStyles() {
-      const {
-        styles,
-        color,
-        bgColor,
-      } = this.data;
+      const { styles, color, bgColor } = this.data;
       let buttonStyles = '';
-      buttonStyles += ` ${styles}` + (color ? `color: ${color}!important;` : '') + (bgColor ? ` background-color: ${bgColor}!important;` : '');
+      buttonStyles +=
+        ` ${styles}` +
+        (color ? `color: ${color}!important;` : '') +
+        (bgColor ? ` background-color: ${bgColor}!important;` : '');
       this.setData({
-        buttonStyles
-      })
+        buttonStyles,
+      });
     },
   },
-  ready: function () {
-    this.initStyles()
+  ready: function() {
+    this.initStyles();
   },
-
-})
+});
