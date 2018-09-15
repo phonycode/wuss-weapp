@@ -1,67 +1,158 @@
 <w-pane title="Button" desc="按钮" />
 
-
 <w-pane desc="ButtonType" />
 
-<w-button type="default" >Default</w-button>
-<w-button type="info" >Info</w-button>
-<w-button type="warn" >Warn</w-button>
-<w-button type="danger" >Danger</w-button>
-<w-button styles="border-color: #b643cd!important;" bgColor="#b643cd" color="#ffffff" >Custom Button</w-button>
-
-
+<w-button type="default">Default</w-button>
+<w-button type="info">Info</w-button>
+<w-button type="warn">Warn</w-button>
+<w-button type="danger">Danger</w-button>
+<w-button
+ styles="border-color: #b643cd!important;"
+ bgColor="#b643cd"
+ color="#ffffff"
+>
+	Custom
+	Button
+</w-button>
 
 <w-pane desc="Disabled" />
 
-<w-button disabled type="default" >Default</w-button>
-<w-button disabled type="info" >Info</w-button>
-<w-button disabled type="warn" >Warn</w-button>
-<w-button disabled type="danger" >Danger</w-button>
-
+<w-button disabled type="default">Default</w-button>
+<w-button disabled type="info">Info</w-button>
+<w-button disabled type="warn">Warn</w-button>
+<w-button disabled type="danger">Danger</w-button>
 
 <w-pane desc="Loading" />
 
-<w-button loading="{{true}}" type="default" >Default</w-button>
-<w-button loading="{{true}}" type="info" >Info</w-button>
-<w-button loading="{{true}}" type="warn" >Warn</w-button>
-<w-button loading="{{true}}" type="danger" >Danger</w-button>
-
+<w-button loading="{{true}}" type="default">Default</w-button>
+<w-button loading="{{true}}" type="info">Info</w-button>
+<w-button loading="{{true}}" type="warn">Warn</w-button>
+<w-button loading="{{true}}" type="danger">Danger</w-button>
 
 <w-pane desc="Ghost" />
 
-<w-button ghost type="default" >Default</w-button>
-<w-button ghost type="info" >Info</w-button>
-<w-button ghost type="warn" >Warn</w-button>
-<w-button ghost type="danger" >Danger</w-button>
+<w-button ghost type="default">Default</w-button>
+<w-button ghost type="info">Info</w-button>
+<w-button ghost type="warn">Warn</w-button>
+<w-button ghost type="danger">Danger</w-button>
 
 <w-pane desc="Dashed" />
 
-<w-button ghost dashed type="default" >Default</w-button>
-<w-button ghost dashed type="info" >Info</w-button>
-<w-button ghost dashed type="warn" >Warn</w-button>
-<w-button ghost dashed type="danger" >Danger</w-button>
-
+<w-button
+ ghost
+ dashed
+ type="default"
+>
+	Default
+</w-button>
+<w-button
+ ghost
+ dashed
+ type="info"
+>
+	Info
+</w-button>
+<w-button
+ ghost
+ dashed
+ type="warn"
+>
+	Warn
+</w-button>
+<w-button
+ ghost
+ dashed
+ type="danger"
+>
+	Danger
+</w-button>
 
 <w-pane desc="Icon" />
 
-<w-button icon="android"  iconSize="18" styles="border-color: #99ddcc!important;" bgColor="#99ddcc" color="#ffffff"  >Android</w-button>
-<w-button icon="edit"  iconSize="18" type="info" >Edit</w-button>
-<w-button icon="refresh" iconColor="#ffffff" iconSize="18" type="warn" >Reload</w-button>
-<w-button icon="apple"  iconSize="18" type="danger" >Apple</w-button>
-
+<w-button
+ icon="android"
+ iconSize="18"
+ styles="border-color: #99ddcc!important;"
+ bgColor="#99ddcc"
+ color="#ffffff"
+>
+	Android
+</w-button>
+<w-button
+ icon="edit"
+ iconSize="18"
+ type="info"
+>
+	Edit
+</w-button>
+<w-button
+ icon="refresh"
+ iconColor="#ffffff"
+ iconSize="18"
+ type="warn"
+>
+	Reload
+</w-button>
+<w-button
+ icon="apple"
+ iconSize="18"
+ type="danger"
+>
+	Apple
+</w-button>
 
 <w-pane desc="Flat" />
 
-<w-button type="warn" >NO Flat</w-button>
-<w-button flat type="info" >Flat</w-button>
-
+<w-button type="warn">NO Flat</w-button>
+<w-button flat type="info">Flat</w-button>
 
 <w-pane desc="Full" />
 
-<w-button type="warn" >NO Full</w-button>
-<w-button full type="info" >Full</w-button>
+<w-button type="warn">NO Full</w-button>
+<w-button full type="info">Full</w-button>
 
 <w-pane desc="Display" />
 
-<w-button type="warn" >Block</w-button>
-<w-button inline type="info" >Inline</w-button>
+<w-button type="warn">Block</w-button>
+<w-button inline type="info">Inline</w-button>
+
+<w-pane desc="In Cell" />
+
+<w-cell-group>
+	<w-cell
+	 direction="flex-start"
+	 is-link
+	 highlight
+	>
+		<w-button
+		 inline
+		 slot="content"
+		 type="warn"
+		>
+			btn1
+		</w-button>
+
+		<w-button
+		 inline
+		 slot="content"
+		 type="warn"
+		>
+			btn2
+		</w-button>
+		<w-button
+		 inline
+		 slot="content"
+		 type="warn"
+		>
+			btn3
+		</w-button>
+		<w-button
+		 inline
+		 slot="content"
+		 type="warn"
+		>
+			btn4
+		</w-button>
+	</w-cell>
+</w-cell-group>
+

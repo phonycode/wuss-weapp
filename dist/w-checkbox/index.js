@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 18:33:47
+ * @Last Modified time: 2018-09-15 18:37:09
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -98,8 +98,6 @@ Component({
     },
     _emptyValue() {
       const { items } = this.data;
-      console.log(items);
-
       items.forEach(e => {
         if (!e.disabled) {
           delete e.checked;
