@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:43:02 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 16:53:51
+ * @Last Modified time: 2018-09-15 16:57:41
  */
 import Behavior from '../common/behavior/index';
 
@@ -40,7 +40,6 @@ Component({
       type: Boolean,
       value: false,
       observer(val) {
-        console.log(11111, val);
         if (typeof val === 'boolean') {
           val ? this.checked() : this.pickup();
         }
@@ -85,35 +84,14 @@ Component({
       this.triggerEvent('onChange', { checked: !_checked }, {});
     },
     checked() {
-      console.log(1);
-
       this.setData({ _checked: true });
     },
     pickup() {
       this.setData({ _checked: false });
     },
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  created: function() {},
-
-  /**
-   * 组件布局完成后执行
-   */
   ready: function() {
     const { defaultChecked } = this.data;
     defaultChecked ? this.checked() : this.pickup();
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  attached: function() {},
-
-  /**
-   * 在组件实例被移动到节点树另一个位置时执行
-   */
-  moved: function() {},
 });
