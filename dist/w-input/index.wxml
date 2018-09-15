@@ -82,41 +82,4 @@
 	</view>
 
 </w-cell>
-<!-- <view class="wuss-class wuss-input">
-	<view class="wuss-input_label label--{{ labelNumber }}">
-		<w-icon type="{{leftIcon}}" />
-		<slot/>
-	</view>
-	<view class="wuss-input_input-wrap">
-		<input
-		 class="wuss-input_input"
-		 type="{{ type === 'phone' ? 'number' : type }}"
-		 style="text-align:{{ moneyKeyboardAlign }}"
-		 disabled="{{ disabled	 }}"
-		 value="{{ value }}"
-		 maxlength="{{ type === 'phone' ? 13 : maxlength }}"
-		 focus="{{ focus }}"
-		 confirm-type="{{ confirm-type }}"
-		 confirm-hold="{{ confirm-hold }}"
-		 cursor="{{ cursor }}"
-		 cursor-spacing="{{ cursor-spacing }}"
-		 placeholder="{{ placeholder }}"
-		 placeholder-style="{{ placeholder-style }}"
-		 placeholder-class="{{ placeholder-class}}"
-		 selection-start="{{ selection-start }}"
-		 selection-end="{{ selection-end }}"
-		 adjust-position="{{ adjust-position }}"
-		 bindinput="handlerChange"
-		 bindfocus="handlerFocus"
-		 bindconfirm="handlerConfirm"
-		 bindblur="handlerBlur"
-		/>
-		<w-icon/>
-		<text
-		 wx:if="{{ extra }}"
-		 class="wuss-extra"
-		 catch:tap="handerExtraClick"
-		>{{extra}}</text>
-	</view>
-</view> -->
 

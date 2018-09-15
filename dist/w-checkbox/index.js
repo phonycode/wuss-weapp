@@ -1,32 +1,27 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-14 17:48:02
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-15 18:33:47
  */
 import Behavior from '../common/behavior/index';
+import field from '../common/behavior/field';
 
+import cell from '../common/behavior/cell';
 Component({
-  /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class'],
-
-  /**
-   * 组件间关系定义
-   */
-  relations: {},
-
-  /**
-   * 组件选项
-   */
-  options: {},
-
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
-
+  behaviors: [cell, field, Behavior],
+  relations: {
+    '../w-cell-group/index': {
+      type: 'ancestor',
+    },
+    '../w-form/index': {
+      type: 'ancestor',
+    },
+  },
+  options: {
+    addGlobalClass: true,
+  },
   /**
    * 组件的属性列表
    * @param {string} color 颜色
@@ -57,57 +52,60 @@ Component({
       value: [],
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
-    _checked: false,
+    value: [],
   },
-
-  /**
-   * 组件方法列表
-   */
+  ready() {
+    const { items } = this.data;
+    this.setData({
+      value: items
+        .filter(i => typeof i.checked === 'boolean' && i.checked)
+        .map(i => {
+          let item = { ...i };
+          delete item.checked;
+          return item;
+        }),
+    });
+  },
   methods: {
     _handleChecked(e) {
-      const {
-        items
-      } = this.data;
+      const { items } = this.data;
       const key = e.currentTarget.dataset.key;
       const item = items[key];
       if (item.disabled) return false;
-      this.setData({
-        [`items[${key}].checked`]: !item.checked,
-      }, () => {
-        this.triggerEvent('onChange', {
-          checked: this.data.items.filter(i => (typeof i.checked === 'boolean' && i.checked)).map(i => {
-            let item = { ...i };
-            delete item.checked;
-            return item;
-          }),
-        }, {});
-      })
+      item.checked = !item.checked;
+      this.setData(
+        {
+          items,
+          value: items
+            .filter(i => typeof i.checked === 'boolean' && i.checked)
+            .map(i => {
+              let item = { ...i };
+              delete item.checked;
+              return item;
+            }),
+        },
+        () => {
+          this.triggerEvent(
+            'onChange',
+            {
+              checked: this.data.value,
+            },
+            {}
+          );
+        }
+      );
+    },
+    _emptyValue() {
+      const { items } = this.data;
+      console.log(items);
+
+      items.forEach(e => {
+        if (!e.disabled) {
+          delete e.checked;
+        }
+      });
+      this.setData({ items, value: [] });
     },
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  created: function () {},
-
-  /**
-   * 组件布局完成后执行
-   */
-  ready: function () {},
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  attached: function () {},
-
-  /**
-   * 在组件实例被移动到节点树另一个位置时执行
-   */
-  moved: function () {},
-
-})
+});

@@ -1,5 +1,5 @@
 
-<view class="wuss-form">
+<view class="wuss-class wuss-form">
 	<slot/>
 </view>
 		

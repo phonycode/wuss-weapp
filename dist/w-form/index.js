@@ -2,10 +2,11 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-15 14:58:27 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 17:12:29
+ * @Last Modified time: 2018-09-15 18:29:15
  */
 import field from '../common/behavior/field';
 Component({
+  externalClasses: ['wuss-class'],
   properties: {},
   options: {
     addGlobalClass: true,
@@ -28,17 +29,17 @@ Component({
       console.log('触发提交按钮');
       const obj = {};
       fields.forEach(e => {
-        const { name, value } = e.data;
-        obj[name] = value;
+        let { name, value, disable } = e.data;
+        if (!disable && !!name) {
+          obj[name] = value;
+        }
       });
       this.triggerEvent('submit', obj);
     },
     reset(fields) {
       console.log('触发重置按钮');
       fields.forEach(e => {
-        e.setData({
-          value: '',
-        });
+        e._resetAllValue();
       });
       this.triggerEvent('reset', {});
     },
