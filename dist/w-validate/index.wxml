@@ -1,0 +1,13 @@
+<!--dist/w-validate/index.wxml-->
+<w-toast id="wuss-toast" />
+<view class="wuss-class wuss-validate {{ showIcon ? 'wuss-validate-showIcon' : '' }}">
+	<slot/>
+	<w-icon
+	 class="validate-icon"
+	 bind:tap="validateToast"
+	 type="info2-o"
+	 size="18"
+	 color="red"
+	/>
+</view>
+

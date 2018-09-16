@@ -8,6 +8,7 @@
     "w-button": "../../dist/w-button/index",
     "w-form": "../../dist/w-form/index",
     "w-switch": "../../dist/w-switch/index",
+    "w-validate": "../../dist/w-validate/index",
     "w-pane": "../../dist/w-pane/index"
   }
 }

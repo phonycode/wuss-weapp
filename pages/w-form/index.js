@@ -1,4 +1,3 @@
-// pages/w-form/index.js
 const MOCK_DATA = {
   productName: 'iphone X max',
   total: 1,

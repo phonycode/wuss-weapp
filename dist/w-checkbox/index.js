@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 18:37:09
+ * @Last Modified time: 2018-09-16 10:03:05
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -50,22 +50,21 @@ Component({
     items: {
       type: Array,
       value: [],
+      observer(items) {
+        this.setData({
+          value: items
+            .filter(i => typeof i.checked === 'boolean' && i.checked)
+            .map(i => {
+              let item = { ...i };
+              delete item.checked;
+              return item;
+            }),
+        });
+      },
     },
   },
   data: {
     value: [],
-  },
-  ready() {
-    const { items } = this.data;
-    this.setData({
-      value: items
-        .filter(i => typeof i.checked === 'boolean' && i.checked)
-        .map(i => {
-          let item = { ...i };
-          delete item.checked;
-          return item;
-        }),
-    });
   },
   methods: {
     _handleChecked(e) {
@@ -74,27 +73,15 @@ Component({
       const item = items[key];
       if (item.disabled) return false;
       item.checked = !item.checked;
-      this.setData(
-        {
-          items,
-          value: items
-            .filter(i => typeof i.checked === 'boolean' && i.checked)
-            .map(i => {
-              let item = { ...i };
-              delete item.checked;
-              return item;
-            }),
-        },
-        () => {
-          this.triggerEvent(
-            'onChange',
-            {
-              checked: this.data.value,
-            },
-            {}
-          );
-        }
-      );
+      this.setData({ items: [...items] }, () => {
+        this.triggerEvent(
+          'onChange',
+          {
+            checked: this.data.value,
+          },
+          {}
+        );
+      });
     },
     _emptyValue() {
       const { items } = this.data;
@@ -103,7 +90,7 @@ Component({
           delete e.checked;
         }
       });
-      this.setData({ items, value: [] });
+      this.setData({ items });
     },
   },
 });

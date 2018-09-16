@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-15 14:58:27 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 18:29:15
+ * @Last Modified time: 2018-09-16 09:57:08
  */
 import field from '../common/behavior/field';
 Component({
@@ -29,8 +29,8 @@ Component({
       console.log('触发提交按钮');
       const obj = {};
       fields.forEach(e => {
-        let { name, value, disable } = e.data;
-        if (!disable && !!name) {
+        let { name, value } = e.data;
+        if (!!name) {
           obj[name] = value;
         }
       });

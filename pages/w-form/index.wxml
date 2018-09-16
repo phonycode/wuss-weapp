@@ -1,15 +1,15 @@
-<!--pages/w-form/index.wxml-->
 <w-pane title="Form" desc="表单" />
 <w-form bindsubmit="wussFormSubmit" bindreset="wussFormReset">
 	<w-cell-group>
-
-		<w-input
-		 type="phone"
-		 name="phone"
-		 placeholder="请输入你的手机号"
-		 label="手机号"
-		/>
-
+		<w-validate>
+			<w-input
+			 type="phone"
+			 name="phone"
+			 clear
+			 placeholder="请输入你的手机号"
+			 label="手机号"
+			/>
+		</w-validate>
 		<w-input
 		 name="userName"
 		 placeholder="请输入你的姓名"
@@ -20,7 +20,7 @@
 			<w-switch name="isVip" slot="content" />
 		</w-cell>
 
-		<w-checkbox name="checkbox" items="{{ items1 }}"/>
+		<w-checkbox name="checkbox" items="{{ items1 }}" />
 
 		<w-cell>
 			<w-button

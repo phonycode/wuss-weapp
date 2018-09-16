@@ -84,7 +84,7 @@
 	 label="标题"
 	/>
 
-	<w-button type="info" bind:click="handleFocus">click to Focus</w-button>
-
 </w-cell-group>
+
+<w-button type="info" bind:click="handleFocus">click to Focus</w-button>
 

@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 18:16:39
+ * @Last Modified time: 2018-09-16 17:43:26
  */
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
@@ -47,11 +47,11 @@ Component({
       type: String,
       value: '',
     },
-    'placeholder-style': {
+    placeholderStyle: {
       type: String,
       value: '',
     },
-    'placeholder-class': {
+    placeholderClass: {
       type: String,
       value: '',
     },
@@ -59,7 +59,7 @@ Component({
       type: Number,
       value: '',
     },
-    'cursor-spacing': {
+    cursorSpacing: {
       type: Number,
       value: 0,
     },
@@ -67,15 +67,15 @@ Component({
       type: Boolean,
       value: false,
     },
-    'selection-start': {
+    selectionStart: {
       type: Number,
       value: -1,
     },
-    'selection-end': {
+    selectionEnd: {
       type: Number,
       value: -1,
     },
-    'adjust-position': {
+    adjustPosition: {
       type: Boolean,
       value: true,
     },
@@ -137,13 +137,13 @@ Component({
       value = value.replace(/\s/g, '');
       switch (type) {
         case 'phone':
-          value = value.replace(/(\d{0,3})(\d{0,4})(\d{0,4})/g, '$1 $2 $3');
+          value = value.replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, '$1 $2 $3');
         case 'bankCard':
           value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
         default:
           break;
       }
-      return value.trim();
+      return value;
     },
     _trigger(name, e) {
       this.triggerEvent(name, e.detail);
@@ -159,12 +159,18 @@ Component({
     },
     handlerFocus(e) {
       this._trigger('focus', e);
+      // this.setData({
+      //   _focus: true,
+      // });
     },
     handlerConfirm(e) {
       this._trigger('confirm', e);
     },
     handlerBlur(e) {
       this._trigger('blur', e);
+      // this.setData({
+      //   _focus: false,
+      // });
     },
     handerExtraClick(e) {
       this._trigger('extraClick', e);
