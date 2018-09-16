@@ -1,0 +1,8 @@
+/* pages/w-tag/index.wxss */
+
+.tag-container {
+  padding: 0 20rpx;
+}
+.a {
+  color: blue;
+}
