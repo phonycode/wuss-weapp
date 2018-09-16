@@ -2,9 +2,8 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-16 21:30:31 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-16 21:32:39
+ * @Last Modified time: 2018-09-16 22:22:35
  */
-// dist/w-tag/index.js
 Component({
   externalClasses: ['wuss-class'],
   options: {
@@ -12,6 +11,10 @@ Component({
   },
   /**
    * 组件的属性列表
+   * @param {boolean} visible 控制是否可见
+   * @param {boolean} closeable 是否可以关闭
+   * @param {string} type 类型
+   * @param {String} tagStyle 标签的样式
    */
   properties: {
     visible: {
@@ -31,10 +34,6 @@ Component({
       value: '',
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     _closeAnimate: true,
   },
@@ -43,10 +42,10 @@ Component({
       _closeAnimate: this.data.visible,
     });
   },
-  /**
-   * 组件的方法列表
-   */
   methods: {
+    handlerClick() {
+      this.triggerEvent('click', {});
+    },
     _closeTag() {
       this.triggerEvent('close', {});
       this.setData(

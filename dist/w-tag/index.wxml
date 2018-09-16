@@ -2,6 +2,7 @@
   class="wuss-class wuss-tag wuss-tag-normal {{ _closeAnimate ? '' : 'wuss-tag-close' }}"
   wx:if="{{ visible }}"
   style="{{ tagStyle }}"
+  bindtap="{{ handlerClick }}"
 >
 	<slot/>
 	<w-icon type="close"  wx:if="{{ closeable }}" bindtap="_closeTag"/>

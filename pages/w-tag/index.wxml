@@ -1,7 +1,7 @@
 <w-pane title="Tag" desc="标签" />
 <view class="tag-container">
 
-<w-tag>VIP</w-tag>
+<w-tag bindclick="tagClick">VIP</w-tag>
 <w-tag closeable bindafterClose="afterClose" bindclose="close">点击关闭</w-tag>
 <w-tag tagStyle="color:#fff;background-color:green;border-color:green;">琚志强：我绿吗</w-tag>
 <w-tag tagStyle="color:pink;border-color:pink;">老蔡:有点绿</w-tag>
