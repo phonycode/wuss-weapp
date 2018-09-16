@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 17:12:04 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-06 14:43:50
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-16 20:34:37
  */
 Component({
   /**
@@ -31,21 +31,21 @@ Component({
       type: String,
       value: 'home',
       observer(val) {
-        this.initIcon()
+        this.initIcon();
       },
     },
     size: {
       type: String,
-      value: '24px',
+      value: '',
       observer(val) {
-        this.initIcon()
+        this.initIcon();
       },
     },
     color: {
       type: String,
       value: '',
       observer(val) {
-        this.initIcon()
+        this.initIcon();
       },
     },
   },
@@ -63,37 +63,39 @@ Component({
   methods: {
     initIcon() {
       let iconStyles = '';
-      const {
-        color,
-        size
-      } = this.data;
-      iconStyles += (color ? `color: ${color};` : '') + ` font-size: ${size.indexOf('px')>-1 || size.indexOf('rpx')>-1 ? size : ( size + 'px')};`;
+      const { color, size } = this.data;
+      iconStyles +=
+        (color ? `color: ${color};` : '') +
+        ` font-size: ${
+          size.indexOf('px') > -1 || size.indexOf('rpx') > -1
+            ? size
+            : size + 'px'
+        };`;
       this.setData({
-        iconStyles
-      })
+        iconStyles,
+      });
     },
   },
 
   /**
    * 在组件实例进入页面节点树时执行
    */
-  created: function () {},
+  created: function() {},
 
   /**
    * 组件布局完成后执行
    */
-  ready: function () {
-    this.initIcon()
+  ready: function() {
+    this.initIcon();
   },
 
   /**
    * 在组件实例进入页面节点树时执行
    */
-  attached: function () {},
+  attached: function() {},
 
   /**
    * 在组件实例被移动到节点树另一个位置时执行
    */
-  moved: function () {},
-
-})
+  moved: function() {},
+});

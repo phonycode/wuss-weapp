@@ -1,0 +1,39 @@
+.wuss-tag {
+  font-size: 28rpx;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 40rpx;
+  height: 44rpx;
+  padding: 0 14rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #d9d9d9;
+  background: #fafafa;
+  font-size: 24rpx;
+  /* transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); */
+  opacity: 1;
+  margin-right: 16rpx;
+  white-space: nowrap;
+  transition: transform 300ms linear 0ms;
+  transform-origin: 0px 100% 0px;
+  transform: scale3d(1, 1, 1);
+  display: inline-block;
+}
+.wuss-tag-close {
+  transform: scale3d(0, 0, 0);
+}
+.wuss-tag-normal {
+  color: #888;
+  border: 1rpx solid #ddd;
+}
+.wuss-tag-active {
+  color: #108ee9;
+  border: 1rx solid #108ee9;
+}
+w-icon {
+  margin-left: 8rpx;
+}
