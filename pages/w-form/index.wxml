@@ -16,6 +16,22 @@
 		 label="姓名"
 		/>
 
+		<w-cell
+		 isLink
+     label="选择地区"
+     content="{{ currentCity }}"
+		 bind:click="handleClick"
+		>
+			<w-picker
+       name="address"
+       title="请选择地区"
+			 visible="{{ picker_visible }}"
+			 dataItems="{{ cityData }}"
+       bind:cancel="handleCancel"
+       bind:onSelect="handleOnSelected"
+			/>
+		</w-cell>
+
 		<w-cell label="开启VIP模式">
 			<w-switch name="isVip" slot="content" />
 		</w-cell>

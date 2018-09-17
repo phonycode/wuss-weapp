@@ -17,8 +17,8 @@
       <w-cell label="Steps 步骤条" link="../w-steps/index" wuss-class="w-cell" isLink />
       <w-cell label="Countdown 倒计时" link="../w-countdown/index" wuss-class="w-cell" isLink />
       <w-cell label="Dialog 消息框" link="../w-dialog/index" wuss-class="w-cell" isLink />
-      <w-cell label="badge 徽章" link="../w-badge/index" wuss-class="w-cell" isLink/>
-      <w-cell label="tag 标签" link="../w-tag/index" wuss-class="w-cell" isLink/>
+      <w-cell label="Badge 徽章" link="../w-badge/index" wuss-class="w-cell" isLink/>
+      <w-cell label="Tag 标签" link="../w-tag/index" wuss-class="w-cell" isLink/>
     </w-cell-group>
 
 
@@ -43,6 +43,7 @@
       <w-cell label="Toast 提示" link="../w-toast/index" wuss-class="w-cell" isLink />
       <w-cell label="Alert 弹出框" link="../w-alert/index" wuss-class="w-cell" isLink />
       <w-cell label="Notice 通告" link="../w-notice/index" wuss-class="w-cell" isLink />
+      <w-cell label="Picker 选择器" link="../w-picker/index" wuss-class="w-cell" isLink />
       <w-cell label="ActivityIndicator 活动指示器" link="../w-activity-indicator/index" wuss-class="w-cell" isLink />
     </w-cell-group>
 

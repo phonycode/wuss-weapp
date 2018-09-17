@@ -9,6 +9,7 @@
     "w-form": "../../dist/w-form/index",
     "w-switch": "../../dist/w-switch/index",
     "w-validate": "../../dist/w-validate/index",
+    "w-picker": "../../dist/w-picker/index",
     "w-pane": "../../dist/w-pane/index"
   }
 }

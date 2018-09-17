@@ -1,0 +1,38 @@
+<w-pane title="Picker" desc="选择器" />
+
+<w-pane desc="Default" />
+<w-picker
+ visible="{{ visible }}"
+ dataItems="{{ items }}"
+ title="请选择数据"
+ bind:onSelect="handleSelect"
+ bind:onChange="handleChange"
+ bind:cancel="handleCancel"
+/>
+
+
+<w-button bindclick="handleClick">{{ visible ? 'on' : 'off'}}</w-button>
+
+<view
+ class=""
+ style="font-size: 24px;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+  实时数据:   
+	{{
+	  sync_string
+	}}
+</view>
+
+<view
+ class=""
+ style="font-size: 24px;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+  onSelect:   
+	{{
+	string
+	}}
+</view>
