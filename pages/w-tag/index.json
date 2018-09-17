@@ -2,6 +2,7 @@
   "navigationBarTitleText": "Tag 标签",
   "usingComponents": {
     "w-tag": "../../dist/w-tag/index",
+    "w-button": "../../dist/w-button/index",
     "w-pane": "../../dist/w-pane/index"
   }
 }

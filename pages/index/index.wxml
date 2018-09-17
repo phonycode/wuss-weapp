@@ -18,6 +18,7 @@
       <w-cell label="Countdown 倒计时" link="../w-countdown/index" wuss-class="w-cell" isLink />
       <w-cell label="Dialog 消息框" link="../w-dialog/index" wuss-class="w-cell" isLink />
       <w-cell label="badge 徽章" link="../w-badge/index" wuss-class="w-cell" isLink/>
+      <w-cell label="tag 标签" link="../w-tag/index" wuss-class="w-cell" isLink/>
     </w-cell-group>
 
 

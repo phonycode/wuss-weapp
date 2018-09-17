@@ -2,8 +2,20 @@
 <view class="tag-container">
 
 <w-tag bindclick="tagClick">VIP</w-tag>
-<w-tag closeable bindafterClose="afterClose" bindclose="close">点击关闭</w-tag>
+<w-tag color="magenta">VIP</w-tag>
+<w-tag color="red">VIP</w-tag>
+<w-tag color="volcano">VIP</w-tag>
+<w-tag color="orange">VIP</w-tag>
+<w-tag color="gold">VIP</w-tag>
+<w-tag color="lime">VIP</w-tag>
+<w-tag color="green">VIP</w-tag>
+<w-tag color="cyan">VIP</w-tag>
+<w-tag color="blue">VIP</w-tag>
+<w-tag color="geekblue">VIP</w-tag>
+<w-tag color="purple">VIP</w-tag>
+<w-tag closeable bindafterClose="afterClose" bindclose="close" visible="{{ visible }}">点击关闭</w-tag>
 <w-tag tagStyle="color:#fff;background-color:green;border-color:green;">琚志强：我绿吗</w-tag>
 <w-tag tagStyle="color:pink;border-color:pink;">老蔡:有点绿</w-tag>
 
+<w-button type="info" bindclick="toggleTag">toggleTag</w-button>
 </view>

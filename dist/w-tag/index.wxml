@@ -1,6 +1,5 @@
 <view 
-  class="wuss-class wuss-tag wuss-tag-normal {{ _closeAnimate ? '' : 'wuss-tag-close' }}"
-  wx:if="{{ visible }}"
+  class="wuss-class wuss-tag wuss-tag-{{ color }} {{ visible ? '' : 'wuss-tag-close' }} "
   style="{{ tagStyle }}"
   bindtap="{{ handlerClick }}"
 >
