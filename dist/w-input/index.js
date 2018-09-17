@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-16 17:43:26
+ * @Last Modified time: 2018-09-17 14:45:15
  */
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
@@ -143,7 +143,7 @@ Component({
         default:
           break;
       }
-      return value;
+      return value.trim();
     },
     _trigger(name, e) {
       this.triggerEvent(name, e.detail);
