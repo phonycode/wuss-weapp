@@ -16,6 +16,7 @@ Component({
      * @param {string} width 内容区的宽度，当type的值为left,right 时生效
      * @param {string} height 内容区的高度, 当type的值为top,bottom 时生效
      * @param {string} padding 内容区的内边距
+     * @param {number} maskIndex 当前组件的z-index值
      */
     visible: {
       type: Boolean,
@@ -35,6 +36,10 @@ Component({
     mask: {
       type: Boolean,
       value: true,
+    },
+    maskIndex: {
+      type: Number,
+      value: 100,
     },
     width: {
       type: String,

@@ -22,7 +22,7 @@
   background-color: #ffffff;
   border-radius: 50%;
   box-shadow: 0 1rpx 2rpx rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  z-index: 101;
   font-size: 0;
   letter-spacing: 0;
   top: 50%;
