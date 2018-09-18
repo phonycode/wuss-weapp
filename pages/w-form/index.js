@@ -21,6 +21,24 @@ Page({
     },
     items1: [
       {
+        options1: [
+          {
+            key: '苹果',
+            value: 'iphone',
+          },
+          {
+            key: '华为',
+            value: 'huawei',
+          },
+          {
+            key: 'oppo音乐手机',
+            value: 'oppo',
+          },
+        ],
+      },
+    ],
+    items1: [
+      {
         label: '复选框1',
         ...MOCK_DATA,
         checked: true,
@@ -260,7 +278,7 @@ Page({
     this.setData({ picker_visible: true });
   },
   handleOnSelected(e) {
-    this.setData({ currentCity: e.detail.text });
+    this.setData({ currentCity: e.detail.value });
   },
   handleCancel() {
     this.setData({ picker_visible: false });

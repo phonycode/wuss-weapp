@@ -1,8 +1,8 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 17:53:43 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-17 11:22:57
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-18 15:09:26
  */
 /**
  * @param {string} type icon类型
@@ -16,7 +16,8 @@ const DEFAULTS_OPTS = {
   duration: 1500,
   mask: true,
   message: '',
-  size: 50,
+  size: 100,
+  color: "#ffffff",
   position: 'default',
 };
 

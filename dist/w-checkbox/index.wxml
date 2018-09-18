@@ -4,7 +4,7 @@
  direction="{{ direction === 'left' ? 'flex-start' : 'flex-end' }}"
  label="{{ direction === 'right' ? item.label : '' }}"
  bind:click="_handleChecked"
- wx:for="{{ items }}"
+ wx:for="{{ options }}"
  wx:key="index"
  data-key="{{ index }}"
 >

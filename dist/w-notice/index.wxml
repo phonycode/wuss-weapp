@@ -8,7 +8,6 @@
 	 wx:if="{{ icon }}"
 	 class="wuss-notice-voice"
    type="{{ icon }}"
-   size="20"
 	/>
 	
 	<view class="wuss-notice__content-wrap">

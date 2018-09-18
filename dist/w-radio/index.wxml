@@ -1,10 +1,27 @@
-<view
- class="wuss-class wuss-radio {{ _checked ? 'wuss-radio-active' : '' }} {{ disabled ? 'wuss-radio-disabled' : '' }} wuss-radio-size-{{ size }}"
- style="{{ _checked ? 'border: 1rpx solid ' + color + ';' : '' }}"
- hover-class="none"
- hover-stop-propagation="false"
- catchtap="_handleChecked"
->
-	<view class="wuss-radio-checked" style="{{ _checked ? 'background-color: ' + color + ';' : '' }}" />
-</view>
+<w-pane wuss-class="w-pane" desc="{{ label }}" wx:if="{{ label }}" />
+<block wx:for="{{ options }}" wx:key="index">
+	<w-cell
+	 label="{{ item.key }}"
+	 disabled="{{ item.disabled }}"
+	 bind:click="_handleChecked"
+   data-index="{{ index }}"
+   data-value="{{ item.value }}"
+	>
+		<view
+		 slot="content"
+		 class="wuss-class wuss-radio"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			<w-icon
+			 wx:if="{{ item.checked }}"
+			 wuss-class="{{ item.disabled ? 'wuss-radio-disabled' : '' }}"
+			 wx:if="{{ item.checked }}"
+			 type="checked"
+			 color="{{ color }}"
+			 size="34"
+			/>
+		</view>
+	</w-cell>
+</block>
 

@@ -14,7 +14,7 @@
 	>
 		<w-icon
 		 type="{{ item.name }}"
-		 size="36px"
+		 size="40"
 		 color="#333333"
     />
     <text class="wuss-icon-text" >{{ item.text }}</text>

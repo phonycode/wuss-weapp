@@ -1,4 +1,3 @@
-<!--dist/w-validate/index.wxml-->
 <w-toast id="wuss-toast" />
 <view class="wuss-class wuss-validate {{ showIcon ? 'wuss-validate-showIcon' : '' }}">
 	<slot/>

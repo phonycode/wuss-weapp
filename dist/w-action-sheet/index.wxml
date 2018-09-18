@@ -34,7 +34,7 @@
 						<w-icon
 						 wx:if="{{ item.icon }}"
 						 type="{{ item.icon }}"
-						 size="{{ item.iconSize}}"
+						 size="{{ item.iconSize }}"
 						 color="{{ item.disabled ? '#b2b2b2b' : item.iconColor}}"
 						/>
 						{{

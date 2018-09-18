@@ -70,7 +70,6 @@
 		 class="wuss-clear {{ value.length > 0 ? 'wuss-clear-show' : ''}} "
 		 type="close"
 		 bindtap="handerClearClick"
-		 size="20"
 		/>
 		<view
 		 wx:if="{{ extra }}"

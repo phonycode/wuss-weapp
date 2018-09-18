@@ -1,4 +1,4 @@
 <view 
   class="wuss-class wuss-font wuss-icon-{{ type }}" 
-  style="display:inline-block;{{ iconStyles }}"
+  style="font-size: {{ size }}rpx;color: {{ color }};display:inline-block;{{ iconStyles }}"
 />

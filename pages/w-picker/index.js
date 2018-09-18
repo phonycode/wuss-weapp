@@ -6,45 +6,46 @@ Page({
    */
   data: {
     visible: false,
-    items: [
+    wModel: 'key4',
+    options: [
       {
-        text: '测试数据1',
+        key: '测试数据1',
         value: 'key1',
       },
       {
-        text: '测试数据2',
+        key: '测试数据2',
         value: 'key2',
       },
       {
-        text: '测试数据3',
+        key: '测试数据3',
         value: 'key3',
       },
       {
-        text: '测试数据4',
+        key: '测试数据4',
         value: 'key4',
       },
       {
-        text: '测试数据5',
+        key: '测试数据5',
         value: 'key5',
       },
       {
-        text: '测试数据6',
+        key: '测试数据6',
         value: 'key6',
       },
       {
-        text: '测试数据7',
+        key: '测试数据7',
         value: 'key7',
       },
       {
-        text: '测试数据8',
+        key: '测试数据8',
         value: 'key8',
       },
       {
-        text: '测试数据9',
+        key: '测试数据9',
         value: 'key9',
       },
       {
-        text: '测试数据10',
+        key: '测试数据10',
         value: 'key10',
       },
     ],
@@ -76,6 +77,10 @@ Page({
     this.setData({
       visible: false
     })
+  },
+  handleChangeModel(e) {
+    const { value } = e.currentTarget.dataset;
+    this.setData({ wModel: value })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

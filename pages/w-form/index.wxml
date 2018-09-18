@@ -27,7 +27,7 @@
        name="address"
        title="请选择地区"
 			 visible="{{ picker_visible }}"
-			 dataItems="{{ cityData }}"
+			 options="{{ cityData }}"
        bind:cancel="handleCancel"
        bind:onSelect="handleOnSelected"
 			/>
@@ -35,9 +35,11 @@
 
 		<w-cell label="开启VIP模式">
 			<w-switch name="isVip" slot="content" />
-		</w-cell>
+    </w-cell>
 
-		<w-checkbox name="checkbox" items="{{ items1 }}" />
+    <w-radio label="请选择手机" name="radio" options="{{ options1 }}" />
+
+		<w-checkbox name="checkbox" options="{{ items1 }}" />
 
 		<w-cell>
 			<w-button

@@ -1,6 +1,6 @@
 <w-popup
  position="bottom"
- visible="{{ visible && dataItems.length >0 }}"
+ visible="{{ visible && options.length >0 }}"
  padding="0"
  maskIndex="1000"
  bind:close="_handleCancel"
@@ -34,7 +34,7 @@
 			 class="wuss-picker-scroll"
        direction="vertical"
        disabled="{{ disabled }}"
-			 damping="100"
+			 damping="50"
 			 y="{{ scrollY }}"
 			 style="width: {{ systemInfo.windowWidth }}px;height: {{ scroll_height }}px;"
 			 bindchange="_handleChange"
@@ -44,11 +44,11 @@
 			>
 				<view
 				 class="wuss-picker-scroll-item"
-				 wx:for="{{ dataItems }}"
+				 wx:for="{{ options }}"
 				 wx:key="index"
 				>
 					{{
-            item.text
+            item.key
 					}}
 				</view>
 			</movable-view>

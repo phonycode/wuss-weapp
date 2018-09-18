@@ -2,21 +2,21 @@
 
 <w-pane desc="Default" />
 <w-cell-group>
-	<w-checkbox items="{{ items1 }}" bind:onChange="handleChange" />
+	<w-checkbox options="{{ items1 }}" bind:onChange="handleChange" />
 </w-cell-group>
 
 <view>{{ items1Str }}</view>
 
 <w-pane desc="Disabled" />
 <w-cell-group>
-	<w-checkbox items="{{ items2 }}" bind:onChange="handleChange" />
+	<w-checkbox options="{{ items2 }}" bind:onChange="handleChange" />
 </w-cell-group>
 
 <w-pane desc="Directon" />
 <w-cell-group>
 	<w-checkbox
 	 direction="right"
-	 items="{{ items1 }}"
+	 options="{{ items1 }}"
 	 bind:onChange="handleChange"
 	/>
 </w-cell-group>

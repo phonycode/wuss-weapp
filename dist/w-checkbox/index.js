@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-16 10:03:05
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-18 15:28:13
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -28,7 +28,7 @@ Component({
    * @param {string} disabled 禁用
    * @param {string} title 标题
    * @param {string} direction 方向，可选值有[left/right]
-   * @param {string} [items] 传入的数组对象，参数有 label,checked,disabled
+   * @param {string} [options] 传入的数组对象，参数有 label,checked,disabled
    */
   properties: {
     color: {
@@ -47,12 +47,12 @@ Component({
       type: String,
       value: 'left',
     },
-    items: {
+    options: {
       type: Array,
       value: [],
-      observer(items) {
+      observer(options) {
         this.setData({
-          value: items
+          value: options
             .filter(i => typeof i.checked === 'boolean' && i.checked)
             .map(i => {
               let item = { ...i };
@@ -68,12 +68,12 @@ Component({
   },
   methods: {
     _handleChecked(e) {
-      const { items } = this.data;
+      const { options } = this.data;
       const key = e.currentTarget.dataset.key;
-      const item = items[key];
+      const item = options[key];
       if (item.disabled) return false;
       item.checked = !item.checked;
-      this.setData({ items: [...items] }, () => {
+      this.setData({ options: [...options] }, () => {
         this.triggerEvent(
           'onChange',
           {
@@ -84,13 +84,13 @@ Component({
       });
     },
     _emptyValue() {
-      const { items } = this.data;
-      items.forEach(e => {
+      const { options } = this.data;
+      options.forEach(e => {
         if (!e.disabled) {
           delete e.checked;
         }
       });
-      this.setData({ items });
+      this.setData({ options });
     },
   },
 });

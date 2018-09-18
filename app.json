@@ -21,6 +21,7 @@
     "pages/w-switch/index",
     "pages/w-badge/index",
     "pages/w-checkbox/index",
+    "pages/w-dialog/index",
     "pages/w-radio/index",
     "pages/w-form/index",
     "pages/w-picker/index",
