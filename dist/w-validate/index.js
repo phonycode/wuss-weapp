@@ -1,34 +1,47 @@
-import wussValidate from '../common/wuss-validate';
-const defaultRules = {
-  phone: {
-    required: {
-      value: true,
-      message: '手机号必填',
-    },
-    regexp: {
-      value: /^\d{11}$/,
-      message: '手机号码格式不正确',
-    },
-  },
-};
+import WussValidate from '../common/wuss-validate';
+import field from '../common/behavior/field';
 Component({
   properties: {
     rules: {
       type: Object,
-      value: defaultRules,
+      value: {},
+      observer() {
+        this.isValidate(this.data.value);
+      },
+    },
+  },
+  relations: {
+    field: {
+      type: 'descendant',
+      target: field,
     },
   },
   data: {
-    showIcon: true,
+    showIcon: false,
   },
   methods: {
-    isValidate() {
-      return wussValidate(this.data.rules);
+    isValidate(value) {
+      this.setData({ value });
+
+      const wussValidate = new WussValidate(this.data.rules);
+
+      const result = wussValidate.isValidate(value);
+
+      if (result.length && result[0]) {
+        this.setData({
+          message: result[0],
+          showIcon: true,
+        });
+      } else {
+        this.setData({
+          message: '',
+          showIcon: false,
+        });
+      }
     },
     validateToast() {
-      this.selectComponent('#wuss-toast').show({
-        message: this.isValidate(),
-      });
+      const { message } = this.data;
+      this.selectComponent('#wuss-toast').show({ message });
     },
   },
 });
