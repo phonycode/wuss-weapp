@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 16,
 			"list": [
 				{
 					"id": -1,
@@ -92,9 +92,50 @@
 				},
 				{
 					"id": -1,
+					"name": "w-swiper-out",
+					"pathName": "pages/w-swiper-out/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-action-sheet",
+					"pathName": "pages/w-action-sheet/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-switch",
+					"pathName": "pages/w-switch/index",
+					"query": ""
+				},
+				{
+					"id": -1,
 					"name": "w-input",
 					"pathName": "pages/w-input/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-radio",
+					"pathName": "pages/w-radio/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-checkbox",
+					"pathName": "pages/w-checkbox/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-picker",
+					"pathName": "pages/w-picker/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-form",
+					"pathName": "pages/w-form/index"
 				}
 			]
 		}

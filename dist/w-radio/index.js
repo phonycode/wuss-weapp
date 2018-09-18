@@ -1,10 +1,11 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:43:02 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 16:57:41
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-18 10:58:48
  */
 import Behavior from '../common/behavior/index';
+import field from '../common/behavior/field';
 
 Component({
   /**
@@ -15,7 +16,11 @@ Component({
   /**
    * 组件间关系定义
    */
-  relations: {},
+  relations: {
+    '../w-form/index': {
+      type: 'ancestor',
+    },
+  },
 
   /**
    * 组件选项
@@ -25,41 +30,34 @@ Component({
   /**
    * 组件间关系定义
    */
-  behaviors: [Behavior],
+  behaviors: [Behavior,field],
 
   /**
    * 组件的属性列表
-   * @param {string} checked 控制当前是否选中
-   * @param {string} defaultChecked 初始化选中
-   * @param {string} disabled 禁用
+   * @param {string} options 选项组
+   * @param {string} defaultValue 默认选中项
+   * @param {string} value 当前值
    * @param {string} color 颜色
-   * @param {string} size 大小,可选[small/default/larger]
    */
   properties: {
-    checked: {
-      type: Boolean,
-      value: false,
+    options: {
+      type: Array,
+      value: [],
+    },
+    defaultValue: {
+      type: String,
+      value: '',
+    },
+    wModel: {
+      type: String,
+      value: {},
       observer(val) {
-        if (typeof val === 'boolean') {
-          val ? this.checked() : this.pickup();
-        }
+        this._changeValue();
       },
-    },
-    defaultChecked: {
-      type: Boolean,
-      value: false,
-    },
-    disabled: {
-      type: Boolean,
-      value: false,
     },
     color: {
       type: String,
       value: '#28a2f3',
-    },
-    size: {
-      type: String,
-      value: 'default',
     },
   },
 
@@ -67,7 +65,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    _checked: false,
+    value: {},
   },
 
   /**
@@ -77,21 +75,94 @@ Component({
     /**
      * 单选框被选中
      */
-    _handleChecked() {
-      const { _checked, disabled } = this.data;
-      if (disabled) return false;
-      this.setData({ _checked: !_checked });
-      this.triggerEvent('onChange', { checked: !_checked }, {});
+    _handleChecked(e) {
+      const {
+        index
+      } = e.currentTarget.dataset;
+      let {
+        data: {
+          options
+        },
+        _empty,
+      } = this;
+      const item = options[index];
+      if (item.disabled) return false;
+      options = _empty(options, 'checked');
+      options[index].checked = true;
+      const newValue = _empty(item, 'checked');
+      this.setData({
+        options,
+        value: newValue.key,
+      }, () => this.triggerEvent('onChange',{ key: newValue.key },{}));
     },
-    checked() {
-      this.setData({ _checked: true });
+    _changeValue() {
+      const {
+        options,
+        wModel,
+        value,
+      } = this.data;
+      if (wModel && typeof wModel === 'string') {
+        let currentItem = '';
+        const diff = options.reduce((p, n) => {
+          if (n.value === wModel && !n.disabled) {
+            n.checked = true;
+            currentItem = n;
+            p.count += 1;
+          } else {
+            n.checked = false;
+          }
+          p.array.push(n);
+          return p;
+        }, {
+          count: 0,
+          array: [],
+        })
+        this.setData({
+          options: diff.count > 0 ? diff.array : options,
+          value: diff.count > 0 && currentItem ? currentItem.key : value,
+        }, () => this.triggerEvent('onChange',{ key: currentItem.key },{}))
+      }
     },
-    pickup() {
-      this.setData({ _checked: false });
+    _empty(any, key) {
+      if (!key) return any;
+      if (Array.isArray(any)) {
+        return Object.keys(any).map(i => {
+          delete any[i][key];
+          return any[i];
+        })
+      } else if (typeof any === 'object') {
+        const empty_obj = Object.assign({}, any);
+        delete empty_obj[key];
+        return empty_obj;
+      }
+    },
+    _emptyValue() {
+      this.setData({
+        wModel: '',
+      })
+      this._changeValue();
     },
   },
-  ready: function() {
-    const { defaultChecked } = this.data;
-    defaultChecked ? this.checked() : this.pickup();
+  ready: function () {
+    const {
+      defaultValue,
+      options,
+      value,
+    } = this.data;
+    let currentItem = '';
+    if (defaultValue) {
+      options.map(i => {
+        if (i.value === defaultValue && !i.disabled) {
+          currentItem = i;
+          i.checked = true;
+        } else {
+          i.checked = false;
+        }
+      })
+    }
+    this.setData({
+      options,
+      value: currentItem ? currentItem.key : value,
+    })
   },
 });

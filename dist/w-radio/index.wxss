@@ -2,12 +2,10 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:42:50 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-14 11:00:16
+ * @Last Modified time: 2018-09-18 08:56:14
  */
 .wuss-radio {
   position: relative;
-  border: 1rpx solid #d9d9d9;
-  border-radius: 50%;
   transition: .25s;
 }
 
@@ -28,37 +26,6 @@
   transform: translate(-50%,-50%) scale(1);
 }
 
-.wuss-radio.wuss-radio-disabled {
-  opacity: .6!important;
-}
-
-.wuss-radio.wuss-radio-size-small {
-  width: 12px;
-  height: 12px;
-}
-
-.wuss-radio.wuss-radio-size-small .wuss-radio-checked {
-  width: 6px;
-  height: 6px;
-}
-
-.wuss-radio.wuss-radio-size-default {
-  width: 16px;
-  height: 16px;
-}
-
-.wuss-radio.wuss-radio-size-default .wuss-radio-checked {
-  width: 8px;
-  height: 8px;
-}
-
-
-.wuss-radio.wuss-radio-size-larger {
-  width: 24px;
-  height: 24px;
-}
-
-.wuss-radio.wuss-radio-size-larger .wuss-radio-checked {
-  width: 12px;
-  height: 12px;
+.wuss-radio-disabled {
+  opacity: .6;
 }

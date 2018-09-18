@@ -8,6 +8,20 @@ const MOCK_DATA = {
 };
 Page({
   data: {
+    options1: [
+      {
+        key: 'iphone',
+        value: '苹果',
+      },
+      {
+        key: 'huawei',
+        value: '华为',
+      },
+      {
+        key: 'oppo',
+        value: 'oppo音乐手机',
+      },
+    ],
     items1: [{
         label: '复选框1',
         ...MOCK_DATA,

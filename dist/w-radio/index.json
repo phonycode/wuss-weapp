@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "w-icon": "../w-icon/index",
+    "w-cell": "../w-cell/index"
+  }
 }
