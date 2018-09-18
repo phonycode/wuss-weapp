@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:43:02 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-18 10:58:48
+ * @Last Modified time: 2018-09-18 14:51:02
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -34,8 +34,9 @@ Component({
 
   /**
    * 组件的属性列表
-   * @param {string} options 选项组
+   * @param {string} options 选项组 { key value ...item }
    * @param {string} defaultValue 默认选中项
+   * @param {string} label 选项组标题
    * @param {string} value 当前值
    * @param {string} color 颜色
    */
@@ -45,6 +46,10 @@ Component({
       value: [],
     },
     defaultValue: {
+      type: String,
+      value: '',
+    },
+    label: {
       type: String,
       value: '',
     },
@@ -92,8 +97,8 @@ Component({
       const newValue = _empty(item, 'checked');
       this.setData({
         options,
-        value: newValue.key,
-      }, () => this.triggerEvent('onChange',{ key: newValue.key },{}));
+        value: newValue.value,
+      }, () => this.triggerEvent('onChange',{ value: newValue.value },{}));
     },
     _changeValue() {
       const {
@@ -119,8 +124,8 @@ Component({
         })
         this.setData({
           options: diff.count > 0 ? diff.array : options,
-          value: diff.count > 0 && currentItem ? currentItem.key : value,
-        }, () => this.triggerEvent('onChange',{ key: currentItem.key },{}))
+          value: diff.count > 0 && currentItem ? currentItem.value : value,
+        }, () => this.triggerEvent('onChange',{ value: currentItem.value },{}))
       }
     },
     _empty(any, key) {
@@ -162,7 +167,7 @@ Component({
     }
     this.setData({
       options,
-      value: currentItem ? currentItem.key : value,
+      value: currentItem ? currentItem.value : value,
     })
   },
 });

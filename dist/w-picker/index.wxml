@@ -34,7 +34,7 @@
 			 class="wuss-picker-scroll"
        direction="vertical"
        disabled="{{ disabled }}"
-			 damping="100"
+			 damping="50"
 			 y="{{ scrollY }}"
 			 style="width: {{ systemInfo.windowWidth }}px;height: {{ scroll_height }}px;"
 			 bindchange="_handleChange"
@@ -48,7 +48,7 @@
 				 wx:key="index"
 				>
 					{{
-            item.text
+            item.key
 					}}
 				</view>
 			</movable-view>

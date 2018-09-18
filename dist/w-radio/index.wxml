@@ -1,10 +1,11 @@
+<w-pane wuss-class="w-pane" desc="{{ label }}" wx:if="{{ label }}" />
 <block wx:for="{{ options }}" wx:key="index">
 	<w-cell
-	 label="{{ item.value }}"
+	 label="{{ item.key }}"
 	 disabled="{{ item.disabled }}"
 	 bind:click="_handleChecked"
    data-index="{{ index }}"
-   data-key="{{ item.key }}"
+   data-value="{{ item.value }}"
 	>
 		<view
 		 slot="content"
@@ -18,7 +19,7 @@
 			 wx:if="{{ item.checked }}"
 			 type="checked"
 			 color="{{ color }}"
-			 size="34rpx"
+			 size="34"
 			/>
 		</view>
 	</w-cell>

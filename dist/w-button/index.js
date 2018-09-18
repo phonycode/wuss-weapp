@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 15:55:28
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-18 15:12:38
  */
 Component({
   externalClasses: ['wuss-class', 'wuss-button-hover-class'],
@@ -67,7 +67,7 @@ Component({
     },
     iconSize: {
       type: String,
-      value: '20px',
+      value: '40',
     },
     openType: {
       type: String,

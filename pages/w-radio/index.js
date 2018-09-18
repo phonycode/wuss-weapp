@@ -5,20 +5,20 @@ Page({
    */
   data: {
     dataItems: [{
-        key: 'phone',
-        value: '苹果',
+        key: '苹果',
+        value: 'iphone',
       },
       {
-        key: 'sanxing',
-        value: '三星',
+        key: '三星',
+        value: 'sanxing',
       },
       {
-        key: 'huawei',
-        value: '华为',
+        key: '华为',
+        value: 'huawei',
       },
       {
-        key: 'oppo',
-        value: 'oppo音乐手机',
+        key: 'oppo音乐手机',
+        value: 'oppo',
       },
     ],
     radioModel: '',
@@ -32,8 +32,12 @@ Page({
     console.log(e)
   },
   handleChange(e) {
-    const { value } = e.target.dataset;
-    this.setData({ radioModel: value })
+    const {
+      value
+    } = e.target.dataset;
+    this.setData({
+      radioModel: value
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

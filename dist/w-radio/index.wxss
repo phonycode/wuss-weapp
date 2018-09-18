@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:42:50 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-18 08:56:14
+ * @Last Modified time: 2018-09-18 14:52:23
  */
 .wuss-radio {
   position: relative;
@@ -28,4 +28,8 @@
 
 .wuss-radio-disabled {
   opacity: .6;
+}
+
+.w-pane {
+  margin: 10px;
 }

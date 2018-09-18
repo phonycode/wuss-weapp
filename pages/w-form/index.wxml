@@ -35,10 +35,10 @@
 		<w-cell label="开启VIP模式">
 			<w-switch name="isVip" slot="content" />
     </w-cell>
-    
-    <w-radio name="radio" options="{{ options1 }}" />
 
-		<w-checkbox name="checkbox" items="{{ items1 }}" />
+    <w-radio label="请选择手机" name="radio" options="{{ options1 }}" />
+
+		<w-checkbox name="checkbox" options="{{ items1 }}" />
 
 		<w-cell>
 			<w-button

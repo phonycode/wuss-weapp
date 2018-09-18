@@ -13,7 +13,8 @@
 			<w-icon
 			 wx:if="{{ type }}"
 			 type="{{ type }}"
-			 size="{{ size }}"
+       size="{{ size }}"
+       color="{{ color }}"
 			 class="wuss-toast-icon"
 			/>
 			<view class="wuss-toast-text" >
