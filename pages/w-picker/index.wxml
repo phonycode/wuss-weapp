@@ -3,7 +3,7 @@
 <w-pane desc="Default" />
 <w-picker
  visible="{{ visible }}"
- dataItems="{{ items }}"
+ options="{{ items }}"
  title="请选择数据"
  bind:onSelect="handleSelect"
  bind:onChange="handleChange"

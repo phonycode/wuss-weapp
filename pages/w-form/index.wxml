@@ -26,7 +26,7 @@
        name="address"
        title="请选择地区"
 			 visible="{{ picker_visible }}"
-			 dataItems="{{ cityData }}"
+			 options="{{ cityData }}"
        bind:cancel="handleCancel"
        bind:onSelect="handleOnSelected"
 			/>

@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-15 09:20:34 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-17 16:30:24
+ * @Last Modified time: 2018-09-18 09:12:12
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -34,6 +34,14 @@ Component({
 
   /**
    * 组件的属性列表
+   * @param {string} visible  组件是否可见
+   * @param {string} disabled 禁用
+   * @param {string} options  传入的选项数据源，格式text, ...item
+   * @param {string} value  form表单收集的值
+   * @param {string} title  header中间的标题
+   * @param {string} cancelText 取消按钮的文本
+   * @param {string} confirmText  确定按钮的文本
+   * @param {string} confirmTextColor 确定按钮的颜色
    */
   properties: {
     visible: {
@@ -44,7 +52,7 @@ Component({
       type: Boolean,
       value: false,
     },
-    dataItems: {
+    options: {
       type: Array,
       value: [],
     },
@@ -147,7 +155,7 @@ Component({
         currentItem
       } = this.data;
       if (!currentItem) {
-        currentItem = this.data.dataItems[0];
+        currentItem = this.data.options[0];
       }
       this.setData({
         value: currentItem,
@@ -162,24 +170,24 @@ Component({
       const systemInfo = wx.getSystemInfoSync();
       wx.createSelectorQuery().in(this).selectAll('.wuss-picker-scroll-item').boundingClientRect(items => {
         const {
-          dataItems
+          options
         } = this.data;
-        if (dataItems.length <= 0) {
-          throw Error('dataItems不能为空')
+        if (options.length <= 0) {
+          throw Error('options不能为空')
         }
-        let firstItem = items[0];
+        const firstItem = items[0];
         let diffArray = [{
           ...firstItem,
           top: 0,
           item: {
-            ...dataItems[0],
+            ...options[0],
           },
         }].concat(items.map((i, idx) => {
           if (idx > 0) {
             return {
               ...i,
               item: {
-                ...dataItems[idx],
+                ...options[idx],
               },
               top: -(i.top - firstItem.top),
             }
