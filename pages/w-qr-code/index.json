@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "w-qr-code": "../../dist/w-qr-code/index",
-    "w-button": "../../dist/w-button/index",
-    "w-pane": "../../dist/w-pane/index"
+    "w-qr-code": "/dist/w-qr-code/index",
+    "w-button": "/dist/w-button/index",
+    "w-pane": "/dist/w-pane/index"
   }
 }

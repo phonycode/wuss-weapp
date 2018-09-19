@@ -1,9 +1,9 @@
 {
   "navigationBarTitleText": "badge 徽章",
   "usingComponents": {
-    "w-badge": "../../dist/w-badge/index",
-    "w-button": "../../dist/w-button/index",
-    "w-pane": "../../dist/w-pane/index",
-    "w-icon": "../../dist/w-icon/index"
+    "w-badge": "/dist/w-badge/index",
+    "w-button": "/dist/w-button/index",
+    "w-pane": "/dist/w-pane/index",
+    "w-icon": "/dist/w-icon/index"
   }
 }

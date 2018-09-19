@@ -26,7 +26,7 @@ Page({
   },
   default() {
     Toast.show({
-      message: 'wuss小程序UI库'
+      message: 'wuss小程序UI库',
     });
   },
   success() {

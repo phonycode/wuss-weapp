@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "w-icon": "../../dist/w-icon/index",
-    "w-pane": "../../dist/w-pane/index"
+    "w-icon": "/dist/w-icon/index",
+    "w-pane": "/dist/w-pane/index"
   }
 }

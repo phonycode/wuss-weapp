@@ -1,14 +1,14 @@
 {
   "usingComponents": {
-    "w-calendar": "../../dist/w-calendar/index",
-    "w-drop-menu": "../../dist/w-drop-menu/index",
-    "w-mask-shadow": "../../dist/w-mask-shadow/index",
-    "w-popup": "../../dist/w-popup/index",
-    "w-activity-indicator": "../../dist/w-activity-indicator/index",
-    "w-button": "../../dist/w-button/index",
-    "w-icon": "../../dist/w-icon/index",
-    "w-pane": "../../dist/w-pane/index",
-    "w-cell": "../../dist/w-cell/index",
-    "w-cell-group": "../../dist/w-cell-group/index"
+    "w-calendar": "/dist/w-calendar/index",
+    "w-drop-menu": "/dist/w-drop-menu/index",
+    "w-mask-shadow": "/dist/w-mask-shadow/index",
+    "w-popup": "/dist/w-popup/index",
+    "w-activity-indicator": "/dist/w-activity-indicator/index",
+    "w-button": "/dist/w-button/index",
+    "w-icon": "/dist/w-icon/index",
+    "w-pane": "/dist/w-pane/index",
+    "w-cell": "/dist/w-cell/index",
+    "w-cell-group": "/dist/w-cell-group/index"
   }
 }

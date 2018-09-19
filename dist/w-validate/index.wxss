@@ -13,5 +13,7 @@
   padding-right: 30rpx;
 }
 .wuss-validate-showIcon .validate-icon {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

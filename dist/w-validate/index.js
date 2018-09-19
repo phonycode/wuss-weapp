@@ -25,6 +25,7 @@ Component({
   },
   methods: {
     isValidate(value) {
+      if (!value) return;
       this.setData({ value });
 
       const wussValidate = new WussValidate(this.data.rules);

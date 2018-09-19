@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "w-pane": "../../dist/w-pane/index",
-    "w-button": "../../dist/w-button/index",
-    "w-action-sheet": "../../dist/w-action-sheet/index"
+    "w-pane": "/dist/w-pane/index",
+    "w-button": "/dist/w-button/index",
+    "w-action-sheet": "/dist/w-action-sheet/index"
   }
 }

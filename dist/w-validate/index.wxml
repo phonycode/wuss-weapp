@@ -5,7 +5,7 @@
 	 class="validate-icon"
 	 bind:tap="validateToast"
 	 type="info2-o"
-	 size="20"
+	 size="38"
 	 color="red"
 	/>
 </view>
