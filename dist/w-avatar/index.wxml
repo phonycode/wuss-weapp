@@ -1,4 +1,4 @@
-<view class=" wuss-class  wuss-avatar	wuss-avatar-{{ shape }} 'wuss-avatar-{{ size }} 	{{ src ? 'wuss-avatar-src' : '' }}" >
+<view class=" wuss-class  wuss-avatar	wuss-avatar-{{ shape }} 'wuss-avatar-{{ size }} 	{{ src ? 'wuss-avatar-src' : '' }}" bindtap="handlerClick">
 	<image
 	 class="wuss-avatar-img"
 	 src="{{ src }}"

@@ -1,8 +1,8 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 17:54:29 
- * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
- * @Last Modified time: 2018-09-10 17:54:29 
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-19 18:07:28
  */
 Component({
   externalClasses: ['wuss-class'],
@@ -29,6 +29,11 @@ Component({
     scale: {
       type: Boolean,
       value: false,
+    },
+  },
+  methods: {
+    handlerClick(e) {
+      this.triggerEvent('click', {});
     },
   },
 });
