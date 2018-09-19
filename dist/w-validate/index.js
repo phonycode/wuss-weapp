@@ -1,6 +1,10 @@
 import WussValidate from '../common/wuss-validate';
 import field from '../common/behavior/field';
 Component({
+  externalClasses: ['wuss-class'],
+  options: {
+    addGlobalClass: true,
+  },
   properties: {
     rules: {
       type: Object,

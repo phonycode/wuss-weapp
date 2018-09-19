@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-18 15:23:05
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-19 08:25:07
  */
 import cell from '../common/behavior/cell';
 Component({
@@ -26,7 +26,6 @@ Component({
     multipleSlots: true,
     addGlobalClass: true,
   },
-
   /**
    * 组件的属性列表
    * @param {string} label  标题

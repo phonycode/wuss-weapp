@@ -1,19 +1,8 @@
 Component({
-  /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class', 'wuss-activity-indicator'],
-
-  /**
-   * 组件间关系定义
-   */
-  relations: {},
-
-  /**
-   * 组件选项
-   */
-  options: {},
-
+  options: {
+    addGlobalClass: true,
+  },
   /**
    * 组件的属性列表
    * @param {boolean} show 控制动画的显示隐藏
@@ -32,21 +21,21 @@ Component({
       type: String,
       value: 'default',
       observer(val) {
-        this.initAnimation()
+        this.initAnimation();
       },
     },
     color: {
       type: String,
       value: 'rgb(252, 145, 83)',
       observer(val) {
-        this.initAnimation()
+        this.initAnimation();
       },
     },
     type: {
       type: String,
       value: 'snake',
       observer(val) {
-        this.initAnimation()
+        this.initAnimation();
       },
     },
     text: {
@@ -58,23 +47,13 @@ Component({
       value: '',
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     animationStyles: '',
     animationClass: '',
   },
-
-  /**
-   * 组件方法列表
-   */
   methods: {
     initAnimation() {
-      const {
-        color
-      } = this.data;
+      const { color } = this.data;
       const size = this.data.size.toLowerCase();
       const type = this.data.type.toLowerCase();
       let animationStyles = '';
@@ -95,34 +74,14 @@ Component({
         default:
           break;
       }
-      animationClass += ` animation-${type}-size-${size}`
+      animationClass += ` animation-${type}-size-${size}`;
       this.setData({
         animationStyles,
         animationClass,
-      })
+      });
     },
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  created: function () {},
-
-  /**
-   * 组件布局完成后执行
-   */
-  ready: function () {
+  ready: function() {
     this.initAnimation();
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  attached: function () {},
-
-  /**
-   * 在组件实例被移动到节点树另一个位置时执行
-   */
-  moved: function () {},
-
-})
+});

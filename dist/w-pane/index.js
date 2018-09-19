@@ -2,14 +2,14 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-31 15:30:11 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-10 11:13:16
+ * @Last Modified time: 2018-09-19 08:27:04
  */
 Component({
-  externalClasses: ['wuss-class'], 
-   options: {
+  externalClasses: ['wuss-class'],
+  options: {
     multipleSlots: true,
-   },
-   
+  },
+
   /**
    * 组件的属性列表
    * @param {string} title 标题
@@ -35,36 +35,4 @@ Component({
       value: 14,
     },
   },
-  
-  /**
-   * 组件的初始数据
-   */
-  data: {},
-  
-  /**
-   * 组件方法列表
-   */
-  methods: {},
-  
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  created: function() {},
-   
-  /**
-   * 组件布局完成后执行
-   */
-  ready: function() {
-  },
-  
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-   attached: function() {},
-   
-  /**
-   * 在组件实例被移动到节点树另一个位置时执行
-   */
-   moved: function() {},
-   
-})
+});

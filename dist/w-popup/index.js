@@ -1,23 +1,20 @@
 Component({
-  /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class', 'wuss-popup-content'],
-
+  options: {
+    addGlobalClass: true,
+  },
   /**
    * 组件的属性列表
+   * @param {boolean} visible 组件是否可见
+   * @param {string} position 弹出位置,可选值: left right top bottom
+   * @param {boolean} mask 是否开启遮罩层
+   * @param {boolean} maskCancel 点击遮罩层可否关闭
+   * @param {string} width 内容区的宽度，当type的值为left,right 时生效
+   * @param {string} height 内容区的高度, 当type的值为top,bottom 时生效
+   * @param {string} padding 内容区的内边距
+   * @param {number} maskIndex 当前组件的z-index值
    */
   properties: {
-    /**
-     * @param {boolean} visible 组件是否可见
-     * @param {string} position 弹出位置,可选值: left right top bottom
-     * @param {boolean} mask 是否开启遮罩层
-     * @param {boolean} maskCancel 点击遮罩层可否关闭
-     * @param {string} width 内容区的宽度，当type的值为left,right 时生效
-     * @param {string} height 内容区的高度, 当type的值为top,bottom 时生效
-     * @param {string} padding 内容区的内边距
-     * @param {number} maskIndex 当前组件的z-index值
-     */
     visible: {
       type: Boolean,
       value: false,
@@ -66,17 +63,9 @@ Component({
       value: true,
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     maskShadow: false, // 模态框是否可见
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
     /**
      * 遮罩层点击遮罩关闭
