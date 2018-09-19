@@ -9,9 +9,9 @@
 
 <w-pane desc="Use src" />
 <view class="pd" >
-	<w-avatar size="small" src="https://avatars3.githubusercontent.com/u/42834563?s=400&u=409ea65eb5ffd1546b97a7a8ca57267913cf08f0&v=4" />
-	<w-avatar src="https://avatars3.githubusercontent.com/u/42834563?s=400&u=409ea65eb5ffd1546b97a7a8ca57267913cf08f0&v=4" />
-	<w-avatar size="large" src="https://avatars3.githubusercontent.com/u/42834563?s=400&u=409ea65eb5ffd1546b97a7a8ca57267913cf08f0&v=4" />
+	<w-avatar size="small" src="/dist/common/image/logo2.png" />
+	<w-avatar src="/dist/common/image/logo2.png" />
+	<w-avatar size="large" src="/dist/common/image/logo2.png" />
 </view>
 
 <w-pane desc="Shape is square" />
