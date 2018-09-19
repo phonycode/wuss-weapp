@@ -25,7 +25,9 @@
     "pages/w-radio/index",
     "pages/w-form/index",
     "pages/w-picker/index",
-    "pages/w-tag/index"
+    "pages/w-tag/index",
+    "pages/w-address/index",
+    "pages/w-popup-picker/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

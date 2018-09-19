@@ -1,58 +1,39 @@
-<w-popup
- position="bottom"
- visible="{{ visible && options.length >0 }}"
- padding="0"
- maskIndex="1000"
- bind:close="_handleCancel"
+<view
+ class="wuss-class wuss-picker"
+ hover-class="none"
+ hover-stop-propagation="false"
 >
-	<view
-	 class="wuss-class wuss-picker"
-	 hover-class="none"
-   hover-stop-propagation="false"
+	<view class="wuss-picker-mask" />
+	<view class="wuss-picker-current-highlight" />
+	<movable-area
+	 class="wuss-picker-content"
+	 scale-area="false"
+	 style="width: {{ systemInfo.windowWidth }}px;"
 	>
-		<view class="wuss-picker-header">
-			<view class="wuss-picker-header-hd" catchtap="_handleCancel">
-				{{ cancelText }}
-			</view>
-			<view class="wuss-picker-header-bd">
-        {{ title }}
-      </view>
-			<view style="color: {{ confirmTextColor }};" class="wuss-picker-header-ft" catchtap="_confirm">
-				{{ confirmText }}
-			</view>
-		</view>
-		<view class="wuss-picker-mask" />
-		<view class="wuss-picker-current-highlight" />
-		<movable-area
-		 class="wuss-picker-content"
-		 scale-area="false"
-     style="width: {{ systemInfo.windowWidth }}px;"
+		<movable-view
+		 inertia
+		 out-of-bounds
+		 class="wuss-picker-scroll"
+		 direction="vertical"
+		 disabled="{{ disabled }}"
+		 damping="50"
+		 y="{{ scrollY }}"
+		 style="width: {{ systemInfo.windowWidth }}px;height: {{ scroll_height }}px;"
+		 bindchange="_handleChange"
+		 bindtouchstart="_handleTouchStart"
+		 bindtouchmove="_handleTouchMove"
+		 bindtouchend="_handleTouchEnd"
 		>
-			<movable-view
-			 inertia
-			 out-of-bounds
-			 class="wuss-picker-scroll"
-       direction="vertical"
-       disabled="{{ disabled }}"
-			 damping="50"
-			 y="{{ scrollY }}"
-			 style="width: {{ systemInfo.windowWidth }}px;height: {{ scroll_height }}px;"
-			 bindchange="_handleChange"
-			 bindtouchstart="_handleTouchStart"
-			 bindtouchmove="_handleTouchMove"
-			 bindtouchend="_handleTouchEnd"
+			<view
+			 class="wuss-picker-scroll-item"
+			 wx:for="{{ options }}"
+			 wx:key="index"
 			>
-				<view
-				 class="wuss-picker-scroll-item"
-				 wx:for="{{ options }}"
-				 wx:key="index"
-				>
-					{{
-            item.key
-					}}
-				</view>
-			</movable-view>
-		</movable-area>
-	</view>
-</w-popup>
+				{{
+				item.key
+				}}
+			</view>
+		</movable-view>
+	</movable-area>
+</view>
 

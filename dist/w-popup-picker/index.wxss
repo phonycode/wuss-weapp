@@ -2,9 +2,9 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-15 09:20:42 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-19 09:13:52
+ * @Last Modified time: 2018-09-19 09:16:59
  */
-.wuss-picker {
+ .wuss-picker {
   position: relative;
 }
 
@@ -43,7 +43,7 @@
   height: 250px;
   overflow: hidden;
   background-color: #ffffff;
-  /* padding-bottom: 45px; */
+  padding-bottom: 45px;
 }
 
 .wuss-picker-scroll {

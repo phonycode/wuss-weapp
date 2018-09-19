@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 16,
+			"current": 18,
 			"list": [
 				{
 					"id": -1,
@@ -135,7 +135,19 @@
 				{
 					"id": -1,
 					"name": "w-form",
-					"pathName": "pages/w-form/index"
+					"pathName": "pages/w-form/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-address",
+					"pathName": "pages/w-address/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-popup-picker",
+					"pathName": "pages/w-popup-picker/index"
 				}
 			]
 		}

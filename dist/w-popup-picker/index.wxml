@@ -1,0 +1,29 @@
+<w-popup
+ position="bottom"
+ visible="{{ visible && options.length >0 }}"
+ padding="0"
+ maskIndex="1000"
+ bind:close="_handleCancel"
+>
+  <view class="wuss-picker-header">
+    <view class="wuss-picker-header-hd" catchtap="_handleCancel">
+      {{ cancelText }}
+    </view>
+    <view class="wuss-picker-header-bd">
+      {{ title }}
+    </view>
+    <view style="color: {{ confirmTextColor }};" class="wuss-picker-header-ft" catchtap="_confirm">
+      {{ confirmText }}
+    </view>
+  </view>
+  <w-picker 
+    disabled="{{ disabled }}"
+    options="{{ options }}"
+    value="{{ value }}"
+    defaultValue="{{ defaultValue }}"
+    wModel="{{ wModel }}"
+    bind:onSelect="_handleSelect"
+    bind:onChange="_handleChange"
+  />
+</w-popup>
+

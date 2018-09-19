@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "Wuss-weapp",
   "usingComponents": {
     "w-calendar": "/dist/w-calendar/index",
     "w-drop-menu": "/dist/w-drop-menu/index",

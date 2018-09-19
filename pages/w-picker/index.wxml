@@ -2,20 +2,14 @@
 
 <w-pane desc="Default" />
 <w-picker
- visible="{{ visible }}"
  options="{{ options }}"
- title="请选择数据"
  bind:onSelect="handleSelect"
  bind:onChange="handleChange"
- bind:cancel="handleCancel"
- defaultValue="key4"
  w-model="{{ wModel }}"
 />
 
 <w-button wuss-class="p-btn" data-value="key10" bindclick="handleChangeModel">w-model = key10</w-button>
 <w-button wuss-class="p-btn" data-value="key3" bindclick="handleChangeModel">w-model = key3</w-button>
-
-<w-button bindclick="handleClick">{{ visible ? 'on' : 'off'}}</w-button>
 
 <view
  class=""
