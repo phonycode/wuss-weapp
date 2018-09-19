@@ -1,10 +1,9 @@
-<p style="text-align:center">
+<p align="center">
     <img alt="logo" src="./dist/common/image/logo.gif" width="120" style="margin-bottom: 10px;">
 </p>
 
 # [Wuss Weapp](https://github.com/phonycode/wuss)
 
----
 
 一款高质量，组件齐全，高自定义的微信小程序 UI 组件库
 
