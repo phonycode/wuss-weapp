@@ -1,7 +1,7 @@
 module.exports = {
   head: [['link', { rel: 'icon', href: `/logo.png` }]],
-  title: 'Wuss',
-  base:'/wuss/',
+  title: 'Wuss Weapp',
+  base: '/wuss/',
   description: '🐳 wuss 一款高质量，组件齐全，高自定义的微信小程序UI组件库',
   themeConfig: {
     nav: [
