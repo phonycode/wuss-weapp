@@ -1,10 +1,8 @@
-<p style="text-align:center">
+<p align="center">
     <img alt="logo" src="./dist/common/image/logo.gif" width="120" style="margin-bottom: 10px;">
 </p>
 
 # [Wuss Weapp](https://github.com/phonycode/wuss)
-
----
 
 一款高质量，组件齐全，高自定义的微信小程序 UI 组件库
 
@@ -28,9 +26,9 @@
 
 1. 通过 `npm` 安装，需要依赖小程序基础库 2.2.1 以上版本，同时依赖开发者工具的 `npm` 构建。具体详情可查阅 [官方 npm 文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)。
 
-2.到 [GitHub](https://github.com/phonycode/wuss) 下载 Wuss Weapp 的代码，将 `dist` 目录拷贝到自己的项目中。然后按照如下的方式使用组件，以 Button 为例，其它组件在对应的文档页查看：
+2. 到 [GitHub](https://github.com/phonycode/wuss) 下载 Wuss Weapp 的代码，将 `dist` 目录拷贝到自己的项目中。然后按照如下的方式使用组件，以 Button 为例，其它组件在对应的文档页查看：
 
-1. 添加需要的组件。在页面的 json 中配置（路径根据自己项目位置配置）：
+3. 添加需要的组件。在页面的 json 中配置（路径根据自己项目位置配置）：
 
 ```json
 "usingComponents": {
