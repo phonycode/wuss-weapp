@@ -17,11 +17,7 @@ module.exports = {
       {
         title: '开发指南',
         collapsable: false,
-        children: [
-          ['/', '介绍'],
-          ['/quickstart', '快速上手'],
-          ['/CHANGELOG', '更新日志'],
-        ],
+        children: [['/quickstart', '快速上手'], ['/CHANGELOG', '更新日志']],
       },
       {
         title: '基础组件',
