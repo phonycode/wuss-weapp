@@ -17,6 +17,7 @@
     </view>
   </view>
   <w-picker 
+    id="wuss-picker"
     disabled="{{ disabled }}"
     options="{{ options }}"
     value="{{ value }}"
