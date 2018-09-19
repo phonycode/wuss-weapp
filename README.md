@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="./dist/common/image/logo.gif" width="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="./dist/common/image/logo2.png" width="120" style="margin-bottom: 10px;">
 </p>
 
 # [Wuss Weapp](https://github.com/phonycode/wuss)
