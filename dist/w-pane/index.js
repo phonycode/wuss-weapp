@@ -8,6 +8,7 @@ Component({
   externalClasses: ['wuss-class'],
   options: {
     multipleSlots: true,
+    addGlobalClass: true,
   },
 
   /**
