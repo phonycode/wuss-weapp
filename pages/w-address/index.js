@@ -6,6 +6,49 @@ Page({
    */
   data: {
 
+    visible: false,
+    wModel: 'key4',
+    options: [{
+        key: '测试数据1',
+        value: 'key1',
+      },
+      {
+        key: '测试数据2',
+        value: 'key2',
+      },
+      {
+        key: '测试数据3',
+        value: 'key3',
+      },
+      {
+        key: '测试数据4',
+        value: 'key4',
+      },
+      {
+        key: '测试数据5',
+        value: 'key5',
+      },
+      {
+        key: '测试数据6',
+        value: 'key6',
+      },
+      {
+        key: '测试数据7',
+        value: 'key7',
+      },
+      {
+        key: '测试数据8',
+        value: 'key8',
+      },
+      {
+        key: '测试数据9',
+        value: 'key9',
+      },
+      {
+        key: '测试数据10',
+        value: 'key10',
+      },
+    ],
   },
 
   /**
@@ -15,6 +58,41 @@ Page({
 
   },
 
+  handleSelect(e) {
+    console.log(e)
+    wx.showModal({
+      title: 'address',
+      content: JSON.stringify(e.detail),
+      showCancel: false,
+    });
+    this.setData({
+      string: JSON.stringify(e.detail),
+    })
+  },
+
+  handleChange(e) {
+    this.setData({
+      sync_string: JSON.stringify(e.detail),
+    })
+  },
+  handleClick() {
+    this.setData({
+      visible: true
+    })
+  },
+  handleCancel() {
+    this.setData({
+      visible: false
+    })
+  },
+  handleChangeModel(e) {
+    const {
+      value
+    } = e.currentTarget.dataset;
+    this.setData({
+      wModel: value
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

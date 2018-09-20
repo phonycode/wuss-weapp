@@ -1,2 +1,49 @@
-<!--dist/w-address/index.wxml-->
-<text>dist/w-address/index.wxml</text>
+<w-popup
+ position="bottom"
+ visible="{{ visible && options.length >0 }}"
+ padding="0"
+ maskIndex="1000"
+ bind:close="_handleCancel"
+>
+  <view class="wuss-class wuss-picker-header">
+    <view class="wuss-picker-header-hd" catchtap="_handleCancel">
+      {{ cancelText }}
+    </view>
+    <view class="wuss-picker-header-bd">
+      {{ title }}
+    </view>
+    <view style="color: {{ confirmTextColor }};" class="wuss-picker-header-ft" catchtap="_confirm">
+      {{ confirmText }}
+    </view>
+  </view>
+  <view class="wuss-picker-address">
+    <w-picker
+      id="wuss-picker-province"
+      options="{{ _province_Data }}"
+      width="{{ _pickerWidth }}"
+      keyName="name"
+      defaultValue="{{ province }}"
+      bind:onSelect="_selectProvince"
+      bind:onChange="_changeProvince"
+    />
+    <w-picker
+      id="wuss-picker-city"
+      options="{{ _city_Data }}"
+      width="{{ _pickerWidth }}"
+      defaultValue="{{ city }}"
+      keyName="name"
+      bind:onSelect="_selectCity"
+      bind:onChange="_changeCity"
+    />
+    <w-picker
+      id="wuss-picker-area"
+      options="{{ _area_Data }}"
+      width="{{ _pickerWidth }}"
+      defaultValue="{{ area }}"
+      keyName="name"
+      bind:onSelect="_selectArea"
+      bind:onChange="_changeArea"
+    />
+  </view>
+</w-popup>
+

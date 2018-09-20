@@ -2,4 +2,58 @@
 
 <w-pane desc="Default" />
 
-<w-address />
+<w-address
+ visible="{{ visible }}"
+ options="{{ options }}"
+ title="请选择数据"
+ defaultValue="key4"
+ bind:onSelect="handleSelect"
+ bind:onChange="handleChange"
+ bind:onCancel="handleCancel"
+/>
+
+<w-button
+ wuss-class="p-btn"
+ data-value="key10"
+ bindclick="handleChangeModel"
+>
+	w-model
+	=
+	key10
+</w-button>
+<w-button
+ wuss-class="p-btn"
+ data-value="key3"
+ bindclick="handleChangeModel"
+>
+	w-model
+	=
+	key3
+</w-button>
+
+<w-button bindclick="handleClick">{{ visible ? 'on' : 'off' }}</w-button>
+
+<view
+ class=""
+ style="font-size: 24px;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	实时数据:
+	{{
+	sync_string
+	}}
+</view>
+
+<view
+ class=""
+ style="font-size: 24px;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	onSelect:
+	{{
+	string
+	}}
+</view>
+

@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-15 09:20:42 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-19 09:13:52
+ * @Last Modified time: 2018-09-20 09:55:29
  */
 .wuss-picker {
   position: relative;
@@ -29,7 +29,6 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 100%;
   height: 34px;
   z-index: 1000;
   background-image: -webkit-linear-gradient(top, #d0d0d0, #d0d0d0, transparent, transparent), -webkit-linear-gradient(bottom, #d0d0d0, #d0d0d0, transparent, transparent);
@@ -65,8 +64,8 @@
   width: 100%;
   text-align: center;
   color: #333333;
+  font-size: 32rpx;
 }
-
 
 .wuss-picker-header {
   display: flex;

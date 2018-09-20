@@ -10,7 +10,7 @@
     "w-switch": "/dist/w-switch/index",
     "w-radio": "/dist/w-radio/index",
     "w-validate": "/dist/w-validate/index",
-    "w-picker": "/dist/w-picker/index",
+    "w-popup-picker": "/dist/w-popup-picker/index",
     "w-pane": "/dist/w-pane/index"
   }
 }

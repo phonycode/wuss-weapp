@@ -5,7 +5,7 @@
  maskIndex="1000"
  bind:close="_handleCancel"
 >
-  <view class="wuss-picker-header">
+  <view class="wuss-class wuss-picker-header">
     <view class="wuss-picker-header-hd" catchtap="_handleCancel">
       {{ cancelText }}
     </view>
