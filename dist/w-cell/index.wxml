@@ -23,8 +23,7 @@
 			<view class="wuss-class-right wuss-cell-right" style="{{ !isLink ? 'padding-right: 0;' : ''}}">
 				<slot/>
 				<view class="wuss-class-content wuss-cell-right-content {{ disabled ? 'wuss-cell-right-content-disabled' : '' }}" style="justify-content: {{ direction }};">
-					{{ content
-					}}
+					{{content}}
 					<slot wx:if="{{ !content }}" name="content" />
 				</view>
 			</view>

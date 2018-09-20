@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:25:07
+ * @Last Modified time: 2018-09-20 18:25:15
  */
 import cell from '../common/behavior/cell';
 Component({
@@ -108,7 +108,7 @@ Component({
      * cell点击跳转事件
      */
     linkTo() {
-      const { isLink, link, linkType, delta, disabled } = this.data;
+      const { link, linkType, delta, disabled } = this.data;
       const navigateMethods = [
         'navigateTo',
         'redirectTo',
@@ -117,7 +117,7 @@ Component({
       ];
       if (disabled) return false;
       this.triggerEvent('click', {}, {});
-      if (!isLink || !link) return false;
+      if (!link) return false;
       if (!linkType) throw Error('linkType 不能为空');
       if (navigateMethods.indexOf(linkType) > -1) {
         if (!link) throw Error('link 不能为空');
