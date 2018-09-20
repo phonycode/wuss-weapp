@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-15 09:20:34 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 11:27:48
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-19 11:57:24
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -46,10 +46,6 @@ Component({
       type: String,
       value: {},
     },
-    value: {
-      type: Object,
-      value: {},
-    },
     wModel: {
       type: String,
       value: '',
@@ -71,21 +67,28 @@ Component({
       value: '#ff8800',
     },
   },
-  data: {},
+  data: {
+    value: {},
+  },
   methods: {
     _handleSelect(e) {
-      this.triggerEvent('onSelect', { ...e.detail.item }, {});
+      if(!this.data.visible) { return false };
+      this.setData({ value: e.detail.item }, () => this.triggerEvent('onSelect', { ...e.detail.item }, {}))
     },
     _handleChange(e) {
-      this.triggerEvent('onSelect', { ...e.detail.item }, {});
+      if(!this.data.visible) { return false };
+      this.triggerEvent('onChange', { ...e.detail.currentItem }, {});
     },
     _handleCancel() {
       this.triggerEvent('onCancel', {}, {});
     },
     _confirm() {
       const picker = this.selectComponent('#wuss-picker');
-      console.log(picker);
-      this._handleCancel();
+      const { data: { currentItem } } = picker;
+      this.setData({ value: currentItem }, () => {
+        this.triggerEvent('onSelect', { ...currentItem }, {})
+        this._handleCancel();
+      })
     },
   },
 });

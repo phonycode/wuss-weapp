@@ -23,12 +23,12 @@
      content="{{ currentCity }}"
 		 bind:click="handleClick"
 		>
-			<w-picker
+			<w-popup-picker
        name="address"
        title="请选择地区"
 			 visible="{{ picker_visible }}"
 			 options="{{ cityData }}"
-       bind:cancel="handleCancel"
+       bind:onCancel="handleCancel"
        bind:onSelect="handleOnSelected"
 			/>
 		</w-cell>

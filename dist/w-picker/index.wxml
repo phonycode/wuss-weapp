@@ -3,12 +3,12 @@
  hover-class="none"
  hover-stop-propagation="false"
 >
-	<view class="wuss-picker-mask" />
-	<view class="wuss-picker-current-highlight" />
+	<!-- <view class="wuss-picker-mask" /> -->
+	<view style="width: {{ width ? width : systemInfo.windowWidth }}px;" class="wuss-picker-current-highlight" />
 	<movable-area
-	 class="wuss-picker-content"
+	 class="wuss-picker-content wuss-class-picker"
 	 scale-area="false"
-	 style="width: {{ systemInfo.windowWidth }}px;"
+	 style="width: {{ width ? width : systemInfo.windowWidth }}px;"
 	>
 		<movable-view
 		 inertia
@@ -18,7 +18,7 @@
 		 disabled="{{ disabled }}"
 		 damping="50"
 		 y="{{ scrollY }}"
-		 style="width: {{ systemInfo.windowWidth }}px;height: {{ scroll_height }}px;"
+		 style="width: {{ width ? width : systemInfo.windowWidth }}px;height: {{ scroll_height }}px;"
 		 bindchange="_handleChange"
 		 bindtouchstart="_handleTouchStart"
 		 bindtouchmove="_handleTouchMove"
@@ -26,11 +26,12 @@
 		>
 			<view
 			 class="wuss-picker-scroll-item"
+       style="font-size: {{ item[keyName].length >=8 ? 22 : 32}}rpx;"
 			 wx:for="{{ options }}"
 			 wx:key="index"
 			>
 				{{
-				item.key
+				item[keyName]
 				}}
 			</view>
 		</movable-view>
