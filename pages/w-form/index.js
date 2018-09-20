@@ -9,14 +9,11 @@ const MOCK_DATA = {
 Page({
   data: {
     userNameRules: {
-      mode: ['email', 'mobile', 'url'],
-      regexp: {
-        value: ['^琚志强$', 'g'],
-        message: '必须输入琚志强作为用户名',
-      },
       maxLength: {
-        value: 2,
-        message: '长度必须是琚志强的三分之二',
+        value: 6,
+      },
+      minLength: {
+        value: 3,
       },
     },
     items1: [
