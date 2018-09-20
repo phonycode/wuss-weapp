@@ -1,5 +1,6 @@
 import WussValidate from '../common/wuss-validate';
 import field from '../common/behavior/field';
+const FORM_PATH = '../w-form/index';
 Component({
   externalClasses: ['wuss-class'],
   options: {
@@ -19,6 +20,9 @@ Component({
       type: 'descendant',
       target: field,
     },
+    [FORM_PATH]: {
+      type: 'ancestor',
+    },
   },
   data: {
     showIcon: false,
@@ -27,7 +31,6 @@ Component({
     isValidate(value) {
       if (!value) return;
       this.setData({ value });
-
       const wussValidate = new WussValidate(this.data.rules);
 
       const result = wussValidate.isValidate(value);
@@ -43,6 +46,7 @@ Component({
           showIcon: false,
         });
       }
+      this.getRelationNodes(FORM_PATH)[0].isAllValidate();
     },
     validateToast() {
       const { message } = this.data;
