@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "Address 地区联动",
-  "usingComponents": {
-    "w-address": "../../dist/w-address/index",
-    "w-button": "../../dist/w-button/index",
-    "w-pane": "../../dist/w-pane/index"
-  }
-}
