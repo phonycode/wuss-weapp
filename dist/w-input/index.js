@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-18 17:08:03
+ * @Last Modified time: 2018-09-20 11:14:59
  */
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
@@ -135,18 +135,25 @@ Component({
       value: false,
     },
   },
+  ready() {
+    const value = this.formatValue(this.data.value);
+    this.setData({ value });
+    if (value === '') {
+      this.goValidate('');
+    }
+  },
   methods: {
     formatValue(value) {
       const { type } = this.data;
       switch (type) {
-        case 'phone':
+        case 'mobile':
           value = value.replace(/\s/g, '');
-          value = value
-            .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, '$1 $2 $3')
-            .trim();
+          value = value.replace(/^(\d{3})(\d{4})(\d{4})$/, '$1 $2 $3').trim();
+          break;
         case 'bankCard':
           value = value.replace(/\s/g, '');
           value = value.replace(/(\d{4})(?=\d)/g, '$1 ').trim();
+          break;
         default:
           break;
       }
@@ -183,11 +190,18 @@ Component({
       this._trigger('clearClick', e);
       this.setData({ value: '' });
     },
+    getValue(value) {
+      if (!!~['mobile', 'bankCard'].indexOf(this.data.type)) {
+        return value.replace(/\s/g, '');
+      }
+      return value;
+    },
+    //调用验证
     goValidate(newValue) {
       const validate = this.getRelationNodes('../w-validate/index')[0];
-      ['phone', 'bankCard'].indexOf !== -1 &&
-        (newValue = newValue.replace(/\s/g, ''));
-      validate && validate.isValidate(newValue);
+      if (!validate) return false;
+      newValue = this.getValue(newValue);
+      validate.isValidate(newValue);
     },
   },
 });

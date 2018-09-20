@@ -1,10 +1,11 @@
 <w-pane title="Form" desc="表单" />
-<w-form bindsubmit="wussFormSubmit" bindreset="wussFormReset">
+<w-form bindsubmit="wussFormSubmit" bindreset="wussFormReset" isValidateBtn>
 	<w-cell-group>
 		<w-validate rules="{{ { mode:['mobile'] } }}">
 			<w-input
-			 type="phone"
-			 name="phone"
+			 type="mobile"
+			 name="mobile"
+			 value="13480233139"
 			 clear
 			 placeholder="请输入你的手机号"
 			 label="手机号"
