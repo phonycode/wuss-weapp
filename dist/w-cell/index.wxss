@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-14 11:15:32
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-20 17:37:57
  */
 .wuss-cell {
   position: relative;
@@ -57,7 +57,7 @@
 }
 
 .wuss-cell-ft .wuss-cell-desc {
-  padding: 0 15px 5px;
+  /* padding: 0 15px 5px; */
 }
 
 .wuss-cell-left {
