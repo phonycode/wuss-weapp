@@ -69,7 +69,6 @@ Component({
     },
     // 提交
     submit(fields) {
-      console.log('触发提交按钮');
       if (!this.data.canSubmit) return false;
       const obj = {};
       fields.forEach(e => {
@@ -84,7 +83,6 @@ Component({
     },
     // 重置
     reset(fields) {
-      console.log('触发重置按钮');
       fields.forEach(e => {
         e._resetAllValue();
       });

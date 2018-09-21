@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:23 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:29:39
+ * @Last Modified time: 2018-09-21 16:45:46
  */
 import Behavior from '../common/behavior/index';
 const SYSTEM_INFO = wx.getSystemInfoSync();
@@ -139,7 +139,6 @@ Component({
         autoClose ? this.close() : '';
       } else {
         this.triggerEvent('click');
-        console.log('click');
       }
     },
     open() {

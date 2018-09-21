@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-15 09:20:34 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-19 17:37:32
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-21 16:45:59
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -54,7 +54,7 @@ Component({
       type: Array,
       value: [],
       observer(val) {
-        this._initial()
+        this._initial();
       },
     },
     defaultValue: {
@@ -100,17 +100,13 @@ Component({
   methods: {
     _handleTouchStart(e) {
       this.setData({
-        startY: e.changedTouches["0"].pageY,
+        startY: e.changedTouches['0'].pageY,
         touchMove: true,
-      })
-      // console.log('_handleTouchStart',e)
+      });
     },
-    _handleTouchMove(e) {
-
-    },
+    _handleTouchMove(e) {},
     _handleTouchEnd(e) {
-      // console.log('handleTouchEnd',e)
-      const endY = e.changedTouches["0"].pageY;
+      const endY = e.changedTouches['0'].pageY;
       let diff = {
         ...e,
         detail: {
@@ -118,9 +114,12 @@ Component({
           y: endY - this.data.startY,
         },
       };
-      this.setData({
-        touchMove: false,
-      }, () => this._handleChange(diff))
+      this.setData(
+        {
+          touchMove: false,
+        },
+        () => this._handleChange(diff)
+      );
     },
     _handleChange(e) {
       const scrollY = e.detail.y;
@@ -128,151 +127,198 @@ Component({
         touchMove,
         scroll_element,
         scroll_height,
-        stopPrevent
+        stopPrevent,
       } = this.data;
-      if (touchMove || scroll_element.length <= 0 || !scroll_height || stopPrevent) return false;
-      let diffArray = scroll_element.map(item => {
-        return {
-          ...item,
-          diff: Math.abs(Math.abs(item.top) - Math.abs(scrollY)),
-        }
-      }).sort((a, b) => {
-        if (a.diff > b.diff) {
-          return -1; //返回的是负数，是降序
-        } else if (a.diff < b.diff) {
-          return 1; //返回的是正数，升序
-        } else {
-          return 0;
-        }
-      })
+      if (
+        touchMove ||
+        scroll_element.length <= 0 ||
+        !scroll_height ||
+        stopPrevent
+      )
+        return false;
+      let diffArray = scroll_element
+        .map(item => {
+          return {
+            ...item,
+            diff: Math.abs(Math.abs(item.top) - Math.abs(scrollY)),
+          };
+        })
+        .sort((a, b) => {
+          if (a.diff > b.diff) {
+            return -1; //返回的是负数，是降序
+          } else if (a.diff < b.diff) {
+            return 1; //返回的是正数，升序
+          } else {
+            return 0;
+          }
+        });
       const currentItem = diffArray[diffArray.length - 1];
       if (this.data.scrollY === currentItem.top) return false;
-      // console.log('_handleChange',currentItem)
-      this.setData({
-        scrollY: currentItem.top,
-        currentItem: currentItem.item,
-      }, () => this.triggerEvent('onChange', {
-        currentItem: currentItem.item
-      }, {}))
+      this.setData(
+        {
+          scrollY: currentItem.top,
+          currentItem: currentItem.item,
+        },
+        () =>
+          this.triggerEvent(
+            'onChange',
+            {
+              currentItem: currentItem.item,
+            },
+            {}
+          )
+      );
     },
     _confirm() {
-      let {
-        currentItem
-      } = this.data;
+      let { currentItem } = this.data;
       if (!currentItem) {
         currentItem = this.data.options[0];
       }
-      this.setData({
-        value: currentItem,
-      }, () => {
-        this.triggerEvent('onSelect', {
-          ...currentItem,
-        }, {})
-      })
+      this.setData(
+        {
+          value: currentItem,
+        },
+        () => {
+          this.triggerEvent(
+            'onSelect',
+            {
+              ...currentItem,
+            },
+            {}
+          );
+        }
+      );
     },
     _changeValue() {
-      const {
-        wModel,
-        scroll_element,
-      } = this.data;
+      const { wModel, scroll_element } = this.data;
       if (wModel && typeof wModel === 'string') {
-        const diffData = scroll_element.filter(i => (i.item.value === wModel));
+        const diffData = scroll_element.filter(i => i.item.value === wModel);
         if (diffData.length > 0) {
-          this.setData({
-            stopPrevent: true,
-            scrollY: diffData[0].top,
-          }, () => setTimeout(() => {
-            this.setData({
-              stopPrevent: false,
-              value: diffData[0].item,
-            }, () => this.triggerEvent('onSelect', {
-              ...diffData[0],
-            }, {}))
-          }, 200))
+          this.setData(
+            {
+              stopPrevent: true,
+              scrollY: diffData[0].top,
+            },
+            () =>
+              setTimeout(() => {
+                this.setData(
+                  {
+                    stopPrevent: false,
+                    value: diffData[0].item,
+                  },
+                  () =>
+                    this.triggerEvent(
+                      'onSelect',
+                      {
+                        ...diffData[0],
+                      },
+                      {}
+                    )
+                );
+              }, 200)
+          );
         }
       }
     },
     _initial() {
       const systemInfo = wx.getSystemInfoSync();
-      wx.createSelectorQuery().in(this).selectAll('.wuss-picker-scroll-item').boundingClientRect(items => {
-        const {
-          options,
-          defaultValue,
-        } = this.data;
-        // if (options.length <= 0) {
-        //   throw Error('options不能为空')
-        // }
-        /**
-         * 数据量过多时导致页面还没渲染完成获取到的元素数目不对,只能重新获取一次
-         */
-        if (options.length <=0 || items.length !== options.length) {
-          setTimeout(() => {
-            this._initial()
-          }, 200);
-          return false;
-        }
-        const firstItem = items[0];
-        let currentItem = '';
-        let diffArray = items.map((i, idx) => {
-          const item = Object.assign({ ...i,
-            item: { ...options[idx]
+      wx.createSelectorQuery()
+        .in(this)
+        .selectAll('.wuss-picker-scroll-item')
+        .boundingClientRect(items => {
+          const { options, defaultValue } = this.data;
+          // if (options.length <= 0) {
+          //   throw Error('options不能为空')
+          // }
+          /**
+           * 数据量过多时导致页面还没渲染完成获取到的元素数目不对,只能重新获取一次
+           */
+          if (options.length <= 0 || items.length !== options.length) {
+            setTimeout(() => {
+              this._initial();
+            }, 200);
+            return false;
+          }
+          const firstItem = items[0];
+          let currentItem = '';
+          let diffArray = items
+            .map((i, idx) => {
+              const item = Object.assign(
+                {
+                  ...i,
+                  item: {
+                    ...options[idx],
+                  },
+                },
+                idx === 0
+                  ? {
+                      ...item,
+                      top: 0,
+                    }
+                  : {
+                      ...item,
+                      top: -(i.top - firstItem.top),
+                    }
+              );
+              if (defaultValue && item.item.value === defaultValue) {
+                currentItem = item;
+              }
+              return item;
+            })
+            .filter(i => i && typeof i === 'object');
+          this.setData(
+            {
+              systemInfo,
+              currentItem,
+              stopPrevent: true,
+              scroll_element: diffArray,
+              scroll_height:
+                firstItem.height * items.length + (250 - firstItem.height),
+              scrollY: defaultValue ? currentItem.top : firstItem.top,
+              value: currentItem.item,
+            },
+            () => {
+              setTimeout(() => {
+                this.setData(
+                  {
+                    stopPrevent: false,
+                  },
+                  () => {
+                    this._handleChange({
+                      detail: {
+                        y: -1,
+                      },
+                    });
+                    this._confirm();
+                  }
+                );
+              }, 200);
             }
-          }, idx === 0 ? { ...item,
-            top: 0
-          } : { ...item,
-            top: -(i.top - firstItem.top)
-          });
-          if (defaultValue && item.item.value === defaultValue) {
-            currentItem = item;
-          };
-          return item;
-        }).filter(i => (i && typeof i === 'object'))
-        this.setData({
-          systemInfo,
-          currentItem,
-          stopPrevent: true,
-          scroll_element: diffArray,
-          scroll_height: (firstItem.height * items.length) + (250 - firstItem.height),
-          scrollY: defaultValue ? currentItem.top : firstItem.top,
-          value: currentItem.item,
-        }, () => {
-          setTimeout(() => {
-            this.setData({
-              stopPrevent: false,
-            }, () => {
-              this._handleChange({
-                detail: {
-                  y: -1
-                }
-              });
-              this._confirm()
-            });
-          }, 200);
+          );
         })
-      }).exec();
+        .exec();
     },
   },
 
   /**
    * 在组件实例进入页面节点树时执行
    */
-  created: function () {},
+  created: function() {},
 
   /**
    * 组件布局完成后执行
    */
-  ready: function () {
+  ready: function() {
     // this._initial()
   },
 
   /**
    * 在组件实例进入页面节点树时执行
    */
-  attached: function () {},
+  attached: function() {},
 
   /**
    * 在组件实例被移动到节点树另一个位置时执行
    */
-  moved: function () {},
-
-})
+  moved: function() {},
+});

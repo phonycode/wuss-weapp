@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-21 13:37:32
+ * @Last Modified time: 2018-09-21 16:45:40
  */
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
@@ -157,8 +157,6 @@ Component({
         default:
           break;
       }
-      console.log(value);
-
       return value;
     },
     _trigger(name, e) {
@@ -189,7 +187,6 @@ Component({
       this._trigger('lineChange', e);
     },
     handerClearClick(e) {
-      console.log(1);
       this._trigger('clearClick', e);
 
       this.setData({ value: '' });
