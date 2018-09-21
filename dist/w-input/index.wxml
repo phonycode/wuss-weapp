@@ -15,6 +15,7 @@
 	</view>
 
 	<view class="wuss-class-input-wrap wuss-input_input-wrap {{ disabled && !readOnly ? 'input_input-disabled':''}} {{ type==='textarea' ? 'input-wrap--textarea' : ''}}" slot="content">
+		<view class="wuss-textarea-count" wx:if="{{  type==='textarea' && count > 0 }}"><text>{{value.length}}</text>/{{count}}</view>
 		<textarea
 		 class="wuss-class-input wuss-input_input"
 		 type="text"
@@ -40,7 +41,6 @@
 		 bindblur="handlerBlur"
 		 wx:if="{{ type==='textarea' }}"
 		/>
-		<view class="wuss-textarea-count" wx:if="{{  type==='textarea' && count > 0 }}"><text>{{value.length}}</text>/{{count}}</view>
 		<input
 	 	 wx:else
 		 class="wuss-input_input"
