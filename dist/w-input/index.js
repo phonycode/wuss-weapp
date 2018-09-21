@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-20 11:14:59
+ * @Last Modified time: 2018-09-21 13:37:32
  */
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
@@ -157,6 +157,8 @@ Component({
         default:
           break;
       }
+      console.log(value);
+
       return value;
     },
     _trigger(name, e) {
@@ -164,21 +166,21 @@ Component({
     },
     ///////////input的监听函数
     handlerChange(e) {
-      const value = this.formatValue(e.detail.value);
-      this._trigger('change', {
-        ...e,
-        detail: { ...e.detail, value },
-      });
-      this.setData({ value });
+      const { value = '' } = e.detail || {};
+      this._trigger('change', { detail: { value } });
+      this._trigger('input', { detail: { value } });
+      this.setData({ value: this.formatValue(value) });
     },
     handlerFocus(e) {
       this._trigger('focus', e);
+      this.setData({ _focus: true });
     },
     handlerConfirm(e) {
       this._trigger('confirm', e);
     },
     handlerBlur(e) {
       this._trigger('blur', e);
+      this.setData({ _focus: false });
     },
     handerExtraClick(e) {
       this._trigger('extraClick', e);
@@ -187,7 +189,9 @@ Component({
       this._trigger('lineChange', e);
     },
     handerClearClick(e) {
+      console.log(1);
       this._trigger('clearClick', e);
+
       this.setData({ value: '' });
     },
     getValue(value) {
@@ -196,6 +200,11 @@ Component({
       }
       return value;
     },
+    // isShowClear(options) {
+    //   const { clear, _focus } = options;
+
+    //   return clear && _focus && && value!="" && !disabled && !readOnly;
+    // },
     //调用验证
     goValidate(newValue) {
       const validate = this.getRelationNodes('../w-validate/index')[0];

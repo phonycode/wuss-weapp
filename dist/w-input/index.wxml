@@ -66,18 +66,16 @@
 		 bindblur="handlerBlur"
 		/>
 		<w-icon
-		 wx:if="{{ clear && !disabled}}"
-		 class="wuss-clear {{ value.length > 0 ? 'wuss-clear-show' : ''}} "
+		 wx:if="{{ clear && _focus && value!='' && !disabled && !readOnly }}"
+		 class="wuss-clear "
 		 type="close"
-		 bindtap="handerClearClick"
+		 bind:touchstart="handerClearClick"
 		/>
 		<view
 		 wx:if="{{ extra }}"
 		 class="wuss-extra"
 		 catch:tap="handerExtraClick"
-		>
-			{{extra}}
-		</view>
+		>{{extra}}</view>
 	</view>
 
 </w-cell>
