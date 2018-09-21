@@ -4,7 +4,7 @@
  hover-stop-propagation="false"
 >
   <view class="header">
-    <image class="logo" src="../../dist/common/image/logo2.png" ></image>
+    <image class="logo" src="../assets/logo2.png" ></image>
     <text class="title">Wuss Weapp</text>
   </view>
 
