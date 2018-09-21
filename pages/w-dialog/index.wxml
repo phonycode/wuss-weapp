@@ -7,7 +7,7 @@
   bind:close="handleClose"
 >
   <view class="example-dialog" hover-class="none" hover-stop-propagation="false">
-    <image style="width: 100%;height: 300px;" class="" src="/dist/common/image/logo.gif" ></image>
+    <image style="width: 100%;height: 300px;" class="" src="/pages/assets/logo.png" ></image>
   </view>
 </w-dialog>
 

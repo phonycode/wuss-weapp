@@ -1,5 +1,5 @@
 <p align="center">
-    <img alt="logo" src="./dist/common/image/logo2.png" width="120" style="margin-bottom: 10px;">
+    <img alt="logo" src="/pages/assets/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 
 # [Wuss Weapp](https://github.com/phonycode/wuss)
@@ -14,7 +14,7 @@
 
 使用微信扫一扫体验小程序组件示例
 
-<img width="200" src="./dist/common/image/logo.gif">
+<img width="200" src="/pages/assets/logo.png">
 
 ## 快速上手
 
