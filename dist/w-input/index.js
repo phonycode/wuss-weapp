@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-21 16:45:40
+ * @Last Modified time: 2018-09-21 16:50:03
  */
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
@@ -197,11 +197,6 @@ Component({
       }
       return value;
     },
-    // isShowClear(options) {
-    //   const { clear, _focus } = options;
-
-    //   return clear && _focus && && value!="" && !disabled && !readOnly;
-    // },
     //调用验证
     goValidate(newValue) {
       const validate = this.getRelationNodes('../w-validate/index')[0];
