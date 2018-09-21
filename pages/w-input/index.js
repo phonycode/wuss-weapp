@@ -2,13 +2,9 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-13 11:55:53 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-13 16:58:32
+ * @Last Modified time: 2018-09-21 12:53:58
  */
-// pages/w-input/index.js
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
     focus: false,
   },

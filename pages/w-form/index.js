@@ -11,9 +11,11 @@ Page({
     userNameRules: {
       maxLength: {
         value: 6,
+        message: '姓名最多6个字',
       },
       minLength: {
         value: 3,
+        message: '姓名最少三个字',
       },
     },
     items1: [
@@ -275,7 +277,7 @@ Page({
     this.setData({ picker_visible: true });
   },
   handleOnSelected(e) {
-    console.log(e)
+    console.log(e);
     this.setData({ currentCity: e.detail.value });
   },
   handleCancel() {

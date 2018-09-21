@@ -1,3 +1,9 @@
+/*
+ * @Author: cnyballk[https://github.com/cnyballk] 
+ * @Date: 2018-09-18 12:45:25 
+ * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
+ * @Last Modified time: 2018-09-21 12:45:25 
+ */
 class WussValidate {
   result = [];
   constructor(rules) {

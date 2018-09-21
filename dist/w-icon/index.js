@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 17:12:04 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:17:19
+ * @Last Modified time: 2018-09-21 12:41:43
  */
 Component({
   externalClasses: ['wuss-class'],
@@ -22,7 +22,7 @@ Component({
     },
     size: {
       type: String,
-      value: '40',
+      value: '',
     },
     color: {
       type: String,
