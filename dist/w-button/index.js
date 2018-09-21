@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-18 15:12:38
+ * @Last Modified time: 2018-09-21 16:53:05
  */
 Component({
   externalClasses: ['wuss-class', 'wuss-button-hover-class'],
@@ -28,7 +28,7 @@ Component({
    * @param {boolean} dashed 虚线
    * @param {string} icon 添加按钮图标
    * @param {string} openType 设置开放数据, 可选值为 [contact|share|getUserInfo|openSetting|feedback]
-   * @param {string} type 按钮样式类型，可选值为 []
+   * @param {string} type 按钮样式类型，可选值为 [default,primary,info,warn,danger,custom]
    * @param {string} styles 按钮的自定义样式
    * @param {string} color 自定义按钮颜色
    * @param {string} bgColor 自定义背景颜色
@@ -63,11 +63,11 @@ Component({
     },
     iconColor: {
       type: String,
-      value: '',
+      value: '#333333',
     },
     iconSize: {
       type: String,
-      value: '40',
+      value: '',
     },
     openType: {
       type: String,

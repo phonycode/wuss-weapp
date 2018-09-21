@@ -3,10 +3,12 @@
 <w-pane desc="ButtonType" />
 
 <w-button type="default">Default</w-button>
+<w-button type="primary">Primary</w-button>
 <w-button type="info">Info</w-button>
 <w-button type="warn">Warn</w-button>
 <w-button type="danger">Danger</w-button>
 <w-button
+ type="custom"
  styles="border-color: #b643cd!important;"
  bgColor="#b643cd"
  color="#ffffff"
@@ -71,8 +73,8 @@
 
 <w-button
  icon="android"
- iconSize="18"
  styles="border-color: #99ddcc!important;"
+ iconColor="#ffffff"
  bgColor="#99ddcc"
  color="#ffffff"
 >
@@ -80,7 +82,7 @@
 </w-button>
 <w-button
  icon="edit"
- iconSize="18"
+ iconColor="#ffffff"
  type="info"
 >
 	Edit
@@ -88,14 +90,13 @@
 <w-button
  icon="refresh"
  iconColor="#ffffff"
- iconSize="18"
  type="warn"
 >
 	Reload
 </w-button>
 <w-button
  icon="apple"
- iconSize="18"
+ iconColor="#ffffff"
  type="danger"
 >
 	Apple

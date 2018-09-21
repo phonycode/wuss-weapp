@@ -1,1 +1,4 @@
 /* pages/w-button/index.wxss */
+.w-button-hover-class {
+ background-color: #a93cbe!important;
+}

@@ -6,7 +6,7 @@
   style="{{ buttonStyles }}"
   disabled="{{ disabled }}" 
   loading="{{ loading }}"
-  hover-class="wuss-button-hover-class {{ !disabled ? 'wuss-button-hover' : ''}}"
+  hover-class="{{ !disabled ? type === 'custom' ? 'wuss-button-custom-hover' : 'wuss-button-hover' : '' }}"
   hover-stop-propagation="true"
   form-type="{{ formType }}" 
   open-type="{{ openType }}"
