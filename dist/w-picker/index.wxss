@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-15 09:20:42 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-20 09:55:29
+ * @Last Modified time: 2018-09-21 14:39:25
  */
 .wuss-picker {
   position: relative;
@@ -65,7 +65,17 @@
   text-align: center;
   color: #333333;
   font-size: 32rpx;
+  transition: all .35s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
+
+.wuss-picker-scroll-item.wuss-picker-scroll-item-blur {
+  opacity: .5;
+}
+
+.wuss-picker-scroll-item.wuss-picker-scroll-item-current {
+  opacity: 1;
+}
+
 
 .wuss-picker-header {
   display: flex;
@@ -98,3 +108,5 @@
 .wuss-picker-header-ft {
   padding-right: 15px;
 }
+
+

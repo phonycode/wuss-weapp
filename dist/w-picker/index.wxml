@@ -25,7 +25,7 @@
 		 bindtouchend="_handleTouchEnd"
 		>
 			<view
-			 class="wuss-picker-scroll-item"
+			 class="wuss-picker-scroll-item {{ currentItem[keyName] === item[keyName] ? 'wuss-picker-scroll-item-current' : 'wuss-picker-scroll-item-blur' }}"
        style="font-size: {{ item[keyName].length >=8 ? 22 : 32}}rpx;"
 			 wx:for="{{ options }}"
 			 wx:key="index"
