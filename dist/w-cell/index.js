@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-20 18:25:15
+ * @Last Modified time: 2018-09-22 11:02:29
  */
 import cell from '../common/behavior/cell';
 Component({
@@ -98,6 +98,10 @@ Component({
     direction: {
       type: String,
       value: 'flex-end',
+    },
+    isValidateIcon: {
+      type: Boolean,
+      value: false,
     },
   },
   data: {

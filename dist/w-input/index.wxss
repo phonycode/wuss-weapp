@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:38 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-21 13:53:04
+ * @Last Modified time: 2018-09-22 11:09:38
  */
 
 .wuss-input {
@@ -39,6 +39,7 @@
 .input-wrap--textarea {
   align-items: flex-start;
 }
+
 .wuss-input_input-wrap .wuss-input_input {
   color: #000;
   font-size: 34rpx;
@@ -59,6 +60,7 @@
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
+  color: #ddd;
   font-style: normal;
   padding: 0 10px;
   line-height: inherit;

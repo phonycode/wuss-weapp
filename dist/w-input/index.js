@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:32 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-21 16:50:03
+ * @Last Modified time: 2018-09-22 09:28:44
  */
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
@@ -148,7 +148,9 @@ Component({
       switch (type) {
         case 'mobile':
           value = value.replace(/\s/g, '');
-          value = value.replace(/^(\d{3})(\d{4})(\d{4})$/, '$1 $2 $3').trim();
+          value = value
+            .replace(/(\d{0,3})(\d{0,4})(\d{0,4})/, '$1 $2 $3')
+            .trim();
           break;
         case 'bankCard':
           value = value.replace(/\s/g, '');
