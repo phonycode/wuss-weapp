@@ -1,5 +1,9 @@
 <w-pane title="Form" desc="表单" />
-<w-form bindsubmit="wussFormSubmit" bindreset="wussFormReset" isValidateBtn>
+<w-form
+ bindsubmit="wussFormSubmit"
+ bindreset="wussFormReset"
+ isValidateBtn
+>
 	<w-cell-group>
 		<w-validate rules="{{ { mode:['mobile'] } }}">
 			<w-input
@@ -12,18 +16,42 @@
 			/>
 		</w-validate>
 		<w-validate rules="{{ userNameRules }}">
+			<w-input
+			 name="userName"
+			 placeholder="请输入你的姓名"
+			 label="姓名"
+			/>
+		</w-validate>
 		<w-input
 		 name="userName"
-		 placeholder="请输入你的姓名"
-		 label="姓名"
+		 placeholder="随以输入"
+		 label="test"
 		/>
-	</w-validate>
+		<w-cell
+		 isLink
+		 label="选择地区"
+		 content="{{ currentCity }}"
+		 bind:click="handleClick"
+		>
+			<w-popup-picker
+			 name="address"
+			 title="请选择地区"
+			 visible="{{ picker_visible }}"
+			 options="{{ cityData }}"
+			 bind:onCancel="handleCancel"
+			 bind:onSelect="handleOnSelected"
+			/>
+		</w-cell>
 
 		<w-cell label="开启VIP模式">
 			<w-switch name="isVip" slot="content" />
-    </w-cell>
+		</w-cell>
 
-    <w-radio label="请选择手机" name="radio" options="{{ options1 }}" />
+		<w-radio
+		 label="请选择手机"
+		 name="radio"
+		 options="{{ options1 }}"
+		/>
 
 		<w-checkbox name="checkbox" options="{{ items1 }}" />
 
