@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-08 10:54:34 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:25:58
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-22 14:08:46
  */
 import Behavior from '../common/behavior/index';
 
@@ -20,8 +20,8 @@ const animationFunc = (opts = {}) =>
   });
 
 const _IN_FROM = animationFunc({
-  duration: 0,
-})
+    duration: 0,
+  })
   .opacity(0)
   .scale(1.185)
   .step()
@@ -40,8 +40,8 @@ const _OUT_FROM = animationFunc()
   .export();
 
 const _OUT_TO = animationFunc({
-  duration: 20,
-})
+    duration: 20,
+  })
   .opacity(0)
   .scale(1.185)
   .step()
@@ -66,17 +66,15 @@ Component({
       value: false,
       observer(show) {
         if (show) {
-          this._maskShow();
           this._in();
         } else {
-          this.handleClose();
           this._out();
         }
       },
     },
     width: {
       type: String,
-      value: '80%',
+      value: '100%',
     },
     maskClose: {
       type: Boolean,
@@ -94,51 +92,40 @@ Component({
   },
   methods: {
     _in() {
-      this.setData(
-        {
-          _animate_visible: true,
-        },
-        () =>
-          this.setData(
-            {
-              _animation: _IN_FROM,
-            },
-            () =>
-              setTimeout(() => {
-                this.setData({
-                  _animation: _IN_TO,
-                });
-              }, 20)
-          )
-      );
+      this.setData({
+        _maskShadow: true,
+        _animate_visible: true,
+        _animation: _IN_FROM,
+      },
+      () =>
+      setTimeout(() => {
+        this.setData({
+          _animation: _IN_TO,
+        });
+      }, 20)
+    );
     },
     _out() {
-      this.setData(
-        {
+      this.setData({
+          _maskShadow: false,
           _animation: _OUT_FROM,
         },
         () =>
-          setTimeout(
+        setTimeout(
+          () =>
+          this.setData({
+              _animation: _OUT_TO,
+            },
             () =>
-              this.setData(
-                {
-                  _animation: _OUT_TO,
-                },
-                () =>
-                  setTimeout(() => {
-                    this.setData({
-                      _animate_visible: false,
-                    });
-                  }, 20)
-              ),
-            200
-          )
+            setTimeout(() => {
+              this.setData({
+                _animate_visible: false,
+              });
+            }, 20)
+          ),
+          200
+        )
       );
-    },
-    _maskShow() {
-      this.setData({
-        _maskShadow: true,
-      });
     },
     handleClose() {
       this.setData({
