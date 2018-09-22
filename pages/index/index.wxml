@@ -43,7 +43,6 @@
       <w-cell label="Toast 提示" link="../w-toast/index" wuss-class="w-cell" isLink />
       <w-cell label="Alert 弹出框" link="../w-alert/index" wuss-class="w-cell" isLink />
       <w-cell label="Notice 通告" link="../w-notice/index" wuss-class="w-cell" isLink />
-      <w-cell label="Picker 选择器" link="../w-picker/index" wuss-class="w-cell" isLink />
       <w-cell label="ActivityIndicator 活动指示器" link="../w-activity-indicator/index" wuss-class="w-cell" isLink />
     </w-cell-group>
 
