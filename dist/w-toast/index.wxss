@@ -1,6 +1,7 @@
 .wuss-toast-warp {
   z-index: 1001;
   position: fixed;
+  left: 0;
   width: 100vw;
   display: flex;
   justify-content: center;
