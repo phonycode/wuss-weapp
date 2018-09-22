@@ -9,9 +9,9 @@
 
 <w-pane desc="Use src" />
 <view class="pd" >
-	<w-avatar size="small" src="/dist/common/image/logo2.png" />
-	<w-avatar src="/dist/common/image/logo2.png" />
-	<w-avatar size="large" src="/dist/common/image/logo2.png" />
+	<w-avatar size="small" src="/pages/assets/logo.png" />
+	<w-avatar src="/pages/assets/logo.png" />
+	<w-avatar size="large" src="/pages/assets/logo.png" />
 </view>
 
 <w-pane desc="Shape is square" />
