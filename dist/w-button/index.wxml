@@ -10,7 +10,11 @@
   hover-stop-propagation="true"
   form-type="{{ formType }}" 
   open-type="{{ openType }}"
+  app-parameter="{{ appParameter }}"
   bindtap="handleClick"
+  binderror="handleError"
+  bindgetuserinfo="getuserinfo"
+  bindgetphonenumber="getphonenumber"
 >
   <w-icon 
     wuss-class="w-icon" 

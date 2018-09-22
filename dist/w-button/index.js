@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-21 16:53:05
+ * @Last Modified time: 2018-09-22 11:47:19
  */
 Component({
   externalClasses: ['wuss-class', 'wuss-button-hover-class'],
@@ -28,6 +28,7 @@ Component({
    * @param {boolean} dashed 虚线
    * @param {string} icon 添加按钮图标
    * @param {string} openType 设置开放数据, 可选值为 [contact|share|getUserInfo|openSetting|feedback]
+   * @param {string} appParameter 打开 APP 时，向 APP 传递的参数
    * @param {string} type 按钮样式类型，可选值为 [default,primary,info,warn,danger,custom]
    * @param {string} styles 按钮的自定义样式
    * @param {string} color 自定义按钮颜色
@@ -73,6 +74,10 @@ Component({
       type: String,
       value: '',
     },
+    appParameter: {
+      type: String,
+      value: '',
+    },
     type: {
       type: String,
       value: 'default',
@@ -104,10 +109,19 @@ Component({
   },
   data: {},
   methods: {
-    handleClick() {
+    handleClick(e) {
       const { _formTarget, formType } = this.data;
       formType && _formTarget && _formTarget.formTypeClick(formType);
-      this.triggerEvent('click', {}, {});
+      this.triggerEvent('click', { ...e }, {});
+    },
+    handleError(e) {
+      this.triggerEvent('error', { ...e }, {});
+    },
+    getuserinfo(e) {
+      this.triggerEvent('getuserinfo',{ ...e },{});
+    },
+    getphonenumber(e) {
+      this.triggerEvent('getphonenumber',{ ...e },{});
     },
     initStyles() {
       const { styles, color, bgColor } = this.data;
