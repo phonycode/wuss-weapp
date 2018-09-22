@@ -1,10 +1,10 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-10 15:51:06 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-22 11:51:51
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-22 17:19:08
  */
-import { Alert } from '../../dist/common/index';
+import { Alert } from '../../dist/index';
 
 Page({
   handleClick() {

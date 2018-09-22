@@ -1,10 +1,10 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-5 17:55:32 
- * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
- * @Last Modified time: 2018-09-10 17:55:32 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-22 17:19:32
  */
-import { Toast } from '../../dist/common/index';
+import { Toast } from '../../dist/index';
 Page({
   top() {
     Toast.show({
