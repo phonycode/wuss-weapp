@@ -1,20 +1,25 @@
 <p align="center">
-    <img alt="logo" src="/pages/assets/logo.png" width="120" style="margin-bottom: 10px;">
+  <img alt="logo" src="/pages/assets/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 
-# [Wuss Weapp](https://github.com/phonycode/wuss)
+# Wuss Weapp
 
-一款高质量，组件齐全，高自定义的微信小程序 UI 组件库
+<h3 align="center">一款高质量，组件齐全，高自定义的微信小程序 UI 组件库</h3>
 
 ### 文档
 
 [https://phonycode.github.io/wuss](https://phonycode.github.io/wuss)
 
-## 体验
+## 扫码体验
 
 使用微信扫一扫体验小程序组件示例
 
-<img width="200" src="/pages/assets/logo.png">
+<img width="200" src="/assets/qrcode.png">
+
+
+## 演示图片
+
+<img width="450" src="/assets/home.png">
 
 ## 快速上手
 
