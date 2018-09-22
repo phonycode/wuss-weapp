@@ -157,3 +157,7 @@
 	</w-cell>
 </w-cell-group>
 
+
+<w-pane desc="OpenType" />
+<w-button type="info" open-type="getUserInfo" bindgetuserinfo="change">getUserInfo</w-button>
+<w-button type="info" open-type="getPhoneNumber" bindgetPhoneNumber="change">getPhoneNumber</w-button>
