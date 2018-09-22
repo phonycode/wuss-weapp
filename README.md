@@ -2,7 +2,7 @@
   <img alt="logo" src="/assets/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 
-# Wuss Weapp
+<h1 align="center">Wuss Weapp</h1>
 
 <h3 align="center">一款高质量，组件齐全，高自定义的微信小程序 UI 组件库</h3>
 
