@@ -6,12 +6,5 @@
   "miniprogram": "dist",
   "repository": "https://github.com/phonycode/wuss",
   "author": "Awei <13650928419@163.com>",
-  "license": "MIT",
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  },
-  "devDependencies": {
-    "vuepress": "^0.14.2"
-  }
+  "license": "MIT"
 }

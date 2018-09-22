@@ -1,6 +1,8 @@
 <w-toast id="wuss-toast" />
 <view class="wuss-class wuss-validate {{ showIcon ? 'wuss-validate-showIcon' : '' }}">
-	<slot/>
+	<view class="wuss-content">
+		<slot />
+	</view>	
 	<w-icon
 	 class="validate-icon"
 	 bind:tap="validateToast"

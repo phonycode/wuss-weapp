@@ -16,6 +16,11 @@ Component({
     field: {
       type: 'descendant',
       target: field,
+      linked(t) {
+        this.setData({
+          _node: t,
+        });
+      },
     },
     [FORM_PATH]: {
       type: 'ancestor',
@@ -29,7 +34,7 @@ Component({
   methods: {
     isValidate(value) {
       if (value === void 666) return false;
-      const { rules, first } = this.data;
+      const { rules, first, _node } = this.data;
       const [message = ''] = new WussValidate(rules).isValidate(value);
       this.setData({
         message,
@@ -37,6 +42,14 @@ Component({
         first: false,
         isError: !!message,
       });
+      _node.setData(
+        {
+          __showIcon: !!message && !first && true,
+        },
+        () => {
+          console.log(_node.data);
+        }
+      );
       const form = this.getRelationNodes(FORM_PATH)[0];
       form && form.isAllValidate();
     },

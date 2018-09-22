@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 15:10:16 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-12 10:32:36
+ * @Last Modified time: 2018-09-22 11:16:07
  */
 page {
   width: 100%;
@@ -28,6 +28,7 @@ page {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-size: 50rpx;
   flex-wrap: wrap;
 }
 

@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 17:12:04 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-21 12:41:43
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-22 11:12:29
  */
 Component({
   externalClasses: ['wuss-class'],
@@ -26,7 +26,7 @@ Component({
     },
     color: {
       type: String,
-      value: '#333333',
+      value: '',
     },
   },
 });

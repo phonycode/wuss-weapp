@@ -1,6 +1,7 @@
 /* dist/w-validate/index.wxss */
 .wuss-validate {
   position: relative;
+  display: flex;
 }
 .validate-icon {
   display: none;
@@ -9,8 +10,11 @@
   top: 50%;
   transform: translate3d(0, -50%, 0);
 }
+.wuss-content {
+  flex-grow: 1;
+}
 .wuss-validate-showIcon {
-  padding-right: 30rpx;
+  /* padding-right: 30rpx; */
 }
 .wuss-validate-showIcon .validate-icon {
   display: flex;
