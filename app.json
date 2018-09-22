@@ -24,9 +24,7 @@
     "pages/w-dialog/index",
     "pages/w-radio/index",
     "pages/w-form/index",
-    "pages/w-picker/index",
-    "pages/w-tag/index",
-    "pages/w-popup-picker/index"
+    "pages/w-tag/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

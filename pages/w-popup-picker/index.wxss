@@ -1,6 +1,0 @@
-/* pages/w-popup-picker/index.wxss */
-
-.p-btn {
-  position: relative;
-  z-index: 10000;
-}

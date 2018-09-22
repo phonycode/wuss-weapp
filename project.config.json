@@ -1,170 +1,182 @@
 {
-  "description": "项目配置文件。",
-  "packOptions": {
-    "ignore": [
-      {
-        "type": "folder",
-        "value": "node_modules"
-      },
-      {
-        "type": "folder",
-        "value": "docs"
-      }
-    ]
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "postcss": true,
-    "minified": true,
-    "newFeature": true,
-    "nodeModules": false
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.2.5",
-  "appid": "wx0188295b10d5c4cf",
-  "projectname": "wuss-weapp",
-  "isGameTourist": false,
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "plugin": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "currentL": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": 19,
-      "list": [
-        {
-          "id": -1,
-          "name": "w-popup",
-          "pathName": "pages/w-popup/index",
-          "query": ""
-        },
-        {
-          "id": 1,
-          "name": "w-toast",
-          "pathName": "pages/w-toast/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-button",
-          "pathName": "pages/w-button/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-avatar",
-          "pathName": "pages/w-avatar/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-cell",
-          "pathName": "pages/w-cell/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-tabs",
-          "pathName": "pages/w-tabs/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-steps",
-          "pathName": "pages/w-steps/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-dialog",
-          "pathName": "pages/w-dialog/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-alert",
-          "pathName": "pages/w-alert/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-swiper-out",
-          "pathName": "pages/w-swiper-out/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-action-sheet",
-          "pathName": "pages/w-action-sheet/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-switch",
-          "pathName": "pages/w-switch/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-input",
-          "pathName": "pages/w-input/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-radio",
-          "pathName": "pages/w-radio/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-checkbox",
-          "pathName": "pages/w-checkbox/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-picker",
-          "pathName": "pages/w-picker/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-form",
-          "pathName": "pages/w-form/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-address",
-          "pathName": "pages/w-address/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "w-popup-picker",
-          "pathName": "pages/w-popup-picker/index",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "tag",
-          "pathName": "pages/w-tag/index"
-        }
-      ]
-    }
-  }
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": [
+			{
+				"type": "folder",
+				"value": "node_modules"
+			},
+			{
+				"type": "folder",
+				"value": "docs"
+			}
+		]
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.5",
+	"appid": "wx0188295b10d5c4cf",
+	"projectname": "wuss-weapp",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 21,
+			"list": [
+				{
+					"id": -1,
+					"name": "w-popup",
+					"pathName": "pages/w-popup/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "w-toast",
+					"pathName": "pages/w-toast/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-button",
+					"pathName": "pages/w-button/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-avatar",
+					"pathName": "pages/w-avatar/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-cell",
+					"pathName": "pages/w-cell/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-tabs",
+					"pathName": "pages/w-tabs/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-steps",
+					"pathName": "pages/w-steps/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-dialog",
+					"pathName": "pages/w-dialog/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-alert",
+					"pathName": "pages/w-alert/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-swiper-out",
+					"pathName": "pages/w-swiper-out/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-action-sheet",
+					"pathName": "pages/w-action-sheet/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-switch",
+					"pathName": "pages/w-switch/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-input",
+					"pathName": "pages/w-input/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-radio",
+					"pathName": "pages/w-radio/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-checkbox",
+					"pathName": "pages/w-checkbox/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-picker",
+					"pathName": "pages/w-picker/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-form",
+					"pathName": "pages/w-form/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-address",
+					"pathName": "pages/w-address/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-popup-picker",
+					"pathName": "pages/w-popup-picker/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "tag",
+					"pathName": "pages/w-tag/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-qr-code",
+					"pathName": "pages/w-qr-code/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-icon",
+					"pathName": "pages/w-icon/index"
+				}
+			]
+		}
+	}
 }
