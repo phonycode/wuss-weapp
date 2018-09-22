@@ -6,11 +6,11 @@ Component({
   options: {
     addGlobalClass: true,
   },
+  /**
+   * @param {object} rules 规则
+   */
   properties: {
-    rules: {
-      type: Object,
-      value: {},
-    },
+    rules: Object,
   },
   relations: {
     field: {
