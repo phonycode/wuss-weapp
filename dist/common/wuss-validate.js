@@ -1,8 +1,33 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-18 12:45:25 
- * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
- * @Last Modified time: 2018-09-21 12:45:25 
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-22 12:09:16
+ */
+/** 如何使用 ?
+ *  const wussV =  new WussValidate (rules)
+ *  wussV.isValidate(value)
+ *
+ * 规则的类型 :
+ * interface IWussValidate<T>
+ * {
+ *    value:T    //验证的规则
+ *    message:string  //验证失败的提示语
+ * }
+ * @param {array} mode 模式 mobile | email | url |idcard
+ * @param {IWussValidate<boolean>} required 是否必填
+ * @param {IWussValidate<number>} equalLength  等于字符长度
+ * @param {IWussValidate<number>} maxLength  最大字符长度
+ * @param {IWussValidate<number>} minLength  最小字符长度
+ * @param {IWussValidate<array>} rangelength  限制字符长度的范围
+ * @param {IWussValidate<number>} equal  等于某值
+ * @param {IWussValidate<number>} max  最大值
+ * @param {IWussValidate<number>} min  最小值
+ * @param {IWussValidate<number>} range  值的范围
+ * @param {IWussValidate<string>} regexp  正则限制
+ *
+ *  使用 addMethods 增加新的方法
+ *  wussV.addMethods(()=>{      return '我是验证失败的提示语' })
  */
 class WussValidate {
   result = [];
@@ -17,10 +42,6 @@ class WussValidate {
     }
     return this.result;
   }
-  /**
-   *
-   * @param {模式的数组} arr 自带 mobile email
-   */
   mode(arr) {
     for (const i in arr) {
       const message = this[arr[i]]();

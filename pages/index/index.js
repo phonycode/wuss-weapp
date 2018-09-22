@@ -1,14 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-29 17:12:25 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-08-30 10:21:03
- */
-/*
- * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
- * @Date: 2018-08-29 17:12:23 
- * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
- * @Last Modified time: 2018-08-29 17:12:23 
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-22 11:52:03
  */
 Page({
   data: {
@@ -73,20 +67,14 @@ Page({
       },
     ],
   },
-  
-  onLoad: function () {
-   
-  },
-
   handleSelected() {
-    console.log(...arguments)
+    console.log(...arguments);
   },
 
   handleVisible() {
-    this.setData({ visible: true })
+    this.setData({ visible: true });
   },
   handleClose() {
-    this.setData({ visible: false })
+    this.setData({ visible: false });
   },
-  
-})
+});

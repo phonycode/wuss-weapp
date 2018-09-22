@@ -1,4 +1,3 @@
-// pages/w-checkbox/index.js
 const MOCK_DATA = {
   productName: 'iphone X max',
   total: 1,
@@ -9,9 +8,6 @@ const MOCK_DATA = {
 };
 
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
     items1Str: '',
     items1: [
