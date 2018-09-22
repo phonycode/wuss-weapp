@@ -27,21 +27,6 @@
 		 placeholder="随以输入"
 		 label="test"
 		/>
-		<w-cell
-		 isLink
-		 label="选择地区"
-		 content="{{ currentCity }}"
-		 bind:click="handleClick"
-		>
-			<w-popup-picker
-			 name="address"
-			 title="请选择地区"
-			 visible="{{ picker_visible }}"
-			 options="{{ cityData }}"
-			 bind:onCancel="handleCancel"
-			 bind:onSelect="handleOnSelected"
-			/>
-		</w-cell>
 
 		<w-cell label="开启VIP模式">
 			<w-switch name="isVip" slot="content" />
