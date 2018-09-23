@@ -42,14 +42,9 @@ Component({
         first: false,
         isError: !!message,
       });
-      _node.setData(
-        {
-          __showIcon: !!message && !first && true,
-        },
-        () => {
-          console.log(_node.data);
-        }
-      );
+      _node.setData({
+        __showIcon: !!message && !first && true,
+      });
       const form = this.getRelationNodes(FORM_PATH)[0];
       form && form.isAllValidate();
     },
