@@ -16,7 +16,6 @@
 
 <img width="200" src="/assets/qrcode.jpg">
 
-
 ## 演示图片
 
 <img width="450" src="/assets/home.jpg">
@@ -56,6 +55,10 @@ git clone https://github.com/phonycode/wuss.git
 ```
 
 然后，直接将项目在微信开发者工具中打开即可。
+
+### Wuss Weapp 官方交流群
+
+QQ 群号 787275772
 
 ## 贡献
 

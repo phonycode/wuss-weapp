@@ -15,6 +15,7 @@
 <w-cell-group>
 	<w-input
 	 extra="￥"
+	 type="digit"
 	 bindextraClick="extraClick"
 	 placeholder="00"
 	 label="金额"
@@ -25,7 +26,7 @@
 <w-pane desc="Format" />
 <w-cell-group>
 	<w-input
-	 type="phone"
+	 type="mobile"
 	 bindblur="iBlur"
 	 placeholder="请输入你的手机号"
 	 label="手机号"
@@ -62,7 +63,6 @@
 <w-pane desc="readOnly and disabled" />
 <w-cell-group>
 	<w-input
-	 disabled
 	 readOnly
 	 value="我是值只读"
 	 placeholder="只读"
