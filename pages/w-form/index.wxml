@@ -9,7 +9,6 @@
 			<w-input
 			 type="mobile"
 			 name="mobile"
-			 value="13111111111"
 			 clear
 			 placeholder="请输入你的手机号"
 			 label="手机号"
@@ -19,12 +18,14 @@
 			<w-input
 			 name="userName"
 			 placeholder="请输入你的姓名"
+			 clear
 			 label="姓名"
 			/>
 		</w-validate>
 		<w-input
 		 name="userName"
 		 placeholder="随以输入"
+		 clear
 		 label="test"
 		/>
 
