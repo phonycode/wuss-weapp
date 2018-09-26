@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:38 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-25 09:13:56
+ * @Last Modified time: 2018-09-26 10:50:54
  */
 
 .wuss-input {
@@ -10,7 +10,6 @@
 }
 .wuss-input_label {
   color: #000;
-  font-size: 34rpx;
   margin-left: 0;
   margin-right: 10rpx;
   text-align: left;
@@ -30,19 +29,19 @@
   color: #888;
 }
 .wuss-input_input-wrap {
-  font-size: 34rpx;
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   display: flex;
   align-items: center;
   position: relative;
 }
 .input-wrap--textarea {
   align-items: flex-start;
+  padding-bottom: 40rpx;
 }
 
 .wuss-input_input-wrap .wuss-input_input {
   color: #000;
-  font-size: 34rpx;
   appearance: none;
   width: 100%;
   border: 0;
@@ -51,7 +50,6 @@
   box-sizing: border-box;
 }
 .wuss-extra {
-  font-size: 30rpx;
   margin-left: 10rpx;
   vertical-align: middle;
 }

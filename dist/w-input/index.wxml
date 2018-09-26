@@ -1,6 +1,6 @@
 <!-- dist/w-input/index.wxml -->
 <w-cell
- icon="leftIcon"
+ icon="{{leftIcon}}"
  class="wuss-class"
  wuss-class-hd="{{type==='textarea'?'wuss-class-hd':''}}"
  isValidateIcon="{{ __showIcon }}"

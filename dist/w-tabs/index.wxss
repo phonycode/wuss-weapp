@@ -2,19 +2,15 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:51 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-07 11:18:15
+ * @Last Modified time: 2018-09-26 10:49:11
  */
 page {
   min-height: 100%;
 }
-
-.wuss-tabs {
-}
-
-.wuss-tabs-content {
+.wuss-tabs-title {
   white-space: nowrap;
   display: block;
-  height:70rpx;
+  height: 70rpx;
   position: relative;
 }
 .tabs-item {
@@ -26,7 +22,7 @@ page {
   font-size: 15px;
   display: inline-block;
 }
-.tabs-item-icon{
+.tabs-item-icon {
   display: inline-block;
 }
 .tabs-item-title.active {
@@ -38,14 +34,14 @@ page {
   bottom: 0;
   z-index: 100;
   background-color: rgb(69, 143, 246);
-  -webkit-transition: .3s, -webkit-transform .3s;
-  transition: .3s, -webkit-transform .3s;
+  -webkit-transition: 0.3s, -webkit-transform 0.3s;
+  transition: 0.3s, -webkit-transform 0.3s;
 }
-.wuss-tabs-item-disabled{
-  color:#c9c9c9;
+.wuss-tabs-item-disabled {
+  color: #c9c9c9;
 }
 .wuss-tabs-border-none {
-  border: none!important;
+  border: none !important;
 }
 
 .wuss-tabs-fixed {
@@ -54,4 +50,7 @@ page {
   right: 0;
   top: 0;
   width: 100%;
+}
+.wuss-tabs-fixed--content {
+  margin-top: 70rpx;
 }

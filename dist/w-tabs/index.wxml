@@ -4,7 +4,7 @@
 	 scroll-left="{{ scrollLeft }}"
 	 scroll-x="{{ isScroll }}"
 	>
-		<view class="wuss-tabs-content">
+		<view class="wuss-tabs-title">
 			<block wx:for="{{ tabs }}" wx:key="index">
 				<view
 				 catchtap="handleTab"
@@ -14,7 +14,7 @@
 				>
 					<block wx:if="{{ item.data.icon }}">
 						<w-icon
-             class="tabs-item-icon"
+						 class="tabs-item-icon"
 						 type="{{ item.data.icon }}"
 						 size="{{ item.data.iconSize }}"
 						 color="{{ item.data.iconColor }}"
@@ -35,7 +35,7 @@
 
 </view>
 
-<view class="wuss-tabs-content">
+<view class="wuss-tabs-content {{ fixed ? 'wuss-tabs-fixed--content' : '' }}">
 	<slot/>
 </view>
 
