@@ -9,7 +9,7 @@
  visible="{{ visible }}"
  maskCancel="{{ maskCancel }}"
  styles="padding: 0;"
- bind:close="_handlePopupClose"
+ bind:close="_handleCancel"
 >
 	<view class="wuss-class wuss-action-sheet">
 		<view class="wuss-action-sheet-hd">

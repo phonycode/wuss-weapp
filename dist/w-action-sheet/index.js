@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-12 14:03:55 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:22:18
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-27 14:43:11
  */
 import Behavior from '../common/behavior/index';
 
@@ -25,13 +25,6 @@ Component({
     visible: {
       type: Boolean,
       value: false,
-      observer(visible) {
-        if (visible) {
-          this.show();
-        } else {
-          this.hide();
-        }
-      },
     },
     items: {
       type: Array,
@@ -67,35 +60,36 @@ Component({
      * 取消回调
      */
     _handleCancel() {
-      this.triggerEvent('close', {}, {});
+      this.setData({
+        visible: false,
+      },() => this.triggerEvent('close', {}, {}))
     },
     /**
      * 菜单被点击回调
      */
     _handleItemClick(e) {
       const item = this.data.items[e.currentTarget.dataset.key];
-      const { autoClose } = this.data;
       if (!item || item.disabled) return false;
       this.triggerEvent(
-        'click',
+        'onChange',
         {
           ...item,
           key: e.currentTarget.dataset.key,
         },
-        {}
+        {},
       );
     },
     show(opts = {}) {
       this.setData({
         visible: true,
         ...opts,
-      });
+      },() => this.triggerEvent('show', {}, {}));
     },
-    hide() {
-      this.triggerEvent('close', {}, {});
-    },
-    _handlePopupClose() {
-      this.triggerEvent('close', {}, {});
+    hide(opts = {}) {
+      this.setData({
+        visible: false,
+        ...opts,
+      }, () => this.triggerEvent('close', {}, {}));
     },
   },
 });
