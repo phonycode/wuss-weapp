@@ -24,7 +24,19 @@ const Alert = options => {
   return component.alert(options);
 };
 
+const ActionSheet = {
+  show: (options = {}) => {
+    const component = getCtx('#wuss-actionsheet');
+    return component.show(options);
+  },
+  hide: (options = {}) => {
+    const component = getCtx('#wuss-actionsheet');
+    return component.hide(options);
+  },
+};
+
 module.exports = {
   Toast,
   Alert,
+  ActionSheet,
 };

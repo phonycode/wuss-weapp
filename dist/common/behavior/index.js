@@ -26,5 +26,12 @@ module.exports = Behavior({
         return p;
       },0) ? r != null || r != undefined ? v.replace(new RegExp(x,'g'),'') + r : v :  v + unit;
     },
+    /**
+     * 判断是否是数组对象 [{},{},{}....]
+     * @param {array} arry 
+     */
+    isArrayObject(arry) {
+      return Array.isArray(arry) && arry.length >0 && Object.prototype.toString.call(arry[0]) === '[object Object]'
+    },
   }
 })
