@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:51 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-26 10:49:11
+ * @Last Modified time: 2018-09-26 11:11:48
  */
 page {
   min-height: 100%;
@@ -50,6 +50,7 @@ page {
   right: 0;
   top: 0;
   width: 100%;
+  z-index: 100;
 }
 .wuss-tabs-fixed--content {
   margin-top: 70rpx;
