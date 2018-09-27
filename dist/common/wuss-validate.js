@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-18 12:45:25 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-22 12:09:16
+ * @Last Modified time: 2018-09-27 17:20:29
  */
 /** 如何使用 ?
  *  const wussV =  new WussValidate (rules)
@@ -74,8 +74,8 @@ class WussValidate {
       ) && `请输入有效的身份证号`
     );
   }
-  required() {
-    return this.value.length === 0 && `请输入值`;
+  required({ value, message }) {
+    return value && this.value.length === 0 && (message || `请输入值`);
   }
   // 等于长度
   equalLength({ value, message }) {
