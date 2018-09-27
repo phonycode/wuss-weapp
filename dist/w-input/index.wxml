@@ -19,7 +19,27 @@
 			<text>{{value.length}}</text>
 			/{{count}}
 		</view>
-		<textarea class="wuss-class-input wuss-input_input" type="text" fixed="{{ fixed }}" style="text-align:left" disabled="{{ disabled	 }}" value="{{ value }}" maxlength="{{ count? count : maxlength }}" focus="{{ focus }}" autoHeight="{{ autoHeight }}" cursor="{{ cursor }}" cursor-spacing="{{ cursorSpacing }}" placeholder="{{ placeholder }}" placeholder-style="{{ placeholderStyle }}" placeholder-class="{{ placeholderClass}}" selection-start="{{ selectionStart }}" selection-end="{{ selectionEnd }}" adjust-position="{{ adjustPosition }}" bindinput="handlerChange" bindfocus="handlerFocus" bindlinechange="handerLineChange" bindconfirm="handlerConfirm" bindblur="handlerBlur" wx:if="{{ type==='textarea' }}" />
+		<textarea 
+			class="wuss-class-input wuss-input_input" 
+			type="text" 
+			fixed="{{ fixed }}" 
+			style="text-align:left" 
+			disabled="{{ readOnly || disabled	 }}" 
+			value="{{ value }}" 
+			maxlength="{{ count? count : maxlength }}" 
+			focus="{{ focus }}" 
+			autoHeight="{{ autoHeight }}" 
+			cursor="{{ cursor }}" 
+			cursor-spacing="{{ cursorSpacing }}" 
+			placeholder="{{ placeholder }}" 
+			placeholder-style="{{ placeholderStyle }}" 
+			placeholder-class="{{ placeholderClass}}" 
+			selection-start="{{ selectionStart }}" 
+			selection-end="{{ selectionEnd }}" 
+			adjust-position="{{ adjustPosition }}" 
+			bindinput="handlerChange" 
+			bindfocus="handlerFocus" bindlinechange="handerLineChange" bindconfirm="handlerConfirm" bindblur="handlerBlur" wx:if="{{ type==='textarea' }}" 
+		/>
 		<input
 	 	 wx:else
 		 class="wuss-input_input"
