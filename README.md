@@ -8,7 +8,7 @@
 
 ### 文档
 
-[https://phonycode.github.io/wuss](https://phonycode.github.io/wuss)
+[https://phonycode.github.io/wuss-weapp](https://phonycode.github.io/wuss-weapp)
 
 ## 扫码体验
 
@@ -30,7 +30,7 @@
 
 1. 通过 `npm` 安装，需要依赖小程序基础库 2.2.1 以上版本，同时依赖开发者工具的 `npm` 构建。具体详情可查阅 [官方 npm 文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)。
 
-2. 到 [GitHub](https://github.com/phonycode/wuss) 下载 Wuss Weapp 的代码，将 `dist` 目录拷贝到自己的项目中。然后按照如下的方式使用组件，以 Button 为例，其它组件在对应的文档页查看：
+2. 到 [GitHub](https://github.com/phonycode/wuss-weapp) 下载 Wuss Weapp 的代码，将 `dist` 目录拷贝到自己的项目中。然后按照如下的方式使用组件，以 Button 为例，其它组件在对应的文档页查看：
 
 3. 添加需要的组件。在页面的 json 中配置（路径根据自己项目位置配置）：
 
@@ -51,7 +51,7 @@
 我们内置了所有组件的示例，您可以扫描上方的的小程序码体验，或按以下方式在微信开发者工具中查看：
 
 ```shell
-git clone https://github.com/phonycode/wuss.git
+git clone https://github.com/phonycode/wuss-weapp.git
 ```
 
 然后，直接将项目在微信开发者工具中打开即可。
@@ -66,4 +66,4 @@ QQ 群号 787275772
 
 ## LICENSE
 
-[MIT](https://github.com/phonycode/wuss/blob/master/LICENSE)
+[MIT](https://github.com/phonycode/wuss-weapp/blob/master/LICENSE)
