@@ -1,3 +1,4 @@
+import { ActionSheet } from '../../dist/index';
 Page({
   data: {
     visible: false,
@@ -73,6 +74,7 @@ Page({
   handleClick(e) {
     const key = e.currentTarget.dataset.key;
     const item = e.detail;
+    if(item.type === 'hide') return ActionSheet.hide({});
     if (key == 6) {
       this.setData(
         {
@@ -100,5 +102,10 @@ Page({
   handleShow(e) {
     const { key } = e.currentTarget.dataset;
     this.setData({ [`visible${key}`]: true });
+  },
+  handleClick2() {
+    ActionSheet.show({
+      items: [{text: 'ActionSheet.hide()',type: 'hide'}],
+    })
   },
 });

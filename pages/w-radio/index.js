@@ -7,6 +7,7 @@ Page({
       },
       {
         key: '三星',
+        disabled: true,
         value: 'sanxing',
       },
       {
@@ -18,6 +19,7 @@ Page({
         value: 'oppo',
       },
     ],
+    dataItems2: ['种子轮','天使轮','A轮','B轮','C轮','D轮'],
     radioModel: '',
   },
   handleonChange(e) {

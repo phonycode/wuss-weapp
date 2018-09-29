@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:43:02 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:28:59
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-26 16:38:23
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -30,6 +30,9 @@ Component({
     options: {
       type: Array,
       value: [],
+      observer(val) {
+        this.setData({ _isArrayObject: this.isArrayObject(val) })
+      },
     },
     defaultValue: {
       type: String,
@@ -53,6 +56,7 @@ Component({
   },
   data: {
     value: {},
+    _isArrayObject: false,
   },
   methods: {
     /**
@@ -61,34 +65,47 @@ Component({
     _handleChecked(e) {
       const { index } = e.currentTarget.dataset;
       let {
-        data: { options },
+        data: { options, _isArrayObject },
         _empty,
       } = this;
       const item = options[index];
-      if (item.disabled) return false;
-      options = _empty(options, 'checked');
-      options[index].checked = true;
-      const newValue = _empty(item, 'checked');
-      this.setData(
-        {
-          options,
-          value: newValue.value,
-        },
-        () => this.triggerEvent('onChange', { value: newValue.value }, {})
-      );
+      if(_isArrayObject) {
+        if (item.disabled) return false;
+        options = _empty(options, 'checked');
+        options[index].checked = true;
+        const newValue = _empty(item, 'checked');
+        this.setData(
+          {
+            options,
+            value: newValue.value,
+          },
+          () => this.triggerEvent('onChange', { value: newValue.value }, {})
+        );
+      } else {
+        this.setData({
+          value: item,
+        }, () => this.triggerEvent('onChange',{ value: item },{}))
+      }
     },
     _changeValue() {
-      const { options, wModel, value } = this.data;
+      const { options, wModel, value, _isArrayObject } = this.data;
       if (wModel && typeof wModel === 'string') {
         let currentItem = '';
         const diff = options.reduce(
           (p, n) => {
-            if (n.value === wModel && !n.disabled) {
-              n.checked = true;
-              currentItem = n;
-              p.count += 1;
+            if(_isArrayObject) {
+              if (String(n.value) === wModel && !n.disabled) {
+                n.checked = true;
+                currentItem = n;
+                p.count += 1;
+              } else {
+                n.checked = false;
+              }
             } else {
-              n.checked = false;
+              if (String(n) === wModel) {
+                currentItem = n;
+                p.count += 1;
+              }
             }
             p.array.push(n);
             return p;
@@ -98,13 +115,23 @@ Component({
             array: [],
           }
         );
-        this.setData(
-          {
-            options: diff.count > 0 ? diff.array : options,
-            value: diff.count > 0 && currentItem ? currentItem.value : value,
-          },
-          () => this.triggerEvent('onChange', { value: currentItem.value }, {})
-        );
+        if(_isArrayObject) {
+          this.setData(
+            {
+              options: diff.count > 0 ? diff.array : options,
+              value: diff.count > 0 && currentItem ? currentItem.value : value,
+            },
+            () => this.triggerEvent('onChange', { value: currentItem.value }, {})
+          );
+        } else {
+          const value = diff.count > 0 && currentItem ? currentItem : value;
+          this.setData(
+            {
+              value,
+            },
+            () => this.triggerEvent('onChange', { value }, {})
+          );
+        }
       }
     },
     _empty(any, key) {
@@ -130,19 +157,26 @@ Component({
   ready: function() {
     const { defaultValue, options, value } = this.data;
     let currentItem = '';
+    const isArrayObject = this.isArrayObject(options);
     if (defaultValue) {
       options.map(i => {
-        if (i.value === defaultValue && !i.disabled) {
-          currentItem = i;
-          i.checked = true;
+        if(isArrayObject) {
+          if (i.value === defaultValue && !i.disabled) {
+            currentItem = i;
+            i.checked = true;
+          } else {
+            i.checked = false;
+          }
         } else {
-          i.checked = false;
+          if (String(i) === String(defaultValue)) {
+            currentItem = i;
+          }
         }
       });
     }
     this.setData({
       options,
-      value: currentItem ? currentItem.value : value,
+      value: currentItem ? isArrayObject ? currentItem.value : currentItem : value,
     });
   },
 });

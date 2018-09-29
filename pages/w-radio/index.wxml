@@ -26,3 +26,12 @@
 <w-button type="info" data-value="sanxing" bind:click="handleChange">change 三星</w-button>
 <w-button type="info" data-value="huawei" bind:click="handleChange">change 华为</w-button>
 <w-button type="info" data-value="oppo" bind:click="handleChange">change oppo音乐手机</w-button>
+
+
+
+
+<w-pane desc="Use ArrayKeys" />
+
+<w-cell-group>
+  <w-radio defaultValue="天使轮" options="{{ dataItems2 }}" bindonChange="handleonChange" />
+</w-cell-group>
