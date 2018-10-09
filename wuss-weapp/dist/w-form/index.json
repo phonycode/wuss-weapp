@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "w-input": "../w-input/index",
-    "w-cell-group": "../w-cell-group/index"
-  }
-}
