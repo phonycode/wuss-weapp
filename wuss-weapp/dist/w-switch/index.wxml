@@ -1,0 +1,10 @@
+<view
+ class="wuss-class wuss-switch wuss-switch-size-{{ size }} {{ disabled ? 'wuss-switch-disabled' : '' }}"
+ hover-class="none"
+ hover-stop-propagation="false"
+ catchtap="_handleClick"
+>
+	<view class="wuss-switch-circle {{ value ? 'wuss-switch-circle-active' : '' }}" />
+	<view class="wuss-switch-mask {{ value ? 'wuss-switch-mask-active' : '' }}" style="border: 1rpx solid {{ color }};background-color: {{ color }};" />
+</view>
+

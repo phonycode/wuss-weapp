@@ -1,0 +1,32 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-09-14 14:14:52 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-09-28 09:50:01
+ */
+.wuss-checkbox {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: row;
+}
+
+.wuss-checkbox-title {
+  margin-left: 5px;
+  text-align: left;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.w-cell-left {
+  display: none!important;
+  /* flex: 1; */
+  /* padding-right: 0!important; */
+}
+
+.w-cell-right {
+}
+
+.wuss-checkbox-disabled {
+  opacity: .6;
+}

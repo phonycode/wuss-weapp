@@ -1,0 +1,26 @@
+<!--dist/w-toast/index.wxml-->
+<w-mask-shadow opacity="{{ mask && 0 }}" visible="{{ visible && mask }}" />
+ <!-- hidden="{{ !visible }}" -->
+
+<view
+ catchtap="toastClick"
+ class="wuss-toast-warp wuss-toast-position-{{ position }} {{   visible && 'wuss-toast-show' }}"
+ animation="{{ animationData }}"
+ wx:if="{{ visible }}"
+>
+	<view class="wuss-toast " >
+		<view class="wuss-class wuss-toast-content {{ type ? '' : 'wuss-toast-content_text' }}" >
+			<w-icon
+			 wx:if="{{ type }}"
+			 type="{{ type }}"
+       size="{{ size }}"
+       color="{{ color }}"
+			 class="wuss-toast-icon"
+			/>
+			<view class="wuss-toast-text" >
+				{{ message }}
+			</view>
+		</view>
+	</view>
+</view>
+

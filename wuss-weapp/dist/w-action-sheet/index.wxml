@@ -1,0 +1,60 @@
+<w-mask-shadow
+  visible="{{ _globalTouch }}"
+  maskCancel="{{ false }}"
+  opacity="0"
+  zIndex="10000"
+/>
+<w-popup
+ position="bottom"
+ visible="{{ visible }}"
+ maskCancel="{{ maskCancel }}"
+ styles="padding: 0;"
+ bind:close="_handleCancel"
+>
+	<view class="wuss-class wuss-action-sheet">
+		<view class="wuss-action-sheet-hd">
+			<slot name="header" />
+		</view>
+		<view class="wuss-action-sheet-bd">
+			<view class="wuss-action-sheet-btns">
+				<block wx:for="{{ items }}" wx:key="index">
+					<view
+					 style="color: {{ item.color }};"
+					 hover-class="{{ item.disabled ? '' : 'wuss-action-sheet-btn-hover' }}"
+					 class="wuss-action-sheet-btn {{ item.disabled ? 'wuss-action-sheet-btn-disabled' : '' }}"
+					 catchtap="_handleItemClick"
+					 data-key="{{ index }}"
+					>
+						<w-activity-indicator
+						 show="{{ item.loading }}"
+						 color="#b2b2b2"
+						 size="small"
+						 wuss-class="w-activity-indicator"
+						/>
+						<w-icon
+						 wx:if="{{ item.icon }}"
+						 type="{{ item.icon }}"
+						 size="{{ item.iconSize }}"
+						 color="{{ item.disabled ? '#b2b2b2b' : item.iconColor}}"
+						/>
+						{{
+						item.text
+						}}
+					</view>
+				</block>
+			</view>
+		</view>
+		<view class="wuss-action-sheet-ft" wx:if="{{ showCancel }}">
+			<view
+			 catchtap="_handleCancel"
+			 hover-class="wuss-action-sheet-btn-hover"
+			 class="wuss-action-sheet-cancel"
+			>
+				{{
+				cancelText
+				}}
+			</view>
+		</view>
+	</view>
+</w-popup>
+

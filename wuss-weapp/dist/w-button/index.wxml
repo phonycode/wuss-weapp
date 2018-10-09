@@ -1,0 +1,27 @@
+<button 
+  size="default" 
+  type="default" 
+  plain="default" 
+  class="wuss-class wuss-button wuss-button-normalize wuss-button-{{ type }} {{ disabled ? 'wuss-button-disabled' : ''}} {{ flat ? 'wuss-button-flat' : '' }} {{ ghost ? 'wuss-button-ghost' : '' }} {{ dashed ? 'wuss-button-dashed' : ''}} {{ inline ? 'wuss-button-inline' : '' }} {{ full ? 'wuss-button-full' : '' }}"
+  style="{{ buttonStyles }}"
+  disabled="{{ disabled }}" 
+  loading="{{ loading }}"
+  hover-class="{{ !disabled ? type === 'custom' ? 'wuss-button-custom-hover' : 'wuss-button-hover' : '' }}"
+  hover-stop-propagation="true"
+  form-type="{{ formType }}" 
+  open-type="{{ openType }}"
+  app-parameter="{{ appParameter }}"
+  bindtap="handleClick"
+  binderror="handleError"
+  bindgetuserinfo="getuserinfo"
+  bindgetphonenumber="getphonenumber"
+>
+  <w-icon 
+    wuss-class="w-icon" 
+    wx:if="{{ icon }}" 
+    type="{{ icon }}" 
+    size="{{ iconSize }}" 
+    color="{{ iconColor }}"
+  />
+  <slot/>
+</button>

@@ -1,0 +1,87 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-08-31 17:11:58 
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-19 08:28:35
+ */
+import { createQrCodeImg } from 'qrcode';
+
+Component({
+  externalClasses: ['wuss-class'],
+  options: {
+    addGlobalClass: true,
+  },
+  /**
+   * 组件的属性列表
+   * @param {string} text 二维码信息
+   * @param {string} size 二维码大小
+   */
+  properties: {
+    text: {
+      type: String,
+      value: '',
+      observer(val) {
+        this.drawQRCode();
+        this.triggerEvent('change', { val }, {});
+      },
+    },
+    size: {
+      type: String,
+      value: 100,
+      observer() {
+        this.computedStyles();
+      },
+    },
+  },
+  methods: {
+    /**
+     * 绘制二维码
+     */
+    drawQRCode() {
+      const { text } = this.data;
+      const base64Data = createQrCodeImg(encodeURIComponent(text));
+      this.computedStyles();
+      this.setData({
+        base64Data,
+      });
+    },
+    /**
+     * 计算styles
+     */
+    computedStyles() {
+      const { size } = this.data;
+      this.setData({
+        styles: `width: ${
+          String(size).indexOf('px') > -1 ? size : size + 'px'
+        };height: ${String(size).indexOf('px') > -1 ? size : size + 'px'};`,
+      });
+    },
+    /**
+     * 渲染错误回调
+     */
+    handleOnError() {
+      this.triggerEvent(
+        'onLoad',
+        {
+          ...this.properties,
+        },
+        {}
+      );
+    },
+    /**
+     * 渲染成功回调
+     */
+    handleOnLoad() {
+      this.triggerEvent(
+        'onLoad',
+        {
+          ...this.properties,
+        },
+        {}
+      );
+    },
+  },
+  ready: function() {
+    this.drawQRCode();
+  },
+});

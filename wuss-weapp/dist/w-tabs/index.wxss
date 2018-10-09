@@ -1,0 +1,57 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-09-03 15:12:51 
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-09-27 17:27:14
+ */
+page {
+  min-height: 100%;
+}
+.wuss-tabs-title {
+  white-space: nowrap;
+  display: block;
+  height: 70rpx;
+  position: relative;
+}
+.tabs-item {
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+}
+.tabs-item-title {
+  font-size: 15px;
+  display: inline-block;
+}
+.tabs-item-icon {
+  display: inline-block;
+}
+.tabs-item-title.active {
+  color: rgb(69, 143, 246);
+}
+
+.tab-line-bar {
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgb(69, 143, 246);
+  -webkit-transition: 0.3s, -webkit-transform 0.3s;
+  transition: 0.3s, -webkit-transform 0.3s;
+}
+.wuss-tabs-item-disabled {
+  color: #c9c9c9;
+}
+.wuss-tabs-border-none {
+  border: none !important;
+}
+
+.wuss-tabs-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+}
+.wuss-tabs-fixed--content {
+  margin-top: 70rpx;
+}

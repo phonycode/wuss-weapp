@@ -1,0 +1,80 @@
+<!-- dist/w-input/index.wxml -->
+<w-cell
+ icon="{{leftIcon}}"
+ class="wuss-class"
+ wuss-class-hd="{{type==='textarea'?'wuss-class-hd':''}}"
+ isValidateIcon="{{ __showIcon }}"
+ wuss-class-cell="{{ firstCell ? 'wuss-cell-first-cell' : '' }}"
+ labelSpan="{{ labelSpan }}"
+ wuss-class-left="{{label===''?'wuss-class-left-empty':''}}"
+>
+	<view
+	 class="wuss-class-label wuss-input_label {{ disabled && !readOnly ? 'input_label-disabled':''}}"
+	 slot="label"
+	>
+		{{label}}
+	</view>
+	<view class="wuss-class-input-wrap wuss-input_input-wrap {{ disabled && !readOnly ? 'input_input-disabled':''}} {{ type==='textarea' ? 'input-wrap--textarea' : ''}}" slot="content">
+		<view class="wuss-textarea-count" wx:if="{{  type==='textarea' && count > 0 }}">
+			<text>{{value.length}}</text>
+			/{{count}}
+		</view>
+		<textarea 
+			class="wuss-class-input wuss-input_input" 
+			type="text" 
+			fixed="{{ fixed }}" 
+			style="text-align:left" 
+			disabled="{{ readOnly || disabled	 }}" 
+			value="{{ value }}" 
+			maxlength="{{ count? count : maxlength }}" 
+			focus="{{ focus }}" 
+			autoHeight="{{ autoHeight }}" 
+			cursor="{{ cursor }}" 
+			cursor-spacing="{{ cursorSpacing }}" 
+			placeholder="{{ placeholder }}" 
+			placeholder-style="{{ placeholderStyle }}" 
+			placeholder-class="{{ placeholderClass}}" 
+			selection-start="{{ selectionStart }}" 
+			selection-end="{{ selectionEnd }}" 
+			adjust-position="{{ adjustPosition }}" 
+			bindinput="handlerChange" 
+			bindfocus="handlerFocus" bindlinechange="handerLineChange" bindconfirm="handlerConfirm" bindblur="handlerBlur" wx:if="{{ type==='textarea' }}" 
+		/>
+		<input
+	 	 wx:else
+		 class="wuss-input_input"
+		 type="{{ type === 'mobile' ? 'number' : type }}"
+		 style="text-align:{{ moneyKeyboardAlign }};"
+		 disabled="{{ readOnly || disabled	 }}"
+		 value="{{ value }}"
+		 maxlength="{{ type === 'mobile' ? 13 : maxlength }}"
+		 focus="{{ focus }}"
+		 confirm-type="{{ confirmType }}"
+		 confirm-hold="{{ confirmHold }}"
+		 cursor="{{ cursor }}"
+		 cursor-spacing="{{ cursorSpacing }}"
+		 placeholder="{{ placeholder }}"
+		 placeholder-style="{{ placeholderStyle }}"
+		 placeholder-class="{{ placeholderClass}}"
+		 selection-start="{{ selectionStart }}"
+		 selection-end="{{ selectionEnd }}"
+		 adjust-position="{{ adjustPosition }}"
+		 bindinput="handlerChange"
+		 bindfocus="handlerFocus"
+		 bindconfirm="handlerConfirm"
+		 bindblur="handlerBlur"
+		/>
+    <w-icon
+      wx:if="{{ clear && _focus && value!='' && !disabled && !readOnly }}"
+      class="wuss-clear"
+      type="error"
+      bind:touchstart="handerClearClick"
+    />
+		<view
+		 wx:if="{{ extra }}"
+		 class="wuss-extra"
+		 catch:tap="handerExtraClick"
+		>{{extra}}</view>
+	</view>
+</w-cell>
+

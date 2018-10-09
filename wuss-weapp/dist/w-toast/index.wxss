@@ -1,0 +1,56 @@
+.wuss-toast-warp {
+  z-index: 1001;
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.wuss-toast-show{
+  visibility: visible;
+}
+.wuss-toast {
+  background: rgba(40, 40, 40, 0.75);
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fff;
+}
+.wuss-toast-content {
+  min-height: 230rpx;
+  padding: 44rpx 84rpx;
+  box-sizing: border-box;
+  max-width: 80vw;
+}
+.wuss-toast-content_text {
+  min-height:0;
+  padding: 10rpx 30rpx;
+  text-overflow: ellipsis;
+}
+.wuss-toast-icon {
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+/* position */
+.wuss-toast-position-default {
+  top: 260rpx !important;
+  bottom: auto !important;
+}
+
+.wuss-toast-position-top {
+  top:0;
+  bottom: auto !important;
+  transform: translate3d(0, -100%, 0);
+}
+.wuss-toast-position-bottom {
+  bottom:0;
+  top: auto !important;
+  transform: translate3d(0, 100%, 0);
+}
+.wuss-toast-position-middle {
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translate3d(0, -50%, 0);
+}

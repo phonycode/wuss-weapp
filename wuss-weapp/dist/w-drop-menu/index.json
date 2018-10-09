@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-cell": "../w-cell/index",
+    "w-radio": "../w-radio/index",
+    "w-button": "../w-button/index",
+    "w-icon": "../w-icon/index",
+    "w-cell-group": "../w-cell-group/index",
+    "w-popup": "../w-popup/index"
+  }
+}

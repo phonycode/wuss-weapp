@@ -1,0 +1,11 @@
+<text
+  size="default" 
+  max="{{ max }}" 
+  class="wuss-class wuss-badge-warp wuss-badge-{{ type }}"
+  style="{{ styles }}"
+  hover-stop-propagation="true"
+  open-type="{{ openType }}"
+>
+  <slot wx:if="{{!value && type !== 'round'}}"></slot>
+  {{value && type !== 'round' ? value : ''}}
+</text>

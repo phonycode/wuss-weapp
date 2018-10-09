@@ -1,0 +1,9 @@
+<view 
+  class="wuss-class wuss-tag wuss-tag-{{ color }} {{ visible ? '' : 'wuss-tag-close' }} "
+  style="{{ tagStyle }}"
+  bindtap="handlerClick"
+>
+	<slot/>
+	<w-icon type="close"  wx:if="{{ closeable }}" bindtap="_closeTag"/>
+</view>
+

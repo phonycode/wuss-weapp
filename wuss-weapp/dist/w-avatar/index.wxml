@@ -1,0 +1,16 @@
+<view class=" wuss-class  wuss-avatar	wuss-avatar-{{ shape }} 'wuss-avatar-{{ size }} 	{{ src ? 'wuss-avatar-src' : '' }}" bindtap="handlerClick">
+	<image
+	 class="wuss-avatar-img"
+	 src="{{ src }}"
+	 wx:if="{{ src }}"
+	/>
+	<text
+	 class="wuss-avatar-string"
+	 style="{{ childrenStyle }}"
+	 wx:else
+	>
+		<slot/>
+	</text>
+
+</view>
+

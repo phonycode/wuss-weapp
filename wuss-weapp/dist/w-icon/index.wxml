@@ -1,0 +1,4 @@
+<view 
+  class="wuss-class wuss-font wuss-icon-{{ type }}" 
+  style="{{ size ? 'font-size:' + size + 'rpx;' : '' }}{{ color ? 'color:' + color + ';' : '' }}display:inline-block;{{ iconStyles }}"
+/>

@@ -1,0 +1,7 @@
+<view
+ class="wuss-class wuss-cell-group"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+  <slot />
+</view>

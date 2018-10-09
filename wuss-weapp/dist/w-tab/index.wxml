@@ -1,0 +1,6 @@
+<view
+  class="wuss-tab-pane"
+  style="{{ show ? '' : 'display: none' }}"
+>
+  <slot />
+</view>

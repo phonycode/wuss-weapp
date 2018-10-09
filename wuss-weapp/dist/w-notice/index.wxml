@@ -1,0 +1,40 @@
+<view
+ wx:if="{{ show }}"
+ class="wuss-class wuss-notice {{ mode ? 'wuss-notice-icon' : '' }}"
+ style="color: {{ color }};background-color: {{ backgroundColor }}"
+ bind:tap="handleClick"
+>
+	<w-icon
+	 wx:if="{{ icon }}"
+	 class="wuss-notice-voice"
+   type="{{ icon }}"
+	/>
+	
+	<view class="wuss-notice__content-wrap">
+
+		<view class="wuss-notice__content" animation="{{ animationData }}">
+			{{ text }}
+		</view>
+
+	</view>
+
+	<view wx:if="{{ mode }}" class="wuss-notice-operation">
+		
+		<navigator
+		 hover-class="none"
+		 wx:if="{{ mode === 'link' }}"
+		 url="{{ url }}"
+		 open-type="{{ openType }}"
+		>
+			<w-icon  type="arrow-right" size="20"/>
+		</navigator>
+
+		<w-icon
+		 wx:if="{{ mode === 'closeable' }}"
+     size="20"
+		 type="close"
+		 bind:tap="onClose"
+		/>
+	</view>
+</view>
+

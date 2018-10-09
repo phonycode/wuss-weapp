@@ -1,0 +1,27 @@
+<view class="wuss-class wuss-steps wuss-steps-{{ direction }}">
+
+	<view
+	 wx:for="{{ steps }}"
+	 wx:key="index"
+	 class="wuss-step wuss-step-{{ item._status }}"
+	>
+		<view class="wuss-steps-item-tail wuss-steps-item-tail-{{ item._lineStatus }}" />
+		<view class="wuss-step--icon-container ">
+			<view class="step-icon--default step-icon--default-dot" wx:if="{{ type === 'dot' }}" />
+			<w-icon
+			 wx:elif="{{ item._status === 'finish' || item._status === 'error' }}"
+			 type="{{ item._status === 'finish' ? 'success' : 'error' }}"
+			 size="36"
+			 wuss-class="wuss-step--icon"
+			/>
+			<view class="step-icon--default step-icon--default-number" wx:elif="{{ type === 'number' }}">{{ index + 1 }}</view>
+		</view>
+		<view class="wuss-step-content">
+			<view class="step-title">{{ item.title }}</view>
+			<view class="step-desc">{{ item.desc }}</view>
+		</view>
+
+	</view>
+
+</view>
+

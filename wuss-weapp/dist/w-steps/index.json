@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-icon": "../w-icon/index"
+  }
+}

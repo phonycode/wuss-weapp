@@ -1,0 +1,11 @@
+<view class="wuss-class wuss-pane" hover-class="none" hover-stop-propagation="false">
+	<view class="title" style="font-size: {{ tsize }}px;" wx:if="{{ title }}" >
+    {{ title }}
+    <slot name="title" />
+	</view>
+	<view class="description" style="font-size: {{ dsize }}px;" wx:if="{{ desc }}" >
+    {{ desc }}
+    <slot name="desc" />
+	</view>
+</view>
+
