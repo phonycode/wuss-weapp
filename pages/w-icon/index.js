@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 15:28:45 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-22 11:51:29
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-09 10:26:31
  */
 Page({
   data: {
@@ -105,6 +105,8 @@ Page({
       { text: 'zoomout', name: 'zoomout' },
       { text: 'zoomin', name: 'zoomin' },
       { text: 'position', name: 'position' },
+      { text: 'checkbox', name: 'checkbox' },
+      { text: 'checkbox-o', name: 'checkbox-o' },
     ],
   },
   copyIconName(e) {

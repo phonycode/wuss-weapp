@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 17:12:04 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-22 11:12:29
+ * @Last Modified time: 2018-10-09 10:27:05
  */
 Component({
   externalClasses: ['wuss-class'],
