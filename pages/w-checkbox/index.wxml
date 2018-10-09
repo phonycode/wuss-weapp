@@ -21,3 +21,24 @@
 	/>
 </w-cell-group>
 
+<w-pane desc="IconType" />
+<w-cell-group>
+	<w-checkbox
+   icon-type="circle"
+	 direction="right"
+	 options="{{ items1 }}"
+	 bind:onChange="handleChange"
+	/>
+  <w-checkbox
+   icon-type="box"
+	 direction="right"
+	 options="{{ items1 }}"
+	 bind:onChange="handleChange"
+	/>
+  <w-checkbox
+   icon-type="check"
+	 direction="right"
+	 options="{{ items1 }}"
+	 bind:onChange="handleChange"
+	/>
+</w-cell-group>

@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-18 15:28:13
+ * @Last Modified time: 2018-10-09 10:19:27
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -28,6 +28,7 @@ Component({
    * @param {string} disabled 禁用
    * @param {string} title 标题
    * @param {string} direction 方向，可选值有[left/right]
+   * @param {string} iconType  checkbox图标类型，可选值有[circle,box,check]
    * @param {string} [options] 传入的数组对象，参数有 label,checked,disabled
    */
   properties: {
@@ -46,6 +47,10 @@ Component({
     direction: {
       type: String,
       value: 'left',
+    },
+    iconType: {
+      type: String,
+      value: 'circle',
     },
     options: {
       type: Array,

@@ -2,9 +2,9 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:52 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-14 15:53:00
+ * @Last Modified time: 2018-10-09 10:19:44
  */
-.wuss-checkbox {
+ .wuss-checkbox {
   display: flex;
   flex: 1;
   align-items: center;
