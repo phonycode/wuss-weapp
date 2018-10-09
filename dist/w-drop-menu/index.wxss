@@ -12,7 +12,7 @@
   flex: 1;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .wuss-drop-menu-bar .bar-item {
@@ -27,7 +27,7 @@
 
 .bar-item-text {
   position: relative;
-  font-size: 28rpx;
+  font-size: 15px;
   color: #333333;
   white-space: nowrap;
   overflow: hidden;
@@ -41,23 +41,16 @@
   color: #fe8b4a;
 }
 
-.arrow {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  vertical-align: middle;
-  transition: 400ms;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABTElEQVRIS+2TMUtDQRCEZ/+Kv0IEFUQI9oqo2KiI2uxqlTSihVi+20MsFCy0shNrKwsbEcRO/BvWGTlIJMYk9xJ5VnnlMTff3sw+QcWfVOyPMSCb8P9FZGafJOvufpYda7BAzOwGwEQIYer7BWa2BuCa5I67X44KUdUrAEskazHGpx8RdUBW3f12WIiZnZNcBzDn7s/p/q8OzGyD5IWILIYQ7spCepn3BKRDM9sFEEVkoSiKhxzEzAqSW52Tt+/03SIzM5KnAGru/tgPoqpJswdgvh1Lp3bgmrYgJyRnYowv3RAzOyK5LyKzIYTXXkNk/wNVPRSRgwRx97e2iarWATQGmfftoHuSFIOIbDebzckY40frZcc589KAVvEFgGWS9wBWypgPBUhiVd0UkelUvru/57ZraEAZw25NtuRRTEuv6V/NxxGVSrDykr8AS0SXGZ1VyZIAAAAASUVORK5CYII=');
-  background-repeat: no-repeat;
-  background-size: cover;
+.arrow-down {
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  vertical-align: 6rpx;
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
 }
 
-.arrow.selected {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABY0lEQVRIS+2Tu0oDURRFz5pP8StEMIIIyU2tiIqNiqiVj0wSG9FCgjOFIGKhYKGVnQjJJGhlYSOC2Im/YenMkSQmxLxmEolVprycu9e5e+9BBvwxYH0ZAkId/j+LAtd8IpLF9k5D1+oyoCoErrkGGbFsb6z+Aj0yCwpXoGvY3kW/EN81l4jMYFlxdvJPvyyqQ0TnSXs3vUJ8x5yBLIJOkio+l++3ZKCOWVI4J9BpMt5tVEg78baA8qE6Zl1FTiAw2KWHMIjvmmNEVho3r93p2CJ1zaaq5LCIkyo8doL4TjIHugE6VbOlcbZrTasQDrGIkcq/NEN8N7mP6BbKBOnCa7slQv8DdcyeimyDxrCLbzURdRJZhd1u4h0zaNm0asMq+jVK+v6j8jKRgzDxyIDy4E+QsyrcIToXRbwnQKVdbmI5EMatQHNkiu9h7eoZEEWweSY05H5EI9f0r+JDiyI5OPCQvwG5MYkZzCBZfAAAAABJRU5ErkJggg==');
-  background-repeat: no-repeat;
-  background-size: cover;
+.arrow-up {
+  transition: all 400ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  vertical-align: middle;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
@@ -90,7 +83,7 @@
 .animation-content {
   position: absolute;
   top: 0;
-  margin-top: 45px;
+  margin-top: 44px;
   z-index: 100;
   width: 100%;
 }
@@ -144,4 +137,29 @@
 
 .wuss-drop-menu-list .items:last-child {
   /* border-bottom: none; */
+}
+
+.w-cell-hd {
+  min-height: 40px;
+}
+
+.wuss-drop-menu-scrollview {
+  min-height: 200px;
+  max-height: 350px;
+  overflow: hidden;
+}
+
+.wuss-drop-menu-btn-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.w-button {
+  margin: 0!important;
+  border-top: none!important;
+}
+
+.w-icon-filter {
+  vertical-align: 3rpx;
 }

@@ -1,69 +1,98 @@
 Page({
   data: {
-    dataItems: [
-      {
-        text: '户型',
+    options: [{
+        text: '最高评分',
         type: 'sort',
-        options: [],
       },
       {
-        text: '推荐排序',
-        type: 'selected',
-        options: [
-          {
-            text: '推荐排序',
-            checked: false,
+        text: '风格',
+        type: 'radio',
+        options: [{
+            text: '全部',
           },
           {
-            text: '好评优先',
-            checked: false,
+            text: '原创',
           },
           {
-            text: '高价优先',
-            checked: false,
+            text: '漫改',
           },
           {
-            text: '低价优先',
-            checked: false,
+            text: '轻改',
           },
           {
-            text: '距离优先',
-            checked: false,
+            text: '游戏改',
+          },
+          {
+            text: '动态漫',
+          },
+          {
+            text: '布袋戏',
+          },
+          {
+            text: '热血',
+          },
+          {
+            text: '奇幻',
+          },
+          {
+            text: '战斗',
+          },
+          {
+            text: '搞笑',
+          },
+          {
+            text: '日常',
+          },
+          {
+            text: '科幻',
+          },
+          {
+            text: '萌系',
+          },
+          {
+            text: '治愈',
+          },
+          {
+            text: '校园',
           },
         ],
       },
       {
-        text: '价格星级',
-        type: 'selected',
-        options: [
-          {
-            text: '快捷酒店',
-            checked: false,
+        text: '类型',
+        type: 'checkbox',
+        options: [{
+            text: '国产',
           },
           {
-            text: '二星以下/经济型',
-            checked: false,
+            text: '正片',
           },
           {
-            text: '三星/舒适',
-            checked: false,
+            text: '剧场版',
           },
           {
-            text: '四星/高档',
-            checked: false,
+            text: '日本动漫',
           },
           {
-            text: '五星/豪华',
-            checked: false,
+            text: '其他',
           },
         ],
+      },
+      {
+        text: '筛选',
+        type: 'filter',
+        slotName: 'filter',
       },
     ],
+    radioOptions: ["全部", "正片", "剧场版", "其他"],
+    checkboxOptions: [{
+      label: "免费"
+    }, {
+      label: "付费"
+    }, {
+      label: "大会员"
+    }],
   },
-  handleSelected(e) {
-    console.log(e);
-  },
-  handleSelectedSort(e) {
+  handleChange(e) {
     console.log(e);
   },
 });

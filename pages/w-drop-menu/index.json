@@ -1,6 +1,12 @@
 {
   "usingComponents": {
     "w-drop-menu": "/dist/w-drop-menu/index",
+    "w-cell-group": "/dist/w-cell-group/index",
+    "w-cell": "/dist/w-cell/index",
+    "w-checkbox": "/dist/w-checkbox/index",
+    "w-radio": "/dist/w-radio/index",
+    "w-switch": "/dist/w-switch/index",
+    "w-button": "/dist/w-button/index",
     "w-pane": "/dist/w-pane/index"
   }
 }
