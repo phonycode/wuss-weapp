@@ -1,11 +1,12 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-22 11:01:24
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-09 11:25:36
  */
-.wuss-cell {
+ .wuss-cell {
   position: relative;
+  transition: background-color 200ms ease 0s;
 }
 
 .wuss-cell-hover {

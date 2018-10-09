@@ -28,7 +28,6 @@
 				</view>
 			</view>
 		</view>
-
 	</view>
 	<view class="wuss-cell-link" wx:if="{{ isLink }}">
 		<w-icon
