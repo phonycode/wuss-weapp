@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-08 10:54:34 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-22 14:08:46
+ * @Last Modified time: 2018-10-09 10:21:06
  */
 import Behavior from '../common/behavior/index';
 
@@ -133,5 +133,10 @@ Component({
       });
       this.triggerEvent('close');
     },
+  },
+  ready: function() {
+    this.setData({
+      _animation: _IN_FROM,
+    })
   },
 });
