@@ -9,7 +9,7 @@
   height="250px"
   bind:close="handleClose"
 >
-  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
 </w-popup>
 <w-button type="info" bind:click="handleClick2">Bottom</w-button>
 <w-popup 
@@ -18,7 +18,7 @@
   height="250px"
   bind:close="handleClose"
 >
-  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
 </w-popup>
 <w-button type="info" bind:click="handleClick3">Left</w-button>
 <w-popup 
@@ -26,7 +26,7 @@
   position="left"
   bind:close="handleClose"
 >
-  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
 </w-popup>
 <w-button type="info" bind:click="handleClick4">Right</w-button>
 <w-popup 
@@ -34,20 +34,20 @@
   position="right"
   bind:close="handleClose"
 >
-  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
 </w-popup>
 
-<w-pane desc="Disabled Mask" />
+<w-pane desc="Disabled MaskClose" />
 
 <w-button type="info" bind:click="handleClick5">Info</w-button>
 <w-popup 
+  mask-close="{{false}}"
   visible="{{ popup5 }}"
   position="bottom"
   height="250px"
   bind:close="handleClose"
-  mask="{{false}}"
 >
-  <view wx:for="{{100}}" wx:key="index">{{ index }}</view>
+  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
   <w-button type="info" bind:click="handleClose">关闭</w-button>
 </w-popup>
 
