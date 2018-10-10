@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="logo" src="/assets/logo.png" width="120" style="margin-bottom: 10px;">
+  <img alt="logo" src="https://raw.githubusercontent.com/phonycode/wuss-weapp/master/assets/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 
 <h1 align="center">Wuss Weapp</h1>
@@ -14,11 +14,11 @@
 
 使用微信扫一扫体验小程序组件示例
 
-<img width="200" src="/assets/qrcode.jpg">
+<img width="200" src="https://raw.githubusercontent.com/phonycode/wuss-weapp/master/assets/qrcode.jpg">
 
 ## 演示图片
 
-<img width="450" src="/assets/home.jpg">
+<img width="450" src="https://raw.githubusercontent.com/phonycode/wuss-weapp/master/assets/home.jpg">
 
 ## 快速上手
 
