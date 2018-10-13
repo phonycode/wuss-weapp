@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:43:02 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-26 16:38:23
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2018-10-13 15:38:52
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -31,7 +31,7 @@ Component({
       type: Array,
       value: [],
       observer(val) {
-        this.setData({ _isArrayObject: this.isArrayObject(val) })
+        this.setData({ _isArrayObject: this.isArrayObject(val) });
       },
     },
     defaultValue: {
@@ -69,7 +69,7 @@ Component({
         _empty,
       } = this;
       const item = options[index];
-      if(_isArrayObject) {
+      if (_isArrayObject) {
         if (item.disabled) return false;
         options = _empty(options, 'checked');
         options[index].checked = true;
@@ -82,9 +82,12 @@ Component({
           () => this.triggerEvent('onChange', { value: newValue.value }, {})
         );
       } else {
-        this.setData({
-          value: item,
-        }, () => this.triggerEvent('onChange',{ value: item },{}))
+        this.setData(
+          {
+            value: item,
+          },
+          () => this.triggerEvent('onChange', { value: item }, {})
+        );
       }
     },
     _changeValue() {
@@ -93,7 +96,7 @@ Component({
         let currentItem = '';
         const diff = options.reduce(
           (p, n) => {
-            if(_isArrayObject) {
+            if (_isArrayObject) {
               if (String(n.value) === wModel && !n.disabled) {
                 n.checked = true;
                 currentItem = n;
@@ -115,13 +118,14 @@ Component({
             array: [],
           }
         );
-        if(_isArrayObject) {
+        if (_isArrayObject) {
           this.setData(
             {
               options: diff.count > 0 ? diff.array : options,
               value: diff.count > 0 && currentItem ? currentItem.value : value,
             },
-            () => this.triggerEvent('onChange', { value: currentItem.value }, {})
+            () =>
+              this.triggerEvent('onChange', { value: currentItem.value }, {})
           );
         } else {
           const value = diff.count > 0 && currentItem ? currentItem : value;
@@ -160,8 +164,8 @@ Component({
     const isArrayObject = this.isArrayObject(options);
     if (defaultValue) {
       options.map(i => {
-        if(isArrayObject) {
-          if (i.value === defaultValue && !i.disabled) {
+        if (isArrayObject) {
+          if (i.value.toString() === defaultValue && !i.disabled) {
             currentItem = i;
             i.checked = true;
           } else {
@@ -176,7 +180,11 @@ Component({
     }
     this.setData({
       options,
-      value: currentItem ? isArrayObject ? currentItem.value : currentItem : value,
+      value: currentItem
+        ? isArrayObject
+          ? currentItem.value
+          : currentItem
+        : value,
     });
   },
 });
