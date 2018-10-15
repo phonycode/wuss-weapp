@@ -1,18 +1,18 @@
-<view wx:if="{{ type === 'snake' && show }}" class="wuss-class {{ text ? 'flex-content' : ''}}" >
+<view wx:if="{{ type === 'snake' }}" class="wuss-class {{ text ? 'flex-content' : ''}}" >
 	<view class="wuss-activity-indicator animation-snake {{ animationClass }}" style="{{ animationStyles }}" />
 	<view class="wuss-activity-indicator-text" wx:if="{{ text }}" style="{{ textStyle }}" >
 		{{ text }}
 	</view>
 </view>
 
-<view wx:if="{{ type === 'diffusion' && show }}" class="wuss-class {{ text ? 'flex-content' : ''}}" >
+<view wx:if="{{ type === 'diffusion' }}" class="wuss-class {{ text ? 'flex-content' : ''}}" >
 	<view class="wuss-activity-indicator animation-diffusion {{ animationClass }}" style="{{ animationStyles }}" />
 	<view class="wuss-activity-indicator-text" wx:if="{{ text }}" style="{{ textStyle }}" >
 		{{ text }}
 	</view>
 </view>
 
-<view wx:if="{{ type === 'catapult' && show }}" class="wuss-class {{ text ? 'flex-content' : ''}}" >
+<view wx:if="{{ type === 'catapult' }}" class="wuss-class {{ text ? 'flex-content' : ''}}" >
 	<view class="wuss-activity-indicator animation-catapult {{ animationClass }}" >
 		<view style="{{ animationStyles }}" />
 		<view style="{{ animationStyles }}" />
@@ -25,7 +25,7 @@
 	</view>
 </view>
 
-<view wx:if="{{ type === 'ball' && show }}" class="wuss-class {{ text ? 'flex-content' : ''}}" >
+<view wx:if="{{ type === 'ball' }}" class="wuss-class {{ text ? 'flex-content' : ''}}" >
 	<view class="wuss-activity-indicator animation-ball {{ animationClass }}" >
 		<view style="{{ animationStyles }}" />
 		<view style="{{ animationStyles }}" />

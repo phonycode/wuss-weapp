@@ -5,7 +5,6 @@ Component({
   },
   /**
    * 组件的属性列表
-   * @param {boolean} show 控制动画的显示隐藏
    * @param {string} size 指示器的大小,分别为[small/default/larger]
    * @param {string} color 动画的颜色
    * @param {string} type 动画类型，可选参数为[snake/diffusion/ball/catapult]
@@ -13,10 +12,6 @@ Component({
    * @param {string} textStyles 附加的文本内容样式
    */
   properties: {
-    show: {
-      type: Boolean,
-      value: false,
-    },
     size: {
       type: String,
       value: 'default',
