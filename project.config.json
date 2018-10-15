@@ -18,7 +18,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": false
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 21,
+			"current": 22,
 			"list": [
 				{
 					"id": -1,
@@ -174,7 +174,13 @@
 				{
 					"id": -1,
 					"name": "w-icon",
-					"pathName": "pages/w-icon/index"
+					"pathName": "pages/w-icon/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-drop-menu",
+					"pathName": "pages/w-drop-menu/index"
 				}
 			]
 		}
