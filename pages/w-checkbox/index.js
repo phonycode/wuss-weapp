@@ -12,35 +12,37 @@ Page({
     items1Str: '',
     items1: [
       {
-        label: '复选框1',
+        text: '复选框1',
         ...MOCK_DATA,
       },
       {
-        label: '复选框2',
+        text: '复选框2',
         ...MOCK_DATA,
       },
       {
-        label: '复选框3',
+        text: '复选框3',
         ...MOCK_DATA,
       },
     ],
     items2: [
       {
-        label: '复选框1',
+        text: '复选框1',
         ...MOCK_DATA,
       },
       {
-        label: '复选框2',
+        text: '复选框2',
         ...MOCK_DATA,
         disabled: true,
       },
       {
-        label: '复选框3',
+        text: '复选框3',
         ...MOCK_DATA,
       },
     ],
+    items3: ['测试1','测试2','测试3','测试4','测试5'],
   },
   handleChange(e) {
+    console.log(e.detail.checked)
     this.setData({ items1Str: JSON.stringify(e.detail.checked) });
   },
 });
