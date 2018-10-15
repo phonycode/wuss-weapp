@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-22 11:47:19
+ * @Last Modified time: 2018-10-09 16:38:07
  */
 Component({
   externalClasses: ['wuss-class', 'wuss-button-hover-class'],
@@ -36,6 +36,7 @@ Component({
    * @param {boolean} flat 开启按钮扁平化
    * @param {boolean} full 撑满容器
    * @param {boolean} inline 行内块按钮
+   * @param {boolean} circle 按钮显示为椭圆形
    */
   properties: {
     disabled: {
@@ -103,6 +104,10 @@ Component({
       value: false,
     },
     inline: {
+      type: Boolean,
+      value: false,
+    },
+    circle: {
       type: Boolean,
       value: false,
     },
