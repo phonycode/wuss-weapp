@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-09 10:19:27
+ * @Last Modified time: 2018-10-10 10:52:45
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -55,47 +55,69 @@ Component({
     options: {
       type: Array,
       value: [],
-      observer(options) {
-        this.setData({
-          value: options
-            .filter(i => typeof i.checked === 'boolean' && i.checked)
-            .map(i => {
-              let item = { ...i };
-              delete item.checked;
-              return item;
-            }),
-        });
+      observer(val) {
+
       },
     },
   },
   data: {
     value: [],
+    _isArrayObject: false,
   },
   methods: {
     _handleChecked(e) {
-      const { options } = this.data;
+      let {
+        options,
+      } = this.data;
       const key = e.currentTarget.dataset.key;
       const item = options[key];
       if (item.disabled) return false;
       item.checked = !item.checked;
-      this.setData({ options: [...options] }, () => {
-        this.triggerEvent(
-          'onChange',
-          {
-            checked: this.data.value,
-          },
-          {}
-        );
-      });
+      this.setData({
+        options,
+        value: options
+          .filter(i => typeof i.checked === 'boolean' && i.checked)
+          .map(i => {
+            let item = { ...i
+            };
+            delete item.checked;
+            return item;
+          }),
+      }, () => this.triggerEvent(
+        'onChange', {
+          checked: this.data.value,
+        }, {}
+      ));
     },
     _emptyValue() {
-      const { options } = this.data;
+      const {
+        options
+      } = this.data;
       options.forEach(e => {
         if (!e.disabled) {
           delete e.checked;
         }
       });
-      this.setData({ options });
+      this.setData({
+        options
+      });
     },
+  },
+  ready: function () {
+    const {
+      options
+    } = this.data;
+    const _isArrayObject = this.isArrayObject(options);
+    if (!_isArrayObject) {
+      const newOptions = options.map(text => Object.assign({
+        text
+      }, {}));
+      this.setData({
+        options: newOptions,
+      })
+    }
+    this.setData({
+      _isArrayObject
+    });
   },
 });

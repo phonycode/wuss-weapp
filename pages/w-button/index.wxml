@@ -117,7 +117,7 @@
 <w-button type="warn">Block</w-button>
 <w-button inline type="info">Inline</w-button>
 
-<w-pane desc="In Cell" />
+<w-pane desc="In Cell Circle" />
 
 <w-cell-group>
 	<w-cell
@@ -126,6 +126,7 @@
 	 highlight
 	>
 		<w-button
+     circle
 		 inline
 		 slot="content"
 		 type="warn"
@@ -134,6 +135,7 @@
 		</w-button>
 
 		<w-button
+     circle
 		 inline
 		 slot="content"
 		 type="warn"
@@ -141,6 +143,7 @@
 			btn2
 		</w-button>
 		<w-button
+     circle
 		 inline
 		 slot="content"
 		 type="warn"
@@ -148,6 +151,7 @@
 			btn3
 		</w-button>
 		<w-button
+     circle
 		 inline
 		 slot="content"
 		 type="warn"
@@ -159,5 +163,5 @@
 
 
 <w-pane desc="OpenType" />
-<w-button type="info" open-type="getUserInfo" bindgetuserinfo="change">getUserInfo</w-button>
-<w-button type="info" open-type="getPhoneNumber" bindgetPhoneNumber="change">getPhoneNumber</w-button>
+<w-button circle type="info" open-type="getUserInfo" bindgetuserinfo="change">getUserInfo</w-button>
+<w-button circle type="info" open-type="getPhoneNumber" bindgetPhoneNumber="change">getPhoneNumber</w-button>

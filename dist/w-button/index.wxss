@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:45 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-21 16:43:19
+ * @Last Modified time: 2018-10-09 16:16:18
  */
 button.wuss-button.wuss-button-normalize {
   padding: 0;
@@ -14,6 +14,7 @@ button.wuss-button.wuss-button-normalize {
   font-size: 16px;
   border: 1px solid transparent;
   min-height: 42px;
+  transition: background-color 200ms ease 0s ,opacity 200ms ease 0s;
 }
 
 button.wuss-button.wuss-button-full {
@@ -142,4 +143,8 @@ button.wuss-button.wuss-button-dashed.wuss-button-normalize {
 
 button.wuss-button.wuss-button-normalize.wuss-button-custom-hover {
   opacity: .6;
+}
+
+button.wuss-button.wuss-button-normalize.wuss-button-circle {
+  border-radius: 42px;
 }

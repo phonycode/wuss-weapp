@@ -42,3 +42,13 @@
 	 bind:onChange="handleChange"
 	/>
 </w-cell-group>
+
+
+<w-pane desc="ArrayKeys" />
+<w-cell-group>
+	<w-checkbox
+	 direction="right"
+	 options="{{ items3 }}"
+	 bind:onChange="handleChange"
+	/>
+</w-cell-group>

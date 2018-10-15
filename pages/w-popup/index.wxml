@@ -37,11 +37,11 @@
   <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
 </w-popup>
 
-<w-pane desc="Disabled MaskClose" />
+<w-pane desc="Disabled MaskCancel" />
 
 <w-button type="info" bind:click="handleClick5">Info</w-button>
 <w-popup 
-  mask-close="{{false}}"
+  mask-cancel="{{ false }}"
   visible="{{ popup5 }}"
   position="bottom"
   height="250px"

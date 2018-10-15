@@ -2,7 +2,7 @@
  wuss-class-left="{{ direction === 'left' ? 'w-cell-left' : '' }}"
  wuss-class-right="{{ direction === 'right' ? 'w-cell-right' : '' }}"
  direction="{{ direction === 'left' ? 'flex-start' : 'flex-end' }}"
- label="{{ direction === 'right' ? item.label : '' }}"
+ label="{{ direction === 'right' ? item.text : '' }}"
  bind:click="_handleChecked"
  wx:for="{{ options }}"
  wx:key="index"
@@ -55,7 +55,7 @@
     <!-- iconType = check -->
     
 		<view class="wuss-checkbox-title" wx:if="{{ direction === 'left' }}">
-			{{ item.label }}
+			{{ item.text }}
 		</view>
 	</view>
 </w-cell>
