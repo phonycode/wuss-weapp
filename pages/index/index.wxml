@@ -53,6 +53,7 @@
       <w-cell highlight label="Input 输入框" link="../w-input/index" wuss-class="w-cell" isLink />
       <w-cell highlight label="Switch 开关" link="../w-switch/index" wuss-class="w-cell" isLink />
       <w-cell highlight label="Radio 单选框" link="../w-radio/index" wuss-class="w-cell" isLink />
+      <w-cell highlight label="Range 区域选择" link="../w-range/index" wuss-class="w-cell" isLink />
       <w-cell highlight label="Checkbox 复选框" link="../w-checkbox/index" wuss-class="w-cell" isLink />
     </w-cell-group>
     

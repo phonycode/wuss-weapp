@@ -1,0 +1,5 @@
+/* pages/w-range/index.wxss */
+.range {
+  width: 80%;
+  margin: 0 auto 35px;
+}

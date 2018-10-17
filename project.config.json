@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": 23,
 			"list": [
 				{
 					"id": -1,
@@ -180,7 +180,13 @@
 				{
 					"id": -1,
 					"name": "w-drop-menu",
-					"pathName": "pages/w-drop-menu/index"
+					"pathName": "pages/w-drop-menu/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-range",
+					"pathName": "pages/w-range/index"
 				}
 			]
 		}

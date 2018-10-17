@@ -1,0 +1,25 @@
+<w-pane title="Range" desc="区域选择" />
+
+<w-pane desc="Default" />
+
+<view class="range">
+	<w-range bindonChange="onChange" bindafterChange="afterChange" />
+</view>
+
+<w-pane desc="Disabled" />
+
+<view class="range">
+	<w-range disabled />
+</view>
+
+<w-pane desc="Custom Style" />
+<view class="range">
+	<w-range
+	 bindonChange="onChange"
+	 bindafterChange="afterChange"
+	 handleStyle="{{['background-color:red;border-color:gray;','background-color:green;border-color:#fe961c;']}}"
+	 trackStyle="background-color:pink;"
+	 railStyle="background-color:#000;"
+	/>
+</view>
+

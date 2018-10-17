@@ -1,0 +1,25 @@
+<view class="wuss-class  wuss-slider {{disabled?'wuss-slider-disabled':''}}" style="margin-left: 30px; margin-right: 30px;">
+	<view class="wuss-slider-rail" style="{{railStyle}}" />
+	<view class="wuss-slider-track wuss-slider-track-1" style="{{_trackStyle}}" />
+	<view class="wuss-slider-step" />
+	<view
+	 bind:touchstart="onTouchStart"
+	 catch:touchmove="onTouchMove"
+	 bind:touchend="onTouchEnd"
+	 bind:touchcancel="onTouchEnd"
+	 data-move-node="0"
+	 class="wuss-slider-handle"
+	 style="{{_handleStyle[0]}}"
+	/>
+	<view
+	 bind:touchstart="onTouchStart"
+	 catch:touchmove="onTouchMove"
+	 bind:touchend="onTouchEnd"
+	 bind:touchcancel="onTouchEnd"
+	 data-move-node="1"
+	 class="wuss-slider-handle"
+	 style="{{_handleStyle[1]}}"
+	/>
+	<view class="wuss-slider-mark" />
+</view>
+

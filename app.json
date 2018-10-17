@@ -25,7 +25,8 @@
     "pages/w-dialog/index",
     "pages/w-radio/index",
     "pages/w-form/index",
-    "pages/w-tag/index"
+    "pages/w-tag/index",
+    "pages/w-range/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

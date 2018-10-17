@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "Range 区域选择",
+  "usingComponents": {
+    "w-cell": "/dist/w-cell/index",
+    "w-cell-group": "/dist/w-cell-group/index",
+    "w-button": "/dist/w-button/index",
+    "w-range": "/dist/w-range/index",
+    "w-pane": "/dist/w-pane/index"
+  }
+}
