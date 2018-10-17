@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:38 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-26 10:52:27
+ * @Last Modified time: 2018-10-16 15:44:31
  */
 
 .wuss-input {
@@ -15,8 +15,9 @@
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
-  padding: 4rpx 0;
-  display: none;
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
 }
 .wuss-cell-first-cell::before {
   display: none;
@@ -77,11 +78,6 @@
   color: #000;
 }
 
-.wuss-input_label {
-  display: flex;
-  height: 100%;
-  align-items: flex-start;
-}
 view.wuss-class-hd {
   padding-top: 20rpx;
   align-items: flex-start;
