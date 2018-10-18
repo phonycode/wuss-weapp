@@ -4,13 +4,14 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-09-12 10:53:14
  */
+@import '../common/theme/global.wxss';
 
 .wuss-swiper-out {
   overflow: hidden;
 }
 
 .wuss-swiper-out-view {
-  position: relative;  
+  position: relative;
 }
 
 .wuss-swiper-out-view::before {
@@ -43,8 +44,8 @@
 
 .wuss-swiper-out-btns {
   position: absolute;
-  top:50%;
-  transform:translate(0,-50%);
+  top: 50%;
+  transform: translate(0, -50%);
   z-index: 1000;
   background: #ffffff;
   display: flex;
@@ -74,7 +75,8 @@
 .wuss-swiper-out-left {
   height: 100%;
 }
-.wuss-swiper-out-left >view {
+
+.wuss-swiper-out-left>view {
   height: 100%;
 }
 

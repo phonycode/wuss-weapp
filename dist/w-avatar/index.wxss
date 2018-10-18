@@ -1,3 +1,11 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-18 17:24:05 
+ * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Last Modified time: 2018-10-18 17:24:05 
+ */
+@import '../common/theme/global.wxss';
+
 .wuss-avatar {
   box-sizing: border-box;
   display: inline-block;
@@ -12,28 +20,34 @@
   font-size: 36rpx;
   border-radius: 50%;
 }
+
 .wuss-avatar-small {
   width: 48rpx;
   height: 48rpx;
   font-size: 28rpx;
 }
+
 .wuss-avatar-large {
   width: 80rpx;
   height: 80rpx;
   font-size: 48rpx;
 }
+
 .wuss-avatar-square {
   border-radius: 8rpx;
 }
-.wuss-avatar-string{
+
+.wuss-avatar-string {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .wuss-avatar-src {
   background: none;
 }
+
 .wuss-avatar .wuss-avatar-img {
   width: 100%;
   height: 100%;

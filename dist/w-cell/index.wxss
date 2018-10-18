@@ -2,9 +2,11 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-09 11:25:36
+ * @Last Modified time: 2018-10-18 17:24:49
  */
- .wuss-cell {
+@import '../common/theme/global.wxss';
+
+.wuss-cell {
   position: relative;
   transition: background-color 200ms ease 0s;
 }
@@ -44,9 +46,11 @@
   box-sizing: border-box;
   min-height: 44px;
 }
+
 .wuss-cell-hd-showIcon {
   padding: 0 35px 0 15px;
 }
+
 .wuss-cell-ft {
   font-size: 13px;
   color: #999999;

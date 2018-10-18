@@ -4,39 +4,40 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-09-13 09:12:18
  */
- .wuss-action-sheet {
-   background-color: #f3f4f5;
- }
+@import '../common/theme/global.wxss';
 
- .wuss-action-sheet-hd {
+.wuss-action-sheet {
+  background-color: #f3f4f5;
+}
 
- }
+.wuss-action-sheet-hd {}
 
- .wuss-action-sheet-bd {
- }
+.wuss-action-sheet-bd {}
 
- .wuss-action-sheet-ft {
+.wuss-action-sheet-ft {
   margin-top: 6px;
 }
 
- .wuss-action-sheet-btns {}
+.wuss-action-sheet-btns {}
 
- .wuss-action-sheet-btn ,.wuss-action-sheet-cancel{
-   position: relative;
-   display: flex;
-   flex: 1;
-   justify-content: center;
-   align-items: center;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   background-color: #ffffff;
-   font-size: 15px;
-   color: #333333;
-   padding: 0;
-   min-height: 48px;
- }
+.wuss-action-sheet-btn,
+.wuss-action-sheet-cancel {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+  font-size: 15px;
+  color: #333333;
+  padding: 0;
+  min-height: 48px;
+}
 
- .wuss-action-sheet-btn::after,.wuss-action-sheet-cancel::after {
+.wuss-action-sheet-btn::after,
+.wuss-action-sheet-cancel::after {
   content: " ";
   position: absolute;
   left: 0;
@@ -48,26 +49,27 @@
   transform-origin: 0 0;
   -webkit-transform: scaleY(.5);
   transform: scaleY(.5);
- }
+}
 
- .wuss-action-sheet-btn-hover {
-   background: #ececec;
-  }
+.wuss-action-sheet-btn-hover {
+  background: #ececec;
+}
 
- .wuss-action-sheet-btn:first-child::after {
-   /* display: none; */
- }
+.wuss-action-sheet-btn:first-child::after {
+  /* display: none; */
+}
 
- .wuss-action-sheet-btn {}
+.wuss-action-sheet-btn {}
 
- .wuss-action-sheet-btn w-icon,.wuss-action-sheet-btn w-activity-indicator {
-   margin-right: 5px;
- }
+.wuss-action-sheet-btn w-icon,
+.wuss-action-sheet-btn w-activity-indicator {
+  margin-right: 5px;
+}
 
- .wuss-action-sheet-btn-disabled {
-   color: #b2b2b2;
- }
+.wuss-action-sheet-btn-disabled {
+  color: #b2b2b2;
+}
 
- .w-activity-indicator {
-   transform: scale(.8);
- }
+.w-activity-indicator {
+  transform: scale(.8);
+}

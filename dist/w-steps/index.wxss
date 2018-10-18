@@ -1,14 +1,23 @@
-/* dist/w-steps/index.wxss */
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-18 17:26:58 
+ * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Last Modified time: 2018-10-18 17:26:58 
+ */
+@import '../common/theme/global.wxss';
+
 .wuss-steps {
   overflow: hidden;
   background-color: #fff;
 }
+
 .wuss-steps-horizontal {
   display: flex;
   overflow: hidden;
   position: relative;
   padding: 20rpx 20rpx 30rpx;
 }
+
 .wuss-step {
   flex: 1;
   font-size: 28rpx;
@@ -16,9 +25,11 @@
   color: #666;
   vertical-align: top;
 }
+
 .wuss-step-process .step-icon--default-number {
   border-color: #06bf04;
 }
+
 .wuss-step-process .step-icon--default-dot {
   background-color: #06bf04;
 }
@@ -26,9 +37,11 @@
 .wuss-step-finish {
   color: #06bf04;
 }
+
 .wuss-step-finish .step-icon--default-number {
   border-color: #06bf04;
 }
+
 .wuss-step-finish .step-icon--default-dot {
   background-color: #06bf04;
 }
@@ -40,15 +53,19 @@
 .wuss-step-error {
   color: #f4333c;
 }
+
 .wuss-steps-item-tail.wuss-steps-item-tail-error::after {
   background-color: #f4333c;
 }
+
 .wuss-step-error .step-icon--default-number {
   border-color: #f4333c;
 }
+
 .wuss-step-error .step-icon--default-dot {
   background-color: #f4333c;
 }
+
 .wuss-step-process {
   color: #06bf04;
 }
@@ -65,6 +82,7 @@
   transition: background-color 0.3s, border-color 0.3s;
   border-radius: 50%;
 }
+
 .step-icon--default-number {
   height: 36rpx;
   width: 36rpx;
@@ -74,12 +92,14 @@
   box-sizing: border-box;
   text-align: center;
 }
+
 .step-icon--default-dot {
   width: 50%;
   height: 50%;
   margin-left: 5rpx;
   background-color: #ddd;
 }
+
 /* 内容 */
 .wuss-steps-horizontal .wuss-step-content {
   display: block;
@@ -87,16 +107,19 @@
   margin-top: 16rpx;
   text-align: center;
 }
+
 .wuss-steps-vertical .wuss-step--icon-container {
   margin-right: 16rpx;
   float: left;
 }
+
 .wuss-steps-vertical .wuss-step-content {
   min-height: 120rpx;
   overflow: hidden;
   display: block;
   margin-top: 6rpx;
 }
+
 /* 线条 */
 .wuss-steps-item-tail {
   position: absolute;
@@ -107,9 +130,11 @@
   margin-left: 96rpx;
   box-sizing: border-box;
 }
+
 .wuss-step:last-child .wuss-steps-item-tail {
   display: none;
 }
+
 .wuss-steps-vertical .wuss-steps-item-tail {
   position: absolute;
   left: 6rpx;
@@ -118,14 +143,17 @@
   width: 1rpx;
   padding: 50rpx 0 10rpx 0;
 }
+
 .wuss-steps-vertical .wuss-steps-item-tail::after {
   width: 1rpx;
   height: 100%;
 }
+
 .wuss-steps-horizontal .wuss-steps-item-tail::after {
   width: 100%;
   height: 1rpx;
 }
+
 .wuss-steps-item-tail::after {
   border-radius: 1rpx;
   left: 0;

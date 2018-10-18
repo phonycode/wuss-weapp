@@ -4,7 +4,9 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-10-09 10:19:44
  */
- .wuss-checkbox {
+@import '../common/theme/global.wxss';
+
+.wuss-checkbox {
   display: flex;
   flex: 1;
   align-items: center;
@@ -19,13 +21,12 @@
 }
 
 .w-cell-left {
-  display: none!important;
+  display: none !important;
   /* flex: 1; */
   /* padding-right: 0!important; */
 }
 
-.w-cell-right {
-}
+.w-cell-right {}
 
 .wuss-checkbox-disabled {
   opacity: .6;

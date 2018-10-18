@@ -1,3 +1,11 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-18 17:24:35 
+ * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Last Modified time: 2018-10-18 17:24:35 
+ */
+@import '../common/theme/global.wxss';
+
 .date-day {
   display: flex;
   padding: 5px;

@@ -1,8 +1,16 @@
-/* dist/w-validate/index.wxss */
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-18 17:27:51 
+ * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Last Modified time: 2018-10-18 17:27:51 
+ */
+@import '../common/theme/global.wxss';
+
 .wuss-validate {
   position: relative;
   display: flex;
 }
+
 .validate-icon {
   display: none;
   position: absolute;
@@ -10,12 +18,15 @@
   top: 50%;
   transform: translate3d(0, -50%, 0);
 }
+
 .wuss-content {
   flex-grow: 1;
 }
+
 .wuss-validate-showIcon {
   /* padding-right: 30rpx; */
 }
+
 .wuss-validate-showIcon .validate-icon {
   display: flex;
   justify-content: center;
