@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-18 12:45:25 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-27 17:20:29
+ * @Last Modified time: 2018-10-18 09:48:30
  */
 /** 如何使用 ?
  *  const wussV =  new WussValidate (rules)
@@ -83,11 +83,11 @@ class WussValidate {
   }
   // 最大长度
   maxLength({ value, message }) {
-    return this.value.length >= value && (message || `最多可以输入${value}位`);
+    return this.value.length > value && (message || `最多可以输入${value}位`);
   }
   // 最小长度
   minLength({ value, message }) {
-    return this.value.length <= value && (message || `长度不能少于${value}位`);
+    return this.value.length < value && (message || `长度不能少于${value}位`);
   }
   //验证一个长度范围[min, max]
   rangelength({ value, message }) {
@@ -95,26 +95,28 @@ class WussValidate {
       minL = value[0],
       maxL = value[1];
     return (
-      (l >= minL && l <= maxL && message) ||
-      `请输入长度在 ${minL} 到 ${maxL} 之间的字符`
+      l > minL &&
+      l < maxL &&
+      (message || `请输入长度在 ${minL} 到 ${maxL} 之间的字符`)
     );
   }
   min({ value, message }) {
-    return (this.value <= value && message) || `请输入不小于 ${value} 的数值`;
+    return this.value < value && (message || `请输入不小于 ${value} 的数值`);
   }
   max({ value, message }) {
-    return (this.value >= value && message) || `请输入不大于 ${value} 的数值`;
+    return this.value > value && (message || `请输入不大于 ${value} 的数值`);
   }
   range({ value, message }) {
     const min = value[0],
       max = value[1];
     return (
-      (this.value >= min && this.value <= max && message) ||
-      `请输入 ${min} 到 ${max} 之间的数值`
+      this.value > min &&
+      this.value < max &&
+      (message || `请输入 ${min} 到 ${max} 之间的数值`)
     );
   }
   equal({ value, message }) {
-    return (this.value === value && message) || `输入值必须和 ${value} 相同`;
+    return this.value === value && (message || `输入值必须和 ${value} 相同`);
   }
   regexp({ value, message }) {
     if (!value[0]) return;
