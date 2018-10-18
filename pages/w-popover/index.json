@@ -1,1 +1,9 @@
-{}
+{
+  "navigationBarTitleText": "Popover 气泡",
+  "usingComponents": {
+    "w-notice": "/dist/w-popover/index",
+    "w-button": "/dist/w-button/index",
+    "w-toast": "/dist/w-toast/index",
+    "w-pane": "/dist/w-pane/index"
+  }
+}

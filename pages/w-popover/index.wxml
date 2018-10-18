@@ -1,2 +1,8 @@
-<!--pages/w-popover/index.wxml-->
-<text>pages/w-popover/index.wxml</text>
+<w-pane title="Popover" desc="气泡" />
+
+<w-toast id="wuss-toast" wuss-class="test" />
+
+<w-pane desc="Default" />
+
+<w-popover/>
+

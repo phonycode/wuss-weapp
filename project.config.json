@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 23,
+			"current": 24,
 			"list": [
 				{
 					"id": -1,
@@ -186,7 +186,13 @@
 				{
 					"id": -1,
 					"name": "w-calendar",
-					"pathName": "pages/w-calendar/index"
+					"pathName": "pages/w-calendar/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-popover 气泡",
+					"pathName": "pages/w-popover/index"
 				}
 			]
 		}
