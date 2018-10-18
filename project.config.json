@@ -185,8 +185,8 @@
 				},
 				{
 					"id": -1,
-					"name": "w-range",
-					"pathName": "pages/w-range/index"
+					"name": "w-calendar",
+					"pathName": "pages/w-calendar/index"
 				}
 			]
 		}
