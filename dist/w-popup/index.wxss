@@ -1,3 +1,11 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-18 17:26:32 
+ * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Last Modified time: 2018-10-18 17:26:32 
+ */
+@import '../common/theme/global.wxss';
+
 .animate-content {
   position: fixed;
   box-sizing: border-box;

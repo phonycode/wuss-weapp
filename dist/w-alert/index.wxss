@@ -4,9 +4,9 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-09-12 09:22:46
  */
-.w-dialog >view {
-  
-}
+@import '../common/theme/global.wxss';
+
+.w-dialog>view {}
 
 .w-dialog {
   background-color: transparent;

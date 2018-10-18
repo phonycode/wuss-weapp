@@ -1,13 +1,15 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:38 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-10-16 15:44:31
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-18 17:25:48
  */
+@import '../common/theme/global.wxss';
 
 .wuss-input {
   align-items: center;
 }
+
 .wuss-input_label {
   color: #000;
   margin-left: 0;
@@ -19,16 +21,20 @@
   height: 100%;
   align-items: flex-start;
 }
+
 .wuss-cell-first-cell::before {
   display: none;
 }
+
 .wuss-class-left-empty {
   display: none !important;
 }
+
 .input_input-disabled,
 .input_label-disabled {
   color: #888;
 }
+
 .wuss-input_input-wrap {
   /* flex: 1; */
   width: 100%;
@@ -36,6 +42,7 @@
   align-items: center;
   position: relative;
 }
+
 .input-wrap--textarea {
   align-items: flex-start;
   padding-bottom: 40rpx;
@@ -50,10 +57,12 @@
   line-height: 1;
   box-sizing: border-box;
 }
+
 .wuss-extra {
   margin-left: 10rpx;
   vertical-align: middle;
 }
+
 .wuss-clear {
   flex-shrink: 0;
   height: 100%;
@@ -74,7 +83,8 @@
   color: #bbb;
   font-size: 28rpx;
 }
-.wuss-textarea-count > text {
+
+.wuss-textarea-count>text {
   color: #000;
 }
 

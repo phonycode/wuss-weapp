@@ -1,3 +1,11 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-18 17:25:24 
+ * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Last Modified time: 2018-10-18 17:25:24 
+ */
+@import '../common/theme/global.wxss';
+
 .wuss-drop-menu {
   position: relative;
 }
@@ -156,8 +164,8 @@
 }
 
 .w-button {
-  margin: 0!important;
-  border-top: none!important;
+  margin: 0 !important;
+  border-top: none !important;
 }
 
 .w-icon-filter {

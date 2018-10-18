@@ -4,6 +4,7 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-08-31 15:41:55
  */
+@import '../common/theme/global.wxss';
 
 .wuss-pane {
   margin: 20px;

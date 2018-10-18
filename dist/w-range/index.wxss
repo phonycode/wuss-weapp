@@ -1,9 +1,19 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-18 17:26:45 
+ * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Last Modified time: 2018-10-18 17:26:45 
+ */
+@import '../common/theme/global.wxss';
+
 .wuss-slider {
   position: relative;
 }
+
 .wuss-slider-disabled {
   opacity: 0.3;
 }
+
 .wuss-slider-rail {
   position: absolute;
   width: 100%;
@@ -11,6 +21,7 @@
   height: 2px;
   box-sizing: border-box;
 }
+
 .wuss-slider-track {
   position: absolute;
   left: 0;
@@ -18,12 +29,14 @@
   border-radius: 2px;
   background-color: #108ee9;
 }
+
 .wuss-slider-step {
   position: absolute;
   width: 100%;
   height: 4px;
   background: transparent;
 }
+
 .wuss-slider-handle {
   position: absolute;
   margin-left: -12px;
@@ -36,6 +49,7 @@
   background-color: #fff;
   box-sizing: border-box;
 }
+
 .wuss-slider-mark {
   position: absolute;
   top: 20px;

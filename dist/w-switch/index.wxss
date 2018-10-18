@@ -4,6 +4,8 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-09-13 13:50:29
  */
+@import '../common/theme/global.wxss';
+
 .wuss-switch {
   position: relative;
   background-color: #ddd9d9;
@@ -26,7 +28,7 @@
   font-size: 0;
   letter-spacing: 0;
   top: 50%;
-  transform: translate(0,-50%);
+  transform: translate(0, -50%);
   transition: transform .35s cubic-bezier(0.3, 0.3, 0.25, 1.35);
 }
 
@@ -40,6 +42,7 @@
   opacity: 0;
   transition: opacity .1s cubic-bezier(0.4, 1, 0.4, 1.35);
 }
+
 .wuss-switch .wuss-switch-mask.wuss-switch-mask-active {
   opacity: 1;
 }
@@ -64,7 +67,7 @@
 
 .wuss-switch.wuss-switch.wuss-switch-size-small .wuss-switch-circle.wuss-switch-circle-active {
   top: 50%;
-  transform: translate(21px,-50%);
+  transform: translate(21px, -50%);
 }
 
 
@@ -88,7 +91,7 @@
 
 .wuss-switch.wuss-switch.wuss-switch-size-default .wuss-switch-circle.wuss-switch-circle-active {
   top: 50%;
-  transform: translate(23px,-50%);
+  transform: translate(23px, -50%);
 }
 
 
@@ -111,5 +114,5 @@
 
 .wuss-switch.wuss-switch.wuss-switch-size-larger .wuss-switch-circle.wuss-switch-circle-active {
   top: 50%;
-  transform: translate(25px,-50%);
+  transform: translate(25px, -50%);
 }

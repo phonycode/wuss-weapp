@@ -1,9 +1,11 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-09 14:36:08 
- * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
- * @Last Modified time: 2018-09-09 14:36:08 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-18 17:26:05
  */
+@import '../common/theme/global.wxss';
+
 .wuss-notice {
   display: flex;
   padding: 18rpx 20rpx;
@@ -11,15 +13,18 @@
   line-height: 1.5;
   align-items: center;
 }
+
 .wuss-notice-icon {
   position: relative;
   padding-right: 60rpx;
 }
+
 .wuss-notice-voice {
   min-width: 40rpx;
   padding-top: 1rpx;
   box-sizing: border-box;
 }
+
 .wuss-notice-operation {
   position: absolute;
   display: flex;
@@ -29,12 +34,14 @@
   right: 15rpx;
   line-height: 1;
 }
+
 .wuss-notice__content-wrap {
   position: relative;
   flex: 1;
   height: 36rpx;
   overflow: hidden;
 }
+
 .wuss-notice__content {
   position: absolute;
   white-space: nowrap;

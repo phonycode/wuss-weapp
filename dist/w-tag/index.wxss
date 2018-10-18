@@ -1,3 +1,11 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-18 17:27:29 
+ * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Last Modified time: 2018-10-18 17:27:29 
+ */
+@import '../common/theme/global.wxss';
+
 .wuss-tag {
   color: rgba(0, 0, 0, 0.65);
   box-sizing: border-box;
@@ -16,73 +24,88 @@
   transform: scale(1, 1);
   display: inline-block;
 }
+
 .wuss-tag-close {
   transform: scale(0, 0);
   width: 0 !important;
   padding: 0;
   margin: 0;
 }
+
 .wuss-tag-normal {
   color: #888;
   border: 1rpx solid #ddd;
 }
+
 .wuss-tag-active {
   color: #108ee9;
   border: 1rx solid #108ee9;
 }
+
 w-icon {
   margin-left: 8rpx;
 }
+
 .wuss-tag-magenta {
   color: #eb2f96;
   background: #fff0f6;
   border-color: #ffadd2;
 }
+
 .wuss-tag-red {
   color: #f5222d;
   background: #fff1f0;
   border-color: #ffa39e;
 }
+
 .wuss-tag-volcano {
   color: #fa541c;
   background: #fff2e8;
   border-color: #ffbb96;
 }
+
 .wuss-tag-orange {
   color: #fa8c16;
   background: #fff7e6;
   border-color: #ffd591;
 }
+
 .wuss-tag-gold {
   color: #faad14;
   background: #fffbe6;
   border-color: #ffe58f;
 }
+
 .wuss-tag-lime {
   color: #a0d911;
   background: #fcffe6;
   border-color: #eaff8f;
 }
+
 .wuss-tag-green {
   color: #52c41a;
   background: #f6ffed;
   border-color: #b7eb8f;
 }
+
 .wuss-tag-cyan {
   color: #13c2c2;
   background: #e6fffb;
   border-color: #87e8de;
 }
+
 .wuss-tag-blue {
   color: #1890ff;
   background: #e6f7ff;
   border-color: #91d5ff;
 }
+
 .wuss-tag-geekblue {
   color: #2f54eb;
   background: #f0f5ff;
   border-color: #adc6ff;
 }
+
 .wuss-tag-purple {
   color: #722ed1;
   background: #f9f0ff;
