@@ -252,7 +252,7 @@ Component({
           ? checkOutDate.substr(5, 2)
           : checkOutDate.substr(6, 1); //选择离店的月id
       if (curreInid == curreOutid) {
-        //入住与离店是当月的情况
+          //入住与离店是当月的情况
         for (let i = 0; i < dateList.length; i++) {
           if (dateList[i].id == curreInid) {
             let days = dateList[i].days;
@@ -309,7 +309,7 @@ Component({
                 }
               }
             } else if (yearOut > yearIn) {
-              // 跨年的话
+              // 跨年的话 
               let days = dateList[j].days;
               if (dateList[j].year == yearIn) {
                 // 当年的跨月
@@ -322,9 +322,21 @@ Component({
                 }
               } else {
                 // 下一年的跨月
-                for (let k = 0; k < days.length; k++) {
-                  if (days[k].day < dayOut) {
+                if(Number(dateList[j].year) < yearOut) {
+                  for (let k = 0; k < days.length; k++) {
                     days[k].class = days[k].class + ' bgitem';
+                  }
+                } else {
+                  if(Number(dateList[j].month) <= Number(monthOut)) {
+                    for (let k = 0; k < days.length; k++) {
+                      if(Number(dateList[j].month) < Number(monthOut)) {
+                        days[k].class = days[k].class + ' bgitem';
+                      } else if(Number(dateList[j].month) === Number(monthOut)) {
+                        if (Number(days[k].day) < Number(dayOut)) {
+                          days[k].class = days[k].class + ' bgitem';
+                        }
+                      }
+                    }
                   }
                 }
               }
