@@ -18,38 +18,34 @@ Page({
         message: '姓名最少三个字',
       },
     },
-    items1: [
+    options1: [
       {
-        options1: [
-          {
-            key: '苹果',
-            value: 'iphone',
-          },
-          {
-            key: '华为',
-            value: 'huawei',
-          },
-          {
-            key: 'oppo音乐手机',
-            value: 'oppo',
-          },
-        ],
+        key: '苹果',
+        value: 'iphone',
+      },
+      {
+        key: '华为',
+        value: 'huawei',
+      },
+      {
+        key: 'oppo音乐手机',
+        value: 'oppo',
       },
     ],
     items1: [
       {
-        label: '复选框1',
+        text: '复选框1',
         ...MOCK_DATA,
         checked: true,
       },
       {
-        label: '复选框2',
+        text: '复选框2',
         ...MOCK_DATA,
         checked: true,
         disabled: true,
       },
       {
-        label: '复选框3',
+        text: '复选框3',
         ...MOCK_DATA,
       },
     ],
