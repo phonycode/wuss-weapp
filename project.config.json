@@ -34,16 +34,16 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 24,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -192,7 +192,8 @@
 				{
 					"id": -1,
 					"name": "w-popover 气泡",
-					"pathName": "pages/w-popover/index"
+					"pathName": "pages/w-popover/index",
+					"query": ""
 				}
 			]
 		}
