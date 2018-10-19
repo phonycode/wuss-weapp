@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-01 13:25:28 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-22 11:52:58
+ * @Last Modified time: 2018-10-18 16:36:05
  */
 Page({
   data: {
@@ -20,6 +20,8 @@ Page({
     this.setData({ visible3: !this.data.visible3 });
   },
   handleCancel() {
+    console.log('cancel');
+
     this.setData({
       visible1: false,
       visible2: false,
