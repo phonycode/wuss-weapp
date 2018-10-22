@@ -14,6 +14,10 @@ Component({
   externalClasses: ['wuss-class'],
   properties: {
     visible: Boolean,
+    type: {
+      type: String,
+      value: 'range', //'one' | 'more' |'range'
+    },
     maxDate: {
       type: String,
       value: '',
@@ -42,6 +46,7 @@ Component({
   data: {
     dateList: [],
     weekStr: ['日', '一', '二', '三', '四', '五', '六'],
+    hashValue: {},
   },
   ready() {
     this.createDateListData();
@@ -121,19 +126,165 @@ Component({
      * 点击日期事件
      */
     onPressDate(e) {
-      let { dateList } = this.data;
-      const { year, month, day, index } = e.currentTarget.dataset;
-      console.log(year, month, day, index);
+      let { type } = this.data;
+      const { day, ...dataset } = e.currentTarget.dataset;
+      if (day <= 0) return false;
+      this[type + 'Press']({ ...dataset, day });
+    },
+    //单选日期
+    onePress({ dateIndex, index, year, month, day }) {
+      const {
+        hashValue: {
+          0: { dateIndex: OldDateIndex = 0, index: OldIndex = 0 } = {},
+        },
+      } = this.data;
+      if (dateIndex === OldDateIndex && index === OldIndex) return false;
       this.setData(
         {
-          [`dateList[${index}].days[${day}].isStartDay`]: true,
+          [`dateList[${OldDateIndex}].days[${OldIndex}].checked`]: false,
+          [`dateList[${dateIndex}].days[${index}].checked`]: true,
+          ['value[0]']: new Date(year, month - 1, day),
+          ['hashValue[0]']: {
+            dateIndex,
+            index,
+          },
         },
-        () => {
-          console.log(this.data.dateList[index]);
-        }
+        this.valueChange
       );
     },
+    //多选日期
+    morePress({ dateIndex, index, year, month, day }) {
+      let { dateList, value } = this.data;
+      const { checked } = dateList[dateIndex].days[index];
+      if (checked) {
+        const {
+          hashValue: { [`${year}-${month}-${day}`]: { arrIndex } = {} },
+        } = this.data;
+        value.splice(arrIndex, 1);
+      } else {
+        value.push(new Date(year, month - 1, day));
+      }
+      this.setData(
+        {
+          [`dateList[${dateIndex}].days[${index}].checked`]: !checked,
+          value,
+          hashValue: {
+            [`${year}-${month}-${day}`]: {
+              dateIndex,
+              index,
+              arrIndex: value.length - 1,
+            },
+          },
+        },
+        this.valueChange
+      );
+    },
+    //范围日期
+    rangePress({ dateIndex, index, year, month, day }) {
+      let {
+        startDayText,
+        endDayText,
+        value: [date1, date2],
+        hashValue: {
+          0: { dateIndex: dateIndex1 = 0, index: index1 = 0 } = {},
+          1: { dateIndex: dateIndex2 = 0, index: index2 = 0 } = {},
+        },
+      } = this.data;
+      this.clearRangeStyle();
+      if (date1 && !date2) {
+        date2 = new Date(year, month + 1, day);
+        if (date1.getTime() > date2.getTime()) {
+          [date1, date2, dateIndex1, dateIndex, index1, index] = [
+            date2,
+            date1,
+            dateIndex,
+            dateIndex1,
+            index,
+            index1,
+          ];
+        }
+        if (dateIndex1 == dateIndex && index1 == index) {
+          endDayText = startDayText + endDayText;
+        }
+        this.setData(
+          {
+            [`dateList[${dateIndex1}].days[${index1}].checked`]: true,
+            [`dateList[${dateIndex1}].days[${index1}].checkedText`]: startDayText,
+            [`dateList[${dateIndex}].days[${index}].checked`]: true,
+            [`dateList[${dateIndex}].days[${index}].checkedText`]: endDayText,
+            value: [date1, date2],
+            hashValue: [
+              { dateIndex: dateIndex1, index: index1 },
+              { dateIndex, index },
+            ],
+          },
+          this.renderRangeStyle
+        );
+      } else {
+        this.setData(
+          {
+            [`dateList[${dateIndex1}].days[${index1}].checked`]: false,
+            [`dateList[${dateIndex1}].days[${index1}].checkedText`]: '',
+            [`dateList[${dateIndex2}].days[${index2}].checked`]: false,
+            [`dateList[${dateIndex2}].days[${index2}].checkedText`]: '',
+            [`dateList[${dateIndex}].days[${index}].checked`]: true,
+            [`dateList[${dateIndex}].days[${index}].checkedText`]: startDayText,
+            value: [new Date(year, month + 1, day)],
+            hashValue: [{ dateIndex, index }],
+          },
+          this.valueChange
+        );
+      }
+    },
+    searchValueIndex({ dateIndex, index }) {
+      const { value } = this.data;
+      for (const i in value) {
+        if (date.getTime() === value[i].getTime()) {
+          return i;
+        }
+      }
+    },
+    clearRangeStyle() {
+      this.renderHash = this.renderHash || [];
+      this.renderHash.forEach(element => {
+        element.renderRange = false;
+      });
+      this.setData({
+        dateList: this.data.dateList,
+      });
+    },
     //渲染选择中的样式
-    renderPressStyle(year, month, day) {},
+    renderRangeStyle() {
+      const {
+        dateList,
+        hashValue: [
+          { dateIndex: dateIndex1, index: index1 } = {},
+          { dateIndex: dateIndex2, index: index2 } = {},
+        ],
+      } = this.data;
+      this.renderHash = [];
+      for (let i = dateIndex1; i <= dateIndex2; i++) {
+        for (
+          let ii = i === dateIndex1 ? index1 : 0,
+            l = i === dateIndex2 ? index2 : dateList[i].days.length;
+          ii < l;
+          ii++
+        ) {
+          dateList[i].days[ii].renderRange = true;
+          this.renderHash.push(dateList[i].days[ii]);
+        }
+      }
+
+      this.setData({ dateList });
+      this.valueChange();
+    },
+    handleOk() {
+      const { value } = this.data;
+      this.triggerEvent('onOk', { value });
+    },
+    valueChange() {
+      const { value } = this.data;
+      this.triggerEvent('onSelect', { value });
+    },
   },
 });

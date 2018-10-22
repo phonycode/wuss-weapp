@@ -7,7 +7,7 @@
 />
 <view
  class="wuss-class wuss-calendar-container {{ visible ? 'calendar-modal-show' : ''}}"
- style="height: 80vh;"
+ style="height: 100vh;"
  hover-class="none"
  hover-stop-propagation="false"
 >
@@ -16,12 +16,23 @@
 	 hover-class="none"
 	 hover-stop-propagation="false"
 	>
-		<view class="wuss-calendar-date-btn wuss-calendar-left-btn" catchtap="handleClose">
+		<w-button
+		 wuss-class="wuss-calendar-date-btn"
+		 type="primary"
+		 catchtap="handleClose"
+		>
 			取消
-		</view>
+		</w-button>
 		<view class="wuss-calendar-title wuss-calendar-centered">
 			选择日期
 		</view>
+		<w-button
+		 wuss-class="wuss-calendar-date-btn"
+		 type="primary"
+		 catchtap="handleOk"
+		>
+			确定
+		</w-button>
 	</view>
 	<view
 	 class="wuss-calendar-week-content"
@@ -56,22 +67,24 @@
 	 bindscrolltoupper=""
 	 bindscrolltolower=""
 	 bindscroll=""
-	 style="height: calc(80vh - 84px);"
+	 style="height: calc(100vh - 84px);"
 	>
 		<view
 		 wx:for="{{dateList}}"
 		 wx:key="{{item.year+item.month}}"
 		 wx:for-item="dateItem"
+		 wx:for-index="dateIndex"
 		 class="wuss-calendar-date-content"
 		>
 			<view class="wuss-calendar-date-year-month">{{dateItem.year}}年{{dateItem.month}}月</view>
 			<view class="wuss-calendar-row" style="flex-wrap: wrap;margin:15rpx 0;">
 				<view
-				 class="wuss-calendar-date-day {{item.day<=0?'bgwhite':item.className}}"
+				 class="wuss-calendar-date-day {{item.day<=0?'bgwhite':item.className}}  {{item.checked?'active':''}} {{item.renderRange?'renderRange':''}}"
 				 style="width:calc((100vw / 7) - 10px);height:calc(100vw / 7);"
 				 data-year="{{dateItem.year}}"
 				 data-month="{{dateItem.month}}"
 				 data-day="{{item.day}}"
+				 data-date-index="{{dateIndex}}"
 				 data-index="{{index}}"
 				 bindtap="onPressDate"
 				 wx:for="{{dateItem.days}}"
@@ -79,8 +92,7 @@
 				>
 					<view class='wuss-calendar-item-days' wx:if="{{item.day >0}}">
 						<text style='font-size:28rpx;'>{{item.day}}</text>
-						<text class="wuss-calendar-item-days-text" wx:if="{{item.isStartDay}}">{{startDayText}}</text>
-						<text class="wuss-calendar-item-days-text" wx:elif="{{item.isEndDay}}">{{endDayText}}</text>
+						<text class="wuss-calendar-item-days-text" wx:if="{{item.checkedText}}">{{item.checkedText}}</text>
 						<text class="wuss-calendar-item-days-text" wx:elif="{{item.dateTextObj}}" >
 							{{item.dateTextObj.text}}
 						</text>
@@ -89,5 +101,8 @@
 			</view>
 		</view>
 	</scroll-view>
+	<!-- <view class="wuss-calendar-footer">
+		你好
+	</view> -->
 </view>
 

@@ -7,8 +7,15 @@
   flex-direction: column;
 }
 
-.wuss-calendar-date-day.bgitem {
-  background-color: #d8ecf9;
+.wuss-calendar-date-day.renderRange {
+  background-color: rgba(255, 153, 0, 0.1);
+}
+
+.wuss-calendar-container .bgwhite {
+  background-color: #fff;
+}
+.wuss-calendar-container .week {
+  color: #fe8b4a;
 }
 
 .wuss-calendar-date-day.active {
@@ -46,11 +53,6 @@
   align-content: center;
   margin: 5px;
 }
-
-.wuss-calendar-container .week {
-  color: #fe8b4a;
-}
-
 .wuss-calendar-row {
   display: flex;
   flex-direction: row;
@@ -62,10 +64,6 @@
   justify-content: center;
   align-items: center;
   font-size: 18px;
-}
-
-.wuss-calendar-container .bgwhite {
-  background-color: #fff;
 }
 
 .wuss-calendar-date-year-month {
@@ -104,7 +102,7 @@
   background: #ffffff;
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -113,18 +111,17 @@
 }
 
 .wuss-calendar-date-btn {
-  position: absolute;
-  left: 0;
-  top: 0;
   font-size: 14px;
-  line-height: 14px;
-  padding: 0 10px;
   color: #333333;
   height: 100%;
-  display: flex;
-  align-items: center;
+  width: 60px;
+  margin: 0;
 }
 .wuss-calendar-title {
   font-size: 16px;
   line-height: 16px;
+}
+.wuss-calendar-footer {
+  height: 40px;
+  line-height: 40px;
 }

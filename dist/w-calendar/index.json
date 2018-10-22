@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "w-mask-shadow": "../w-mask-shadow/index"
+    "w-mask-shadow": "../w-mask-shadow/index",
+    "w-button": "../w-button/index"
   }
 }
