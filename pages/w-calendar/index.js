@@ -2,13 +2,14 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-01 13:25:28 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-10-22 13:47:48
+ * @Last Modified time: 2018-10-23 15:40:41
  */
 Page({
   data: {
     visible1: false,
     visible2: false,
     visible3: false,
+    defaultValue: [new Date().getTime(), new Date(2018, 11, 0).getTime()],
   },
   handleClick1() {
     this.setData({ visible1: !this.data.visible1 });
