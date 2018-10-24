@@ -17,16 +17,16 @@
 		</view>
 		<view class="wuss-action-sheet-bd">
 			<view class="wuss-action-sheet-btns">
-				<block wx:for="{{ items }}" wx:key="index">
+				<block wx:for="{{ options }}" wx:key="item">
 					<view
-					 style="color: {{ item.color }};"
+           style="color: {{ item.color }};"
 					 hover-class="{{ item.disabled ? '' : 'wuss-action-sheet-btn-hover' }}"
 					 class="wuss-action-sheet-btn {{ item.disabled ? 'wuss-action-sheet-btn-disabled' : '' }}"
 					 catchtap="_handleItemClick"
 					 data-key="{{ index }}"
-					>
+          >
 						<w-activity-indicator
-						 show="{{ item.loading }}"
+						 wx:if="{{ item.loading }}"
 						 color="#b2b2b2"
 						 size="small"
 						 wuss-class="w-activity-indicator"
@@ -38,8 +38,8 @@
 						 color="{{ item.disabled ? '#b2b2b2b' : item.iconColor}}"
 						/>
 						{{
-						item.text
-						}}
+						item.text 
+            }}
 					</view>
 				</block>
 			</view>

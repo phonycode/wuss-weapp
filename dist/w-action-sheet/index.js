@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-12 14:03:55 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-27 14:43:11
+ * @Last Modified time: 2018-10-24 09:32:14
  */
 import Behavior from '../common/behavior/index';
 
@@ -16,7 +16,7 @@ Component({
   /**
    * 组件的属性列表
    * @param {boolean} visible 是否可见
-   * @param {array} items 当前传出的菜单列表
+   * @param {array} options 当前传出的菜单列表
    * @param {boolean} maskCancel 点击遮罩是否可关闭
    * @param {boolean} showCancel  是否展示取消按钮
    * @param {string} cancelText 取消按钮文字
@@ -26,7 +26,7 @@ Component({
       type: Boolean,
       value: false,
     },
-    items: {
+    options: {
       type: Array,
       value: [],
       observer(val) {
@@ -68,7 +68,7 @@ Component({
      * 菜单被点击回调
      */
     _handleItemClick(e) {
-      const item = this.data.items[e.currentTarget.dataset.key];
+      const item = this.data.options[e.currentTarget.dataset.key];
       if (!item || item.disabled) return false;
       this.triggerEvent(
         'onChange',
