@@ -134,6 +134,13 @@
 			 link="../w-alert/index"
 			 wuss-class="w-cell"
 			 isLink
+      />
+      <w-cell
+			 highlight
+			 label="Confirm 确认框"
+			 link="../w-confirm/index"
+			 wuss-class="w-cell"
+			 isLink
 			/>
 			<w-cell
 			 highlight
@@ -146,6 +153,13 @@
 			 highlight
 			 label="Popover 气泡"
 			 link="../w-popover/index"
+			 wuss-class="w-cell"
+			 isLink
+      />
+      <w-cell
+			 highlight
+			 label="Loading 加载指示器"
+			 link="../w-loading/index"
 			 wuss-class="w-cell"
 			 isLink
 			/>
@@ -201,6 +215,13 @@
 			 link="../w-checkbox/index"
 			 wuss-class="w-cell"
 			 isLink
+      />
+      <w-cell
+			 highlight
+			 label="Number 步进器"
+			 link="../w-number/index"
+			 wuss-class="w-cell"
+			 isLink
 			/>
 		</w-cell-group>
 
@@ -224,6 +245,13 @@
 			 highlight
 			 label="SwiperOut 侧滑菜单"
 			 link="../w-swiper-out/index"
+			 wuss-class="w-cell"
+			 isLink
+      />
+      <w-cell
+			 highlight
+			 label="Marquee 垂直滚动"
+			 link="../w-marquee/index"
 			 wuss-class="w-cell"
 			 isLink
 			/>
