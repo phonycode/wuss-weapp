@@ -1,0 +1,11 @@
+/* pages/w-marquee/index.wxss */
+.w-marquee-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+
+page {
+  padding: 0;
+}

@@ -1,0 +1,14 @@
+<w-pane title="Loading" desc="加载指示器" />
+
+<w-pane desc="Callback" />
+<w-button type="info" bind:click="handleClick3" >正常使用</w-button>
+
+<w-pane desc="Default" />
+<w-button type="info" bind:click="handleClick1" >3秒后SetTimeOut关闭</w-button>
+
+<w-pane desc="TimeOut" />
+<w-button type="info" bind:click="handleClick2" >3秒后自动关闭</w-button>
+
+
+<w-loading id="wuss-loading" />
+<w-alert id="wuss-alert" />

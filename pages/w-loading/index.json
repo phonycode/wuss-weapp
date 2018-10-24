@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "w-loading": "/dist/w-loading/index",
+    "w-alert": "/dist/w-alert/index",
+    "w-button": "/dist/w-button/index",
+    "w-pane": "/dist/w-pane/index"
+  }
+}

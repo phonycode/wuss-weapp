@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "w-marquee": "/dist/w-marquee/index",
+    "w-marquee-item": "/dist/w-marquee-item/index",
+    "w-alert": "/dist/w-alert/index",
+    "w-button": "/dist/w-button/index",
+    "w-pane": "/dist/w-pane/index"
+  }
+}
