@@ -1,0 +1,36 @@
+<w-mask-shadow
+ visible="{{ _visible }}"
+ maskCancel="{{ false }}"
+ zIndex="{{ 10000 }}"
+ opacity="{{ 0 }}"
+/>
+
+<view
+ class="wuss-class wuss-loading"
+ hover-class="none"
+ hover-stop-propagation="false"
+ wx:if="{{ _visible }}"
+>
+	<view
+	 class="wuss-loading-content"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		<view
+		 class="wuss-loading-icon"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		/>
+		<view
+		 class="wuss-loading-text"
+		 hover-class="none"
+     hover-stop-propagation="false"
+     wx:if="{{ showText }}"
+		>
+			{{
+			content
+			}}
+		</view>
+	</view>
+</view>
+
