@@ -1,12 +1,5 @@
-/*
- * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
- * @Date: 2018-10-18 17:24:35 
- * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
- * @Last Modified time: 2018-10-18 17:24:35 
- */
 @import '../common/theme/global.wxss';
-
-.date-day {
+.wuss-calendar-date-day {
   display: flex;
   padding: 5px;
   text-align: center;
@@ -15,25 +8,39 @@
   flex-direction: column;
 }
 
-.date-day.bgitem {
-  background-color: #d8ecf9;
+.wuss-calendar-date-day.renderRange {
+  background-color: rgba(255, 153, 0, 0.1);
 }
 
-.date-day.active {
+.wuss-calendar-container .bgwhite {
+  background-color: #fff;
+}
+.wuss-calendar-container .week {
+  color: #fe8b4a;
+}
+
+.wuss-calendar-date-day.active {
   background: #fe8b4a;
-  color: #FFF;
+  color: #fff;
+}
+.wuss-calendar-date-day.day-diabled {
+  color: #aaa;
+  background: #eee;
 }
 
-.date-day.vacation .item-days-text {
-  color: #F56C6C;
+.wuss-calendar-item-days-text {
+  font-size: 18rpx;
+  text-overflow: ellipis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.week-content {
+.wuss-calendar-week-content {
   position: relative;
   background: #ffffff;
 }
 
-.week-list {
+.wuss-calendar-week-list {
   /* position: absolute;
   top: 0; */
   font-size: 15px;
@@ -41,27 +48,22 @@
   padding-bottom: 5px;
 }
 
-.date-day.unavailable {
+.wuss-calendar-date-day.unavailable {
   color: #aaa;
 }
 
-.date-week {
+.wuss-calendar-date-week {
   display: flex;
   justify-content: center;
   align-content: center;
   margin: 5px;
 }
-
-.week {
-  color: #fe8b4a;
-}
-
-.row {
+.wuss-calendar-row {
   display: flex;
   flex-direction: row;
 }
 
-.item-days {
+.wuss-calendar-item-days {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,29 +71,7 @@
   font-size: 18px;
 }
 
-.bgwhite {
-  background-color: #fff;
-}
-
-.mask-shadow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, .7);
-  z-index: 900;
-  transition: all .2s ease-in-out;
-  opacity: 0;
-  visibility: hidden
-}
-
-.mask-shadow-show {
-  opacity: 1;
-  visibility: visible
-}
-
-.date-year-month {
+.wuss-calendar-date-year-month {
   font-size: 14px;
   padding: 5px 0;
   text-align: center;
@@ -99,11 +79,11 @@
   background: #f7f7f7;
 }
 
-.date-content {
+.wuss-calendar-date-content {
   background: #ffffff;
 }
 
-.calendar-container {
+.wuss-calendar-container {
   position: fixed;
   width: 100%;
   box-sizing: border-box;
@@ -113,21 +93,21 @@
   background: #f7f7f7;
   transform: translate3d(0, 100%, 0);
   transform-origin: center;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   z-index: 900;
-  visibility: hidden
+  visibility: hidden;
 }
 
 .calendar-modal-show {
   transform: translate3d(0, 0, 0);
-  visibility: visible
+  visibility: visible;
 }
 
-.header {
+.wuss-calendar-header {
   background: #ffffff;
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -135,26 +115,18 @@
   position: relative;
 }
 
-.date-btn {
-  position: absolute;
-  left: 0;
-  top: 0;
+.wuss-calendar-date-btn {
   font-size: 14px;
-  line-height: 14px;
-  padding: 0 10px;
   color: #333333;
   height: 100%;
-  display: flex;
-  align-items: center;
+  width: 60px;
+  margin: 0;
 }
-
-.left-btn {}
-
-.cancel-btn {}
-
-.centered {}
-
-.title {
+.wuss-calendar-title {
   font-size: 16px;
   line-height: 16px;
+}
+.wuss-calendar-footer {
+  height: 40px;
+  line-height: 40px;
 }
