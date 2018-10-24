@@ -1,16 +1,24 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-10 16:03:51 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:23:24
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-20 12:01:07
  */
 import Behavior from '../common/behavior/index';
 
-const OPTIONS = {
+/**
+ * @param title 标题
+ * @param content 内容
+ * @param maskClose 点击遮罩层是否可关闭
+ * @param buttonColor 按钮颜色
+ * @param confirm 确定按钮回调
+ */
+
+const DEFAULT_OPTIONS = {
   title: '',
   content: '',
   maskClose: false,
-  buttonColor: '#333333',
+  buttonColor: '#ff9900',
   confirm: () => {},
 };
 
@@ -38,7 +46,7 @@ Component({
       if (_visible) return false;
       this.setData({
         _visible: true,
-        ...OPTIONS,
+        ...DEFAULT_OPTIONS,
         ...opts,
       });
     },

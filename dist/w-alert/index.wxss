@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-10 16:04:05 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-12 09:22:46
+ * @Last Modified time: 2018-10-20 15:50:12
  */
 @import '../common/theme/global.wxss';
 
@@ -11,6 +11,7 @@
 .w-dialog {
   background-color: transparent;
   text-align: center;
+  margin-top: 200px;
 }
 
 .wuss-alert {
