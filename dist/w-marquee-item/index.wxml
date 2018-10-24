@@ -1,0 +1,9 @@
+<view
+ class="wuss-class wuss-marquee-slide-item"
+ hover-class="none"
+ hover-stop-propagation="false"
+ catchtap="handleClick"
+ style="height: {{ height }}px;"
+>
+	<slot/>
+</view>

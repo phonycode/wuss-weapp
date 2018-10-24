@@ -1,0 +1,6 @@
+/* dist/w-marquee-item/index.wxss */
+.wuss-marquee-slide-item {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
