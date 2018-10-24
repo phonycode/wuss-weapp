@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 29,
 			"list": [
 				{
 					"id": -1,
@@ -199,6 +199,30 @@
 					"id": -1,
 					"name": "w-accordion",
 					"pathName": "pages/w-accordion/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-number",
+					"pathName": "pages/w-number/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-marquee",
+					"pathName": "pages/w-marquee/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-loading",
+					"pathName": "pages/w-loading/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-confirm",
+					"pathName": "pages/w-confirm/index",
 					"query": ""
 				}
 			]

@@ -31,7 +31,6 @@
     "pages/w-popover/index",
     "pages/w-loading/index",
     "pages/w-marquee/index",
-    "pages/w-accordion/index",
     "pages/w-number/index"
   ],
   "window": {
