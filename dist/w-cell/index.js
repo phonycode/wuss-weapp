@@ -120,7 +120,7 @@ Component({
         'reLaunch',
       ];
       if (disabled) return false;
-      this.triggerEvent('click', {}, {});
+      this.triggerEvent('onClick', {}, {});
       if (!link) return false;
       if (!linkType) throw Error('linkType 不能为空');
       if (navigateMethods.indexOf(linkType) > -1) {
