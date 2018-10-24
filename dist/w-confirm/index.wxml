@@ -1,0 +1,40 @@
+<w-dialog
+ visible="{{ _visible }}"
+ maskClose="{{ false }}"
+ wuss-class="w-dialog"
+>
+	<view
+	 class="wuss-class wuss-confirm"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		<view class="wuss-confirm-hd">
+			<view class="wuss-confirm-title">{{ title }}</view>
+		</view>
+		<view class="wuss-confirm-bd">
+			<view class="wuss-confirm-content">{{ content }}</view>
+		</view>
+		<view class="wuss-confirm-ft">
+			<view class="wuss-confirm-button-group">
+        <view
+         wx:if="{{ showCancel }}"
+				 style="color: {{ cancelTextColor }};"
+				 catchtap="_handleCancel"
+				 class="wuss-confirm-button"
+				 hover-class="wuss-confirm-button-hover"
+				>
+					{{ cancelText }}
+				</view>
+				<view
+				 style="color: {{ confirmTextColor }};"
+				 catchtap="_handleConfirm"
+				 class="wuss-confirm-button"
+				 hover-class="wuss-confirm-button-hover"
+				>
+					{{ confirmText }}
+				</view>
+			</view>
+		</view>
+	</view>
+</w-dialog>
+

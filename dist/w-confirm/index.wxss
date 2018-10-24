@@ -1,0 +1,97 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-19 17:48:05 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-20 09:38:36
+ */
+@import '../common/theme/global.wxss';
+
+.w-dialog {
+  background-color: transparent;
+  text-align: center;
+}
+
+.wuss-confirm {
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+.wuss-confirm .wuss-confirm-hd {
+  padding: 15px 30px 5px;
+}
+
+.wuss-confirm .wuss-confirm-title {
+  font-size: 18px;
+  color: #333333;
+  text-align: center;
+}
+
+.wuss-confirm .wuss-confirm-bd {
+  padding: 5px 30px 20px;
+}
+
+.wuss-confirm .wuss-confirm-content {
+  font-size: 15px;
+  color: #999999;
+  text-align: center;
+}
+
+.wuss-confirm .wuss-confirm-ft {
+  position: relative;
+}
+
+.wuss-confirm .wuss-confirm-ft::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  border-top: 1rpx solid #eeeeee;
+  color: #eeeeee;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+}
+
+.wuss-confirm .wuss-confirm-button-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+
+.wuss-confirm .wuss-confirm-button {
+  min-height: 44px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: background-color 200ms ease 0s;
+}
+
+.wuss-confirm .wuss-confirm-button:last-child {
+  position: relative;
+}
+
+.wuss-confirm .wuss-confirm-button:last-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rpx;
+  bottom: 0;
+  border-left: 1rpx solid #eeeeee;
+  color: #eeeeee;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(.5);
+  transform: scaleX(.5);
+}
+
+.wuss-confirm-button-hover {
+  background-color: #eeeeee;
+}
