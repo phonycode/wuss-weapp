@@ -71,6 +71,13 @@
 
 		<w-pane desc="布局" wuss-class="w-pane" />
 		<w-cell-group>
+      <w-cell
+			 highlight
+			 label="Layout 栅格"
+			 link="../w-layout/index"
+			 wuss-class="w-cell"
+			 isLink
+			/>
 			<w-cell
 			 highlight
 			 label="Pane 窗格"
