@@ -1,0 +1,29 @@
+<view
+ class="wuss-class wuss-number"
+ hover-stop-propagation="false"
+ hover-class="none"
+>
+	<view
+	 class="wuss-number-btn-{{ buttonType === 'box' ? 'box' : 'circle' }} wuss-number-btn-{{ buttonType === 'box' ? 'box' : 'circle' }}-cut {{ disabled || _cutDisabled ? 'wuss-number-btn-disabled' : '' }}"
+	 hover-stop-propagation="false"
+   hover-class="{{ disabled || _cutDisabled ? '' : 'wuss-number-btn-hover-class' }}"
+	 catchtap="handleCut"
+	/>
+	<input
+   class="wuss-number-input {{ buttonType === 'circle' ? 'wuss-number-input-circle' : '' }}"
+   style="width: {{ width }}px;"
+	 value="{{ value }}"
+	 type="number"
+	 disabled="{{ !fillable || disabled }}"
+	 bindinput="handleInput"
+	 bindblur="handleBlur"
+	 bindconfirm="handleConfirm"
+	/>
+	<view
+	 class="wuss-number-btn-{{ buttonType === 'box' ? 'box' : 'circle' }} wuss-number-btn-{{ buttonType === 'box' ? 'box' : 'circle' }}-add {{ disabled || _addDisabled ? 'wuss-number-btn-disabled' : '' }}"
+   hover-class="{{ disabled || _addDisabled ? '' : 'wuss-number-btn-hover-class' }}"
+	 hover-stop-propagation="false"
+	 catchtap="handleAdd"
+	/>
+</view>
+

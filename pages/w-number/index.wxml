@@ -1,0 +1,60 @@
+<w-pane title="Number" desc="计数器" />
+
+<w-pane desc="Default" />
+<w-number wuss-class="w-number" />
+
+<w-pane desc="DefaultValue = 1000" />
+<w-number wuss-class="w-number" defaultValue="1000" />
+
+<w-pane desc="Min = 10,Max = 100" />
+<w-number
+ wuss-class="w-number"
+ max="100"
+ min="10"
+/>
+
+<w-pane desc="Width = 150" />
+<w-number
+ width="150"
+ default-value="233333333"
+ wuss-class="w-number"
+/>
+
+<w-pane desc="Steps = 10" />
+<w-number
+ default-value="100"
+ steps="10"
+ wuss-class="w-number"
+/>
+
+<w-pane desc="buttonType = circle" />
+<w-number
+ default-value="100"
+ button-type="circle"
+ wuss-class="w-number"
+/>
+
+<w-pane desc="Fillable" />
+<w-number
+ fillable="{{ false }}"
+ default-value="100"
+ wuss-class="w-number"
+/>
+
+<w-pane desc="Disabled" />
+<w-number disabled wuss-class="w-number" />
+
+<w-pane desc="In Cell" />
+<w-cell-group>
+	<block wx:for="{{ items }}" wx:key="item">
+		<w-cell label="{{ item }}">
+			<w-number
+			 slot="content"
+			 button-type="circle"
+			 default-value="{{ index }}"
+			 max="1000"
+			/>
+		</w-cell>
+	</block>
+</w-cell-group>
+

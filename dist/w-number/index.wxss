@@ -1,0 +1,143 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-23 09:56:31 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-23 17:01:47
+ */
+@import '../common/theme/global.wxss';
+
+.wuss-number {
+  font-size: 0;
+  letter-spacing: 0;
+  overflow: hidden;
+  display: block;
+}
+
+
+.wuss-number-input,
+.wuss-number-btn-box-cut,
+.wuss-number-btn-box-add,
+.wuss-number-btn-circle-cut,
+.wuss-number-btn-circle-add {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #ffffff;
+}
+
+.wuss-number-input {
+  height: 26px;
+  padding: 1px;
+  min-height: 0;
+  border: 1px solid #eee;
+  border-width: 1px 0;
+  border-radius: 0;
+  box-sizing: content-box;
+  color: #333333;
+  font-size: 14px;
+  text-align: center;
+  -webkit-appearance: none
+}
+
+.wuss-number-input-circle {
+  border: none;
+  border-radius: 0;
+  padding: 0 10px;
+}
+
+.wuss-number-btn-box {
+  width: 40px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  position: relative;
+  padding: 5px;
+  transition: background-color 100ms ease;
+}
+
+.wuss-number-btn-box-cut::before,
+.wuss-number-btn-box-add::after {
+  width: 9px;
+  height: 1px;
+}
+
+.wuss-number-btn-box-cut::before,
+.wuss-number-btn-box-add::after {
+  content: '';
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #6c6c6c;
+}
+
+
+.wuss-number-btn-box-add::before {
+  width: 1px;
+  height: 9px;
+  content: '';
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #6c6c6c;
+}
+
+.wuss-number-btn-hover-class {
+  background-color: #f9f9f9;
+  opacity: .8;
+}
+
+.wuss-number-btn-box.wuss-number-btn-disabled {
+  background: #ececec;
+  opacity: .4;
+}
+
+.wuss-number-btn-circle.wuss-number-btn-circle-cut.wuss-number-btn-disabled,
+.wuss-number-btn-circle.wuss-number-btn-circle-add.wuss-number-btn-disabled {
+  border: 1px solid #ececec;
+}
+
+.wuss-number-btn-circle.wuss-number-btn-circle-cut.wuss-number-btn-disabled::after,
+.wuss-number-btn-circle.wuss-number-btn-circle-add.wuss-number-btn-disabled::after,
+.wuss-number-btn-circle.wuss-number-btn-circle-add.wuss-number-btn-disabled::before {
+  background-color: #ececec;
+}
+
+.wuss-number-btn-circle {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ff9900;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0;
+} 
+
+.wuss-number-btn-circle-cut::after,
+.wuss-number-btn-circle-add::before,
+.wuss-number-btn-circle-add::after {
+  width: 12px;
+  height: 1px;
+}
+
+.wuss-number-btn-circle-cut::after,
+.wuss-number-btn-circle-add::before,
+.wuss-number-btn-circle-add::after  {
+  content: '';
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ff9900;
+}
+
+.wuss-number-btn-circle-add::after  {
+  width: 1px;
+  height: 12px;
+}

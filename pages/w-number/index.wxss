@@ -1,0 +1,4 @@
+/* pages/w-number/index.wxss */
+.w-number {
+  margin: 15px;
+}
