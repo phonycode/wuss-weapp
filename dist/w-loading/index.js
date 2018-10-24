@@ -1,5 +1,11 @@
 import Behavior from '../common/behavior/index';
 
+/**
+ * @param {string} content 展示内容
+ * @param {boolean} showText 是否展示内容文字
+ * @param {number} timeout 指定时间段内关闭loading
+ * @param {function} hide loading消失后的回调
+ */
 const DEFAULT_OPTIONS = {
   content: '正在加载...',
   showText: true,

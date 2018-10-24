@@ -46,6 +46,10 @@ Component({
 
   /**
    * 组件的属性列表
+   * @param {number} interval 过渡时间，默认为3s
+   * @param {number} defaultIndex 初始化后默认的索引
+   * @param {number} itemHeight 每个子节点(w-marquee-item)的高度
+   * @param {number} currentIndex 设置当前的激活索引
    */
   properties: {
     interval: {

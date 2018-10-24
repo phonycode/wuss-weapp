@@ -23,14 +23,14 @@ Component({
 
   /**
    * 组件的属性列表
-   * @param defaultValue 当前默认值
-   * @param max 最大值
-   * @param min 最小值
-   * @param width 当前输入框宽度
-   * @param steps 步进数
-   * @param fillable 是否可填写
-   * @param buttonType 按钮样式，可选[box/circel]
-   * @param disabled 禁用
+   * @param {number} defaultValue 当前默认值
+   * @param {number} max 最大值
+   * @param {number} min 最小值
+   * @param {number} width 当前输入框宽度
+   * @param {number} steps 步进数
+   * @param {boolean} fillable 是否可填写
+   * @param {string} buttonType 按钮样式，可选[box/circle]
+   * @param {boolean} disabled 禁用
    */
   properties: {
     defaultValue: {

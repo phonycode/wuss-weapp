@@ -47,6 +47,10 @@ Component({
     handleClick(e) {
       this.triggerEvent('onClick',e)
     },
+    /**
+     * 更新一个item的高度
+     * @param {number} height 
+     */
     updateItemHeight(height) {
       if(height) this.setData({ height })
     }
