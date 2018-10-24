@@ -1,0 +1,16 @@
+<view
+ class="wuss-class wuss-marquee"
+ hover-class="none"
+ hover-stop-propagation="false"
+ style="height: {{ itemHeight }}px;"
+>
+	<view
+	 class="wuss-marquee-slide"
+	 style="{{ _styles }}"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		<slot/>
+	</view>
+</view>
+

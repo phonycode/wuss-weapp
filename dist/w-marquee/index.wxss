@@ -1,0 +1,24 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-20 14:14:55 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-22 09:48:47
+ */
+@import '../common/theme/global.wxss';
+
+
+.wuss-marquee {
+  overflow: hidden;
+}
+
+.wuss-marquee-slide {
+  transition: transform 300ms ease 0s;
+}
+
+.wuss-marquee-slide-item {
+
+}
+
+.wuss-marquee-slide-item-text {
+
+}
