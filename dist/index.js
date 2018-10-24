@@ -24,6 +24,11 @@ const Alert = options => {
   return component.alert(options);
 };
 
+const Confirm = options => {
+  const component = getCtx('#wuss-confirm');
+  return component.confirm(options);
+};
+
 const ActionSheet = {
   show: (options = {}) => {
     const component = getCtx('#wuss-actionsheet');
@@ -35,8 +40,21 @@ const ActionSheet = {
   },
 };
 
+const Loading = {
+  show: (options = {}) => {
+    const component = getCtx('#wuss-loading');
+    return component.show(options);
+  },
+  hide: (options = {}) => {
+    const component = getCtx('#wuss-loading');
+    return component.hide(options);
+  },
+};
+
 module.exports = {
   Toast,
   Alert,
+  Confirm,
+  Loading,
   ActionSheet,
 };
