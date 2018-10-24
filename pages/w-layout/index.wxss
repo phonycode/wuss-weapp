@@ -1,0 +1,8 @@
+/* pages/w-layout/index.wxss */
+
+.w-layout-col::before {
+  content: '';
+  display: table;
+  clear: both;
+  overflow: hidden;
+}
