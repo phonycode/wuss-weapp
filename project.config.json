@@ -34,16 +34,16 @@
 			"current": -1,
 			"list": []
 		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
 		"plugin": {
 			"current": -1,
 			"list": []
 		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": -1,
+			"current": 25,
 			"list": [
 				{
 					"id": -1,
@@ -193,6 +193,12 @@
 					"id": -1,
 					"name": "w-popover 气泡",
 					"pathName": "pages/w-popover/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-accordion",
+					"pathName": "pages/w-accordion/index",
 					"query": ""
 				}
 			]
