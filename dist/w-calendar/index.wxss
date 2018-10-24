@@ -22,6 +22,10 @@
   background: #fe8b4a;
   color: #fff;
 }
+.wuss-calendar-date-day.day-diabled {
+  color: #aaa;
+  background: #eee;
+}
 
 .wuss-calendar-item-days-text {
   font-size: 18rpx;

@@ -79,7 +79,7 @@
 			<view class="wuss-calendar-date-year-month">{{dateItem.year}}年{{dateItem.month}}月</view>
 			<view class="wuss-calendar-row" style="flex-wrap: wrap;margin:15rpx 0;">
 				<view
-				 class="wuss-calendar-date-day {{item.day<=0?'bgwhite':item.className}}  {{item.checked?'active':''}} {{item.renderRange?'renderRange':''}}"
+				 class="wuss-calendar-date-day {{item.day<=0?'bgwhite':item.className}}  {{item.checked?'active':''}} {{item.renderRange?'renderRange':''}} {{item.disabledDate?'day-diabled':''}}"
 				 style="width:calc((100vw / 7) - 10px);height:calc(100vw / 7);"
 				 data-year="{{dateItem.year}}"
 				 data-month="{{dateItem.month}}"
@@ -93,6 +93,9 @@
 					<view class='wuss-calendar-item-days' wx:if="{{item.day >0}}">
 						<text style='font-size:28rpx;'>{{item.day}}</text>
 						<text class="wuss-calendar-item-days-text" wx:if="{{item.checkedText}}">{{item.checkedText}}</text>
+						<text class="wuss-calendar-item-days-text" wx:elif="{{item.disabledDate}}" >
+							{{item.disabledDate.text}}
+						</text>
 						<text class="wuss-calendar-item-days-text" wx:elif="{{item.dateTextObj}}" >
 							{{item.dateTextObj.text}}
 						</text>

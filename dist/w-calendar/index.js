@@ -14,11 +14,11 @@ Component({
       value: 'range', //'one' | 'more' |'range'
     },
     maxDate: {
-      type: Number,
+      type: null,
       value: 0,
     },
     minDate: {
-      type: Number,
+      type: null,
       value: 0,
     },
     defaultValue: {
@@ -41,6 +41,10 @@ Component({
       type: Number,
       value: 6,
     },
+    disabledDate: {
+      type: Object,
+      value: {},
+    },
   },
   data: {
     value: [],
@@ -58,29 +62,26 @@ Component({
     setDefaultValueToValue() {
       let { defaultValue, type } = this.data;
       if (type === 'one') {
-        this.onePress(this.searchdDateIndex(defaultValue[0]), true);
+        this.onPressDate(this.searchdDateIndex(defaultValue[0]), true);
       } else if (type === 'range') {
-        this.rangePress(this.searchdDateIndex(defaultValue[0]), true);
-        this.rangePress(this.searchdDateIndex(defaultValue[1]), true);
+        this.onPressDate(this.searchdDateIndex(defaultValue[0]), true);
+        this.onPressDate(this.searchdDateIndex(defaultValue[1]), true);
       } else if (type === 'more') {
         for (const i of defaultValue) {
-          this.morePress(this.searchdDateIndex(i), true);
+          this.onPressDate(this.searchdDateIndex(defaultValue[i]), true);
         }
       }
     },
     //创建月份表
     createDateListData() {
-      let { initalMonths, maxDate, minDate } = this.data;
-      console.log(new Date(2018, 12, 1).getTime());
-
+      let { initalMonths, maxDate } = this.data;
       this.createMonthDateList(
-        Math.min(
-          this.getMonthLen(
-            new Date(2018, 12, 1).getTime(),
-            new Date().getTime()
-          ),
-          initalMonths
-        ),
+        +maxDate
+          ? Math.min(
+              this.getMonthLen(new Date().getTime(), maxDate),
+              initalMonths
+            )
+          : initalMonths,
         0
       );
     },
@@ -89,8 +90,6 @@ Component({
         month1 = new Date(date1).getMonth(),
         year2 = new Date(date2).getFullYear(),
         month2 = new Date(date2).getMonth();
-      console.log(year2, year1, month1, month2);
-
       let len = (year2 - year1) * 12 + month2 - month1;
       return len < 0 ? 1 : len + 1;
     },
@@ -100,16 +99,9 @@ Component({
      * @param {number} operator 0代表往后 -1 代表往前
      */
     createMonthDateList(num, operator) {
-      console.log(num);
-
-      let { dateList, dateTextObj } = this.data;
+      let { dateList, dateTextObj, disabledDate } = this.data;
       dateTextObj = Object.assign({}, SFTV, dateTextObj);
-      let date;
-      if (operator) {
-        date = dateList[0] || {};
-      } else {
-        date = dateList[dateList.length - 1] || {};
-      }
+      const date = operator ? dateList[0] : dateList[dateList.length - 1] || {};
       const now =
         (date.year && new Date(date.year, date.month + operator)) || new Date();
       const _nowMonth = now.getMonth();
@@ -128,10 +120,12 @@ Component({
           if (tempWeek == 0 || tempWeek == 6) {
             className = 'week';
           }
+
           days.push({
             day,
             className,
             dateTextObj: dateTextObj[`${month}-${day}`] || false,
+            disabledDate: disabledDate[`${year}-${month}-${day}`] || false,
           });
         }
         !operator && dateList.push({ year, month, days });
@@ -154,15 +148,24 @@ Component({
     /**
      * 点击日期事件
      */
-    onPressDate(e) {
-      let { type } = this.data;
-      const { day, ...dataset } = e.currentTarget.dataset;
-      if (day <= 0) return false;
-      this[type + 'Press']({ ...dataset, day });
+    onPressDate(e, first = false) {
+      const { dateIndex, index, day, ...dataset } =
+        (e.currentTarget && e.currentTarget.dataset) || e;
+      console.log(this.data.dateList[dateIndex]['days'][index]);
+
+      if (
+        dateIndex === void 666 ||
+        day <= 0 ||
+        this.data.dateList[dateIndex]['days'][index].disabledDate
+      )
+        return false;
+      this[this.data.type + 'Press'](
+        { ...dataset, index, dateIndex, day },
+        first
+      );
     },
     //单选日期
-    onePress({ dateIndex, index, year, month, day } = {}, first = false) {
-      if (dateIndex === void 666) return false;
+    onePress({ dateIndex, index, year, month, day }, first = false) {
       const { dateList, hashDays } = this.data;
       const newDay = dateList[dateIndex]['days'][index];
       if (hashDays[0] === newDay) return false;
@@ -180,8 +183,7 @@ Component({
       );
     },
     //多选日期
-    morePress({ dateIndex, index, year, month, day } = {}, first = false) {
-      if (dateIndex === void 666) return false;
+    morePress({ dateIndex, index, year, month, day }, first = false) {
       let { dateList, value } = this.data;
       const { checked } = dateList[dateIndex].days[index];
       if (checked) {
@@ -204,8 +206,7 @@ Component({
       );
     },
     //范围日期
-    rangePress({ dateIndex, index, year, month, day } = {}, first = false) {
-      if (dateIndex === void 666) return false;
+    rangePress({ dateIndex, index, year, month, day }, first = false) {
       let {
         startDayText,
         dateList,
@@ -279,21 +280,32 @@ Component({
     // 寻找时间戳的下标
     searchdDateIndex(date) {
       const { dateList } = this.data;
-      const _date = new Date(date);
-      const year = _date.getFullYear();
-      const month = _date.getMonth() + 1;
-      const day = _date.getDate();
-      for (const dateIndex in dateList) {
-        if (
-          year == dateList[dateIndex].year &&
-          month == dateList[dateIndex].month
-        ) {
-          for (const index in dateList[dateIndex]['days']) {
-            if (dateList[dateIndex]['days'][index].day == day)
-              return { year, month, day, dateIndex: +dateIndex, index: +index };
+      try {
+        const _date = new Date(date);
+        const year = _date.getFullYear();
+        const month = _date.getMonth() + 1;
+        const day = _date.getDate();
+        for (const dateIndex in dateList) {
+          if (
+            year == dateList[dateIndex].year &&
+            month == dateList[dateIndex].month
+          ) {
+            for (const index in dateList[dateIndex]['days']) {
+              if (dateList[dateIndex]['days'][index].day == day)
+                return {
+                  year,
+                  month,
+                  day,
+                  dateIndex: +dateIndex,
+                  index: +index,
+                };
+            }
           }
         }
+      } catch (e) {
+        return {};
       }
+      return {};
     },
     clearRangeStyle() {
       this.renderHash = this.renderHash || [];
@@ -332,7 +344,7 @@ Component({
     // 点击确定
     handleOk() {
       const { value } = this.data;
-      this.triggerEvent('onOk', { value });
+      this.triggerEvent('confirm', { value });
     },
     // value改变触发
     valueChange() {

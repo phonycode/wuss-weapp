@@ -5,5 +5,5 @@
 <w-button type="info" bind:click="handleClick1">
 	{{ visible1 ? 'show' : 'hide' }}
 </w-button>
-<w-calendar visible bind:onSelect="handleSelected" bind:cancel="handleCancel" defaultValue="{{defaultValue}}" />
+<w-calendar bindonSelect="handleSelected" bindconfirm="handleConfirm" bindcancel="handleCancel" defaultValue="{{defaultValue}}" visible disabledDate="{{disabledDate}}" />
 
