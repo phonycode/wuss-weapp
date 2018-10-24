@@ -2,45 +2,8 @@
 
 <w-pane desc="Default" />
 
-<w-button 
-  type="info" 
-  bind:click="handleClick1" 
->
-  {{ visible1 ? 'show' : 'hide' }}
+<w-button type="info" bind:click="handleClick1">
+	{{ visible1 ? 'show' : 'hide' }}
 </w-button>
-<w-calendar 
-  visible="{{visible1}}"
-  bind:onSelect="handleSelected"
-  bind:cancel="handleCancel" 
-/>
-<!-- 
-<w-pane desc="Specified Date" />
+<w-calendar bindonSelect="handleSelected" bindconfirm="handleConfirm" bindcancel="handleCancel" defaultValue="{{defaultValue}}" visible disabledDate="{{disabledDate}}" />
 
-<w-button 
-  type="info" 
-  bind:click="handleClick2" 
->
-  {{ visible2 ? 'show' : 'hide' }}
-</w-button>
-<w-calendar 
-  visible="{{visible2}}"
-  checkInDate="2018-09-15"
-  checkOutDate="2018-10-15"
-  bind:onSelect="handleSelected"
-  bind:cancel="handleCancel"
-/>
-
-<w-pane desc="Maximum Render Month" />
-
-<w-button 
-  type="info" 
-  bind:click="handleClick3"
->
-  {{ visible3 ? 'show' : 'hide' }}
-</w-button>
-<w-calendar 
-  visible="{{visible3}}" 
-  maxMonth="12"
-  bind:onSelect="handleSelected"
-  bind:cancel="handleCancel" 
-/> -->

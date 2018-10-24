@@ -1,5 +1,4 @@
-@import '../common/theme/global.wxss';
-.wuss-calendar-date-day {
+.date-day {
   display: flex;
   padding: 5px;
   text-align: center;
@@ -8,39 +7,25 @@
   flex-direction: column;
 }
 
-.wuss-calendar-date-day.renderRange {
-  background-color: rgba(255, 153, 0, 0.1);
+.date-day.bgitem {
+  background-color: #d8ecf9;
 }
 
-.wuss-calendar-container .bgwhite {
-  background-color: #fff;
-}
-.wuss-calendar-container .week {
-  color: #fe8b4a;
-}
-
-.wuss-calendar-date-day.active {
+.date-day.active {
   background: #fe8b4a;
-  color: #fff;
-}
-.wuss-calendar-date-day.day-diabled {
-  color: #aaa;
-  background: #eee;
+  color: #FFF;
 }
 
-.wuss-calendar-item-days-text {
-  font-size: 18rpx;
-  text-overflow: ellipis;
-  overflow: hidden;
-  white-space: nowrap;
+.date-day.vacation .item-days-text {
+  color: #F56C6C;
 }
 
-.wuss-calendar-week-content {
+.week-content {
   position: relative;
   background: #ffffff;
 }
 
-.wuss-calendar-week-list {
+.week-list {
   /* position: absolute;
   top: 0; */
   font-size: 15px;
@@ -48,22 +33,27 @@
   padding-bottom: 5px;
 }
 
-.wuss-calendar-date-day.unavailable {
+.date-day.unavailable {
   color: #aaa;
 }
 
-.wuss-calendar-date-week {
+.date-week {
   display: flex;
   justify-content: center;
   align-content: center;
   margin: 5px;
 }
-.wuss-calendar-row {
+
+.week {
+  color: #fe8b4a;
+}
+
+.row {
   display: flex;
   flex-direction: row;
 }
 
-.wuss-calendar-item-days {
+.item-days {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +61,29 @@
   font-size: 18px;
 }
 
-.wuss-calendar-date-year-month {
+.bgwhite {
+  background-color: #fff;
+}
+
+.mask-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .7);
+  z-index: 900;
+  transition: all .2s ease-in-out;
+  opacity: 0;
+  visibility: hidden
+}
+
+.mask-shadow-show {
+  opacity: 1;
+  visibility: visible
+}
+
+.date-year-month {
   font-size: 14px;
   padding: 5px 0;
   text-align: center;
@@ -79,11 +91,11 @@
   background: #f7f7f7;
 }
 
-.wuss-calendar-date-content {
+.date-content {
   background: #ffffff;
 }
 
-.wuss-calendar-container {
+.calendar-container {
   position: fixed;
   width: 100%;
   box-sizing: border-box;
@@ -93,21 +105,21 @@
   background: #f7f7f7;
   transform: translate3d(0, 100%, 0);
   transform-origin: center;
-  transition: all 0.2s ease-in-out;
+  transition: all .2s ease-in-out;
   z-index: 900;
-  visibility: hidden;
+  visibility: hidden
 }
 
 .calendar-modal-show {
   transform: translate3d(0, 0, 0);
-  visibility: visible;
+  visibility: visible
 }
 
-.wuss-calendar-header {
+.header {
   background: #ffffff;
   display: flex;
   flex: 1;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -115,18 +127,26 @@
   position: relative;
 }
 
-.wuss-calendar-date-btn {
+.date-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
   font-size: 14px;
+  line-height: 14px;
+  padding: 0 10px;
   color: #333333;
   height: 100%;
-  width: 60px;
-  margin: 0;
+  display: flex;
+  align-items: center;
 }
-.wuss-calendar-title {
+
+.left-btn {}
+
+.cancel-btn {}
+
+.centered {}
+
+.title {
   font-size: 16px;
   line-height: 16px;
-}
-.wuss-calendar-footer {
-  height: 40px;
-  line-height: 40px;
 }
