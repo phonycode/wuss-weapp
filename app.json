@@ -31,6 +31,7 @@
     "pages/w-popover/index",
     "pages/w-loading/index",
     "pages/w-marquee/index",
+    "pages/w-cell-picker/index",
     "pages/w-number/index"
   ],
   "window": {

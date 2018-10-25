@@ -1,2 +1,80 @@
-<!--dist/w-cell-picker/index.wxml-->
-<text>dist/w-cell-picker/index.wxml</text>
+<w-cell
+ highlight
+ isLink
+ label="{{ label }}"
+ bind:onClick="_handleClick"
+>
+	<view
+	 slot="content"
+	 class="wuss-class wuss-cell-picker"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		<w-popup
+		 maskCancel
+		 visible="{{ _visible }}"
+		 position="bottom"
+		 width="100%"
+		 padding="0"
+     bind:close="_handleCancel"
+		>
+			<view
+			 class="wuss-cell-picker-header"
+			 hover-class="none"
+			 hover-stop-propagation="false"
+			>
+				<view
+				 class="wuss-cell-picker-header-hd"
+				 hover-class="none"
+				 hover-stop-propagation="false"
+				 style="{{ cancelTextColor ? 'color:' + cancelTextColor + ';' : '' }}"
+         catchtap="_handleCancel"
+				>
+					{{ cancelText }}
+				</view>
+				<view
+				 class="wuss-cell-picker-header-bd"
+				 hover-class="none"
+				 hover-stop-propagation="false"
+				>
+					{{ title }}
+				</view>
+				<view
+				 class="wuss-cell-picker-header-ft"
+				 hover-class="none"
+				 hover-stop-propagation="false"
+				 style="{{ confirmTextColor ? 'color:' + confirmTextColor + ';' : '' }}"
+         catchtap="_handleConfirm"
+				>
+					{{ confirmText }}
+				</view>
+			</view>
+			<picker-view
+			 value="{{ value }}"
+			 class="wuss-cell-picker-view"
+			 bindchange="_handleChange"
+			>
+				<block
+				 wx:for="{{ options }}"
+				 wx:for-item="column"
+				 wx:for-index="columnIdx"
+				 wx:key="column"
+				>
+					<picker-view-column>
+						<block
+						 wx:for="{{ column }}"
+						 wx:for-item="item"
+						 wx:for-index="index"
+						 wx:key="item"
+						>
+							<view class="wuss-cell-picker-view-item">
+								{{ showValue ? item.value : item.key }}
+							</view>
+						</block>
+					</picker-view-column>
+				</block>
+			</picker-view>
+		</w-popup>
+	</view>
+</w-cell>
+
