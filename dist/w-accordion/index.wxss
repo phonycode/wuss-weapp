@@ -1,0 +1,61 @@
+.wuss-accordion--header {
+  position: relative;
+  padding: 20rpx 30rpx;
+  color: #000000;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  padding-right: 60rpx;
+  width: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.wuss-accordion--header:after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #d9d9d9;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+  left: 0;
+}
+.wuss-accordion--disabled {
+  opacity: 0.3;
+}
+.wuss-accordion--arrow {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  color: #bbb;
+  transition: transform 0.2s ease;
+}
+.wuss-accordion--current .wuss-accordion--arrow {
+  transform: rotate(180deg);
+}
+.wuss-accordion--content:after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #d9d9d9;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+  left: 0;
+}
+.wuss-accordion--content {
+  transition: all 0.3s;
+  overflow: hidden;
+  background: #fff;
+  font-size: 30rpx;
+  color: #333;
+  position: relative;
+}
+
+.wuss-accordion--current .wuss-accordion--content {
+}

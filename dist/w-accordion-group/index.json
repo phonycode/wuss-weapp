@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-cell-group": "../w-cell-group/index"
+  }
+}

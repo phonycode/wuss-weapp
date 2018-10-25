@@ -67,6 +67,13 @@
 			 wuss-class="w-cell"
 			 isLink
 			/>
+			<w-cell
+			 highlight
+			 label="Accordion 手风琴"
+			 link="../w-accordion/index"
+			 wuss-class="w-cell"
+			 isLink
+			/>
 		</w-cell-group>
 
 		<w-pane desc="布局" wuss-class="w-pane" />
@@ -134,8 +141,8 @@
 			 link="../w-alert/index"
 			 wuss-class="w-cell"
 			 isLink
-      />
-      <w-cell
+			/>
+			<w-cell
 			 highlight
 			 label="Confirm 确认框"
 			 link="../w-confirm/index"
@@ -155,8 +162,8 @@
 			 link="../w-popover/index"
 			 wuss-class="w-cell"
 			 isLink
-      />
-      <w-cell
+			/>
+			<w-cell
 			 highlight
 			 label="Loading 加载指示器"
 			 link="../w-loading/index"
@@ -215,8 +222,8 @@
 			 link="../w-checkbox/index"
 			 wuss-class="w-cell"
 			 isLink
-      />
-      <w-cell
+			/>
+			<w-cell
 			 highlight
 			 label="Number 步进器"
 			 link="../w-number/index"
@@ -247,8 +254,8 @@
 			 link="../w-swiper-out/index"
 			 wuss-class="w-cell"
 			 isLink
-      />
-      <w-cell
+			/>
+			<w-cell
 			 highlight
 			 label="Marquee 垂直滚动"
 			 link="../w-marquee/index"

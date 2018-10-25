@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents": {
+    "w-pane": "/dist/w-pane/index",
+    "w-accordion-group": "/dist/w-accordion-group/index",
+    "w-accordion": "/dist/w-accordion/index"
+  }
+}
