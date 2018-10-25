@@ -26,7 +26,8 @@ Component({
   /**
    * 组件的属性列表
    * @param {array} options 传入的选项组[ [], [], [] ]
-   * @param {string} cancelTextColor 默认值 可以支持 key value 例: [value,value,value...] 或 [key,key,key...]
+   * @param {string} defaultValue 默认值 可以支持 key value 例: [value,value,value...] 或 [key,key,key...]
+   * @param {string} cancelTextColor 取消文本颜色
    * @param {string} cancelText 取消文本文字
    * @param {string} title 标题
    * @param {string} confirmTextColor 确认文本颜色
