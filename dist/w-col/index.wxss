@@ -1,0 +1,405 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-24 09:46:25 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-24 12:02:04
+ */
+@import '../common/theme/global.wxss';
+
+.wuss-layout-col {
+  position: relative;
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.wuss-layout-col::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+.wuss-layout-col-span-1 {
+  width: 4.166666666666666%;
+}
+
+.wuss-layout-col-offset-1 {
+  margin-left: 4.166666666666666%;
+}
+
+.wuss-layout-col-push-1 {
+  left: 4.166666666666666%;
+}
+
+.wuss-layout-col-pull-1 {
+  right: 4.166666666666666%;
+}
+
+.wuss-layout-col-span-2 {
+  width: 8.333333333333332%;
+}
+
+.wuss-layout-col-offset-2 {
+  margin-left: 8.333333333333332%;
+}
+
+.wuss-layout-col-push-2 {
+  left: 8.333333333333332%;
+}
+
+.wuss-layout-col-pull-2 {
+  right: 8.333333333333332%;
+}
+
+.wuss-layout-col-span-3 {
+  width: 12.5%;
+}
+
+.wuss-layout-col-offset-3 {
+  margin-left: 12.5%;
+}
+
+.wuss-layout-col-push-3 {
+  left: 12.5%;
+}
+
+.wuss-layout-col-pull-3 {
+  right: 12.5%;
+}
+
+.wuss-layout-col-span-4 {
+  width: 16.666666666666664%;
+}
+
+.wuss-layout-col-offset-4 {
+  margin-left: 16.666666666666664%;
+}
+
+.wuss-layout-col-push-4 {
+  left: 16.666666666666664%;
+}
+
+.wuss-layout-col-pull-4 {
+  right: 16.666666666666664%;
+}
+
+.wuss-layout-col-span-5 {
+  width: 20.833333333333336%;
+}
+
+.wuss-layout-col-offset-5 {
+  margin-left: 20.833333333333336%;
+}
+
+.wuss-layout-col-push-5 {
+  left: 20.833333333333336%;
+}
+
+.wuss-layout-col-pull-5 {
+  right: 20.833333333333336%;
+}
+
+.wuss-layout-col-span-6 {
+  width: 25%;
+}
+
+.wuss-layout-col-offset-6 {
+  margin-left: 25%;
+}
+
+.wuss-layout-col-push-6 {
+  left: 25%;
+}
+
+.wuss-layout-col-pull-6 {
+  right: 25%;
+}
+
+.wuss-layout-col-span-7 {
+  width: 29.166666666666668%;
+}
+
+.wuss-layout-col-offset-7 {
+  margin-left: 29.166666666666668%;
+}
+
+.wuss-layout-col-push-7 {
+  left: 29.166666666666668%;
+}
+
+.wuss-layout-col-pull-7 {
+  right: 29.166666666666668%;
+}
+
+.wuss-layout-col-span-8 {
+  width: 33.33333333333333%;
+}
+
+.wuss-layout-col-offset-8 {
+  margin-left: 33.33333333333333%;
+}
+
+.wuss-layout-col-push-8 {
+  left: 33.33333333333333%;
+}
+
+.wuss-layout-col-pull-8 {
+  right: 33.33333333333333%;
+}
+
+.wuss-layout-col-span-9 {
+  width: 37.5%;
+}
+
+.wuss-layout-col-offset-9 {
+  margin-left: 37.5%;
+}
+
+.wuss-layout-col-push-9 {
+  left: 37.5%;
+}
+
+.wuss-layout-col-pull-9 {
+  right: 37.5%;
+}
+
+.wuss-layout-col-span-10 {
+  width: 41.66666666666667%;
+}
+
+.wuss-layout-col-offset-10 {
+  margin-left: 41.66666666666667%;
+}
+
+.wuss-layout-col-push-10 {
+  left: 41.66666666666667%;
+}
+
+.wuss-layout-col-pull-10 {
+  right: 41.66666666666667%;
+}
+
+.wuss-layout-col-span-11 {
+  width: 45.83333333333333%;
+}
+
+.wuss-layout-col-offset-11 {
+  margin-left: 45.83333333333333%;
+}
+
+.wuss-layout-col-push-11 {
+  left: 45.83333333333333%;
+}
+
+.wuss-layout-col-pull-11 {
+  right: 45.83333333333333%;
+}
+
+.wuss-layout-col-span-12 {
+  width: 50%;
+}
+
+.wuss-layout-col-offset-12 {
+  margin-left: 50%;
+}
+
+.wuss-layout-col-push-12 {
+  left: 50%;
+}
+
+.wuss-layout-col-pull-12 {
+  right: 50%;
+}
+
+.wuss-layout-col-span-13 {
+  width: 54.166666666666664%;
+}
+
+.wuss-layout-col-offset-13 {
+  margin-left: 54.166666666666664%;
+}
+
+.wuss-layout-col-push-13 {
+  left: 54.166666666666664%;
+}
+
+.wuss-layout-col-pull-13 {
+  right: 54.166666666666664%;
+}
+
+.wuss-layout-col-span-14 {
+  width: 58.333333333333336%;
+}
+
+.wuss-layout-col-offset-14 {
+  margin-left: 58.333333333333336%;
+}
+
+.wuss-layout-col-push-14 {
+  left: 58.333333333333336%;
+}
+
+.wuss-layout-col-pull-14 {
+  right: 58.333333333333336%;
+}
+
+.wuss-layout-col-span-15 {
+  width: 62.5%;
+}
+
+.wuss-layout-col-offset-15 {
+  margin-left: 62.5%;
+}
+
+.wuss-layout-col-push-15 {
+  left: 62.5%;
+}
+
+.wuss-layout-col-pull-15 {
+  right: 62.5%;
+}
+
+.wuss-layout-col-span-16 {
+  width: 66.66666666666666%;
+}
+
+.wuss-layout-col-offset-16 {
+  margin-left: 66.66666666666666%;
+}
+
+.wuss-layout-col-push-16 {
+  left: 66.66666666666666%;
+}
+
+.wuss-layout-col-pull-16 {
+  right: 66.66666666666666%;
+}
+
+.wuss-layout-col-span-17 {
+  width: 70.83333333333334%;
+}
+
+.wuss-layout-col-offset-17 {
+  margin-left: 70.83333333333334%;
+}
+
+.wuss-layout-col-push-17 {
+  left: 70.83333333333334%;
+}
+
+.wuss-layout-col-pull-17 {
+  right: 70.83333333333334%;
+}
+
+.wuss-layout-col-span-18 {
+  width: 75%;
+}
+
+.wuss-layout-col-offset-18 {
+  margin-left: 75%;
+}
+
+.wuss-layout-col-push-18 {
+  left: 75%;
+}
+
+.wuss-layout-col-pull-18 {
+  right: 75%;
+}
+
+.wuss-layout-col-span-19 {
+  width: 79.16666666666666%;
+}
+
+.wuss-layout-col-offset-19 {
+  margin-left: 79.16666666666666%;
+}
+
+.wuss-layout-col-push-19 {
+  left: 79.16666666666666%;
+}
+
+.wuss-layout-col-pull-19 {
+  right: 79.16666666666666%;
+}
+
+.wuss-layout-col-span-20 {
+  width: 83.33333333333334%;
+}
+
+.wuss-layout-col-offset-20 {
+  margin-left: 83.33333333333334%;
+}
+
+.wuss-layout-col-push-20 {
+  left: 83.33333333333334%;
+}
+
+.wuss-layout-col-pull-20 {
+  right: 83.33333333333334%;
+}
+
+.wuss-layout-col-span-21 {
+  width: 87.5%;
+}
+
+.wuss-layout-col-offset-21 {
+  margin-left: 87.5%;
+}
+
+.wuss-layout-col-push-21 {
+  left: 87.5%;
+}
+
+.wuss-layout-col-pull-21 {
+  right: 87.5%;
+}
+
+.wuss-layout-col-span-22 {
+  width: 91.66666666666666%;
+}
+
+.wuss-layout-col-offset-22 {
+  margin-left: 91.66666666666666%;
+}
+
+.wuss-layout-col-push-22 {
+  left: 91.66666666666666%;
+}
+
+.wuss-layout-col-pull-22 {
+  right: 91.66666666666666%;
+}
+
+.wuss-layout-col-span-23 {
+  width: 95.83333333333334%;
+}
+
+.wuss-layout-col-offset-23 {
+  margin-left: 95.83333333333334%;
+}
+
+.wuss-layout-col-push-23 {
+  left: 95.83333333333334%;
+}
+
+.wuss-layout-col-pull-23 {
+  right: 95.83333333333334%;
+}
+
+.wuss-layout-col-span-24 {
+  width: 100%;
+}
+
+.wuss-layout-col-offset-24 {
+  margin-left: 100%;
+}
+
+.wuss-layout-col-push-24 {
+  left: 100%;
+}
+
+.wuss-layout-col-pull-24 {
+  right: 100%;
+}

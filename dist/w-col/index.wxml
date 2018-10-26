@@ -1,0 +1,10 @@
+<view
+ class="wuss-class wuss-layout-col"
+ hover-class="none"
+ hover-stop-propagation="false"
+ class="wuss-layout-col wuss-layout-col-span-{{ span }} {{ offset ? 'wuss-layout-col-offset-' + offset : '' }} {{ push ? 'wuss-layout-col-push-' + push : '' }} {{ pull ? 'wuss-layout-col-pull-' + pull : '' }}"
+ style="{{ _gutter ? 'padding: 0 ' + _gutter + 'px;' : 'padding: 0;' }} float: {{ _direction }};"
+>
+	<slot/>
+</view>
+

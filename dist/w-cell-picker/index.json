@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-popup": "../w-popup/index",
+    "w-cell": "../w-cell/index"
+  }
+}

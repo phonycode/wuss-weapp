@@ -1,0 +1,16 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-24 09:46:57 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-24 11:47:49
+ */
+@import '../common/theme/global.wxss';
+
+.wuss-layout-row {
+}
+
+.wuss-layout-row::after {
+  content: '';
+  display: table;
+  clear: both;
+}

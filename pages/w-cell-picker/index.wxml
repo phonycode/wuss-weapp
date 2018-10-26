@@ -1,0 +1,12 @@
+<w-pane title="CellPicker" desc="选择器" />
+
+<w-pane desc="Default" />
+
+<w-cell-group>
+	<w-cell-picker
+	 label="选择地区"
+	 options="{{ options }}"
+	 title="请选择地区"
+	/>
+</w-cell-group>
+
