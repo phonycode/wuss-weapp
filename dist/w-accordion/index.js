@@ -12,7 +12,8 @@ Component({
   data: {
     current: false,
     index: 0,
-    height: '',
+    height: 'height:0px',
+    zeroHeight: '',
   },
   ready() {
     wx.createSelectorQuery()
@@ -20,27 +21,15 @@ Component({
       .select('.wuss-accordion--content')
       .boundingClientRect()
       .exec(rect => {
-        console.log(rect[0].height);
-        // this.setData({ _height: rect[0].height, height: `height:0px` });
+        this.setData({
+          height: `height:${rect[0].height}px`,
+          zeroHeight: 'height:0px',
+        });
       });
   },
   methods: {
-    changeCurrent(e) {
-      console.log(e);
-
-      if (e) {
-        console.log(this.data._height);
-        this.setData({
-          height: `height:${this.data._height}px`,
-        });
-      } else {
-        this.setData({
-          height: `height:0px`,
-        });
-      }
-    },
     onTap() {
-      const { index, disabled, key } = this.data;
+      const { index, disabled } = this.data;
       const parent = this.getRelationNodes(PATH)[0];
       if (parent) {
         if (disabled) {

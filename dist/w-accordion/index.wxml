@@ -10,7 +10,7 @@
 			<w-icon type="arrow-down" wuss-class="wuss-accordion--arrow" />
 		</view>
 	</view>
-	<view class="wuss-accordion--content" style="{{height}}">
+	<view class="wuss-accordion--content" style="{{current ? height : zeroHeight }}">
 		<slot/>
 	</view>
 </view>

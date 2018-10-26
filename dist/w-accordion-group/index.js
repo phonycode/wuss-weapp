@@ -5,13 +5,13 @@ Component({
     [PATH]: {
       type: 'child',
       linked() {
-        this.update(true);
+        this.update();
       },
       linkChanged() {
-        this.update(true);
+        this.update();
       },
       unlinked() {
-        this.update(true);
+        this.update();
       },
     },
   },
@@ -31,14 +31,13 @@ Component({
     keys: [],
   },
   methods: {
-    update(first) {
+    update() {
       const { activeKey, accordion } = this.data;
       const keys = this.getRelationNodes(PATH).map((e, index) => {
         const current = accordion
           ? activeKey[0] === index
           : activeKey.indexOf(index) !== -1;
         e.setData({ current, index });
-        !first && e.changeCurrent(current);
         return e.data.key;
       });
       this.setData({ keys });
