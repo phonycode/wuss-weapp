@@ -1,9 +1,18 @@
 const PATH = '../w-accordion-group/index';
 Component({
   externalClasses: ['wuss-class'],
+  options: {
+    multipleSlots: true,
+    addGlobalClass: true,
+  },
   relations: {
     [PATH]: { type: 'parent' },
   },
+  /**
+   * @param {key} 携带的数据
+   * @param {title} 标题
+   * @param {disabled} 是否开启禁用
+   */
   properties: {
     key: null,
     title: String,

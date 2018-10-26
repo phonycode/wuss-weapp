@@ -7,11 +7,26 @@ import { SFTV } from './data';
  */
 Component({
   externalClasses: ['wuss-class'],
+  options: {
+    addGlobalClass: true,
+  },
+  /**
+   * @param {visible} 是否可见
+   * @param {type} 日历选择类型 'one' | 'more' |'range'
+   * @param {maxDate} 最大日期
+   * @param {minDate} 最小日期
+   * @param {defaultValue} 最小日期
+   * @param {startDayText} 开始日期的字 type为range有效
+   * @param {endDayText} 结束日期的字 type为range有效
+   * @param {dateTextObj} 日期的文本 比如节日等的渲染
+   * @param {initalMonths} 初始渲染月份
+   * @param {disabledDate} 禁用的日期
+   */
   properties: {
     visible: Boolean,
     type: {
       type: String,
-      value: 'range', //'one' | 'more' |'range'
+      value: 'range',
     },
     maxDate: {
       type: null,

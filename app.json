@@ -27,6 +27,7 @@
     "pages/w-form/index",
     "pages/w-tag/index",
     "pages/w-range/index",
+    "pages/w-accordion/index",
     "pages/w-confirm/index",
     "pages/w-popover/index",
     "pages/w-loading/index",

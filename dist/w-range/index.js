@@ -1,14 +1,20 @@
 Component({
   externalClasses: ['wuss-class'],
-
   options: {
     addGlobalClass: true,
   },
-
-  relations: {},
-
-  options: {},
-
+  /**
+   * @param {max} 最大值
+   * @param {min} 最小值
+   * @param {step} 一步最低多少
+   * @param {value}  默认的value
+   * @param {trackStyle} 被选中的范围线条的样式
+   * @param {railStyle} 未被选中范围线条的样式
+   * @param {handleStyle} 按钮的样式
+   * @param {dateTextObj} 日期的文本 比如节日等的渲染
+   * @param {initalMonths} 初始渲染月份
+   * @param {disabled} 是否禁用
+   */
   properties: {
     disabled: Boolean,
     max: {

@@ -56,6 +56,3 @@
   color: #333;
   position: relative;
 }
-/* 
-.wuss-accordion--current .wuss-accordion--content {
-} */

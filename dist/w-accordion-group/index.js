@@ -1,6 +1,9 @@
 const PATH = '../w-accordion/index';
 Component({
   externalClasses: ['wuss-class'],
+  options: {
+    addGlobalClass: true,
+  },
   relations: {
     [PATH]: {
       type: 'child',
@@ -57,7 +60,6 @@ Component({
       }
       this.setData({ activeKey }, () => {
         this.update();
-
         this.triggerEvent('onChange', {
           activeKey,
           keys: keys.filter((e, i) => {
