@@ -2,6 +2,8 @@
 .wuss-cell-group {
   background: #ffffff;
   position: relative;
+  clear: both;
+  overflow: hidden;
 }
 
 .wuss-cell-group::before {
@@ -21,6 +23,8 @@
   transform-origin: 0 0;
   -webkit-transform: scaleY(0.5);
   transform: scaleY(0.5);
+  clear: both;
+  overflow: hidden;
 }
 
 .wuss-cell-group::after {
@@ -40,4 +44,6 @@
   transform-origin: 0 0;
   -webkit-transform: scaleY(0.5);
   transform: scaleY(0.5);
+  clear: both;
+  overflow: hidden;
 }
