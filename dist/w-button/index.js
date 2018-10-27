@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-09 16:38:07
+ * @Last Modified time: 2018-10-27 11:09:41
  */
 Component({
   externalClasses: ['wuss-class', 'wuss-button-hover-class'],
@@ -117,7 +117,7 @@ Component({
     handleClick(e) {
       const { _formTarget, formType } = this.data;
       formType && _formTarget && _formTarget.formTypeClick(formType);
-      this.triggerEvent('click', { ...e }, {});
+      this.triggerEvent('onClick', { ...e }, {});
     },
     handleError(e) {
       this.triggerEvent('error', { ...e }, {});
