@@ -7,6 +7,7 @@
 	 label="选择地区"
 	 options="{{ options }}"
 	 title="请选择地区"
+	 defaultValue="{{[1,1,5]}}"
 	/>
 </w-cell-group>
 

@@ -1,28 +1,12 @@
 import Behavior from '../common/behavior/index';
 
 Component({
-  /**
-   * 继承父组件的class
-   */
   externalClasses: ['wuss-class'],
-
-  /**
-   * 组件间关系定义
-   */
   relations: {},
-
-  /**
-   * 组件选项
-   */
   options: {
     addGlobalClass: true,
   },
-
-  /**
-   * 组件间关系定义
-   */
   behaviors: [Behavior],
-
   /**
    * 组件的属性列表
    * @param {array} options 传入的选项组[ [], [], [] ]
@@ -77,101 +61,66 @@ Component({
       value: 'value',
     },
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
-    _visible: false,
+    _visible: true,
     value: [0, 0, 0],
+    _isLinkage: false,
   },
-
-  /**
-   * 组件方法列表
-   */
   methods: {
     _handleClick() {
       this.setData({
         _visible: true,
-      })
+      });
     },
     _handleCancel() {
       this.setData({
         _visible: false,
-      })
+      });
     },
     _handleConfirm() {
       const { value } = this.data;
       this.setData({
         _visible: false,
-      })
+      });
       // this.triggerEvent('onSelect',{
       //   value: this.getValues(value),
       // },{})
     },
     _ArrayKeysToArrayObject() {
-      const {
-        options,
-      } = this.data;
+      const { options } = this.data;
       if (options.length <= 0) return false;
-      const {
-        0: items
-      } = options;
+      const { 0: items } = options;
       const _isArrayObject = this.isArrayObject(items);
-      if (!_isArrayObject) {
-        const newOptions = [];
-        options.forEach(i => {
-          let arr = [];
-          i.forEach(j => {
-            arr.push({
+      !_isArrayObject &&
+        this.setData({
+          options: options.map(i =>
+            i.map(j => ({
               key: j,
               value: j,
-            })
-          })
-          newOptions.push(arr)
+            }))
+          ),
         });
-        this.setData({
-          options: newOptions,
-        })
-      }
     },
     _handleChange(e) {
       const value = e.detail.value;
-      this.setData({
-        value,
-      })
+      this.setData({ value });
+
       // this.triggerEvent('onChange',{
       //   value: this.getValues(value),
       // },{})
     },
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  created: function () {},
-
-  /**
-   * 组件布局完成后执行
-   */
-  ready: function () {
-    const {
-      options,
-    } = this.data;
+  ready: function() {
+    const { options, defaultValue } = this.data;
+    const [v1 = 0, v2 = 0, v3 = 0] = defaultValue;
     this.setData({
-      _isLinkage: JSON.stringify(options).indexOf('parent') > -1,
-    })
-    this._ArrayKeysToArrayObject()
+      value: [v1, v2, v3],
+      _isLinkage: !!(
+        options[1] &&
+        options[1][0] &&
+        options[1][0].hasOwnProperty('parent')
+      ),
+    });
+    this._ArrayKeysToArrayObject();
   },
-
-  /**
-   * 在组件实例进入页面节点树时执行
-   */
-  attached: function () {},
-
-  /**
-   * 在组件实例被移动到节点树另一个位置时执行
-   */
-  moved: function () {},
-
-})
+});
