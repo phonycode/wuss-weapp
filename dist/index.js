@@ -1,3 +1,5 @@
+const CountUp = require('./w-count-up/index');
+
 const getCurrentPage = () => {
   const pages = getCurrentPages();
   return pages[pages.length - 1];
@@ -56,5 +58,6 @@ module.exports = {
   Alert,
   Confirm,
   Loading,
+  CountUp,
   ActionSheet,
 };

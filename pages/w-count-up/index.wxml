@@ -1,0 +1,58 @@
+<w-pane title="CountUp" desc="指数" />
+
+<w-pane desc="Default" />
+
+<view
+ style="color: #ff9900;padding: 15px 0;text-align: center;font-size: 40px;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	{{ count }}
+</view>
+
+<view
+ style="color: #ff9900;padding: 15px 0;text-align: center;font-size: 40px;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	{{ count2 }}
+</view>
+
+<view
+ style="color: #ff9900;padding: 15px 0;text-align: center;font-size: 40px;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	{{ count3 }}
+</view>
+
+<w-form
+ bindsubmit="handleSubmit"
+>
+	<w-cell-group>
+		<w-input
+		 label="初始数字"
+		 name="startVal"
+		 value="0"
+		/>
+		<w-input
+		 label="结束数字"
+		 name="endVal"
+		 value="3000"
+		/>
+		<w-input
+		 label="保留小数点位数"
+		 name="decimals"
+		 value="2"
+		/>
+		<w-input
+		 label="过渡时间"
+		 name="duration"
+		 value="3"
+		/>
+		<w-button formType="submit" type="primary">
+			开始
+		</w-button>
+	</w-cell-group>
+</w-form>
+
