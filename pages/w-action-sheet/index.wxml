@@ -4,7 +4,7 @@
 <w-button
  type="info"
  data-key="1"
- bind:click="handleShow"
+ bind:onClick="handleShow"
 >
 	{{
 	visible1
@@ -26,7 +26,7 @@
 <w-button
  type="info"
  data-key="2"
- bind:click="handleShow"
+ bind:onClick="handleShow"
 >
 	{{
 	visible2
@@ -48,7 +48,7 @@
 <w-button
  type="info"
  data-key="3"
- bind:click="handleShow"
+ bind:onClick="handleShow"
 >
 	{{
 	visible3
@@ -71,7 +71,7 @@
 <w-button
  type="info"
  data-key="4"
- bind:click="handleShow"
+ bind:onClick="handleShow"
 >
 	{{
 	visible4
@@ -94,7 +94,7 @@
 <w-button
  type="info"
  data-key="5"
- bind:click="handleShow"
+ bind:onClick="handleShow"
 >
 	{{
 	visible5
@@ -117,7 +117,7 @@
 <w-button
  type="info"
  data-key="6"
- bind:click="handleShow"
+ bind:onClick="handleShow"
 >
 	{{
 	visible6
@@ -137,6 +137,6 @@
 />
 
 <w-pane desc="插件手动调用" />
-<w-button type="info" bind:click="handleClick2">ActionSheet.show()</w-button>
+<w-button type="info" bind:onClick="handleClick2">ActionSheet.show()</w-button>
 <w-action-sheet id="wuss-actionsheet" options="{{ items6 }}" bind:onChange="handleClick" bind:close="handleClose" />
 

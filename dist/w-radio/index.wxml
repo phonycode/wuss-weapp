@@ -3,7 +3,7 @@
 	<w-cell
 	 label="{{ _isArrayObject ? item.key : item }}"
 	 disabled="{{ item.disabled }}"
-	 bind:click="_handleChecked"
+	 bind:onClick="_handleChecked"
    data-index="{{ index }}"
 	>
 		<view

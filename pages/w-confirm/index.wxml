@@ -1,16 +1,16 @@
 <w-pane title="Confirm" desc="确认框" />
 
 <w-pane desc="Default" />
-<w-button type="info" bind:click="handleClick1" >Confirm</w-button>
+<w-button type="info" bind:onClick="handleClick1" >Confirm</w-button>
 
 <w-pane desc="ButtonColor" />
-<w-button type="info" bind:click="handleClick2" >Confirm2</w-button>
+<w-button type="info" bind:onClick="handleClick2" >Confirm2</w-button>
 
 <w-pane desc="ButtonText" />
-<w-button type="info" bind:click="handleClick3" >Confirm3</w-button>
+<w-button type="info" bind:onClick="handleClick3" >Confirm3</w-button>
 
 <w-pane desc="ShowCancel = False" />
-<w-button type="info" bind:click="handleClick4" >Confirm3</w-button>
+<w-button type="info" bind:onClick="handleClick4" >Confirm3</w-button>
 
 
 <w-confirm id="wuss-confirm" />

@@ -8,7 +8,7 @@
     text="{{ code }}"
   />
 </view>
-<w-button type="info" bind:click="handleClick">取随机值</w-button>
+<w-button type="info" bind:onClick="handleClick">取随机值</w-button>
 
 
 <w-pane desc="Size" />

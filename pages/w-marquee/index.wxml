@@ -2,11 +2,11 @@
 
 <w-pane desc="Default" />
 
-<w-button bind:click="handleClick1" type="info">+1</w-button>
+<w-button bind:onClick="handleClick1" type="info">+1</w-button>
 
-<w-button bind:click="handleClick2" type="info">jump to 8</w-button>
+<w-button bind:onClick="handleClick2" type="info">jump to 8</w-button>
 
-<w-button bind:click="handleClick3" type="info">jump to 1</w-button>
+<w-button bind:onClick="handleClick3" type="info">jump to 1</w-button>
 
 <view
  class=""

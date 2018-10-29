@@ -20,17 +20,15 @@ Page({
   onLoad: function (options) {
 
   },
-  handleClick1() {
+  handleSubmit(e) {
+    const { startVal = 0 , endVal = 3000, decimals = 0, duration = 3000 } = e.detail;
     this.setData({
       count: 0
     } , () => {
-      new CountUp(0, 3000, 2, 5, count => this.setData({
+      new CountUp(startVal, endVal, decimals, duration, count => this.setData({
         count
       })).start()
     })
-  },
-  handleSubmit(e) {
-    console.log('11111',e)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

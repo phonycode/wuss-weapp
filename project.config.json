@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 31,
+			"current": 32,
 			"list": [
 				{
 					"id": -1,
@@ -234,7 +234,13 @@
 				{
 					"id": -1,
 					"name": "w-count-up",
-					"pathName": "pages/w-count-up/index"
+					"pathName": "pages/w-count-up/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-address-picker",
+					"pathName": "pages/w-address-picker/index"
 				}
 			]
 		}

@@ -1,13 +1,13 @@
 <w-pane title="Alert" desc="弹出框" />
 
 <w-pane desc="Default" />
-<w-button bind:click="handleClick" type="info">Default</w-button>
+<w-button bind:onClick="handleClick" type="info">Default</w-button>
 
 <w-pane desc="ButtonColor" />
-<w-button bind:click="handleClick2" type="info">ButtonColor</w-button>
+<w-button bind:onClick="handleClick2" type="info">ButtonColor</w-button>
 
 <w-pane desc="MoreText" />
-<w-button bind:click="handleClick3" type="info">MoreText</w-button>
+<w-button bind:onClick="handleClick3" type="info">MoreText</w-button>
 
 
 <w-alert id="wuss-alert" />

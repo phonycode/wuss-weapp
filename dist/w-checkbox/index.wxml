@@ -3,7 +3,7 @@
  wuss-class-right="{{ direction === 'right' ? 'w-cell-right' : '' }}"
  direction="{{ direction === 'left' ? 'flex-start' : 'flex-end' }}"
  label="{{ direction === 'right' ? item.text : '' }}"
- bind:click="_handleChecked"
+ bind:onClick="_handleChecked"
  wx:for="{{ options }}"
  wx:key="index"
  data-key="{{ index }}"

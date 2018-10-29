@@ -34,7 +34,8 @@
     "pages/w-marquee/index",
     "pages/w-cell-picker/index",
     "pages/w-number/index",
-    "pages/w-count-up/index"
+    "pages/w-count-up/index",
+    "pages/w-address-picker/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

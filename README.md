@@ -54,7 +54,7 @@ yarn add --production wuss-weapp
 4. 在 wxml 中使用组件：
 
 ```html
-<w-button type="info" bind:click="buttonClick">这是一个按钮</w-button>
+<w-button type="info" bind:onClick="buttonClick">这是一个按钮</w-button>
 ```
 
 5. 在JavaScript中使用:
@@ -88,7 +88,7 @@ Toast.show({
 2. 在 wxml 中使用组件：
 
 ```html
-<w-button type="info" bind:click="buttonClick">这是一个按钮</w-button>
+<w-button type="info" bind:onClick="buttonClick">这是一个按钮</w-button>
 ```
 
 ### 预览所有组件

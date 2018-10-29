@@ -2,7 +2,7 @@
 
 <w-pane desc="Position" />
 
-<w-button type="info" bind:click="handleClick1">Top</w-button>
+<w-button type="info" bind:onClick="handleClick1">Top</w-button>
 <w-popup 
   visible="{{ popup1 }}"
   position="top"
@@ -11,7 +11,7 @@
 >
   <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
 </w-popup>
-<w-button type="info" bind:click="handleClick2">Bottom</w-button>
+<w-button type="info" bind:onClick="handleClick2">Bottom</w-button>
 <w-popup 
   visible="{{ popup2 }}"
   position="bottom"
@@ -20,7 +20,7 @@
 >
   <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
 </w-popup>
-<w-button type="info" bind:click="handleClick3">Left</w-button>
+<w-button type="info" bind:onClick="handleClick3">Left</w-button>
 <w-popup 
   visible="{{ popup3 }}"
   position="left"
@@ -28,7 +28,7 @@
 >
   <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
 </w-popup>
-<w-button type="info" bind:click="handleClick4">Right</w-button>
+<w-button type="info" bind:onClick="handleClick4">Right</w-button>
 <w-popup 
   visible="{{ popup4 }}"
   position="right"
@@ -39,7 +39,7 @@
 
 <w-pane desc="Disabled MaskCancel" />
 
-<w-button type="info" bind:click="handleClick5">Info</w-button>
+<w-button type="info" bind:onClick="handleClick5">Info</w-button>
 <w-popup 
   mask-cancel="{{ false }}"
   visible="{{ popup5 }}"
@@ -48,7 +48,7 @@
   bind:close="handleClose"
 >
   <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
-  <w-button type="info" bind:click="handleClose">关闭</w-button>
+  <w-button type="info" bind:onClick="handleClose">关闭</w-button>
 </w-popup>
 
 

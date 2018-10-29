@@ -86,5 +86,5 @@
 
 </w-cell-group>
 
-<w-button type="info" bind:click="handleFocus">click to Focus</w-button>
+<w-button type="info" bind:onClick="handleFocus">click to Focus</w-button>
 

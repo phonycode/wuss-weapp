@@ -2,7 +2,7 @@
 
 <w-pane desc="Default" />
 
-<w-button type="info" bind:click="handleClick1">
+<w-button type="info" bind:onClick="handleClick1">
 	{{ visible1 ? 'show' : 'hide' }}
 </w-button>
 <w-calendar bindonSelect="handleSelected" bindconfirm="handleConfirm" bindcancel="handleCancel" defaultValue="{{defaultValue}}" visible disabledDate="{{disabledDate}}" />

@@ -7,7 +7,7 @@
  steps="{{ steps }}"
 />
 
-<w-button bind:click="setCurrent" size="small" type="info">下一步</w-button>
+<w-button bind:onClick="setCurrent" size="small" type="info">下一步</w-button>
 <w-pane desc="vertical" />
 <w-steps
  current="{{ current }}"

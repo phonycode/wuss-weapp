@@ -11,7 +11,7 @@
 	</w-tab>
 </w-tabs>
 <w-pane desc="Initial Index = 2" />
-<w-button type="info" bind:click="handleSelected">selected tab2</w-button>
+<w-button type="info" bind:onClick="handleSelected">selected tab2</w-button>
 <w-tabs bind:onChange="handleChange" currentIndex="{{ index }}">
 	<w-tab
 	 wx:for="{{ tabs4 }}"
@@ -67,7 +67,7 @@
 </w-tabs>
 
 <w-pane desc="Scroll" />
-<w-tabs bind:click="handleClick">
+<w-tabs bind:onClick="handleClick">
 	<w-tab
 	 wx:for="123456"
 	 wx:key="{{index}}"

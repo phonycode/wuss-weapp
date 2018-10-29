@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:31 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 15:41:31
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-29 09:48:05
  */
 const PATH = '../w-tab/index';
 Component({
@@ -196,7 +196,7 @@ Component({
       if (tabs[index].data.disabled) {
         this._trigger('disabled', index);
       } else {
-        this._trigger('click', index);
+        this._trigger('onClick', index);
 
         if (index == currentIndex) return;
         this.setData({ currentIndex: index });
