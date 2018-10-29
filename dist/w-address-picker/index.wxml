@@ -1,0 +1,27 @@
+<w-cell
+ label="{{ label }}"
+ wuss-class-right="w-cell-right"
+ wuss-class-content="w-cell-content"
+ labelSpan="3"
+ disabled="{{ disabled }}"
+>
+	<picker
+	 slot="content"
+	 class="wuss-class wuss-address-picker"
+	 mode="region"
+	 value="{{ value }}"
+	 custom-item="{{ customItem }}"
+	 disabled="{{ disabled }}"
+	 bindchange="handleChange"
+	 bindcancel="handleCancel"
+	>
+		<view
+		 class="wuss-address-picker-text"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			{{ _currentValue }}
+		</view>
+	</picker>
+</w-cell>
+

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "w-cell": "../w-cell/index"
+  }
+}
