@@ -164,7 +164,7 @@ var CountUp = function(startVal, endVal, decimals, duration, callback, options) 
 
 		// whether to continue
 		if (progress < self.duration) {
-			self.rAF = requestAnimationFrame(self.count);
+			self.rAF = self.requestAnimationFrame(self.count);
 		} else {
 			if (self.callback) self.callback();
 		}
@@ -173,19 +173,19 @@ var CountUp = function(startVal, endVal, decimals, duration, callback, options) 
 	self.start = function(callback) {
 		if (!self.initialize()) return;
 		self.callback = callback;
-		self.rAF = requestAnimationFrame(self.count);
+		self.rAF = self.requestAnimationFrame(self.count);
 	};
 	// toggles pause/resume animation
 	self.pauseResume = function() {
 		if (!self.paused) {
 			self.paused = true;
-			cancelAnimationFrame(self.rAF);
+			self.self.cancelAnimationFrame(self.rAF);
 		} else {
 			self.paused = false;
 			delete self.startTime;
 			self.duration = self.remaining;
 			self.startVal = self.frameVal;
-			requestAnimationFrame(self.count);
+			self.self.requestAnimationFrame(self.count);
 		}
 	};
 	// reset to startVal so animation can be run again
@@ -194,7 +194,7 @@ var CountUp = function(startVal, endVal, decimals, duration, callback, options) 
 		delete self.startTime;
 		self.initialized = false;
 		if (self.initialize()) {
-			cancelAnimationFrame(self.rAF);
+			self.cancelAnimationFrame(self.rAF);
 			self.printValue(self.startVal);
 		}
 	};
@@ -208,13 +208,13 @@ var CountUp = function(startVal, endVal, decimals, duration, callback, options) 
 		}
 		self.error = '';
 		if (newEndVal === self.frameVal) return;
-		cancelAnimationFrame(self.rAF);
+		self.cancelAnimationFrame(self.rAF);
 		self.paused = false;
 		delete self.startTime;
 		self.startVal = self.frameVal;
 		self.endVal = newEndVal;
 		self.countDown = (self.startVal > self.endVal);
-		self.rAF = requestAnimationFrame(self.count);
+		self.rAF = self.requestAnimationFrame(self.count);
 	};
 
 	// format startVal on initialization
