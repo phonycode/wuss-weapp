@@ -21,7 +21,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.5",
+	"libVersion": "2.3.2",
 	"appid": "wx0188295b10d5c4cf",
 	"projectname": "wuss-weapp",
 	"isGameTourist": false,
@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 32,
+			"current": 37,
 			"list": [
 				{
 					"id": -1,
@@ -191,12 +191,6 @@
 				},
 				{
 					"id": -1,
-					"name": "w-popover 气泡",
-					"pathName": "pages/w-popover/index",
-					"query": ""
-				},
-				{
-					"id": -1,
 					"name": "w-accordion",
 					"pathName": "pages/w-accordion/index",
 					"query": ""
@@ -240,7 +234,43 @@
 				{
 					"id": -1,
 					"name": "w-address-picker",
-					"pathName": "pages/w-address-picker/index"
+					"pathName": "pages/w-address-picker/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-activity-indicator",
+					"pathName": "pages/w-activity-indicator/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-pull-to-refresh",
+					"pathName": "pages/w-pull-to-refresh/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-rater",
+					"pathName": "pages/w-rater/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-card",
+					"pathName": "pages/w-card/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-segmented-control",
+					"pathName": "pages/w-segmented-control/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-layout",
+					"pathName": "pages/w-layout/index"
 				}
 			]
 		}

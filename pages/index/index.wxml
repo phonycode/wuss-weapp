@@ -12,265 +12,299 @@
 		<w-pane desc="基础组件" wuss-class="w-pane" />
 		<w-cell-group>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Button 按钮"
 			 link="../w-button/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Icon 图标"
 			 link="../w-icon/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Avatar 头像"
 			 link="../w-avatar/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Steps 步骤条"
 			 link="../w-steps/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Countdown 倒计时"
 			 link="../w-countdown/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Dialog 消息框"
 			 link="../w-dialog/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Badge 徽章"
 			 link="../w-badge/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Tag 标签"
 			 link="../w-tag/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Accordion 手风琴"
 			 link="../w-accordion/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 		</w-cell-group>
 
 		<w-pane desc="布局" wuss-class="w-pane" />
 		<w-cell-group>
-      <w-cell
+			<w-cell
+			 isLink
 			 highlight
 			 label="Layout 栅格"
 			 link="../w-layout/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
+			 highlight
+			 label="Card 卡片"
+			 link="../w-card/index"
+			 wuss-class="w-cell"
+			/>
+			<w-cell
+			 isLink
 			 highlight
 			 label="Pane 窗格"
 			 link="../w-pane/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 		</w-cell-group>
 
 		<w-pane desc="导航" wuss-class="w-pane" />
 		<w-cell-group>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Cell 列表"
 			 link="../w-cell/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Popup 弹出层"
 			 link="../w-popup/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="DropMenu 下拉菜单"
 			 link="../w-drop-menu/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Tabs 导航切换栏"
 			 link="../w-tabs/index"
 			 wuss-class="w-cell"
+      />
+      <w-cell
 			 isLink
+			 highlight
+			 label="SegmentedControl 分段器"
+			 link="../w-segmented-control/index"
+			 wuss-class="w-cell"
 			/>
 		</w-cell-group>
 
 		<w-pane desc="操作反馈" wuss-class="w-pane" />
 		<w-cell-group>
 			<w-cell
+			 isLink
 			 highlight
 			 label="ActionSheet 操作菜单"
 			 link="../w-action-sheet/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Toast 提示"
 			 link="../w-toast/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Alert 弹出框"
 			 link="../w-alert/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Confirm 确认框"
 			 link="../w-confirm/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Notice 通告"
 			 link="../w-notice/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Popover 气泡"
 			 link="../w-popover/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Loading 加载指示器"
 			 link="../w-loading/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="ActivityIndicator 活动指示器"
 			 link="../w-activity-indicator/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 		</w-cell-group>
 
 		<w-pane desc="表单" wuss-class="w-pane" />
 		<w-cell-group>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Form 表单"
 			 link="../w-form/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Input 输入框"
 			 link="../w-input/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Switch 开关"
 			 link="../w-switch/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Radio 单选框"
 			 link="../w-radio/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
+			 highlight
+			 label="CellPicker 选择器"
+			 link="../w-cell-picker/index"
+			 wuss-class="w-cell"
+			/>
+			<w-cell
+			 isLink
+			 highlight
+			 label="AddressPicker 地址选择器"
+			 link="../w-address-picker/index"
+			 wuss-class="w-cell"
+			/>
+			<w-cell
+			 isLink
+			 highlight
+			 label="Calendar 日历预定选择器"
+			 link="../w-calendar/index"
+			 wuss-class="w-cell"
+			/>
+			<w-cell
+			 isLink
 			 highlight
 			 label="Range 区域选择"
 			 link="../w-range/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Checkbox 复选框"
 			 link="../w-checkbox/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Number 步进器"
 			 link="../w-number/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 		</w-cell-group>
 
 		<w-pane desc="其他" wuss-class="w-pane" />
 		<w-cell-group>
 			<w-cell
-			 highlight
-			 label="Calendar 日历预定选择器"
-			 link="../w-calendar/index"
-			 wuss-class="w-cell"
 			 isLink
-			/>
-			<w-cell
 			 highlight
 			 label="QRCode 二维码生成"
 			 link="../w-qr-code/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
+			 highlight
+			 label="CountUp 指数"
+			 link="../w-count-up/index"
+			 wuss-class="w-cell"
+			/>
+			<w-cell
+			 isLink
 			 highlight
 			 label="SwiperOut 侧滑菜单"
 			 link="../w-swiper-out/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 			<w-cell
+			 isLink
 			 highlight
 			 label="Marquee 垂直滚动"
 			 link="../w-marquee/index"
 			 wuss-class="w-cell"
-			 isLink
 			/>
 		</w-cell-group>
-
 	</view>
 </view>
 
