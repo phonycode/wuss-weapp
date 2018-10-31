@@ -102,7 +102,8 @@
 <w-pane desc="Slot" />
 <w-cell-group>
 	<w-cell
-	 disabled
+	 isLink
+	 highlight
 	 icon="home"
 	 link="/message"
 	>
@@ -112,6 +113,41 @@
 		<view slot="content">
 			内容
 		</view>
+	</w-cell>
+	<w-cell
+	 isLink
+	 highlight
+	 desc="您在闲鱼上售卖的产品已出售，点击查看详情"
+	 wuss-class-hd="w-cell-hd"
+	 wuss-class-left="w-cell-left"
+	>
+		<view
+		 slot="label"
+		 class="w-cell-label"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			<view
+			 class="left"
+			 hover-class="none"
+			 hover-stop-propagation="false"
+			>
+				您有新的通知
+			</view>
+			<view
+			 style="font-size: 14px;color: #999999;"
+			 class="right"
+			 hover-class="none"
+			 hover-stop-propagation="false"
+			>
+				10-31 09:12
+			</view>
+		</view>
+		<image
+		 slot="icon"
+		 class="w-cell-avatar"
+		 src="../../assets/logo.png"
+		/>
 	</w-cell>
 </w-cell-group>
 
