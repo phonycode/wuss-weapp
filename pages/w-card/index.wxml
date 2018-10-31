@@ -1,0 +1,65 @@
+<w-pane title="Card" desc="卡片" />
+
+<w-pane desc="Slot" />
+<w-card
+ title="标题"
+ extra="副标题"
+ content="内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区"
+ footer="底部信息"
+ footer-extra="底部副标题"
+/>
+
+<w-pane desc="Full" />
+<w-card
+ full
+ title="标题"
+ extra="副标题"
+ content="内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区"
+ footer="底部信息"
+ footer-extra="底部副标题"
+/>
+
+<w-pane desc="Slot" />
+<w-card>
+	<view
+	 slot="title"
+	 class="w-card-title"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		标题
+	</view>
+	<view
+	 slot="extra"
+	 class="w-card-extra"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		副标题
+	</view>
+	<view
+	 slot="content"
+	 class="w-card-content"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		内容区内容区内容区内容区内容区内容区内容区内容区
+	</view>
+	<view
+	 slot="footer"
+	 class="w-card-footer"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		底部
+	</view>
+	<view
+	 slot="footer-extra"
+	 class="w-card-footer-extra"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		底部extra
+	</view>
+</w-card>
+

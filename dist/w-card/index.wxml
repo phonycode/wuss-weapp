@@ -1,0 +1,28 @@
+<view class="wuss-class wuss-card {{ full ? 'wuss-card-full' : '' }}" hover-class="none" hover-stop-propagation="false">
+  <view catchtap="handleHdClick" class="wuss-class-hd wuss-card-hd" hover-class="none" hover-stop-propagation="false">
+    <view wx:if="{{ title }}" class="wuss-card-hd-title" hover-class="none" hover-stop-propagation="false">
+      {{ title }}
+    </view>
+    <view wx:if="{{ extra }}" class="wuss-card-hd-extra" hover-class="none" hover-stop-propagation="false">
+      {{ extra }}
+    </view>
+    <slot wx:if="{{ !title }}" name="title" />
+    <slot wx:if="{{ !extra }}" name="extra" />
+  </view>
+  <view catchtap="handleBdClick" class="wuss-class-bd wuss-card-bd" hover-class="none" hover-stop-propagation="false">
+    <view wx:if="{{ content }}" class="wuss-card-bd-content" hover-class="none" hover-stop-propagation="false">
+      {{ content }}
+    </view>
+    <slot wx:if="{{ !content }}" name="content" />
+  </view>
+  <view class="wuss-class-ft wuss-card-ft" hover-class="none" hover-stop-propagation="false">
+    <view wx:if="{{ footer }}" class="wuss-card-ft-c" hover-class="none" hover-stop-propagation="false">
+      {{ footer }}
+    </view>
+    <view wx:if="{{ footerExtra }}" class="wuss-card-ft-extra" hover-class="none" hover-stop-propagation="false">
+      {{ footerExtra }}
+    </view>
+    <slot wx:if="{{ !footer }}" name="footer" />
+    <slot wx:if="{{ !footerExtra }}" name="footer-extra" />
+  </view>
+</view>

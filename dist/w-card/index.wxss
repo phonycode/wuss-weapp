@@ -1,0 +1,113 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-30 14:52:19 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-30 15:37:34
+ */
+@import '../common/theme/global.wxss';
+
+.wuss-card {
+  margin: 0 15px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  min-height: 96px;
+  padding-bottom: 8px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  font-size: 15px;
+}
+
+.wuss-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(.5);
+  -ms-transform: scale(.5);
+  transform: scale(.5);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.wuss-card-hd {
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.wuss-card-hd::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #dddddd;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scaleY(.5);
+  transform-origin: 50% 50%;
+}
+
+.wuss-card-bd {
+  padding: 10px 15px;
+}
+
+.wuss-card-ft {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 15px;
+  color: #999999;
+}
+
+.wuss-card.wuss-card-full {
+  flex: 1;
+  margin: 0;
+  width: 100%;
+}
+
+.wuss-card-full.wuss-card {
+  border-radius: 0;
+}
+
+.wuss-card-full.wuss-card::after {
+  border-radius: 0;
+}
+
+.wuss-card-hd-title {
+  font-size: 16px;
+  color: #333333;
+}
+
+.wuss-card-hd-extra {
+  color: #999999;
+}
+
+.wuss-card-bd-content {
+
+}
+
+.wuss-card-ft-c {
+
+}
+
+.wuss-card-ft-extra {
+
+}
