@@ -1,0 +1,25 @@
+<view
+ class="wuss-class wuss-rater"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	<view
+	 class="wuss-rater-content"
+	 hover-class="none"
+   hover-stop-propagation="false"
+   catchtap="handleClick"
+	>
+		<block wx:for="{{ count }}" wx:key="key">
+			<view
+       class="wuss-rater-iconfont {{ value > index ? 'wuss-rater-iconfont-active' : '' }}"
+       style="{{ activeColor && value > index ? 'color:' + activeColor + ';' : '' }}{{ margin ? 'padding-right: ' + padding + 'px;' : '' }}{{ fontSize ? 'font-size:' + fontSize + 'px;' : '' }}"
+       hover-class="none"
+       data-id="{{ index+1 }}"
+			 hover-stop-propagation="false"
+			>
+				{{ iconFont }}
+			</view>
+		</block>
+	</view>
+</view>
+

@@ -1,0 +1,31 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-30 08:57:21 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-30 09:51:42
+ */
+@import '../common/theme/global.wxss';
+
+.wuss-rater {
+  display: inline-block;
+}
+
+.wuss-rater-content {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.wuss-rater-iconfont {
+  padding-right: 2px;
+  font-size: 22px;
+  color: #cccccc;
+}
+
+.wuss-rater .wuss-rater-content .wuss-rater-iconfont:last-child {
+  padding-right: 0!important;
+}
+
+.wuss-rater-iconfont.wuss-rater-iconfont-active {
+  color: #ff9900;
+}

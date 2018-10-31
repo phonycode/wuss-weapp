@@ -1,0 +1,51 @@
+<w-pane title="Rater" desc="星级评分" />
+
+<w-pane desc="Default" />
+<view
+ class=""
+ style="padding: 10px 0 10px 30px;display: flex; flex: 1;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	<w-rater/>
+</view>
+
+<w-pane desc="InCell" />
+<w-cell-group>
+	<w-cell label="在Cell中使用">
+		<w-rater value="1" slot="content" />
+	</w-cell>
+	<w-cell label="Max = 4">
+		<w-rater value="2" max="4" slot="content" />
+	</w-cell>
+	<w-cell label="Min = 3">
+		<w-rater value="3" min="3" slot="content" />
+	</w-cell>
+	<w-cell label="禁用">
+		<w-rater value="4" disabled slot="content" />
+	</w-cell>
+	<w-cell label="默认值 5">
+		<w-rater value="5" slot="content" />
+	</w-cell>
+	<w-cell label="iconFont = ♥">
+		<w-rater
+		 value="3"
+		 icon-font="♥"
+		 font-size="18"
+		 slot="content"
+		/>
+  </w-cell>
+  <w-cell label="iconFont = O Count = 6">
+		<w-rater
+     value="4"
+     count="6"
+		 icon-font="O"
+		 font-size="28"
+		 slot="content"
+		/>
+	</w-cell>
+	<w-cell label="activeColor = pink">
+		<w-rater value="4" active-color="pink" slot="content" />
+	</w-cell>
+</w-cell-group>
+
