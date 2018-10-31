@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:45 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-09 16:16:18
+ * @Last Modified time: 2018-10-29 17:21:05
  */
 @import '../common/theme/global.wxss';
 
@@ -79,7 +79,7 @@ button.wuss-button.wuss-button-normalize.wuss-button-info {
 }
 
 button.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-hover {
-  background-color: rgb(40, 162, 243);
+  background-color: rgb(43, 159, 236);
 }
 
 button.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-disabled {
@@ -109,11 +109,20 @@ button.wuss-button.wuss-button-normalize.wuss-button-default.wuss-button-ghost {
   background: transparent;
 }
 
+button.wuss-button.wuss-button-normalize.wuss-button-default.wuss-button-ghost.wuss-button-hover {
+  background-color: rgb(223, 223, 223);
+  color: #ffffff;
+}
 
 button.wuss-button.wuss-button-primary.wuss-button-ghost {
   border-color: rgb(68, 142, 246);
   color: rgb(68, 142, 246);
   background: transparent;
+}
+
+button.wuss-button.wuss-button-primary.wuss-button-ghost.wuss-button-hover {
+  background-color: rgb(28, 117, 243);
+  color: #ffffff;
 }
 
 button.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-ghost {
@@ -122,16 +131,31 @@ button.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-ghost {
   background: transparent;
 }
 
+button.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-ghost.wuss-button-hover {
+  background-color: rgb(255, 136, 0);
+  color: #ffffff;
+}
+
 button.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-ghost {
   border-color: rgb(85, 178, 240);
   color: rgb(85, 178, 240);
   background: transparent;
 }
 
+button.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-ghost.wuss-button-hover {
+  background-color: rgb(43, 159, 236);
+  color: #ffffff;
+}
+
 button.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-ghost {
   border-color: rgb(239, 71, 58);
   color: rgb(239, 71, 58);
   background: transparent;
+}
+
+button.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-ghost.wuss-button-hover {
+  background-color: rgb(228, 33, 18);
+  color: #ffffff;
 }
 
 button.wuss-button.wuss-button-dashed.wuss-button-normalize {
@@ -149,4 +173,16 @@ button.wuss-button.wuss-button-normalize.wuss-button-custom-hover {
 
 button.wuss-button.wuss-button-normalize.wuss-button-circle {
   border-radius: 42px;
+}
+
+.w-activity-indicator {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.wuss-activity-indicator {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
 }

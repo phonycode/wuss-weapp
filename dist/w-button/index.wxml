@@ -1,27 +1,36 @@
-<button 
-  size="default" 
-  type="default" 
-  plain="default" 
-  class="wuss-class wuss-button wuss-button-normalize wuss-button-{{ type }} {{ disabled ? 'wuss-button-disabled' : ''}} {{ flat ? 'wuss-button-flat' : '' }} {{ ghost ? 'wuss-button-ghost' : '' }} {{ dashed ? 'wuss-button-dashed' : ''}} {{ inline ? 'wuss-button-inline' : '' }} {{ full ? 'wuss-button-full' : '' }} {{ circle ? 'wuss-button-circle' : '' }}"
-  style="{{ buttonStyles }}"
-  loading="{{ loading }}"
-  disabled="{{ disabled }}" 
-  hover-class="{{ !disabled ? type === 'custom' ? 'wuss-button-custom-hover' : 'wuss-button-hover' : '' }}"
-  hover-stop-propagation="true"
-  form-type="{{ formType }}" 
-  open-type="{{ openType }}"
-  app-parameter="{{ appParameter }}"
-  bindtap="handleClick"
-  binderror="handleError"
-  bindgetuserinfo="getuserinfo"
-  bindgetphonenumber="getphonenumber"
+<button
+ size="default"
+ type="default"
+ plain="default"
+ class="wuss-class wuss-button wuss-button-normalize wuss-button-{{ type }} {{ disabled ? 'wuss-button-disabled' : ''}} {{ flat ? 'wuss-button-flat' : '' }} {{ ghost ? 'wuss-button-ghost' : '' }} {{ dashed ? 'wuss-button-dashed' : ''}} {{ inline ? 'wuss-button-inline' : '' }} {{ full ? 'wuss-button-full' : '' }} {{ circle ? 'wuss-button-circle' : '' }}"
+ style="{{ buttonStyles }}"
+ loading="{{ false }}"
+ disabled="{{ disabled }}"
+ hover-class="{{ !disabled ? type === 'custom' ? 'wuss-button-custom-hover' : 'wuss-button-hover' : '' }}"
+ hover-stop-propagation="true"
+ form-type="{{ formType }}"
+ open-type="{{ openType }}"
+ app-parameter="{{ appParameter }}"
+ bindtap="handleClick"
+ binderror="handleError"
+ bindgetuserinfo="getuserinfo"
+ bindgetphonenumber="getphonenumber"
 >
-  <w-icon 
-    wuss-class="w-icon" 
-    wx:if="{{ icon }}" 
-    type="{{ icon }}" 
-    size="{{ iconSize }}" 
-    color="{{ iconColor }}"
+  <w-activity-indicator
+    size="small"
+    color="#d9d9d9"
+    type="snake"
+    wx:if="{{ loading }}"
+    wuss-class="w-activity-indicator"
+    wuss-activity-indicator="wuss-activity-indicator"
   />
-  <slot/>
+	<w-icon
+	 wuss-class="w-icon"
+	 wx:if="{{ icon }}"
+	 type="{{ icon }}"
+	 size="{{ iconSize }}"
+	 color="{{ iconColor }}"
+	/>
+	<slot/>
 </button>
+
