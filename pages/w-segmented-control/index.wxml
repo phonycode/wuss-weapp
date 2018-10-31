@@ -1,0 +1,50 @@
+<w-pane title="SegmentedControl" desc="分段器" />
+
+<w-pane desc="Default" />
+<view
+ style="margin: 30px 0;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	<w-segmented-control styles="font-size: 14px;" options="{{ options1 }}" />
+</view>
+
+<view
+ style="margin: 30px 0;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	<w-segmented-control
+	 color="#1c75f3"
+   defaultIndex="2"
+	 styles="font-size: 14px;"
+	 options="{{ options2 }}"
+	/>
+</view>
+
+<view
+ style="margin: 30px 0;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	<w-segmented-control
+   color="#e42112"
+   defaultIndex="1"
+	 styles="font-size: 14px;"
+	 options="{{ options3 }}"
+	/>
+</view>
+
+<view
+ style="margin: 30px 0;"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	<w-segmented-control
+   disabled
+   color="green"
+	 styles="font-size: 14px;"
+	 options="{{ options4 }}"
+	/>
+</view>
+

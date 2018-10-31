@@ -1,0 +1,23 @@
+<view
+ class="wuss-class wuss-segmented {{ disabled ? 'wuss-segmented-disabled' : '' }}"
+ hover-class="none"
+ hover-stop-propagation="false"
+ catchtap="_handleClick"
+ style="{{ color ? 'border-color: ' + color + ';' : '' }}"
+>
+	<block
+	 wx:for="{{ options }}"
+	 wx:key="index"
+	>
+		<view
+		 data-index="{{ index }}"
+     class="wuss-segmented-view {{ _currentIndex === index ? 'wuss-segmented-view-active' : '' }}"
+     style="{{ styles }} {{ color && _currentIndex === index ?  'background-color: ' + color + ';' : 'color: ' + color + ';border-color: ' + color + ';' }}"
+		 hover-class="wuss-segmented-view-hover"
+		 hover-stop-propagation="false"
+		>
+			{{ item }}
+		</view>
+  </block>
+</view>
+

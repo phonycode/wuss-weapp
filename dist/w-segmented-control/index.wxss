@@ -1,0 +1,71 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-10-30 17:29:29 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-10-31 10:34:24
+ */
+@import '../common/theme/global.wxss';
+
+
+.wuss-segmented {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: 5px;
+  position: relative;
+  margin: 15px;
+  border: 1rpx solid #ff9900;
+  overflow: hidden;
+}
+
+.wuss-segmented-view {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  padding: 5px 0;
+  transition: opacity 200ms ease, background-color 300ms ease;
+  position: relative;
+  color: #ff9900;
+  background-color: #ffffff;
+}
+
+.wuss-segmented-view.wuss-segmented-view-active {
+  color: #ffffff;
+  background-color: #ff9900;
+}
+
+.wuss-segmented-view:nth-child(2n) {
+  position: relative;
+}
+
+.wuss-segmented-view:nth-child(2n) {
+  border-left: 1rpx solid #ff9900;
+  border-right: 1rpx solid #ff9900;
+}
+
+.wuss-segmented-view:nth-child(2n).wuss-segmented-view-active {
+  border-color: #ffffff;
+}
+
+.wuss-segmented-view:first-child {
+  border: none;
+}
+
+
+.wuss-segmented-view:last-child {
+  border: none;
+}
+
+
+.wuss-segmented-view-hover {
+  opacity: .8;
+}
+
+.wuss-segmented-disabled {
+  opacity: .4;
+}
