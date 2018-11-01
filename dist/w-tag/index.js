@@ -36,7 +36,7 @@ Component({
   },
   methods: {
     handlerClick() {
-      this.triggerEvent('click', {});
+      this.triggerEvent('onClick', {});
     },
     _closeTag() {
       this.triggerEvent('close', {});

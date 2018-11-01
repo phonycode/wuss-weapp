@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-15 14:58:27 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-20 11:09:24
+ * @Last Modified time: 2018-11-01 09:42:24
  */
 import field from '../common/behavior/field';
 const VALIDATE_PATH = '../w-validate/index';
@@ -29,6 +29,9 @@ Component({
     [VALIDATE_PATH]: {
       type: 'descendant',
     },
+  },
+  data: {
+    canSubmit: true,
   },
   methods: {
     // 是否全部完成校验
@@ -73,6 +76,7 @@ Component({
       const obj = {};
       fields.forEach(e => {
         let { name, value } = e.data;
+
         //判断是否有专门格式化获取value的函数
         e.getValue && (value = e.getValue(value));
         if (!!name) {

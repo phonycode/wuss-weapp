@@ -70,11 +70,11 @@ Component({
     noticeAnimation: null,
     resetAnimation: null,
   },
-  detached(){
+  detached() {
     clearTimeout(this.data.timer);
     this.setData({
-      timer:null
-    })
+      timer: null,
+    });
   },
   methods: {
     init() {
@@ -134,7 +134,7 @@ Component({
       });
     },
     handleClick(e) {
-      this.triggerEvent('click', e);
+      this.triggerEvent('onClick', e);
     },
     onClose(e) {
       if (this.data.mode !== 'closeable') return;

@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 17:54:29 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-21 10:56:12
+ * @Last Modified time: 2018-11-01 09:53:15
  */
 Component({
   externalClasses: ['wuss-class'],
@@ -36,7 +36,7 @@ Component({
   },
   methods: {
     handlerClick(e) {
-      this.triggerEvent('click', {});
+      this.triggerEvent('onClick', {});
     },
   },
 });

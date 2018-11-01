@@ -17,7 +17,7 @@ const DEFAULTS_OPTS = {
   mask: true,
   message: '',
   size: 100,
-  color: "#ffffff",
+  color: '#ffffff',
   position: 'default',
 };
 
@@ -126,7 +126,7 @@ Component({
       );
     },
     toastClick() {
-      this.triggerEvent('click', {});
+      this.triggerEvent('onClick', {});
     },
   },
 });

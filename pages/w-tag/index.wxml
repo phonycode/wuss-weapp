@@ -1,7 +1,7 @@
 <w-pane title="Tag" desc="标签" />
 <view class="tag-container">
 
-<w-tag bindclick="tagClick">VIP</w-tag>
+<w-tag bind:onClick="tagClick">VIP</w-tag>
 <w-tag color="magenta">VIP</w-tag>
 <w-tag color="red">VIP</w-tag>
 <w-tag color="volcano">VIP</w-tag>
@@ -17,5 +17,5 @@
 <w-tag tagStyle="color:#fff;background-color:green;border-color:green;">Green</w-tag>
 <w-tag tagStyle="color:pink;border-color:pink;">Pink</w-tag>
 
-<w-button type="info" bindclick="toggleTag">toggleTag</w-button>
+<w-button type="info" bind:onClick="toggleTag">toggleTag</w-button>
 </view>

@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 09:43:02 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-10-13 15:38:52
+ * @Last Modified time: 2018-11-01 09:44:20
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -63,6 +63,8 @@ Component({
      * 单选框被选中
      */
     _handleChecked(e) {
+      console.log(1);
+
       const { index } = e.currentTarget.dataset;
       let {
         data: { options, _isArrayObject },

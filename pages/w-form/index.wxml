@@ -24,7 +24,7 @@
 		</w-validate>
 		<w-input
 		 name="userName"
-		 placeholder="随以输入"
+		 placeholder="随意输入"
 		 clear
 		 label="test"
 		/>

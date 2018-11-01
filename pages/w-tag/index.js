@@ -12,7 +12,7 @@ Page({
     });
   },
   tagClick() {
-    console.log('click');
+    console.log('onClick');
   },
   toggleTag() {
     this.setData({

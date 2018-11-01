@@ -138,7 +138,7 @@ Component({
         // 展开状态
         autoClose ? this.close() : '';
       } else {
-        this.triggerEvent('click');
+        this.triggerEvent('onClick');
       }
     },
     open() {
