@@ -2,6 +2,7 @@
 
 <w-pane desc="Slot" />
 <w-card
+ loading="{{ loading }}"
  title="标题"
  extra="副标题"
  content="内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区"
@@ -9,9 +10,18 @@
  footer-extra="底部副标题"
 />
 
+<view style="margin: 20px 0;" hover-class="none" hover-stop-propagation="false">
+  <w-cell-group>
+    <w-cell label="开启loading">
+      <w-switch color="#ff9900" slot="content" bind:onChange="handleChange" />
+    </w-cell>
+  </w-cell-group>
+</view>
+
 <w-pane desc="Full" />
 <w-card
  full
+ shadow="{{ false }}"
  title="标题"
  extra="副标题"
  content="内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区内容区"

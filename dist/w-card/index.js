@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-30 14:52:00 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-30 15:36:20
+ * @Last Modified time: 2018-10-31 14:59:20
  */
 import Behavior from '../common/behavior/index';
 
@@ -32,12 +32,14 @@ Component({
 
   /**
    * 组件的属性列表
-   * @param {string} full 通栏模式
+   * @param {boolean} full 通栏模式
    * @param {string} title 头部标题
    * @param {string} extra 头部副标题
    * @param {string} content 内容区信息
    * @param {string} footer 底部标题
-   * @param {string} footerExtra 底部副标题 
+   * @param {string} footerExtra 底部副标题
+   * @param {boolean} shadow 开启卡片阴影
+   * @param {boolean} loading 进入loading模式
    */
   properties: {
     full: {
@@ -58,6 +60,14 @@ Component({
     footerExtra: {
       type: String,
     },
+    shadow: {
+      type: Boolean,
+      value: true,
+    },
+    loading: {
+      type: Boolean,
+      value: false,
+    },
   },
 
   /**
@@ -70,10 +80,10 @@ Component({
    */
   methods: {
     handleHdClick (e) {
-      this.triggerEvnet('onHdClick',e);
+      this.triggerEvent('onHdClick',e);
     },
     handleBdClick (e) {
-      this.triggerEvnet('onBdClick',e);
+      this.triggerEvent('onBdClick',e);
     },
   },
 
