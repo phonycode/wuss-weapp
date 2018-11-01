@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "Loading 加载指示器",
   "usingComponents": {
     "w-loading": "/dist/w-loading/index",
     "w-alert": "/dist/w-alert/index",

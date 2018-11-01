@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "QRCode 二维码",
   "usingComponents": {
     "w-qr-code": "/dist/w-qr-code/index",
     "w-button": "/dist/w-button/index",

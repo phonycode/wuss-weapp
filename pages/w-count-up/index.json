@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "CountUp 指数",
   "usingComponents": {
     "w-cell": "/dist/w-cell/index",
     "w-cell-group": "/dist/w-cell-group/index",

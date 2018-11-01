@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "DropMenu 下拉菜单",
   "usingComponents": {
     "w-drop-menu": "/dist/w-drop-menu/index",
     "w-cell-group": "/dist/w-cell-group/index",

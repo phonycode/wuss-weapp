@@ -35,7 +35,8 @@
 
 		<w-radio
 		 label="请选择手机"
-		 name="radio"
+     name="radio"
+     defaultValue="huawei"
 		 options="{{ options1 }}"
 		/>
 

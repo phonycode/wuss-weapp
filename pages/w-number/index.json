@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "Number 步进器",
   "usingComponents": {
     "w-number": "/dist/w-number/index",
     "w-alert": "/dist/w-alert/index",

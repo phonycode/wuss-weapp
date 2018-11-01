@@ -116,6 +116,13 @@
 			 label="Popup 弹出层"
 			 link="../w-popup/index"
 			 wuss-class="w-cell"
+      />
+      <w-cell
+			 isLink
+			 highlight
+			 label="ScrollableTabView 滑动视图"
+			 link="../w-scrollable-tab-view/index"
+			 wuss-class="w-cell"
 			/>
 			<w-cell
 			 isLink

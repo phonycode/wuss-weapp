@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "CellPicker 选择器",
   "usingComponents": {
     "w-cell-picker": "/dist/w-cell-picker/index",
     "w-cell-group": "/dist/w-cell-group/index",

@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "Layout 布局",
   "usingComponents": {
     "w-row": "/dist/w-row/index",
     "w-col": "/dist/w-col/index",
