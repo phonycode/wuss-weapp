@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-31 09:28:52 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-31 10:25:08
+ * @Last Modified time: 2018-10-31 17:31:02
  */
 import Behavior from '../common/behavior/index';
 
@@ -44,6 +44,7 @@ Component({
     },
     color: {
       type: String,
+      value: '#ff9900',
     },
     disabled: {
       type: Boolean,
@@ -51,6 +52,13 @@ Component({
     defaultIndex: {
       type: Number,
       value: 0,
+    },
+    currentIndex: {
+      type: Number,
+      observer(v) {
+        if(isNaN(v) || typeof v !== 'number') return false;
+        this.setData({ _currentIndex: v })
+      },
     },
     styles: {
       type: String,
@@ -72,7 +80,7 @@ Component({
       const { disabled } = this.data;
       const { index: _currentIndex } = e.target.dataset;
       if(isNaN(_currentIndex) || _currentIndex === this.data._currentIndex || disabled) return false;
-      this.setData({ _currentIndex });
+      this.setData({ _currentIndex }, () => this.triggerEvent('onChange',{ value: _currentIndex},{}));
     },
   },
 

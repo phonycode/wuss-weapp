@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Tabs 导航切换栏",
+  "navigationBarTitleText": "SegmentedControl 分段器",
   "usingComponents": {
     "w-segmented-control": "/dist/w-segmented-control/index",
     "w-button": "/dist/w-button/index",
