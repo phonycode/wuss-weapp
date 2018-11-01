@@ -2,44 +2,18 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:31 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-29 09:48:05
+ * @Last Modified time: 2018-11-01 09:39:26
  */
-const PATH = '../w-tab/index';
 Component({
   externalClasses: ['wuss-class'],
   options: {
     addGlobalClass: true,
   },
-  relations: {
-    [PATH]: {
-      type: 'descendant',
-      linked(target) {
-        const tabs = this.data.tabs.concat();
-        tabs.push({
-          instance: target,
-          data: target.data,
-        });
-        this.setData({
-          tabs,
-          isScroll: tabs.length > this.data.itemThreshold,
-        });
-
-        this.setTabActive();
-      },
-
-      unlinked(target) {
-        const tabs = this.data.tabs.concat();
-        this.setData({
-          tabs: tabs.filter(item => item.instance !== target),
-          isScroll: tabs.length > this.data.itemThreshold,
-        });
-      },
-    },
-  },
+  relations: {},
 
   /**
    * 组件的属性列表
-   * @param {array} tabs tab列表的数据源 参数有 text,icon,iconColor,iconSize
+   * @param {array} options tab列表的数据源 参数有 text,icon,iconColor,iconSize
    * @param {number} currentIndex  初始化或者控制索引
    * @param {boolean} transition 是否开启过渡动画
    * @param {string} line 是否开启线条
@@ -53,6 +27,15 @@ Component({
    * @param {boolean} fixed 是否开启定位
    */
   properties: {
+    options: {
+      type: Array,
+      value: [],
+      observer(v) {
+        this.setData({
+          isScroll: v.length > this.data.itemThreshold,
+        });
+      },
+    },
     currentIndex: {
       type: Number,
       value: 0,
@@ -103,18 +86,20 @@ Component({
       type: Number,
       value: 4,
       observer(newValue) {
-        const { tabs } = this.data;
+        const {
+          options
+        } = this.data;
         this.setData({
-          isScroll: tabs.length > newValue,
+          isScroll: options.length > newValue,
         });
+        console.log(this.data.isScroll)
       },
     },
   },
   data: {
     scrollLeft: 0,
-    tabs: [],
   },
-  ready: function() {
+  ready: function () {
     this.setLineStyle();
     this.computedStyles();
   },
@@ -130,9 +115,10 @@ Component({
       } = this.data;
       wx.createSelectorQuery()
         .in(this)
-        .selectAll('.tabs-item')
+        .selectAll('.wuss-tabs-item')
         .boundingClientRect()
         .exec(([rects]) => {
+          if (!Array.prototype.toString.call(rects)) return false;
           const currentRect = rects[currentIndex];
 
           let left = rects
@@ -154,70 +140,66 @@ Component({
         });
     },
     computedStyles() {
-      const { borderColor } = this.data;
+      const {
+        borderColor
+      } = this.data;
 
-      this.setData({ styles: `border-bottom: 1rpx solid ${borderColor};` });
+      this.setData({
+        styles: `border-bottom: 1rpx solid ${borderColor};`
+      });
     },
-    _trigger(name, index) {
+    _trigger(name, value) {
       this.triggerEvent(name, {
-        index,
-        title: this.data.tabs[index].data.title,
+        value,
+        title: this.data.options[value].title,
       });
     },
     //设置高亮index并且触发事件
     setCurrentIndex(currentIndex) {
-      if (this.data.tabs.length < currentIndex) return false;
-      this._trigger('onChange', currentIndex);
-      this.setTabActive();
+      if (this.data.options.length < currentIndex) return false;
+      // this._trigger('onChange', currentIndex);
       this.setLineStyle();
       this._scrolltoView();
     },
-    //设置子组件tab
-    setTabActive() {
-      const { currentIndex, tabs } = this.data;
-
-      tabs.forEach((item, index) => {
-        const { mounted: Imounted, show: Ishow } = item.instance.data;
-        const show = index === currentIndex;
-        const data = { show };
-
-        !Imounted && data.show && (data.mounted = true);
-
-        if (show !== Ishow) {
-          item.instance.setData(data);
-        }
-      });
-    },
     //点击tab触发
     handleTab(e) {
-      const { currentIndex, tabs } = this.data;
-      const { index } = e.currentTarget.dataset;
+      const {
+        currentIndex,
+        options
+      } = this.data;
+      const {
+        index
+      } = e.currentTarget.dataset;
       if (index == null || index == undefined) return false;
-      if (tabs[index].data.disabled) {
+      if (options[index].disabled) {
         this._trigger('disabled', index);
       } else {
-        this._trigger('onClick', index);
+        this._trigger('onChange', index);
 
         if (index == currentIndex) return;
-        this.setData({ currentIndex: index });
+        this.setData({
+          currentIndex: index
+        });
       }
     },
     //移动scroll滚动条
     _scrolltoView() {
-      const { currentIndex } = this.data;
+      const {
+        currentIndex
+      } = this.data;
       wx.createSelectorQuery()
         .in(this)
         .select('.wuss-tabs-content')
         .boundingClientRect()
-        .selectAll('.tabs-item')
+        .selectAll('.wuss-tabs-item')
         .boundingClientRect()
         .exec(([contentRect, itemRect]) => {
+          if (!Array.prototype.toString.call(itemRect)) return false;
           const _scrollLeft = itemRect
             .slice(0, currentIndex)
             .reduce((prev, curr) => prev + curr.width, 0);
           this.setData({
-            scrollLeft:
-              _scrollLeft -
+            scrollLeft: _scrollLeft -
               (contentRect.width - itemRect[currentIndex].width) / 2, //居中展示
           });
         });
