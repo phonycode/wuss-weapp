@@ -63,7 +63,8 @@ Component({
   },
   data: {
     _visible: true,
-    value: [0, 0, 0],
+    value: [],
+    _options: [],
     _isLinkage: false,
   },
   methods: {
@@ -104,17 +105,31 @@ Component({
     _handleChange(e) {
       const value = e.detail.value;
       this.setData({ value });
-
+      this.formatOptions();
       // this.triggerEvent('onChange',{
       //   value: this.getValues(value),
       // },{})
     },
+    formatOptions() {
+      const { options, value, _isLinkage } = this.data;
+      if (!_isLinkage) return false;
+      const _options = [];
+      let prev;
+      options.forEach((v, i) => {
+        if (i === 0) {
+          return _options.push(v);
+        } else {
+          prev = _options[i - 1][value[i - 1] || 0];
+        }
+        _options.push(options[i].filter(iv => prev.value === iv.parent));
+      });
+      this.setData({ _options });
+    },
   },
   ready: function() {
     const { options, defaultValue } = this.data;
-    const [v1 = 0, v2 = 0, v3 = 0] = defaultValue;
     this.setData({
-      value: [v1, v2, v3],
+      value: defaultValue,
       _isLinkage: !!(
         options[1] &&
         options[1][0] &&
@@ -122,5 +137,6 @@ Component({
       ),
     });
     this._ArrayKeysToArrayObject();
+    this.formatOptions();
   },
 });

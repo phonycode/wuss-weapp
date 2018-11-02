@@ -55,7 +55,7 @@
 			 bindchange="_handleChange"
 			>
 				<block
-				 wx:for="{{ options }}"
+				 wx:for="{{ _options }}"
 				 wx:for-item="column"
 				 wx:for-index="columnIdx"
 				 wx:key="column"
@@ -66,7 +66,6 @@
 						 wx:for-item="item"
 						 wx:for-index="index"
 						 wx:key="item"
-						 wx:if="{{ columnIdx > 0 && _isLinkage ? options[columnIdx - 1][value[columnIdx - 1]].value === item.parent : true }}"
 						>
 							<view class="wuss-cell-picker-view-item">
 								{{ showValue ? item.value : item.key }}
