@@ -5,6 +5,16 @@
  isValidateBtn
 >
 	<w-cell-group>
+
+		<w-validate rules="{{ userNameRules }}">
+			<w-input
+			 name="userName"
+			 placeholder="请输入你的姓名"
+			 clear
+			 label="姓名"
+			/>
+    </w-validate>
+    
 		<w-validate rules="{{ { mode:['mobile'] } }}">
 			<w-input
 			 type="mobile"
@@ -13,30 +23,38 @@
 			 placeholder="请输入你的手机号"
 			 label="手机号"
 			/>
-		</w-validate>
-		<w-validate rules="{{ userNameRules }}">
-			<w-input
-			 name="userName"
-			 placeholder="请输入你的姓名"
-			 clear
-			 label="姓名"
-			/>
-		</w-validate>
-		<w-input
-		 name="userName"
-		 placeholder="随意输入"
-		 clear
-		 label="test"
-		/>
+    </w-validate>
 
-		<w-cell label="开启VIP模式">
+    <w-validate rules="{{ isRequired }}">
+      <w-cell-picker
+        label="性别"
+        options="{{ [['男','女']] }}"
+        name="sex"
+      />
+    </w-validate>
+    
+		<w-validate rules="{{ isRequired }}">
+			<w-address-picker label="选择地区" name="region" />
+    </w-validate>
+    
+		<w-validate rules="{{ isRequired }}">
+      <w-input
+       clear
+       type="textarea"
+       label="地址"
+       name="address"
+       placeholder="请输入详细地址..."
+      />
+    </w-validate>
+
+		<w-cell label="同意用户协议信息">
 			<w-switch name="isVip" slot="content" />
 		</w-cell>
 
 		<w-radio
 		 label="请选择手机"
-     name="radio"
-     defaultValue="huawei"
+		 name="radio"
+		 defaultValue="huawei"
 		 options="{{ options1 }}"
 		/>
 

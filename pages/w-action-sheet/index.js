@@ -105,7 +105,7 @@ Page({
   },
   handleClick2() {
     ActionSheet.show({
-      items: [{text: 'ActionSheet.hide()',type: 'hide'}],
+      options: [{text: 'ActionSheet.hide()',type: 'hide'}],
     })
   },
 });

@@ -49,13 +49,6 @@
 			<w-cell
 			 isLink
 			 highlight
-			 label="Dialog 消息框"
-			 link="../w-dialog/index"
-			 wuss-class="w-cell"
-			/>
-			<w-cell
-			 isLink
-			 highlight
 			 label="Badge 徽章"
 			 link="../w-badge/index"
 			 wuss-class="w-cell"
@@ -187,8 +180,8 @@
 			<w-cell
 			 isLink
 			 highlight
-			 label="Popover 气泡"
-			 link="../w-popover/index"
+			 label="Dialog 消息框"
+			 link="../w-dialog/index"
 			 wuss-class="w-cell"
 			/>
 			<w-cell
@@ -278,6 +271,13 @@
 			 label="Number 步进器"
 			 link="../w-number/index"
 			 wuss-class="w-cell"
+      />
+      <w-cell
+			 isLink
+			 highlight
+			 label="VCode 验证码"
+			 link="../w-vcode/index"
+			 wuss-class="w-cell"
 			/>
 		</w-cell-group>
 
@@ -309,6 +309,13 @@
 			 highlight
 			 label="Marquee 垂直滚动"
 			 link="../w-marquee/index"
+			 wuss-class="w-cell"
+      />
+      <w-cell
+			 isLink
+			 highlight
+			 label="Rater 星级评分"
+			 link="../w-rater/index"
 			 wuss-class="w-cell"
 			/>
 		</w-cell-group>

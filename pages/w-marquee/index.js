@@ -90,6 +90,16 @@ Page({
       currentIndex: 1,
     })
   },
+  handleClick4() {
+    this.setData({
+      currentIndex: this.data.currentIndex >= this.data.arr.length-1 ? 0 : this.data.currentIndex+=1,
+    })
+  },
+  handleChange(e) {
+    this.setData({
+      currentIndex: e.detail.value,
+    })
+  },
   handleChange(e) {
     console.log(e)
   },

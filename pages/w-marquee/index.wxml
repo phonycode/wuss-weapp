@@ -8,12 +8,18 @@
 
 <w-button bind:onClick="handleClick3" type="info">jump to 1</w-button>
 
+<w-button bind:onClick="handleClick4" type="info">Next Item</w-button>
+
 <view
  class=""
  hover-class="none"
  hover-stop-propagation="false"
 >
-	<w-marquee default-index="{{ 6 }}" current-index="{{ currentIndex }}">
+	<w-marquee
+	 bind:onChange="handleChange"
+	 default-index="{{ 6 }}"
+	 current-index="{{ currentIndex }}"
+	>
 		<w-marquee-item
 		 bind:onClick="handleChange"
 		 data-url="{{ item.url }}"
@@ -28,12 +34,8 @@
 			 hover-stop-propagation="false"
 			 style="font-size: 14px;"
 			>
-				{{
-				  item.title
-				}}
-				{{
-				  index
-				}}
+				{{ item.title }}
+				{{ index }}
 			</view>
 		</w-marquee-item>
 	</w-marquee>
@@ -44,7 +46,11 @@
  hover-class="none"
  hover-stop-propagation="false"
 >
-	<w-marquee default-index="{{ 0 }}" item-height="666.75" current-index="{{ currentIndex }}">
+	<w-marquee
+	 default-index="{{ 0 }}"
+	 item-height="666.75"
+	 current-index="{{ currentIndex }}"
+	>
 		<w-marquee-item
 		 bind:onClick="handleChange"
 		 data-url="{{ item.url }}"

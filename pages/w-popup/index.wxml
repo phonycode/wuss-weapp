@@ -3,53 +3,101 @@
 <w-pane desc="Position" />
 
 <w-button type="info" bind:onClick="handleClick1">Top</w-button>
-<w-popup 
-  visible="{{ popup1 }}"
-  position="top"
-  height="250px"
-  bind:close="handleClose"
+<w-popup
+ visible="{{ popup1 }}"
+ position="top"
+ height="250px"
+ bind:onClose="handleClose"
 >
-  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
+	<scroll-view scroll-y class="scroll-view-x">
+		<view
+		 class=""
+		 wx:for="{{50}}"
+		 wx:key="index"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			{{ index }}
+		</view>
+	</scroll-view>
 </w-popup>
 <w-button type="info" bind:onClick="handleClick2">Bottom</w-button>
-<w-popup 
-  visible="{{ popup2 }}"
-  position="bottom"
-  height="250px"
-  bind:close="handleClose"
+<w-popup
+ visible="{{ popup2 }}"
+ position="bottom"
+ height="250px"
+ bind:onClose="handleClose"
 >
-  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
+	<scroll-view scroll-y class="scroll-view-x">
+		<view
+		 class=""
+		 wx:for="{{50}}"
+		 wx:key="index"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			{{ index }}
+		</view>
+	</scroll-view>
 </w-popup>
 <w-button type="info" bind:onClick="handleClick3">Left</w-button>
-<w-popup 
-  visible="{{ popup3 }}"
-  position="left"
-  bind:close="handleClose"
+<w-popup
+ visible="{{ popup3 }}"
+ position="left"
+ bind:onClose="handleClose"
 >
-  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
+	<scroll-view scroll-y class="scroll-view-y">
+		<view
+		 class=""
+		 wx:for="{{50}}"
+		 wx:key="index"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			{{ index }}
+		</view>
+	</scroll-view>
 </w-popup>
 <w-button type="info" bind:onClick="handleClick4">Right</w-button>
-<w-popup 
-  visible="{{ popup4 }}"
-  position="right"
-  bind:close="handleClose"
+<w-popup
+ visible="{{ popup4 }}"
+ position="right"
+ bind:onClose="handleClose"
 >
-  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
+	<scroll-view scroll-y class="scroll-view-y">
+		<view
+		 class=""
+		 wx:for="{{50}}"
+		 wx:key="index"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			{{ index }}
+		</view>
+	</scroll-view>
 </w-popup>
 
 <w-pane desc="Disabled MaskCancel" />
 
 <w-button type="info" bind:onClick="handleClick5">Info</w-button>
-<w-popup 
-  mask-cancel="{{ false }}"
-  visible="{{ popup5 }}"
-  position="bottom"
-  height="250px"
-  bind:close="handleClose"
+<w-popup
+ mask-cancel="{{ false }}"
+ visible="{{ popup5 }}"
+ position="bottom"
+ height="250px"
+ bind:onClose="handleClose"
 >
-  <view wx:for="{{50}}" wx:key="index">{{ index }}</view>
-  <w-button type="info" bind:onClick="handleClose">关闭</w-button>
+	<scroll-view scroll-y class="scroll-view-x">
+		<view
+		 class=""
+		 wx:for="{{50}}"
+		 wx:key="index"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			{{ index }}
+		</view>
+	  <w-button type="info" bind:onClick="handleClose">关闭</w-button>
+	</scroll-view>
 </w-popup>
-
-
 

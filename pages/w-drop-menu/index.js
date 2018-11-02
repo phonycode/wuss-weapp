@@ -84,13 +84,7 @@ Page({
       },
     ],
     radioOptions: ["全部", "正片", "剧场版", "其他"],
-    checkboxOptions: [{
-      label: "免费"
-    }, {
-      label: "付费"
-    }, {
-      label: "大会员"
-    }],
+    checkboxOptions: ["免费","付费","大会员"],
   },
   handleChange(e) {
     console.log(e);
