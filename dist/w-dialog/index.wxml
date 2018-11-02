@@ -1,7 +1,7 @@
 <w-mask-shadow
  maskCancel="{{ maskClose }}"
  visible="{{ _maskShadow }}"
- bind:close="handleClose"
+ bind:onClose="handleClose"
 />
 
 <view

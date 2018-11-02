@@ -167,19 +167,19 @@ Component({
     ///////////input的监听函数
     handlerChange(e) {
       const { value = '' } = e.detail || {};
-      this._trigger('change', { detail: { value } });
+      this._trigger('onChange', { detail: { value } });
       this._trigger('input', { detail: { value } });
       this.setData({ value: this.formatValue(value) });
     },
     handlerFocus(e) {
-      this._trigger('focus', e);
+      this._trigger('onFocus', e);
       this.setData({ _focus: true });
     },
     handlerConfirm(e) {
-      this._trigger('confirm', e);
+      this._trigger('onConfirm', e);
     },
     handlerBlur(e) {
-      this._trigger('blur', e);
+      this._trigger('onBlur', e);
       this.setData({ _focus: false });
     },
     handerExtraClick(e) {

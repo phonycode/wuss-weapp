@@ -19,7 +19,7 @@
  visible="{{ visible1 }}"
  options="{{ items1 }}"
  bind:onChange="handleClick"
- bind:close="handleClose"
+ bind:onClose="handleClose"
 />
 
 <w-pane desc="Icon" />
@@ -41,7 +41,7 @@
  visible="{{ visible2 }}"
  options="{{ items2 }}"
  bind:onChange="handleClick"
- bind:close="handleClose"
+ bind:onClose="handleClose"
 />
 
 <w-pane desc="MaskCancel = False" />
@@ -64,7 +64,7 @@
  visible="{{ visible3 }}"
  options="{{ items3 }}"
  bind:onChange="handleClick"
- bind:close="handleClose"
+ bind:onClose="handleClose"
 />
 
 <w-pane desc="ShowCancel = False" />
@@ -87,7 +87,7 @@
  visible="{{ visible4 }}"
  options="{{ items4 }}"
  bind:onChange="handleClick"
- bind:close="handleClose"
+ bind:onClose="handleClose"
 />
 
 <w-pane desc="CancelText = 退出" />
@@ -110,7 +110,7 @@
  visible="{{ visible5 }}"
  options="{{ items5 }}"
  bind:onChange="handleClick"
- bind:close="handleClose"
+ bind:onClose="handleClose"
 />
 
 <w-pane desc="Loading" />
@@ -133,10 +133,10 @@
  visible="{{ visible6 }}"
  options="{{ items6 }}"
  bind:onChange="handleClick"
- bind:close="handleClose"
+ bind:onClose="handleClose"
 />
 
 <w-pane desc="插件手动调用" />
 <w-button type="info" bind:onClick="handleClick2">ActionSheet.show()</w-button>
-<w-action-sheet id="wuss-actionsheet" options="{{ items6 }}" bind:onChange="handleClick" bind:close="handleClose" />
+<w-action-sheet id="wuss-actionsheet" options="{{ items6 }}" bind:onChange="handleClick" bind:onClose="handleClose" />
 

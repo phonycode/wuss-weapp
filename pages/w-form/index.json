@@ -9,6 +9,10 @@
     "w-form": "/dist/w-form/index",
     "w-switch": "/dist/w-switch/index",
     "w-radio": "/dist/w-radio/index",
+    "w-address-picker": "/dist/w-address-picker/index",
+    "w-cell-picker": "/dist/w-cell-picker/index",
+    "w-number": "/dist/w-number/index",
+    "w-vcode": "/dist/w-vcode/index",
     "w-validate": "/dist/w-validate/index",
     "w-pane": "/dist/w-pane/index"
   }

@@ -52,7 +52,7 @@ Page({
       showCancel: false,
     });
   },
-  delete() {
+  delete(e) {
     wx.showModal({
       title: '提示',
       content: 'delete',

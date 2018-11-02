@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-27 11:09:41
+ * @Last Modified time: 2018-11-02 14:07:04
  */
 Component({
   externalClasses: ['wuss-class', 'wuss-button-hover-class'],
@@ -27,6 +27,8 @@ Component({
    * @param {boolean} ghost 幽灵按钮
    * @param {boolean} dashed 虚线
    * @param {string} icon 添加按钮图标
+   * @param {string} iconColor 按钮图标颜色
+   * @param {number} iconSize 按钮图标大小
    * @param {string} openType 设置开放数据, 可选值为 [contact|share|getUserInfo|openSetting|feedback]
    * @param {string} appParameter 打开 APP 时，向 APP 传递的参数
    * @param {string} type 按钮样式类型，可选值为 [default,primary,info,warn,danger,custom]
@@ -120,7 +122,7 @@ Component({
       this.triggerEvent('onClick', { ...e }, {});
     },
     handleError(e) {
-      this.triggerEvent('error', { ...e }, {});
+      this.triggerEvent('onError', { ...e }, {});
     },
     getuserinfo(e) {
       this.triggerEvent('getuserinfo',{ ...e },{});

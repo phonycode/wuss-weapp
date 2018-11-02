@@ -1,11 +1,11 @@
-// pages/w-address-picker/index.js
+// pages/w-pane/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    address: '',
+
   },
 
   /**
@@ -14,10 +14,7 @@ Page({
   onLoad: function (options) {
 
   },
-  handleChange(e) {
-    console.log(e)
-    this.setData({ address: e.detail.value.join(' ','') })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Pane 窗格",
+  "usingComponents": {
+    "w-pane": "/dist/w-pane/index"
+  }
+}

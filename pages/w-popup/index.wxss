@@ -1,1 +1,10 @@
 /* pages/w-popup/index.wxss */
+
+.scroll-view-x {
+  height: 250px;
+  width: 100%;
+}
+
+.scroll-view-y {
+  height: 100%;
+}

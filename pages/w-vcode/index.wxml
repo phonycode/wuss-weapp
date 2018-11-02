@@ -1,0 +1,13 @@
+<w-pane title="VCode" desc="验证码" />
+
+<w-pane desc="Default" />
+
+
+<w-cell-group>
+  <w-vcode
+    label="验证码"
+    placeholder="验证码..."
+    vcodeSrc="{{ src }}"
+    bind:onChangeVCode="handleChange"
+  />
+</w-cell-group>

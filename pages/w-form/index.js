@@ -18,6 +18,12 @@ Page({
         message: '姓名最少三个字',
       },
     },
+    isRequired: {
+      required: {
+        value: true,
+        message: '必填',
+      },
+    },
     options1: [
       {
         key: '苹果',

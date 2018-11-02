@@ -3,6 +3,7 @@
 <w-pane desc="Default" />
 <w-swiper-out 
   swiperOutBtns="{{ btns1 }}"
+  data-itemid="sdadasdas123"
   bind:delete="delete"
   bind:edit="edit"
   bind:added="added"

@@ -42,7 +42,7 @@ Page({
     items3: ['测试1','测试2','测试3','测试4','测试5'],
   },
   handleChange(e) {
-    console.log(e.detail.checked)
-    this.setData({ items1Str: JSON.stringify(e.detail.checked) });
+    console.log(e.detail.value)
+    this.setData({ items1Str: JSON.stringify(e.detail.value) });
   },
 });

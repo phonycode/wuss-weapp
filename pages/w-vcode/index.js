@@ -1,11 +1,12 @@
-// pages/w-address-picker/index.js
+// pages/w-vcode/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    address: '',
+    src: 'https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg',
+    flag: false,
   },
 
   /**
@@ -14,9 +15,11 @@ Page({
   onLoad: function (options) {
 
   },
-  handleChange(e) {
-    console.log(e)
-    this.setData({ address: e.detail.value.join(' ','') })
+  handleChange() {
+    this.setData({
+      src: this.data.flag ? 'http://img5.imgtn.bdimg.com/it/u=3224070611,1493841838&fm=26&gp=0.jpg' : 'https://ws1.sinaimg.cn/large/663d3650gy1fq684go3glj203m01hmwy.jpg',
+      flag: !this.data.flag,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

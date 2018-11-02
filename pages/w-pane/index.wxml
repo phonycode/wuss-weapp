@@ -1,0 +1,10 @@
+<w-pane title="Pane" desc="窗格" />
+<view style="margin: 10px 0;text-align:center;">
+	demo demo
+</view>
+<w-pane title="Title" desc="description" />
+<view style="margin: 10px 0;text-align:center;">
+	demo demo
+</view>
+<w-pane desc="description" />
+

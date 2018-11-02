@@ -1,0 +1,29 @@
+/*
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
+ * @Date: 2018-11-01 10:38:03 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-11-01 11:08:38
+ */
+@import '../common/theme/global.wxss';
+
+.wuss-vcode {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-left: 10px;
+}
+
+
+.wuss-vcode-input {
+  flex: 1;
+  text-align: left;
+  font-size: 16px;
+  color: #333333;
+}
+
+.wuss-vcode-image {
+  width: 100px;
+  height: 36px;
+}

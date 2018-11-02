@@ -37,7 +37,7 @@ Component({
       const { maskCancel } = this.data;
       if (!maskCancel) return false; // 如果用户没开则退出
       this.triggerEvent(
-        'close',
+        'onClose',
         {
           visible,
         },

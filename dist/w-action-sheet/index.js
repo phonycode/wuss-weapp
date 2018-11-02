@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-12 14:03:55 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-24 09:32:14
+ * @Last Modified time: 2018-11-02 12:06:58
  */
 import Behavior from '../common/behavior/index';
 
@@ -62,7 +62,7 @@ Component({
     _handleCancel() {
       this.setData({
         visible: false,
-      },() => this.triggerEvent('close', {}, {}))
+      },() => this.triggerEvent('onClose', {}, {}))
     },
     /**
      * 菜单被点击回调
@@ -83,13 +83,13 @@ Component({
       this.setData({
         visible: true,
         ...opts,
-      },() => this.triggerEvent('show', {}, {}));
+      },() => this.triggerEvent('onShow', {}, {}));
     },
     hide(opts = {}) {
       this.setData({
         visible: false,
         ...opts,
-      }, () => this.triggerEvent('close', {}, {}));
+      }, () => this.triggerEvent('onClose', {}, {}));
     },
   },
 });

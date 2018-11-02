@@ -2,12 +2,17 @@
 	<w-cell-group slot="filter">
 		<w-radio color="#ff9900" options="{{  radioOptions  }}" />
 		<w-checkbox icon-type="box" options="{{ checkboxOptions }}" />
-    <w-cell label="我已阅读条款">
-      <w-switch color="#ff9900" slot="content" />
-    </w-cell>
-    <w-button flat full type="warn">确定</w-button>
+		<w-cell label="我已阅读条款">
+			<w-switch color="#ff9900" slot="content" />
+		</w-cell>
+		<w-button
+		 flat
+		 full
+		 type="warn"
+		>确定
+		</w-button>
 	</w-cell-group>
 </w-drop-menu>
 
-	<w-pane title="DropMenu" desc="下拉菜单" />
+<w-pane title="DropMenu" desc="下拉菜单" />
 

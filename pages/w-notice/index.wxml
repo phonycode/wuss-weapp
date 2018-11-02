@@ -12,7 +12,7 @@
 <w-notice
  mode="closeable"
  text="{{ text }}"
- bindclose="noticeClose"
+ bindonClose="noticeClose"
  speed="30"
 />
 

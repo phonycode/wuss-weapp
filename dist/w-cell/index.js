@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-22 11:02:29
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-11-02 14:12:39
  */
 import cell from '../common/behavior/cell';
 Component({
@@ -29,7 +29,7 @@ Component({
   /**
    * 组件的属性列表
    * @param {string} label  标题
-   * @param {string} labelSpan  标题宽度可选值1-5
+   * @param {number} labelSpan  标题宽度可选值1-5
    * @param {string} content 内容
    * @param {string} desc   附加描述
    * @param {string} isLink 是否是链接 开启后显示右边箭头
@@ -42,6 +42,7 @@ Component({
    * @param {boolean} disabled  禁用cell
    * @param {boolean} highlight  开启hover class
    * @param {string} direction  内容区的显示方向
+   * @param {boolean} isValidateIcon  是否是表单中的按钮,开启是将触发表单功能
    */
   properties: {
     label: {
@@ -121,7 +122,7 @@ Component({
       ];
       if (disabled) return false;
       this.triggerEvent('onClick', {}, {});
-      if (!link) return false;
+      if (!link && linkType !== 'navigateBack') return false;
       if (!linkType) throw Error('linkType 不能为空');
       if (navigateMethods.indexOf(linkType) > -1) {
         if (!link) throw Error('link 不能为空');

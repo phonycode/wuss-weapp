@@ -49,7 +49,7 @@
      zIndex="{{ item.type === 'filter' ? 1000 :  200 }}"
      maskIndex="{{ item.type === 'filter' ? 1000 :  100 }}"
 		 padding="0"
-		 bind:close="handleClose"
+		 bind:onClose="handleClose"
     >
 		  <slot wx:if="{{ item.type === 'filter' }}" name="{{ item.slotName }}" />
 			<view wx:if="{{ item.type !== 'filter' }}" class="wuss-drop-menu-content">
@@ -62,7 +62,7 @@
 						 wx:for-item="opt"
 						 data-parentkey="{{ parent_key }}"
 						 data-optkey="{{ opt_index }}"
-						 catch:click="handleOptionsClick"
+						 catch:onClick="handleOptionsClick"
 						 wuss-class-hd="w-cell-hd"
 						>
 							<view slot="label" class="{{opt.checked ? 'opt-text-checked' : ''}}">
@@ -96,7 +96,7 @@
 					 type="default"
 					 wuss-class="w-button"
 					 style="flex: 1;"
-					 catch:click="_handleSelectedReset"
+					 catch:onClick="_handleSelectedReset"
 					>
 						重置
 					</w-button>
@@ -105,7 +105,7 @@
 					 type="warn"
 					 wuss-class="w-button"
 					 style="flex: 1;"
-					 catch:click="_handleConfirmSelected"
+					 catch:onClick="_handleConfirmSelected"
 					>
 						确定
 					</w-button>

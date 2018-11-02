@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-31 15:15:00 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-31 16:25:15
+ * @Last Modified time: 2018-11-02 10:27:23
  */
 import Behavior from '../common/behavior/index';
 
@@ -34,6 +34,11 @@ Component({
 
   /**
    * 组件的属性列表
+   * @param {array} options 传入的选项组： { containerName, containerHeight }
+   * @param {number} height 固定每个容器的高度
+   * @param {number} width 固定每个容器的高度
+   * @param {number} currentIndex 设置当前激活的索引
+   * @param {number} defaultIndex 设置初始化索引
    */
   properties: {
     options: {

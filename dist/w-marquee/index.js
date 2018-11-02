@@ -68,15 +68,11 @@ Component({
       type: Number,
       value: 0,
       observer(val) {
-        if(val && typeof val === 'number') {
-          const { _currentIndex } = this.data;
-          if(val === _currentIndex)return false;
-          this.setData({
-            _currentIndex: val,
-          }, () => {
-            this.nextSlide(val);
-            this.autoplay();
-          })
+        if(!isNaN(val) && typeof val === 'number') {
+          const { _currentIndex, ITEM_COUNT } = this.data;
+          if(val === _currentIndex || val > ITEM_COUNT)return false;
+          this.nextSlide(val);
+          this.autoplay();
         }
       },
     },
@@ -129,10 +125,11 @@ Component({
     },
     nextSlide(index = 1) {
       let { itemHeight, _currentIndex, ITEM_COUNT } = this.data;
+      if(index > ITEM_COUNT) {debugger;}
       this.setData({
-        _styles: `transform: translate3d(0%,-${ itemHeight * index }px,0);`,
-        _currentIndex: _currentIndex >= --ITEM_COUNT ? 0 : ++_currentIndex,
-      });
+        _styles: `transform: translate3d(0%,-${ index > ITEM_COUNT ? itemHeight : itemHeight * index }px,0);`,
+        _currentIndex: _currentIndex >= --ITEM_COUNT || index > ITEM_COUNT ? 0 : ++_currentIndex,
+      }, () => this.triggerEvent('onChange',{ value: this.data._currentIndex },{}));
     },
   },
 

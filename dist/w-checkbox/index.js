@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-01 10:09:58
+ * @Last Modified time: 2018-11-02 14:17:06
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -85,7 +85,7 @@ Component({
           }),
       }, () => this.triggerEvent(
         'onChange', {
-          checked: this.data.value,
+          value: this.data.value,
         }, {}
       ));
     },
