@@ -34,10 +34,10 @@ Component({
    * @param {number} count iconfont的数量
    * @param {number} max 最大可选值
    * @param {number} min 最小可选值
-   * @param {number} disabled 禁用
+   * @param {boolean} disabled 禁用
    * @param {number} value 当前选中值
-   * @param {number} iconFont 自定义字体图标
-   * @param {number} activeColor 激活的颜色
+   * @param {string} iconFont 自定义字体图标
+   * @param {string} activeColor 激活的颜色
    * @param {number} margin 每个iconfont之间的外边距
    * @param {number} fontSize iconfont大小
    */
