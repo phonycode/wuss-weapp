@@ -5,5 +5,40 @@
 <w-button type="info" bind:onClick="handleClick1">
 	{{ visible1 ? 'show' : 'hide' }}
 </w-button>
-<w-calendar bindonSelect="handleSelected" bindconfirm="handleConfirm" bindcancel="handleCancel" defaultValue="{{defaultValue}}" visible disabledDate="{{disabledDate}}" />
+<w-calendar
+ bind:onSelect="handleSelected"
+ bind:onConfirm="handleConfirm"
+ bind:onCancel="handleCancel"
+ minDate="{{minDate}}"
+ visible="{{visible1}}"
+ defaultValue="{{defaultValue}}"
+/>
+
+<w-pane desc="Type = more" />
+<w-button type="info" bind:onClick="handleClick2">
+	{{ visible2 ? 'show' : 'hide' }}
+</w-button>
+<w-calendar
+ bind:onSelect="handleSelected"
+ bind:onConfirm="handleConfirm"
+ bind:onCancel="handleCancel"
+ minDate="{{minDate}}"
+ visible="{{visible2}}"
+ type="more"
+ defaultValue="{{defaultValue}}"
+/>
+
+<w-pane desc="Type = range" />
+<w-button type="info" bind:onClick="handleClick3">
+	{{ visible3 ? 'show' : 'hide' }}
+</w-button>
+<w-calendar
+ bind:onSelect="handleSelected"
+ bind:onConfirm="handleConfirm"
+ bind:onCancel="handleCancel"
+ minDate="{{minDate}}"
+ visible="{{visible3}}"
+ type="range"
+ defaultValue="{{defaultValue}}"
+/>
 

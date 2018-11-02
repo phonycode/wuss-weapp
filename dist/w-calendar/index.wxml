@@ -59,14 +59,12 @@
 	 scroll-y="true"
 	 upper-threshold="50"
 	 lower-threshold="50"
-	 scroll-top="0"
-	 scroll-left="0"
-	 scroll-into-view=""
 	 scroll-with-animation="true"
 	 enable-back-to-top="true"
-	 bindscrolltoupper=""
-	 bindscrolltolower=""
-	 bindscroll=""
+	 bind:touchstart="handleTouchStart"
+	 bind:touchend="handleTouchEnd"
+	 bind:scrolltoupper="handleScrollToUpper"
+	 bind:scrolltolower="handleScrollToLower"
 	 style="height: calc(100vh - 84px);"
 	>
 		<view

@@ -11,30 +11,36 @@ Component({
     addGlobalClass: true,
   },
   /**
-   * @param {visible} 是否可见
-   * @param {type} 日历选择类型 'one' | 'more' |'range'
-   * @param {maxDate} 最大日期
-   * @param {minDate} 最小日期
-   * @param {defaultValue} 最小日期
-   * @param {startDayText} 开始日期的字 type为range有效
-   * @param {endDayText} 结束日期的字 type为range有效
-   * @param {dateTextObj} 日期的文本 比如节日等的渲染
-   * @param {initalMonths} 初始渲染月份
-   * @param {disabledDate} 禁用的日期
+   * @param {boolean} visible是 否可见
+   * @param {string} type 日历选择类型 'one' | 'more' |'range'
+   * @param {string|number} maxDate 最大日期
+   * @param {string|number} minDate 最小日期
+   * @param {array} defaultValue 最小日期
+   * @param {string} startDayText 开始日期的字 type为range有效
+   * @param {string} endDayText 结束日期的字 type为range有效
+   * @param {object} dateTextObj 日期的文本 比如节日等的渲染
+   * @param {number} initalMonths 初始渲染月份
+   * @param {object} disabledDate 禁用的日期
    */
   properties: {
     visible: Boolean,
     type: {
       type: String,
-      value: 'range',
+      value: 'one',
     },
     maxDate: {
       type: null,
       value: 0,
+      observer(value) {
+        this.isValiDateType(value, 'maxDate');
+      },
     },
     minDate: {
       type: null,
       value: 0,
+      observer(value) {
+        this.isValiDateType(value, 'minDate');
+      },
     },
     defaultValue: {
       type: Array,
@@ -69,6 +75,9 @@ Component({
     hashDays: {},
   },
   ready() {
+    let { maxDate, minDate } = this.data;
+    this.maxDateTime = new Date(maxDate).getTime();
+    this.minDateTime = new Date(minDate).getTime();
     this.createDateListData();
     this.setDefaultValueToValue();
   },
@@ -83,15 +92,21 @@ Component({
         this.onPressDate(this.searchdDateIndex(defaultValue[1]), true);
       } else if (type === 'more') {
         for (const i of defaultValue) {
-          this.onPressDate(this.searchdDateIndex(defaultValue[i]), true);
+          this.onPressDate(this.searchdDateIndex(i), true);
         }
+      }
+    },
+    isValiDateType(value, name) {
+      const type = typeof value;
+      if (['number', 'string'].indexOf(type) == -1) {
+        throw Error(`${name}类型必须是number或者string而不是${type}`);
       }
     },
     //创建月份表
     createDateListData() {
       let { initalMonths, maxDate } = this.data;
       this.createMonthDateList(
-        +maxDate
+        maxDate !== 0
           ? Math.min(
               this.getMonthLen(new Date().getTime(), maxDate),
               initalMonths
@@ -114,11 +129,12 @@ Component({
      * @param {number} operator 0代表往后 -1 代表往前
      */
     createMonthDateList(num, operator) {
-      let { dateList, dateTextObj, disabledDate } = this.data;
+      let { dateList, dateTextObj, disabledDate, maxDate, minDate } = this.data;
       dateTextObj = Object.assign({}, SFTV, dateTextObj);
       const date = operator ? dateList[0] : dateList[dateList.length - 1] || {};
       const now =
         (date.year && new Date(date.year, date.month + operator)) || new Date();
+
       const _nowMonth = now.getMonth();
       for (let i = -operator; i < num + -operator; i++) {
         const _createNow = new Date(
@@ -130,17 +146,38 @@ Component({
         const week = this.getWeek(year, month, 1);
         const days = [];
         for (let day = -week + 1; day <= totalDay; day++) {
-          const tempWeek = this.getWeek(year, month, day);
           let className = '';
-          if (tempWeek == 0 || tempWeek == 6) {
-            className = 'week';
+          let disabled = false;
+          const nowDateTime = new Date(year, month - 1, day).getTime();
+          if (
+            !this._cntDown &&
+            day > 0 &&
+            maxDate !== 0 &&
+            nowDateTime > this.maxDateTime
+          ) {
+            disabled = true;
+            this._cntDown = true;
           }
-
+          if (
+            !this._cntTop &&
+            day > 0 &&
+            minDate !== 0 &&
+            nowDateTime < this.minDateTime
+          ) {
+            disabled = true;
+            this._cntTop = true;
+          }
+          if (!disabled) {
+            const tempWeek = this.getWeek(year, month, day);
+            if (tempWeek == 0 || tempWeek == 6) {
+              className = 'week';
+            }
+          }
           days.push({
             day,
             className,
             dateTextObj: dateTextObj[`${month}-${day}`] || false,
-            disabledDate: disabledDate[`${year}-${month}-${day}`] || false,
+            disabledDate: disabledDate[`${year}-${month}-${day}`] || disabled,
           });
         }
         !operator && dateList.push({ year, month, days });
@@ -166,7 +203,6 @@ Component({
     onPressDate(e, first = false) {
       const { dateIndex, index, day, ...dataset } =
         (e.currentTarget && e.currentTarget.dataset) || e;
-      console.log(this.data.dateList[dateIndex]['days'][index]);
 
       if (
         dateIndex === void 666 ||
@@ -199,7 +235,7 @@ Component({
     },
     //多选日期
     morePress({ dateIndex, index, year, month, day }, first = false) {
-      let { dateList, value } = this.data;
+      let { dateList, value, hashValue } = this.data;
       const { checked } = dateList[dateIndex].days[index];
       if (checked) {
         value.splice(hashValue[`${year}-${month}-${day}`], 1);
@@ -356,10 +392,35 @@ Component({
       }
       this.setData({ dateList });
     },
+    //到底顶部
+    handleScrollToUpper(e) {
+      this.top = true;
+    },
+    //到底底部
+    handleScrollToLower() {
+      this.end = true;
+    },
+    handleTouchStart() {
+      this.top = false;
+      this.end = false;
+    },
+    handleTouchEnd(e) {
+      if (this.top && !this._cntTop) {
+        this.createMonthDateList(1, -1);
+        this.top = false;
+      }
+      if (this.end && !this._cntDown) {
+        this.createMonthDateList(1, 0);
+        this.end = false;
+      }
+    },
     // 点击确定
     handleOk() {
       const { value } = this.data;
-      this.triggerEvent('confirm', { value });
+      this.setData({
+        visible: false,
+      });
+      this.triggerEvent('onConfirm', { value });
     },
     // value改变触发
     valueChange() {
@@ -368,7 +429,10 @@ Component({
     },
     //点击取消
     handleClose() {
-      this.triggerEvent('cancel', {}, {});
+      this.setData({
+        visible: false,
+      });
+      this.triggerEvent('onCancel', {}, {});
     },
   },
 });

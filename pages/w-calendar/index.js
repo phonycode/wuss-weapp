@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-01 13:25:28 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-10-24 10:36:25
+ * @Last Modified time: 2018-11-02 16:47:27
  */
 const now = new Date();
 Page({
@@ -10,15 +10,17 @@ Page({
     visible1: false,
     visible2: false,
     visible3: false,
-    defaultValue: [new Date().getTime(), '2018-12-1'],
+    defaultValue: [now.getTime(), '2018-12-1'],
+    maxDate: new Date(new Date().setMonth(now.getMonth() + 3)).getTime(),
+    minDate: now.getTime(),
     disabledDate: {
-      '2018-10-29': {
+      '2018-12-29': {
         text: '禁用',
       },
-      '2018-10-30': {
+      '2018-12-30': {
         text: '你点不到我',
       },
-      '2018-10-31': {
+      '2018-12-31': {
         text: '禁用',
       },
     },
@@ -34,7 +36,6 @@ Page({
   },
   handleCancel() {
     console.log('cancel');
-
     this.setData({
       visible1: false,
       visible2: false,
@@ -46,11 +47,16 @@ Page({
       detail: { value },
     } = date;
     console.log(value);
-
-    // wx.showModal({
-    //   title: '提示',
-    //   content: `您选择了 入住日期:${checkInDate}，离店日期:${checkOutDate},总天数:${checkTotalDay}`,
-    //   showCancel: false,
-    // });
+  },
+  handleConfirm(date) {
+    const {
+      detail: { value },
+    } = date;
+    console.log(value);
+    this.setData({
+      visible1: false,
+      visible2: false,
+      visible3: false,
+    });
   },
 });
