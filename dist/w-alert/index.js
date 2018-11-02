@@ -7,11 +7,11 @@
 import Behavior from '../common/behavior/index';
 
 /**
- * @param title 标题
- * @param content 内容
- * @param maskClose 点击遮罩层是否可关闭
- * @param buttonColor 按钮颜色
- * @param confirm 确定按钮回调
+ * @param {string} title 标题
+ * @param {string} content 内容
+ * @param {boolean} maskClose 点击遮罩层是否可关闭
+ * @param {string} buttonColor 按钮颜色
+ * @param {function} confirm 确定按钮回调
  */
 
 const DEFAULT_OPTIONS = {
