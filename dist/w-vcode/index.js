@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-11-01 10:38:31 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-01 11:15:51
+ * @Last Modified time: 2018-11-02 16:48:50
  */
 import Behavior from '../common/behavior/index';
 

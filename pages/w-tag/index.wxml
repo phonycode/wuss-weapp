@@ -13,7 +13,7 @@
 <w-tag color="blue">VIP</w-tag>
 <w-tag color="geekblue">VIP</w-tag>
 <w-tag color="purple">VIP</w-tag>
-<w-tag closeable bindafterClose="afterClose" bindclose="close" visible="{{ visible }}">点击关闭</w-tag>
+<w-tag closeable bindafterClose="afterClose" bindonClose="close" visible="{{ visible }}">点击关闭</w-tag>
 <w-tag tagStyle="color:#fff;background-color:green;border-color:green;">Green</w-tag>
 <w-tag tagStyle="color:pink;border-color:pink;">Pink</w-tag>
 

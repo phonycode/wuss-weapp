@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 17:53:43 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 14:51:31
+ * @Last Modified time: 2018-11-02 16:48:49
  */
 /**
  * @param {string} type icon类型

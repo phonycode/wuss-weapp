@@ -1,8 +1,8 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-15 14:58:27 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-11-01 09:42:24
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-11-02 16:47:48
  */
 import field from '../common/behavior/field';
 const VALIDATE_PATH = '../w-validate/index';
@@ -83,14 +83,14 @@ Component({
           obj[name] = value;
         }
       });
-      this.triggerEvent('submit', obj);
+      this.triggerEvent('onSubmit', obj);
     },
     // 重置
     reset(fields) {
       fields.forEach(e => {
         e._resetAllValue();
       });
-      this.triggerEvent('reset', {});
+      this.triggerEvent('onReset', {});
     },
   },
 });

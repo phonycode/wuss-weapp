@@ -1,8 +1,8 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-09 14:35:55 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-10 11:20:23
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-11-02 16:48:03
  */
 Component({
   externalClasses: ['wuss-class'],
@@ -139,7 +139,7 @@ Component({
     onClose(e) {
       if (this.data.mode !== 'closeable') return;
       this.setData({ show: false });
-      this.triggerEvent('close', e);
+      this.triggerEvent('onClose', e);
     },
   },
 });

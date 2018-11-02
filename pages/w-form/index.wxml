@@ -1,7 +1,7 @@
 <w-pane title="Form" desc="表单" />
 <w-form
- bindsubmit="wussFormSubmit"
- bindreset="wussFormReset"
+ bind:onSubmit="wussFormSubmit"
+ bind:onReset="wussFormReset"
  isValidateBtn
 >
 	<w-cell-group>

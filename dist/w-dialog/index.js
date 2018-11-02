@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-08 10:54:34 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-09 10:21:06
+ * @Last Modified time: 2018-11-02 16:44:50
  */
 import Behavior from '../common/behavior/index';
 
@@ -131,7 +131,7 @@ Component({
       this.setData({
         _maskShadow: false,
       });
-      this.triggerEvent('close');
+      this.triggerEvent('onClose');
     },
   },
   ready: function() {

@@ -3,7 +3,7 @@
  maskCancel="{{ true }}"
  opacity=".7"
  zIndex="900"
- bindclose="handleClose"
+ bind:onClose="handleClose"
 />
 <view
  class="wuss-class wuss-calendar-container {{ visible ? 'calendar-modal-show' : ''}}"

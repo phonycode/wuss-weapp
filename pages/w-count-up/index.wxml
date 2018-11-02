@@ -28,7 +28,7 @@
 </view>
 
 <w-form
- bind:submit="handleSubmit"
+ bind:onSubmit="handleSubmit"
 >
 	<w-cell-group>
 		<w-input

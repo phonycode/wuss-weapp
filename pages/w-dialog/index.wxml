@@ -4,7 +4,7 @@
 <w-button bind:onClick="handleClick" data-id="1" type="info">{{ visible1 ? 'on' : 'off' }}</w-button>
 <w-dialog 
   visible="{{ visible1 }}"
-  bind:close="handleClose"
+  bind:onClose="handleClose"
 >
   <view class="example-dialog" hover-class="none" hover-stop-propagation="false">
     <image style="width: 100%;height: 350px;" class="" src="http://img3.imgtn.bdimg.com/it/u=3013567159,2250112086&fm=26&gp=0.jpg" ></image>
@@ -16,7 +16,7 @@
 <w-button bind:onClick="handleClick" data-id="2" type="info">{{ visible2 ? 'on' : 'off' }}</w-button>
 <w-dialog 
   visible="{{ visible2 }}"
-  bind:close="handleClose"
+  bind:onClose="handleClose"
 >
   <view class="example-dialog" hover-class="none" hover-stop-propagation="false">
     <text>wuss 一款高质量，组件齐全，高自定义的微信小程序UI组件库</text>
@@ -29,7 +29,7 @@
 <w-dialog 
   visible="{{ visible3 }}"
   maskClose="{{ false }}"
-  bind:close="handleClose"
+  bind:onClose="handleClose"
 >
   <view class="example-dialog" hover-class="none" hover-stop-propagation="false">
     <text>点击遮罩层是无法关闭该对话框的哟~</text>

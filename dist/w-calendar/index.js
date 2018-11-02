@@ -359,7 +359,7 @@ Component({
     // 点击确定
     handleOk() {
       const { value } = this.data;
-      this.triggerEvent('confirm', { value });
+      this.triggerEvent('onConfirm', { value });
     },
     // value改变触发
     valueChange() {
@@ -368,7 +368,7 @@ Component({
     },
     //点击取消
     handleClose() {
-      this.triggerEvent('cancel', {}, {});
+      this.triggerEvent('onCancel', {}, {});
     },
   },
 });

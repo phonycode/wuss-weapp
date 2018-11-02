@@ -1,8 +1,8 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-16 21:30:31 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-17 12:19:09
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-11-02 16:48:49
  */
 Component({
   externalClasses: ['wuss-class'],
@@ -39,7 +39,7 @@ Component({
       this.triggerEvent('onClick', {});
     },
     _closeTag() {
-      this.triggerEvent('close', {});
+      this.triggerEvent('onClose', {});
       this.setData({ visible: false }, () => {
         setTimeout(() => {
           this.triggerEvent('afterClose', {});
