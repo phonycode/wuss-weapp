@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-27 14:08:39 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-27 15:09:38
+ * @Last Modified time: 2018-11-01 14:44:55
  */
 import Behavior from '../common/behavior/index';
 
@@ -32,6 +32,7 @@ Component({
   /**
    * 组件的属性列表
    * @param {string} label 标签
+   * @param {number} labelSpan 标签所占宽度
    * @param {array} defaultValue 初始化的默认值
    * @param {array} currentValue 设置当前激活的值
    * @param {boolean} showCode 返回的值是否是地址的code码
@@ -42,6 +43,10 @@ Component({
     label: {
       type: String,
       value: '请选择地址',
+    },
+    labelSpan: {
+      type: Number,
+      value: 3,
     },
     defaultValue: {
       type: Array,
@@ -86,6 +91,7 @@ Component({
       const { showCode } = this.data;
       const current = showCode ? currentCode : currentValue;
       this.setData({
+        value: currentValue,
         _currentValue: currentValue.join(' ',''),
       })
       this.triggerEvent('onChange', {

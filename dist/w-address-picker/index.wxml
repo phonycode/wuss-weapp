@@ -2,7 +2,7 @@
  label="{{ label }}"
  wuss-class-right="w-cell-right"
  wuss-class-content="w-cell-content"
- labelSpan="3"
+ labelSpan="{{ labelSpan }}"
  disabled="{{ disabled }}"
 >
 	<picker
