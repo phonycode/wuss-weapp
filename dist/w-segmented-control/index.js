@@ -35,7 +35,7 @@ Component({
    * @param {string} color 组件的主色调
    * @param {boolean} disabled 禁用
    * @param {number} defaultIndex 初始化默认的索引
-   * @param {number} styles 自定义样式
+   * @param {string} styles 自定义样式
    */
   properties: {
     options: {
