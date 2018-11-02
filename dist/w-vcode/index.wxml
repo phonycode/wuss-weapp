@@ -1,0 +1,26 @@
+<w-cell label="{{ label }}" direction="flex-start">
+	<view
+	 slot="content"
+	 class="wuss-class wuss-vcode"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	>
+		<input
+		 class="wuss-vcode-input"
+		 value="{{ value }}"
+		 type="text"
+		 placeholder="{{ placeholder }}"
+		 placeholder-class="wuss-placeholder-class"
+		 disabled="{{ disabled }}"
+		 maxlength="{{ maxLength }}"
+		 bindinput="_handleChange"
+		/>
+		<image
+		 wx:if="{{ vcodeSrc }}"
+     catchtap="_handleChangeVCode"
+		 class="wuss-vcode-image"
+		 src="{{ vcodeSrc }}"
+		/>
+		<slot wx:if="{{ !vcodeSrc }}" />
+	</view>
+</w-cell>

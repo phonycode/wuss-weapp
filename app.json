@@ -40,7 +40,9 @@
     "pages/w-rater/index",
     "pages/w-card/index",
     "pages/w-segmented-control/index",
-    "pages/w-scrollable-tab-view/index"
+    "pages/w-scrollable-tab-view/index",
+    "pages/w-vcode/index",
+    "pages/w-pane/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

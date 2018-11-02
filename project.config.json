@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 38,
+			"current": 39,
 			"list": [
 				{
 					"id": -1,
@@ -276,7 +276,13 @@
 				{
 					"id": -1,
 					"name": "w-scrollable-tab-view",
-					"pathName": "pages/w-scrollable-tab-view/index"
+					"pathName": "pages/w-scrollable-tab-view/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-vcode",
+					"pathName": "pages/w-vcode/index"
 				}
 			]
 		}
