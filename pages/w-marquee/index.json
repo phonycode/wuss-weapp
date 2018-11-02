@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "Marquee 垂直滚动视图",
   "usingComponents": {
     "w-marquee": "/dist/w-marquee/index",
     "w-marquee-item": "/dist/w-marquee-item/index",

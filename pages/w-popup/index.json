@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "Popup 弹出层",
   "usingComponents": {
     "w-popup": "/dist/w-popup/index",
     "w-button": "/dist/w-button/index",

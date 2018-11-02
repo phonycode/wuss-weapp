@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "Calendar 日历",
   "usingComponents": {
     "w-calendar": "/dist/w-calendar/index",
     "w-button": "/dist/w-button/index",

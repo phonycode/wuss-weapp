@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 37,
+			"current": 38,
 			"list": [
 				{
 					"id": -1,
@@ -270,7 +270,13 @@
 				{
 					"id": -1,
 					"name": "w-layout",
-					"pathName": "pages/w-layout/index"
+					"pathName": "pages/w-layout/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-scrollable-tab-view",
+					"pathName": "pages/w-scrollable-tab-view/index"
 				}
 			]
 		}

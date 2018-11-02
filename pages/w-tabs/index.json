@@ -2,7 +2,6 @@
   "navigationBarTitleText": "Tabs 导航切换栏",
   "usingComponents": {
     "w-tabs": "/dist/w-tabs/index",
-    "w-tab": "/dist/w-tab/index",
     "w-button": "/dist/w-button/index",
     "w-pane": "/dist/w-pane/index"
   }

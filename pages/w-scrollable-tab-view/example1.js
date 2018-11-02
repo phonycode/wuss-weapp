@@ -1,29 +1,56 @@
-// pages/w-card/index.js
+// pages/w-scrollable-tab-view/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    loading: false,
+    currentIndex: 0,
+    options1: ['关注','推荐','热榜','视频'],
+    options: [
+      {
+        containerName: '关注',
+      },
+      {
+        containerName: '推荐',
+      },
+      {
+        containerName: '热榜',
+      },
+      {
+        containerName: '视频',
+      },
+    ],
+    pageHeight: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  },
+  handleScrollableChange(e) {
+    this.setData({
+      currentIndex: e.detail.value,
+    })
   },
   handleChange(e) {
     this.setData({
-      loading: e.detail.value,
+      currentIndex: e.detail.value,
     })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.createSelectorQuery()
+    .select('.w-scrollable-tab-view-bar')
+    .boundingClientRect()
+    .exec(([node]) => {
+      this.setData({
+        pageHeight: wx.getSystemInfoSync().windowHeight - node.height,
+      })
+    })
   },
 
   /**

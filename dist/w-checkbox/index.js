@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-10 10:52:45
+ * @Last Modified time: 2018-11-01 10:09:58
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -107,6 +107,7 @@ Component({
     const {
       options
     } = this.data;
+    const value = options.filter(i => (i.checked === true));
     const _isArrayObject = this.isArrayObject(options);
     if (!_isArrayObject) {
       const newOptions = options.map(text => Object.assign({
@@ -117,7 +118,8 @@ Component({
       })
     }
     this.setData({
-      _isArrayObject
+      _isArrayObject,
+      value,
     });
   },
 });

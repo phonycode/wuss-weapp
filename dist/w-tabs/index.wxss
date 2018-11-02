@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:51 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-27 17:27:14
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-11-01 09:58:48
  */
 @import '../common/theme/global.wxss';
 
@@ -10,33 +10,34 @@ page {
   min-height: 100%;
 }
 
-.wuss-tabs-title {
+.wuss-tabs-content {
   white-space: nowrap;
   display: block;
   height: 70rpx;
   position: relative;
 }
 
-.tabs-item {
+.wuss-tabs-item {
   height: 100%;
   display: inline-block;
   text-align: center;
 }
 
-.tabs-item-title {
+.wuss-tabs-item-title {
   font-size: 15px;
   display: inline-block;
+  vertical-align: middle;
 }
 
-.tabs-item-icon {
+.wuss-tabs-item-icon {
   display: inline-block;
 }
 
-.tabs-item-title.active {
+.wuss-tabs-item-title.active {
   color: rgb(69, 143, 246);
 }
 
-.tab-line-bar {
+.wuss-tab-line-bar {
   position: absolute;
   bottom: 0;
   z-index: 100;

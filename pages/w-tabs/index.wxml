@@ -1,105 +1,55 @@
 <w-pane title="Tabs" desc="导航切换栏" />
 
 <w-pane desc="Default" />
-<w-tabs bind:onChange="handleChange">
-	<w-tab
-	 wx:for="{{ tabs4 }}"
-	 wx:key="{{ index }}"
-	 title="{{ item.text }}"
-	>
-		<view class="content">{{ item.text }}内容页</view>
-	</w-tab>
-</w-tabs>
+<w-tabs bind:onChange="handleChange" options="{{ tabs1 }}" />
+
 <w-pane desc="Initial Index = 2" />
 <w-button type="info" bind:onClick="handleSelected">selected tab2</w-button>
-<w-tabs bind:onChange="handleChange" currentIndex="{{ index }}">
-	<w-tab
-	 wx:for="{{ tabs4 }}"
-	 wx:key="{{ index }}"
-	 title="{{ item.text }}"
-	>
-		<view class="content">{{ item.text }}内容页</view>
-	</w-tab>
-</w-tabs>
+<w-tabs
+ bind:onChange="handleChange"
+ options="{{ tabs4 }}"
+ currentIndex="{{ index }}"
+/>
+
 <w-pane desc="Line Size = 1" />
-<w-tabs lineSize="1">
-	<w-tab
-	 wx:for="{{ tabs1 }}"
-	 wx:key="{{ index }}"
-	 title="{{ item.text }}"
-	>
-		<view class="content">{{ item.text }}内容页</view>
-	</w-tab>
-</w-tabs>
+<w-tabs lineSize="1" options="{{ tabs1 }}" />
+
 <w-pane desc="Active Color" />
-<w-tabs lineSize="1" activeColor="#ff8800">
-	<w-tab
-	 wx:for="{{ tabs3 }}"
-	 wx:key="{{ index }}"
-	 title="{{ item.text }}"
-	>
-		<view class="content">{{ item.text }}内容页</view>
-	</w-tab>
-</w-tabs>
+<w-tabs
+ lineSize="1"
+ activeColor="#ff8800"
+ options="{{ tabs3 }}"
+/>
+
 <w-pane desc="Icon" />
-<w-tabs textStyles="font-size: 14px;" activeColor="#ef473a">
-	<w-tab
-	 wx:for="{{ tabs2 }}"
-	 wx:key="{{ index }}"
-	 title="{{ item.text }}"
-	 icon="{{item.icon}}"
-	 iconSize="{{item.iconSize}}"
-	 iconColor="{{item.iconColor}}"
-	>
-		<view class="content">{{ item.text }}内容页</view>
-	</w-tab>
-</w-tabs>
+<w-tabs
+ textStyles="font-size: 14px;"
+ options="{{ tabs2 }}"
+ activeColor="#ef473a"
+/>
+
 <w-pane desc="Disabled Transition and DisabledItem" />
-<w-tabs transition="{{ false }}" bind:disabled="onDisabled">
-	<w-tab
-	 wx:for="{{ tabs4 }}"
-	 wx:key="{{ index }}"
-	 title="{{ item.text }}"
-	 disabled="{{ index == 2 }}"
-	>
-		<view class="content">{{ item.text }}内容页</view>
-	</w-tab>
-</w-tabs>
+<w-tabs
+ transition="{{ false }}"
+ options="{{ tabs4 }}"
+ bind:disabled="onDisabled"
+/>
 
 <w-pane desc="Scroll" />
-<w-tabs bind:onClick="handleClick">
-	<w-tab
-	 wx:for="123456"
-	 wx:key="{{index}}"
-	 title="{{ 'tab' + item }}"
-	>
-		<view class="content">{{ item }}内容页</view>
-	</w-tab>
-</w-tabs>
+<w-tabs bind:onClick="handleClick" options="{{ tabs5 }}" />
 
 <w-pane desc="Disabled Line" />
-<w-tabs transition="{{ false }}" line="{{ false }}">
-	<w-tab
-	 wx:for="{{ tabs4 }}"
-	 wx:key="{{ index }}"
-	 title="{{ item.text }}"
-	>
-		<view class="content">{{ item.text }}内容页</view>
-	</w-tab>
-</w-tabs>
+<w-tabs
+ transition="{{ false }}"
+ line="{{ false }}"
+ options="{{ tabs4 }}"
+/>
 
 <w-pane desc="Disabled Border" />
 <w-tabs
  transition="{{ false }}"
  line="{{ false }}"
  border="{{ false }}"
->
-	<w-tab
-	 wx:for="{{ tabs4 }}"
-	 wx:key="{{ index }}"
-	 title="{{ item.text }}"
-	>
-		<view class="content">{{ item.text }}内容页</view>
-	</w-tab>
-</w-tabs>
+ options="{{ tabs4 }}"
+/>
 

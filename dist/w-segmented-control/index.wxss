@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-30 17:29:29 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-31 10:34:24
+ * @Last Modified time: 2018-10-31 16:35:51
  */
 @import '../common/theme/global.wxss';
 
@@ -32,32 +32,22 @@
   position: relative;
   color: #ff9900;
   background-color: #ffffff;
+  border-right: 1rpx solid #ff9900;
 }
 
 .wuss-segmented-view.wuss-segmented-view-active {
   color: #ffffff;
-  background-color: #ff9900;
-}
-
-.wuss-segmented-view:nth-child(2n) {
-  position: relative;
-}
-
-.wuss-segmented-view:nth-child(2n) {
-  border-left: 1rpx solid #ff9900;
-  border-right: 1rpx solid #ff9900;
-}
-
-.wuss-segmented-view:nth-child(2n).wuss-segmented-view-active {
   border-color: #ffffff;
 }
 
 .wuss-segmented-view:first-child {
-  border: none;
+  border-radius: 5px 0 0 5px;
+  border-left: none;
 }
 
 
 .wuss-segmented-view:last-child {
+  border-radius: 0 5px 5px 0;
   border: none;
 }
 

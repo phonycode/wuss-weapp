@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Radio 单选框",
+  "navigationBarTitleText": "Rater 星级评分",
   "usingComponents": {
     "w-cell": "/dist/w-cell/index",
     "w-cell-group": "/dist/w-cell-group/index",

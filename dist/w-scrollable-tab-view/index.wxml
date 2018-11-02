@@ -1,0 +1,17 @@
+<swiper
+ style="height: {{ height ? height : _currentHeight }}px;width: {{ width ? width : _currentWidth }}px;"
+ circular="{{ false }}"
+ class="wuss-class wuss-scrollable-tab-view"
+ current="{{ _currentIndex }}"
+ current-item-id=""
+ duration="300"
+ bindchange="handleChange"
+ bindanimationfinish="handleAnimationFinish"
+>
+	<block wx:for="{{ options }}" wx:key="index">
+		<swiper-item class="wuss-scrollable-tab-view-container" item-id="">
+			<slot name="{{ item.containerName }}" />
+		</swiper-item>
+	</block>
+</swiper>
+

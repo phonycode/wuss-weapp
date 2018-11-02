@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-30 14:52:19 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-30 15:37:34
+ * @Last Modified time: 2018-10-31 14:44:08
  */
 @import '../common/theme/global.wxss';
 
@@ -18,6 +18,12 @@
   flex-wrap: wrap;
   position: relative;
   font-size: 15px;
+}
+
+.wuss-card-shadow {
+  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,.09);
+  box-shadow: 0 2px 8px rgba(0,0,0,.09);
+  border-color: rgba(0,0,0,.09);
 }
 
 .wuss-card::after {
@@ -110,4 +116,55 @@
 
 .wuss-card-ft-extra {
 
+}
+
+.wuss-card-loading {
+  padding: 10px 15px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.wuss-card-loading-block {
+  position: relative;
+  z-index: 1000;
+  height: 15px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(207, 216, 220, .2)), color-stop(rgba(207, 216, 220, .4)), to(rgba(207, 216, 220, .2)));
+  background: -webkit-linear-gradient(left, rgba(207, 216, 220, .2), rgba(207, 216, 220, .4), rgba(207, 216, 220, .2));
+  background: linear-gradient(90deg, rgba(207, 216, 220, .2), rgba(207, 216, 220, .4), rgba(207, 216, 220, .2));
+  -webkit-animation: loading 2s ease infinite;
+  animation: loading 2s ease infinite;
+  background-size: 500% 500%;
+}
+
+@-webkit-keyframes loading {
+
+  0%,
+  to {
+    background-position: 0 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+}
+
+@keyframes loading {
+
+  0%,
+  to {
+    background-position: 0 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
 }
