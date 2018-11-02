@@ -119,7 +119,7 @@ Component({
         if (i === 0) {
           return _options.push(v);
         } else {
-          prev = _options[i - 1][value[i - 1] || 0];
+          prev = _options[i - 1][value[i - 1] || 0] || _options[i - 1][0];
         }
         _options.push(options[i].filter(iv => prev.value === iv.parent));
       });
