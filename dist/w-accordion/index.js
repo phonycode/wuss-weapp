@@ -9,9 +9,9 @@ Component({
     [PATH]: { type: 'parent' },
   },
   /**
-   * @param {key} 携带的数据
-   * @param {title} 标题
-   * @param {disabled} 是否开启禁用
+   * @param {string} key 携带的数据
+   * @param {string} title 标题
+   * @param {boolean} disabled 是否开启禁用
    */
   properties: {
     key: null,
