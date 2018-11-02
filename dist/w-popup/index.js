@@ -74,7 +74,7 @@ Component({
       const { mask, visible } = this.data;
       if (!mask) return false; // 如果用户没开则退出
       this.setData({ maskShadow: false });
-      this.triggerEvent('close', { visible }, {});
+      this.triggerEvent('onClose', { visible }, {});
     },
     /**
      * 打开遮罩层
