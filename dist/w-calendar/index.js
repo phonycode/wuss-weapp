@@ -1,10 +1,4 @@
 import { SFTV } from './data';
-/**
- * 预定日期日历选择器
- * @augments {date} checkInDate 当前选择日期的起始时间
- * @augments {date} checkOutDate 当前选择日期的起始时间
- * @augments {number} maxMonth 最大渲染月数
- */
 Component({
   externalClasses: ['wuss-class'],
   options: {
