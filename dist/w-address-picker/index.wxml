@@ -1,4 +1,5 @@
 <w-cell
+ isLink
  label="{{ label }}"
  wuss-class-right="w-cell-right"
  wuss-class-content="w-cell-content"
