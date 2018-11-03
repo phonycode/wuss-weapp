@@ -6,10 +6,10 @@
   <w-tabs
    options="{{ options1 }}"
    lineSize="1"
-   border="{{ false }}"
    activeColor="#ff9900"
 	 currentIndex="{{ currentIndex }}"
 	 bind:onChange="handleChange"
+   wuss-class-item="w-tabs-item"
 	/>
 </view>
 

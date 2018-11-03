@@ -1,8 +1,7 @@
 Page({
   data: {
-    options: [
-      [
-        {
+    options1: [
+      [{
           key: '北京市',
           value: '110000',
         },
@@ -11,8 +10,7 @@ Page({
           value: '440000',
         },
       ],
-      [
-        {
+      [{
           key: '市辖区',
           value: '110100',
           parent: '110000',
@@ -28,8 +26,7 @@ Page({
           parent: '440000',
         },
       ],
-      [
-        {
+      [{
           key: '东城区',
           value: '110101',
           parent: '110100',
@@ -216,6 +213,51 @@ Page({
         },
       ],
     ],
+    options2: [
+      ['男', '女']
+    ],
+    options3: [
+      [{
+          key: '前端',
+          value: '0'
+        },
+        {
+          key: '后端',
+          value: '1'
+        },
+      ],
+      [{
+          key: 'Javascript',
+          value: '2',
+          parent: '0'
+        },
+        {
+          key: 'css3',
+          value: '3',
+          parent: '0'
+        },
+        {
+          key: 'html5',
+          value: '4',
+          parent: '0'
+        },
+        {
+          key: 'Java',
+          value: '5',
+          parent: '1'
+        },
+        {
+          key: 'PHP',
+          value: '6',
+          parent: '1'
+        },
+        {
+          key: 'Python',
+          value: '7',
+          parent: '1'
+        },
+      ],
+    ],
   },
-  onLoad: function(options) {},
+  onLoad: function (options) {},
 });

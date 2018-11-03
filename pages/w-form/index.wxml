@@ -28,6 +28,8 @@
     <w-validate rules="{{ isRequired }}">
       <w-cell-picker
         label="性别"
+        title="请选择性别"
+        placeholder="请选择性别"
         options="{{ [['男','女']] }}"
         name="sex"
       />

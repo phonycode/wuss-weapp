@@ -47,6 +47,7 @@ Page({
     .select('.w-scrollable-tab-view-bar')
     .boundingClientRect()
     .exec(([node]) => {
+      console.log(node.height,wx.getSystemInfoSync())
       this.setData({
         pageHeight: wx.getSystemInfoSync().windowHeight - node.height,
       })

@@ -4,10 +4,18 @@
   width: 100%;
   height: 100%;
   /* padding: 10px 0; */
-  overflow: auto;
+  overflow: hidden;
 }
 
 page {
   padding: 0;
   margin: 0;
+}
+
+.w-scrollable-tab-view-bar {
+  display: block;
+  overflow: hidden;
+}
+
+.w-tabs-item {
 }
