@@ -9,7 +9,7 @@
 				<view
 				 catchtap="handleTab"
 				 data-index="{{ index }}"
-				 class="wuss-tabs-item {{ item.disabled ? 'wuss-tabs-item-disabled' : '' }}"
+				 class="wuss-class-item wuss-tabs-item {{ item.disabled ? 'wuss-tabs-item-disabled' : '' }}"
 				 style="width:calc(100% / {{ itemThreshold > options.length ? options.length : itemThreshold }})"
 				>
 					<block wx:if="{{ item.icon }}">

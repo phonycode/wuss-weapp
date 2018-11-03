@@ -5,7 +5,7 @@
  * @Last Modified time: 2018-11-01 09:39:26
  */
 Component({
-  externalClasses: ['wuss-class'],
+  externalClasses: ['wuss-class','wuss-class-item'],
   options: {
     addGlobalClass: true,
   },

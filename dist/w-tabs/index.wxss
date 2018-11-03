@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-01 15:56:51
+ * @Last Modified time: 2018-11-02 17:33:06
  */
 @import '../common/theme/global.wxss';
 
@@ -13,13 +13,13 @@ page {
 .wuss-tabs-content {
   white-space: nowrap;
   display: block;
-  height: 70rpx;
   position: relative;
   background-color: #ffffff;
 }
 
 .wuss-tabs-item {
   height: 100%;
+  min-height: 44px;
   display: inline-block;
   text-align: center;
 }
@@ -27,12 +27,12 @@ page {
 .wuss-tabs-item-title {
   font-size: 15px;
   display: inline-block;
-  vertical-align: -7px;
+  vertical-align: -10px;
 }
 
 .wuss-tabs-item-icon {
   display: inline-block;
-  vertical-align: -7px;
+  vertical-align: -10px;
 }
 
 .wuss-tabs-item-title.active {
