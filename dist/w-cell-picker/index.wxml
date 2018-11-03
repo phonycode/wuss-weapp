@@ -10,6 +10,13 @@
 	 hover-class="none"
 	 hover-stop-propagation="false"
 	>
+		<view
+		 class="wuss-cell-picker-text-view"
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			{{ _currentText }}
+		</view>
 		<w-popup
 		 maskCancel
 		 visible="{{ _visible }}"
@@ -53,9 +60,10 @@
 			 value="{{ value }}"
 			 class="wuss-cell-picker-view"
 			 bindchange="_handleChange"
+       bindpickstart="_handleTouchStart"
 			>
 				<block
-				 wx:for="{{ _options }}"
+				 wx:for="{{ _isLinkage ? _options : options }}"
 				 wx:for-item="column"
 				 wx:for-index="columnIdx"
 				 wx:key="column"

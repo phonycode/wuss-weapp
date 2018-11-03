@@ -66,3 +66,5 @@
   flex-wrap: nowrap;
   color: #333333;
 }
+
+.wuss-cell-picker-text-view {}

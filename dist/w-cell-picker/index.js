@@ -1,12 +1,17 @@
 import Behavior from '../common/behavior/index';
+import field from '../common/behavior/field';
 
 Component({
   externalClasses: ['wuss-class'],
-  relations: {},
+  relations: {
+    '../w-form/index': {
+      type: 'ancestor',
+    },
+  },
   options: {
     addGlobalClass: true,
   },
-  behaviors: [Behavior],
+  behaviors: [Behavior,field],
   /**
    * 组件的属性列表
    * @param {array} options 传入的选项组[ [], [], [] ]
@@ -18,6 +23,7 @@ Component({
    * @param {string} confirmText 确认文本文字
    * @param {string} showValue 是否用value而不是key展示
    * @param {string} defaultKey onChange和onSelect事件返回的值是何种格式 [value,value...] [key,key,...]
+   * @param {string} placeholder 初始化默认的占位符 例如：请选择
    */
   properties: {
     options: {
@@ -60,12 +66,17 @@ Component({
       type: String,
       value: 'value',
     },
+    placeholder: {
+      type: String,
+    },
   },
   data: {
-    _visible: true,
+    _visible: false,
     value: [],
+    _currentText: '',
     _options: [],
     _isLinkage: false,
+    _isReadyConfirm: true,
   },
   methods: {
     _handleClick() {
@@ -79,18 +90,32 @@ Component({
       });
     },
     _handleConfirm() {
-      const { value } = this.data;
+      const {
+        _isReadyConfirm,
+        value,
+        showValue,
+        defaultKey
+      } = this.data;
+      if (!_isReadyConfirm) return false;
       this.setData({
         _visible: false,
       });
-      // this.triggerEvent('onSelect',{
-      //   value: this.getValues(value),
-      // },{})
+      const currentValues = this.getValues(value, defaultKey);
+      this.setData({
+        _currentText: this.getValues(value, showValue ? 'value' : 'key').join(' ', ''),
+        value: currentValues,
+      }, () => this.triggerEvent('onSelect', {
+        value: currentValues,
+      }, {}))
     },
     _ArrayKeysToArrayObject() {
-      const { options } = this.data;
+      const {
+        options
+      } = this.data;
       if (options.length <= 0) return false;
-      const { 0: items } = options;
+      const {
+        0: items
+      } = options;
       const _isArrayObject = this.isArrayObject(items);
       !_isArrayObject &&
         this.setData({
@@ -102,16 +127,44 @@ Component({
           ),
         });
     },
+    _handleTouchStart() {
+      this.setData({
+        _isReadyConfirm: false,
+      })
+    },
+    getValues(value, defaultKey) {
+      const {
+        options,
+        _options,
+        _isLinkage,
+      } = this.data;
+      let values = [];
+      const currentOpitons = _isLinkage ? _options : options;
+      const currentkey = defaultKey === 'key' ? 'key' : 'value';
+      try {
+        currentOpitons.forEach((v, i) => {
+          values[i] = !!Array.prototype.toString.call(value) ? v[value[i]][currentkey] : v[0][currentkey];
+        })
+      } catch (error) {}
+      return values;
+    },
     _handleChange(e) {
       const value = e.detail.value;
-      this.setData({ value });
+      this.setData({
+        value,
+        _isReadyConfirm: true,
+      });
       this.formatOptions();
       // this.triggerEvent('onChange',{
       //   value: this.getValues(value),
       // },{})
     },
     formatOptions() {
-      const { options, value, _isLinkage } = this.data;
+      const {
+        options,
+        value,
+        _isLinkage,
+      } = this.data;
       if (!_isLinkage) return false;
       const _options = [];
       let prev;
@@ -123,11 +176,18 @@ Component({
         }
         _options.push(options[i].filter(iv => prev.value === iv.parent));
       });
-      this.setData({ _options });
+      this.setData({
+        _options,
+      });
     },
   },
-  ready: function() {
-    const { options, defaultValue } = this.data;
+  ready: function () {
+    const {
+      options,
+      defaultValue,
+      showValue,
+      placeholder,
+    } = this.data;
     this.setData({
       value: defaultValue,
       _isLinkage: !!(
@@ -138,5 +198,8 @@ Component({
     });
     this._ArrayKeysToArrayObject();
     this.formatOptions();
+    this.setData({
+      _currentText: !!Array.prototype.toString.call(defaultValue) ? this.getValues(defaultValue,showValue ? 'value' : 'key').join(' ', '') : placeholder,
+    });
   },
 });
