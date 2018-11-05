@@ -15,6 +15,7 @@ Component({
    * @param {object} dateTextObj 日期的文本 比如节日等的渲染
    * @param {number} initalMonths 初始渲染月份
    * @param {object} disabledDate 禁用的日期
+   * @param {number} height popup弹出的高度
    */
   properties: {
     visible: Boolean,
@@ -59,6 +60,10 @@ Component({
     disabledDate: {
       type: Object,
       value: {},
+    },
+    height: {
+      type: Number,
+      value: 100,
     },
   },
   data: {

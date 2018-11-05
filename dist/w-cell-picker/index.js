@@ -82,12 +82,12 @@ Component({
     _handleClick() {
       this.setData({
         _visible: true,
-      });
+      }, () => this.triggerEvent('onOpen'));
     },
     _handleCancel() {
       this.setData({
         _visible: false,
-      });
+      },() => this.triggerEvent('onCancel'));
     },
     _handleConfirm() {
       const {
