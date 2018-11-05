@@ -5,7 +5,6 @@
  bind:onClose="handleClose"
  zIndex="{{ maskIndex }}"
 />
-
 <view class="wuss-class animate-content animate-content-{{ position }} {{ visible ? 'animate-content-open' : ''}}" style="{{ popupStyles }} {{ styles }}">
 	<view class="popup-content">
 		<slot/>
