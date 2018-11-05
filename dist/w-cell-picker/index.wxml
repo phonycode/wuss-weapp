@@ -22,7 +22,8 @@
 		 visible="{{ _visible }}"
 		 position="bottom"
 		 width="100%"
-		 padding="0"
+     padding="0"
+     zIndex="10000"
 		 bind:onClose="_handleCancel"
 		>
 			<view

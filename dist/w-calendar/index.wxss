@@ -84,23 +84,10 @@
 }
 
 .wuss-calendar-container {
-  position: fixed;
-  width: 100%;
   box-sizing: border-box;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
   background: #f7f7f7;
-  transform: translate3d(0, 100%, 0);
-  transform-origin: center;
   transition: all 0.2s ease-in-out;
-  z-index: 900;
-  visibility: hidden;
-}
-
-.calendar-modal-show {
-  transform: translate3d(0, 0, 0);
-  visibility: visible;
 }
 
 .wuss-calendar-header {
