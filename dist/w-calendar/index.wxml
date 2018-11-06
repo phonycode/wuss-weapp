@@ -4,6 +4,7 @@
  maskIndex="1000"
  zIndex="10000"
  bind:onClose="handleClose"
+ wuss-class="w-popup"
 >
 	<view
 	 class="wuss-class wuss-calendar-container"
