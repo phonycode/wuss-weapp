@@ -75,7 +75,7 @@
 			 class="wuss-calendar-date-content"
 			>
 				<view class="wuss-calendar-date-year-month">{{dateItem.year}}年{{dateItem.month}}月</view>
-				<view class="wuss-calendar-row" style="flex-wrap: wrap;margin:15rpx 0;">
+				<view class="wuss-calendar-row" style="flex-wrap: wrap;padding:15rpx 0;">
 					<view
 					 class="wuss-calendar-date-day {{item.day<=0?'bgwhite':item.className}}  {{item.checked?'active':''}} {{item.renderRange?'renderRange':''}} {{item.disabledDate?'day-diabled':''}}"
 					 style="width:calc((100vw / 7) - 10px);height:calc(100vw / 7);"
