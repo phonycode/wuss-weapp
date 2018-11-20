@@ -20,7 +20,7 @@
 		"newFeature": true,
 		"nodeModules": true
 	},
-	"compileType": "miniprogram",
+	"compileType": "plugin",
 	"libVersion": "2.3.2",
 	"appid": "wx0188295b10d5c4cf",
 	"projectname": "wuss-weapp",
