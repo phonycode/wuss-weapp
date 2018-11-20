@@ -5,7 +5,7 @@
 >
   <w-tabs
    options="{{ options1 }}"
-   lineSize="1"
+   lineSize=".5"
    activeColor="#ff9900"
 	 currentIndex="{{ currentIndex }}"
 	 bind:onChange="handleChange"

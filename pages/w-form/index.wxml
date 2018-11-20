@@ -13,8 +13,8 @@
 			 clear
 			 label="姓名"
 			/>
-    </w-validate>
-    
+		</w-validate>
+
 		<w-validate rules="{{ { mode:['mobile'] } }}">
 			<w-input
 			 type="mobile"
@@ -23,31 +23,40 @@
 			 placeholder="请输入你的手机号"
 			 label="手机号"
 			/>
-    </w-validate>
+		</w-validate>
 
-    <w-validate rules="{{ isRequired }}">
-      <w-cell-picker
-        label="性别"
-        title="请选择性别"
-        placeholder="请选择性别"
-        options="{{ [['男','女']] }}"
-        name="sex"
-      />
-    </w-validate>
-    
+		<w-validate rules="{{ isRequired }}">
+			<w-cell-picker
+			 label="性别"
+			 title="请选择性别"
+			 placeholder="请选择性别"
+			 options="{{ [['男','女']] }}"
+			 name="sex"
+			 bind:onOpen="handlePickerOpen"
+			 bind:onCancel="handlePickerCancel"
+			/>
+		</w-validate>
+
 		<w-validate rules="{{ isRequired }}">
 			<w-address-picker label="选择地区" name="region" />
-    </w-validate>
-    
-		<w-validate rules="{{ isRequired }}">
-      <w-input
-       clear
-       type="textarea"
-       label="地址"
-       name="address"
-       placeholder="请输入详细地址..."
-      />
-    </w-validate>
+		</w-validate>
+
+		<view
+		 hidden="{{ textarea_visible }}"
+		 class=""
+		 hover-class="none"
+		 hover-stop-propagation="false"
+		>
+			<w-validate rules="{{ isRequired }}">
+				<w-input
+				 clear
+				 type="textarea"
+				 label="地址"
+				 name="address"
+				 placeholder="请输入详细地址..."
+				/>
+			</w-validate>
+		</view>
 
 		<w-cell label="同意用户协议信息">
 			<w-switch name="isVip" slot="content" />

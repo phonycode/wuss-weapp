@@ -31,13 +31,13 @@
 1. 通过使用shell命令或git定位到当前小程序开发目录，然后使用npm或者yarn安装依赖。
 
 ```shell
-npm install --production wuss-weapp
+npm init && npm install --production wuss-weapp
 ```
 
 或者
 
 ```shell
-yarn add --production wuss-weapp
+yarn init && yarn add --production wuss-weapp
 ```
 
 2. 当依赖安装完成后即可在微信小程序开发者工具里点击 [工具] => [构建npm]，此时若出现弹窗则记得吧 “使用npm模块” 勾上，若无弹窗则待构建完成后在详情里面手动勾上 “使用npm模块”。
@@ -47,7 +47,9 @@ yarn add --production wuss-weapp
 
 ```json
 "usingComponents": {
-  "w-button": "wuss-weapp/w-button/index"
+  "w-button": "wuss-weapp/w-button/index",
+  "w-toast": "wuss-weapp/w-toast/index",
+  "w-alert": "wuss-weapp/w-alert/index"
 }
 ```
 
@@ -55,6 +57,8 @@ yarn add --production wuss-weapp
 
 ```html
 <w-button type="info" bind:onClick="buttonClick">这是一个按钮</w-button>
+<w-toast id="wuss-toast" />
+<w-alert id="wuss-alert" />
 ```
 
 5. 在JavaScript中使用:

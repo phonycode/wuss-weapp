@@ -1,109 +1,110 @@
-<w-mask-shadow
+<w-popup
  visible="{{ visible }}"
- maskCancel="{{ true }}"
- opacity=".7"
- zIndex="900"
+ height="{{ height }}%"
+ maskIndex="1000"
+ zIndex="10000"
  bind:onClose="handleClose"
-/>
-<view
- class="wuss-class wuss-calendar-container {{ visible ? 'calendar-modal-show' : ''}}"
- style="height: 100vh;"
- hover-class="none"
- hover-stop-propagation="false"
+ wuss-class="w-popup"
 >
 	<view
-	 class="wuss-calendar-header"
+	 class="wuss-class wuss-calendar-container"
 	 hover-class="none"
 	 hover-stop-propagation="false"
 	>
-		<w-button
-		 wuss-class="wuss-calendar-date-btn"
-		 type="primary"
-		 catchtap="handleClose"
+		<view
+		 class="wuss-calendar-header"
+		 hover-class="none"
+		 hover-stop-propagation="false"
 		>
-			取消
-		</w-button>
-		<view class="wuss-calendar-title wuss-calendar-centered">
-			选择日期
+			<w-button
+			 wuss-class="wuss-calendar-date-btn"
+			 type="primary"
+			 catchtap="handleClose"
+			>
+				取消
+			</w-button>
+			<view class="wuss-calendar-title wuss-calendar-centered">
+				选择日期
+			</view>
+			<w-button
+			 wuss-class="wuss-calendar-date-btn"
+			 type="primary"
+			 catchtap="handleOk"
+			>
+				确定
+			</w-button>
 		</view>
-		<w-button
-		 wuss-class="wuss-calendar-date-btn"
-		 type="primary"
-		 catchtap="handleOk"
+		<view
+		 class="wuss-calendar-week-content"
+		 hover-class="none"
+		 hover-stop-propagation="false"
 		>
-			确定
-		</w-button>
-	</view>
-	<view
-	 class="wuss-calendar-week-content"
-	 hover-class="none"
-	 hover-stop-propagation="false"
-	>
-		<view class="wuss-calendar-week-list">
-			<view class="wuss-calendar-row">
-				<text
+			<view class="wuss-calendar-week-list">
+				<view class="wuss-calendar-row">
+					<text
 				 class="wuss-calendar-date-week"
 				 style="width:calc((100vw / 7) - 10px);height:20px"
 				 wx:for="{{weekStr}}"
 				 wx:key="{{item}}"
 				>
 					<text wx:if="{{item !== '日' && item !== '六'}}">{{item}}</text>
-				<text wx:if="{{item === '日' || item === '六'}}" class="week" >{{item}}</text>
-				</text>
-			</view>
-		</view>
-	</view>
-	<scroll-view
-	 class="wuss-calendar-month-content"
-	 scroll-x="false"
-	 scroll-y="true"
-	 upper-threshold="50"
-	 lower-threshold="50"
-	 scroll-with-animation="true"
-	 enable-back-to-top="true"
-	 bind:touchstart="handleTouchStart"
-	 bind:touchend="handleTouchEnd"
-	 bind:scrolltoupper="handleScrollToUpper"
-	 bind:scrolltolower="handleScrollToLower"
-	 style="height: calc(100vh - 84px);"
-	>
-		<view
-		 wx:for="{{dateList}}"
-		 wx:key="{{item.year+item.month}}"
-		 wx:for-item="dateItem"
-		 wx:for-index="dateIndex"
-		 class="wuss-calendar-date-content"
-		>
-			<view class="wuss-calendar-date-year-month">{{dateItem.year}}年{{dateItem.month}}月</view>
-			<view class="wuss-calendar-row" style="flex-wrap: wrap;margin:15rpx 0;">
-				<view
-				 class="wuss-calendar-date-day {{item.day<=0?'bgwhite':item.className}}  {{item.checked?'active':''}} {{item.renderRange?'renderRange':''}} {{item.disabledDate?'day-diabled':''}}"
-				 style="width:calc((100vw / 7) - 10px);height:calc(100vw / 7);"
-				 data-year="{{dateItem.year}}"
-				 data-month="{{dateItem.month}}"
-				 data-day="{{item.day}}"
-				 data-date-index="{{dateIndex}}"
-				 data-index="{{index}}"
-				 bindtap="onPressDate"
-				 wx:for="{{dateItem.days}}"
-				 wx:key="{{item.day}}"
-				>
-					<view class='wuss-calendar-item-days' wx:if="{{item.day >0}}">
-						<text style='font-size:28rpx;'>{{item.day}}</text>
-						<text class="wuss-calendar-item-days-text" wx:if="{{item.checkedText}}">{{item.checkedText}}</text>
-						<text class="wuss-calendar-item-days-text" wx:elif="{{item.disabledDate}}" >
-							{{item.disabledDate.text}}
-						</text>
-						<text class="wuss-calendar-item-days-text" wx:elif="{{item.dateTextObj}}" >
-							{{item.dateTextObj.text}}
-						</text>
-					</view>
+					<text wx:if="{{item === '日' || item === '六'}}" class="week" >{{item}}</text>
+					</text>
 				</view>
 			</view>
 		</view>
-	</scroll-view>
-	<!-- <view class="wuss-calendar-footer">
+		<scroll-view
+		 class="wuss-calendar-month-content"
+		 scroll-x="false"
+		 scroll-y="true"
+		 upper-threshold="50"
+		 lower-threshold="50"
+		 scroll-with-animation="true"
+		 enable-back-to-top="true"
+		 bind:touchstart="handleTouchStart"
+		 bind:touchend="handleTouchEnd"
+		 bind:scrolltoupper="handleScrollToUpper"
+		 bind:scrolltolower="handleScrollToLower"
+		 style="height: calc(100vh - 84px);"
+		>
+			<view
+			 wx:for="{{dateList}}"
+			 wx:key="{{item.year+item.month}}"
+			 wx:for-item="dateItem"
+			 wx:for-index="dateIndex"
+			 class="wuss-calendar-date-content"
+			>
+				<view class="wuss-calendar-date-year-month">{{dateItem.year}}年{{dateItem.month}}月</view>
+				<view class="wuss-calendar-row" style="flex-wrap: wrap;padding:15rpx 0;">
+					<view
+					 class="wuss-calendar-date-day {{item.day<=0?'bgwhite':item.className}}  {{item.checked?'active':''}} {{item.renderRange?'renderRange':''}} {{item.disabledDate?'day-diabled':''}}"
+					 style="width:calc((100vw / 7) - 10px);height:calc(100vw / 7);"
+					 data-year="{{dateItem.year}}"
+					 data-month="{{dateItem.month}}"
+					 data-day="{{item.day}}"
+					 data-date-index="{{dateIndex}}"
+					 data-index="{{index}}"
+					 bindtap="onPressDate"
+					 wx:for="{{dateItem.days}}"
+					 wx:key="{{item.day}}"
+					>
+						<view class='wuss-calendar-item-days' wx:if="{{item.day >0}}">
+							<text style='font-size:28rpx;'>{{item.day}}</text>
+							<text class="wuss-calendar-item-days-text" wx:if="{{item.checkedText}}">{{item.checkedText}}</text>
+							<text class="wuss-calendar-item-days-text" wx:elif="{{item.disabledDate}}" >
+							{{item.disabledDate.text}}
+						</text>
+							<text class="wuss-calendar-item-days-text" wx:elif="{{item.dateTextObj}}" >
+							{{item.dateTextObj.text}}
+						</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+		<!-- <view class="wuss-calendar-footer">
 		你好
 	</view> -->
-</view>
+	</view>
+</w-popup>
 

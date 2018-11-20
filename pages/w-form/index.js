@@ -55,6 +55,13 @@ Page({
         ...MOCK_DATA,
       },
     ],
+    textarea_visible: true,
+  },
+  handlePickerOpen() {
+    this.setData({ textarea_visible: true })
+  },
+  handlePickerCancel() {
+    this.setData({ textarea_visible: false })
   },
   wussFormSubmit(e) {
     console.log('提交了:', e.detail);

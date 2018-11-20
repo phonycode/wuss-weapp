@@ -198,6 +198,13 @@
 			 link="../w-activity-indicator/index"
 			 wuss-class="w-cell"
 			/>
+			<w-cell
+				isLink
+				highlight
+				label="IndexIndicator 索引指示器"
+				link="../w-index-indicator/index"
+				wuss-class="w-cell"
+			/>
 		</w-cell-group>
 
 		<w-pane desc="表单" wuss-class="w-pane" />
