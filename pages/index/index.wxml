@@ -109,8 +109,8 @@
 			 label="Popup 弹出层"
 			 link="../w-popup/index"
 			 wuss-class="w-cell"
-      />
-      <w-cell
+			/>
+			<w-cell
 			 isLink
 			 highlight
 			 label="ScrollableTabView 滑动视图"
@@ -130,8 +130,8 @@
 			 label="Tabs 导航切换栏"
 			 link="../w-tabs/index"
 			 wuss-class="w-cell"
-      />
-      <w-cell
+			/>
+			<w-cell
 			 isLink
 			 highlight
 			 label="SegmentedControl 分段器"
@@ -197,13 +197,6 @@
 			 label="ActivityIndicator 活动指示器"
 			 link="../w-activity-indicator/index"
 			 wuss-class="w-cell"
-			/>
-			<w-cell
-				isLink
-				highlight
-				label="IndexIndicator 索引指示器"
-				link="../w-index-indicator/index"
-				wuss-class="w-cell"
 			/>
 		</w-cell-group>
 
@@ -278,8 +271,8 @@
 			 label="Number 步进器"
 			 link="../w-number/index"
 			 wuss-class="w-cell"
-      />
-      <w-cell
+			/>
+			<w-cell
 			 isLink
 			 highlight
 			 label="VCode 验证码"
@@ -317,8 +310,8 @@
 			 label="Marquee 垂直滚动"
 			 link="../w-marquee/index"
 			 wuss-class="w-cell"
-      />
-      <w-cell
+			/>
+			<w-cell
 			 isLink
 			 highlight
 			 label="Rater 星级评分"

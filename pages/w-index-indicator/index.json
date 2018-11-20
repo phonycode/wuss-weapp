@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "IndexIndicator 索引指示器",
-  "usingComponents": {
-    "w-index": "/dist/w-index-indicator/index",
-    "w-pane": "/dist/w-pane/index"
-  }
-}
