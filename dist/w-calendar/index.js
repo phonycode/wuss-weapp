@@ -267,7 +267,7 @@ Component({
       this.clearRangeStyle();
       const newDay = dateList[dateIndex]['days'][index];
       if (date1 && !date2) {
-        date2 = new Date(year, month + 1, day);
+        date2 = new Date(year, month - 1, day);
         if (date1.getTime() === date2.getTime()) {
           endDayText = startDayText + endDayText;
         }
@@ -308,7 +308,7 @@ Component({
         this.setData(
           {
             dateList,
-            value: [new Date(year, month + 1, day)],
+            value: [new Date(year, month - 1, day)],
             hashDays: [newDay],
           },
           () => {
