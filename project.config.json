@@ -20,8 +20,8 @@
 		"newFeature": true,
 		"nodeModules": true
 	},
-	"compileType": "plugin",
-	"libVersion": "2.3.2",
+	"compileType": "miniprogram",
+	"libVersion": "2.4.1",
 	"appid": "wx0188295b10d5c4cf",
 	"projectname": "wuss-weapp",
 	"isGameTourist": false,

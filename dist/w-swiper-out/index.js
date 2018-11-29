@@ -1,6 +1,6 @@
 /*
- * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
- * @Date: 2018-09-06 16:23:23 
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Date: 2018-09-06 16:23:23
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
  * @Last Modified time: 2018-09-21 16:45:46
  */
@@ -90,17 +90,27 @@ Component({
      * movable-view 鼠标按下回调
      */
     handleTouchStart(e) {
-      const { pageX } = e.changedTouches['0'];
-      this.setData({ _startX: pageX });
+      const { pageX, pageY } = e.changedTouches['0'];
+      this.setData({ _startX: pageX, _startY: pageY });
     },
     /**
      * movable-view 鼠标松开回调
      */
     handleTouchEnd(e) {
-      const { pageX } = e.changedTouches['0'];
-      const { _startX, _slideWidth, _threshold, disabled } = this.data;
+      const { pageX, pageY } = e.changedTouches['0'];
+      const {
+        _startX,
+        _startY,
+        _slideWidth,
+        _threshold,
+        disabled,
+        height,
+      } = this.data;
       if (disabled) return false;
-      if (_startX - pageX >= _threshold) {
+      if (
+        _startX - pageX >= _threshold &&
+        Math.abs(_startY - pageY) <= height
+      ) {
         this.setData({
           _scrollX: -_slideWidth,
         });

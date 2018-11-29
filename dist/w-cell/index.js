@@ -35,7 +35,7 @@ Component({
    * @param {string} isLink 是否是链接 开启后显示右边箭头
    * @param {string} link   isLink为true时,link为跳转的url
    * @param {string} icon   标题图标
-   * @param {string} iconSize  图标大小
+   * @param {number} iconSize  图标大小
    * @param {string} iconColor   图标颜色
    * @param {number} delta   当linkType值为 navigateBack 时有效，表示返回页面层数
    * @param {string} linkType  跳转类型，类型有 [navigateTo/redirectTo/switchTab/reLaunch/navigateBack]
@@ -47,18 +47,15 @@ Component({
   properties: {
     label: {
       type: String,
-      value: '',
     },
     labelSpan: {
       type: Number,
     },
     content: {
       type: String,
-      valie: '',
     },
     desc: {
       type: String,
-      valie: '',
     },
     isLink: {
       type: Boolean,
@@ -66,19 +63,15 @@ Component({
     },
     link: {
       type: String,
-      valie: '',
     },
     icon: {
       type: String,
-      valie: '',
     },
     iconSize: {
-      type: String,
-      valie: '',
+      type: Number,
     },
     iconColor: {
       type: String,
-      valie: '',
     },
     delta: {
       type: Number,
