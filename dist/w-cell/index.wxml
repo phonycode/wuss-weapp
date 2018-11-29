@@ -34,7 +34,7 @@
 		<w-icon
 		 type="arrow-right"
 		 color="#c8c8cd"
-		 size="18px"
+		 size="18"
 		/>
 	</view>
 </view>
