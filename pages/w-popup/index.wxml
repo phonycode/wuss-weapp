@@ -81,7 +81,7 @@
 
 <w-button type="info" bind:onClick="handleClick5">Info</w-button>
 <w-popup
- mask-cancel="{{ false }}"
+ maskCancel="{{ false }}"
  visible="{{ popup5 }}"
  position="bottom"
  height="250px"
