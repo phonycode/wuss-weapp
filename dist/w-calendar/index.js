@@ -114,6 +114,7 @@ Component({
         0
       );
     },
+    //获取相差的长度
     getMonthLen(date1, date2) {
       const year1 = new Date(date1).getFullYear(),
         month1 = new Date(date1).getMonth(),
@@ -123,7 +124,7 @@ Component({
       return len < 0 ? 1 : len + 1;
     },
     /**
-     *
+     * 创建月份表
      * @param {number} num 加载几个月
      * @param {number} operator 0代表往后 -1 代表往前
      */
@@ -133,12 +134,12 @@ Component({
       const date = operator ? dateList[0] : dateList[dateList.length - 1] || {};
       const now =
         (date.year && new Date(date.year, date.month + operator)) || new Date();
-
+      now.setDate(1);
       const _nowMonth = now.getMonth();
       for (let i = -operator; i < num + -operator; i++) {
-        const _createNow = new Date(
-          new Date(now.getTime()).setMonth(_nowMonth + (operator ? -i : i))
-        );
+        const _createNow = new Date(now.getTime());
+        _createNow.setMonth(_nowMonth + (operator ? -i : i));
+
         const year = _createNow.getFullYear();
         const month = _createNow.getMonth() + 1;
         const totalDay = this.getTotalDayByMonth(year, month);
