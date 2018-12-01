@@ -1,8 +1,8 @@
 /*
- * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
- * @Date: 2018-09-01 13:25:28 
+ * @Author: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Date: 2018-09-01 13:25:28
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-11-02 16:47:27
+ * @Last Modified time: 2018-12-01 09:59:19
  */
 const now = new Date();
 Page({
@@ -11,7 +11,7 @@ Page({
     visible2: false,
     visible3: false,
     defaultValue: [now.getTime(), '2018-12-1'],
-    maxDate: new Date(new Date().setMonth(now.getMonth() + 3)).getTime(),
+    maxDate: new Date().setMonth(now.getMonth() + 3),
     minDate: now.getTime(),
     disabledDate: {
       '2018-12-29': {

@@ -136,6 +136,8 @@ Component({
         (date.year && new Date(date.year, date.month + operator)) || new Date();
       now.setDate(1);
       const _nowMonth = now.getMonth();
+      let _cntDown = false;
+      let _cntTop = false;
       for (let i = -operator; i < num + -operator; i++) {
         const _createNow = new Date(now.getTime());
         _createNow.setMonth(_nowMonth + (operator ? -i : i));
@@ -156,7 +158,7 @@ Component({
             nowDateTime > this.maxDateTime
           ) {
             disabled = true;
-            this._cntDown = true;
+            _cntDown = true;
           }
           if (
             !this._cntTop &&
@@ -165,7 +167,7 @@ Component({
             nowDateTime < this.minDateTime
           ) {
             disabled = true;
-            this._cntTop = true;
+            _cntTop = true;
           }
           if (!disabled) {
             const tempWeek = this.getWeek(year, month, day);
@@ -183,6 +185,8 @@ Component({
         !operator && dateList.push({ year, month, days });
         operator && dateList.unshift({ year, month, days });
       }
+      this._cntDown = _cntDown;
+      this._cntTop = _cntTop;
       this.setData({ dateList });
     },
     /*
