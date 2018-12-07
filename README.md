@@ -10,6 +10,10 @@
 
 [https://phonycode.github.io/wuss-weapp](https://phonycode.github.io/wuss-weapp)
 
+### Wuss Weapp 官方交流群
+
+QQ 群号 787275772
+
 ## 扫码体验
 
 使用微信扫一扫体验小程序组件示例
@@ -105,9 +109,6 @@ git clone https://github.com/phonycode/wuss-weapp.git
 
 然后，直接将项目在微信开发者工具中打开即可。
 
-### Wuss Weapp 官方交流群
-
-QQ 群号 787275772
 
 ## 贡献
 
