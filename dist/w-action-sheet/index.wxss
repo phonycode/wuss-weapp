@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-12 14:03:52 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-13 09:12:18
+ * @Last Modified time: 2018-12-10 11:26:57
  */
 @import '../common/theme/global.wxss';
 
@@ -20,8 +20,8 @@
 
 .wuss-action-sheet-btns {}
 
-.wuss-action-sheet-btn,
-.wuss-action-sheet-cancel {
+button.wuss-action-sheet-btn,
+button.wuss-action-sheet-cancel {
   position: relative;
   display: flex;
   flex: 1;
@@ -34,16 +34,36 @@
   color: #333333;
   padding: 0;
   min-height: 48px;
+  line-height: initial;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+  border: none;
 }
 
-.wuss-action-sheet-btn::after,
-.wuss-action-sheet-cancel::after {
+
+button.wuss-action-sheet-btn::before,
+button.wuss-action-sheet-cancel::before {
+  display: none;
+}
+
+button.wuss-action-sheet-btn::after,
+button.wuss-action-sheet-cancel::after {
   content: " ";
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
+  margin: 0;
+  padding: 0;
   height: 1px;
+  box-shadow: none;
+  text-shadow: none;
+  line-height: initial;
+  outline: none;
+  border: none;
+  border-radius: 0;
   background-color: #d9d9d9;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
@@ -51,22 +71,22 @@
   transform: scaleY(.5);
 }
 
-.wuss-action-sheet-btn-hover {
+button.wuss-action-sheet-btn.wuss-action-sheet-btn-hover {
   background: #ececec;
 }
 
-.wuss-action-sheet-btn:first-child::after {
+button.wuss-action-sheet-btn:first-child::after {
   /* display: none; */
 }
 
 .wuss-action-sheet-btn {}
 
-.wuss-action-sheet-btn w-icon,
-.wuss-action-sheet-btn w-activity-indicator {
+button.wuss-action-sheet-btn w-icon,
+button.wuss-action-sheet-btn w-activity-indicator {
   margin-right: 5px;
 }
 
-.wuss-action-sheet-btn-disabled {
+button.wuss-action-sheet-btn-disabled {
   color: #b2b2b2;
 }
 
