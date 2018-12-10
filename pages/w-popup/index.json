@@ -3,6 +3,8 @@
   "usingComponents": {
     "w-popup": "/dist/w-popup/index",
     "w-button": "/dist/w-button/index",
+    "w-qr-code": "/dist/w-qr-code/index",
+    "w-icon": "/dist/w-icon/index",
     "w-pane": "/dist/w-pane/index"
   }
 }

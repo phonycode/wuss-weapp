@@ -59,6 +59,23 @@
 	</scroll-view>
 </w-popup>
 <w-button type="info" bind:onClick="handleClick4">Right</w-button>
+
+<w-popup
+ visible="{{ popup6 }}"
+ position="main"
+ height="45%"
+ width="72%"
+ padding="0"
+ bind:onClose="handleClose"
+ wuss-class="wuss-popup"
+>
+  <view class="demo-popup-6">
+    <w-qr-code size="200" text="hello world" />
+    <w-icon bindtap="handleClose" type="close" color="#999999" wuss-class="w-icon" />
+  </view>
+</w-popup>
+<w-button type="info" bind:onClick="handleClick6">Main</w-button>
+
 <w-popup
  visible="{{ popup4 }}"
  position="right"
@@ -95,7 +112,7 @@
 		 hover-class="none"
 		 hover-stop-propagation="false"
 		>
-			{{ index }}
+			下拉点击关闭按钮{{ index }}
 		</view>
 	  <w-button type="info" bind:onClick="handleClose">关闭</w-button>
 	</scroll-view>
