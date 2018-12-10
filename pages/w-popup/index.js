@@ -5,6 +5,7 @@ Page({
     popup3: false,
     popup4: false,
     popup5: false,
+    popup6: false,
   },
   handleClose() {
     this.setData({
@@ -13,6 +14,7 @@ Page({
       popup3: false,
       popup4: false,
       popup5: false,
+      popup6: false,
     });
   },
   handleClick1() {
@@ -29,5 +31,8 @@ Page({
   },
   handleClick5() {
     this.setData({ popup5: true });
+  },
+  handleClick6() {
+    this.setData({ popup6: true });
   },
 });

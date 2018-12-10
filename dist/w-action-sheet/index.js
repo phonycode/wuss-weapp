@@ -16,7 +16,7 @@ Component({
   /**
    * 组件的属性列表
    * @param {boolean} visible 是否可见
-   * @param {array} options 当前传出的菜单列表
+   * @param {array} options 当前传出的菜单列表 openType: contact|share|getUserInfo|openSetting|feedback
    * @param {boolean} maskCancel 点击遮罩是否可关闭
    * @param {boolean} showCancel  是否展示取消按钮
    * @param {string} cancelText 取消按钮文字

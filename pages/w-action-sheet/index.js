@@ -6,10 +6,12 @@ Page({
       {
         text: '分享给朋友',
         type: 'share',
+        openType: 'share',
       },
       {
         text: '分享到朋友圈',
         type: 'shareTimeLine',
+        openType: 'share',
       },
     ],
     items2: [
@@ -17,11 +19,13 @@ Page({
         text: '分享给朋友',
         type: 'share',
         icon: 'forward-o',
+        openType: 'share',
       },
       {
         text: '分享到朋友圈',
         type: 'shareTimeLine',
         icon: 'share',
+        openType: 'share',
       },
     ],
     items3: [
@@ -29,11 +33,13 @@ Page({
         text: '分享给朋友',
         type: 'share',
         icon: 'forward-o',
+        openType: 'share',
       },
       {
         text: '分享到朋友圈',
         type: 'shareTimeLine',
         icon: 'share',
+        openType: 'share',
       },
     ],
     items4: [
@@ -41,11 +47,13 @@ Page({
         text: '分享给朋友',
         type: 'share',
         icon: 'forward-o',
+        openType: 'share',
       },
       {
         text: '分享到朋友圈',
         type: 'shareTimeLine',
         icon: 'share',
+        openType: 'share',
       },
     ],
     items5: [
@@ -53,21 +61,25 @@ Page({
         text: '分享给朋友',
         type: 'share',
         icon: 'forward-o',
+        openType: 'share',
       },
       {
         text: '分享到朋友圈',
         type: 'shareTimeLine',
         icon: 'share',
+        openType: 'share',
       },
     ],
     items6: [
       {
         text: '分享给朋友',
         type: 'share',
+        openType: 'share',
       },
       {
         text: '分享到朋友圈',
         type: 'shareTimeLine',
+        openType: 'share',
       },
     ],
   },
@@ -108,4 +120,14 @@ Page({
       options: [{text: 'ActionSheet.hide()',type: 'hide'}],
     })
   },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '自定义转发标题',
+      path: '/page/user?id=123'
+    }
+  }
 });
