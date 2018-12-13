@@ -11,6 +11,10 @@ about: 使用 wuss-weapp 遇到的问题
 重现行为的步骤：
 1.点击
 
+*代码判断*
+尽量提供可复现代码，[查看如何创建代码片段](https://developers.weixin.qq.com/miniprogram/dev/devtools/minicode.html?search-key=%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5)
+代码片段地址：
+
 *预期行为*。
 对你期望发生的事情的清晰而简明的描述。
 
