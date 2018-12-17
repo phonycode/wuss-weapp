@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-31 15:30:11 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:27:04
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-12-12 16:11:04
  */
 Component({
   externalClasses: ['wuss-class'],
@@ -21,11 +21,9 @@ Component({
   properties: {
     title: {
       type: String,
-      value: '',
     },
     desc: {
       type: String,
-      value: '',
     },
     tsize: {
       type: Number,
