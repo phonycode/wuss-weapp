@@ -27,7 +27,9 @@ Component({
   /**
    * 组件选项
    */
-   options: {},
+   options: {
+    addGlobalClass: true,
+   },
    
   /**
    * 组件间关系定义
