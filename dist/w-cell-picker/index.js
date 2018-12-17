@@ -94,19 +94,24 @@ Component({
         _isReadyConfirm,
         value,
         showValue,
+        _currentValue,
         defaultKey
       } = this.data;
       if (!_isReadyConfirm) return false;
       this.setData({
         _visible: false,
       });
-      const currentValues = this.getValues(value, defaultKey);
+      const currentValues = this.getValues(_currentValue, defaultKey);
+      if(JSON.stringify(currentValues) === JSON.stringify(value)) {
+        this.setData({
+          value: currentValues,
+        })  
+      };
       this.setData({
-        _currentText: this.getValues(value, showValue ? 'value' : 'key').join(' ', ''),
-        value: currentValues,
+        _currentText: this.getValues(_currentValue, showValue ? 'value' : 'key').join(' ', ''),
       }, () => this.triggerEvent('onSelect', {
         value: currentValues,
-      }, {}))
+      }, {}));
     },
     _ArrayKeysToArrayObject() {
       const {
@@ -151,13 +156,10 @@ Component({
     _handleChange(e) {
       const value = e.detail.value;
       this.setData({
-        value,
+        _currentValue: value,
         _isReadyConfirm: true,
       });
       this.formatOptions();
-      // this.triggerEvent('onChange',{
-      //   value: this.getValues(value),
-      // },{})
     },
     formatOptions() {
       const {
@@ -188,6 +190,7 @@ Component({
       showValue,
       placeholder,
     } = this.data;
+    if(!Array.isArray(options) || !Array.prototype.toString.call(options)) throw Error('Missing required parameters : options');
     this.setData({
       value: defaultValue,
       _isLinkage: !!(
