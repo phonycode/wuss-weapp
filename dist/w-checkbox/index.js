@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 14:17:06
+ * @Last Modified time: 2018-11-29 15:28:15
  */
 import Behavior from '../common/behavior/index';
 import field from '../common/behavior/field';
@@ -25,11 +25,11 @@ Component({
   /**
    * 组件的属性列表
    * @param {string} color 颜色
-   * @param {string} disabled 禁用
+   * @param {boolean} disabled 禁用
    * @param {string} title 标题
    * @param {string} direction 方向，可选值有[left/right]
    * @param {string} iconType  checkbox图标类型，可选值有[circle,box,check]
-   * @param {string} [options] 传入的数组对象，参数有 label,checked,disabled
+   * @param {array} [options] 传入的数组对象，参数有 label,checked,disabled
    */
   properties: {
     color: {
@@ -42,7 +42,6 @@ Component({
     },
     title: {
       type: String,
-      value: '',
     },
     direction: {
       type: String,
@@ -55,9 +54,6 @@ Component({
     options: {
       type: Array,
       value: [],
-      observer(val) {
-
-      },
     },
   },
   data: {
