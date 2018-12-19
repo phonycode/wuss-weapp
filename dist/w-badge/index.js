@@ -1,19 +1,15 @@
-/*
- * @Author: Github.Juzhiqiang 
- * @Date: 2018-08-30 15:49:51 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:24:08
- */
-
 Component({
-  externalClasses: ['wuss-class', 'wuss-button-hover-class'],
+  externalClasses: [
+    'wuss-class',
+    'wuss-button-hover-class',
+    'wuss-class-badge',
+  ],
   options: {
     addGlobalClass: true,
   },
   /**
    * 组件的属性列表
    * @param {string} icon 添加按钮图标
-   * @param {string} openType 设置开放数据, 可选值为 [contact|share|getUserInfo|openSetting|feedback]
    * @param {string} type 按钮样式类型，可选值为 []
    * @param {string} styles 按钮的自定义样式
    * @param {string} color 自定义按钮颜色
@@ -33,10 +29,6 @@ Component({
     iconSize: {
       type: String,
       value: '20px',
-    },
-    openType: {
-      type: String,
-      value: '',
     },
     type: {
       type: String,
@@ -59,41 +51,36 @@ Component({
       value: false,
     },
     max: {
-      type: [Number, String],
+      type: Number,
       value: 99,
     },
     value: {
-      type: [Number, String],
+      type: Number,
       value: 0,
     },
   },
+  data: {
+    isMax: false,
+  },
   methods: {
     initStyles() {
-      const { styles, color, bgColor } = this.data;
-      let buttonStyles = '';
-      buttonStyles +=
+      let { styles, color, bgColor } = this.data;
+      styles +=
         ` ${styles}` +
         (color ? `color: ${color}!important;` : '') +
         (bgColor ? ` background-color: ${bgColor}!important;` : '');
-      this.setData({
-        buttonStyles,
-      });
+      this.setData({ styles });
+    },
+    handleClick() {
+      this.triggerEvent('onClick', { ...e }, {});
     },
   },
   ready: function() {
     this.initStyles();
-  },
-  attached: function() {
-    let host = this;
-    let data = host.data;
-    let max = parseInt(data.max, 10);
-    let value = parseInt(data.value, 10);
-
+    let { max, value } = this.data;
     // 超出 max 范围显示 max+
-    if (value && max && value > max) {
-      host.setData({
-        value: '...',
-      });
+    if (value > max) {
+      this.setData({ isMax: true });
     }
   },
 });

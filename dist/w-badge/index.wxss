@@ -1,24 +1,25 @@
-/*
- * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
- * @Date: 2018-10-18 17:24:16 
- * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
- * @Last Modified time: 2018-10-18 17:24:16 
- */
 @import '../common/theme/global.wxss';
-
 .wuss-badge-warp {
+  position: relative;
   display: inline-block;
-  min-width: 14px;
-  height: 14px;
-  line-height: 5px;
+}
+.wuss-badge {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 18px;
+  height: 18px;
   color: #fff;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   font-size: 10px;
-  border-radius: 18px;
-  padding: 0 2px;
+  border-radius: 50%;
   background: rgb(40, 162, 243);
 }
-
+.isMax {
+  align-items: flex-start;
+}
 .wuss-badge-round {
   width: 6px;
   height: 6px;
