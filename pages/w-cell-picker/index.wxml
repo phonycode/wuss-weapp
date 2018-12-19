@@ -8,18 +8,28 @@
 	 options="{{ options1 }}"
 	 title="请选择地区"
 	 defaultValue="{{[1,1,5]}}"
+   bind:onSelect="handleSelect"
 	/>
   <w-cell-picker
 	 label="单选模式"
 	 title="请选择性别"
 	 options="{{ options2 }}"
-	 defaultValue="{{[1]}}"
+	 defaultValue="男"
+   bind:onSelect="handleSelect"
+	/>
+  <w-cell-picker
+	 label="单选模式2"
+	 title="请选择续费时间"
+	 options="{{ options4 }}"
+	 defaultValue="60"
+   bind:onSelect="handleSelect"
 	/>
   <w-cell-picker
 	 label="多选联动模式"
    placeholder="请选择语言"
 	 options="{{ options3 }}"
 	 title="请选择语言"
+   bind:onSelect="handleSelect"
 	/>
 </w-cell-group>
 
