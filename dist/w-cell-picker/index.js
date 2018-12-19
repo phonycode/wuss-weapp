@@ -7,6 +7,9 @@ Component({
     '../w-form/index': {
       type: 'ancestor',
     },
+    '../w-validate/index': {
+      type: 'ancestor',
+    },
   },
   options: {
     addGlobalClass: true,
@@ -86,9 +89,9 @@ Component({
   data: {
     _visible: false,
     _initPicker: true,
-    value: [],
     _currentText: '',
     _options: [],
+    value: null,
     _isLinkage: false,
     _currentValue: [],
     _isReadyConfirm: true,
@@ -121,13 +124,14 @@ Component({
       if (JSON.stringify(currentValues) !== JSON.stringify(value)) {
         this.setData({
           value: currentValues,
-        })
+        });
       };
       this.setData({
         _currentText: !_isRadio ? this.getValues(_currentValue, showValue ? 'value' : 'key').join(' ', '') : this.getValues(_currentValue, showValue ? 'value' : 'key'),
       }, () => this.triggerEvent('onSelect', {
         value: currentValues,
       }, {}));
+      this.validate(this.data.value);
     },
     _ArrayKeysToArrayObject() {
       const {
@@ -249,6 +253,13 @@ Component({
         _currentValue: [],
         value: [],
       });
+      this.validate('');
+    },
+    //调用验证
+    validate(newValue) {
+      const validate = this.getRelationNodes('../w-validate/index')[0];
+      if (!validate) return false;
+      validate.isValidate(newValue || '');
     },
   },
   ready: function () {
