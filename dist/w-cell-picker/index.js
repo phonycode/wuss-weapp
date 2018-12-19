@@ -11,7 +11,7 @@ Component({
   options: {
     addGlobalClass: true,
   },
-  behaviors: [Behavior,field],
+  behaviors: [Behavior, field],
   /**
    * 组件的属性列表
    * @param {array} options 传入的选项组[ [], [], [] ]
@@ -29,10 +29,23 @@ Component({
     options: {
       type: Array,
       value: [],
+      observer(__val) {
+        /**
+         * 这里_initPicker是为了解决官方组件picker-view在第一次初始化后 改变值无法检测高度问题
+         * 只能使用非惰性让他在渲染一次以重置picker-view-column下view的高度。
+         */
+        this.initPicker();
+        this.setData({
+          _initPicker: false,
+        }, () => setTimeout(() => {
+          this.setData({
+            _initPicker: true,
+          })
+        }, 20));
+      },
     },
     defaultValue: {
-      type: Array,
-      value: [],
+      type: null,
     },
     cancelTextColor: {
       type: String,
@@ -72,10 +85,12 @@ Component({
   },
   data: {
     _visible: false,
+    _initPicker: true,
     value: [],
     _currentText: '',
     _options: [],
     _isLinkage: false,
+    _currentValue: [],
     _isReadyConfirm: true,
   },
   methods: {
@@ -87,14 +102,15 @@ Component({
     _handleCancel() {
       this.setData({
         _visible: false,
-      },() => this.triggerEvent('onCancel'));
+      }, () => this.triggerEvent('onCancel'));
     },
     _handleConfirm() {
       const {
         _isReadyConfirm,
-        value,
-        showValue,
         _currentValue,
+        showValue,
+        value,
+        _isRadio,
         defaultKey
       } = this.data;
       if (!_isReadyConfirm) return false;
@@ -102,13 +118,13 @@ Component({
         _visible: false,
       });
       const currentValues = this.getValues(_currentValue, defaultKey);
-      if(JSON.stringify(currentValues) === JSON.stringify(value)) {
+      if (JSON.stringify(currentValues) !== JSON.stringify(value)) {
         this.setData({
           value: currentValues,
-        })  
+        })
       };
       this.setData({
-        _currentText: this.getValues(_currentValue, showValue ? 'value' : 'key').join(' ', ''),
+        _currentText: !_isRadio ? this.getValues(_currentValue, showValue ? 'value' : 'key').join(' ', '') : this.getValues(_currentValue, showValue ? 'value' : 'key'),
       }, () => this.triggerEvent('onSelect', {
         value: currentValues,
       }, {}));
@@ -121,35 +137,60 @@ Component({
       const {
         0: items
       } = options;
-      const _isArrayObject = this.isArrayObject(items);
-      !_isArrayObject &&
+      if (Array.isArray(items)) { // [ [], [], [] ] ,  [ a,b,c,d,e,f,g ]
+        const _isArrayObject = this.isArrayObject(items);
+        !_isArrayObject &&
+          this.setData({
+            options: options.map(i =>
+              i.map(j => ({
+                key: j,
+                value: j,
+              }))
+            ),
+          });
+      } else if (Object.prototype.toString.call(items) !== '[object Object]') {
         this.setData({
-          options: options.map(i =>
-            i.map(j => ({
-              key: j,
-              value: j,
-            }))
-          ),
+          options: options.map(_v => ({
+            key: _v,
+            value: _v,
+          })),
         });
+      }
     },
     _handleTouchStart() {
       this.setData({
         _isReadyConfirm: false,
       })
     },
-    getValues(value, defaultKey) {
+    _handleTouchEnd() {
+      this.setData({
+        _isReadyConfirm: true,
+      });
+    },
+    getValues(value, defaultKey) { // value: [2], defaultKey: 'value'
       const {
         options,
         _options,
         _isLinkage,
+        _isRadio,
       } = this.data;
       let values = [];
       const currentOpitons = _isLinkage ? _options : options;
-      const currentkey = defaultKey === 'key' ? 'key' : 'value';
+      const currentkey = (defaultKey === 'key' ? 'key' : 'value');
       try {
         currentOpitons.forEach((v, i) => {
-          values[i] = !!Array.prototype.toString.call(value) ? v[value[i]][currentkey] : v[0][currentkey];
-        })
+          if (!_isRadio) {
+            values[i] = !!Array.prototype.toString.call(value) ? v[value[i]][currentkey] : v[0][currentkey];
+          } else {
+            if (value && value[0]) {
+              if (value[0] === i) {
+                values = v[currentkey];
+              }
+            } else {
+              return values = currentOpitons[0][currentkey];
+            }
+          }
+        });
       } catch (error) {}
       return values;
     },
@@ -157,14 +198,13 @@ Component({
       const value = e.detail.value;
       this.setData({
         _currentValue: value,
-        _isReadyConfirm: true,
       });
       this.formatOptions();
     },
     formatOptions() {
       const {
         options,
-        value,
+        _currentValue,
         _isLinkage,
       } = this.data;
       if (!_isLinkage) return false;
@@ -174,7 +214,7 @@ Component({
         if (i === 0) {
           return _options.push(v);
         } else {
-          prev = _options[i - 1][value[i - 1] || 0] || _options[i - 1][0];
+          prev = _options[i - 1][_currentValue[i - 1] || 0] || _options[i - 1][0];
         }
         _options.push(options[i].filter(iv => prev.value === iv.parent));
       });
@@ -182,15 +222,41 @@ Component({
         _options,
       });
     },
+    initPicker() {
+      const {
+        defaultValue,
+        showValue,
+        placeholder,
+      } = this.data;
+      this._ArrayKeysToArrayObject();
+      this.formatOptions();
+      let defaultText = placeholder || '';
+      if (defaultValue) {
+        if (!this.data._isRadio) {
+          if (Array.isArray(defaultValue) && !!Array.prototype.toString.call(defaultValue)) {
+            defaultText = this.getValues(defaultValue, showValue ? 'value' : 'key').join(' ', '');
+          }
+        } else {
+          this.data.options.forEach((__v, _i) => {
+            if (__v['value'] == defaultValue) {
+              defaultText = __v[showValue ? 'value' : 'key'];
+            }
+          });
+        }
+      };
+      this.setData({
+        _currentText: defaultText,
+        _currentValue: [],
+        value: [],
+      });
+    },
   },
   ready: function () {
     const {
       options,
       defaultValue,
-      showValue,
-      placeholder,
     } = this.data;
-    if(!Array.isArray(options) || !Array.prototype.toString.call(options)) throw Error('Missing required parameters : options');
+    if (!Array.isArray(options) || !Array.prototype.toString.call(options)) throw Error('Missing required parameters : options');
     this.setData({
       value: defaultValue,
       _isLinkage: !!(
@@ -198,11 +264,8 @@ Component({
         options[1][0] &&
         options[1][0].hasOwnProperty('parent')
       ),
+      _isRadio: options[0] && !Array.isArray(options[0]),
     });
-    this._ArrayKeysToArrayObject();
-    this.formatOptions();
-    this.setData({
-      _currentText: !!Array.prototype.toString.call(defaultValue) ? this.getValues(defaultValue,showValue ? 'value' : 'key').join(' ', '') : placeholder,
-    });
+    this.initPicker();
   },
 });

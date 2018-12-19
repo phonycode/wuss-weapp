@@ -22,8 +22,8 @@
 		 visible="{{ _visible }}"
 		 position="bottom"
 		 width="100%"
-     padding="0"
-     zIndex="10000"
+		 padding="0"
+		 zIndex="10000"
 		 bind:onClose="_handleCancel"
 		>
 			<view
@@ -58,16 +58,19 @@
 				</view>
 			</view>
 			<picker-view
-			 value="{{ value }}"
+			 value="{{ _currentValue }}"
 			 class="wuss-cell-picker-view"
 			 bindchange="_handleChange"
-       bindpickstart="_handleTouchStart"
+			 bindpickstart="_handleTouchStart"
+			 bindpickend="_handleTouchEnd"
+			 wx:if="{{ _initPicker }}"
 			>
 				<block
 				 wx:for="{{ _isLinkage ? _options : options }}"
 				 wx:for-item="column"
 				 wx:for-index="columnIdx"
 				 wx:key="column"
+				 wx:if="{{ !_isRadio }}"
 				>
 					<picker-view-column>
 						<block
@@ -82,6 +85,18 @@
 						</block>
 					</picker-view-column>
 				</block>
+				<picker-view-column wx:if="{{ _isRadio }}">
+					<block
+					 wx:for="{{ options }}"
+					 wx:for-item="item"
+					 wx:for-index="index"
+					 wx:key="item"
+					>
+						<view class="wuss-cell-picker-view-item">
+							{{ showValue ? item.value : item.key }}
+						</view>
+					</block>
+				</picker-view-column>
 			</picker-view>
 		</w-popup>
 	</view>
