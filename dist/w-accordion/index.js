@@ -21,7 +21,7 @@ Component({
   data: {
     current: false,
     index: 0,
-    height: 'height:0px',
+    height: '',
     zeroHeight: '',
   },
   ready() {
