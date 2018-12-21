@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei]
  * @Date: 2018-09-06 16:23:23
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-21 16:45:46
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-12-19 16:32:27
  */
 import Behavior from '../common/behavior/index';
 const SYSTEM_INFO = wx.getSystemInfoSync();
@@ -125,6 +125,10 @@ Component({
       } else if (pageX - _startX < _threshold && pageX - _startX > 0) {
         this.setData({
           _scrollX: -_slideWidth,
+        });
+      } else if (pageX === _startX || pageY === _startY) {
+        this.setData({
+          _scrollX: 0,
         });
       }
     },

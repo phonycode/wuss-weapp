@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-24 15:29:04 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-19 09:26:50
+ * @Last Modified time: 2018-12-21 12:07:58
  */
 @import '../common/theme/global.wxss';
 
@@ -55,7 +55,7 @@
 
 .wuss-cell-picker-view {
   width: 100%;
-  height: 300px;
+  height: 100%;
 }
 
 .wuss-cell-picker-view-item {

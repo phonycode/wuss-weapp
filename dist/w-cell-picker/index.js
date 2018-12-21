@@ -37,7 +37,20 @@ Component({
          * 这里_initPicker是为了解决官方组件picker-view在第一次初始化后 改变值无法检测高度问题
          * 只能使用非惰性让他在渲染一次以重置picker-view-column下view的高度。
          */
-        this.initPicker();
+        const {
+          options,
+          defaultValue,
+        } = this.data;
+        if (!Array.isArray(options) || !Array.prototype.toString.call(options)) throw Error('Missing required parameters : options');
+        this.setData({
+          value: defaultValue || [],
+          _isLinkage: !!(
+            options[1] &&
+            options[1][0] &&
+            options[1][0].hasOwnProperty('parent')
+          ),
+          _isRadio: options[0] && !Array.isArray(options[0]),
+        }, () => this.initPicker());
         this.setData({
           _initPicker: false,
         }, () => setTimeout(() => {
@@ -94,6 +107,7 @@ Component({
     value: null,
     _isLinkage: false,
     _currentValue: [],
+    _isRadio: false,
     _isReadyConfirm: true,
   },
   methods: {
@@ -248,12 +262,11 @@ Component({
           });
         }
       };
+      this.validate(defaultValue);
       this.setData({
         _currentText: defaultText,
         _currentValue: [],
-        value: [],
       });
-      this.validate('');
     },
     //调用验证
     validate(newValue) {
@@ -269,14 +282,13 @@ Component({
     } = this.data;
     if (!Array.isArray(options) || !Array.prototype.toString.call(options)) throw Error('Missing required parameters : options');
     this.setData({
-      value: defaultValue,
+      value: defaultValue || [],
       _isLinkage: !!(
         options[1] &&
         options[1][0] &&
         options[1][0].hasOwnProperty('parent')
       ),
       _isRadio: options[0] && !Array.isArray(options[0]),
-    });
-    this.initPicker();
+    }, () => this.initPicker());
   },
 });
