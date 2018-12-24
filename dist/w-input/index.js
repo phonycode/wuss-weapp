@@ -1,8 +1,8 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk]
  * @Date: 2018-09-12 16:37:32
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-22 09:28:44
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2018-12-24 18:56:37
  */
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
@@ -166,7 +166,7 @@ Component({
     },
     ///////////input的监听函数
     handlerChange(e) {
-      const { value = '' } = e.detail || {};
+      let { value = '' } = e.detail || {};
       value = this.getValue(newValue);
       this._trigger('onChange', { detail: { value } });
       this._trigger('input', { detail: { value } });
