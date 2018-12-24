@@ -5,14 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    options: ['关注','推荐','热榜','视频'],
+    options: [
+      '关注',
+      '推荐',
+      '热榜',
+      '视频',
+    ],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
+  onLoad: function (options) {},
   handleScrollableChange(e) {
     this.setData({
       currentIndex: e.detail.value,

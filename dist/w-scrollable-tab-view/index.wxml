@@ -5,7 +5,7 @@
 >
 	<w-tabs
 	 wx:if="{{ renderTabBar === 'tabs' }}"
-	 options="{{ options }}"
+	 options="{{ _tabBarOptions }}"
 	 currentIndex="{{ currentIndex }}"
 	 transition="{{ tabsTransition }}"
 	 line="{{ tabsLine }}"
@@ -23,7 +23,7 @@
 	/>
 	<w-segmented-control
 	 wx:if="{{ renderTabBar === 'segmented-control' }}"
-	 options="{{ options }}"
+	 options="{{ _tabBarOptions }}"
 	 color="{{ tabsActiveColor }}"
 	 disabled="{{ tabsDisabled }}"
 	 defaultIndex="{{ tabsDefaultIndex }}"
@@ -43,14 +43,14 @@
  bindanimationfinish="handleAnimationFinish"
 >
 	<block
-	 wx:for="{{ options }}"
+	 wx:for="{{ _options }}"
 	 wx:key="index"
 	>
 		<swiper-item
 		 class="wuss-scrollable-tab-view-container"
 		 item-id=""
 		>
-			<slot name="{{ _isArrayObject ? item.containerName : item }}" />
+			<slot name="{{ !_isRadio ? item.name : item }}" />
 		</swiper-item>
 	</block>
 </swiper>

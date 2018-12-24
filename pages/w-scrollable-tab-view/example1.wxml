@@ -14,7 +14,7 @@
 		<w-cell-group>
 			<w-cell
 			 highlight
-			 wx:for="{{ 30 }}"
+			 wx:for="{{ 20 }}"
 			 wx:key="child"
 			 wx:for-index="child"
 			 wx:for-item="childItem"
