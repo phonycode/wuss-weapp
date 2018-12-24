@@ -1,6 +1,6 @@
 /*
- * @Author: cnyballk[https://github.com/cnyballk] 
- * @Date: 2018-09-12 16:37:32 
+ * @Author: cnyballk[https://github.com/cnyballk]
+ * @Date: 2018-09-12 16:37:32
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
  * @Last Modified time: 2018-09-22 09:28:44
  */
@@ -167,9 +167,10 @@ Component({
     ///////////input的监听函数
     handlerChange(e) {
       const { value = '' } = e.detail || {};
+      value = this.getValue(newValue);
       this._trigger('onChange', { detail: { value } });
       this._trigger('input', { detail: { value } });
-      this.setData({ value: this.formatValue(value) });
+      this.setData({ value });
     },
     handlerFocus(e) {
       this._trigger('onFocus', e);
