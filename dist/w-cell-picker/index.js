@@ -41,7 +41,9 @@ Component({
           options,
           defaultValue,
         } = this.data;
-        if (!Array.isArray(options) || !Array.prototype.toString.call(options)) throw Error('Missing required parameters : options');
+        if (!Array.isArray(options) || !Array.prototype.toString.call(options)) {
+          console.warn('cell-picker Warning: Missing required parameters: options');
+        };
         this.setData({
           value: defaultValue || [],
           _isLinkage: !!(
@@ -49,7 +51,7 @@ Component({
             options[1][0] &&
             options[1][0].hasOwnProperty('parent')
           ),
-          _isRadio: options[0] && !Array.isArray(options[0]),
+          _isRadio: !!(options[0] && !Array.isArray(options[0])),
         }, () => this.initPicker());
         this.setData({
           _initPicker: false,
@@ -117,8 +119,34 @@ Component({
       }, () => this.triggerEvent('onOpen'));
     },
     _handleCancel() {
+      const {
+        _currentValue,
+        value,
+        defaultKey,
+        _isLinkage
+      } = this.data;
+      const currentValues = this.getValues(_currentValue, defaultKey);
+      if ((typeof value === 'string' ? value : JSON.stringify(value)) === (typeof currentValues === 'string' ? currentValues : JSON.stringify(currentValues))) {
+        // console.log('两个值相等，不重置当前值');
+      } else {
+        if(_isLinkage) {
+          this.setData({
+            _currentValue: value,
+          }, () => {
+            this.formatOptions();
+            this.setData({
+              _currentValue: this.getValues(value, defaultKey, true),
+            })
+          })
+        } else {
+          this.setData({
+            _currentValue: this.getValues(value, defaultKey, true),
+          })
+        }
+      }
       this.setData({
         _visible: false,
+        _isReadyConfirm: true,
       }, () => this.triggerEvent('onCancel'));
     },
     _handleConfirm() {
@@ -131,11 +159,8 @@ Component({
         defaultKey
       } = this.data;
       if (!_isReadyConfirm) return false;
-      this.setData({
-        _visible: false,
-      });
       const currentValues = this.getValues(_currentValue, defaultKey);
-      if (JSON.stringify(currentValues) !== JSON.stringify(value)) {
+      if ((typeof currentValues === 'string' ? currentValues : JSON.stringify(currentValues)) !== (typeof value === 'string' ? value : JSON.stringify(value))) {
         this.setData({
           value: currentValues,
         });
@@ -146,6 +171,9 @@ Component({
         value: currentValues,
       }, {}));
       this.validate(this.data.value);
+      this.setData({
+        _visible: false,
+      });
     },
     _ArrayKeysToArrayObject() {
       const {
@@ -185,7 +213,7 @@ Component({
         _isReadyConfirm: true,
       });
     },
-    getValues(value, defaultKey) { // value: [2], defaultKey: 'value'
+    getValues(value, defaultKey, decode = false) { // value: [2], defaultKey: 'value'
       const {
         options,
         _options,
@@ -194,18 +222,36 @@ Component({
       } = this.data;
       let values = [];
       const currentOpitons = _isLinkage ? _options : options;
-      const currentkey = (defaultKey === 'key' ? 'key' : 'value');
+      const currentkey = defaultKey === 'key' ? 'key' : 'value';
       try {
         currentOpitons.forEach((v, i) => {
           if (!_isRadio) {
-            values[i] = !!Array.prototype.toString.call(value) ? v[value[i]][currentkey] : v[0][currentkey];
-          } else {
-            if (value && value[0]) {
-              if (value[0] === i) {
-                values = v[currentkey];
+            if (!!Array.prototype.toString.call(value)) {
+              if (!decode) {
+                values[i] = v[value[i]][currentkey];
+              } else {
+                v.forEach((__f, __i) => {
+                  if ((typeof __f[currentkey] === 'string' ? __f[currentkey] : JSON.stringify(__f[currentkey])) === (typeof value[i] === 'string' ? value[i] : JSON.stringify(value[i]))) {
+                    values[i] = __i;
+                  }
+                });
               }
             } else {
-              return values = currentOpitons[0][currentkey];
+              values[i] = v[0][currentkey];
+            }
+          } else {
+            if (!decode) {
+              if (value && value[0]) {
+                if (value[0] === i) {
+                  values = v[currentkey];
+                }
+              } else {
+                return values = currentOpitons[0][currentkey];
+              }
+            } else {
+              if ((typeof v[currentkey] === 'string' ? v[currentkey] : JSON.stringify(v[currentkey])) === (typeof value === 'string' ? value : JSON.stringify(value))) {
+                values = [i];
+              }
             }
           }
         });
@@ -256,7 +302,7 @@ Component({
           }
         } else {
           this.data.options.forEach((__v, _i) => {
-            if (__v['value'] == defaultValue) {
+            if ((typeof __v['value'] === 'string' ? __v['value'] : JSON.stringify(__v['value'])) === (typeof defaultValue === 'string' ? defaultValue : JSON.stringify(defaultValue))) {
               defaultText = __v[showValue ? 'value' : 'key'];
             }
           });
@@ -275,20 +321,5 @@ Component({
       validate.isValidate(newValue || '');
     },
   },
-  ready: function () {
-    const {
-      options,
-      defaultValue,
-    } = this.data;
-    if (!Array.isArray(options) || !Array.prototype.toString.call(options)) throw Error('Missing required parameters : options');
-    this.setData({
-      value: defaultValue || [],
-      _isLinkage: !!(
-        options[1] &&
-        options[1][0] &&
-        options[1][0].hasOwnProperty('parent')
-      ),
-      _isRadio: options[0] && !Array.isArray(options[0]),
-    }, () => this.initPicker());
-  },
+  ready: function () {},
 });

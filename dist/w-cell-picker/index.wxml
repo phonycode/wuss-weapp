@@ -64,7 +64,7 @@
 			 bindchange="_handleChange"
 			 bindpickstart="_handleTouchStart"
 			 bindpickend="_handleTouchEnd"
-			 wx:if="{{ _initPicker }}"
+			 wx:if="{{ _initPicker && _visible }}"
 			>
 				<block
 				 wx:for="{{ _isLinkage ? _options : options }}"
