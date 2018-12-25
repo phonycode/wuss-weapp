@@ -2,9 +2,10 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-30 14:52:00 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-31 14:59:20
+ * @Last Modified time: 2018-12-25 14:44:48
  */
 import Behavior from '../common/behavior/index';
+
 
 Component({
   /**
@@ -40,6 +41,7 @@ Component({
    * @param {string} footerExtra 底部副标题
    * @param {boolean} shadow 开启卡片阴影
    * @param {boolean} loading 进入loading模式
+   * @param {number} loadingIndex 进入loading模式骨架的z-index层级
    */
   properties: {
     full: {
@@ -67,13 +69,22 @@ Component({
     loading: {
       type: Boolean,
       value: false,
+      observer(__v) {
+        if(__v) return this._renderLoadingCard();
+      },
+    },
+    loadingIndex: {
+      type: Number,
     },
   },
 
   /**
    * 组件的初始数据
    */
-  data: {},
+  data: {
+    _CARD_LOADING_HEIGHT: 138,
+    _RENDER_CARD_COUNT: 1,
+  },
 
   /**
    * 组件方法列表
@@ -84,6 +95,15 @@ Component({
     },
     handleBdClick (e) {
       this.triggerEvent('onBdClick',e);
+    },
+    _renderLoadingCard() {
+      wx.createSelectorQuery()
+      .in(this)
+      .select('.wuss-card')
+      .boundingClientRect()
+      .exec(([node]) => this.setData({
+        _RENDER_CARD_COUNT: parseInt(node.height/this.data._CARD_LOADING_HEIGHT),
+      }));
     },
   },
 

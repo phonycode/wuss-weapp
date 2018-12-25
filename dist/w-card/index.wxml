@@ -25,8 +25,14 @@
 		>
 			{{ extra }}
 		</view>
-		<slot wx:if="{{ !title }}" name="title" />
-		<slot wx:if="{{ !extra }}" name="extra" />
+		<slot
+		 wx:if="{{ !title }}"
+		 name="title"
+		/>
+		<slot
+		 wx:if="{{ !extra }}"
+		 name="extra"
+		/>
 	</view>
 	<view
 	 catchtap="handleBdClick"
@@ -42,7 +48,10 @@
 		>
 			{{ content }}
 		</view>
-		<slot wx:if="{{ !content }}" name="content" />
+		<slot
+		 wx:if="{{ !content }}"
+		 name="content"
+		/>
 	</view>
 	<view
 	 class="wuss-class-ft wuss-card-ft"
@@ -65,66 +74,99 @@
 		>
 			{{ footerExtra }}
 		</view>
-		<slot wx:if="{{ !footer }}" name="footer" />
-		<slot wx:if="{{ !footerExtra }}" name="footer-extra" />
+		<slot
+		 wx:if="{{ !footer }}"
+		 name="footer"
+		/>
+		<slot
+		 wx:if="{{ !footerExtra }}"
+		 name="footer-extra"
+		/>
 	</view>
 	<view
 	 class="wuss-card-loading"
+	 style="{{ loadingIndex ? 'z-index:' + loadingIndex + ';' : '' }}"
 	 wx:if="{{ loading }}"
 	 hover-class="none"
 	 hover-stop-propagation="false"
 	>
-		<w-row>
-			<w-col span="22">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-		</w-row>
-		<w-row>
-			<w-col span="8">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-			<w-col span="15" offset="1">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-		</w-row>
-		<w-row>
-			<w-col span="5">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-			<w-col span="18" offset="1">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-		</w-row>
-		<w-row>
-			<w-col span="13">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-			<w-col span="9" offset="1">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-		</w-row>
-		<w-row>
-			<w-col span="3">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-			<w-col span="4" offset="1">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-			<w-col span="15" offset="1">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-		</w-row>
-		<w-row>
-			<w-col span="8">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-			<w-col span="5" offset="1">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-			<w-col span="8" offset="1">
-				<view class="wuss-card-loading-block" />
-			</w-col>
-		</w-row>
+		<block
+		 wx:for="{{ _RENDER_CARD_COUNT }}"
+		 wx:key="key"
+		>
+			<w-row>
+				<w-col span="22">
+					<view class="wuss-card-loading-block" />
+				</w-col>
+			</w-row>
+			<w-row>
+				<w-col span="8">
+					<view class="wuss-card-loading-block" />
+				</w-col>
+				<w-col
+				 span="15"
+				 offset="1"
+				>
+					<view class="wuss-card-loading-block" />
+				</w-col>
+			</w-row>
+			<w-row>
+				<w-col span="5">
+					<view class="wuss-card-loading-block" />
+				</w-col>
+				<w-col
+				 span="18"
+				 offset="1"
+				>
+					<view class="wuss-card-loading-block" />
+				</w-col>
+			</w-row>
+			<w-row>
+				<w-col span="13">
+					<view class="wuss-card-loading-block" />
+				</w-col>
+				<w-col
+				 span="9"
+				 offset="1"
+				>
+					<view class="wuss-card-loading-block" />
+				</w-col>
+			</w-row>
+			<w-row>
+				<w-col span="3">
+					<view class="wuss-card-loading-block" />
+				</w-col>
+				<w-col
+				 span="4"
+				 offset="1"
+				>
+					<view class="wuss-card-loading-block" />
+				</w-col>
+				<w-col
+				 span="15"
+				 offset="1"
+				>
+					<view class="wuss-card-loading-block" />
+				</w-col>
+			</w-row>
+			<w-row>
+				<w-col span="8">
+					<view class="wuss-card-loading-block" />
+				</w-col>
+				<w-col
+				 span="5"
+				 offset="1"
+				>
+					<view class="wuss-card-loading-block" />
+				</w-col>
+				<w-col
+				 span="8"
+				 offset="1"
+				>
+					<view class="wuss-card-loading-block" />
+				</w-col>
+			</w-row>
+		</block>
 	</view>
 </view>
 
