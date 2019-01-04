@@ -7,10 +7,10 @@
 	 label="多选联动模式"
 	 options="{{ options1 }}"
 	 title="请选择地区"
-	 defaultValue="{{[1,1,5]}}"
+	 defaultValue="{{['广东省','广州市','海珠区']}}"
    bind:onSelect="handleSelect"
 	/>
-  <w-cell-picker
+  <!-- <w-cell-picker
 	 label="单选模式"
 	 title="请选择性别"
 	 options="{{ options2 }}"
@@ -30,6 +30,6 @@
 	 options="{{ options3 }}"
 	 title="请选择语言"
    bind:onSelect="handleSelect"
-	/>
+	/> -->
 </w-cell-group>
 
