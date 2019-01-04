@@ -52,6 +52,7 @@ Component({
             options[1][0].hasOwnProperty('parent')
           ),
           _isRadio: !!(options[0] && !Array.isArray(options[0])),
+          _currentValue: defaultValue || [0,0,0],
         }, () => this.initPicker());
         this.setData({
           _initPicker: false,
@@ -225,10 +226,11 @@ Component({
       const currentkey = defaultKey === 'key' ? 'key' : 'value';
       try {
         currentOpitons.forEach((v, i) => {
+          debugger;
           if (!_isRadio) {
             if (!!Array.prototype.toString.call(value)) {
               if (!decode) {
-                values[i] = v[value[i]][currentkey];
+                values[i] = typeof value[i] === 'string' ? v.filter(__v => (__v[currentkey] === value[i]))[0][currentkey] : v[value[i]][currentkey];
               } else {
                 v.forEach((__f, __i) => {
                   if ((typeof __f[currentkey] === 'string' ? __f[currentkey] : JSON.stringify(__f[currentkey])) === (typeof value[i] === 'string' ? value[i] : JSON.stringify(value[i]))) {
@@ -275,6 +277,7 @@ Component({
       const _options = [];
       let prev;
       options.forEach((v, i) => {
+        debugger;
         if (i === 0) {
           return _options.push(v);
         } else {
@@ -294,6 +297,7 @@ Component({
       } = this.data;
       this._ArrayKeysToArrayObject();
       this.formatOptions();
+      debugger;
       let defaultText = placeholder || '';
       if (defaultValue) {
         if (!this.data._isRadio) {
