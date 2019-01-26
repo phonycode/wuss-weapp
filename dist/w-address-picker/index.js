@@ -2,32 +2,22 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-27 14:08:39 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-01 14:44:55
+ * @Last Modified time: 2019-01-26 16:17:09
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
+import field from '../common/behavior/field';
 
-Component({
-  /**
-   * 继承父组件的class
-   */
-  externalClasses: ['wuss-class'],
-
+WussComponent({
   /**
    * 组件间关系定义
    */
-  relations: {},
-
-  /**
-   * 组件选项
-   */
-  options: {
-    addGlobalClass: true,
+  relations: {
+    '../w-form/index': {
+      type: 'ancestor',
+    },
   },
 
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
+  behaviors: [field],
 
   /**
    * 组件的属性列表
