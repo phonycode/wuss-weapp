@@ -1,8 +1,7 @@
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
 
-Component({
-  externalClasses: ['wuss-class'],
+WussComponent({
   relations: {
     '../w-form/index': {
       type: 'ancestor',
@@ -11,10 +10,7 @@ Component({
       type: 'ancestor',
     },
   },
-  options: {
-    addGlobalClass: true,
-  },
-  behaviors: [Behavior, field],
+  behaviors: [field],
   /**
    * 组件的属性列表
    * @param {array} options 传入的选项组[ [], [], [] ]
@@ -27,6 +23,7 @@ Component({
    * @param {string} showValue 是否用value而不是key展示
    * @param {string} defaultKey onChange和onSelect事件返回的值是何种格式 [value,value...] [key,key,...]
    * @param {string} placeholder 初始化默认的占位符 例如：请选择
+   * @param {boolean} isDatePicker 类型切换为日期选择器
    */
   properties: {
     options: {
@@ -40,19 +37,21 @@ Component({
         const {
           options,
           defaultValue,
+          isDatePicker,
         } = this.data;
         if (!Array.isArray(options) || !Array.prototype.toString.call(options)) {
           console.warn('cell-picker Warning: Missing required parameters: options');
         };
+        if(isDatePicker) {
+          return this._ArrayKeysToArrayObject();
+        };
         this.setData({
-          value: defaultValue || [],
           _isLinkage: !!(
             options[1] &&
             options[1][0] &&
             options[1][0].hasOwnProperty('parent')
           ),
           _isRadio: !!(options[0] && !Array.isArray(options[0])),
-          _currentValue: defaultValue || [0,0,0],
         }, () => this.initPicker());
         this.setData({
           _initPicker: false,
@@ -101,6 +100,9 @@ Component({
     placeholder: {
       type: String,
     },
+    isDatePicker: {
+      type: Boolean,
+    }
   },
   data: {
     _visible: false,
@@ -157,10 +159,11 @@ Component({
         showValue,
         value,
         _isRadio,
-        defaultKey
+        defaultKey,
+        isDatePicker,
       } = this.data;
       if (!_isReadyConfirm) return false;
-      const currentValues = this.getValues(_currentValue, defaultKey);
+      let currentValues = this.getValues(_currentValue, defaultKey);
       if ((typeof currentValues === 'string' ? currentValues : JSON.stringify(currentValues)) !== (typeof value === 'string' ? value : JSON.stringify(value))) {
         this.setData({
           value: currentValues,
@@ -226,7 +229,6 @@ Component({
       const currentkey = defaultKey === 'key' ? 'key' : 'value';
       try {
         currentOpitons.forEach((v, i) => {
-          debugger;
           if (!_isRadio) {
             if (!!Array.prototype.toString.call(value)) {
               if (!decode) {
@@ -243,7 +245,7 @@ Component({
             }
           } else {
             if (!decode) {
-              if (value && value[0]) {
+              if (Array.isArray(value) && value[0]) {
                 if (value[0] === i) {
                   values = v[currentkey];
                 }
@@ -266,6 +268,7 @@ Component({
         _currentValue: value,
       });
       this.formatOptions();
+      this.triggerEvent('onChange',{value},{});
     },
     formatOptions() {
       const {
@@ -277,7 +280,6 @@ Component({
       const _options = [];
       let prev;
       options.forEach((v, i) => {
-        debugger;
         if (i === 0) {
           return _options.push(v);
         } else {
@@ -294,10 +296,11 @@ Component({
         defaultValue,
         showValue,
         placeholder,
+        defaultKey,
+        _isLinkage,
       } = this.data;
       this._ArrayKeysToArrayObject();
       this.formatOptions();
-      debugger;
       let defaultText = placeholder || '';
       if (defaultValue) {
         if (!this.data._isRadio) {
@@ -311,11 +314,25 @@ Component({
             }
           });
         }
+        if(_isLinkage) {
+          this.setData({
+            _currentValue: defaultValue,
+          }, () => {
+            this.formatOptions();
+            this.setData({
+              _currentValue: this.getValues(defaultValue, defaultKey, true),
+            })
+          })
+        } else {
+          this.setData({
+            _currentValue: this.getValues(defaultValue, defaultKey, true),
+          })
+        }
       };
       this.validate(defaultValue);
       this.setData({
+        value: this.getValues(this.data._currentValue, defaultKey),
         _currentText: defaultText,
-        _currentValue: [],
       });
     },
     //调用验证
@@ -325,5 +342,26 @@ Component({
       validate.isValidate(newValue || '');
     },
   },
-  ready: function () {},
+  ready: function () {
+    const { options, defaultValue, isDatePicker } = this.data;
+    if(isDatePicker) {
+      this.setData({
+        value: defaultValue || [],
+        _isLinkage: !!(
+          options[1] &&
+          options[1][0] &&
+          options[1][0].hasOwnProperty('parent')
+        ),
+        _isRadio: !!(options[0] && !Array.isArray(options[0])),
+        _currentValue: defaultValue || [0,0,0],
+      }, () => this.initPicker());
+      this.setData({
+        _initPicker: false,
+      }, () => setTimeout(() => {
+        this.setData({
+          _initPicker: true,
+        })
+      }, 20));
+    }
+  },
 });

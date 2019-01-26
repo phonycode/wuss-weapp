@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-24 15:29:04 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-25 09:46:36
+ * @Last Modified time: 2019-01-26 15:29:13
  */
 @import '../common/theme/global.wxss';
 
@@ -67,4 +67,7 @@
   color: #333333;
 }
 
-.wuss-cell-picker-text-view {}
+.wuss-cell-picker-text-view {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
