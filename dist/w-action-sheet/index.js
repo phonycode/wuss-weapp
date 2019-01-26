@@ -2,17 +2,11 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-12 14:03:55 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 12:06:58
+ * @Last Modified time: 2019-01-26 15:46:02
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true,
-  },
-  behaviors: [Behavior],
+WussComponent({
   /**
    * 组件的属性列表
    * @param {boolean} visible 是否可见

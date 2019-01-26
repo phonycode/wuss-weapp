@@ -2,14 +2,11 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-31 15:30:11 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-12 16:11:04
+ * @Last Modified time: 2019-01-26 15:53:34
  */
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
 
   /**
    * 组件的属性列表

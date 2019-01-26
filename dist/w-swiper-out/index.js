@@ -2,16 +2,12 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei]
  * @Date: 2018-09-06 16:23:23
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-19 16:32:27
+ * @Last Modified time: 2019-01-26 15:55:55
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 const SYSTEM_INFO = wx.getSystemInfoSync();
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
-  behaviors: [Behavior],
+
+WussComponent({
   /**
    * 组件的属性列表
    * @param {array} swiperOutBtns 侧滑菜单按钮列表 参数有 text, color, background, disabled

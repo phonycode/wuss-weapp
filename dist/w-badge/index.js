@@ -1,12 +1,10 @@
-Component({
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
   externalClasses: [
-    'wuss-class',
     'wuss-button-hover-class',
     'wuss-class-badge',
   ],
-  options: {
-    addGlobalClass: true,
-  },
   /**
    * 组件的属性列表
    * @param {string} icon 添加按钮图标

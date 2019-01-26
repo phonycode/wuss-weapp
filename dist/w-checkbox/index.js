@@ -2,15 +2,14 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-14 14:14:38 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-29 15:28:15
+ * @Last Modified time: 2019-01-26 15:49:20
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
-
 import cell from '../common/behavior/cell';
-Component({
-  externalClasses: ['wuss-class'],
-  behaviors: [cell, field, Behavior],
+
+WussComponent({
+  behaviors: [cell, field],
   relations: {
     '../w-cell-group/index': {
       type: 'ancestor',
@@ -18,9 +17,6 @@ Component({
     '../w-form/index': {
       type: 'ancestor',
     },
-  },
-  options: {
-    addGlobalClass: true,
   },
   /**
    * 组件的属性列表

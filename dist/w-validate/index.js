@@ -1,11 +1,9 @@
+import WussComponent from '../common/extends/baseComponent';
 import WussValidate from '../common/wuss-validate';
 import field from '../common/behavior/field';
 const FORM_PATH = '../w-form/index';
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+
+WussComponent({
   /**
    * @param {object} rules 规则
    */

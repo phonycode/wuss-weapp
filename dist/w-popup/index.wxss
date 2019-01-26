@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-18 17:26:32 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-08 17:09:35
+ * @Last Modified time: 2019-01-21 14:15:41
  */
 @import '../common/theme/global.wxss';
 
@@ -71,10 +71,10 @@
 }
 
 .animate-content.animate-content-open {
-  -webkit-transition: opacity .3s, -webkit-transform .3s;
+  /* -webkit-transition: opacity .3s, -webkit-transform .3s;
   transition: opacity .3s, -webkit-transform .3s;
   transition: opacity .3s, transform .3s;
-  transition: opacity .3s, transform .3s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, -webkit-transform .3s; */
   opacity: 1;
   -webkit-transform: none;
   transform: none;

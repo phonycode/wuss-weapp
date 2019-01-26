@@ -2,13 +2,11 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-16 21:30:31 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 16:48:49
+ * @Last Modified time: 2019-01-26 15:56:29
  */
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
   /**
    * 组件的属性列表
    * @param {boolean} visible 控制是否可见

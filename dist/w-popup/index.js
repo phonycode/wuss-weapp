@@ -1,8 +1,7 @@
-Component({
-  externalClasses: ['wuss-class', 'wuss-popup-content'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
+  externalClasses: ['wuss-popup-content'],
   /**
    * 组件的属性列表
    * @param {boolean} visible 组件是否可见

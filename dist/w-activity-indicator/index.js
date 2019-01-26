@@ -1,8 +1,7 @@
-Component({
-  externalClasses: ['wuss-class', 'wuss-activity-indicator'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
+  externalClasses: ['wuss-activity-indicator'],
   /**
    * 组件的属性列表
    * @param {string} size 指示器的大小,分别为[small/default/larger]

@@ -1,4 +1,4 @@
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
 /**
  * @param title 标题
@@ -22,28 +22,11 @@ const DEFAULT_OPTIONS = {
   cancel: () => void 0,
 };
 
-Component({
-  /**
-   * 继承父组件的class
-   */
-  externalClasses: ['wuss-class'],
-
+WussComponent({
   /**
    * 组件间关系定义
    */
   relations: {},
-
-  /**
-   * 组件选项
-   */
-  options: {
-    addGlobalClass: true,
-  },
-
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
 
   /**
    * 组件的属性列表

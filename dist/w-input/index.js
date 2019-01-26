@@ -2,14 +2,15 @@
  * @Author: cnyballk[https://github.com/cnyballk]
  * @Date: 2018-09-12 16:37:32
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-25 14:26:52
+ * @Last Modified time: 2019-01-26 15:51:56
  */
+import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
-Component({
+
+WussComponent({
   behaviors: [cell, field],
   externalClasses: [
-    'wuss-class',
     'wuss-class-label',
     'wuss-class-input-wrap',
     'wuss-class-input',
@@ -24,9 +25,6 @@ Component({
     '../w-validate/index': {
       type: 'ancestor',
     },
-  },
-  options: {
-    addGlobalClass: true,
   },
   properties: {
     ///////自带属性

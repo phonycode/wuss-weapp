@@ -1,14 +1,9 @@
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
 const LayoutCol = '../w-col/index';
 const DIRECTION = ['flex-start','flex-end','center','space-around','space-between'];
 
-Component({
-  /**
-   * 继承父组件的class
-   */
-  externalClasses: ['wuss-class'],
-
+WussComponent({
   /**
    * 组件间关系定义
    */
@@ -28,19 +23,6 @@ Component({
       unlinked() {},
     },
   },
-
-  /**
-   * 组件选项
-   */
-  options: {
-    addGlobalClass: true,
-  },
-
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
-
   /**
    * 组件的属性列表
    * @param {number} gutter 栅格间隔

@@ -2,13 +2,12 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:51 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 14:07:04
+ * @Last Modified time: 2019-01-26 15:44:34
  */
-Component({
-  externalClasses: ['wuss-class', 'wuss-button-hover-class'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
+  externalClasses: ['wuss-button-hover-class'],
   relations: {
     '../w-form/index': {
       type: 'ancestor',
@@ -114,7 +113,6 @@ Component({
       value: false,
     },
   },
-  data: {},
   methods: {
     handleClick(e) {
       const { _formTarget, formType } = this.data;

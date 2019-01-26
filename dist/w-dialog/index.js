@@ -2,9 +2,9 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-08 10:54:34 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 16:44:50
+ * @Last Modified time: 2019-01-26 15:50:43
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
 const OPTIONS = {
   duration: 200,
@@ -47,12 +47,7 @@ const _OUT_TO = animationFunc({
   .step()
   .export();
 
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
-  behaviors: [Behavior],
+WussComponent({
   /**
    * 组件的属性列表
    * @param {boolean} visible 显示/隐藏

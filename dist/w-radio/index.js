@@ -4,20 +4,16 @@
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
  * @Last Modified time: 2018-11-01 09:44:20
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
 
-Component({
-  externalClasses: ['wuss-class'],
+WussComponent({
   relations: {
     '../w-form/index': {
       type: 'ancestor',
     },
   },
-  options: {
-    addGlobalClass: true,
-  },
-  behaviors: [Behavior, field],
+  behaviors: [field],
   /**
    * 组件的属性列表
    * @param {string} options 选项组 { key value ...item }

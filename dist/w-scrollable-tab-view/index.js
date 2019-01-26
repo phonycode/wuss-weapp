@@ -2,36 +2,18 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-31 15:15:00 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-24 15:44:47
+ * @Last Modified time: 2019-01-26 15:55:14
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
-Component({
-  /**
-   * 继承父组件的class
-   */
-  externalClasses: ['wuss-class'],
-
+WussComponent({
   /**
    * 组件间关系定义
    */
   relations: {
 
   },
-
-  /**
-   * 组件选项
-   */
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true,
-  },
-
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
-
+  
   /**
    * 组件的属性列表
    * @param {array} options 传入的选项组： { containerName, containerHeight } 支持array-keys形式传参

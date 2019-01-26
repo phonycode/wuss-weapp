@@ -2,21 +2,19 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-15 14:58:27 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 16:47:48
+ * @Last Modified time: 2019-01-26 15:51:23
  */
+import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
 const VALIDATE_PATH = '../w-validate/index';
 const BUTTON_PATH = '../w-button/index';
-Component({
-  externalClasses: ['wuss-class'],
+
+WussComponent({
   properties: {
     isValidateBtn: {
       type: Boolean,
       value: false,
     },
-  },
-  options: {
-    addGlobalClass: true,
   },
   relations: {
     field: {

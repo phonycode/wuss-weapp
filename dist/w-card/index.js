@@ -4,32 +4,19 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-12-25 14:44:48
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
 
-Component({
+WussComponent({
   /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class', 'wuss-class-hd', 'wuss-class-bd', 'wuss-class-ft'],
+  externalClasses: ['wuss-class-hd', 'wuss-class-bd', 'wuss-class-ft'],
 
   /**
    * 组件间关系定义
    */
   relations: {},
-
-  /**
-   * 组件选项
-   */
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true,
-  },
-
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
 
   /**
    * 组件的属性列表

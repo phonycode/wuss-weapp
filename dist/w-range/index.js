@@ -1,8 +1,6 @@
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
   /**
    * @param {number} max 最大值
    * @param {number} min 最小值

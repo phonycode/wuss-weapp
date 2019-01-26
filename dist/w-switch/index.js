@@ -1,25 +1,19 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-13 10:24:04 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-15 17:19:23
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2019-01-26 15:56:05
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
 
-Component({
-  behaviors: [field, Behavior],
-
-  externalClasses: ['wuss-class'],
+WussComponent({
+  behaviors: [field],
 
   relations: {
     '../w-form/index': {
       type: 'ancestor',
     },
-  },
-
-  options: {
-    addGlobalClass: true,
   },
 
   /**
