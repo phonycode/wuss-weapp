@@ -1,0 +1,78 @@
+<w-pane title="DatePicker" desc="日期时间选择器" />
+
+<w-pane desc="Mode 模式" />
+<w-cell-group>
+  <w-date-picker
+    mode="date"
+    label="date"
+    title="请选择日期"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    mode="dateTime"
+    label="dateTime"
+    title="请选择日期"
+    defaultValue="{{ 1548487316805 }}"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    mode="dateTimeMinute"
+    label="dateTimeMinute"
+    title="请选择日期"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    mode="dateTimeHour"
+    label="dateTimeHour"
+    title="请选择日期"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>
+
+
+<w-pane desc="设置默认值" />
+<w-cell-group>
+  <w-date-picker
+    mode="date"
+    label="mode = date"
+    title="请选择日期"
+    defaultValue="{{ 1548487316805 }}"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>
+
+
+<w-pane desc="指定开始时间和结束时间" />
+<w-cell-group>
+  <w-date-picker
+    mode="dateTimeMinute"
+    label="1990 ~ 2020"
+    startDate="1990"
+    endDate="2020"
+    title="请选择日期"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>
+
+
+<w-pane desc="自定义后缀名" />
+<w-cell-group>
+  <w-date-picker
+    mode="dateTimeMinute"
+    label="CH"
+    title="请选择日期"
+    startDate="1990"
+    endDate="2020"
+    suffixName="{{ ['年','月','日','时','分','秒'] }}"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    mode="dateTimeMinute"
+    label="EN"
+    title="Please choose the time"
+    startDate="1990"
+    endDate="2020"
+    suffixName="{{ ['Y','M','D','h','m','s'] }}"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>

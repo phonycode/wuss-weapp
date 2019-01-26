@@ -1,0 +1,15 @@
+<w-cell-picker
+  isDatePicker
+  wuss-class="wuss-class"
+  label="{{ label }}"
+  options="{{ options }}"
+  title="{{ title }}"
+  defaultValue="{{ _defaultValue }}"
+  cancelTextColor="{{ cancelTextColor }}"
+  cancelText="{{ cancelText }}"
+  confirmTextColor="{{ confirmTextColor }}"
+  confirmText="{{ confirmText }}"
+  placeholder="{{ placeholder }}"
+  bind:onChange="handleChange"
+  bind:onSelect="handleSelect"
+/>

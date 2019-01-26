@@ -42,7 +42,8 @@
     "pages/w-segmented-control/index",
     "pages/w-scrollable-tab-view/index",
     "pages/w-vcode/index",
-    "pages/w-pane/index"
+    "pages/w-pane/index",
+    "pages/w-date-picker/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

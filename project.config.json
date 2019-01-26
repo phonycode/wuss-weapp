@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 41,
+			"current": 42,
 			"list": [
 				{
 					"id": -1,
@@ -295,7 +295,13 @@
 				{
 					"id": -1,
 					"name": "w-badge",
-					"pathName": "pages/w-badge/index"
+					"pathName": "pages/w-badge/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-date-picker",
+					"pathName": "pages/w-date-picker/index"
 				}
 			]
 		}
