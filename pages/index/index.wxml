@@ -244,6 +244,13 @@
 			 link="../w-address-picker/index"
 			 wuss-class="w-cell"
 			/>
+      <w-cell
+			 isLink
+			 highlight
+			 label="DatePicker 日期/时间选择器"
+			 link="../w-date-picker/index"
+			 wuss-class="w-cell"
+			/>
 			<w-cell
 			 isLink
 			 highlight

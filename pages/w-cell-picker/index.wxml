@@ -10,11 +10,11 @@
 	 defaultValue="{{['广东省','广州市','海珠区']}}"
    bind:onSelect="handleSelect"
 	/>
-  <!-- <w-cell-picker
+  <w-cell-picker
 	 label="单选模式"
 	 title="请选择性别"
 	 options="{{ options2 }}"
-	 defaultValue="男"
+	 defaultValue="女"
    bind:onSelect="handleSelect"
 	/>
   <w-cell-picker
@@ -30,6 +30,6 @@
 	 options="{{ options3 }}"
 	 title="请选择语言"
    bind:onSelect="handleSelect"
-	/> -->
+	/>
 </w-cell-group>
 
