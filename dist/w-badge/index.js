@@ -69,7 +69,7 @@ WussComponent({
         (bgColor ? ` background-color: ${bgColor}!important;` : '');
       this.setData({ styles });
     },
-    handleClick() {
+    handleClick(e) {
       this.triggerEvent('onClick', { ...e }, {});
     },
   },
