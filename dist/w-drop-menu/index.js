@@ -1,9 +1,9 @@
+import WussComponent from '../common/extends/baseComponent';
+
 /**
  * @emits {Function} selected 当前下拉列表选中的options向父组件发出的回调方法
  * @emits {Function} sortChange 当前sort排序改变时向父组件发出的回调方法
  */
-import WussComponent from '../common/extends/baseComponent';
-
 WussComponent({
   externalClasses: ['wuss-class-content','wuss-class-item','wuss-class-item-text'],
   properties: {
@@ -68,6 +68,8 @@ WussComponent({
           return this._handleFilter(e);
         case 'sort': // 当前筛选条件为sort时
           return this._handleSort(e);
+        case 'custom': // 当前筛选条件为custom时
+          return this._handleCustomClick(e);
         default:
           break;
       }
@@ -137,9 +139,26 @@ WussComponent({
       });
       this.triggerEvent(
         'onChange', {
-          sort: options[itemkey].sortBy,
-          // parent: options[itemkey],
+          ...options[itemkey],
           type: 'sort'
+        }, {}
+      );
+    },
+    /**
+     * 自定义点击
+     * @param {*} e 
+     */
+    _handleCustomClick(e) {
+      const {
+        itemkey
+      } = e.currentTarget.dataset;
+      let {
+        _options: options
+      } = this.data;
+      this.triggerEvent(
+        'onChange', {
+          ...options[itemkey],
+          type: 'custom'
         }, {}
       );
     },
@@ -246,6 +265,7 @@ WussComponent({
         }
         this.triggerEvent(
           'onChange', {
+            ...options[currentIndex],
             checked: result,
             type: 'checkbox',
           }, {}
@@ -318,6 +338,7 @@ WussComponent({
         _options: options,
       } = this.data;
       const eventDetail = {
+        ...options[parentkey],
         key: optkey,
         item: options[parentkey] && options[parentkey].options && options[parentkey].options[optkey] ? options[parentkey].options[optkey] : {},
       };
@@ -432,6 +453,10 @@ WussComponent({
             ...items,
           };
           case 'slot':
+          return {
+            ...items,
+          };
+          case 'custom':
           return {
             ...items,
           };
