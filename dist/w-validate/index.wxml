@@ -4,7 +4,7 @@
 		<slot />
 	</view>	
 	<w-icon
-	 class="validate-icon"
+	 class="wuss-validate-icon validate-icon"
 	 bind:tap="validateToast"
 	 type="info2-o"
 	 size="38"

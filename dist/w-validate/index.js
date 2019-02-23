@@ -10,6 +10,7 @@ WussComponent({
   properties: {
     rules: Object,
   },
+  externalClasses: ['wuss-validate-icon'],
   relations: {
     field: {
       type: 'descendant',
