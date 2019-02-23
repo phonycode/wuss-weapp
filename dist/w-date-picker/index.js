@@ -22,6 +22,7 @@ WussComponent({
    * @param {number} startDate 开始的年份
    * @param {number} endDate 结束的年份 默认为当前的年份
    * @param {array} suffixName 每个column对应的后缀名称
+   * @param {*} defaultValue 设置初始化默认值
    * @param {string} cancelTextColor picker取消文本的字体颜色
    * @param {string} cancelText picker取消文本
    * @param {string} confirmTextColor picker确认文本的字体颜色
