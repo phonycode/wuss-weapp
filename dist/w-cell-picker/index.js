@@ -40,7 +40,7 @@ WussComponent({
           isDatePicker,
         } = this.data;
         if (!Array.isArray(options) || !Array.prototype.toString.call(options)) {
-          console.warn('cell-picker Warning: Missing required parameters: options');
+          // console.warn('cell-picker Warning: Missing required parameters: options');
         };
         if(isDatePicker) {
           return this._ArrayKeysToArrayObject();
