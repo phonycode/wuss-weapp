@@ -2,9 +2,9 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei]
  * @Date: 2018-09-06 16:23:23
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2019-01-26 15:55:55
+ * @Last Modified time: 2019-02-25 09:13:33
  */
-import WussComponent from '../common/extends/baseComponent';
+import WussComponent from "../common/extends/baseComponent";
 const SYSTEM_INFO = wx.getSystemInfoSync();
 
 WussComponent({
@@ -22,39 +22,39 @@ WussComponent({
   properties: {
     swiperOutBtns: {
       type: Array,
-      value: [],
+      value: []
     },
     backgroundColor: {
       type: String,
-      value: '#ffffff',
+      value: "#ffffff"
     },
     buttonWidth: {
       type: Number,
-      value: 0,
+      value: 0
     },
     height: {
       type: Number,
-      value: 48,
+      value: 48
     },
     threshold: {
       type: Number,
-      value: 0.35,
+      value: 0.35
     },
     close: {
       type: Boolean,
       value: false,
       observer(val) {
         val ? this.open() : this.close();
-      },
+      }
     },
     autoClose: {
       type: Boolean,
-      value: true,
+      value: true
     },
     disabled: {
       type: Boolean,
-      value: false,
-    },
+      value: false
+    }
   },
   data: {
     _scrollX: 0,
@@ -62,7 +62,7 @@ WussComponent({
     _slideWidth: 0,
     out: true,
     _width: SYSTEM_INFO.windowWidth,
-    _threshold: 0,
+    _threshold: 0
   },
   methods: {
     /**
@@ -74,11 +74,11 @@ WussComponent({
       if (disabled) return false;
       if (!out && x < -_threshold) {
         this.setData({
-          out: true,
+          out: true
         });
       } else if (out && x >= -_threshold) {
         this.setData({
-          out: false,
+          out: false
         });
       }
     },
@@ -86,21 +86,21 @@ WussComponent({
      * movable-view 鼠标按下回调
      */
     handleTouchStart(e) {
-      const { pageX, pageY } = e.changedTouches['0'];
+      const { pageX, pageY } = e.changedTouches["0"];
       this.setData({ _startX: pageX, _startY: pageY });
     },
     /**
      * movable-view 鼠标松开回调
      */
     handleTouchEnd(e) {
-      const { pageX, pageY } = e.changedTouches['0'];
+      const { pageX, pageY } = e.changedTouches["0"];
       const {
         _startX,
         _startY,
         _slideWidth,
         _threshold,
         disabled,
-        height,
+        height
       } = this.data;
       if (disabled) return false;
       if (
@@ -108,23 +108,23 @@ WussComponent({
         Math.abs(_startY - pageY) <= height
       ) {
         this.setData({
-          _scrollX: -_slideWidth,
+          _scrollX: -_slideWidth
         });
       } else if (_startX - pageX < _threshold && _startX - pageX > 0) {
         this.setData({
-          _scrollX: 0,
+          _scrollX: 0
         });
       } else if (pageX - _startX >= _threshold) {
         this.setData({
-          _scrollX: 0,
+          _scrollX: 0
         });
       } else if (pageX - _startX < _threshold && pageX - _startX > 0) {
         this.setData({
-          _scrollX: -_slideWidth,
+          _scrollX: 0
         });
       } else if (pageX === _startX || pageY === _startY) {
         this.setData({
-          _scrollX: 0,
+          _scrollX: 0
         });
       }
     },
@@ -137,7 +137,7 @@ WussComponent({
       const item = swiperOutBtns[key];
       if (item.disabled) return false;
       this.triggerEvent(item.type);
-      autoClose ? this.close() : '';
+      autoClose ? this.close() : "";
     },
     /**
      * left内容区被点击
@@ -146,22 +146,22 @@ WussComponent({
       const { autoClose, _scrollX, _slideWidth } = this.data;
       if (_scrollX === -_slideWidth) {
         // 展开状态
-        autoClose ? this.close() : '';
+        autoClose ? this.close() : "";
       } else {
-        this.triggerEvent('onClick');
+        this.triggerEvent("onClick");
       }
     },
     open() {
       const { _slideWidth } = this.data;
       this.setData({
-        _scrollX: -_slideWidth,
+        _scrollX: -_slideWidth
       });
     },
     close() {
       this.setData({
-        _scrollX: 0,
+        _scrollX: 0
       });
-    },
+    }
   },
   ready: function() {
     const { threshold, buttonWidth, swiperOutBtns, close } = this.data;
@@ -172,8 +172,8 @@ WussComponent({
         : (SYSTEM_INFO.windowWidth * 0.45) / swiperOutBtns.length);
     this.setData({
       _slideWidth,
-      _threshold: _slideWidth * threshold,
+      _threshold: _slideWidth * threshold
     });
-    close ? this.open() : '';
-  },
+    close ? this.open() : "";
+  }
 });
