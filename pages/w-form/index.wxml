@@ -75,7 +75,7 @@
 			<w-date-picker
 			 name="createTime"
 			 mode="dateTime"
-			 label="dateTime"
+			 label="出生日期"
 			 title="请选择日期"
 			/>
 		</w-validate>
