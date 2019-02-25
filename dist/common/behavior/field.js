@@ -35,5 +35,10 @@ module.exports = Behavior({
           break;
       }
     },
+    validate(newValue) {
+      const validate = this.getRelationNodes('../w-validate/index')[0];
+      if (!validate) return false;
+      validate.isValidate(newValue || '');
+    },
   },
 });
