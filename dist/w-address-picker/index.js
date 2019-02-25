@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-27 14:08:39 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2019-01-26 16:17:09
+ * @Last Modified time: 2019-02-24 13:26:07
  */
 import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
@@ -13,6 +13,9 @@ WussComponent({
    */
   relations: {
     '../w-form/index': {
+      type: 'ancestor',
+    },
+    '../w-validate/index': {
       type: 'ancestor',
     },
   },
@@ -84,6 +87,7 @@ WussComponent({
         value: currentValue,
         _currentValue: currentValue.join(' ',''),
       })
+      this.validate(current);
       this.triggerEvent('onChange', {
         value: current,
       }, {});
@@ -107,7 +111,8 @@ WussComponent({
       this.setData({
         value: defaultValue,
         _currentValue: defaultValue.join(' ',''),
-      })
+      });
+      this.validate(defaultValue);
     }
   },
   /**
