@@ -9,6 +9,9 @@ WussComponent({
     '../w-form/index': {
       type: 'ancestor',
     },
+    '../w-validate/index': {
+      type: 'ancestor',
+    },
   },
 
   behaviors: [field],
@@ -84,6 +87,7 @@ WussComponent({
           value,
           _defaultValue: value,
         });
+        this.validate(value);
       },
     },
     cancelTextColor: {
@@ -223,11 +227,14 @@ WussComponent({
       let value;
       const { showValue } = this.data;
       const _year = year && year.substr(0,4);
-      const _month = month && month.substr(0,2);
+      const MONTH = month && month.substr(0,2);
       const _day = day && day.substr(0,2);
       const _hour = hour && hour.substr(0,2);
       const _minute = minute && minute.substr(0,2);
       const _seconds = seconds && seconds.substr(0,2);
+      let _month = new Date(_year, MONTH);
+      _month.setMonth(_month.getMonth() - 1);
+      _month = _month.getMonth();
       switch (showValue) {
         case 'formateDate': //返回格式化后的时间
           try {
@@ -284,6 +291,7 @@ WussComponent({
       };
       this.setData({ value });
       this.triggerEvent('onSelect',{ value },{});
+      this.validate(value);
     },
   },
 
@@ -315,7 +323,8 @@ WussComponent({
     };
     this.setData({
       options: dateTimeArray,
-    })
+    });
+    this.validate();
   },
 
   /**
