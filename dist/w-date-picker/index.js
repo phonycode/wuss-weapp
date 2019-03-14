@@ -1,5 +1,7 @@
 import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
+import './format';
+const fmt = ["Y+,i,year","M+,,month", "d+,i,day", "h+,i,hours", "m+,,minutes", "s+,,seconds"];
 
 WussComponent({
   /**
@@ -18,7 +20,7 @@ WussComponent({
 
   /**
    * 组件的属性列表
-   * @param {string} mode 时间选择器模式 [date/dateTime/dateTimeMinute/dateTimeHour]
+   * @param {stirng} format 要格式化的模板格式 YYYY-MM-DD HH:mm:ss
    * @param {stirng} label 标签名称
    * @param {stirng} title popup弹窗标题
    * @param {stirng} showValue 返回何种格式的时间类型 [formateDate/timestamp/date]
@@ -33,9 +35,9 @@ WussComponent({
    * @param {string} placeholder date picker的占位符文本
    */
   properties: {
-    mode: {
+    format: {
       type: String,
-      value: 'dateTime'
+      value: 'YYYY-MM-DD'
     },
     label: {
       type: String,
@@ -63,25 +65,51 @@ WussComponent({
       type: null,
       observer(_v) {
         const { [0]: year, [1]: month, [2]: day, [3]: hours, [4]: minutes, [5]: seconds } = this.data.suffixName;
-        let value;
+        let value = [];
         const type = Object.prototype.toString.call(_v);
+        const { format } = this.data;
+        const _formatTpl = [].concat(this.data._formatTpl);
+        if (!_formatTpl || !_formatTpl.length) {
+          for (let value in fmt) {
+            const [regexp, flags, rename] = fmt[value].split(',');
+            const validateFlag = new RegExp(`(${regexp})`,flags).test(format);
+            if (validateFlag) {
+              _formatTpl.push(rename);
+            };
+          };
+        };
         if (type === '[object String]' || type === '[object Number]' || type === '[object Date]') {
           const date = new Date(_v);
-          value = [
-            `${date.getFullYear()}${year}`,
-            `${date.getMonth()+1>10?date.getMonth()+1: `0${date.getMonth()+1}`}${month}`,
-            `${date.getDate()>10?date.getDate(): `0${date.getDate()}`}${day}`,
-            `${date.getHours()>10?date.getHours(): `0${date.getHours()}`}${hours}`,
-            `${date.getMinutes()>10?date.getMinutes(): `0${date.getMinutes()}`}${minutes}`,
-            `${date.getSeconds()>10?date.getSeconds(): `0${date.getSeconds()}`}${seconds}`,
-          ];
-        } else if (type === '[object Array]') {
+          if (_formatTpl.includes('year')) {
+            value[0] = `${date.getFullYear()}${year}`;
+          };
+          if (_formatTpl.includes('month')) {
+            value[1] = `${date.getMonth()+1>=10?date.getMonth()+1: `0${date.getMonth()+1}`}${month}`;
+          };
+          if (_formatTpl.includes('day')) {
+            value[2] = `${date.getDate()>=10?date.getDate(): `0${date.getDate()}`}${day}`;
+          };
+          if (_formatTpl.includes('hours')) {
+            value[3] = `${date.getHours()>=10?date.getHours(): `0${date.getHours()}`}${hours}`;
+          };
+          if (_formatTpl.includes('minutes')) {
+            value[4] = `${date.getMinutes()>=10?date.getMinutes(): `0${date.getMinutes()}`}${minutes}`;
+          };
+          if (_formatTpl.includes('seconds')) {
+            value[5] = `${date.getSeconds()>=10?date.getSeconds(): `0${date.getSeconds()}`}${seconds}`;
+          };
+        } else if (type === '[object Array]') { // [’2019年','09月']
+          const { _formatTpl, suffixName } = this.data;
           value = _v.map((v,index) => {
-            if(index === 0) return !(v.indexOf(year) > -1) ? `${v}${year}` : v;
-            return !(v.indexOf(this.data.suffixName[index]) > -1) ? `${v}${this.data.suffixName[index]}` : v;
+            if (_formatTpl.includes('year') && index === 0) return v.includes(year) ? v : `${v}${year}`;
+            if (_formatTpl.includes('month')) return v.includes(suffixName[1]) ? v : `${v}${suffixName[index]}`;
+            if (_formatTpl.includes('day')) return v.includes(suffixName[2]) ? v : `${v}${suffixName[index]}`;
+            if (_formatTpl.includes('hours')) return v.includes(suffixName[3]) ? v : `${v}${suffixName[index]}`;
+            if (_formatTpl.includes('minutes')) return v.includes(suffixName[4]) ? v : `${v}${suffixName[index]}`;
+            if (_formatTpl.includes('seconds')) return v.includes(suffixName[5]) ? v : `${v}${suffixName[index]}`;
           });
         } else {
-          return console.warn('w-date-picker Error: defaultValue 值只能为时间蹉、字符串、date类型、数组等');
+          throw TypeError('w-date-picker: defaultValue 值只能为时间蹉、date字符串、数组等');
         };
         this.setData({
           value,
@@ -114,6 +142,7 @@ WussComponent({
    */
   data: {
     options: [],
+    _formatTpl: [],
     value: '',
     _defaultValue: null,
   },
@@ -213,81 +242,75 @@ WussComponent({
     },
     handleChange(e) {
       const value = e.detail.value;
-      let {
-        options
-      } = this.data;
-      const days = this.getMonthDay(options[0][value[0]], options[1][value[1]]);
-      this.setData({
-        [`options[2]`]: days,
-      });
+      const { options, _formatTpl } = this.data;
+      // 是否包含年月
+      if (_formatTpl.includes('year') && _formatTpl.includes('month') && _formatTpl.includes('day')) {
+        const days = this.getMonthDay(options[0][value[0]], options[1][value[1]]);
+        this.setData({
+          [`options[2]`]: days,
+        });
+      };
     },
     handleSelect(e) {
-      const { [0]: year, [1]: month, [2]: day, [3]: hour, [4]: minute, [5]: seconds } = e.detail.value;
-      const dateLen = e.detail.value.length;
-      let value;
-      const { showValue } = this.data;
-      const _year = year && year.substr(0,4);
-      const MONTH = month && month.substr(0,2);
-      const _day = day && day.substr(0,2);
-      const _hour = hour && hour.substr(0,2);
-      const _minute = minute && minute.substr(0,2);
-      const _seconds = seconds && seconds.substr(0,2);
-      let _month = new Date(_year, MONTH);
-      _month.setMonth(_month.getMonth() - 1);
-      _month = _month.getMonth();
+      let value = [];
+      const currentDate = Array.isArray(e.detail.value) ? [].concat(e.detail.value).reverse() : [];
+      if (currentDate.length <= 0) return [];
+      let { showValue, format } = this.data;
+      let _template = ([].concat(this.data._formatTpl)).reverse();
+
+      for (let i = _template.length-1; i >= 0; i--) {
+        if (_template.includes('seconds')) {
+          value.unshift(currentDate.shift().substr(0, 2));
+          _template.shift();
+        } else if (_template.includes('minutes')) {
+          value.unshift(currentDate.shift().substr(0, 2));
+          _template.shift();
+        } else if (_template.includes('hours')) {
+          value.unshift(currentDate.shift().substr(0, 2));
+          _template.shift();
+        } else if (_template.includes('day')) {
+          value.unshift(currentDate.shift().substr(0, 2));
+          _template.shift();
+        } else if (_template.includes('month')) {
+          let _date = new Date(new Date().getFullYear(),currentDate.shift().substr(0, 2));
+          _date.setMonth(_date.getMonth() - 1);
+          value.unshift(_date.getMonth().toString());
+          _template.shift();
+        } else if (_template.includes('year')) {
+          value.unshift(currentDate.shift().substr(0, 4));
+          _template.shift();
+        }
+      };
+
+      
+      // 处理format模板不包含年月的情况，直接返回新字符串数组值
+      if (!this.data._formatTpl.includes('year') && !this.data._formatTpl.includes('month')) {
+        const _date = new Date();
+        const noIncludesDate = [_date.getFullYear(),_date.getMonth(),_date.getDate()];
+        if (this.data._formatTpl.includes('hours')) {
+          noIncludesDate.push(value.shift());
+        }
+        if (this.data._formatTpl.includes('minutes')) {
+          noIncludesDate.push(value.shift());
+        };
+        if (this.data._formatTpl.includes('seconds')) {
+          noIncludesDate.push(value.shift());
+        };
+        value = noIncludesDate;
+      }
+
       switch (showValue) {
-        case 'formateDate': //返回格式化后的时间
-          try {
-            value = `${_year}-${_month}-${_day}`;
-            switch (dateLen) {
-              case 6: // yy:mm:dd hh:mm:ss
-                value+= ` ${_hour}:${_minute}:${_seconds}`;
-                break;
-              case 5: // yy:mm:dd hh:mm
-                value+= ` ${_hour}:${_minute}`;
-                break;
-              case 4: // yy:mm:dd hh
-                value+= ` ${_hour}`;
-                break;
-              default:
-                break;
-            }
-          } catch (error) {};
+        case 'formatDate': //返回格式化后的时间
+          value = new Date(...value).format(format);
           break;
         case 'timestamp':
-          switch (dateLen) {
-            case 6: // yy:mm:dd hh:mm:ss
-              value = new Date(_year,_month,_day,_hour,_minute,_seconds).getTime();
-              break;
-            case 5: // yy:mm:dd hh:mm
-              value = new Date(_year,_month,_day,_hour,_minute).getTime();
-              break;
-            case 4: // yy:mm:dd hh
-              value = new Date(_year,_month,_day,_hour).getTime();
-              break;
-            default:
-              value = new Date(_year,_month,_day).getTime();
-              break;
-          }
+          value = new Date(...value).getTime();
           break;
         case 'date':
-          switch (dateLen) {
-            case 6: // yy:mm:dd hh:mm:ss
-              value = new Date(_year,_month,_day,_hour,_minute,_seconds);
-              break;
-            case 5: // yy:mm:dd hh:mm
-              value = new Date(_year,_month,_day,_hour,_minute);
-              break;
-            case 4: // yy:mm:dd hh
-              value = new Date(_year,_month,_day,_hour);
-              break;
-            default:
-              value = new Date(_year,_month,_day);
-              break;
-          }
+          value = new Date(...value);
           break;
         default:
-          throw Error('未知mode类型');
+          throw TypeError('w-date-picker: showValue值只能为[formatDate/timestamp/date]');
       };
       this.setData({ value });
       this.triggerEvent('onSelect',{ value },{});
@@ -304,25 +327,29 @@ WussComponent({
    * 组件布局完成后执行
    */
   ready: function () {
-    const { startDate, endDate, mode } = this.data;
-    let dateTimeArray = this.dateTimePicker(startDate, endDate);
-    switch (mode) {
-      case 'date': // YY:MM:DD
-        dateTimeArray = [dateTimeArray[0],dateTimeArray[1],dateTimeArray[2]];
-        break;
-      case 'dateTime': // YY:MM:DD HH:MM:SS
-        break;
-      case 'dateTimeMinute': // YY:MM:DD HH:MM
-        dateTimeArray = [dateTimeArray[0],dateTimeArray[1],dateTimeArray[2],dateTimeArray[3],dateTimeArray[4]];
-        break;
-      case 'dateTimeHour': // YY:MM:DD HH
-        dateTimeArray = [dateTimeArray[0],dateTimeArray[1],dateTimeArray[2],dateTimeArray[3]];
-        break;
-      default:
-        break;
+    const { startDate, endDate, format } = this.data;
+    let { _formatTpl } = this.data;
+    const newDateArray = [];
+    let [year = [], month = [], day = [], hours = [], minutes = [], seconds = []] = this.dateTimePicker(startDate, endDate);
+    const formatTpl = {
+      year,
+      month,
+      day,
+      hours,
+      minutes,
+      seconds,
+    };
+    for (let value in fmt) {
+      const [regexp, flags, rename] = fmt[value].split(',');
+      const validateFlag = new RegExp(`(${regexp})`,flags).test(format);
+      if (validateFlag) {
+        newDateArray.push(formatTpl[rename]);
+        _formatTpl.push(rename);
+      };
     };
     this.setData({
-      options: dateTimeArray,
+      _formatTpl,
+      options: newDateArray,
     });
     this.validate();
   },
