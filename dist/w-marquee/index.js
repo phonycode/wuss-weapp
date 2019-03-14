@@ -110,7 +110,6 @@ WussComponent({
     },
     nextSlide(index = 1) {
       let { itemHeight, _currentIndex, ITEM_COUNT } = this.data;
-      // if(index > ITEM_COUNT) {debugger;}
       this.setData({
         _styles: `transform: translate3d(0%,-${ index > ITEM_COUNT ? itemHeight : itemHeight * index }px,0);`,
         _currentIndex: _currentIndex >= --ITEM_COUNT || index > ITEM_COUNT ? 0 : ++_currentIndex,
