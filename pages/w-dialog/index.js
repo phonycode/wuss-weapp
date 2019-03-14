@@ -19,4 +19,7 @@ Page({
       visible4: false,
     });
   },
+  onLoad() {
+    setTimeout(() => this.setData({ visible1: true }), 1000);
+  }
 });

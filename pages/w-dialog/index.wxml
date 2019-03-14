@@ -5,9 +5,10 @@
 <w-dialog 
   visible="{{ visible1 }}"
   bind:onClose="handleClose"
+  wuss-class="example-dialog-1"
 >
-  <view class="example-dialog" hover-class="none" hover-stop-propagation="false">
-    <image style="width: 100%;height: 350px;" class="" src="http://img3.imgtn.bdimg.com/it/u=3013567159,2250112086&fm=26&gp=0.jpg" ></image>
+  <view class="example-dialog-1" hover-class="none" hover-stop-propagation="false">
+    <image style="width: 100%;height: 350px;" class="" src="../../assets/demo.png" ></image>
   </view>
 </w-dialog>
 

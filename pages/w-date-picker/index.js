@@ -5,14 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    date: new Date('2019-03-13 18:10:50').format('YYYY-MM-DD HH:mm:ss'),
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
   handleSelected(e) {
     console.log(e);
