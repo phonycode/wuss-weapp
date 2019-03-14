@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-30 14:52:00 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-25 14:44:48
+ * @Last Modified time: 2019-03-07 15:29:09
  */
 import WussComponent from '../common/extends/baseComponent';
 
@@ -89,7 +89,7 @@ WussComponent({
       .select('.wuss-card')
       .boundingClientRect()
       .exec(([node]) => this.setData({
-        _RENDER_CARD_COUNT: parseInt(node.height/this.data._CARD_LOADING_HEIGHT),
+        _RENDER_CARD_COUNT: Math.ceil(node.height/this.data._CARD_LOADING_HEIGHT),
       }));
     },
   },

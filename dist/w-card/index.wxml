@@ -1,5 +1,5 @@
 <view
- class="wuss-class wuss-card {{ full ? 'wuss-card-full' : '' }} {{ shadow ? 'wuss-card-shadow' : '' }}"
+ class="wuss-class wuss-card {{ full ? 'wuss-card-full' : '' }} {{ shadow ? 'wuss-card-shadow' : '' }} {{ height ? 'wuss-card-loading-height' : '' }}"
  hover-class="none"
  hover-stop-propagation="false"
 >
