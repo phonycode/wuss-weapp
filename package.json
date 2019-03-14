@@ -1,6 +1,6 @@
 {
   "name": "wuss-weapp",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": ":whale:wuss 一款高质量，组件齐全，高自定义的微信小程序UI组件库",
   "miniprogram": "dist",
   "repository": {
