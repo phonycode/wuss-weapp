@@ -38,11 +38,18 @@ WussComponent({
           options,
           defaultValue,
           isDatePicker,
+          _datePickerOptionsInit,
         } = this.data;
         if (!Array.isArray(options) || !Array.prototype.toString.call(options)) {
           // console.warn('cell-picker Warning: Missing required parameters: options');
         };
         if(isDatePicker) {
+          if (!_datePickerOptionsInit && options.length > 0) {
+            const _currentValue = _currentValue && Array.isArray(defaultValue) ? defaultValue.filter(_ => _ !== undefined) || options.map(_ => 0) : null;
+            this.setData(Object.assign({
+              _datePickerOptionsInit: true,
+            }, _currentValue ? { _currentValue } : {}));
+          }
           return this._ArrayKeysToArrayObject();
         };
         this.setData({
@@ -113,6 +120,7 @@ WussComponent({
     _isLinkage: false,
     _currentValue: [],
     _isRadio: false,
+    _datePickerOptionsInit: false,
     _isReadyConfirm: true,
   },
   methods: {
@@ -155,13 +163,21 @@ WussComponent({
     _handleConfirm() {
       const {
         _isReadyConfirm,
-        _currentValue,
         showValue,
         value,
         _isRadio,
         defaultKey,
-        isDatePicker,
+        _isLinkage,
+        _options,
+        options,
       } = this.data;
+      const currentOpitons = _isLinkage ? _options : options;
+      let _currentValue = this.data._currentValue;
+      if (_currentValue.length < currentOpitons.length) { // picker 长度校验
+        for (let i = 0; i < (currentOpitons.length - _currentValue.length); i++) {
+          _currentValue.push(0);
+        };
+      };
       if (!_isReadyConfirm) return false;
       let currentValues = this.getValues(_currentValue, defaultKey);
       if ((typeof currentValues === 'string' ? currentValues : JSON.stringify(currentValues)) !== (typeof value === 'string' ? value : JSON.stringify(value))) {
@@ -171,12 +187,14 @@ WussComponent({
       };
       this.setData({
         _currentText: !_isRadio ? this.getValues(_currentValue, showValue ? 'value' : 'key').join(' ', '') : this.getValues(_currentValue, showValue ? 'value' : 'key'),
-      }, () => this.triggerEvent('onSelect', {
-        value: currentValues,
-      }, {}));
-      this.validate(this.data.value);
-      this.setData({
-        _visible: false,
+      }, () => {
+        this.triggerEvent('onSelect', {
+          value: currentValues,
+        }, {});
+        this.validate(this.data.value);
+        this.setData({
+          _visible: false,
+        });
       });
     },
     _ArrayKeysToArrayObject() {
@@ -293,15 +311,18 @@ WussComponent({
     },
     initPicker() {
       const {
-        defaultValue,
         showValue,
         placeholder,
         defaultKey,
         _isLinkage,
       } = this.data;
+      let { defaultValue } = this.data;
       this._ArrayKeysToArrayObject();
       this.formatOptions();
       let defaultText = placeholder || '';
+      if (defaultValue && Array.isArray(defaultValue)) {
+        defaultValue = defaultValue.filter(_ => _ !== undefined) || defaultValue.map(_ => 0);
+      };
       if (defaultValue) {
         if (!this.data._isRadio) {
           if (Array.isArray(defaultValue) && !!Array.prototype.toString.call(defaultValue)) {
@@ -353,7 +374,7 @@ WussComponent({
           options[1][0].hasOwnProperty('parent')
         ),
         _isRadio: !!(options[0] && !Array.isArray(options[0])),
-        _currentValue: defaultValue || [0,0,0],
+        _currentValue: defaultValue || options.map(_ => 0),
       }, () => this.initPicker());
       this.setData({
         _initPicker: false,

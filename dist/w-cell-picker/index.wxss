@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-24 15:29:04 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2019-01-26 15:29:13
+ * @Last Modified time: 2019-03-14 09:47:40
  */
 @import '../common/theme/global.wxss';
 
@@ -69,5 +69,5 @@
 
 .wuss-cell-picker-text-view {
   white-space: nowrap;
-  text-overflow: ellipsis;
+  text-overflow:ellipsis;
 }
