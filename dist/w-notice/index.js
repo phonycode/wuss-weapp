@@ -1,6 +1,6 @@
 /*
- * @Author: cnyballk[https://github.com/cnyballk] 
- * @Date: 2018-09-09 14:35:55 
+ * @Author: cnyballk[https://github.com/cnyballk]
+ * @Date: 2018-09-09 14:35:55
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2019-01-26 15:53:06
  */
@@ -73,6 +73,9 @@ WussComponent({
     this.setData({
       timer: null,
     });
+  },
+  ready() {
+    !this.data.text && this.init();
   },
   methods: {
     init() {

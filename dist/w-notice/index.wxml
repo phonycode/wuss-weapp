@@ -7,31 +7,32 @@
 	<w-icon
 	 wx:if="{{ icon }}"
 	 class="wuss-notice-voice"
-   type="{{ icon }}"
+	 type="{{ icon }}"
 	/>
-	
+
 	<view class="wuss-notice__content-wrap">
 
 		<view class="wuss-notice__content" animation="{{ animationData }}">
 			{{ text }}
+			<slot wx:if="{{!text}}" />
 		</view>
 
 	</view>
 
 	<view wx:if="{{ mode }}" class="wuss-notice-operation">
-		
+
 		<navigator
 		 hover-class="none"
 		 wx:if="{{ mode === 'link' }}"
 		 url="{{ url }}"
 		 open-type="{{ openType }}"
 		>
-			<w-icon  type="arrow-right" size="20"/>
+			<w-icon type="arrow-right" size="20" />
 		</navigator>
 
 		<w-icon
 		 wx:if="{{ mode === 'closeable' }}"
-     size="20"
+		 size="20"
 		 type="close"
 		 bind:tap="onClose"
 		/>
