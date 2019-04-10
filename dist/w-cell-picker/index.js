@@ -24,6 +24,7 @@ WussComponent({
    * @param {string} defaultKey onChange和onSelect事件返回的值是何种格式 [value,value...] [key,key,...]
    * @param {string} placeholder 初始化默认的占位符 例如：请选择
    * @param {boolean} isDatePicker 类型切换为日期选择器
+   * @param {function} shouldValueUpdate 接收一个fucntion,处理是否更新confirm后的值。返回布尔值Boolean.
    */
   properties: {
     options: {
@@ -109,7 +110,11 @@ WussComponent({
     },
     isDatePicker: {
       type: Boolean,
-    }
+    },
+    shouldValueUpdate: {
+      type: Function,
+      value: () => true,
+    },
   },
   data: {
     _visible: false,
@@ -170,11 +175,16 @@ WussComponent({
         _isLinkage,
         _options,
         options,
+        shouldValueUpdate,
       } = this.data;
+      if(!shouldValueUpdate()) { // 无需更新
+        return this.setData({ _visible: false });
+      };
       const currentOpitons = _isLinkage ? _options : options;
       let _currentValue = this.data._currentValue;
       if (_currentValue.length < currentOpitons.length) { // picker 长度校验
-        for (let i = 0; i < (currentOpitons.length - _currentValue.length); i++) {
+        let _diffLen = (currentOpitons.length - _currentValue.length);
+        for (let i = 0; i < _diffLen; i++) {
           _currentValue.push(0);
         };
       };
@@ -350,21 +360,15 @@ WussComponent({
           })
         }
       };
-      this.validate(defaultValue);
       this.setData({
         value: this.getValues(this.data._currentValue, defaultKey),
         _currentText: defaultText,
       });
     },
-    //调用验证
-    validate(newValue) {
-      const validate = this.getRelationNodes('../w-validate/index')[0];
-      if (!validate) return false;
-      validate.isValidate(newValue || '');
-    },
   },
   ready: function () {
     const { options, defaultValue, isDatePicker } = this.data;
+    this.validate(defaultValue);
     if(isDatePicker) {
       this.setData({
         value: defaultValue || [],
