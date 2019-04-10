@@ -84,19 +84,19 @@ WussComponent({
             value[0] = `${date.getFullYear()}${year}`;
           };
           if (_formatTpl.includes('month')) {
-            value[1] = `${date.getMonth()+1>=10?date.getMonth()+1: `0${date.getMonth()+1}`}${month}`;
+            value[1] = `${this.withData(date.getMonth()+1)}${month}`;
           };
           if (_formatTpl.includes('day')) {
-            value[2] = `${date.getDate()>=10?date.getDate(): `0${date.getDate()}`}${day}`;
+            value[2] = `${this.withData(date.getDate())}${day}`;
           };
           if (_formatTpl.includes('hours')) {
-            value[3] = `${date.getHours()>=10?date.getHours(): `0${date.getHours()}`}${hours}`;
+            value[3] = `${this.withData(date.getHours())}${hours}`;
           };
           if (_formatTpl.includes('minutes')) {
-            value[4] = `${date.getMinutes()>=10?date.getMinutes(): `0${date.getMinutes()}`}${minutes}`;
+            value[4] = `${this.withData(date.getMinutes())}${minutes}`;
           };
           if (_formatTpl.includes('seconds')) {
-            value[5] = `${date.getSeconds()>=10?date.getSeconds(): `0${date.getSeconds()}`}${seconds}`;
+            value[5] = `${this.withData(date.getSeconds())}${seconds}`;
           };
         } else if (type === '[object Array]') { // [’2019年','09月']
           const { _formatTpl, suffixName } = this.data;
@@ -152,7 +152,7 @@ WussComponent({
    */
   methods: {
     withData(param) {
-      return param < 10 ? '0' + param : '' + param;
+      return (param < 10 ? '0' + param : '' + param) || '00';
     },
     getLoopArray(start = 0, end = 1, dtype) {
       const array = [];
