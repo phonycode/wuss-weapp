@@ -6,9 +6,11 @@ const FORM_PATH = '../w-form/index';
 WussComponent({
   /**
    * @param {object} rules 规则
+   * @param {boolean} firstValidate 是否需要初始化校验
    */
   properties: {
     rules: Object,
+    firstValidate: Boolean,
   },
   externalClasses: ['wuss-validate-icon'],
   relations: {
@@ -33,17 +35,29 @@ WussComponent({
   methods: {
     isValidate(value) {
       if (value === void 666) return false;
-      const { rules, first, _node } = this.data;
+      const { rules, first, firstValidate, _node } = this.data;
       const [message = ''] = new WussValidate(rules).isValidate(value);
-      this.setData({
-        message,
-        showIcon: !!message && !first && true,
-        first: false,
-        isError: !!message,
-      });
-      _node.setData({
-        __showIcon: !!message && !first && true,
-      });
+      if (!!firstValidate && first) {
+        this.setData({
+          message,
+          showIcon: !!message,
+          first: false,
+          isError: !!message,
+        });
+        _node.setData({
+          __showIcon: !!message,
+        });
+      } else {
+        this.setData({
+          message,
+          showIcon: !!message && !first && true,
+          first: false,
+          isError: !!message,
+        });
+        _node.setData({
+          __showIcon: !!message && !first && true,
+        });
+      };
       const form = this.getRelationNodes(FORM_PATH)[0];
       form && form.isAllValidate();
     },
