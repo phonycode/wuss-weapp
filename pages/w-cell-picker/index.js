@@ -257,8 +257,18 @@ Page({
         },
       ],
     ],
+    options5: ['测试1','测试2'],
+    shouldValueUpdate: () => {
+      const [page] = getCurrentPages();
+      return !!(page.data.value === '666');
+    },
+    value: '值为666时更新',
   },
-  onLoad: function (options) {},
+  change(e) {
+    this.setData({ value: e.detail.value });
+  },
+  onLoad: function (options) {
+  },
   handleSelect(e) {
     console.log(e)
   },

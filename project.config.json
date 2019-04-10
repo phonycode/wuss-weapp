@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 42,
+			"current": 43,
 			"list": [
 				{
 					"id": -1,
@@ -301,7 +301,14 @@
 				{
 					"id": -1,
 					"name": "w-date-picker",
-					"pathName": "pages/w-date-picker/index"
+					"pathName": "pages/w-date-picker/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-count-down",
+					"pathName": "pages/w-countdown/index",
+					"scene": null
 				}
 			]
 		}

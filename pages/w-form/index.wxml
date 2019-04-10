@@ -28,7 +28,7 @@
 			/>
 		</w-validate>
 
-		<w-validate rules="{{ isRequired }}">
+		<w-validate firstValidate rules="{{ isRequired }}">
 			<w-cell-picker
 			 label="性别"
 			 title="请选择性别"
@@ -40,7 +40,7 @@
 			/>
 		</w-validate>
 
-		<w-validate rules="{{ isRequired }}">
+		<w-validate firstValidate rules="{{ isRequired }}">
 			<w-address-picker
 			 label="选择地区"
 			 name="region"
@@ -71,7 +71,7 @@
 			/>
 		</w-cell>
 
-		<w-validate rules="{{ isRequired }}">
+		<w-validate firstValidate rules="{{ isRequired }}">
 			<w-date-picker
 			 name="createTime"
 			 mode="dateTime"

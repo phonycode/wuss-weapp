@@ -7,7 +7,7 @@
 	 label="多选联动模式"
 	 options="{{ options1 }}"
 	 title="请选择地区"
-	 defaultValue="{{['广东省','广州市','海珠区']}}"
+	 defaultValue="{{['广东省','广州市','番禺区']}}"
    bind:onSelect="handleSelect"
 	/>
   <w-cell-picker
@@ -15,6 +15,7 @@
 	 title="请选择性别"
 	 options="{{ options2 }}"
 	 defaultValue="女"
+   shouldValueUpdate="{{ shouldValueUpdate }}"
    bind:onSelect="handleSelect"
 	/>
   <w-cell-picker
@@ -28,8 +29,18 @@
 	 label="多选联动模式"
    placeholder="请选择语言"
 	 options="{{ options3 }}"
+	 defaultValue="{{['前端','css3']}}"
 	 title="请选择语言"
    bind:onSelect="handleSelect"
 	/>
+  <w-cell-picker
+	 label="指定本次是否更新"
+	 placeholder="通过Function指定更新"
+	 options="{{ options5 }}"
+	 title="请选择"
+   shouldValueUpdate="{{ shouldValueUpdate }}"
+   bind:onSelect="handleSelect"
+	/>
+  <input bindinput="change" value="{{ value }}"/>
 </w-cell-group>
 

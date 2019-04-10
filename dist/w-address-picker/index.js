@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-27 14:08:39 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2019-02-24 13:26:07
+ * @Last Modified time: 2019-04-10 15:45:52
  */
 import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
@@ -43,7 +43,6 @@ WussComponent({
     },
     defaultValue: {
       type: Array,
-      value: [],
     },
     currentValue: {
       type: Array,
@@ -112,8 +111,8 @@ WussComponent({
         value: defaultValue,
         _currentValue: defaultValue.join(' ',''),
       });
-      this.validate(defaultValue);
     }
+    this.validate(defaultValue);
   },
   /**
    * 在组件实例进入页面节点树时执行
