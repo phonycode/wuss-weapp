@@ -25,7 +25,7 @@
 					 style="color: {{ item.color }};"
 					 hover-class="{{ item.disabled ? '' : 'wuss-action-sheet-btn-hover' }}"
 					 class="wuss-action-sheet-btn {{ item.disabled ? 'wuss-action-sheet-btn-disabled' : '' }}"
-					 catchtap="_handleItemClick"
+					 bindtap="_handleItemClick"
            data-key="{{ index }}"
 					 open-type="{{ item.openType }}"
 					>
@@ -51,7 +51,7 @@
 		 wx:if="{{ showCancel }}"
 		>
 			<button
-			 catchtap="_handleCancel"
+			 bindtap="_handleCancel"
 			 hover-class="wuss-action-sheet-btn-hover"
 			 class="wuss-action-sheet-cancel"
 			>

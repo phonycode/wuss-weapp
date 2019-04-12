@@ -18,10 +18,7 @@
 		 wx:for-key="index"
 		 wx:key="unique"
 		>
-			<view
-			 class="wuss-class-item-text bar-item-text"
-			 style="max-width: {{ (systemInfo.windowWidth/options.length) * 0.7 }}px;{{ item.show || item.highlight ? 'color: ' + activeColor + ';' : '' }}"
-			>
+			<view class="wuss-class-item-text bar-item-text" style="max-width: {{ (systemInfo.windowWidth/options.length) * 0.7 }}px;{{ item.show || item.highlight ? 'color: ' + activeColor + ';' : '' }}">
 				{{ item.text || item.options[0].text }}
 			</view>
 			<w-icon
@@ -38,10 +35,7 @@
 			 color="{{ item.show ? activeColor : defaultColor }}"
 			 wuss-class="w-icon-filter"
 			/>
-			<view
-			 wx:if="{{ item.type === 'sort' }}"
-			 class="sort {{ item.sortBy === 'desc' ? 'sort-desc' : item.sortBy === 'asc' ? 'sort-asc' : 'sort-default' }}"
-			/>
+			<view wx:if="{{ item.type === 'sort' }}" class="sort {{ item.sortBy === 'desc' ? 'sort-desc' : item.sortBy === 'asc' ? 'sort-asc' : 'sort-default' }}" />
 		</view>
 	</view>
 	<block
@@ -58,18 +52,9 @@
 		 padding="0"
 		 bind:onClose="handleClose"
 		>
-			<slot
-			 wx:if="{{ item.type === 'filter' }}"
-			 name="{{ item.slotName }}"
-			/>
-			<view
-			 wx:if="{{ item.type !== 'filter' }}"
-			 class="wuss-drop-menu-content"
-			>
-				<scroll-view
-				 scroll-y
-				 class="wuss-drop-menu-scrollview"
-				>
+			<slot wx:if="{{ item.type === 'filter' }}" name="{{ item.slotName }}" />
+			<view wx:if="{{ item.type !== 'filter' }}" class="wuss-drop-menu-content">
+				<scroll-view scroll-y class="wuss-drop-menu-scrollview">
 					<w-cell-group>
 						<w-cell
 						 wx:for="{{ item.options }}"
@@ -78,19 +63,13 @@
 						 wx:for-item="opt"
 						 data-parentkey="{{ parent_key }}"
 						 data-optkey="{{ opt_index }}"
-						 catch:onClick="handleOptionsClick"
+						 bind:onClick="handleOptionsClick"
 						 wuss-class-hd="w-cell-hd"
 						>
-							<view
-							 slot="label"
-							 style="{{ opt.checked ? 'color: ' + activeColor + ';' : '' }}"
-							>
+							<view slot="label" style="{{ opt.checked ? 'color: ' + activeColor + ';' : '' }}">
 								{{ opt.text }}
 							</view>
-							<view
-							 slot="content"
-							 class=""
-							>
+							<view slot="content" class="">
 								<w-icon
 								 wx:if="{{ item.type === 'radio' && opt.checked }}"
 								 type="checked"
@@ -118,17 +97,17 @@
 					 type="default"
 					 wuss-class="w-button"
 					 style="flex: 1;"
-					 catch:onClick="_handleSelectedReset"
+					 bind:onClick="_handleSelectedReset"
 					>
 						重置
 					</w-button>
 					<w-button
 					 flat
 					 type="custom"
-           bgColor="{{ activeColor }}"
+					 bgColor="{{ activeColor }}"
 					 wuss-class="w-button-custom"
 					 style="flex: 1;"
-					 catch:onClick="_handleConfirmSelected"
+					 bind:onClick="_handleConfirmSelected"
 					>
 						确定
 					</w-button>
@@ -137,3 +116,4 @@
 		</w-popup>
 	</block>
 </view>
+

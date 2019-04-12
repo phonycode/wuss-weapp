@@ -76,7 +76,7 @@
 		<view
 		 wx:if="{{ extra }}"
 		 class="wuss-extra"
-		 catch:tap="handerExtraClick"
+		 bind:tap="handerExtraClick"
 		>{{extra}}</view>
 	</view>
 </w-cell>

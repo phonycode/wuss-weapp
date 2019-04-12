@@ -19,7 +19,7 @@
 			<w-button
 			 wuss-class="wuss-calendar-date-btn"
 			 type="primary"
-			 catchtap="handleClose"
+			 bindtap="handleClose"
 			>
 				取消
 			</w-button>
@@ -29,7 +29,7 @@
 			<w-button
 			 wuss-class="wuss-calendar-date-btn"
 			 type="primary"
-			 catchtap="handleOk"
+			 bindtap="handleOk"
 			>
 				确定
 			</w-button>

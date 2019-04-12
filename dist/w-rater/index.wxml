@@ -7,7 +7,7 @@
 	 class="wuss-rater-content"
 	 hover-class="none"
    hover-stop-propagation="false"
-   catchtap="handleClick"
+   bindtap="handleClick"
 	>
 		<block wx:for="{{ count }}" wx:key="key">
 			<view

@@ -7,7 +7,7 @@
 		<view class="wuss-tabs-content">
 			<block wx:for="{{ options }}" wx:key="index">
 				<view
-				 catchtap="handleTab"
+				 bindtap="handleTab"
 				 data-index="{{ index }}"
 				 class="wuss-class-item wuss-tabs-item {{ item.disabled ? 'wuss-tabs-item-disabled' : '' }}"
 				 style="width:calc(100% / {{ itemThreshold > options.length ? options.length : itemThreshold }})"

@@ -3,7 +3,7 @@
  <!-- hidden="{{ !visible }}" -->
 
 <view
- catchtap="toastClick"
+ bindtap="toastClick"
  class="wuss-toast-warp wuss-toast-position-{{ position }} {{   visible && 'wuss-toast-show' }}"
  animation="{{ animationData }}"
  wx:if="{{ visible }}"

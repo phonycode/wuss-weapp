@@ -4,7 +4,7 @@
  hover-stop-propagation="false"
 >
 	<view
-	 catchtap="handleHdClick"
+	 bindtap="handleHdClick"
 	 class="wuss-class-hd wuss-card-hd"
 	 hover-class="none"
 	 hover-stop-propagation="false"
@@ -35,7 +35,7 @@
 		/>
 	</view>
 	<view
-	 catchtap="handleBdClick"
+	 bindtap="handleBdClick"
 	 class="wuss-class-bd wuss-card-bd"
 	 hover-class="none"
 	 hover-stop-propagation="false"

@@ -19,7 +19,7 @@
         <view
          wx:if="{{ showCancel }}"
 				 style="color: {{ cancelTextColor }};"
-				 catchtap="_handleCancel"
+				 bindtap="_handleCancel"
 				 class="wuss-confirm-button"
 				 hover-class="wuss-confirm-button-hover"
 				>
@@ -27,7 +27,7 @@
 				</view>
 				<view
 				 style="color: {{ confirmTextColor }};"
-				 catchtap="_handleConfirm"
+				 bindtap="_handleConfirm"
 				 class="wuss-confirm-button"
 				 hover-class="wuss-confirm-button-hover"
 				>
