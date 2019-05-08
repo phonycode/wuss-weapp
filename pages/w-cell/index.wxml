@@ -42,7 +42,7 @@
 	/>
 	<w-cell
 	 isLink
-	 label="redirectTo"
+   label="redirectTo"
 	 highlight
 	 content="w-button"
 	 linkType="redirectTo"

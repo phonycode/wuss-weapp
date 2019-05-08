@@ -1,8 +1,8 @@
 <w-mask-shadow
-  visible="{{ _globalTouch }}"
-  maskCancel="{{ false }}"
-  opacity="0"
-  zIndex="10000"
+ visible="{{ _globalTouch }}"
+ maskCancel="{{ false }}"
+ opacity="0"
+ zIndex="10000"
 />
 <w-popup
  position="bottom"
@@ -17,14 +17,18 @@
 		</view>
 		<view class="wuss-action-sheet-bd">
 			<view class="wuss-action-sheet-btns">
-				<block wx:for="{{ options }}" wx:key="item">
-					<view
-           style="color: {{ item.color }};"
+				<block
+				 wx:for="{{ options }}"
+				 wx:key="item"
+				>
+					<button
+					 style="color: {{ item.color }};"
 					 hover-class="{{ item.disabled ? '' : 'wuss-action-sheet-btn-hover' }}"
 					 class="wuss-action-sheet-btn {{ item.disabled ? 'wuss-action-sheet-btn-disabled' : '' }}"
 					 catchtap="_handleItemClick"
-					 data-key="{{ index }}"
-          >
+           data-key="{{ index }}"
+					 open-type="{{ item.openType }}"
+					>
 						<w-activity-indicator
 						 wx:if="{{ item.loading }}"
 						 color="#b2b2b2"
@@ -38,15 +42,16 @@
 						 size="{{ item.iconSize }}"
 						 color="{{ item.disabled ? '#b2b2b2b' : item.iconColor}}"
 						/>
-						{{
-						item.text 
-            }}
-					</view>
+						{{ item.text }}
+					</button>
 				</block>
 			</view>
 		</view>
-		<view class="wuss-action-sheet-ft" wx:if="{{ showCancel }}">
-			<view
+		<view
+		 class="wuss-action-sheet-ft"
+		 wx:if="{{ showCancel }}"
+		>
+			<button
 			 catchtap="_handleCancel"
 			 hover-class="wuss-action-sheet-btn-hover"
 			 class="wuss-action-sheet-cancel"
@@ -54,7 +59,7 @@
 				{{
 				cancelText
 				}}
-			</view>
+			</button>
 		</view>
 	</view>
 </w-popup>

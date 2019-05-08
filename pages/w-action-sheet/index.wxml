@@ -6,13 +6,7 @@
  data-key="1"
  bind:onClick="handleShow"
 >
-	{{
-	visible1
-	?
-	'show'
-	:
-	'hide'
-	}}
+	{{ visible1 ? 'show' : 'hide' }}
 </w-button>
 <w-action-sheet
  data-key="1"
@@ -28,13 +22,7 @@
  data-key="2"
  bind:onClick="handleShow"
 >
-	{{
-	visible2
-	?
-	'show'
-	:
-	'hide'
-	}}
+	{{ visible2 ? 'show' : 'hide' }}
 </w-button>
 <w-action-sheet
  data-key="2"
@@ -50,13 +38,7 @@
  data-key="3"
  bind:onClick="handleShow"
 >
-	{{
-	visible3
-	?
-	'show'
-	:
-	'hide'
-	}}
+	{{ visible3 ? 'show' : 'hide' }}
 </w-button>
 <w-action-sheet
  maskCancel="{{ false }}"
@@ -73,13 +55,7 @@
  data-key="4"
  bind:onClick="handleShow"
 >
-	{{
-	visible4
-	?
-	'show'
-	:
-	'hide'
-	}}
+	{{ visible4 ? 'show' : 'hide' }}
 </w-button>
 <w-action-sheet
  showCancel="{{ false }}"
@@ -96,13 +72,7 @@
  data-key="5"
  bind:onClick="handleShow"
 >
-	{{
-	visible5
-	?
-	'show'
-	:
-	'hide'
-	}}
+	{{ visible5 ? 'show' : 'hide' }}
 </w-button>
 <w-action-sheet
  cancelText="退出"
@@ -119,13 +89,7 @@
  data-key="6"
  bind:onClick="handleShow"
 >
-	{{
-	visible6
-	?
-	'show'
-	:
-	'hide'
-	}}
+	{{ visible6 ? 'show' : 'hide' }}
 </w-button>
 <w-action-sheet
  cancelText="退出"

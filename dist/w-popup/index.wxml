@@ -8,10 +8,14 @@
 
 <view
  hover-stop-propagation="true"
- class="wuss-class animate-content animate-content-{{ position }} {{ visible ? 'animate-content-open' : ''}}"
+ class="wuss-class animate-content animate-content-{{ position }} {{ visible ? 'animate-content-open' : ''}} {{ position === 'main' && !visible ? 'animate-content-main-hidden' : '' }}"
  style="{{ popupStyles }} {{ styles }}"
 >
-	<view class="popup-content" hover-stop-propagation="true">
+	<view
+	 class="wuss-popup-content popup-content"
+	 hover-stop-propagation="true"
+	 hidden="{{ !visible }}"
+	>
 		<slot/>
 	</view>
 </view>

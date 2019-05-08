@@ -1,14 +1,12 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 17:54:12 
- * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
- * @Last Modified time: 2018-09-10 17:54:12 
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2019-01-26 15:55:38
  */
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
   /**
    * 组件的属性列表
    * Array<{title:string,desc:string,status:'wait'|'finish'|'error'|'process'}>

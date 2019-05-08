@@ -4,7 +4,7 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-10-20 12:01:07
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
 /**
  * @param {string} title 标题
@@ -22,12 +22,7 @@ const DEFAULT_OPTIONS = {
   confirm: () => {},
 };
 
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
-  behaviors: [Behavior],
+WussComponent({
   data: {
     _visible: false,
   },

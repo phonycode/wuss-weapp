@@ -2,18 +2,28 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-03 15:12:31 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-01 09:39:26
+ * @Last Modified time: 2019-01-26 15:56:17
  */
-Component({
-  externalClasses: ['wuss-class','wuss-class-item'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
+  /**
+   * 继承父组件的class
+   */
+  externalClasses: ['wuss-class-item'],
+
+  /**
+   * 组件间关系定义
+   */
   relations: {},
+
 
   /**
    * 组件的属性列表
-   * @param {array} options tab列表的数据源 参数有 text,icon,iconColor,iconSize
+   */
+  /**
+   * 组件的属性列表
+   * @param {array} options tab列表的数据源 参数有 text,icon,iconColor,iconSize,支持 array-keys形式
    * @param {number} currentIndex  初始化或者控制索引
    * @param {boolean} transition 是否开启过渡动画
    * @param {string} line 是否开启线条
@@ -76,7 +86,6 @@ Component({
     },
     textStyles: {
       type: String,
-      value: '',
     },
     fixed: {
       type: Boolean,
@@ -92,17 +101,18 @@ Component({
         this.setData({
           isScroll: options.length > newValue,
         });
-        console.log(this.data.isScroll)
       },
     },
   },
-  data: {
-    scrollLeft: 0,
-  },
-  ready: function () {
-    this.setLineStyle();
-    this.computedStyles();
-  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {},
+
+  /**
+   * 组件方法列表
+   */
   methods: {
     setLineStyle() {
       const {
@@ -205,4 +215,40 @@ Component({
         });
     },
   },
-});
+
+  /**
+   * 在组件实例进入页面节点树时执行
+   */
+  created: function () {},
+
+  /**
+   * 组件布局完成后执行
+   */
+  ready: function () {
+    const {
+      options
+    } = this.data;
+    const _isArrayObject = this.isArrayObject(options);
+    if (!_isArrayObject) {
+      const newOptions = options.map(text => Object.assign({
+        text
+      }, {}));
+      this.setData({
+        options: newOptions,
+      })
+    };
+    this.setLineStyle();
+    this.computedStyles();
+  },
+
+  /**
+   * 在组件实例进入页面节点树时执行
+   */
+  attached: function () {},
+
+  /**
+   * 在组件实例被移动到节点树另一个位置时执行
+   */
+  moved: function () {},
+
+})

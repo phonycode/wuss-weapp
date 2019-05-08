@@ -8,6 +8,9 @@
  labelSpan="{{ labelSpan }}"
  wuss-class-left="{{label===''?'wuss-class-left-empty':''}}"
 >
+  <view wx:if="{{ !icon }}" class="wuss-class-icon" slot="icon" hover-class="none" hover-stop-propagation="false">
+    <slot name="icon" />
+  </view>
 	<view
 	 class="wuss-class-label wuss-input_label {{ disabled && !readOnly ? 'input_label-disabled':''}}"
 	 slot="label"
@@ -42,7 +45,7 @@
 		/>
 		<input
 	 	 wx:else
-		 class="wuss-input_input"
+		 class="wuss-class-input wuss-input_input"
 		 type="{{ type === 'mobile' ? 'number' : type }}"
 		 style="text-align:{{ moneyKeyboardAlign }};"
 		 disabled="{{ readOnly || disabled	 }}"

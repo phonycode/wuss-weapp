@@ -1,16 +1,13 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-31 17:11:58 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:28:35
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2019-01-26 15:53:59
  */
+import WussComponent from '../common/extends/baseComponent';
 import { createQrCodeImg } from 'qrcode';
 
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+WussComponent({
   /**
    * 组件的属性列表
    * @param {string} text 二维码信息

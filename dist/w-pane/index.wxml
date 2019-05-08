@@ -3,9 +3,9 @@
     {{ title }}
     <slot name="title" />
 	</view>
-	<view class="description" style="font-size: {{ dsize }}px;" wx:if="{{ desc }}" >
+	<view class="description" style="font-size: {{ dsize }}px;" >
     {{ desc }}
-    <slot name="desc" />
+    <slot wx:if="{{ !desc }}" name="desc" />
 	</view>
 </view>
 

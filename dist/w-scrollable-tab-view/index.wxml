@@ -1,16 +1,56 @@
+<view
+ class="w-scrollable-tab-view-bar"
+ hover-class="none"
+ hover-stop-propagation="false"
+>
+	<w-tabs
+	 wx:if="{{ renderTabBar === 'tabs' }}"
+	 options="{{ _tabBarOptions }}"
+	 currentIndex="{{ currentIndex }}"
+	 transition="{{ tabsTransition }}"
+	 line="{{ tabsLine }}"
+	 lineSize="{{ tabsLineSize }}"
+	 border="{{ tabsBorder }}"
+	 borderColor="{{ tabsBorderColor }}"
+	 borderSize="{{ tabsBorderSize }}"
+	 duration="{{ tabsDuration }}"
+	 activeColor="{{ tabsActiveColor }}"
+	 textStyles="{{ tabsTextStyles }}"
+	 fixed="{{ tabsFixed }}"
+	 itemThreshold="{{ tabsItemThreshold }}"
+	 bind:onChange="handleTabChange"
+	 wuss-class-item="w-tabs-item"
+	/>
+	<w-segmented-control
+	 wx:if="{{ renderTabBar === 'segmented-control' }}"
+	 options="{{ _tabBarOptions }}"
+	 color="{{ tabsActiveColor }}"
+	 disabled="{{ tabsDisabled }}"
+	 defaultIndex="{{ tabsDefaultIndex }}"
+	 currentIndex="{{ currentIndex }}"
+	 styles="{{ tabsStyles }}"
+	 bind:onChange="handleTabChange"
+	/>
+</view>
 <swiper
  style="height: {{ height ? height : _currentHeight }}px;width: {{ width ? width : _currentWidth }}px;"
  circular="{{ false }}"
  class="wuss-class wuss-scrollable-tab-view"
- current="{{ _currentIndex }}"
+ current="{{ currentIndex }}"
  current-item-id=""
  duration="300"
- bindchange="handleChange"
+ bindchange="handleSwiperChange"
  bindanimationfinish="handleAnimationFinish"
 >
-	<block wx:for="{{ options }}" wx:key="index">
-		<swiper-item class="wuss-scrollable-tab-view-container" item-id="">
-			<slot name="{{ item.containerName }}" />
+	<block
+	 wx:for="{{ _options }}"
+	 wx:key="index"
+	>
+		<swiper-item
+		 class="wuss-scrollable-tab-view-container"
+		 item-id=""
+		>
+			<slot name="{{ !_isRadio ? item.name : item }}" />
 		</swiper-item>
 	</block>
 </swiper>

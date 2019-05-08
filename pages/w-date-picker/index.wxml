@@ -1,0 +1,105 @@
+<w-pane title="DatePicker" desc="日期时间选择器" />
+
+<w-pane desc="Date 选择器 YYYY-MM-DD" />
+<w-cell-group>
+  <w-date-picker
+    label="年月日"
+    title="请选择日期"
+    format="YYYY-MM-DD"
+    defaultValue="{{ date }}"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    label="年月日时分秒"
+    format="YYYY-MM-DD HH:mm:ss"
+    title="请选择日期"
+    defaultValue="{{ 1548487316805 }}"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    label="年月"
+    format="YYYY-MM"
+    title="请选择日期"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    label="年月日时分"
+    format="YYYY-MM-DD HH:mm"
+    title="请选择日期"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    label="年月日时"
+    format="YYYY-MM-DD HH"
+    title="请选择日期"
+    defaultValue="2019-03-14 09:26"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>
+
+
+<w-pane desc="Time 时间选择器 HH:mm:ss" />
+<w-cell-group>
+  <w-date-picker
+    label="HH:mm:ss"
+    format="HH:mm:ss"
+    title="请选择时间"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    label="HH:mm"
+    format="HH:mm"
+    title="请选择时间"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    label="mm:ss"
+    format="mm:ss"
+    title="请选择时间"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>
+
+
+<w-pane desc="设置默认值" />
+<w-cell-group>
+  <w-date-picker
+    label="mode = date"
+    title="请选择日期"
+    defaultValue="{{ 1548487316805 }}"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>
+
+
+<w-pane desc="指定开始时间和结束时间" />
+<w-cell-group>
+  <w-date-picker
+    label="1990 ~ 2020"
+    startDate="1990"
+    endDate="2020"
+    title="请选择日期"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>
+
+
+<w-pane desc="自定义后缀名" />
+<w-cell-group>
+  <w-date-picker
+    label="CH"
+    title="请选择日期"
+    startDate="1990"
+    endDate="2020"
+    suffixName="{{ ['年','月','日','时','分','秒'] }}"
+    bind:onSelect="handleSelected"
+  />
+  <w-date-picker
+    label="EN"
+    title="Please choose the time"
+    startDate="1990"
+    endDate="2020"
+    suffixName="{{ ['Y','M','D','h','m','s'] }}"
+    bind:onSelect="handleSelected"
+  />
+</w-cell-group>

@@ -2,7 +2,7 @@
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 17:53:43 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 16:48:49
+ * @Last Modified time: 2019-01-26 15:56:45
  */
 /**
  * @param {string} type icon类型
@@ -11,6 +11,8 @@
  * @param {string} position 弹出位置,可选值:  default  top  middle  bottom
  * @param {boolean} mask 是否显示透明蒙层，防止触摸穿透
  */
+import WussComponent from '../common/extends/baseComponent';
+
 const DEFAULTS_OPTS = {
   type: '',
   duration: 1500,
@@ -29,11 +31,7 @@ const DURATION = 100;
 let wussToast = { ...DEFAULT_TOAST };
 const toast_Animation = wx.createAnimation({ duration: DURATION });
 
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+WussComponent({
   /**
    * 组件的初始数据
    * @param {boolean} visible 组件是否可见

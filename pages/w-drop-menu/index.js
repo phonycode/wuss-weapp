@@ -15,6 +15,7 @@ Page({
           },
           {
             text: '漫改',
+            checked: true,
           },
           {
             text: '轻改',
@@ -71,6 +72,7 @@ Page({
           },
           {
             text: '日本动漫',
+            checked: true,
           },
           {
             text: '其他',
@@ -81,10 +83,17 @@ Page({
         text: '筛选',
         type: 'filter',
         slotName: 'filter',
+        highlight: false,
       },
     ],
     radioOptions: ["全部", "正片", "剧场版", "其他"],
     checkboxOptions: ["免费","付费","大会员"],
+  },
+  handleClick() {
+    this.setData({
+      [`options[3].show`]: false,
+      [`options[3].highlight`]: true,
+    });
   },
   handleChange(e) {
     console.log(e);

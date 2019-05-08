@@ -1,35 +1,16 @@
 /* pages/w-toast/index.wxss */
-.test .tt{
-  color:red;
+.test .tt {
+  color: red;
 }
 
 .wuss-class-round,
-.wuss-class-icon{
-  width:40px ;
-  height:40px ;
-  border-radius:50% ;
-  background:#f40 ;
-  position:relative ;
-  margin:0 28px ;
+.wuss-class-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f40;
+  position: relative;
 }
-
-.wuss-class-icon{
-  background: #fff ;
-}
-
-.wuss-badge-warp{
-  position:absolute ;
-  right:-7px;
-  top:0;
-}
-
-.wuss-class-icon .wuss-badge-warp{
-  right:0 ;
-  top:4px ;
-}
-
-.wuss-badge-round{
-  right:-2px;
-  top:2px;
-  
+w-badge {
+  margin-left: 30rpx;
 }

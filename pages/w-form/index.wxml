@@ -1,4 +1,7 @@
-<w-pane title="Form" desc="表单" />
+<w-pane
+ title="Form"
+ desc="表单"
+/>
 <w-form
  bind:onSubmit="wussFormSubmit"
  bind:onReset="wussFormReset"
@@ -25,7 +28,7 @@
 			/>
 		</w-validate>
 
-		<w-validate rules="{{ isRequired }}">
+		<w-validate firstValidate rules="{{ isRequired }}">
 			<w-cell-picker
 			 label="性别"
 			 title="请选择性别"
@@ -37,8 +40,11 @@
 			/>
 		</w-validate>
 
-		<w-validate rules="{{ isRequired }}">
-			<w-address-picker label="选择地区" name="region" />
+		<w-validate firstValidate rules="{{ isRequired }}">
+			<w-address-picker
+			 label="选择地区"
+			 name="region"
+			/>
 		</w-validate>
 
 		<view
@@ -59,8 +65,20 @@
 		</view>
 
 		<w-cell label="同意用户协议信息">
-			<w-switch name="isVip" slot="content" />
+			<w-switch
+			 name="isVip"
+			 slot="content"
+			/>
 		</w-cell>
+
+		<w-validate firstValidate rules="{{ isRequired }}">
+			<w-date-picker
+			 name="createTime"
+			 mode="dateTime"
+			 label="出生日期"
+			 title="请选择日期"
+			/>
+		</w-validate>
 
 		<w-radio
 		 label="请选择手机"
@@ -69,7 +87,10 @@
 		 options="{{ options1 }}"
 		/>
 
-		<w-checkbox name="checkbox" options="{{ items1 }}" />
+		<w-checkbox
+		 name="checkbox"
+		 options="{{ items1 }}"
+		/>
 
 		<w-cell>
 			<w-button

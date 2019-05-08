@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 39,
+			"current": 43,
 			"list": [
 				{
 					"id": -1,
@@ -282,7 +282,33 @@
 				{
 					"id": -1,
 					"name": "w-vcode",
-					"pathName": "pages/w-vcode/index"
+					"pathName": "pages/w-vcode/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "scrollable-tab-view-page-a",
+					"pathName": "pages/w-scrollable-tab-view/example1",
+					"query": "pages/w-scrollable-tab-view/example1",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "w-badge",
+					"pathName": "pages/w-badge/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-date-picker",
+					"pathName": "pages/w-date-picker/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "w-count-down",
+					"pathName": "pages/w-countdown/index",
+					"scene": null
 				}
 			]
 		}

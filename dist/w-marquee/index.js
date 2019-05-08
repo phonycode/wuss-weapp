@@ -1,13 +1,8 @@
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
 const MarqueeItem = '../w-marquee-item/index';
 
-Component({
-  /**
-   * 继承父组件的class
-   */
-  externalClasses: ['wuss-class'],
-
+WussComponent({
   /**
    * 组件间关系定义
    */
@@ -33,16 +28,6 @@ Component({
       }
     },
   },
-
-  /**
-   * 组件选项
-   */
-  options: {},
-
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
 
   /**
    * 组件的属性列表
@@ -125,7 +110,6 @@ Component({
     },
     nextSlide(index = 1) {
       let { itemHeight, _currentIndex, ITEM_COUNT } = this.data;
-      if(index > ITEM_COUNT) {debugger;}
       this.setData({
         _styles: `transform: translate3d(0%,-${ index > ITEM_COUNT ? itemHeight : itemHeight * index }px,0);`,
         _currentIndex: _currentIndex >= --ITEM_COUNT || index > ITEM_COUNT ? 0 : ++_currentIndex,

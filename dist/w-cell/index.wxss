@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2019-05-08 11:23:10
+ * @Last Modified time: 2019-05-08 11:33:48
  */
 @import '../common/theme/global.wxss';
 
@@ -77,6 +77,9 @@
 .wuss-cell-label {
   font-size: 15px;
   font-weight: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .wuss-cell-right {

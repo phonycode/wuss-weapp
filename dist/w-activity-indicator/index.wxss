@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 14:02:10 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2019-05-08 11:18:17
+ * @Last Modified time: 2019-05-08 11:33:21
  */
 @import '../common/theme/global.wxss';
 
@@ -273,6 +273,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: center;
   align-items: center;
 }
 
@@ -288,4 +289,12 @@
 .wuss-activity-indicator-text {
   font-size: 16px;
   color: rgb(153, 153, 153);
+}
+
+.wuss-activity-indicator-block {
+  display: inline-block;
+}
+
+.wuss-activity-indicator-block .wuss-activity-indicator {
+  display: inline-block;
 }

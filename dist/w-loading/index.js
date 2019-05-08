@@ -1,4 +1,4 @@
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
 /**
  * @param {string} content 展示内容
@@ -13,26 +13,11 @@ const DEFAULT_OPTIONS = {
   hide: () => void 0,
 };
 
-Component({
-   /**
-   * 继承父组件的class
-   */
-  externalClasses: ['wuss-class'], 
-  
+WussComponent({
   /**
    * 组件间关系定义
    */
    relations: {},
-   
-  /**
-   * 组件选项
-   */
-   options: {},
-   
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
    
   /**
    * 组件的属性列表

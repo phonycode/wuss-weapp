@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-12 14:03:52 
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2019-05-08 11:05:12
+ * @Last Modified time: 2019-05-08 11:31:57
  */
 @import '../common/theme/global.wxss';
 
@@ -37,6 +37,12 @@
   color: #333333;
   padding: 0;
   min-height: 48px;
+  line-height: initial;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+  border: none;
 }
 
 .wuss-action-sheet-btn::after,
@@ -46,7 +52,15 @@
   left: 0;
   top: 0;
   right: 0;
+  margin: 0;
+  padding: 0;
   height: 1px;
+  box-shadow: none;
+  text-shadow: none;
+  line-height: initial;
+  outline: none;
+  border: none;
+  border-radius: 0;
   background-color: #d9d9d9;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
@@ -54,10 +68,9 @@
   transform: scaleY(0.5);
 }
 
-.wuss-action-sheet-btn-hover {
+.wuss-action-sheet-btn.wuss-action-sheet-btn-hover {
   background: #ececec;
 }
-
 .wuss-action-sheet-btn:first-child::after {
   /* display: none; */
 }

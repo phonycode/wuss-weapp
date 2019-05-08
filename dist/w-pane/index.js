@@ -1,15 +1,12 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-31 15:30:11 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-19 08:27:04
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2019-01-26 15:53:34
  */
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
 
   /**
    * 组件的属性列表
@@ -21,11 +18,9 @@ Component({
   properties: {
     title: {
       type: String,
-      value: '',
     },
     desc: {
       type: String,
-      value: '',
     },
     tsize: {
       type: Number,

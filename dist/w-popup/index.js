@@ -1,12 +1,11 @@
-Component({
-  externalClasses: ['wuss-class', 'wuss-popup-content'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
+  externalClasses: ['wuss-popup-content'],
   /**
    * 组件的属性列表
    * @param {boolean} visible 组件是否可见
-   * @param {string} position 弹出位置,可选值: left right top bottom
+   * @param {string} position 弹出位置,可选值: left right top bottom main
    * @param {boolean} mask 是否开启遮罩层
    * @param {boolean} maskCancel 点击遮罩层可否关闭
    * @param {string} width 内容区的宽度，当type的值为left,right 时生效
@@ -102,6 +101,9 @@ Component({
         break;
       case 'right':
         popupStyles += `width: ${width};`;
+        break;
+      case 'main':
+        popupStyles += `width: ${width};max-height: 100%;height: ${height === 'auto' ? '60%' : height};`;
         break;
       default:
         break;

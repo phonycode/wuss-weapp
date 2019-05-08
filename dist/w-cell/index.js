@@ -2,13 +2,14 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:16 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-11-02 14:12:39
+ * @Last Modified time: 2019-03-14 10:02:52
  */
+import WussComponent from '../common/extends/baseComponent';
 import cell from '../common/behavior/cell';
-Component({
+
+WussComponent({
   behaviors: [cell],
   externalClasses: [
-    'wuss-class',
     'wuss-class-cell',
     'wuss-class-hd',
     'wuss-class-left',

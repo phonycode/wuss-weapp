@@ -8,14 +8,14 @@
    link="./example1"
 	 highlight
 	 label="demo1"
-	 content="结合SegmentedControl组件使用"
+	 content="结合Tabs组件使用"
   />
   <w-cell
    isLink
    link="./example2"
 	 highlight
 	 label="demo2"
-	 content="结合Tabs组件使用"
+	 content="结合SegmentedControl组件使用"
 	/>
 </w-cell-group>
 

@@ -1,20 +1,50 @@
+import WussComponent from '../common/extends/baseComponent';
+
 /**
  * @emits {Function} selected 当前下拉列表选中的options向父组件发出的回调方法
  * @emits {Function} sortChange 当前sort排序改变时向父组件发出的回调方法
  */
-Component({
-  externalClasses: ['wuss-class'],
+WussComponent({
+  externalClasses: ['wuss-class-content','wuss-class-item','wuss-class-item-text'],
   properties: {
     /**
      * @param {array} options 父组件传递过来的菜单数组对象, 参数有: text,show,highlight,options
+     * @param {string} defaultColor 默认颜色
+     * @param {string} activeColor 激活颜色
+     * @param {string | number} height bar的高度
+     * @param {boolean} border 显示底部线条
+     * @param {string} popupStyles 弹出层的样式
      */
     options: {
       type: Array,
-      value: [],
+      observer: 'updateCheckValue',
+    },
+    activeColor: {
+      type: String,
+      value: '#ff8800',
+    },
+    defaultColor: {
+      type: String,
+      value: '#999999',
+    },
+    height: { 
+      type: String,
+      value: '88rpx',
+    },
+    border: {
+      type: Boolean,
+      value: true,
+    },
+    popupStyles: {
+      type: String,
     },
   },
   options: {
     multipleSlots: true,
+  },
+  data: {
+    _options: [],
+    isFirstUpdated: true, // 是否是第一次更新数据
   },
   methods: {
     /**
@@ -26,22 +56,20 @@ Component({
         itemkey
       } = e.currentTarget.dataset;
       const {
-        options,
+        _options: options,
       } = this.data;
       const current = options[itemkey];
       switch (String(current.type)) {
         case 'radio': // 当前筛选条件为radio时
-          this._handleSelected(e);
-          break;
+          return this._handleSelected(e);
         case 'checkbox': // 当前筛选条件为checkbox时
-          this._handleSelected(e);
-          break;
+          return this._handleSelected(e);
         case 'filter': // 当前筛选条件为filter时
-          this._handleFilter(e);
-          break;
+          return this._handleFilter(e);
         case 'sort': // 当前筛选条件为sort时
-          this._handleSort(e);
-          break;
+          return this._handleSort(e);
+        case 'custom': // 当前筛选条件为custom时
+          return this._handleCustomClick(e);
         default:
           break;
       }
@@ -63,7 +91,7 @@ Component({
         itemkey
       } = e.currentTarget.dataset;
       let {
-        options,
+        _options: options,
       } = this.data;
       if(options[itemkey].show) {
         return this.handleClose();
@@ -73,10 +101,10 @@ Component({
         return i;
       })
       this.setData({
-        options,
+        _options: options,
       },() => this.setData({
-        [`options[${itemkey}].show`]: true,
-        [`options[${itemkey}].highlight`]: true,
+        [`_options[${itemkey}].show`]: true,
+        [`_options[${itemkey}].highlight`]: true,
       }))
     },
     /**
@@ -88,7 +116,7 @@ Component({
         itemkey
       } = e.currentTarget.dataset;
       let {
-        options
+        _options: options
       } = this.data;
       switch (options[itemkey].sortBy) {
         case 'desc': // 降序
@@ -103,7 +131,7 @@ Component({
           break;
       }
       this.setData({
-        [`options[${itemkey}]`]: {
+        [`_options[${itemkey}]`]: {
           ...options[itemkey],
           sortBy: options[itemkey].sortBy,
           highlight: true,
@@ -111,9 +139,26 @@ Component({
       });
       this.triggerEvent(
         'onChange', {
-          sort: options[itemkey].sortBy,
-          parent: options[itemkey],
+          ...options[itemkey],
           type: 'sort'
+        }, {}
+      );
+    },
+    /**
+     * 自定义点击
+     * @param {*} e 
+     */
+    _handleCustomClick(e) {
+      const {
+        itemkey
+      } = e.currentTarget.dataset;
+      let {
+        _options: options
+      } = this.data;
+      this.triggerEvent(
+        'onChange', {
+          ...options[itemkey],
+          type: 'custom'
         }, {}
       );
     },
@@ -126,7 +171,7 @@ Component({
         itemkey
       } = e.currentTarget.dataset;
       let {
-        options
+        _options: options
       } = this.data;
       let current = options[itemkey];
       /**
@@ -158,11 +203,11 @@ Component({
           return i;
         });
         this.setData({
-          options,
+          _options: options,
         },() => {
           options[itemkey].show = true;
           this.setData({
-            options,
+            _options: options,
           })
         });
       }
@@ -171,7 +216,7 @@ Component({
      * 重置当前options的选中项
      */
     _handleSelectedReset() {
-      let { options,_defaultOptions } = this.data;
+      let { _options: options, _defaultOptions } = this.data;
       let currentOptions = options.filter(i => (i.show === true))[0] || [];
       if(String(currentOptions.type) === 'checkbox') {
         options.map((i,idx) => {
@@ -197,7 +242,7 @@ Component({
      * 获取当前options的全部选中项
      */
     _handleConfirmSelected(close = true) {
-      const { options } = this.data;
+      const { _options: options } = this.data;
       let currentOptions = '';
       let currentIndex = '';
       options.map((i,idx) => {
@@ -220,6 +265,7 @@ Component({
         }
         this.triggerEvent(
           'onChange', {
+            ...options[currentIndex],
             checked: result,
             type: 'checkbox',
           }, {}
@@ -243,7 +289,7 @@ Component({
         parentkey
       } = e.currentTarget.dataset;
       let {
-        options,
+        _options: options,
         _defaultOptions,
       } = this.data;
       let items = options[parentkey];
@@ -289,12 +335,12 @@ Component({
         parentkey
       } = e.currentTarget.dataset;
       let {
-        options,
+        _options: options,
       } = this.data;
       const eventDetail = {
-        parent: options[parentkey],
-        parentkey,
-        optkey,
+        ...options[parentkey],
+        key: optkey,
+        item: options[parentkey] && options[parentkey].options && options[parentkey].options[optkey] ? options[parentkey].options[optkey] : {},
       };
       let items = options[parentkey];
 
@@ -314,7 +360,7 @@ Component({
         this.handleClose();
       }
       this.setData({
-        [`options[${parentkey}]`]: Object.assign({}, items, {
+        [`_options[${parentkey}]`]: Object.assign({}, items, {
           text: items.options[optkey].text,
           highlight: true,
           show: false,
@@ -336,21 +382,17 @@ Component({
         parentkey
       } = e.currentTarget.dataset;
       const {
-        options
+        _options
       } = this.data;
-      switch (String(options[parentkey].type)) {
+      switch (String(_options[parentkey].type)) {
         case 'radio':
-          this._setRadioOptions(e)
-          break;
+          return this._setRadioOptions(e)
         case 'checkbox':
-          this._setCheckboxOptions(e)
-          break;
+          return this._setCheckboxOptions(e)
         case 'filter':
-          this._setFilterOptions(e)
-          break;
+          return this._setFilterOptions(e)
         case 'sort':
-          this._setSortOptions(e)
-          break;
+          return this._setSortOptions(e)
         default:
           break;
       }
@@ -360,9 +402,9 @@ Component({
      */
     handleClose() {
       let {
-        options
+        _options
       } = this.data;
-      options = options.map(i => {
+      _options = _options.map(i => {
         if (i.show) {
           i.show = false;
         }
@@ -372,42 +414,73 @@ Component({
         return i;
       });
       this.setData({
-        options,
+        _options,
       });
+    },
+    /**
+     * 更新当前的下拉选中项
+     */
+    updateCheckValue() {
+      const { options, isFirstUpdated, _defaultOptions } = this.data;
+      const _options = options.map((__v,index) => {
+        let items = Object.assign({}, __v, {
+          highlight: __v.highlight || false,
+          type: __v.type,
+          options: __v.options || [],
+          show: __v.show || false,
+        }, __v.type === 'sort' ? {
+          sortBy: __v.sortBy || 'default',
+        }: {});
+        switch (items.type) {
+          case 'radio':
+          const current = items.options.findIndex(i => (i.checked === true));
+          return Object.assign({
+            ...items,
+            highlight: current > -1 && !isFirstUpdated,
+          },current > -1 ? {
+            text: items.options[current].text,
+          } : {});
+          case 'checkbox':
+          const hasChecked = items.options.findIndex(i => (i.checked === true)) > -1;
+          return  Object.assign({
+            ...items,
+            highlight: hasChecked,
+          }, !hasChecked && !isFirstUpdated && _defaultOptions ? {
+            text: _defaultOptions[index].text,
+          } : {});
+          case 'filter':
+          return {
+            ...items,
+          };
+          case 'slot':
+          return {
+            ...items,
+          };
+          case 'custom':
+          return {
+            ...items,
+          };
+          default:
+          return {
+            ...items,
+          };
+        }
+      });
+      this.setData(Object.assign({
+        _options,
+      }, isFirstUpdated ? {
+        isFirstUpdated: false,
+      } : {}))
     },
   },
 
   ready: function () {
-    let {
+    const {
       options,
     } = this.data;
     this.setData({
-      _defaultOptions: options,
+      _defaultOptions: [].concat(options),
       systemInfo: wx.getSystemInfoSync(),
-    })
-    options = options.map(i => {
-      let items = Object.assign({}, i, {
-        highlight: i.highlight || false,
-        type: i.type || 'radio',
-        options: i.options || [],
-      });
-      switch (String(items.type)) {
-        case 'radio':
-          items.show = items.show || false;
-          break;
-        case 'checkbox':
-          items.show = items.show || false;
-          break;
-        case 'sort':
-          items.sortBy = items.sortBy || 'default';
-          break;
-        default:
-          break;
-      }
-      return items;
-    });
-    this.setData({
-      options,
     });
   },
 });

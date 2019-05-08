@@ -2,33 +2,21 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-30 14:52:00 
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-31 14:59:20
+ * @Last Modified time: 2019-03-07 15:29:09
  */
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
-Component({
+
+WussComponent({
   /**
    * 继承父组件的class
    */
-  externalClasses: ['wuss-class', 'wuss-class-hd', 'wuss-class-bd', 'wuss-class-ft'],
+  externalClasses: ['wuss-class-hd', 'wuss-class-bd', 'wuss-class-ft'],
 
   /**
    * 组件间关系定义
    */
   relations: {},
-
-  /**
-   * 组件选项
-   */
-  options: {
-    multipleSlots: true,
-    addGlobalClass: true,
-  },
-
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
 
   /**
    * 组件的属性列表
@@ -40,6 +28,7 @@ Component({
    * @param {string} footerExtra 底部副标题
    * @param {boolean} shadow 开启卡片阴影
    * @param {boolean} loading 进入loading模式
+   * @param {number} loadingIndex 进入loading模式骨架的z-index层级
    */
   properties: {
     full: {
@@ -67,13 +56,22 @@ Component({
     loading: {
       type: Boolean,
       value: false,
+      observer(__v) {
+        if(__v) return this._renderLoadingCard();
+      },
+    },
+    loadingIndex: {
+      type: Number,
     },
   },
 
   /**
    * 组件的初始数据
    */
-  data: {},
+  data: {
+    _CARD_LOADING_HEIGHT: 138,
+    _RENDER_CARD_COUNT: 1,
+  },
 
   /**
    * 组件方法列表
@@ -84,6 +82,15 @@ Component({
     },
     handleBdClick (e) {
       this.triggerEvent('onBdClick',e);
+    },
+    _renderLoadingCard() {
+      wx.createSelectorQuery()
+      .in(this)
+      .select('.wuss-card')
+      .boundingClientRect()
+      .exec(([node]) => this.setData({
+        _RENDER_CARD_COUNT: Math.ceil(node.height/this.data._CARD_LOADING_HEIGHT),
+      }));
     },
   },
 

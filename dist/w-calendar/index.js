@@ -1,9 +1,7 @@
+import WussComponent from '../common/extends/baseComponent';
 import { SFTV } from './data';
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+
+WussComponent({
   /**
    * @param {boolean} visible是 否可见
    * @param {string} type 日历选择类型 'one' | 'more' |'range'

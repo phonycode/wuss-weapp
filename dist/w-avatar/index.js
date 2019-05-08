@@ -1,14 +1,12 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 17:54:29 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-11-01 09:53:15
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2019-01-26 15:47:10
  */
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+import WussComponent from '../common/extends/baseComponent';
+
+WussComponent({
   /**
    * 组件的属性列表
    * @param {string} shape 指定头像的形状，可选值为 circle、square

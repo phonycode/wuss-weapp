@@ -50,7 +50,7 @@ class WussValidate {
   }
   // 验证手机号
   mobile() {
-    return !/^1[34578]\d{9}$/.test(this.value) && `请输入11位的手机号码`;
+    return !/^1[345789]\d{9}$/.test(this.value) && `请输入11位的手机号码`;
   }
   // 邮箱验证
   email() {

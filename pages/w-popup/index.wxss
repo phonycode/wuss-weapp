@@ -8,3 +8,24 @@
 .scroll-view-y {
   height: 100%;
 }
+
+.wuss-popup {
+  border-radius: 5px;
+}
+
+.demo-popup-6 {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 25px;
+  height: 100%;
+  position: relative;
+}
+
+.demo-popup-6 .w-icon {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}

@@ -213,9 +213,8 @@ Page({
         },
       ],
     ],
-    options2: [
-      ['男', '女']
-    ],
+    options2: ['男', '女'],
+    options4: [{ key: '30天', value: 30 },{ key: '60天', value: 60 },{ key: '90天', value: 90 },{ key: '1年', value: 365 },{ key: '10年', value: 3650 },],
     options3: [
       [{
           key: '前端',
@@ -258,6 +257,19 @@ Page({
         },
       ],
     ],
+    options5: ['测试1','测试2'],
+    shouldValueUpdate: () => {
+      const [page] = getCurrentPages();
+      return !!(page.data.value === '666');
+    },
+    value: '值为666时更新',
   },
-  onLoad: function (options) {},
+  change(e) {
+    this.setData({ value: e.detail.value });
+  },
+  onLoad: function (options) {
+  },
+  handleSelect(e) {
+    console.log(e)
+  },
 });

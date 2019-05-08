@@ -1,9 +1,7 @@
+import WussComponent from '../common/extends/baseComponent';
+
 const PATH = '../w-accordion/index';
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+WussComponent({
   relations: {
     [PATH]: {
       type: 'child',

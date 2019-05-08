@@ -1,25 +1,10 @@
-import Behavior from '../common/behavior/index';
+import WussComponent from '../common/extends/baseComponent';
 
-Component({
-  /**
-   * 继承父组件的class
-   */
-  externalClasses: ['wuss-class'],
-
+WussComponent({
   /**
    * 组件间关系定义
    */
   relations: {},
-
-  /**
-   * 组件选项
-   */
-  options: {},
-
-  /**
-   * 组件间关系定义
-   */
-  behaviors: [Behavior],
 
   /**
    * 组件的属性列表

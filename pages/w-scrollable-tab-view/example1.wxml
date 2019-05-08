@@ -1,90 +1,27 @@
-<view
- class="w-scrollable-tab-view-bar"
- hover-class="none"
- hover-stop-propagation="false"
->
-	<w-segmented-control
-	 currentIndex="{{ currentIndex }}"
-   bind:onChange="handleChange"
-   color="#448ef6"
-	 styles="font-size: 14px;"
-	 options="{{ options1 }}"
-	/>
-</view>
-
 <w-scrollable-tab-view
  bind:onChange="handleScrollableChange"
- height="{{ pageHeight }}"
- currentIndex="{{ currentIndex }}"
  options="{{ options }}"
+ tabsLineSize="1"
+ tabsActiveColor="#ff9900"
 >
-	<scroll-view  
-	 scroll-y
-	 class="w-scrollable-tab-view-container"
-	 slot="关注"
-	 hover-class="none"
-	 hover-stop-propagation="false"
-	>
-		<w-cell-group>
-			<w-cell
-			 wx:for="{{ 30 }}"
-			 wx:key="index"
-			 highlight
-			 label="列表 {{ index+1 }}"
-			 content="你好，我是关注页面"
-			/>
-		</w-cell-group>
-	</scroll-view>
 	<scroll-view
 	 scroll-y
+	 wx:for="{{ options }}"
+	 wx:key="{{ index }}"
+	 slot="{{ item }}"
 	 class="w-scrollable-tab-view-container"
-	 slot="推荐"
-	 hover-class="none"
-	 hover-stop-propagation="false"
 	>
 		<w-cell-group>
 			<w-cell
-			 wx:for="{{ 30 }}"
-			 wx:key="index"
 			 highlight
-			 label="列表 {{ index+1 }}"
-			 content="你好，我是推荐页面"
+			 wx:for="{{ 20 }}"
+			 wx:key="child"
+			 wx:for-index="child"
+			 wx:for-item="childItem"
+			 label="列表 {{ child+1 }}"
+			 content="你好，我是{{ item }}页面"
 			/>
 		</w-cell-group>
-	</scroll-view>
-	<scroll-view
-	 scroll-y
-	 class="w-scrollable-tab-view-container"
-	 slot="热榜"
-	 hover-class="none"
-	 hover-stop-propagation="false"
-	>
-		<w-cell-group>
-			<w-cell
-			 wx:for="{{ 30 }}"
-			 wx:key="index"
-			 highlight
-			 label="列表 {{ index+1 }}"
-			 content="你好，我是热榜页面"
-			/>
-		</w-cell-group>
-		</scroll-view>
-		<scroll-view
-		 scroll-y
-		 class="w-scrollable-tab-view-container"
-		 slot="视频"
-		 hover-class="none"
-		 hover-stop-propagation="false"
-		>
-			<w-cell-group>
-				<w-cell
-				 wx:for="{{ 20 }}"
-				 wx:key="index"
-				 highlight
-				 label="列表 {{ index+1 }}"
-				 content="你好，我是视频页面"
-				/>
-			</w-cell-group>
 	</scroll-view>
 </w-scrollable-tab-view>
 

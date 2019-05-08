@@ -1,16 +1,12 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-10 14:13:23 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-10 15:31:10
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2019-01-26 15:50:05
  */
-// components/countdown/countdown.js
+import WussComponent from '../common/extends/baseComponent';
 
-Component({
-  externalClasses: ['wuss-class'],
-  options: {
-    addGlobalClass: true,
-  },
+WussComponent({
   /**
    * @param {boolean} notimestamp  是否使用时间戳  true为不是
    * @param {boolean} bindcallback 倒计时结束的回调函数

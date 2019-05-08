@@ -1,15 +1,16 @@
 /*
- * @Author: cnyballk[https://github.com/cnyballk] 
- * @Date: 2018-09-12 16:37:32 
- * @Last Modified by: cnyballk[https://github.com/cnyballk]
- * @Last Modified time: 2018-09-22 09:28:44
+ * @Author: cnyballk[https://github.com/cnyballk]
+ * @Date: 2018-09-12 16:37:32
+ * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
+ * @Last Modified time: 2019-01-26 15:51:56
  */
+import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
 import cell from '../common/behavior/cell';
-Component({
+
+WussComponent({
   behaviors: [cell, field],
   externalClasses: [
-    'wuss-class',
     'wuss-class-label',
     'wuss-class-input-wrap',
     'wuss-class-input',
@@ -24,9 +25,6 @@ Component({
     '../w-validate/index': {
       type: 'ancestor',
     },
-  },
-  options: {
-    addGlobalClass: true,
   },
   properties: {
     ///////自带属性
@@ -166,10 +164,11 @@ Component({
     },
     ///////////input的监听函数
     handlerChange(e) {
-      const { value = '' } = e.detail || {};
+      let { value = '' } = e.detail || {};
+      value = this.getValue(value);
       this._trigger('onChange', { detail: { value } });
       this._trigger('input', { detail: { value } });
-      this.setData({ value: this.formatValue(value) });
+      this.setData({ value });
     },
     handlerFocus(e) {
       this._trigger('onFocus', e);

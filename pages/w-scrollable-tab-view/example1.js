@@ -5,54 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentIndex: 0,
-    options1: ['关注','推荐','热榜','视频'],
     options: [
-      {
-        containerName: '关注',
-      },
-      {
-        containerName: '推荐',
-      },
-      {
-        containerName: '热榜',
-      },
-      {
-        containerName: '视频',
-      },
+      '关注',
+      '推荐',
+      '热榜',
+      '视频',
     ],
-    pageHeight: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  },
-  handleScrollableChange(e) {
-    this.setData({
-      currentIndex: e.detail.value,
-    })
-  },
-  handleChange(e) {
-    this.setData({
-      currentIndex: e.detail.value,
-    })
-  },
+  onLoad: function (options) {},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    wx.createSelectorQuery()
-    .select('.w-scrollable-tab-view-bar')
-    .boundingClientRect()
-    .exec(([node]) => {
-      console.log(node.height,wx.getSystemInfoSync())
-      this.setData({
-        pageHeight: wx.getSystemInfoSync().windowHeight - node.height,
-      })
-    })
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示

@@ -1,4 +1,12 @@
 /* pages/w-alert/index.wxss */
 .example-dialog {
   padding: 10px;
-} 
+}
+
+.example-dialog-1 {
+}
+
+.example-dialog-1 {
+  border-radius: 15rpx!important;
+  overflow: hidden!important;
+}
