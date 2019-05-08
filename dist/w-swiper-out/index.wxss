@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-06 16:23:51 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-12 10:53:14
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-05-08 11:43:06
  */
 @import '../common/theme/global.wxss';
 
@@ -15,7 +15,7 @@
 }
 
 .wuss-swiper-out-view::before {
-  content: " ";
+  content: ' ';
   position: absolute;
   left: 0;
   top: 1px;
@@ -24,12 +24,12 @@
   background-color: #d9d9d9;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  -webkit-transform: scaleY(.5);
-  transform: scaleY(.5);
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
 }
 
 .wuss-swiper-out-view::after {
-  content: " ";
+  content: ' ';
   position: absolute;
   left: 0;
   bottom: 1px;
@@ -38,8 +38,8 @@
   background-color: #d9d9d9;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  -webkit-transform: scaleY(.5);
-  transform: scaleY(.5);
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
 }
 
 .wuss-swiper-out-btns {
@@ -54,7 +54,6 @@
   flex-wrap: nowrap;
 }
 
-
 .wuss-swiper-out-btn {
   display: flex;
   flex: 1;
@@ -65,19 +64,16 @@
   text-align: center;
   font-size: 16px;
   color: #333333;
-  height: 100%
+  height: 100%;
 }
 
 .wuss-weiper-out-btn-disabled {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .wuss-swiper-out-left {
   height: 100%;
 }
 
-.wuss-swiper-out-left>view {
-  height: 100%;
+.wuss-swiper-out-right {
 }
-
-.wuss-swiper-out-right {}

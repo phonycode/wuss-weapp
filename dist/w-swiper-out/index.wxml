@@ -20,6 +20,7 @@
 		<view
 		 class="wuss-swiper-out-left"
 		 hover-class="none"
+		 style="width: calc(100% - {{ _slideWidth }}px)"
 		 hover-stop-propagation="false"
 		 bindtap="handleLeftClick"
 		>

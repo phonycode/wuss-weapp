@@ -4,6 +4,6 @@
   bindtap="handlerClick"
 >
 	<slot/>
-	<w-icon type="close"  wx:if="{{ closeable }}" bindtap="_closeTag"/>
+	<w-icon type="close"  wuss-class="wuss-tag-icon" wx:if="{{ closeable }}" bindtap="_closeTag"/>
 </view>
 
