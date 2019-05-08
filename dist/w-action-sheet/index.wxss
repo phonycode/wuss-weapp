@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-12 14:03:52 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-13 09:12:18
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-05-08 11:05:12
  */
 @import '../common/theme/global.wxss';
 
@@ -10,15 +10,18 @@
   background-color: #f3f4f5;
 }
 
-.wuss-action-sheet-hd {}
+.wuss-action-sheet-hd {
+}
 
-.wuss-action-sheet-bd {}
+.wuss-action-sheet-bd {
+}
 
 .wuss-action-sheet-ft {
   margin-top: 6px;
 }
 
-.wuss-action-sheet-btns {}
+.wuss-action-sheet-btns {
+}
 
 .wuss-action-sheet-btn,
 .wuss-action-sheet-cancel {
@@ -38,7 +41,7 @@
 
 .wuss-action-sheet-btn::after,
 .wuss-action-sheet-cancel::after {
-  content: " ";
+  content: ' ';
   position: absolute;
   left: 0;
   top: 0;
@@ -47,8 +50,8 @@
   background-color: #d9d9d9;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-  -webkit-transform: scaleY(.5);
-  transform: scaleY(.5);
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
 }
 
 .wuss-action-sheet-btn-hover {
@@ -59,10 +62,11 @@
   /* display: none; */
 }
 
-.wuss-action-sheet-btn {}
+.wuss-action-sheet-btn {
+}
 
-.wuss-action-sheet-btn w-icon,
-.wuss-action-sheet-btn w-activity-indicator {
+.wuss-action-sheet-btn .w-icon,
+.wuss-action-sheet-btn .w-activity-indicator {
   margin-right: 5px;
 }
 
@@ -71,5 +75,5 @@
 }
 
 .w-activity-indicator {
-  transform: scale(.8);
+  transform: scale(0.8);
 }

@@ -21,7 +21,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.1",
+	"libVersion": "2.6.6",
 	"appid": "wx0188295b10d5c4cf",
 	"projectname": "wuss-weapp",
 	"isGameTourist": false,

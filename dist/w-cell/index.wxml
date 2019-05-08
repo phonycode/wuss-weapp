@@ -9,6 +9,7 @@
 				<w-icon
 				 wx:if="{{ icon }}"
 				 type="{{ icon }}"
+				 wuss-class="w-icon"
 				 size="{{ iconSize }}"
 				 color="{{ iconColor }}"
 				/>

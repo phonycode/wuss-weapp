@@ -28,11 +28,12 @@
 						<w-activity-indicator
 						 wx:if="{{ item.loading }}"
 						 color="#b2b2b2"
-						 size="small"
 						 wuss-class="w-activity-indicator"
+						 size="small"
 						/>
 						<w-icon
 						 wx:if="{{ item.icon }}"
+						 wuss-class="w-icon"
 						 type="{{ item.icon }}"
 						 size="{{ item.iconSize }}"
 						 color="{{ item.disabled ? '#b2b2b2b' : item.iconColor}}"

@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 14:02:10 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-09-01 13:01:17
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-05-08 11:18:17
  */
 @import '../common/theme/global.wxss';
 
@@ -153,7 +153,7 @@
   white-space: nowrap;
 }
 
-.animation-ball>view {
+.animation-ball .animationClass-view {
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -161,32 +161,32 @@
   border-radius: 50%;
 }
 
-.animation-ball view:nth-child(1) {
-  animation: ball 1s -.5s linear infinite;
-  -webkit-animation: ball 1s -.5s linear infinite;
+.animation-ball .animationClass-view:nth-child(1) {
+  animation: ball 1s -0.5s linear infinite;
+  -webkit-animation: ball 1s -0.5s linear infinite;
 }
 
-.animation-ball view:nth-child(2) {
+.animation-ball .animationClass-view:nth-child(2) {
   animation: ball 1s -0.25s linear infinite;
   -webkit-animation: ball 1s -0.25s linear infinite;
 }
 
-.animation-ball view:nth-child(3) {
+.animation-ball .animationClass-view:nth-child(3) {
   animation: ball 1s 0s linear infinite;
   -webkit-animation: ball 1s 0s linear infinite;
 }
 
-.animation-ball-size-small>view {
+.animation-ball-size-small .animationClass-view {
   width: 20px;
   height: 20px;
 }
 
-.animation-ball-size-default>view {
+.animation-ball-size-default .animationClass-view {
   width: 30px;
   height: 30px;
 }
 
-.animation-ball-size-larger>view {
+.animation-ball-size-larger .animationClass-view {
   width: 45px;
   height: 45px;
 }
@@ -216,7 +216,7 @@
   white-space: nowrap;
 }
 
-.animation-catapult>view {
+.animation-catapult .animationClass-view {
   width: 5px;
   height: 35px;
   background: #fff;
@@ -225,46 +225,46 @@
   display: inline-block;
 }
 
-.animation-catapult view:last-child {
+.animation-catapult .animationClass-view:last-child {
   margin-right: 0;
 }
 
-.animation-catapult view:nth-child(1) {
+.animation-catapult .animationClass-view:nth-child(1) {
   animation: catapult 0.5s -0.3s ease-in-out infinite alternate;
   -webkit-animation: catapult 0.5s -0.3s ease-in-out infinite alternate;
 }
 
-.animation-catapult view:nth-child(2) {
+.animation-catapult .animationClass-view:nth-child(2) {
   animation: catapult 0.5s -0.25s ease-in-out infinite alternate;
   -webkit-animation: catapult 0.5s -0.25s ease-in-out infinite alternate;
 }
 
-.animation-catapult view:nth-child(3) {
+.animation-catapult .animationClass-view:nth-child(3) {
   animation: catapult 0.5s -0.2s ease-in-out infinite alternate;
   -webkit-animation: catapult 0.5s -0.2s ease-in-out infinite alternate;
 }
 
-.animation-catapult view:nth-child(4) {
+.animation-catapult .animationClass-view:nth-child(4) {
   animation: catapult 0.5s -0.1s ease-in-out infinite alternate;
   -webkit-animation: catapult 0.5s -0.1s ease-in-out infinite alternate;
 }
 
-.animation-catapult view:nth-child(5) {
+.animation-catapult .animationClass-view:nth-child(5) {
   animation: catapult 0.5s 0s ease-in-out infinite alternate;
   -webkit-animation: catapult 0.5s 0s ease-in-out infinite alternate;
 }
 
-.animation-catapult-size-small>view {
+.animation-catapult-size-small .animationClass-view {
   width: 3px;
   height: 25px;
 }
 
-.animation-catapult-size-default>view {
+.animation-catapult-size-default .animationClass-view {
   width: 5px;
   height: 35px;
 }
 
-.animation-catapult-size-larger>view {
+.animation-catapult-size-larger .animationClass-view {
   width: 8px;
   height: 48px;
 }

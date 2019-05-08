@@ -1,8 +1,4 @@
-<w-mask-shadow
- maskCancel="{{ maskClose }}"
- visible="{{ _maskShadow }}"
- bind:onClose="handleClose"
-/>
+<w-mask-shadow maskCancel="{{ maskClose }}" visible="{{ _maskShadow }}" bind:onClose="handleClose" />
 
 <view
  class="wuss-class wuss-dialog {{ _animate_visible ? 'wuss-dialog-show' : 'wuss-dialog-hide'}}"
@@ -11,6 +7,8 @@
  style="width: {{ width }};{{ height ? 'height: ' + height + ';' : '' }};"
  animation="{{ _animation }}"
 >
-	<slot/>
+	<view class="slot-warp">
+		<slot/>
+	</view>
 </view>
 

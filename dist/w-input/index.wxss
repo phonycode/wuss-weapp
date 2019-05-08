@@ -1,8 +1,8 @@
 /*
  * @Author: cnyballk[https://github.com/cnyballk] 
  * @Date: 2018-09-12 16:37:38 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-18 17:25:48
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-05-08 11:30:28
  */
 @import '../common/theme/global.wxss';
 
@@ -84,11 +84,11 @@
   font-size: 28rpx;
 }
 
-.wuss-textarea-count>text {
+.wuss-textarea-count .count {
   color: #000;
 }
 
-view.wuss-class-hd {
+.wuss-class-hd {
   padding-top: 20rpx;
   align-items: flex-start;
 }

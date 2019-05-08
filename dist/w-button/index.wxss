@@ -1,12 +1,12 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-08-30 15:49:45 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-29 17:21:05
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-05-08 11:22:14
  */
 @import '../common/theme/global.wxss';
 
-button.wuss-button.wuss-button-normalize {
+.wuss-.wuss--normalize {
   padding: 0;
   margin: 10px;
   outline: none;
@@ -19,146 +19,146 @@ button.wuss-button.wuss-button-normalize {
   transition: background-color 200ms ease 0s, opacity 200ms ease 0s;
 }
 
-button.wuss-button.wuss-button-full {
+.wuss-.wuss--full {
   width: 100%;
   border-radius: 0;
   margin: 10px 0;
 }
 
-button.wuss-button.wuss-button-inline {
+.wuss-.wuss--inline {
   display: inline-block;
   padding: 0 10px;
 }
 
-button.wuss-button.wuss-button-disabled {
-  opacity: .4;
+.wuss-.wuss--disabled {
+  opacity: 0.4;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-default {
+.wuss-.wuss--normalize.wuss--default {
   background-color: rgb(255, 255, 255);
   border-color: rgb(223, 223, 223);
   color: rgb(51, 51, 51);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-default.wuss-button-hover {
+.wuss-.wuss--normalize.wuss--default.wuss--hover {
   background-color: rgb(236, 236, 236);
 }
 
-button.wuss-button.wuss-button-primary {
+.wuss-.wuss--primary {
   background-color: rgb(69, 143, 246);
   border-color: rgb(68, 142, 246);
   color: rgb(255, 255, 255);
 }
 
-button.wuss-button.wuss-button-primary.wuss-button-hover {
+.wuss-.wuss--primary.wuss--hover {
   background-color: rgb(28, 117, 243);
 }
 
-button.wuss-button.wuss-button-primary.wuss-button-disabled {
+.wuss-.wuss--primary.wuss--disabled {
   color: rgb(255, 255, 255);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-warn {
+.wuss-.wuss--normalize.wuss--warn {
   background-color: rgb(255, 153, 0);
   border-color: rgb(255, 153, 0);
   color: rgb(255, 255, 255);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-hover {
+.wuss-.wuss--normalize.wuss--warn.wuss--hover {
   background-color: rgb(255, 136, 0);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-disabled {
+.wuss-.wuss--normalize.wuss--warn.wuss--disabled {
   color: rgb(255, 255, 255);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-info {
+.wuss-.wuss--normalize.wuss--info {
   background-color: rgb(85, 178, 240);
   border-color: rgb(85, 178, 240);
   color: rgb(255, 255, 255);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-hover {
+.wuss-.wuss--normalize.wuss--info.wuss--hover {
   background-color: rgb(43, 159, 236);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-disabled {
+.wuss-.wuss--normalize.wuss--info.wuss--disabled {
   color: rgb(255, 255, 255);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-danger {
+.wuss-.wuss--normalize.wuss--danger {
   background-color: rgb(239, 71, 58);
   color: rgb(255, 255, 255);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-hover {
+.wuss-.wuss--normalize.wuss--danger.wuss--hover {
   background-color: rgb(228, 33, 18);
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-disabled {
+.wuss-.wuss--normalize.wuss--danger.wuss--disabled {
   color: rgb(255, 255, 255);
 }
 
-button.wuss-button.wuss-button-flat {
+.wuss-.wuss--flat {
   border-radius: 0;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-default.wuss-button-ghost {
+.wuss-.wuss--normalize.wuss--default.wuss--ghost {
   border-color: rgb(223, 223, 223);
   color: rgb(51, 51, 51);
   background: transparent;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-default.wuss-button-ghost.wuss-button-hover {
+.wuss-.wuss--normalize.wuss--default.wuss--ghost.wuss--hover {
   background-color: rgb(223, 223, 223);
   color: #ffffff;
 }
 
-button.wuss-button.wuss-button-primary.wuss-button-ghost {
+.wuss-.wuss--primary.wuss--ghost {
   border-color: rgb(68, 142, 246);
   color: rgb(68, 142, 246);
   background: transparent;
 }
 
-button.wuss-button.wuss-button-primary.wuss-button-ghost.wuss-button-hover {
+.wuss-.wuss--primary.wuss--ghost.wuss--hover {
   background-color: rgb(28, 117, 243);
   color: #ffffff;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-ghost {
+.wuss-.wuss--normalize.wuss--warn.wuss--ghost {
   border-color: rgb(255, 153, 0);
   color: rgb(255, 153, 0);
   background: transparent;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-ghost.wuss-button-hover {
+.wuss-.wuss--normalize.wuss--warn.wuss--ghost.wuss--hover {
   background-color: rgb(255, 136, 0);
   color: #ffffff;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-ghost {
+.wuss-.wuss--normalize.wuss--info.wuss--ghost {
   border-color: rgb(85, 178, 240);
   color: rgb(85, 178, 240);
   background: transparent;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-ghost.wuss-button-hover {
+.wuss-.wuss--normalize.wuss--info.wuss--ghost.wuss--hover {
   background-color: rgb(43, 159, 236);
   color: #ffffff;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-ghost {
+.wuss-.wuss--normalize.wuss--danger.wuss--ghost {
   border-color: rgb(239, 71, 58);
   color: rgb(239, 71, 58);
   background: transparent;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-ghost.wuss-button-hover {
+.wuss-.wuss--normalize.wuss--danger.wuss--ghost.wuss--hover {
   background-color: rgb(228, 33, 18);
   color: #ffffff;
 }
 
-button.wuss-button.wuss-button-dashed.wuss-button-normalize {
+.wuss-.wuss--dashed.wuss--normalize {
   border-style: dashed;
 }
 
@@ -166,12 +166,11 @@ button.wuss-button.wuss-button-dashed.wuss-button-normalize {
   margin-right: 5px;
 }
 
-
-button.wuss-button.wuss-button-normalize.wuss-button-custom-hover {
-  opacity: .6;
+.wuss-.wuss--normalize.wuss--custom-hover {
+  opacity: 0.6;
 }
 
-button.wuss-button.wuss-button-normalize.wuss-button-circle {
+.wuss-.wuss--normalize.wuss--circle {
   border-radius: 42px;
 }
 
