@@ -4,7 +4,7 @@
 	<view class="wuss-slider-step" />
 	<view
 	 bind:touchstart="onTouchStart"
-	 catch:touchmove="onTouchMove"
+	 bind:touchmove="onTouchMove"
 	 bind:touchend="onTouchEnd"
 	 bind:touchcancel="onTouchEnd"
 	 data-move-node="0"
@@ -13,7 +13,7 @@
 	/>
 	<view
 	 bind:touchstart="onTouchStart"
-	 catch:touchmove="onTouchMove"
+	 bind:touchmove="onTouchMove"
 	 bind:touchend="onTouchEnd"
 	 bind:touchcancel="onTouchEnd"
 	 data-move-node="1"

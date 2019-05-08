@@ -2,6 +2,6 @@
   class="wuss-class mask-shadow {{ visible ? 'mask-shadow-show' : ''}}" 
   hover-class="none" 
   hover-stop-propagation="true"
-  catchtap="handleClick"
+  bindtap="handleClick"
   style="{{ maskStyles }}"
 />

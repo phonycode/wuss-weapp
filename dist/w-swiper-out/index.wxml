@@ -20,8 +20,9 @@
 		<view
 		 class="wuss-swiper-out-left"
 		 hover-class="none"
+		 style="width: calc(100% - {{ _slideWidth }}px)"
 		 hover-stop-propagation="false"
-		 catchtap="handleLeftClick"
+		 bindtap="handleLeftClick"
 		>
 			<slot/>
 		</view>
@@ -34,7 +35,7 @@
 			 wx:for="{{ swiperOutBtns }}"
 			 wx:key="index"
 			 data-key="{{ index }}"
-			 catchtap="handleBtnClick"
+			 bindtap="handleBtnClick"
 			>
 				{{
 				item.text

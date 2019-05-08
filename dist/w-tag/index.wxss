@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-10-18 17:27:29 
- * @Last Modified by:   Github.Caitingwei[https://github.com/Caitingwei] 
- * @Last Modified time: 2018-10-18 17:27:29 
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-05-08 11:48:57
  */
 @import '../common/theme/global.wxss';
 
@@ -42,7 +42,7 @@
   border: 1rx solid #108ee9;
 }
 
-w-icon {
+.wuss-tag-icon {
   margin-left: 8rpx;
 }
 

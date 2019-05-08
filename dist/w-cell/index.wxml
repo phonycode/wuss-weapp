@@ -3,7 +3,7 @@
  hover-class="{{ !disabled && highlight ? 'wuss-cell-hover' : '' }}"
  hover-stop-propagation="false"
 >
-	<view class="wuss-class wuss-cell-content" catchtap="linkTo">
+	<view class="wuss-class wuss-cell-content" bindtap="linkTo">
 		<view class="wuss-class-hd  wuss-cell-hd {{ desc ? 'wuss-cell-hd-desc-padding' : '' }} {{ isValidateIcon ? 'wuss-cell-hd-showIcon' :''}}">
 			<view class="wuss-cell-left wuss-class-left">
 				<w-icon

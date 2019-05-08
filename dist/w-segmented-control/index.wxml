@@ -2,7 +2,7 @@
  class="wuss-class wuss-segmented {{ disabled ? 'wuss-segmented-disabled' : '' }}"
  hover-class="none"
  hover-stop-propagation="false"
- catchtap="_handleClick"
+ bindtap="_handleClick"
  style="{{ color ? 'border-color: ' + color + ';' : '' }}"
 >
 	<block

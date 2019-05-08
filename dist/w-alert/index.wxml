@@ -16,7 +16,7 @@
     </view>
     <view class="wuss-alert-ft">
       <view class="wuss-alert-button-group">
-        <view style="color: {{ buttonColor }};" catchtap="_handleClick" class="wuss-alert-button" hover-class="wuss-alert-button-hover">确定</view>
+        <view style="color: {{ buttonColor }};" bindtap="_handleClick" class="wuss-alert-button" hover-class="wuss-alert-button-hover">确定</view>
       </view>
     </view>
   </view>

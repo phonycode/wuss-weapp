@@ -17,7 +17,7 @@
 		/>
 		<image
 		 wx:if="{{ vcodeSrc }}"
-     catchtap="_handleChangeVCode"
+     bindtap="_handleChangeVCode"
 		 class="wuss-vcode-image"
 		 src="{{ vcodeSrc }}"
 		/>
