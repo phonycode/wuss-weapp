@@ -14,11 +14,11 @@
 
 <view wx:if="{{ type === 'catapult' }}" class="wuss-class wuss-activity-indicator-block {{ text ? 'flex-content' : ''}}" >
 	<view class="wuss-activity-indicator animation-catapult {{ animationClass }}" >
-		<view style="{{ animationStyles }}" />
-		<view style="{{ animationStyles }}" />
-		<view style="{{ animationStyles }}" />
-		<view style="{{ animationStyles }}" />
-		<view style="{{ animationStyles }}" />
+		<view style="{{ animationStyles }}" class="animationClass-view"/>
+		<view style="{{ animationStyles }}" class="animationClass-view"/>
+		<view style="{{ animationStyles }}" class="animationClass-view"/>
+		<view style="{{ animationStyles }}" class="animationClass-view"/>
+		<view style="{{ animationStyles }}" class="animationClass-view"/>
 	</view>
 	<view class="wuss-activity-indicator-text" wx:if="{{ text }}" style="{{ textStyle }}" >
 		{{ text }}
@@ -27,9 +27,9 @@
 
 <view wx:if="{{ type === 'ball' }}" class="wuss-class wuss-activity-indicator-block {{ text ? 'flex-content' : ''}}" >
 	<view class="wuss-activity-indicator animation-ball {{ animationClass }}" >
-		<view style="{{ animationStyles }}" />
-		<view style="{{ animationStyles }}" />
-		<view style="{{ animationStyles }}" />
+		<view style="{{ animationStyles }}" class="animationClass-view"/>
+		<view style="{{ animationStyles }}" class="animationClass-view"/>
+		<view style="{{ animationStyles }}" class="animationClass-view"/>
 	</view>
 	<view class="wuss-activity-indicator-text" wx:if="{{ text }}" style="{{ textStyle }}" >
 		{{ text }}

@@ -1,8 +1,8 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-04 16:36:36 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2019-03-14 09:40:13
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-05-08 11:33:48
  */
 @import '../common/theme/global.wxss';
 
@@ -70,7 +70,7 @@
   padding-right: 10px;
 }
 
-.wuss-cell-left w-icon {
+.wuss-cell-left .w-icon {
   padding-right: 5px;
 }
 

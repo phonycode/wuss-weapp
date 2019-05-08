@@ -1,12 +1,10 @@
 /*
  * @Author: Github.Caitingwei[https://github.com/Caitingwei] 
  * @Date: 2018-09-10 16:04:05 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-10-29 16:25:56
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-05-08 11:21:12
  */
 @import '../common/theme/global.wxss';
-
-.w-dialog>view {}
 
 .w-dialog {
   background-color: transparent;
@@ -43,7 +41,8 @@
   border-top: 1rpx solid #eeeeee;
 }
 
-.wuss-alert .wuss-alert-button-group {}
+.wuss-alert .wuss-alert-button-group {
+}
 
 .wuss-alert .wuss-alert-button {
   min-height: 44px;

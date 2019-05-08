@@ -19,7 +19,7 @@
 	</view>
 	<view class="wuss-class-input-wrap wuss-input_input-wrap {{ disabled && !readOnly ? 'input_input-disabled':''}} {{ type==='textarea' ? 'input-wrap--textarea' : ''}}" slot="content">
 		<view class="wuss-textarea-count" wx:if="{{  type==='textarea' && count > 0 }}">
-			<text>{{value.length}}</text>
+			<text class="count">{{value.length}}</text>
 			/{{count}}
 		</view>
 		<textarea 
