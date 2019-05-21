@@ -6,7 +6,7 @@
  */
 @import '../common/theme/global.wxss';
 
-.wuss-.wuss--normalize {
+.wuss-button.wuss--normalize {
   padding: 0;
   margin: 10px;
   outline: none;
@@ -19,146 +19,146 @@
   transition: background-color 200ms ease 0s, opacity 200ms ease 0s;
 }
 
-.wuss-.wuss--full {
+.wuss-button.wuss--full {
   width: 100%;
   border-radius: 0;
   margin: 10px 0;
 }
 
-.wuss-.wuss--inline {
+.wuss-button.wuss--inline {
   display: inline-block;
   padding: 0 10px;
 }
 
-.wuss-.wuss--disabled {
+.wuss-button.wuss--disabled {
   opacity: 0.4;
 }
 
-.wuss-.wuss--normalize.wuss--default {
+.wuss-button.wuss--normalize.wuss--default {
   background-color: rgb(255, 255, 255);
   border-color: rgb(223, 223, 223);
   color: rgb(51, 51, 51);
 }
 
-.wuss-.wuss--normalize.wuss--default.wuss--hover {
+.wuss-button.wuss--normalize.wuss--default.wuss--hover {
   background-color: rgb(236, 236, 236);
 }
 
-.wuss-.wuss--primary {
+.wuss-button.wuss--primary {
   background-color: rgb(69, 143, 246);
   border-color: rgb(68, 142, 246);
   color: rgb(255, 255, 255);
 }
 
-.wuss-.wuss--primary.wuss--hover {
+.wuss-button.wuss--primary.wuss--hover {
   background-color: rgb(28, 117, 243);
 }
 
-.wuss-.wuss--primary.wuss--disabled {
+.wuss-button.wuss--primary.wuss--disabled {
   color: rgb(255, 255, 255);
 }
 
-.wuss-.wuss--normalize.wuss--warn {
+.wuss-button.wuss--normalize.wuss--warn {
   background-color: rgb(255, 153, 0);
   border-color: rgb(255, 153, 0);
   color: rgb(255, 255, 255);
 }
 
-.wuss-.wuss--normalize.wuss--warn.wuss--hover {
+.wuss-button.wuss--normalize.wuss--warn.wuss--hover {
   background-color: rgb(255, 136, 0);
 }
 
-.wuss-.wuss--normalize.wuss--warn.wuss--disabled {
+.wuss-button.wuss--normalize.wuss--warn.wuss--disabled {
   color: rgb(255, 255, 255);
 }
 
-.wuss-.wuss--normalize.wuss--info {
+.wuss-button.wuss--normalize.wuss--info {
   background-color: rgb(85, 178, 240);
   border-color: rgb(85, 178, 240);
   color: rgb(255, 255, 255);
 }
 
-.wuss-.wuss--normalize.wuss--info.wuss--hover {
+.wuss-button.wuss--normalize.wuss--info.wuss--hover {
   background-color: rgb(43, 159, 236);
 }
 
-.wuss-.wuss--normalize.wuss--info.wuss--disabled {
+.wuss-button.wuss--normalize.wuss--info.wuss--disabled {
   color: rgb(255, 255, 255);
 }
 
-.wuss-.wuss--normalize.wuss--danger {
+.wuss-button.wuss--normalize.wuss--danger {
   background-color: rgb(239, 71, 58);
   color: rgb(255, 255, 255);
 }
 
-.wuss-.wuss--normalize.wuss--danger.wuss--hover {
+.wuss-button.wuss--normalize.wuss--danger.wuss--hover {
   background-color: rgb(228, 33, 18);
 }
 
-.wuss-.wuss--normalize.wuss--danger.wuss--disabled {
+.wuss-button.wuss--normalize.wuss--danger.wuss--disabled {
   color: rgb(255, 255, 255);
 }
 
-.wuss-.wuss--flat {
+.wuss-button.wuss--flat {
   border-radius: 0;
 }
 
-.wuss-.wuss--normalize.wuss--default.wuss--ghost {
+.wuss-button.wuss--normalize.wuss--default.wuss--ghost {
   border-color: rgb(223, 223, 223);
   color: rgb(51, 51, 51);
   background: transparent;
 }
 
-.wuss-.wuss--normalize.wuss--default.wuss--ghost.wuss--hover {
+.wuss-button.wuss--normalize.wuss--default.wuss--ghost.wuss--hover {
   background-color: rgb(223, 223, 223);
   color: #ffffff;
 }
 
-.wuss-.wuss--primary.wuss--ghost {
+.wuss-button.wuss--primary.wuss--ghost {
   border-color: rgb(68, 142, 246);
   color: rgb(68, 142, 246);
   background: transparent;
 }
 
-.wuss-.wuss--primary.wuss--ghost.wuss--hover {
+.wuss-button.wuss--primary.wuss--ghost.wuss--hover {
   background-color: rgb(28, 117, 243);
   color: #ffffff;
 }
 
-.wuss-.wuss--normalize.wuss--warn.wuss--ghost {
+.wuss-button.wuss--normalize.wuss--warn.wuss--ghost {
   border-color: rgb(255, 153, 0);
   color: rgb(255, 153, 0);
   background: transparent;
 }
 
-.wuss-.wuss--normalize.wuss--warn.wuss--ghost.wuss--hover {
+.wuss-button.wuss--normalize.wuss--warn.wuss--ghost.wuss--hover {
   background-color: rgb(255, 136, 0);
   color: #ffffff;
 }
 
-.wuss-.wuss--normalize.wuss--info.wuss--ghost {
+.wuss-button.wuss--normalize.wuss--info.wuss--ghost {
   border-color: rgb(85, 178, 240);
   color: rgb(85, 178, 240);
   background: transparent;
 }
 
-.wuss-.wuss--normalize.wuss--info.wuss--ghost.wuss--hover {
+.wuss-button.wuss--normalize.wuss--info.wuss--ghost.wuss--hover {
   background-color: rgb(43, 159, 236);
   color: #ffffff;
 }
 
-.wuss-.wuss--normalize.wuss--danger.wuss--ghost {
+.wuss-button.wuss--normalize.wuss--danger.wuss--ghost {
   border-color: rgb(239, 71, 58);
   color: rgb(239, 71, 58);
   background: transparent;
 }
 
-.wuss-.wuss--normalize.wuss--danger.wuss--ghost.wuss--hover {
+.wuss-button.wuss--normalize.wuss--danger.wuss--ghost.wuss--hover {
   background-color: rgb(228, 33, 18);
   color: #ffffff;
 }
 
-.wuss-.wuss--dashed.wuss--normalize {
+.wuss-button.wuss--dashed.wuss--normalize {
   border-style: dashed;
 }
 
@@ -166,11 +166,11 @@
   margin-right: 5px;
 }
 
-.wuss-.wuss--normalize.wuss--custom-hover {
+.wuss-button.wuss--normalize.wuss--custom-hover {
   opacity: 0.6;
 }
 
-.wuss-.wuss--normalize.wuss--circle {
+.wuss-button.wuss--normalize.wuss--circle {
   border-radius: 42px;
 }
 
