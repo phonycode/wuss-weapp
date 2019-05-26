@@ -6,7 +6,7 @@
  */
 @import '../common/theme/global.wxss';
 
-.wuss-button.wuss--normalize {
+.wuss-button.wuss-button-normalize {
   padding: 0;
   margin: 10px;
   outline: none;
@@ -19,146 +19,146 @@
   transition: background-color 200ms ease 0s, opacity 200ms ease 0s;
 }
 
-.wuss-button.wuss--full {
+.wuss-button.wuss-button-full {
   width: 100%;
   border-radius: 0;
   margin: 10px 0;
 }
 
-.wuss-button.wuss--inline {
+.wuss-button.wuss-button-inline {
   display: inline-block;
   padding: 0 10px;
 }
 
-.wuss-button.wuss--disabled {
+.wuss-button.wuss-button-disabled {
   opacity: 0.4;
 }
 
-.wuss-button.wuss--normalize.wuss--default {
+.wuss-button.wuss-button-normalize.wuss-button-default {
   background-color: rgb(255, 255, 255);
   border-color: rgb(223, 223, 223);
   color: rgb(51, 51, 51);
 }
 
-.wuss-button.wuss--normalize.wuss--default.wuss--hover {
+.wuss-button.wuss-button-normalize.wuss-button-default.wuss-button-hover {
   background-color: rgb(236, 236, 236);
 }
 
-.wuss-button.wuss--primary {
+.wuss-button.wuss-button-primary {
   background-color: rgb(69, 143, 246);
   border-color: rgb(68, 142, 246);
   color: rgb(255, 255, 255);
 }
 
-.wuss-button.wuss--primary.wuss--hover {
+.wuss-button.wuss-button-primary.wuss-button-hover {
   background-color: rgb(28, 117, 243);
 }
 
-.wuss-button.wuss--primary.wuss--disabled {
+.wuss-button.wuss-button-primary.wuss-button-disabled {
   color: rgb(255, 255, 255);
 }
 
-.wuss-button.wuss--normalize.wuss--warn {
+.wuss-button.wuss-button-normalize.wuss-button-warn {
   background-color: rgb(255, 153, 0);
   border-color: rgb(255, 153, 0);
   color: rgb(255, 255, 255);
 }
 
-.wuss-button.wuss--normalize.wuss--warn.wuss--hover {
+.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-hover {
   background-color: rgb(255, 136, 0);
 }
 
-.wuss-button.wuss--normalize.wuss--warn.wuss--disabled {
+.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-disabled {
   color: rgb(255, 255, 255);
 }
 
-.wuss-button.wuss--normalize.wuss--info {
+.wuss-button.wuss-button-normalize.wuss-button-info {
   background-color: rgb(85, 178, 240);
   border-color: rgb(85, 178, 240);
   color: rgb(255, 255, 255);
 }
 
-.wuss-button.wuss--normalize.wuss--info.wuss--hover {
+.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-hover {
   background-color: rgb(43, 159, 236);
 }
 
-.wuss-button.wuss--normalize.wuss--info.wuss--disabled {
+.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-disabled {
   color: rgb(255, 255, 255);
 }
 
-.wuss-button.wuss--normalize.wuss--danger {
+.wuss-button.wuss-button-normalize.wuss-button-danger {
   background-color: rgb(239, 71, 58);
   color: rgb(255, 255, 255);
 }
 
-.wuss-button.wuss--normalize.wuss--danger.wuss--hover {
+.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-hover {
   background-color: rgb(228, 33, 18);
 }
 
-.wuss-button.wuss--normalize.wuss--danger.wuss--disabled {
+.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-disabled {
   color: rgb(255, 255, 255);
 }
 
-.wuss-button.wuss--flat {
+.wuss-button.wuss-button-flat {
   border-radius: 0;
 }
 
-.wuss-button.wuss--normalize.wuss--default.wuss--ghost {
+.wuss-button.wuss-button-normalize.wuss-button-default.wuss-button-ghost {
   border-color: rgb(223, 223, 223);
   color: rgb(51, 51, 51);
   background: transparent;
 }
 
-.wuss-button.wuss--normalize.wuss--default.wuss--ghost.wuss--hover {
+.wuss-button.wuss-button-normalize.wuss-button-default.wuss-button-ghost.wuss-button-hover {
   background-color: rgb(223, 223, 223);
   color: #ffffff;
 }
 
-.wuss-button.wuss--primary.wuss--ghost {
+.wuss-button.wuss-button-primary.wuss-button-ghost {
   border-color: rgb(68, 142, 246);
   color: rgb(68, 142, 246);
   background: transparent;
 }
 
-.wuss-button.wuss--primary.wuss--ghost.wuss--hover {
+.wuss-button.wuss-button-primary.wuss-button-ghost.wuss-button-hover {
   background-color: rgb(28, 117, 243);
   color: #ffffff;
 }
 
-.wuss-button.wuss--normalize.wuss--warn.wuss--ghost {
+.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-ghost {
   border-color: rgb(255, 153, 0);
   color: rgb(255, 153, 0);
   background: transparent;
 }
 
-.wuss-button.wuss--normalize.wuss--warn.wuss--ghost.wuss--hover {
+.wuss-button.wuss-button-normalize.wuss-button-warn.wuss-button-ghost.wuss-button-hover {
   background-color: rgb(255, 136, 0);
   color: #ffffff;
 }
 
-.wuss-button.wuss--normalize.wuss--info.wuss--ghost {
+.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-ghost {
   border-color: rgb(85, 178, 240);
   color: rgb(85, 178, 240);
   background: transparent;
 }
 
-.wuss-button.wuss--normalize.wuss--info.wuss--ghost.wuss--hover {
+.wuss-button.wuss-button-normalize.wuss-button-info.wuss-button-ghost.wuss-button-hover {
   background-color: rgb(43, 159, 236);
   color: #ffffff;
 }
 
-.wuss-button.wuss--normalize.wuss--danger.wuss--ghost {
+.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-ghost {
   border-color: rgb(239, 71, 58);
   color: rgb(239, 71, 58);
   background: transparent;
 }
 
-.wuss-button.wuss--normalize.wuss--danger.wuss--ghost.wuss--hover {
+.wuss-button.wuss-button-normalize.wuss-button-danger.wuss-button-ghost.wuss-button-hover {
   background-color: rgb(228, 33, 18);
   color: #ffffff;
 }
 
-.wuss-button.wuss--dashed.wuss--normalize {
+.wuss-button.wuss-button-dashed.wuss-button-normalize {
   border-style: dashed;
 }
 
@@ -166,11 +166,11 @@
   margin-right: 5px;
 }
 
-.wuss-button.wuss--normalize.wuss--custom-hover {
+.wuss-button.wuss-button-normalize.wuss-button-custom-hover {
   opacity: 0.6;
 }
 
-.wuss-button.wuss--normalize.wuss--circle {
+.wuss-button.wuss-button-normalize.wuss-button-circle {
   border-radius: 42px;
 }
 
