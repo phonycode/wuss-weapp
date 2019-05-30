@@ -42,6 +42,12 @@ WussComponent({
         {}
       );
     },
+    /**
+     * 处理触摸滚动问题
+     */
+    handleCatchTouchMove() {
+      return false;
+    },
   },
   ready: function() {
     const { zIndex, opacity } = this.data;

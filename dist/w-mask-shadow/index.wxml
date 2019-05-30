@@ -1,6 +1,7 @@
 <view
   class="wuss-class mask-shadow {{ visible ? 'mask-shadow-show' : ''}}" 
   hover-class="none" 
+  catchtouchmove="handleCatchTouchMove"
   hover-stop-propagation="true"
   bindtap="handleClick"
   style="{{ maskStyles }}"
