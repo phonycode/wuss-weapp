@@ -25,6 +25,8 @@
 	"appid": "wx0188295b10d5c4cf",
 	"projectname": "wuss-weapp",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
