@@ -37,7 +37,7 @@
 				 hover-class="none"
 				 hover-stop-propagation="false"
 				 style="{{ cancelTextColor ? 'color:' + cancelTextColor + ';' : '' }}"
-				 bindtap="_handleCancel"
+				 catchtap="_handleCancel"
 				>
 					{{ cancelText }}
 				</view>
