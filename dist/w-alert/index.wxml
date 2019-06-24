@@ -12,7 +12,7 @@
       <view class="wuss-alert-title">{{ title }}</view>
     </view>
     <view class="wuss-alert-bd">
-      <view class="wuss-alert-content">{{ content }}</view>
+      <rich-text class="wuss-alert-content" nodes="{{content}}"></rich-text>
     </view>
     <view class="wuss-alert-ft">
       <view class="wuss-alert-button-group">

@@ -9,5 +9,7 @@
 <w-pane desc="MoreText" />
 <w-button bind:onClick="handleClick3" type="info">MoreText</w-button>
 
+<w-pane desc="richText" />
+<w-button bind:onClick="handleClick4" type="info">richText</w-button>
 
 <w-alert id="wuss-alert" />
