@@ -4,7 +4,7 @@
 <w-tabs bind:onChange="handleChange" options="{{ tabs1 }}" />
 
 <w-pane desc="Initial Index = 2" />
-<w-button type="info" >selected tab2</w-button>
+<w-button type="info">selected tab2</w-button>
 <w-tabs
  bind:onChange="handleChange"
  options="{{ tabs4 }}"
