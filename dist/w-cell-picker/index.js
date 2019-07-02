@@ -73,26 +73,14 @@ WussComponent({
     defaultValue: {
       type: null,
     },
-    cancelTextColor: {
-      type: String,
-      value: '',
-    },
+    cancelTextColor: String,
     cancelText: {
       type: String,
       value: '取消',
     },
-    label: {
-      type: String,
-      value: '',
-    },
-    title: {
-      type: String,
-      value: '',
-    },
-    confirmTextColor: {
-      type: String,
-      value: '',
-    },
+    label: String,
+    title: String,
+    confirmTextColor: String,
     confirmText: {
       type: String,
       value: '确认',
@@ -105,12 +93,8 @@ WussComponent({
       type: String,
       value: 'value',
     },
-    placeholder: {
-      type: String,
-    },
-    isDatePicker: {
-      type: Boolean,
-    },
+    placeholder: String,
+    isDatePicker: Boolean,
     shouldValueUpdate: {
       type: Function,
       value: () => true,

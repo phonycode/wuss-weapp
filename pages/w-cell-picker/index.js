@@ -259,8 +259,8 @@ Page({
     ],
     options5: ['测试1','测试2'],
     shouldValueUpdate: () => {
-      const [page] = getCurrentPages();
-      return !!(page.data.value === '666');
+      const pages = getCurrentPages();
+      return !!(pages[pages.length-1].data.value === '666');
     },
     value: '值为666时更新',
   },
