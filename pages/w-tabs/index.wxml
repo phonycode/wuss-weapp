@@ -4,7 +4,7 @@
 <w-tabs bind:onChange="handleChange" options="{{ tabs1 }}" />
 
 <w-pane desc="Initial Index = 2" />
-<w-button type="info" bind:onClick="handleSelected">selected tab2</w-button>
+<w-button type="info">selected tab2</w-button>
 <w-tabs
  bind:onChange="handleChange"
  options="{{ tabs4 }}"
@@ -36,7 +36,7 @@
 />
 
 <w-pane desc="Scroll" />
-<w-tabs bind:onClick="handleClick" options="{{ tabs5 }}" />
+<w-tabs options="{{ tabs5 }}" />
 
 <w-pane desc="Disabled Line" />
 <w-tabs

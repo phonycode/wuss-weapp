@@ -1,8 +1,8 @@
 /*
- * @Author: cnyballk[https://github.com/cnyballk] 
- * @Date: 2018-09-8 17:52:32 
- * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2018-12-07 14:32:09
+ * @Author: cnyballk[https://github.com/cnyballk]
+ * @Date: 2018-09-8 17:52:32
+ * @Last Modified by: cnyballk[https://github.com/cnyballk]
+ * @Last Modified time: 2019-07-02 21:17:05
  */
 Page({
   data: {
@@ -34,18 +34,8 @@ Page({
         iconColor: '#ef473a',
       },
     ],
-    tabs3: [
-      '英雄联盟',
-      '绝地求生',
-      'DNF',
-      '炉石传说'
-    ],
-    tabs4: [
-      'tab1',
-      'tab2',
-      'tab3',
-      'tab4'
-    ],
+    tabs3: ['英雄联盟', '绝地求生', 'DNF', '炉石传说'],
+    tabs4: ['tab1', 'tab2', 'tab3', 'tab4'],
     tabs5: [
       'tab1',
       'tab2',
@@ -56,7 +46,7 @@ Page({
       'tab7',
       'tab8',
       'tab9',
-      'tab10'
+      'tab10',
     ],
   },
   handleChange(e) {
@@ -68,18 +58,8 @@ Page({
       index: 2,
     });
   },
-  handleClick(e) {
-    const {
-      index,
-      title
-    } = e.detail;
-    console.log('点击了tab:' + index, title);
-  },
   onDisabled(e) {
-    const {
-      index,
-      title
-    } = e.detail;
+    const { index, title } = e.detail;
     console.log('点击了禁用的:' + index, title);
   },
 });
