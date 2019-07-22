@@ -7,7 +7,9 @@ const MOCK_DATA = {
   desc: 'iphone is good',
 };
 
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   data: {
     items1Str: '',
     items1: [
@@ -45,4 +47,9 @@ Page({
     console.log(e.detail.value)
     this.setData({ items1Str: JSON.stringify(e.detail.value) });
   },
-});
+};
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);
+

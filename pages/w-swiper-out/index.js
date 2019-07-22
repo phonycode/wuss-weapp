@@ -1,4 +1,6 @@
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   data: {
     btns1: [
       {
@@ -70,4 +72,7 @@ Page({
     const { onPress } = e.detail;
     onPress.call(this);
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

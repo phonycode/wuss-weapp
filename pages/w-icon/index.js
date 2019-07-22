@@ -4,7 +4,9 @@
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
  * @Last Modified time: 2018-10-09 10:26:31
  */
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   data: {
     iconData: [
       { text: 'checked', name: 'checked' },
@@ -115,4 +117,7 @@ Page({
       data: String(name),
     });
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

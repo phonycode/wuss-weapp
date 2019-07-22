@@ -1,4 +1,7 @@
-Page({
+import { registerShareEvent } from '../../common/share';
+
+
+const pageOptions = {
   data: {
     popup1: false,
     popup2: false,
@@ -35,4 +38,7 @@ Page({
   handleClick6() {
     this.setData({ popup6: true });
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

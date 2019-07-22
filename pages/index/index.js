@@ -4,7 +4,9 @@
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
  * @Last Modified time: 2018-09-22 11:52:03
  */
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   data: {
     visible: false,
     dataItems: [
@@ -77,4 +79,8 @@ Page({
   handleClose() {
     this.setData({ visible: false });
   },
-});
+};
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

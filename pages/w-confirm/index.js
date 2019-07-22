@@ -1,6 +1,8 @@
 import { Confirm } from '../../dist/index';
 
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   handleClick1() {
     Confirm({
       title: '警告',
@@ -36,4 +38,9 @@ Page({
       content: '你只能点确定',
     })
   },
-});
+};
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);
+

@@ -1,4 +1,7 @@
-Page({
+import { registerShareEvent } from '../../common/share';
+
+
+const pageOptions = {
   data: {
     visible1: false,
     visible2: false,
@@ -22,4 +25,9 @@ Page({
   onLoad() {
     setTimeout(() => this.setData({ visible1: true }), 1000);
   }
-});
+};
+
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

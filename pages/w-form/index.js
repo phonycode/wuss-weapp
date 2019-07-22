@@ -6,7 +6,9 @@ const MOCK_DATA = {
   price: 12700.0,
   desc: 'iphone is good',
 };
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   data: {
     userNameRules: {
       maxLength: {
@@ -69,4 +71,7 @@ Page({
   wussFormReset(e) {
     console.log('重置了:', e.detail);
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

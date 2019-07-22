@@ -4,7 +4,10 @@
  * @Last Modified by:   cnyballk[https://github.com/cnyballk] 
  * @Last Modified time: 2018-09-10 17:52:17 
  */
-Page({
+import { registerShareEvent } from '../../common/share';
+
+
+const pageOptions = {
   data: {
     current: 0,
     steps: [
@@ -42,4 +45,7 @@ Page({
   complete(e) {
     console.log('complete', e.detail.step);
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

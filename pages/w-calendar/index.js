@@ -5,7 +5,8 @@
  * @Last Modified time: 2018-12-01 09:59:19
  */
 const now = new Date();
-Page({
+import { registerShareEvent } from '../../common/share';
+const pageOptions = {
   data: {
     visible1: false,
     visible2: false,
@@ -59,4 +60,9 @@ Page({
       visible3: false,
     });
   },
-});
+};
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);
+

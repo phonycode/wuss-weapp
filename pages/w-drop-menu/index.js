@@ -1,4 +1,7 @@
-Page({
+import { registerShareEvent } from '../../common/share';
+
+
+const pageOptions = {
   data: {
     options: [{
         text: '最高评分',
@@ -98,4 +101,7 @@ Page({
   handleChange(e) {
     console.log(e);
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);
