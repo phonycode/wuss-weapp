@@ -1,5 +1,8 @@
 import { Loading, Alert } from '../../dist/index';
-Page({
+import { registerShareEvent } from '../../common/share';
+
+
+const pageOptions = {
   handleClick3() {
     Loading.show({
       hide: () => Alert({
@@ -33,4 +36,7 @@ Page({
       }),
     })
   }
-})
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

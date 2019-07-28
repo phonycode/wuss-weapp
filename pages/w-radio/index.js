@@ -1,4 +1,7 @@
-Page({
+import { registerShareEvent } from '../../common/share';
+
+
+const pageOptions = {
   data: {
     dataItems: [
       {
@@ -31,4 +34,7 @@ Page({
       radioModel: value,
     });
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

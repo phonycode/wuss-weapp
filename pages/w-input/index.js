@@ -4,7 +4,9 @@
  * @Last Modified by: cnyballk[https://github.com/cnyballk]
  * @Last Modified time: 2018-09-21 12:53:58
  */
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   data: {
     focus: false,
   },
@@ -25,4 +27,7 @@ Page({
   extraClick(e) {
     console.log('注释被点击了', e);
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

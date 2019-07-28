@@ -1,5 +1,7 @@
 import { ActionSheet } from '../../dist/index';
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   data: {
     visible: false,
     items1: [
@@ -120,14 +122,8 @@ Page({
       options: [{text: 'ActionSheet.hide()',type: 'hide'}],
     })
   },
-  onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
-    return {
-      title: '自定义转发标题',
-      path: '/page/user?id=123'
-    }
-  }
-});
+};
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

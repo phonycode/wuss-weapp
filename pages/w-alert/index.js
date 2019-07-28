@@ -5,8 +5,9 @@
  * @Last Modified time: 2018-09-22 17:19:08
  */
 import { Alert } from '../../dist/index';
+import { registerShareEvent } from '../../common/share';
 
-Page({
+const pageOptions = {
   handleClick() {
     Alert({
       title: '提示',
@@ -37,4 +38,7 @@ Page({
         '支持br换行<br/>支持hr线<hr/>支持其他h5标签',
     });
   }
-});
+};
+
+registerShareEvent(pageOptions);
+Page(pageOptions);

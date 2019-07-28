@@ -1,4 +1,6 @@
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   data: {
     options1: [
       [{
@@ -272,4 +274,8 @@ Page({
   handleSelect(e) {
     console.log(e)
   },
-});
+};
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

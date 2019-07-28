@@ -1,4 +1,7 @@
-Page({
+import { registerShareEvent } from '../../common/share';
+
+
+const pageOptions = {
   data: {
     visible: false,
   },
@@ -19,4 +22,7 @@ Page({
       visible: !this.data.visible,
     });
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

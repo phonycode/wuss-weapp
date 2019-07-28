@@ -1,5 +1,6 @@
-// pages/w-layout/index.js
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
 
   /**
    * 页面的初始数据
@@ -62,4 +63,7 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

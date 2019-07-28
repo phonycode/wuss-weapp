@@ -1,5 +1,6 @@
+import { registerShareEvent } from '../../common/share';
 // pages/w-scrollable-tab-view/index.js
-Page({
+const pageOptions = {
 
   /**
    * 页面的初始数据
@@ -63,4 +64,8 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+}
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

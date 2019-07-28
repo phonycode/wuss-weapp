@@ -1,9 +1,10 @@
-// pages/w-count-up/index.js
+import { registerShareEvent } from '../../common/share';
+
 import {
   CountUp
 } from '../../dist/index';
 
-Page({
+const pageOptions = {
 
   /**
    * 页面的初始数据
@@ -85,4 +86,9 @@ Page({
   onShareAppMessage: function () {
 
   }
-})
+};
+
+
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

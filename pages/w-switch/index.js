@@ -1,4 +1,7 @@
-Page({
+import { registerShareEvent } from '../../common/share';
+
+
+const pageOptions = {
   data: {
     value: false,
   },
@@ -6,4 +9,7 @@ Page({
     console.log(e);
     this.setData({ value: e.detail.value });
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);

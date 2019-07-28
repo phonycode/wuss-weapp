@@ -5,7 +5,9 @@
  * @Last Modified time: 2018-09-22 17:19:32
  */
 import { Toast } from '../../dist/index';
-Page({
+import { registerShareEvent } from '../../common/share';
+
+const pageOptions = {
   top() {
     Toast.show({
       position: 'top',
@@ -53,4 +55,7 @@ Page({
     });
     setTimeout(wussToast.hide, 2500);
   },
-});
+}
+registerShareEvent(pageOptions);
+
+Page(pageOptions);
