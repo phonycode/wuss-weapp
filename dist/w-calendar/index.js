@@ -63,6 +63,14 @@ WussComponent({
       type: Number,
       value: 100,
     },
+    cancelText: {
+      type: String,
+      value: '取消',
+    },
+    confirmText: {
+      type: String,
+      value: '确定',
+    },
   },
   data: {
     value: [],
@@ -71,7 +79,10 @@ WussComponent({
     hashValue: {},
     hashDays: {},
   },
+
   ready() {
+    this.prevMonthDateList = [];
+    this.nextMonthDateList = [];
     let { maxDate, minDate } = this.data;
     this.maxDateTime = new Date(maxDate).getTime();
     this.minDateTime = new Date(minDate).getTime();
@@ -128,8 +139,10 @@ WussComponent({
      */
     createMonthDateList(num, operator) {
       let { dateList, dateTextObj, disabledDate, maxDate, minDate } = this.data;
+
       dateTextObj = Object.assign({}, SFTV, dateTextObj);
-      const date = operator ? dateList[0] : dateList[dateList.length - 1] || {};
+      const date =
+        (operator ? dateList[0] : dateList[dateList.length - 1]) || {};
       const now =
         (date.year && new Date(date.year, date.month + operator)) || new Date();
       now.setDate(1);
@@ -186,6 +199,75 @@ WussComponent({
       this._cntDown = _cntDown;
       this._cntTop = _cntTop;
       this.setData({ dateList });
+      this.createHashMonthDateList(1, -1);
+      this.createHashMonthDateList(1, 0);
+    },
+    /**
+     * 创建缓存的月
+     */
+    createHashMonthDateList(num, operator) {
+      let { dateList, dateTextObj, disabledDate, maxDate, minDate } = this.data;
+      let prevOrNext = operator
+        ? this.prevMonthDateList
+        : this.nextMonthDateList;
+      dateTextObj = Object.assign({}, SFTV, dateTextObj);
+      const date =
+        (operator ? dateList[0] : dateList[dateList.length - 1]) || {};
+      const now =
+        (date.year && new Date(date.year, date.month + operator)) || new Date();
+      now.setDate(1);
+      const _nowMonth = now.getMonth();
+      let _cntDown = false;
+      let _cntTop = false;
+      for (let i = -operator; i < num + -operator; i++) {
+        const _createNow = new Date(now.getTime());
+        _createNow.setMonth(_nowMonth + (operator ? -i : i));
+
+        const year = _createNow.getFullYear();
+        const month = _createNow.getMonth() + 1;
+        const totalDay = this.getTotalDayByMonth(year, month);
+        const week = this.getWeek(year, month, 1);
+        const days = [];
+        for (let day = -week + 1; day <= totalDay; day++) {
+          let className = '';
+          let disabled = false;
+          const nowDateTime = new Date(year, month - 1, day).getTime();
+          if (
+            !this._cntDown &&
+            day > 0 &&
+            maxDate !== 0 &&
+            nowDateTime > this.maxDateTime
+          ) {
+            disabled = true;
+            _cntDown = true;
+          }
+          if (
+            !this._cntTop &&
+            day > 0 &&
+            minDate !== 0 &&
+            nowDateTime < this.minDateTime
+          ) {
+            disabled = true;
+            _cntTop = true;
+          }
+          if (!disabled) {
+            const tempWeek = this.getWeek(year, month, day);
+            if (tempWeek == 0 || tempWeek == 6) {
+              className = 'week';
+            }
+          }
+          days.push({
+            day,
+            className,
+            dateTextObj: dateTextObj[`${month}-${day}`] || false,
+            disabledDate: disabledDate[`${year}-${month}-${day}`] || disabled,
+          });
+        }
+        !operator && prevOrNext.push({ year, month, days });
+        operator && prevOrNext.unshift({ year, month, days });
+      }
+      this._cntDown = _cntDown;
+      this._cntTop = _cntTop;
     },
     /*
      * 获取月的总天数
@@ -397,24 +479,36 @@ WussComponent({
     //到底顶部
     handleScrollToUpper(e) {
       this.top = true;
+      if (this.top && !this._cntTop) {
+        this.hashDateListToDateList(-1);
+        this.top = false;
+      }
     },
     //到底底部
     handleScrollToLower() {
       this.end = true;
+      if (this.end && !this._cntDown) {
+        this.hashDateListToDateList(0);
+        this.end = false;
+      }
     },
     handleTouchStart() {
       this.top = false;
       this.end = false;
     },
-    handleTouchEnd(e) {
-      if (this.top && !this._cntTop) {
-        this.createMonthDateList(1, -1);
-        this.top = false;
+    //使用缓存
+    hashDateListToDateList(operator) {
+      let { dateList } = this.data;
+      if (operator) {
+        //前
+        dateList.unshift(this.prevMonthDateList.shift());
+        this.createHashMonthDateList(1, -1);
+      } else {
+        //后
+        dateList.push(this.nextMonthDateList.pop());
+        this.createHashMonthDateList(1, 0);
       }
-      if (this.end && !this._cntDown) {
-        this.createMonthDateList(1, 0);
-        this.end = false;
-      }
+      this.setData({ dateList });
     },
     // 点击确定
     handleOk() {

@@ -21,7 +21,7 @@
 			 type="primary"
 			 bindtap="handleClose"
 			>
-				取消
+				{{cancelText}}
 			</w-button>
 			<view class="wuss-calendar-title wuss-calendar-centered">
 				选择日期
@@ -31,7 +31,7 @@
 			 type="primary"
 			 bindtap="handleOk"
 			>
-				确定
+				{{confirmText}}
 			</w-button>
 		</view>
 		<view
