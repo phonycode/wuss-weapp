@@ -3,6 +3,6 @@
   hover-class="none" 
   catchtouchmove="handleCatchTouchMove"
   hover-stop-propagation="true"
-  bindtap="handleClick"
+  catchtap="handleClick"
   style="{{ maskStyles }}"
 />
