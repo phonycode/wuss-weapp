@@ -16,7 +16,7 @@
   font-size: 16px;
   border: 1px solid transparent;
   min-height: 42px;
-  transition: background-color 200ms ease 0s, opacity 200ms ease 0s;
+  /* transition: background-color 50ms ease 0s, opacity 50ms ease 0s; */
 }
 
 .wuss-button.wuss-button-full {
