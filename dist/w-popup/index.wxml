@@ -2,7 +2,7 @@
  wx:if="{{ mask }}"
  visible="{{ maskShadow }}"
  maskCancel="{{ maskCancel }}"
- bind:onClose="handleClose"
+ catch:onClose="handleClose"
  zIndex="{{ maskIndex }}"
 />
 
