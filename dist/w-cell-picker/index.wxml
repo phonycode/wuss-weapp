@@ -2,7 +2,8 @@
  highlight
  isLink
  label="{{ label }}"
- bind:onClick="_handleClick"
+ catch:onClick="_handleClick"
+ hover-stop-propagation="false"
 >
 	<view
 	 slot="content"
@@ -23,9 +24,9 @@
 		 position="bottom"
 		 width="100%"
 		 padding="0"
-		 height="300px"
+		 height="320px"
 		 zIndex="10000"
-		 bind:onClose="_handleCancel"
+		 catch:onClose="_handleCancel"
 		>
 			<view
 			 class="wuss-cell-picker-header"
@@ -60,7 +61,9 @@
 			</view>
 			<picker-view
 			 value="{{ _currentValue }}"
-			 class="wuss-cell-picker-view"
+       class="wuss-cell-picker-view"
+       indicator-class="wuss-cell-picker-view-indicator"
+       indicator-style="{{ indicatorStyle || '' }}"
 			 bindchange="_handleChange"
 			 bindpickstart="_handleTouchStart"
 			 bindpickend="_handleTouchEnd"

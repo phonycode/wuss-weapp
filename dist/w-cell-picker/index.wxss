@@ -58,12 +58,18 @@
   height: calc(100% - 44px);
 }
 
+.wuss-cell-picker-view-indicator {
+  padding: 5px 0;
+}
+
 .wuss-cell-picker-view-item {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #333333;
 }
 
