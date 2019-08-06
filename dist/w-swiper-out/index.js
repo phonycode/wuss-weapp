@@ -2,7 +2,7 @@
  * @Author: Github.Caitingwei[https://github.com/Caitingwei]
  * @Date: 2018-09-06 16:23:23
  * @Last Modified by: Github.Caitingwei[https://github.com/Caitingwei]
- * @Last Modified time: 2019-03-14 10:01:02
+ * @Last Modified time: 2019-02-25 09:13:33
  */
 import WussComponent from "../common/extends/baseComponent";
 const SYSTEM_INFO = wx.getSystemInfoSync();
@@ -103,23 +103,26 @@ WussComponent({
         height
       } = this.data;
       if (disabled) return false;
-      if (_startX - pageX >= _threshold && Math.abs(_startY - pageY) <= height) { // X轴移动距离大于等于阀值并且Y轴移动距离在Cell内
+      if (
+        _startX - pageX >= _threshold &&
+        Math.abs(_startY - pageY) <= height
+      ) {
         this.setData({
           _scrollX: -_slideWidth
         });
-      } else if(_startX - pageX >= _threshold && Math.abs(_startY - pageY) > height) { // X轴移动距离大于等于阀值并且Y轴移动距离超出W-cell高度时
-        this.setData({
-          _scrollX: 0,
-        });
-      } else if (pageX - _startX >= _threshold) { // 终点X轴大于起点X轴时让他收起
+      } else if (_startX - pageX < _threshold && _startX - pageX > 0) {
         this.setData({
           _scrollX: 0
         });
-      } else if (pageX - _startX < _threshold && pageX - _startX > 0) { // 终点X轴大于起点X轴并且小于阀值收起
+      } else if (pageX - _startX >= _threshold) {
         this.setData({
           _scrollX: 0
         });
-      } else if (pageX === _startX || pageY === _startY) { // 鼠标原地点击时,达到autoClose效果 自动收回
+      } else if (pageX - _startX < _threshold && pageX - _startX > 0) {
+        this.setData({
+          _scrollX: 0
+        });
+      } else if (pageX === _startX || pageY === _startY) {
         this.setData({
           _scrollX: 0
         });
