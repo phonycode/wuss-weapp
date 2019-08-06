@@ -21,6 +21,10 @@
   visibility: visible;
 }
 
+.wuss-toast-text {
+  font-size: 28rpx;
+}
+
 .wuss-toast {
   background: rgba(40, 40, 40, 0.75);
   text-align: center;
@@ -30,7 +34,7 @@
 
 .wuss-toast-content {
   min-height: 230rpx;
-  padding: 44rpx 84rpx;
+  padding: 44rpx;
   box-sizing: border-box;
   max-width: 80vw;
 }
@@ -43,6 +47,7 @@
 
 .wuss-toast-icon {
   margin-bottom: 20rpx;
+  padding: 10rpx 36rpx;
   display: block;
 }
 
