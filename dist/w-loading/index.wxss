@@ -34,7 +34,7 @@
 
 .wuss-loading-text {
   color: #ffffff;
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 10px;
   max-width: 100px;
   overflow: hidden;
