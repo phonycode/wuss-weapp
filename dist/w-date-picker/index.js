@@ -1,7 +1,7 @@
 import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
 import './format';
-const fmt = ["Y+,i,year","M+,,month", "d+,i,day", "h+,i,hours", "m+,,minutes", "s+,,seconds"];
+const fmt = ['Y+,i,year', 'M+,,month', 'd+,i,day', 'h+,i,hours', 'm+,,minutes', 's+,,seconds'];
 
 WussComponent({
   /**
@@ -63,59 +63,20 @@ WussComponent({
     },
     defaultValue: {
       type: null,
-      observer(_v) {
-        const { [0]: year, [1]: month, [2]: day, [3]: hours, [4]: minutes, [5]: seconds } = this.data.suffixName;
-        let value = [];
-        const type = Object.prototype.toString.call(_v);
-        const { format } = this.data;
-        const _formatTpl = [].concat(this.data._formatTpl);
-        if (!_formatTpl || !_formatTpl.length) {
-          for (let value in fmt) {
-            const [regexp, flags, rename] = fmt[value].split(',');
-            const validateFlag = new RegExp(`(${regexp})`,flags).test(format);
-            if (validateFlag) {
-              _formatTpl.push(rename);
-            };
-          };
+      observer(value) {
+        const { isInitialDefaultValue } = this.data;
+        if (!isInitialDefaultValue) { this.getValues(value, true) }
+      },
+    },
+    currentValue: {
+      type: null,
+      observer(value) {
+        const { defaultValue, isInitialDefaultValue } = this.data;
+        if (!defaultValue && !isInitialDefaultValue) { // 若defaultValue没有，则默认视为已初始化值.
+          this.setData({ isInitialDefaultValue: true }, () => this.getValues(value, false));
+          return false;
         };
-        if (type === '[object String]' || type === '[object Number]' || type === '[object Date]') {
-          const date = new Date(_v);
-          if (_formatTpl.includes('year')) {
-            value[0] = `${date.getFullYear()}${year}`;
-          };
-          if (_formatTpl.includes('month')) {
-            value[1] = `${this.withData(date.getMonth()+1)}${month}`;
-          };
-          if (_formatTpl.includes('day')) {
-            value[2] = `${this.withData(date.getDate())}${day}`;
-          };
-          if (_formatTpl.includes('hours')) {
-            value[3] = `${this.withData(date.getHours())}${hours}`;
-          };
-          if (_formatTpl.includes('minutes')) {
-            value[4] = `${this.withData(date.getMinutes())}${minutes}`;
-          };
-          if (_formatTpl.includes('seconds')) {
-            value[5] = `${this.withData(date.getSeconds())}${seconds}`;
-          };
-        } else if (type === '[object Array]') { // [’2019年','09月']
-          const { _formatTpl, suffixName } = this.data;
-          value = _v.map((v,index) => {
-            if (_formatTpl.includes('year') && index === 0) return v.includes(year) ? v : `${v}${year}`;
-            if (_formatTpl.includes('month')) return v.includes(suffixName[1]) ? v : `${v}${suffixName[index]}`;
-            if (_formatTpl.includes('day')) return v.includes(suffixName[2]) ? v : `${v}${suffixName[index]}`;
-            if (_formatTpl.includes('hours')) return v.includes(suffixName[3]) ? v : `${v}${suffixName[index]}`;
-            if (_formatTpl.includes('minutes')) return v.includes(suffixName[4]) ? v : `${v}${suffixName[index]}`;
-            if (_formatTpl.includes('seconds')) return v.includes(suffixName[5]) ? v : `${v}${suffixName[index]}`;
-          });
-        } else {
-          throw TypeError('w-date-picker: defaultValue 值只能为时间蹉、date字符串、数组等');
-        };
-        this.setData({
-          value,
-          _defaultValue: value,
-        });
-        this.validate(value);
+        if (isInitialDefaultValue) { this.getValues(value, false) }
       },
     },
     cancelTextColor: {
@@ -144,6 +105,8 @@ WussComponent({
     options: [],
     _formatTpl: [],
     value: '',
+    isInitialDefaultValue: false,
+    _currentValue: null,
     _defaultValue: null,
   },
 
@@ -164,6 +127,61 @@ WussComponent({
         }
       }
       return array;
+    },
+    getValues(initialValue, isInitial = false) {
+      const { [0]: year, [1]: month, [2]: day, [3]: hours, [4]: minutes, [5]: seconds } = this.data.suffixName;
+      let value = [];
+      const type = Object.prototype.toString.call(initialValue);
+      const { format } = this.data;
+      const _formatTpl = [].concat(this.data._formatTpl);
+      if (!_formatTpl || !_formatTpl.length) {
+        for (let value in fmt) {
+          const [regexp, flags, rename] = fmt[value].split(',');
+          const validateFlag = new RegExp(`(${regexp})`,flags).test(format);
+          if (validateFlag) {
+            _formatTpl.push(rename);
+          };
+        };
+      };
+      if (type === '[object String]' || type === '[object Number]' || type === '[object Date]') {
+        const isTimestamp = !isNaN(Number(initialValue));
+        const date = new Date(isTimestamp ? Number(initialValue) : initialValue);
+        if (_formatTpl.includes('year')) {
+          value[0] = `${date.getFullYear()}${year}`;
+        };
+        if (_formatTpl.includes('month')) {
+          value[1] = `${this.withData(date.getMonth()+1)}${month}`;
+        };
+        if (_formatTpl.includes('day')) {
+          value[2] = `${this.withData(date.getDate())}${day}`;
+        };
+        if (_formatTpl.includes('hours')) {
+          value[3] = `${this.withData(date.getHours())}${hours}`;
+        };
+        if (_formatTpl.includes('minutes')) {
+          value[4] = `${this.withData(date.getMinutes())}${minutes}`;
+        };
+        if (_formatTpl.includes('seconds')) {
+          value[5] = `${this.withData(date.getSeconds())}${seconds}`;
+        };
+      } else if (type === '[object Array]') { // [’2019年','09月']
+        const { _formatTpl, suffixName } = this.data;
+        value = initialValue.map((v,index) => {
+          if (_formatTpl.includes('year') && index === 0) return v.includes(year) ? v : `${v}${year}`;
+          if (_formatTpl.includes('month')) return v.includes(suffixName[1]) ? v : `${v}${suffixName[index]}`;
+          if (_formatTpl.includes('day')) return v.includes(suffixName[2]) ? v : `${v}${suffixName[index]}`;
+          if (_formatTpl.includes('hours')) return v.includes(suffixName[3]) ? v : `${v}${suffixName[index]}`;
+          if (_formatTpl.includes('minutes')) return v.includes(suffixName[4]) ? v : `${v}${suffixName[index]}`;
+          if (_formatTpl.includes('seconds')) return v.includes(suffixName[5]) ? v : `${v}${suffixName[index]}`;
+        });
+      } else {
+        throw TypeError('w-date-picker: defaultValue 值只能为时间戳、date字符串、数组等');
+      };
+      this.setData({
+        value,
+        ...(isInitial ? { _defaultValue: value, isInitialDefaultValue: true } : { _currentValue: value }),
+      });
+      this.validate(value);
     },
     getMonthDay(year, month) {
       const { suffixName } = this.data;

@@ -5,6 +5,7 @@
   options="{{ options }}"
   title="{{ title }}"
   defaultValue="{{ _defaultValue }}"
+  currentValue="{{ _currentValue }}"
   cancelTextColor="{{ cancelTextColor }}"
   cancelText="{{ cancelText }}"
   confirmTextColor="{{ confirmTextColor }}"
