@@ -15,6 +15,12 @@ const pageOptions = {
    */
   onLoad: function (options) {
   },
+  handleChangeDate(e) {
+    const { date } = e.target.dataset;
+    if(date) {
+      this.setData({ date });
+    }
+  },
   handleSelected(e) {
     console.log(e);
   },

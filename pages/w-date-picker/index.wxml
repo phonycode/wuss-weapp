@@ -35,8 +35,16 @@
     defaultValue="2019-03-14 09:26"
     bind:onSelect="handleSelected"
   />
+  <w-date-picker
+    label="动态设置日期"
+    title="请选择日期"
+    format="YYYY-MM-DD HH:mm:ss"
+    currentValue="{{ date }}"
+    bind:onSelect="handleSelected"
+  />
 </w-cell-group>
-
+<w-button data-date="2018-10-01 23:33:33" bind:onClick="handleChangeDate" type="info">动态设置日期为2018-10-01 23:33:33</w-button>
+<w-button data-date="1565061155057" bind:onClick="handleChangeDate" type="info">动态设置日期时间蹉1565061155057</w-button>
 
 <w-pane desc="Time 时间选择器 HH:mm:ss" />
 <w-cell-group>
