@@ -12,6 +12,7 @@ WussComponent({
    * 组件的属性列表
    * @param {string} text 二维码信息
    * @param {string} size 二维码大小
+   * @param {boolean} usingEncode 开启后生成的二维码自动encodeURIComponent
    */
   properties: {
     text: {
@@ -29,18 +30,20 @@ WussComponent({
         this.computedStyles();
       },
     },
+    usingEncode: {
+      type: Boolean,
+      value: false,
+    },
   },
   methods: {
     /**
      * 绘制二维码
      */
     drawQRCode() {
-      const { text } = this.data;
-      const base64Data = createQrCodeImg(encodeURIComponent(text));
+      const { text, usingEncode } = this.data;
+      const base64Data = createQrCodeImg(usingEncode ? encodeURIComponent(text): String(text));
       this.computedStyles();
-      this.setData({
-        base64Data,
-      });
+      this.setData({ base64Data });
     },
     /**
      * 计算styles
