@@ -1,4 +1,4 @@
-interface IAlertOptions {
+export interface IAlertOptions {
   title?: string;
   content?: string;
   maskClose?: boolean;
@@ -6,7 +6,7 @@ interface IAlertOptions {
   confirm?: Function;
 }
 
-interface IConfirmOptions {
+export interface IConfirmOptions {
   title?: string;
   content?: string;
   cancelText?: string;
@@ -18,7 +18,7 @@ interface IConfirmOptions {
   cancel?: Function;
 }
 
-interface IToastShowOptions {
+export interface IToastShowOptions {
   type?: string;
   duration?: number;
   mask?: boolean;
@@ -27,7 +27,7 @@ interface IToastShowOptions {
   color?: string;
   position?: string;
 }
-interface IToast {
+export interface IToast {
   show: (
     options: IToastShowOptions
   ) => {
@@ -35,18 +35,18 @@ interface IToast {
     then: (fn: () => void) => Promise<any>;
   };
 }
-interface ILoadingShowOptions {
+export interface ILoadingShowOptions {
   content?: string;
   showText?: boolean;
   timeout?: number | null;
   hide?: <T>() => T;
 }
-interface ILoading {
+export interface ILoading {
   show: (options?: ILoadingShowOptions) => Promise<any>;
   hide: <R>() => boolean | R;
 }
 
-interface IActionSheetOptions {
+export interface IActionSheetOptions {
   visible?: boolean;
   options?: Array<{
     text: string;
@@ -58,12 +58,12 @@ interface IActionSheetOptions {
   cancelText?: string;
 }
 
-interface IActionSheet<T> {
+export interface IActionSheet<T> {
   show: (options?: T) => void;
   hide: (options?: T) => void;
 }
 
-interface ICountUpOptions {
+export interface ICountUpOptions {
   useEasing: boolean;
   useGrouping: boolean;
   separator: string;
