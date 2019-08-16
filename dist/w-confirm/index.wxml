@@ -12,7 +12,7 @@
 			<view class="wuss-confirm-title">{{ title }}</view>
 		</view>
 		<view class="wuss-confirm-bd">
-			<view class="wuss-confirm-content">{{ content }}</view>
+      <rich-text class="wuss-confirm-content" nodes="{{content}}"></rich-text>
 		</view>
 		<view class="wuss-confirm-ft">
 			<view class="wuss-confirm-button-group">
