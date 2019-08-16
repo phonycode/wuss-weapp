@@ -21,19 +21,20 @@ page,.wuss-weapp-example  {
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  /* display: none; */
   /* background-color: #eeeeee; */
 }
 
 .title {
   padding: 15px;
-  font-size: 24px;
+  font-size: 44px;
   background-image: linear-gradient(92deg, rgba(255, 102, 0,1), rgba(255, 153, 51,1),rgba(204, 0, 51,1));
   background-image: -webkit-linear-gradient(92deg,  rgba(255, 102, 0,1), rgba(255, 153, 51,1),rgba(204, 0, 51,1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: filter-hue 30s infinite linear;
+  -webkit-animation: filter-hue 10s infinite linear;
 }
 
 @-webkit-keyframes filter-hue {

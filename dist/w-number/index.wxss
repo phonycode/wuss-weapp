@@ -51,7 +51,7 @@
   border: 1px solid #eee;
   position: relative;
   padding: 5px;
-  transition: background-color 100ms ease;
+  transition: background-color 50ms ease;
 }
 
 .wuss-number-btn-box-cut::before,

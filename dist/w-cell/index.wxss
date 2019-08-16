@@ -8,7 +8,7 @@
 
 .wuss-cell {
   position: relative;
-  transition: background-color 200ms ease 0s;
+  transition: background-color 50ms ease 0s;
 }
 
 .wuss-cell-hover {

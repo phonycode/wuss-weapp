@@ -28,7 +28,7 @@
   flex-wrap: nowrap;
   font-size: 16px;
   padding: 5px 0;
-  transition: opacity 200ms ease, background-color 300ms ease;
+  transition: background-color 300ms ease;
   position: relative;
   color: #ff9900;
   background-color: #ffffff;
