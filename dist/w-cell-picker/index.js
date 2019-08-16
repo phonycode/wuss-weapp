@@ -411,6 +411,10 @@ WussComponent({
       });
       this.setData({ _options });
     },
+
+    isValidValue(value) {
+      return typeof value !== 'undefined' || Object.prototype.toString.call(value) !== '[object Null]' || !isNaN(value);
+    },
     /**
      * 同步设置DATA
      */
@@ -423,11 +427,11 @@ WussComponent({
       this._ArrayKeysToArrayObject();
       this.formatOptions();
       let defaultText = placeholder || '';
-      if (defaultValue && Array.isArray(defaultValue)) {
+      if (this.isValidValue(defaultValue) && Array.isArray(defaultValue)) {
         defaultValue =
           defaultValue.filter(_ => _ !== undefined) || defaultValue.map(_ => 0);
       }
-      if (defaultValue) {
+      if (this.isValidValue(defaultValue)) {
         if (_isLinkage) {
           if (Array.isArray(defaultValue) && !!defaultValue.length && typeof defaultValue[0] === 'number') {
               this.formatOptions(defaultValue);
