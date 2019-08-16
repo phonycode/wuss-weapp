@@ -3,6 +3,7 @@
   "usingComponents": {
     "w-scrollable-tab-view": "/dist/w-scrollable-tab-view/index",
     "w-cell": "/dist/w-cell/index",
+    "w-loading": "/dist/w-loading/index",
     "w-cell-group": "/dist/w-cell-group/index",
     "w-pane": "/dist/w-pane/index"
   }

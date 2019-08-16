@@ -9,19 +9,20 @@
 	 wx:for="{{ options }}"
 	 wx:key="{{ index }}"
 	 slot="{{ item }}"
+   bindscrolltolower="handleLoadmore"
 	 class="w-scrollable-tab-view-container"
 	>
 		<w-cell-group>
 			<w-cell
 			 highlight
-			 wx:for="{{ 20 }}"
+			 wx:for="{{ dataListView }}"
 			 wx:key="child"
 			 wx:for-index="child"
 			 wx:for-item="childItem"
-			 label="列表 {{ child+1 }}"
-			 content="你好，我是{{ item }}页面"
+			 label="{{ childItem.label }}"
+			 content="{{ childItem.content }}"
 			/>
 		</w-cell-group>
 	</scroll-view>
 </w-scrollable-tab-view>
-
+<w-loading id="wuss-loading"/>

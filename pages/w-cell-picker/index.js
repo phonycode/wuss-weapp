@@ -220,11 +220,11 @@ const pageOptions = {
     ],
     options2: ["男", "女"],
     options4: [
-      { key: "30天", value: 30 },
-      { key: "60天", value: 60 },
-      { key: "90天", value: 90 },
-      { key: "1年", value: 365 },
-      { key: "10年", value: 3650 }
+      { key: "前端开发工程师", value: 0 },
+      { key: "后端开发工程师", value: 1 },
+      { key: "测试工程师", value: 2 },
+      { key: "UI设计师", value: 3 },
+      { key: "高级算法工程师", value: 4 }
     ],
     options3: [
       [

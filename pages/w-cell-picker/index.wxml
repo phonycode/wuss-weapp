@@ -20,9 +20,9 @@
 	/>
   <w-cell-picker
 	 label="单选模式2"
-	 title="请选择续费时间"
+	 title="请选择岗位"
 	 options="{{ options4 }}"
-   defaultValue="60"
+   defaultValue="{{ 0 }}"
    bind:onSelect="handleSelect"
 	/>
   <w-cell-picker

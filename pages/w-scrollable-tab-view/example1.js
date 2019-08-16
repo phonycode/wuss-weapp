@@ -1,4 +1,5 @@
 import { registerShareEvent } from '../../common/share';
+import { Loading } from '../../dist/index';
 // pages/w-scrollable-tab-view/index.js
 const pageOptions = {
 
@@ -12,12 +13,22 @@ const pageOptions = {
       '热榜',
       '视频',
     ],
+    dataListView: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    const dataListView = [];
+    for (let i = 1; i <= 20; i++) {
+      dataListView.push({
+        content: `列表 ${i}`,
+        label: `第${i}个描述`,
+      })
+    }
+    this.setData({ dataListView })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -26,9 +37,7 @@ const pageOptions = {
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -44,18 +53,21 @@ const pageOptions = {
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handleLoadmore() {
+    Loading.show({
+      content: '正在加载...',
+    });
+    const { dataListView } = this.data;
+    const len = dataListView.length;
+    for (let i = 0; i < 10; i++) {
+      dataListView.push({
+        content: `列表 ${len + i}`,
+        label: `第${len + i}个描述`,
+      })
+    }
+    this.setData({ dataListView }, () => setTimeout(() => {
+      Loading.hide();
+    }, 500));
   },
 
   /**
