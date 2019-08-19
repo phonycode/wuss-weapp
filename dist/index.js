@@ -1,4 +1,5 @@
 const CountUp = require('./w-count-up/index');
+const regeneratorRuntime = require('./common/core/runtime-module');
 
 const getCurrentPage = () => {
   const pages = getCurrentPages();
@@ -60,4 +61,5 @@ module.exports = {
   Loading,
   CountUp,
   ActionSheet,
+  regeneratorRuntime, // async await支持
 };

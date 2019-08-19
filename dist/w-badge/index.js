@@ -16,33 +16,15 @@ WussComponent({
    *
    */
   properties: {
-    icon: {
-      type: String,
-      value: '',
-    },
-    iconColor: {
-      type: String,
-      value: '',
-    },
+    icon: String,
+    iconColor: String,
+    type: String,
+    bgColor: String,
+    color: String,
+    styles: String,
     iconSize: {
       type: String,
       value: '20px',
-    },
-    type: {
-      type: String,
-      value: '',
-    },
-    bgColor: {
-      type: String,
-      value: '',
-    },
-    color: {
-      type: String,
-      value: '',
-    },
-    styles: {
-      type: String,
-      value: '',
     },
     inline: {
       type: Boolean,
