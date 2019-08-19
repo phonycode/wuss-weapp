@@ -10,3 +10,4 @@ project.config.json
 assets
 wuss-weapp
 common
+!dist/common
