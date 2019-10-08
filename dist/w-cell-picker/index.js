@@ -1,6 +1,5 @@
 import WussComponent from '../common/extends/baseComponent';
 import field from '../common/behavior/field';
-import regeneratorRuntime from '../common/core/runtime-module';
 
 WussComponent({
   relations: {
@@ -26,12 +25,13 @@ WussComponent({
    * @param {string} placeholder 初始化默认的占位符 例如：请选择
    * @param {boolean} isDatePicker 类型切换为日期选择器
    * @param {string} indicatorStyle 设置选择器中间选中框的样式
+   * @param {boolean} maskClosable 点击蒙层是否允许关闭
    */
   properties: {
     options: {
       type: Array,
       value: [],
-      async observer(__val) {
+      observer(__val) {
         /**
          * 这里_initPicker是为了解决官方组件picker-view在第一次初始化后 改变值无法检测高度问题
          * 只能使用非惰性让他在渲染一次以重置picker-view-column下view的高度。
@@ -56,7 +56,7 @@ WussComponent({
                 ? defaultValue.filter(_ => _ !== undefined) ||
                   options.map(_ => 0)
                 : null;
-            await this.syncSetData(
+            this.syncSetData(
               Object.assign(
                 {
                   _datePickerOptionsInit: true
@@ -67,7 +67,7 @@ WussComponent({
           }
           return this._ArrayKeysToArrayObject();
         }
-        await this.syncSetData({
+        this.syncSetData({
           _isLinkage: !!(
             options[1] &&
             options[1][0] &&
@@ -76,9 +76,9 @@ WussComponent({
           _isRadio: !!(options[0] && !Array.isArray(options[0]))
         });
         this.initPicker()
-        await this.syncSetData({ _initPicker: false });
-        await this.sleep(200);
-        await this.syncSetData({ _initPicker: true });
+        this.syncSetData({ _initPicker: false });
+        this.sleep(200);
+        this.syncSetData({ _initPicker: true });
       }
     },
     defaultValue: {
@@ -86,7 +86,7 @@ WussComponent({
     },
     currentValue: {
       type: null,
-      async observer(currentValue) {
+      observer(currentValue) {
         const dataType = Object.prototype.toString.call(currentValue);
         if (dataType === '[object Null]' || dataType === '[object Undefined]') {
           return console.warn('wuss-weapp: Picker currentValue expect to accept an array or string or number but accept an invalid value.')
@@ -103,15 +103,15 @@ WussComponent({
           if (_isLinkage) {
             if (Array.isArray(currentValue) && !!currentValue.length && typeof currentValue[0] === 'number') {
                 this.formatOptions(currentValue);
-                await this.syncSetData({ _currentValue: currentValue });
+                this.syncSetData({ _currentValue: currentValue });
             } else {
               const formatValue = this.getValues(currentValue, defaultKey, true);
               this.formatOptions(formatValue);
-              await this.syncSetData({ _currentValue: formatValue });
+              this.syncSetData({ _currentValue: formatValue });
             }
           } else {
             const formatValue = this.getValues(currentValue, defaultKey, true);
-            await this.syncSetData({ _currentValue: formatValue });
+            this.syncSetData({ _currentValue: formatValue });
           }
           if (!this.data._isRadio) {
             if (
@@ -131,7 +131,7 @@ WussComponent({
             });
           }
         }
-        await this.syncSetData({
+        this.syncSetData({
           value: this.getValues(this.data._currentValue, defaultKey),
           _currentText: defaultText
         });
@@ -158,9 +158,13 @@ WussComponent({
       type: String,
       value: 'value'
     },
+    maskClosable: {
+      type: Boolean,
+      value: true
+    },
     placeholder: String,
     isDatePicker: Boolean,
-    indicatorStyle: String
+    indicatorStyle: String,
   },
   data: {
     _visible: false,
@@ -316,6 +320,7 @@ WussComponent({
       let values = [];
       const currentOpitons = _isLinkage && value.length && typeof value[0] === 'number' ? _options : options;
       const currentkey = defaultKey === 'key' ? 'key' : 'value';
+      if (!(!!value)) return false;
       try {
         currentOpitons.forEach((v, i) => {
           if (!_isRadio) {
@@ -421,7 +426,7 @@ WussComponent({
     syncSetData(data) {
       return new Promise(resolve => this.setData(data, () => resolve(this.data)))
     },
-    async initPicker() {
+    initPicker() {
       const { showValue, placeholder, defaultKey, _isLinkage } = this.data;
       let { defaultValue } = this.data;
       this._ArrayKeysToArrayObject();
@@ -435,15 +440,15 @@ WussComponent({
         if (_isLinkage) {
           if (Array.isArray(defaultValue) && !!defaultValue.length && typeof defaultValue[0] === 'number') {
               this.formatOptions(defaultValue);
-              await this.syncSetData({ _currentValue: defaultValue });
+              this.syncSetData({ _currentValue: defaultValue });
           } else {
             const formatValue = this.getValues(defaultValue, defaultKey, true);
             this.formatOptions(formatValue);
-            await this.syncSetData({ _currentValue: formatValue });
+            this.syncSetData({ _currentValue: formatValue });
           }
         } else {
           const formatValue = this.getValues(defaultValue, defaultKey, true);
-          await this.syncSetData({ _currentValue: formatValue });
+          this.syncSetData({ _currentValue: formatValue });
         }
         if (!this.data._isRadio) {
           if (

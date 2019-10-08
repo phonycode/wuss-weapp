@@ -19,7 +19,7 @@
 			{{ _currentText }}
 		</view>
 		<w-popup
-		 maskCancel
+		 maskCancel="{{ maskClosable }}"
 		 visible="{{ _visible }}"
 		 position="bottom"
 		 width="100%"
