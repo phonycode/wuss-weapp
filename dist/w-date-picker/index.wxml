@@ -4,6 +4,7 @@
   label="{{ label }}"
   options="{{ options }}"
   title="{{ title }}"
+  maskClosable="{{ maskClosable }}"
   defaultValue="{{ _defaultValue }}"
   currentValue="{{ _currentValue }}"
   cancelTextColor="{{ cancelTextColor }}"

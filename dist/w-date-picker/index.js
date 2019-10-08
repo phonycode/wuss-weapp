@@ -33,6 +33,7 @@ WussComponent({
    * @param {string} confirmTextColor picker确认文本的字体颜色
    * @param {string} confirmText picker确认文本
    * @param {string} placeholder date picker的占位符文本
+   * @param {boolean} maskClosable 点击蒙层是否允许关闭
    */
   properties: {
     format: {
@@ -79,23 +80,21 @@ WussComponent({
         if (isInitialDefaultValue) { this.getValues(value, false) }
       },
     },
-    cancelTextColor: {
-      type: String,
-    },
     cancelText: {
       type: String,
       value: '取消',
-    },
-    confirmTextColor: {
-      type: String,
     },
     confirmText: {
       type: String,
       value: '确认',
     },
-    placeholder: {
-      type: String,
+    maskClosable: {
+      type: Boolean,
+      value: true
     },
+    placeholder: String,
+    cancelTextColor: String,
+    confirmTextColor: String,
   },
 
   /**
