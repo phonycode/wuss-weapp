@@ -324,7 +324,7 @@ WussComponent({
       try {
         currentOpitons.forEach((v, i) => {
           if (!_isRadio) {
-            if (!!Array.prototype.toString.call(value)) {
+            if (!!Array.prototype.toString.call(value || [])) {
               if (!decode) {
                 if (typeof value[i] === 'string') {
                   if (!isDatePicker) {
