@@ -320,7 +320,7 @@ WussComponent({
       let values = [];
       const currentOpitons = _isLinkage && value.length && typeof value[0] === 'number' ? _options : options;
       const currentkey = defaultKey === 'key' ? 'key' : 'value';
-      if (!(!!value)) return false;
+      // if (!(!!value)) return false;
       try {
         currentOpitons.forEach((v, i) => {
           if (!_isRadio) {
