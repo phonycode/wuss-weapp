@@ -321,8 +321,16 @@ WussComponent({
     morePress({ dateIndex, index, year, month, day }, first = false) {
       let { dateList, value, hashValue } = this.data;
       const { checked } = dateList[dateIndex].days[index];
+      let nowHash =  hashValue[`${year}-${month}-${day}`];
       if (checked) {
-        value.splice(hashValue[`${year}-${month}-${day}`], 1);
+        // 替代方案
+        value.splice(nowHash, 1);
+        for (const key in hashValue) {
+          if(hashValue[key] > nowHash) hashValue[key] = hashValue[key] -1;
+        }
+        delete hashValue[`${year}-${month}-${day}`];
+        // 问题代码
+        // value.splice(hashValue[`${year}-${month}-${day}`], 1);
       } else {
         value.push(new Date(year, month - 1, day));
       }
